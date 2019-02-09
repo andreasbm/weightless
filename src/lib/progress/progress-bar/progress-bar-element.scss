@@ -1,12 +1,24 @@
 @import "../../style/base";
 
-$progress-bar-indeterminate-duration: 2.1s;
-$progress-bar-indeterminate-short-delay: 1.15s;
-$progress-bar-height: #{size(4)};
+$progress-bar-height: var(--progress-bar-height, #{size(4)});
+
+$progress-bar-bg: var(--progress-bar-bg, #{color("shade", 300)});
+$progress-bar-color: var(--progress-bar-color, #{color("primary", 500)});
+$progress-bar-buffer-color: var(--progress-bar-buffer-color, #{color("primary", 500, 0.5)});
+
+$progress-bar-determinate-transition: var(--progress-bar-determinate-transition, transform #{$transition-linear});
+
+$progress-bar-indeterminate-duration: var(--progress-bar-indeterminate-duration, 2.1s);
+$progress-bar-indeterminate-short-delay: var(--progress-bar-indeterminate-short-delay, 1.15s);
+$progress-bar-indeterminate-duration: var(--progress-bar-indeterminate-duration, #{$progress-bar-indeterminate-duration});
+$progress-bar-indeterminate-timing-function: var(--progress-bar-indeterminate-timing-function, #{$transition-standard-curve});
+$progress-bar-indeterminate-timing-function: var(--progress-bar-indeterminate-timing-function, #{$transition-standard-curve});
+$progress-bar-indeterminate-short-delay: var(--progress-bar-indeterminate-short-delay, #{$progress-bar-indeterminate-short-delay});
+
 
 :host {
 	height: #{$progress-bar-height};
-	background: var(--progress-bar-bg, #{color("primary", 400, 0.2)});
+	background: #{$progress-bar-bg};
 
 	width: 100%;
 	contain: strict;
@@ -15,11 +27,11 @@ $progress-bar-height: #{size(4)};
 }
 
 #progress {
-	background: var(--progress-bar-color, #{color("primary", 500)});
+	background: #{$progress-bar-color};
 }
 
 #buffer {
-	background: var(--progress-bar-buffer-color, #{color("primary", 500, 0.5)});
+	background: #{$progress-bar-buffer-color};
 }
 
 :host([mode="indeterminate"]) {
@@ -34,23 +46,23 @@ $progress-bar-height: #{size(4)};
 		}
 
 		&:before {
-			animation: indeterminate var(--progress-bar-indeterminate-duration, #{$progress-bar-indeterminate-duration}) var(--progress-bar-indeterminate-timing-function, #{$transition-standard-curve}) infinite;
+			animation: indeterminate #{$progress-bar-indeterminate-duration} #{$progress-bar-indeterminate-timing-function} infinite;
 		}
 		&:after {
-			animation: indeterminate-short var(--progress-bar-indeterminate-duration, #{$progress-bar-indeterminate-duration}) var(--progress-bar-indeterminate-timing-function, #{$transition-standard-curve}) infinite;
-			animation-delay: var(--progress-bar-indeterminate-short-delay, #{$progress-bar-indeterminate-short-delay});
+			animation: indeterminate-short #{$progress-bar-indeterminate-duration} #{$progress-bar-indeterminate-timing-function} infinite;
+			animation-delay: #{$progress-bar-indeterminate-short-delay};
 		}
 	}
 }
 
 :host([mode="determinate"]) #progress, #buffer {
+	transition: #{$progress-bar-determinate-transition};
+
+	transform-origin: top left;
 	position: absolute;
 	top: 0;
 	height: 100%;
 	width: 100%;
-
-	transition: var(--progress-bar-determinate-transition, transform #{$transition-linear});
-	transform-origin: top left;
 }
 
 @keyframes indeterminate {

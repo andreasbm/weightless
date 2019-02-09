@@ -1,28 +1,49 @@
 @import "../style/base";
 
-$button-letter-spacing: #{size(2)};
+$button-letter-spacing: var(--button-letter-spacing, #{size(2)});
+
+$button-color: var(--button-color,#{color-contrast("primary")});
+$button-bg: var(--button-bg, #{color("primary")});
+$button-shadow-color: var(--button-shadow-color, #{color("primary", $default-hue, 0.2)});
+
+$button-color-hover: var(--button-color-hover, #{color-contrast("primary", 400)});
+$button-bg-hover: var(--button-bg-hover, #{color("primary", 400)});
+$button-shadow-color-hover: var(--button-shadow-color-hover, #{color("primary", $default-hue, 0.5)});
+
+$button-color-active: var(--button-color-active, #{color-contrast("primary", 600)});
+$button-bg-active: var(--button-bg-active, #{color("primary", 600)});
+
+$button-color-disabled:  var(--button-color-disabled, #{color-contrast("shade", 400)});
+$button-bg-disabled: var(--button-bg-disabled, #{color("shade", 400)});
+
+$button-border-outlined: var(--button-border-outlined, #{size(2)} solid currentColor);
+
+$button-transition: box-shadow #{$transition-duration-slow-var} #{$transition-ease},
+										background #{$transition-duration-fast-var} #{$transition-ease},
+										color #{$transition-duration-fast-var} #{$transition-ease};
+$button-padding: #{$spacing-m} #{$spacing-l};
+$button-font-size: #{$font-size-m};
+$button-border-radius: #{$border-radius-m};
+$button-font-family: #{$font-family-sans-serif};
 
 :host {
-	--_button-color: var(--button-color,#{color-contrast("primary")});
-	--_button-bg: var(--button-bg, #{color("primary")});
-	--_button-shadow-color: var(--button-shadow-color, #{color("primary", $default-hue, 0.2)});
+	--_button-color: #{$button-color};
+	--_button-bg: #{$button-bg};
+	--_button-shadow-color: #{$button-shadow-color};
 
 	color: var(--_button-color);
 	background: var(--_button-bg);
 	box-shadow: elevation(1, var(--_button-shadow-color));
 
-	padding: #{$spacing-m} #{$spacing-l};
-	font-size: #{$font-size-m};
-	border-radius: #{$border-radius-m};
-	font-family: #{$font-family-sans-serif};
-
-	transition: box-shadow #{$transition-duration-slow-var} #{$transition-ease},
-							background #{$transition-duration-fast-var} #{$transition-ease},
-							color #{$transition-duration-fast-var} #{$transition-ease};
+	padding: #{$button-padding};
+	font-size: #{$button-font-size};
+	border-radius: #{$button-border-radius};
+	font-family: #{$button-font-family};
+	transition: #{$button-transition};
+	letter-spacing: #{$button-letter-spacing};
 
 	@include reset();
 
-	letter-spacing: #{$button-letter-spacing};
 	text-transform: uppercase;
 	cursor: pointer;
 	display: inline-flex;
@@ -34,9 +55,9 @@ $button-letter-spacing: #{size(2)};
 }
 
 :host(:hover) {
-	--_button-color: var(--button-color-hover, #{color-contrast("primary", 400)});
-	--_button-bg: var(--button-bg-hover, #{color("primary", 400)});
-	--_button-shadow-color: var(--button-shadow-color, #{color("primary", $default-hue, 0.5)});
+	--_button-color: #{$button-color-hover};
+	--_button-bg: #{$button-bg-hover};
+	--_button-shadow-color: #{$button-shadow-color-hover};
 }
 
 :host([inverted]) {
@@ -45,12 +66,12 @@ $button-letter-spacing: #{size(2)};
 }
 
 :host([outlined]) {
-	border: var(--button-border-outlined, #{size(2)} solid currentColor);
+	border: #{$button-border-outlined};
 }
 
 :host(:not([disabled]):active), :host(:not(:hover):not([disabled]):focus) {
-	--_button-color: var(--button-color-active, #{color-contrast("primary", 600)});
-	--_button-bg: var(--button-bg-active, #{color("primary", 600)});
+	--_button-color: #{$button-color-active};
+	--_button-bg: #{$button-bg-active};
 }
 
 :host(:not([flat]):not([disabled]):active), :host(:not([flat]):not(:hover):not([disabled]):focus) {
@@ -63,8 +84,8 @@ $button-letter-spacing: #{size(2)};
 }
 
 :host([disabled]) {
-	--_button-color: var(--button-color-hover, #{color-contrast("shade", 400)});
-	--_button-bg: var(--button-bg-hover, #{color("shade", 400)});
+	--_button-color: #{$button-color-disabled};
+	--_button-bg: #{$button-bg-disabled};
 	box-shadow: none;
 	cursor: default;
 	pointer-events: none;

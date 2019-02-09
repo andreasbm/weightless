@@ -25,11 +25,11 @@ export abstract class ProgressBehavior extends LitElement implements IProgressBe
 	@property({type: String, reflect: true}) mode: ProgressMode = ProgressMode.INDETERMINATE;
 
 	@property({type: Number}) value = 0;
-	@property({type: Number}) max = 100;
+	@property({type: Number}) max = 1;
 	@property({type: Number}) min = 0;
 
 	@property({type: Number}) buffer = 0;
-	@property({type: Number}) bufferMax = 100;
+	@property({type: Number}) bufferMax = 1;
 	@property({type: Number}) bufferMin = 0;
 
 	get progressPerc (): number {

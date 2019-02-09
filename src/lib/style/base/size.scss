@@ -1,7 +1,7 @@
-$size-multiplier: 1;
+$size-multiplier: 1px;
 
-@function size($px) {
-	@return calc(#{$px}px * var(--size-multiplier, #{$size-multiplier}));
+@function size($size) {
+	@return calc(#{$size} * var(--size-multiplier, #{$size-multiplier}));
 }
 
 
