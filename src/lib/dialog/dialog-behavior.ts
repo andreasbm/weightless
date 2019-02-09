@@ -1,13 +1,41 @@
-import { IOverlayBehaviorBaseProperties, OverlayBehavior, OverlayBehaviorEvent } from "../overlay/overlay-behavior";
+import { property } from "lit-element";
+import { IOverlayBehaviorBaseProperties, IOverlayBehaviorProperties, OverlayBehavior, OverlayBehaviorEvent } from "../overlay/overlay-behavior";
 import { CUBIC_BEZIER } from "../util/constant/animation";
 
-export interface IDialogBehaviorProperties extends IOverlayBehaviorBaseProperties {
+export enum DialogSize {
+	SMALL = "small",
+	MEDIUM = "medium",
+	LARGE = "large",
+	AUTO = "auto",
+	FULLSCREEN = "fullscreen"
 }
+
+export interface IDialogBaseProperties extends IOverlayBehaviorBaseProperties {
+	size: DialogSize | null;
+	scrollable: boolean;
+}
+
+export interface IDialogBehaviorProperties extends IDialogBaseProperties, IOverlayBehaviorProperties {
+}
+
+export interface IDialogConfig extends Partial<IDialogBaseProperties> {
+}
+
+export const defaultDialogConfig: IDialogConfig = {
+	size: DialogSize.MEDIUM,
+	blockScrolling: true,
+	backdrop: true,
+	duration: 200,
+	persistent: false
+};
 
 /**
  * Button behavior.
  */
 export abstract class DialogBehavior<R, C extends Partial<IDialogBehaviorProperties>> extends OverlayBehavior<R, C> implements IDialogBehaviorProperties {
+
+	@property({type: String, reflect: true}) size: DialogSize | null = null;
+	@property({type: Boolean, reflect: true}) scrollable = false;
 
 	protected abstract $dialog: HTMLElement;
 	protected abstract $backdrop: HTMLElement;
