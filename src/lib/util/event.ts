@@ -8,7 +8,7 @@ export type EventListenerSubscription = (() => void);
  * @param listener
  * @param options
  */
-export function addListener ($elem: EventTarget, type: string[] | string, listener: EventListenerOrEventListenerObject | null, options?: boolean | AddEventListenerOptions): (() => void) {
+export function addListener ($elem: EventTarget, type: string[] | string, listener: ((e?: Event) => void), options?: boolean | AddEventListenerOptions): (() => void) {
 	const types = Array.isArray(type) ? type : [type];
 	types.forEach(t => $elem.addEventListener(t, listener, options));
 	return () => types.forEach(t => $elem.addEventListener(t, listener, options));
@@ -21,4 +21,13 @@ export function addListener ($elem: EventTarget, type: string[] | string, listen
  */
 export function removeListeners (listeners: EventListenerSubscription[]) {
 	listeners.forEach(unsub => unsub());
+}
+
+/**
+ * Stops an event from default behavior and propagating.
+ * @param {Event} e
+ */
+export function stopEvent (e: Event) {
+	e.preventDefault();
+	e.stopPropagation();
 }

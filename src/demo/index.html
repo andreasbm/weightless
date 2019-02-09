@@ -44,6 +44,18 @@
 		<progress-spinner-element mode="determinate" value="0.4"></progress-spinner-element>
 		<progress-spinner-element mode="determinate" value="0.4" buffer="0.7"></progress-spinner-element>
 
+		<h3>dialog-element</h3>
+		<button id="open-dialog-1">Open dialog</button>
+		<dialog-element id="dialog-1" fixed backdrop blockScrolling>
+			<h3 slot="header">Hello my friend</h3>
+			<div slot="content">
+				<input id="dialog-1-input" placeholder="Enter your name" />
+			</div>
+			<div slot="footer">
+				<button-element id="dialog-1-submit-button">Submit</button-element>
+			</div>
+		</dialog-element>
+
 	</section>
 
 	<noscript>

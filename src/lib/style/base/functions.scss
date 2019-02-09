@@ -56,3 +56,19 @@
   @return $value;
 }
 
+@function to-string($value) {
+	@return inspect($value);
+}
+
+@function to-bool($value) {
+	@return not ($value or $value == '' or $value == 0 or $value == ());
+}
+
+@function to-list($value) {
+	@return if(type-of($value) != list, ($value,), $value);
+}
+
+@function to-map($value) {
+	@return if(type-of($value) != map, (1: $value), $value);
+}
+

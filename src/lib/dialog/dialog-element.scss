@@ -1,0 +1,180 @@
+@import "../style/base";
+
+$dialog-elevation: var(--dialog-elevation, #{elevation(2, #{color("shade", 600)})});
+$dialog-bg: var(--dialog-bg, #{color(white)});
+$dialog-color: var(--dialog-color, inherit);
+$dialog-border-radius: var(--dialog-border-radius, #{$border-radius-m});
+$dialog-z-index: var(--dialog-z-index, 1234567);
+$dialog-will-change: var(--dialog-will-change, transform, opacity);
+
+$dialog-width: var(--dialog-width, auto);
+$dialog-height: var(--dialog-height, auto);
+
+$dialog-width-s: var(--dialog-width-s, 40%);
+$dialog-height-s: var(--dialog-height-s, 40%);
+
+$dialog-width-m: var(--dialog-width-m, 50%);
+$dialog-height-m: var(--dialog-height-m, 50%);
+
+$dialog-width-l: var(--dialog-width-l, 60%);
+$dialog-height-l: var(--dialog-height-l, 60%);
+
+$dialog-width-fullscreen: var(--dialog-width-fullscreen, 100%);
+$dialog-height-fullscreen: var(--dialog-height-fullscreen, 100%);
+
+$dialog-min-width: var(--dialog-min-width, 260px);
+$dialog-min-height: var(--dialog-min-height, auto);
+$dialog-max-width: var(--dialog-max-width, 100vw);
+$dialog-max-height: var(--dialog-max-height, 100vh);
+$dialog-width-auto: var(--dialog-width-auto, auto);
+$dialog-height-auto: var(--dialog-height-auto, auto);
+
+$dialog-scrollable-border: var(--dialog-scrollable-border, #{size(1)} solid #{color("shade", 400)});
+
+/* Header */
+$dialog-header-padding: var(--dialog-header-padding, #{$spacing-l} #{$spacing-l} 0);
+$dialog-header-padding-scrollable: var(--dialog-header-padding-scrollable, #{$spacing-l});
+
+/* Content */
+$dialog-content-padding: var(--dialog-content-padding, #{$spacing-l});
+$dialog-content-color: var(--dialog-content-color, #{color("shade", 800)});
+
+/* Footer */
+$dialog-footer-padding: #{$spacing-s};
+
+:host {
+}
+
+:host {
+	text-align: left;
+	display: none;
+	position: relative;
+	outline: none;
+}
+
+:host([scrollable]) {
+
+	#dialog {
+		overflow: hidden;
+	}
+
+	::slotted(header), ::slotted(h5) {
+		padding: #{$dialog-header-padding-scrollable};
+		border-bottom: #{$dialog-scrollable-border};
+	}
+
+	::slotted(footer) {
+		border-top: #{$dialog-scrollable-border};
+	}
+
+	::slotted(section) {
+		overflow-y: auto;
+	}
+}
+
+:host([open]) {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+#dialog {
+	--_dialog-width: #{$dialog-width};
+	--_dialog-height: #{$dialog-height};
+
+	width: var(--_dialog-width);
+	height: var(--_dialog-height);
+
+	box-shadow: #{$dialog-elevation};
+	border-radius: #{$dialog-border-radius};
+	background: #{$dialog-bg};
+	color: #{$dialog-color};
+	will-change: #{$dialog-will-change};
+	transform: translateZ(0);
+
+	padding: 0;
+	margin: 0;
+	outline: none;
+	display: flex;
+	flex-direction: column;
+	align-items: stretch;
+	border: none;
+	overflow-y: auto;
+
+	position: relative;
+	z-index: 1;
+}
+
+#backdrop {
+	display: none;
+}
+
+:host([backdrop]) {
+	#backdrop {
+		display: block;
+	}
+}
+
+::slotted([slot="header"]) {
+	--h-margin: 0;
+	padding: #{$dialog-header-padding};
+	margin: 0;
+	flex-shrink: 0;
+}
+
+::slotted([slot="footer"]) {
+	padding: #{$dialog-footer-padding};
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+	flex-shrink: 0;
+}
+
+::slotted([slot="content"]) {
+	padding: #{$dialog-content-padding};
+	color: #{$dialog-content-color};
+	flex-grow: 1;
+}
+
+:host([fixed]) {
+	z-index: #{$dialog-z-index};
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+
+	#dialog {
+		min-width: #{$dialog-min-width};
+		min-height: #{$dialog-min-height};
+		max-width: #{$dialog-max-width};
+		max-height: #{$dialog-max-height};
+	}
+}
+
+:host([size="small"][fixed]) {
+	--_dialog-width: #{$dialog-width-s};
+	--_dialog-height: #{$dialog-height-s};
+}
+
+:host([size="medium"][fixed]) {
+	--_dialog-width: #{$dialog-width-m};
+	--_dialog-height: #{$dialog-height-m};
+}
+
+:host([size="large"][fixed]) {
+	--_dialog-width: #{$dialog-width-l};
+	--_dialog-height: #{$dialog-height-l};
+}
+
+:host([size="auto"][fixed]) {
+	--_dialog-width: #{$dialog-width-auto};
+	--_dialog-height: #{$dialog-height-auto};
+}
+
+:host([size="fullscreen"][fixed]) {
+	--_dialog-width: #{$dialog-width-fullscreen};
+	--_dialog-height: #{$dialog-height-fullscreen};
+}
+
+

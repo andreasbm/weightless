@@ -7,7 +7,7 @@ export enum ProgressMode {
 	DETERMINATE = "determinate"
 }
 
-export interface IProgressBehavior {
+export interface IProgressBehaviorProperties {
 	mode: ProgressMode;
 	value: number;
 	max: number;
@@ -20,7 +20,7 @@ export interface IProgressBehavior {
 /**
  * Progress behavior.
  */
-export abstract class ProgressBehavior extends LitElement implements IProgressBehavior {
+export abstract class ProgressBehavior extends LitElement implements IProgressBehaviorProperties {
 
 	@property({type: String, reflect: true}) mode: ProgressMode = ProgressMode.INDETERMINATE;
 
@@ -68,7 +68,7 @@ export abstract class ProgressBehavior extends LitElement implements IProgressBe
 	 * Handle that the properties has changed.
 	 * @param changedProperties
 	 */
-	protected updated (changedProperties: Map<keyof IProgressBehavior, unknown>) {
+	protected updated (changedProperties: Map<keyof IProgressBehaviorProperties, unknown>) {
 		super.updated(changedProperties);
 		this.updateAria();
 	}

@@ -1,10 +1,14 @@
 import { html, property, PropertyValues, TemplateResult } from "lit-element";
 import { ifDefined } from "lit-html/directives/if-defined";
-import { FormItemBehavior, IFormItemBehavior } from "../form-item/form-item-behavior";
+import { FormItemBehavior, IFormItemBehaviorProperties } from "../form-item/form-item-behavior";
 import { ENTER, SPACE } from "../util/constant/keycode";
-import { addListener, EventListenerSubscription, removeListeners } from "../util/event-listener";
+import { addListener, EventListenerSubscription, removeListeners, stopEvent } from "../util/event";
 
-export interface IButtonBehavior extends IFormItemBehavior {
+export enum ButtonBehaviorEvent {
+	SUBMIT = "submit"
+}
+
+export interface IButtonBehaviorProperties extends IFormItemBehaviorProperties {
 	type: "button" | "submit";
 	inverted: boolean;
 	outlined: boolean;
@@ -14,7 +18,7 @@ export interface IButtonBehavior extends IFormItemBehavior {
 /**
  * Button behavior.
  */
-export abstract class ButtonBehavior extends FormItemBehavior implements IButtonBehavior {
+export abstract class ButtonBehavior extends FormItemBehavior implements IButtonBehaviorProperties {
 	@property({type: String}) type: "button" | "submit" = "submit";
 
 	@property({type: Boolean, reflect: true}) inverted = false;
@@ -54,13 +58,13 @@ export abstract class ButtonBehavior extends FormItemBehavior implements IButton
 
 		// If disabled we stop the event here
 		if (this.disabled) {
-			e.preventDefault();
-			e.stopPropagation();
+			stopEvent(e);
 			return;
 		}
 
 		// Simulate the click on the form item to interact with the form if there is one.
 		this.$formItem.click();
+		this.dispatchEvent(new CustomEvent(ButtonBehaviorEvent.SUBMIT))
 	}
 
 	/**

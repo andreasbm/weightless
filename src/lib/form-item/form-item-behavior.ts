@@ -1,4 +1,4 @@
-import { LitElement, property, PropertyValues } from "lit-element";
+import { LitElement, property } from "lit-element";
 
 export type FormItem =
 	HTMLInputElement
@@ -10,34 +10,23 @@ export type FormItem =
 	| HTMLTextAreaElement;
 const FORM_ITEM_EVENTS = ["valid", "invalid", "input"];
 
-export interface IFormItemBehavior {
+export interface IFormItemBehaviorProperties {
 	disabled: boolean;
 	readonly?: boolean;
 	required?: boolean;
 	invalid?: boolean;
 	name?: string;
 	value?: string;
-
-	readonly validationMessage: string;
-	readonly validity: ValidityState;
-	readonly willValidate: boolean;
-	readonly form: HTMLFormElement | null;
-
-	checkValidity (): boolean;
-	setCustomValidity (error: string): void;
 }
 
-export abstract class FormItemBehavior extends LitElement implements IFormItemBehavior {
+export abstract class FormItemBehavior extends LitElement implements IFormItemBehaviorProperties {
 	@property({type: Boolean, reflect: true}) disabled: boolean = false;
 	@property({type: Boolean, reflect: true}) readonly?: boolean = false;
 	@property({type: Boolean, reflect: true}) required?: boolean = false;
-	@property({type: Boolean, reflect: true}) invalid: boolean = false;
+	@property({type: Boolean, reflect: true}) invalid?: boolean = false;
 	@property({type: String}) name?: string;
 	@property({type: String}) value?: string;
 
-	/**
-	 * A reference to the child <input /> element
-	 */
 	protected $formItem!: FormItem;
 
 	get validationMessage (): string {
@@ -60,7 +49,7 @@ export abstract class FormItemBehavior extends LitElement implements IFormItemBe
 	 * When the form item first updates we add the form item to the light DOM.
 	 * @param props
 	 */
-	firstUpdated (props: PropertyValues) {
+	firstUpdated (props: Map<keyof IFormItemBehaviorProperties, unknown>) {
 		super.firstUpdated(props);
 
 		this.syncWithFormItem = this.syncWithFormItem.bind(this);
