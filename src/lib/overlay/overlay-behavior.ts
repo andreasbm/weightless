@@ -7,11 +7,17 @@ import { addListener, EventListenerSubscription, removeListeners, stopEvent } fr
 import { renderAttributes } from "../util/html";
 import { uniqueID } from "../util/unique";
 
+/**
+ * Events the overlay behavior can dispatch.
+ */
 export enum OverlayBehaviorEvent {
 	SHOW = "open",
 	HIDE = "hide"
 }
 
+/**
+ * Base properties of the overlay behavior.
+ */
 export interface IOverlayBehaviorBaseProperties {
 	open: boolean;
 	persistent: boolean;
@@ -21,20 +27,33 @@ export interface IOverlayBehaviorBaseProperties {
 	scrollContainer: HTMLElement;
 }
 
+/**
+ * Properties of the overlay behavior.
+ */
 export interface IOverlayBehaviorProperties {
 	open: boolean;
-	fixed: boolean;
 }
 
+// Type of an overlay resolver.
 export declare type OverlayResolver<R> = ((result: R | null | undefined) => void);
 
+// Prefix infront of the class indicating that an overlay is blocking the scrolling
 const OVERLAY_SCROLLING_BLOCKED_CLASS_PREFIX = `overlay`;
+
+// Generates a scroll blocking identifier css class name.
 const scrollingBlockedClass = (id: string) => `${OVERLAY_SCROLLING_BLOCKED_CLASS_PREFIX}-${id}`;
 
+/**
+ * This class defines all of the logic elements with an overlay requires.
+ */
 export abstract class OverlayBehavior<R, C extends Partial<IOverlayBehaviorBaseProperties>> extends LitElement implements IOverlayBehaviorProperties {
+
+	// Whether the overlay is open or not
 	@property({type: Boolean, reflect: true}) open = false;
+
+	// Whether the backdrop is visible or not
 	@property({type: Boolean, reflect: true}) backdrop = false;
-	@property({type: Boolean, reflect: true}) fixed = false;
+
 	@property({type: Boolean}) persistent = false;
 	@property({type: Boolean}) blockScrolling = false;
 	@property({type: Number}) duration = 200;
