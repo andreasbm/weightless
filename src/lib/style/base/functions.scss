@@ -1,0 +1,58 @@
+/**
+	Merges a set of maps.
+	@param {Map[]} $maps - The maps to merge
+	@return {Map} - All the maps merged
+ */
+@function merge-maps($maps...) {
+  $collection: ();
+
+  @each $map in $maps {
+		$collection: map-merge($collection, $map);
+  }
+  @return $collection;
+}
+
+/**
+	Clamps a value between min and max.
+	@param {Number} $value - The value to be clammed
+	@param {Number} $min - The minimum value
+	@param {Number} $max - The maximum value
+	@return {Number} - The clammed value
+ */
+@function clamp($value, $min, $max) {
+  @return if($value > $max, $max, if($value < $min, $min, $value));
+}
+
+/**
+	Ensures that a map has a set of required keys. Throws an error if the map does not have the required keys.
+	@param {Map} $map
+	@param {Array} $required-keys
+ */
+@function ensure-keys($map, $required-keys) {
+  @if type-of($map) != map {
+		@error "The input is not a valid map.";
+  }
+
+  @each $key in $required-keys {
+		@if map-has-key($map, $key) == false {
+			@error "The map must contain the key '#{$key}'. Verify that the key '#{$key}' is present and valid in the map '#{$map}'.";
+		}
+  }
+}
+
+/**
+	Returns the value associated with a key from the map. Throws an error if the key is not found in the map.
+	@param {Map} $map
+	@param {String} $key
+	@return {Any}
+ */
+@function get-entry($map, $key) {
+  $value: map-get($map, $key);
+
+  @if $value == null {
+		@error "The key '#{$key}' was not found in the map '#{$map}'."
+  }
+
+  @return $value;
+}
+

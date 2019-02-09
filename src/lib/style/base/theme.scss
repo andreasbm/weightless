@@ -1,0 +1,120 @@
+@import "functions";
+
+$default-hue: 500;
+
+$palette-alias-map: (
+		primary: cobalt,
+		accent: pink,
+		shade: grey
+);
+
+$palette-map: (
+		black: (
+				400: '0,0,0',
+				500: '0,0,0',
+				600: '0,0,0'
+		),
+		white: (
+				400: '255,255,255',
+				500: '255,255,255',
+				600: '255,255,255'
+		),
+		cobalt: (
+				400: '86, 93, 250',
+				500: '19, 47, 242',
+				600: '0, 37, 204',
+		),
+		white-dirty: (
+				400: '245, 246, 252',
+				500: '246, 247, 251',
+				600: '193, 200, 227'
+		),
+		black-dirty: (
+				400: '28, 18, 18',
+				500: '23, 23, 23',
+				600: '10, 10, 10'
+		),
+		grey: (
+				100: '249, 250, 252',
+				200: '249, 250, 254',
+				300: '227, 230, 237',
+				400: '199, 203, 208',
+				500: '170, 177, 186',
+				600: '119, 130, 146',
+				700: '79, 82, 95',
+				800: '45, 46, 50'
+		)
+);
+
+/**
+ * Returns a color from the palette.
+ */
+@function get-color($color, $hue: $default-hue) {
+	@return get-entry(get-entry($palette-map, $color), $hue);
+}
+
+$palette-contrast-map: (
+		black: get-color(white),
+		white: get-color(black),
+		cobalt: get-color(white),
+		white-dirty: get-color(black),
+		black-dirty: get-color(white),
+		grey: (
+				100: get-color(black),
+				200: get-color(black),
+				300: get-color(black),
+				400: get-color(white),
+				500: get-color(white),
+				600: get-color(white),
+				700: get-color(white),
+				800: get-color(white),
+		),
+);
+
+/**
+ * Returns a contrast color to a color.
+ */
+@function get-color-contrast($color, $hue: $default-hue) {
+	$match: get-entry($palette-contrast-map, $color);
+	@if (type-of($match) != map) {
+		@return $match;
+	} @else {
+		@return get-entry($match, $hue);
+	}
+}
+
+@function _get-dynamic-color($color, $hue: $default-hue) {
+	$default-value: if(map-has-key($palette-alias-map, $color), _get-dynamic-color(get-entry($palette-alias-map, $color), $hue), get-color($color, $hue));
+	@return #{'var(--#{$color}-#{$hue}, #{$default-value})'};
+}
+
+@function _get-dynamic-color-contrast($color, $hue: $default-hue) {
+	$default-value: if(map-has-key($palette-alias-map, $color), _get-dynamic-color-contrast(get-entry($palette-alias-map, $color), $hue), get-color-contrast($color, $hue));
+	@return #{'var(--#{$color}-#{$hue}-contrast, #{$default-value})'};
+}
+
+/**
+ * Returns a color variable.
+ */
+@function color ($color, $hue: $default-hue, $alpha: null) {
+	$dynamic-color: _get-dynamic-color($color, $hue);
+	@if ($alpha and $alpha >= 0 and $alpha < 1) {
+		@return #{'rgba(#{$dynamic-color}, #{$alpha})'};
+
+	} @else {
+		@return #{'rgb(#{$dynamic-color})'};
+	}
+}
+
+/**
+ * Returns a color contrast variable.
+ */
+@function color-contrast ($color, $hue: $default-hue, $alpha: null) {
+	$dynamic-color-contrast: _get-dynamic-color-contrast($color, $hue);
+	@if ($alpha and $alpha >= 0 and $alpha < 1) {
+		@return #{'rgba(#{$dynamic-color-contrast}, #{$alpha})'};
+
+	} @else {
+		@return #{'rgb(#{$dynamic-color-contrast})'};
+	}
+}

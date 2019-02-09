@@ -1,0 +1,71 @@
+@import "../style/base";
+
+$button-letter-spacing: #{size(2)};
+
+:host {
+	--_button-color: var(--button-color,#{color-contrast("primary")});
+	--_button-bg: var(--button-bg, #{color("primary")});
+	--_button-shadow-color: var(--button-shadow-color, #{color("primary", $default-hue, 0.2)});
+
+	color: var(--_button-color);
+	background: var(--_button-bg);
+	box-shadow: elevation(1, var(--_button-shadow-color));
+
+	padding: #{$spacing-m} #{$spacing-l};
+	font-size: #{$font-size-m};
+	border-radius: #{$border-radius-m};
+	font-family: #{$font-family-sans-serif};
+
+	transition: box-shadow #{$transition-duration-slow-var} #{$transition-ease},
+							background #{$transition-duration-fast-var} #{$transition-ease},
+							color #{$transition-duration-fast-var} #{$transition-ease};
+
+	@include reset();
+
+	letter-spacing: #{$button-letter-spacing};
+	text-transform: uppercase;
+	cursor: pointer;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	user-select: none;
+	outline: none;
+}
+
+:host(:hover) {
+	--_button-color: var(--button-color-hover, #{color-contrast("primary", 400)});
+	--_button-bg: var(--button-bg-hover, #{color("primary", 400)});
+	--_button-shadow-color: var(--button-shadow-color, #{color("primary", $default-hue, 0.5)});
+}
+
+:host([inverted]) {
+	color: var(--_button-bg);
+	background: var(--_button-color);
+}
+
+:host([outlined]) {
+	border: var(--button-border-outlined, #{size(2)} solid currentColor);
+}
+
+:host(:not([disabled]):active), :host(:not(:hover):not([disabled]):focus) {
+	--_button-color: var(--button-color-active, #{color-contrast("primary", 600)});
+	--_button-bg: var(--button-bg-active, #{color("primary", 600)});
+}
+
+:host(:not([flat]):not([disabled]):active), :host(:not([flat]):not(:hover):not([disabled]):focus) {
+	box-shadow: elevation(2, var(--_button-shadow-color));
+}
+
+:host([flat]) {
+	box-shadow: none;
+	background: none;
+}
+
+:host([disabled]) {
+	--_button-color: var(--button-color-hover, #{color-contrast("shade", 400)});
+	--_button-bg: var(--button-bg-hover, #{color("shade", 400)});
+	box-shadow: none;
+	cursor: default;
+	pointer-events: none;
+}

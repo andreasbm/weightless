@@ -1,0 +1,30 @@
+@import "./size";
+
+$transition-duration-fast: 120ms;
+$transition-duration-medium: 200ms;
+$transition-duration-slow: 300ms;
+
+$transition-duration-fast-var: var(--transition-duration-fast, #{$transition-duration-fast});
+$transition-duration-medium-var: var(--transition-duration-medium, #{$transition-duration-medium});
+$transition-duration-slow-var: var(--transition-duration-slow, #{$transition-duration-slow});
+
+$transition-timing-function-linear: linear;
+$transition-linear: var(--transition-timing-function-linear, #{$transition-timing-function-linear});
+
+$transition-timing-function-ease: ease;
+$transition-ease: var(--transition-timing-function-ease, #{$transition-timing-function-ease});
+
+$transition-timing-function-ease-in: ease;
+$transition-ease-in: var(--transition-timing-function-ease-in, #{$transition-timing-function-ease-in});
+
+$transition-timing-function-deceleration-curve: cubic-bezier(0.0, 0.0, 0.2, 1);
+$transition-deceleration-curve: var(--transition-timing-function-deceleration-curve, #{$transition-timing-function-deceleration-curve});
+
+$transition-timing-function-acceleration-curve: cubic-bezier(0.4, 0.0, 1, 1);
+$transition-acceleration-curve: var(--transition-timing-function-acceleration-curve, #{$transition-timing-function-acceleration-curve});
+
+$transition-timing-function-standard-curve: cubic-bezier(0.4, 0.0, 0.2, 1);
+$transition-standard-curve: var(--transition-timing-function-standard-curve, #{$transition-timing-function-standard-curve});
+
+$transition-timing-function-sharp: cubic-bezier(.4, 0, .6, 1);
+$transition-sharp-curve: var(--transition-timing-function-sharp-curve, #{$transition-timing-function-sharp});

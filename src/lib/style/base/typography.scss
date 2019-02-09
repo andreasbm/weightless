@@ -1,0 +1,11 @@
+@import "size";
+
+$font-size-xs: #{size(6)};
+$font-size-s: #{size(12)};
+$font-size-m: #{size(16)};
+$font-size-xm: #{size(20)};
+$font-size-l: #{size(25)};
+$font-size-xl: #{size(30)};
+
+$font-family-serif: var(--font-family-serif, 'Roboto Slab', serif);
+$font-family-sans-serif: var(--font-family-sans-serif, 'Roboto Condensed', sans-serif);

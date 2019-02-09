@@ -1,0 +1,57 @@
+{
+	"name": "@appnest/elements",
+	"version": "0.0.19",
+	"license": "MIT",
+	"module": "index.js",
+	"author": "Appnest",
+	"description": "A lightweight web component to trap focus within a DOM node",
+	"bugs": {
+		"url": "https://github.com/andreasbm/focus-trap/issues"
+	},
+	"homepage": "https://github.com/andreasbm/focus-trap#readme",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/andreasbm/focus-trap.git"
+	},
+	"keywords": [
+		"custom",
+		"elements",
+		"web",
+		"component",
+		"custom element",
+		"web component",
+		"focus",
+		"accessibility",
+		"dialog",
+		"focus trap",
+		"trap"
+	],
+	"main": "index.js",
+	"types": "index.d.ts",
+	"scripts": {
+		"ncu": "ncu -u -a && npm update && npm install",
+		"test": "karma start",
+		"b:dev": "rollup -c --environment NODE_ENV:dev",
+		"b:prod": "rollup -c --environment NODE_ENV:prod",
+		"s:dev": "rollup -c --watch --environment NODE_ENV:dev",
+		"s:prod": "rollup -c --watch --environment NODE_ENV:prod",
+		"s": "npm run s:dev",
+		"start": "npm run s",
+		"b:lib": "node pre-build.js && tsc -p tsconfig.build.json",
+		"git:add:commit:push": "git add . && git commit --no-edit --amend --no-verify && git push",
+		"bump:patch": "npm version patch && npm run git:add:commit:push",
+		"bump:minor": "npm version minor && npm run git:add:commit:push",
+		"publish": "cd dist && npm publish --access=public && cd ..",
+		"bump:major": "npm version major && npm run git:add:commit:push",
+		"publish:patch": "npm run test && npm run bump:patch && npm run b:lib && npm run publish",
+		"publish:minor": "npm run test && npm run bump:minor && npm run b:lib && npm run publish",
+		"publish:major": "npm run test && npm run bump:major && npm run b:lib && npm run publish"
+	},
+	"devDependencies": {
+		"@appnest/web-config": "0.3.9"
+	},
+	"dependencies": {
+		"lit-element": "^2.0.1",
+		"lit-html": "^1.0.0"
+	}
+}

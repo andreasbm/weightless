@@ -1,0 +1,11 @@
+@import "functions";
+@import "theme";
+
+$elevation-map: (
+	1: "0px 1px 3px 0px",
+	2: "0px 2px 5px 0",
+);
+
+@function elevation($z-index, $color: #{color(shade, 700, 0.2)}) {
+	@return #{"var(--elevation-#{$z-index}, #{get-entry($elevation-map, $z-index)} #{$color})"};
+}
