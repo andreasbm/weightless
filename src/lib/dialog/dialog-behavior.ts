@@ -34,7 +34,7 @@ export const defaultDialogConfig: IDialogConfig = {
 /**
  * Button behavior.
  */
-export abstract class DialogBehavior<R, C extends IDialogBehaviorProperties> extends OverlayBehavior<R, C> implements IDialogBehaviorProperties {
+export abstract class DialogBehavior<R, C extends Partial<IDialogBehaviorProperties>> extends OverlayBehavior<R, C> implements IDialogBehaviorProperties {
 
 	// The size of the dialog
 	@property({type: String, reflect: true}) size: DialogSize | null = null;

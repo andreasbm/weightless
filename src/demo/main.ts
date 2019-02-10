@@ -1,7 +1,9 @@
 import "../lib";
-import "./main.scss";
+import { html } from "lit-html";
 import { DialogElement } from "../lib/dialog/dialog-element";
+import { openDialog } from "../lib/dialog/open-dialog";
 import { ENTER } from "../lib/util/constant/keycode";
+import "./main.scss";
 
 document.querySelector("#open-dialog-1")!.addEventListener("click", () => {
 	const $dialog = document.querySelector<DialogElement<string>>("#dialog-1")!;
@@ -19,7 +21,7 @@ document.querySelector("#open-dialog-1")!.addEventListener("click", () => {
 	const keyup = (e: KeyboardEvent) => {
 		switch (e.code) {
 			case ENTER:
-				submit()
+				submit();
 		}
 	};
 
@@ -31,5 +33,17 @@ document.querySelector("#open-dialog-1")!.addEventListener("click", () => {
 		$submitButton.removeEventListener("click", submit);
 		$input.removeEventListener("keyup", submit);
 	});
+});
+
+document.querySelector("#open-dialog-2")!.addEventListener("click", async () => {
+	const ref = await openDialog({
+		fixed: true,
+		backdrop: true,
+		blockScrolling: true,
+		container: document.body,
+		template: html`<p slot="content">This is a template!</p>`
+	});
+
+	console.log(await ref.result);
 });
 

@@ -8,7 +8,7 @@ import styles from "./dialog-element.scss";
 import "../backdrop";
 
 @customElement("dialog-element")
-export class DialogElement<R = any> extends DialogBehavior<R, IDialogBehaviorProperties> {
+export class DialogElement<R = any> extends DialogBehavior<R, Partial<IDialogBehaviorProperties>> {
 
 	static styles = [cssResult(styles), sharedStyles];
 	protected role = "dialog";

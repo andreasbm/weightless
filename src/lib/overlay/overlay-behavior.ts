@@ -47,7 +47,7 @@ const scrollingBlockedClass = (id: string) => `${OVERLAY_SCROLLING_BLOCKED_CLASS
 /**
  * This class defines all of the logic elements with an overlay requires.
  */
-export abstract class OverlayBehavior<R, C extends IOverlayBehaviorBaseProperties> extends LitElement implements IOverlayBehaviorProperties {
+export abstract class OverlayBehavior<R, C extends Partial<IOverlayBehaviorBaseProperties>> extends LitElement implements IOverlayBehaviorProperties {
 
 	// Whether the overlay is open or not.
 	@property({type: Boolean, reflect: true}) open = false;
@@ -120,7 +120,7 @@ export abstract class OverlayBehavior<R, C extends IOverlayBehaviorBasePropertie
 	 * Shows the overlayed component.
 	 * @param config
 	 */
-	show (config?: Partial<C>): Promise<R | null> {
+	show (config?: C): Promise<R | null> {
 
 		// If an in animation is already playing return a new resolver.
 		if (this.currentInAnimations.length > 0) {
@@ -234,7 +234,7 @@ export abstract class OverlayBehavior<R, C extends IOverlayBehaviorBasePropertie
 	 * Sets the properties based on the configuration object.
 	 * @param config
 	 */
-	protected setConfig (config: Partial<C>) {
+	protected setConfig (config: C) {
 		Object.assign(this, config);
 	}
 
@@ -264,13 +264,15 @@ export abstract class OverlayBehavior<R, C extends IOverlayBehaviorBasePropertie
 	 * Prepares the show animation.
 	 * @param config
 	 */
-	protected prepareShowAnimation (config?: Partial<C>) {
+	protected prepareShowAnimation (config?: C) {
 
 		// Listen for events on when to update the position of the overlay
 		this.listeners.push(
-			onSizeChanged(this, this.updatePosition),
 			addListener(this, "scroll", this.updatePosition, {passive: true}),
-			addListener(this.scrollContainer, "scroll", this.updatePosition, {passive: true})
+			addListener(this.scrollContainer, "scroll", this.updatePosition, {passive: true}),
+
+			// Either attach a resize observer or fallback to listening to window resizes
+			"ResizeObserver" in window ? onSizeChanged(this, this.updatePosition) : addListener(window, "resize", this.updatePosition, {passive: true}),
 		);
 
 		this.pauseAnimations();
