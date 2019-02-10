@@ -1,0 +1,118 @@
+@import "../style/base";
+
+@mixin _textfield-slotted-field() {
+	::slotted(input), ::slotted(textarea), ::slotted(select) {
+		@content
+	}
+}
+
+$textfield-color-active: var(--textfield-color-active, #{color("primary")});
+$textfield-caret-color: var(--textfield-caret-color, #{$textfield-color-active});
+$textfield-border-color: var(--textfield-border-color, #{color("shade", 400)});
+$textfield-border-color-active: var(--textfield-border-color-active, #{color("shade", 600)});
+
+$textfield-ruler-height: var(--textfield-line-height, #{size(2)});
+$textfield-ruler-transition: var(--textfield-line-transition, transform #{$transition-duration-fast} #{$transition-deceleration-curve});
+$textfield-font-size: var(--textfield-font-size, #{$font-size-m});
+
+$textfield-padding-left-right: var(--textfield-padding-left-right, 0);
+$textfield-padding-top-bottom: var(--textfield-padding-left-right, #{$spacing-m});
+
+$textfield-border-outlined: var(--textfield-border-outlined, #{$textfield-ruler-height});
+$textfield-font-family: var(--textfield-font-family, #{$font-family-serif});
+
+$textfield-placeholder-color: var(--textfield-placeholder-color, #{color("shade", 600)});
+$textfield-placeholder-font-size: var(--textfield-placeholder-font-size, #{$font-size-s});
+$textfield-placeholder-transition: var(--textfield-placeholder-transition, #{$transition-duration-fast} all #{$transition-linear});
+$textfield-placeholder-space: var(--textfield-placeholder-space, #{size(8)});
+
+:host {
+	--_textfield-border-color: #{$textfield-border-color};
+	--_textfield-padding-left-right: #{$textfield-padding-left-right};
+
+	transform: translateZ(0);
+	display: block;
+}
+
+:host([disabled]) {
+	pointer-events: none;
+}
+
+#container {
+	font-size: #{$textfield-font-size};
+	font-family: #{$textfield-font-family};
+	border-bottom: #{$textfield-ruler-height} solid var(--_textfield-border-color);
+	position: relative;
+}
+
+#ruler {
+	background: #{$textfield-color-active};
+
+	height: #{$textfield-ruler-height};
+	transition: #{$textfield-ruler-transition};
+
+	width: 100%;
+	transform: scaleX(0);
+	position: absolute;
+	bottom: calc(#{$textfield-ruler-height} * -1);
+}
+
+#placeholder {
+	left: var(--_textfield-padding-left-right);
+	top: #{$textfield-padding-top-bottom};
+	color: #{$textfield-placeholder-color};
+	transform: translateY(#{$textfield-placeholder-space});
+	transition: #{$textfield-placeholder-transition};
+	position: absolute;
+	pointer-events: none;
+	font-size: inherit;
+	line-height: 100%;
+	display: flex;
+	align-items: center;
+	white-space: nowrap;
+}
+
+:host(:hover) {
+	--_textfield-border-color: #{$textfield-border-color-active};
+}
+
+:host(:focus-within) {
+	#ruler {
+		transform: scaleX(1);
+	}
+}
+
+:host([dirty]), :host(:focus-within) {
+	#placeholder {
+		font-size: #{$textfield-placeholder-font-size};
+		transform: translateY(-50%);
+	}
+}
+
+:host([placeholder]) {
+	@include _textfield-slotted-field () {
+		padding-top: calc(#{$textfield-padding-top-bottom} + #{$textfield-placeholder-space});
+	}
+}
+
+
+@include _textfield-slotted-field () {
+	@include reset();
+	caret-color: var(--_textfield-color-state);
+	padding: #{$textfield-padding-top-bottom} var(--_textfield-padding-left-right);
+
+	-webkit-overflow-scrolling: touch;
+	position: relative;
+	appearance: none;
+	font-size: inherit;
+	border: none;
+	outline: none;
+	margin: 0;
+	background: transparent;
+	width: 100%;
+
+	// Remove ugly autofill
+	&:-webkit-autofill {
+		-webkit-box-shadow: inset 0 0 0px 9999px white;
+	}
+}

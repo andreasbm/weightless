@@ -20,12 +20,10 @@ export interface IButtonBehaviorProperties extends IFormItemBehaviorProperties {
  */
 export abstract class ButtonBehavior extends FormItemBehavior implements IButtonBehaviorProperties {
 	@property({type: String}) type: "button" | "submit" = "submit";
-
 	@property({type: Boolean, reflect: true}) inverted = false;
 	@property({type: Boolean, reflect: true}) outlined = false;
 	@property({type: Boolean, reflect: true}) flat = false;
 
-	protected listeners: EventListenerSubscription[] = [];
 	protected abstract role: string;
 
 	/**
@@ -36,18 +34,10 @@ export abstract class ButtonBehavior extends FormItemBehavior implements IButton
 		this.setAttribute("role", this.role);
 
 		this.onClick = this.onClick.bind(this);
-		this.listeners = [
+		this.listeners.push(
 			addListener(this, "click", this.onClick),
 			addListener(this, "keyup", (e: KeyboardEvent) => e.code === ENTER || e.code === SPACE ? this.onClick(e) : undefined)
-		];
-	}
-
-	/**
-	 * Tear down the component.
-	 */
-	disconnectedCallback () {
-		super.disconnectedCallback();
-		removeListeners(this.listeners);
+		);
 	}
 
 	/**

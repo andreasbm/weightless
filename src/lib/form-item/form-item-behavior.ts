@@ -1,10 +1,10 @@
 import { LitElement, property } from "lit-element";
+import { addListener, EventListenerSubscription, removeListeners } from "../util/event";
 
 export type FormItem =
 	HTMLInputElement
 	| HTMLOutputElement
 	| HTMLButtonElement
-	| HTMLFieldSetElement
 	| HTMLObjectElement
 	| HTMLSelectElement
 	| HTMLTextAreaElement;
@@ -28,6 +28,7 @@ export abstract class FormItemBehavior extends LitElement implements IFormItemBe
 	@property({type: String}) value?: string;
 
 	protected $formItem!: FormItem;
+	protected listeners: EventListenerSubscription[] = [];
 
 	get validationMessage (): string {
 		return this.$formItem.validationMessage;
@@ -49,7 +50,7 @@ export abstract class FormItemBehavior extends LitElement implements IFormItemBe
 	 * When the form item first updates we add the form item to the light DOM.
 	 * @param props
 	 */
-	firstUpdated (props: Map<keyof IFormItemBehaviorProperties, unknown>) {
+	protected firstUpdated (props: Map<keyof IFormItemBehaviorProperties, unknown>) {
 		super.firstUpdated(props);
 
 		this.syncWithFormItem = this.syncWithFormItem.bind(this);
@@ -57,7 +58,10 @@ export abstract class FormItemBehavior extends LitElement implements IFormItemBe
 		// Move the form item to the light DOM
 		this.$formItem = this.queryFormItem();
 		this.appendChild(this.$formItem);
-		FORM_ITEM_EVENTS.forEach(event => this.$formItem.addEventListener(event, this.syncWithFormItem));
+
+		this.listeners.push(
+			...FORM_ITEM_EVENTS.map(event => addListener(this.$formItem, event, this.syncWithFormItem))
+		);
 	}
 
 	/**
@@ -65,7 +69,7 @@ export abstract class FormItemBehavior extends LitElement implements IFormItemBe
 	 */
 	disconnectedCallback () {
 		super.disconnectedCallback();
-		FORM_ITEM_EVENTS.forEach(event => this.$formItem.removeEventListener(event, this.syncWithFormItem));
+		removeListeners(this.listeners);
 	}
 
 	/**

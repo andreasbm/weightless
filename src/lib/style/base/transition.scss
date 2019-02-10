@@ -1,12 +1,8 @@
 @import "./size";
 
-$transition-duration-fast: 120ms;
-$transition-duration-medium: 200ms;
-$transition-duration-slow: 300ms;
-
-$transition-duration-fast-var: var(--transition-duration-fast, #{$transition-duration-fast});
-$transition-duration-medium-var: var(--transition-duration-medium, #{$transition-duration-medium});
-$transition-duration-slow-var: var(--transition-duration-slow, #{$transition-duration-slow});
+$transition-duration-fast: var(--transition-duration-fast, 120ms);
+$transition-duration-medium: var(--transition-duration-medium, 200ms);
+$transition-duration-slow: var(--transition-duration-slow, 300ms);
 
 $transition-timing-function-linear: linear;
 $transition-linear: var(--transition-timing-function-linear, #{$transition-timing-function-linear});
@@ -14,8 +10,11 @@ $transition-linear: var(--transition-timing-function-linear, #{$transition-timin
 $transition-timing-function-ease: ease;
 $transition-ease: var(--transition-timing-function-ease, #{$transition-timing-function-ease});
 
-$transition-timing-function-ease-in: ease;
+$transition-timing-function-ease-in: ease-in;
 $transition-ease-in: var(--transition-timing-function-ease-in, #{$transition-timing-function-ease-in});
+
+$transition-timing-function-ease-out: ease-out;
+$transition-ease-out: var(--transition-timing-function-ease-out, #{$transition-timing-function-ease-out});
 
 $transition-timing-function-deceleration-curve: cubic-bezier(0.0, 0.0, 0.2, 1);
 $transition-deceleration-curve: var(--transition-timing-function-deceleration-curve, #{$transition-timing-function-deceleration-curve});

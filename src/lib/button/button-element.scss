@@ -18,9 +18,9 @@ $button-bg-disabled: var(--button-bg-disabled, #{color("shade", $light-hue)});
 
 $button-border-outlined: var(--button-border-outlined, #{size(2)} solid currentColor);
 
-$button-transition: box-shadow #{$transition-duration-slow-var} #{$transition-ease},
-										background #{$transition-duration-fast-var} #{$transition-ease},
-										color #{$transition-duration-fast-var} #{$transition-ease};
+$button-transition: box-shadow #{$transition-duration-slow} #{$transition-ease},
+										background #{$transition-duration-fast} #{$transition-ease},
+										color #{$transition-duration-fast} #{$transition-ease};
 $button-padding: #{$spacing-m} #{$spacing-l};
 $button-font-size: #{$font-size-m};
 $button-border-radius: #{$border-radius-m};
@@ -72,12 +72,12 @@ $button-font-family: #{$font-family-sans-serif};
 	border: #{$button-border-outlined};
 }
 
-:host(:not([disabled]):active), :host(:not(:hover):not([disabled]):focus) {
+:host(:not([disabled]):active), :host(:not(:hover):not([disabled]):focus-within) {
 	--_button-color: #{$button-color-active};
 	--_button-bg: #{$button-bg-active};
 }
 
-:host(:not([flat]):not([disabled]):active), :host(:not([flat]):not(:hover):not([disabled]):focus) {
+:host(:not([flat]):not([disabled]):active), :host(:not([flat]):not(:hover):not([disabled]):focus-within) {
 	box-shadow: elevation(2, var(--_button-shadow-color));
 }
 
