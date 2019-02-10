@@ -1,0 +1,15 @@
+@import "../style/base";
+
+$fab-button-size: var(--fab-button-size, #{size(40)});
+
+:host {
+	width: #{$fab-button-size};
+	height: #{$fab-button-size};
+
+	padding: 0;
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 100%;
+}
+

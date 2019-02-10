@@ -4,3 +4,5 @@ export * from "./dialog";
 export * from "./overlay";
 export * from "./backdrop";
 export * from "./banner";
+export * from "./icon";
+export * from "./divider";

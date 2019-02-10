@@ -9,6 +9,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
 
 	<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400,700|Roboto+Slab:300,400,700" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<style>
 		html {
 			font-family: var(--font-family-serif, 'Roboto Slab', serif);
@@ -42,6 +43,13 @@
 			<button-element>Button</button-element>
 		</form>
 
+		<h3>fab-button-element</h3>
+		<fab-button-element><icon-element>warning</icon-element></fab-button-element>
+		<fab-button-element inverted><icon-element>delete</icon-element></fab-button-element>
+		<fab-button-element outlined><icon-element>done</icon-element></fab-button-element>
+		<fab-button-element flat inverted><icon-element>info</icon-element></fab-button-element>
+		<fab-button-element flat inverted outlined><icon-element>print</icon-element></fab-button-element>
+
 
 		<h3>progress-bar-element</h3>
 		<progress-bar-element></progress-bar-element>
@@ -65,9 +73,21 @@
 			</div>
 		</dialog-element>
 
+		<h3>icon-element</h3>
+		<icon-element>warning</icon-element>
+		<icon-element style="--size-multiplier: 2px">account_box</icon-element>
+
+		<h3>divider-element</h3>
+		<divider-element></divider-element>
+
 		<h3>banner-element</h3>
 		<banner-element>
-			<icon-element slot="icon"></icon-element>
+			<icon-element slot="icon">warning</icon-element>
+			<span slot="text">No internet connection.</span>
+			<button-element slot="action" flat inverted>Try again</button-element>
+		</banner-element>
+		<banner-element>
+			<icon-element slot="icon">account_box</icon-element>
 			<span slot="text">Your password was updated on your other device. Please sign in again.</span>
 			<button-element slot="action" flat inverted>Continue as guest</button-element>
 			<button-element slot="action" flat inverted>Sign in</button-element>

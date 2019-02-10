@@ -6,17 +6,16 @@ $banner-padding: var(--banner-padding, #{$spacing-s});
 $banner-color: var(--banner-color, #{$foreground});
 $banner-bg: var(--banner-bg, #{$background});
 $banner-content-padding: var(--banner-content-padding, #{$spacing-s});
-$banner-border-bottom: var(--banner-border-bottom, 1px solid #{color("shade", $light-hue)});
 
 :host {
 	padding: #{$banner-padding};
-	border-bottom: #{$banner-border-bottom};
 	color: #{$banner-color};
 	background: #{$banner-bg};
 
 	flex-wrap: wrap;
 	justify-content: flex-end;
 	text-align: left;
+	position: relative;
 }
 
 :host, #content, #actions {
@@ -32,6 +31,13 @@ $banner-border-bottom: var(--banner-border-bottom, 1px solid #{color("shade", $l
 #content {
 	padding: #{$banner-content-padding};
 	flex-grow: 1;
+}
+
+#divider {
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 100%;
 }
 
 ::slotted(button-element[slot="action"][inverted][flat]:last-child) {

@@ -17,3 +17,9 @@ export class BackdropElement extends LitElement implements IBackdropProperties {
 		return html``;
 	}
 }
+
+declare global {
+	interface HTMLElementTagNameMap {
+		"backdrop-element": BackdropElement;
+	}
+}

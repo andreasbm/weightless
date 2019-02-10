@@ -1,7 +1,7 @@
 import { customElement, html } from "lit-element";
 import { TemplateResult } from "lit-html";
 
-import "../button";
+import "../divider";
 import { sharedStyles } from "../style/shared";
 import { cssResult } from "../util/css";
 import { BannerBehavior } from "./banner-behavior";
@@ -22,6 +22,13 @@ export class BannerElement extends BannerBehavior {
 		<div id="actions">
 			<slot name="action"></slot>
 		</div>
+		<divider-element id="divider"></divider-element>
 		`;
+	}
+}
+
+declare global {
+	interface HTMLElementTagNameMap {
+		"banner-element": BannerElement;
 	}
 }

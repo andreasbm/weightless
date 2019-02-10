@@ -1,8 +1,8 @@
 import { LitElement } from "lit-element";
 
-export interface IBannerProperties {
+export interface IBannerBehaviorProperties {
 }
 
-export abstract class BannerBehavior extends LitElement implements IBannerProperties{
+export abstract class BannerBehavior extends LitElement implements IBannerBehaviorProperties{
 
 }

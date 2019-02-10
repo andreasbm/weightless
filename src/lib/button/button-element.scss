@@ -46,12 +46,15 @@ $button-font-family: #{$font-family-sans-serif};
 
 	text-transform: uppercase;
 	cursor: pointer;
-	display: inline-flex;
-	align-items: center;
-	justify-content: center;
 	text-align: center;
 	user-select: none;
 	outline: none;
+	display: inline-block;
+
+	// Add ellipsis when the text is too long
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
 }
 
 :host(:hover) {

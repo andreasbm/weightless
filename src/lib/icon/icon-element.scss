@@ -1,0 +1,23 @@
+@import "../style/base";
+
+$icon-font: var(--icon-font, "Material Icons");
+$icon-size: var(--icon-size, #{size(24)});
+
+:host {
+  font-size: #{$icon-size};
+  font-family: #{$icon-font};
+
+  font-weight: normal;
+  font-style: normal;
+  color: inherit;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-feature-settings: 'liga';
+  -webkit-font-smoothing: antialiased;
+}
+

@@ -1,0 +1,12 @@
+@import "../style/base";
+
+$divider-color: var(--divider-color, #{color(black, $default-hue, 0.12)});
+$divider-height: var(--divider-height, #{size(1)});
+
+:host {
+  background: #{$divider-color};
+  height: #{$divider-height};
+
+  display: block;
+  width: 100%;
+}

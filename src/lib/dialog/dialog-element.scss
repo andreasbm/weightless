@@ -59,16 +59,16 @@ $dialog-footer-padding: #{$spacing-s};
 		overflow: hidden;
 	}
 
-	::slotted(header), ::slotted(h5) {
+	::slotted([slot="header"]) {
 		padding: #{$dialog-header-padding-scrollable};
 		border-bottom: #{$dialog-scrollable-border};
 	}
 
-	::slotted(footer) {
+	::slotted([slot="footer"]) {
 		border-top: #{$dialog-scrollable-border};
 	}
 
-	::slotted(section) {
+	::slotted([slot="content"]) {
 		overflow-y: auto;
 	}
 }
