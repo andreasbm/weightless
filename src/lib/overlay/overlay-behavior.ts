@@ -5,14 +5,15 @@ import { CUBIC_BEZIER } from "../util/constant/animation";
 import { ESCAPE } from "../util/constant/keycode";
 import { addListener, EventListenerSubscription, removeListeners, stopEvent } from "../util/event";
 import { renderAttributes } from "../util/html";
+import { onSizeChanged } from "../util/resize";
 import { uniqueID } from "../util/unique";
 
 /**
  * Events the overlay behavior can dispatch.
  */
 export enum OverlayBehaviorEvent {
-	SHOW = "open",
-	HIDE = "hide"
+	DID_SHOW = "didShow",
+	DID_HIDE = "didHide"
 }
 
 /**
@@ -46,17 +47,24 @@ const scrollingBlockedClass = (id: string) => `${OVERLAY_SCROLLING_BLOCKED_CLASS
 /**
  * This class defines all of the logic elements with an overlay requires.
  */
-export abstract class OverlayBehavior<R, C extends Partial<IOverlayBehaviorBaseProperties>> extends LitElement implements IOverlayBehaviorProperties {
+export abstract class OverlayBehavior<R, C extends IOverlayBehaviorBaseProperties> extends LitElement implements IOverlayBehaviorProperties {
 
-	// Whether the overlay is open or not
+	// Whether the overlay is open or not.
 	@property({type: Boolean, reflect: true}) open = false;
 
-	// Whether the backdrop is visible or not
+	// Whether the backdrop is visible or not.
 	@property({type: Boolean, reflect: true}) backdrop = false;
 
+	// Whether the overlay is persistent or not. When the overlay is persistent, ESCAPE and backdrop clicks won't close it.
 	@property({type: Boolean}) persistent = false;
+
+	// Whether the overlay blocks the scrolling on the scroll container.
 	@property({type: Boolean}) blockScrolling = false;
+
+	// The duration of the animations.
 	@property({type: Number}) duration = 200;
+
+	// The container the overlay lives in.
 	@property({type: Object}) scrollContainer = document.body;
 
 	protected currentInAnimations: Animation[] = [];
@@ -65,8 +73,7 @@ export abstract class OverlayBehavior<R, C extends Partial<IOverlayBehaviorBaseP
 	protected abstract role: string;
 	protected abstract $focusTrap?: FocusTrap;
 	protected overlayId = uniqueID();
-	protected visibilityListeners: EventListenerSubscription[] = [];
-	protected interactionListeners: EventListenerSubscription[] = [];
+	protected listeners: EventListenerSubscription[] = [];
 	protected activeElementBefore?: HTMLElement;
 
 	/**
@@ -85,33 +92,26 @@ export abstract class OverlayBehavior<R, C extends Partial<IOverlayBehaviorBaseP
 	connectedCallback () {
 		super.connectedCallback();
 
+		// Bind the relevant functions to the instance of the class
 		this.onKeyDown = this.onKeyDown.bind(this);
-		this.onShow = this.onShow.bind(this);
-		this.onHide = this.onHide.bind(this);
+		this.didShow = this.didShow.bind(this);
+		this.didHide = this.didHide.bind(this);
 		this.updatePosition = this.updatePosition.bind(this);
 
+		// Set the role attribute for accessibility
 		this.setAttribute("role", this.role);
-
-		this.visibilityListeners.push(
-			addListener(this, OverlayBehaviorEvent.SHOW, this.onShow),
-			addListener(this, OverlayBehaviorEvent.HIDE, this.onHide)
-		);
 	}
-
-	/**
-	 * Tears down the component.
-	 */
-	disconnectedCallback () {
-		removeListeners(this.visibilityListeners);
-	}
-
 
 	/**
 	 * Focuses on the first element of the overlay.
 	 */
 	trapFocus () {
 		if (this.$focusTrap != null) {
+
+			// Store the current active element so we can restore the focus on that element when the overlay is closed.
 			this.activeElementBefore = <HTMLElement>document.activeElement;
+
+			// Trap the focus on the first element of the overlay.
 			this.$focusTrap.focusFirstElement();
 		}
 	}
@@ -120,16 +120,23 @@ export abstract class OverlayBehavior<R, C extends Partial<IOverlayBehaviorBaseP
 	 * Shows the overlayed component.
 	 * @param config
 	 */
-	show (config?: C): Promise<R | null> {
+	show (config?: Partial<C>): Promise<R | null> {
 
-		// If an in animation is already playing return a resolver.
+		// If an in animation is already playing return a new resolver.
 		if (this.currentInAnimations.length > 0) {
 			return this.createResolver();
 		}
 
+		// Prepare the show animation with the configuration object
 		this.prepareShowAnimation(config);
+
+		// Animate the overlay in.
 		this.animateIn();
+
+		// Show the overlay
 		this.open = true;
+
+		// Return a resolver
 		return this.createResolver();
 	}
 
@@ -138,11 +145,17 @@ export abstract class OverlayBehavior<R, C extends Partial<IOverlayBehaviorBaseP
 	 * @param result
 	 */
 	hide (result?: R) {
+
+		// If there are out animations already being played, we simply return
+		// knowing that the current out animation will finish soon.
 		if (this.currentOutAnimations.length > 0) {
 			return;
 		}
 
+		// Prepare the hide animation
 		this.prepareHideAnimation();
+
+		// Animate the overlay out
 		this.animateOut(result);
 	}
 
@@ -153,12 +166,19 @@ export abstract class OverlayBehavior<R, C extends Partial<IOverlayBehaviorBaseP
 	protected updated (props: Map<keyof IOverlayBehaviorProperties, unknown>) {
 		super.updated(props);
 
-		this.updateAria();
 		if (props.has("open")) {
+
+			// When the overlay is closed it is removed from the tab order.
 			this.open ? this.removeAttribute("tabindex") : this.setAttribute("tabindex", "-1");
 		}
+
+		// Each time a property changes we need to update the aria information.
+		this.updateAria();
 	}
 
+	/**
+	 * Updates the aria information.
+	 */
 	protected updateAria () {
 		renderAttributes(this, {
 			"aria-hidden": !this.open
@@ -166,53 +186,25 @@ export abstract class OverlayBehavior<R, C extends Partial<IOverlayBehaviorBaseP
 	}
 
 	/**
-	 * Creates a root with delegates focus set to true.
+	 * Creates a root that delegates the focus.
 	 */
 	protected createRenderRoot () {
 		return this.attachShadow({mode: "open", delegatesFocus: true});
 	}
 
 	/**
-	 * Prepares the show animation.
-	 * @param {C} config
+	 * Creates a new resolver.
 	 */
-	protected prepareShowAnimation (config?: C) {
-		this.interactionListeners.push(
-			addListener(this, "resize", this.updatePosition),
-			addListener(this, "scroll", this.updatePosition, {passive: true}),
-			addListener(this.scrollContainer, "scroll", this.updatePosition, {passive: true})
-		);
-
-		this.pauseAnimations();
-
-		// Set the configuration object if necessary
-		if (config != null) {
-			this.setConfig(config);
-		}
-
-		// Block the scrolling on the body element if necessary.
-		if (this.blockScrolling) {
-			this.scrollContainer.style.overflow = `hidden`;
-			this.scrollContainer.classList.add(scrollingBlockedClass(this.overlayId));
-		}
-	}
-
-	protected animateIn () {
-		this.dispatchOverlayEvent(OverlayBehaviorEvent.SHOW);
-	}
-
-	protected animateOut (result?: R) {
-		this.open = false;
-		this.dispatchOverlayEvent(OverlayBehaviorEvent.HIDE, result);
-		this.resolve(result);
-	}
-
 	protected createResolver () {
-		return new Promise((res: OverlayResolver<R>, rej) => {
+		return new Promise((res: OverlayResolver<R>) => {
 			this.resolvers.push(res);
 		});
 	};
 
+	/**
+	 * Resolves a result and clears the list of resolvers.
+	 * @param result
+	 */
 	protected resolve (result?: R | null) {
 		for (const resolve of this.resolvers) {
 			resolve(result);
@@ -220,6 +212,9 @@ export abstract class OverlayBehavior<R, C extends Partial<IOverlayBehaviorBaseP
 		this.resolvers.length = 0;
 	}
 
+	/**
+	 * Hides the overlay if it's not persistent.
+	 */
 	protected backdropClick () {
 		if (!this.persistent) {
 			this.hide();
@@ -232,23 +227,15 @@ export abstract class OverlayBehavior<R, C extends Partial<IOverlayBehaviorBaseP
 	 * @param {R} detail
 	 */
 	protected dispatchOverlayEvent (e: OverlayBehaviorEvent, detail?: R | null) {
-		this.dispatchEvent(new CustomEvent(e, {bubbles: false, detail}));
+		this.dispatchEvent(new CustomEvent(e, {detail}));
 	}
 
 	/**
 	 * Sets the properties based on the configuration object.
 	 * @param config
 	 */
-	protected setConfig (config: C) {
+	protected setConfig (config: Partial<C>) {
 		Object.assign(this, config);
-	}
-
-	/**
-	 * Prepares the hide animation.
-	 */
-	protected prepareHideAnimation () {
-		removeListeners(this.interactionListeners);
-		this.pauseAnimations();
 	}
 
 	/**
@@ -273,16 +260,76 @@ export abstract class OverlayBehavior<R, C extends Partial<IOverlayBehaviorBaseP
 		pauseAnimations(this.currentOutAnimations);
 	}
 
-	protected onShow () {
+	/**
+	 * Prepares the show animation.
+	 * @param config
+	 */
+	protected prepareShowAnimation (config?: Partial<C>) {
+
+		// Listen for events on when to update the position of the overlay
+		this.listeners.push(
+			onSizeChanged(this, this.updatePosition),
+			addListener(this, "scroll", this.updatePosition, {passive: true}),
+			addListener(this.scrollContainer, "scroll", this.updatePosition, {passive: true})
+		);
+
+		this.pauseAnimations();
+
+		// Set the configuration object if necessary
+		if (config != null) {
+			this.setConfig(config);
+		}
+
+		// Block the scrolling on the body element if necessary.
+		if (this.blockScrolling) {
+			this.scrollContainer.style.overflow = `hidden`;
+			this.scrollContainer.classList.add(scrollingBlockedClass(this.overlayId));
+		}
+	}
+
+	/**
+	 * Prepares the hide animation.
+	 */
+	protected prepareHideAnimation () {
+		removeListeners(this.listeners);
+		this.pauseAnimations();
+	}
+
+	/**
+	 * Animates the overlay in.
+	 */
+	protected animateIn () {
+		this.didShow();
+	}
+
+	/**
+	 * Animates the overlay out.
+	 * @param result
+	 */
+	protected animateOut (result?: R) {
+		this.open = false;
+		this.resolve(result);
+		this.didHide(result);
+	}
+
+	/**
+	 * Hooks up listeners and traps the focus.
+	 */
+	protected didShow () {
 		this.currentInAnimations.length = 0;
-		this.interactionListeners.push(
+		this.listeners.push(
 			addListener(this, "keydown", this.onKeyDown)
 		);
 
 		this.trapFocus();
+		this.dispatchOverlayEvent(OverlayBehaviorEvent.DID_SHOW);
 	}
 
-	protected onHide () {
+	/**
+	 * Removes listeners and restores the state before the overlay was opened.
+	 * @param result
+	 */
+	protected didHide (result?: R) {
 		if (this.blockScrolling) {
 
 			// Check whether other overlays are blocking the same scroll container.
@@ -303,10 +350,11 @@ export abstract class OverlayBehavior<R, C extends Partial<IOverlayBehaviorBaseP
 
 		this.currentOutAnimations.length = 0;
 		this.open = false;
+		this.dispatchOverlayEvent(OverlayBehaviorEvent.DID_HIDE, result);
 	}
 
 	/**
-	 * Updates the position of the element.
+	 * Updates the position of the overlay..
 	 */
 	protected updatePosition () {
 		// Implement if necessary

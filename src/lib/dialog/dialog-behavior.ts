@@ -1,5 +1,5 @@
 import { property } from "lit-element";
-import { IOverlayBehaviorBaseProperties, IOverlayBehaviorProperties, OverlayBehavior, OverlayBehaviorEvent } from "../overlay/overlay-behavior";
+import { IOverlayBehaviorBaseProperties, IOverlayBehaviorProperties, OverlayBehavior } from "../overlay/overlay-behavior";
 import { CUBIC_BEZIER } from "../util/constant/animation";
 
 export enum DialogSize {
@@ -34,7 +34,7 @@ export const defaultDialogConfig: IDialogConfig = {
 /**
  * Button behavior.
  */
-export abstract class DialogBehavior<R, C extends Partial<IDialogBehaviorProperties>> extends OverlayBehavior<R, C> implements IDialogBehaviorProperties {
+export abstract class DialogBehavior<R, C extends IDialogBehaviorProperties> extends OverlayBehavior<R, C> implements IDialogBehaviorProperties {
 
 	// The size of the dialog
 	@property({type: String, reflect: true}) size: DialogSize | null = null;
@@ -45,27 +45,36 @@ export abstract class DialogBehavior<R, C extends Partial<IDialogBehaviorPropert
 	// Whether the dialog is fixed or not
 	@property({type: Boolean, reflect: true}) fixed = false;
 
+	// Dialog element
 	protected abstract $dialog: HTMLElement;
+
+	// Backdrop element
 	protected abstract $backdrop: HTMLElement;
 
+	/**
+	 * Animates the dialog in.
+	 */
 	protected animateIn () {
 		const animationConfig: KeyframeAnimationOptions = {
 			...this.animationConfig,
 			fill: "both"
 		};
 
+		// We only want to run the setup function once.
 		let ready = false;
 		const setup = () => {
 			if (ready) return;
 			ready = true;
-			this.dispatchOverlayEvent(OverlayBehaviorEvent.SHOW);
+			this.didShow();
 		};
 
+		// The animation of the dialog
 		const dialogAnimation = this.$dialog.animate(<Keyframe[]>[
 			{transform: `scale(0.9) translate(0, 30px)`, opacity: `${0}`},
 			{transform: `scale(1) translate(0, 0)`, opacity: `${1}`}
 		], animationConfig);
 
+		// The animation of the backdrop
 		const backdropAnimation = this.$backdrop.animate(<Keyframe[]>[
 			{opacity: `${0}`},
 			{opacity: `${1}`}
@@ -77,6 +86,10 @@ export abstract class DialogBehavior<R, C extends Partial<IDialogBehaviorPropert
 		this.currentInAnimations.push(dialogAnimation, backdropAnimation);
 	}
 
+	/**
+	 * Animates the dialog out.
+	 * @param result
+	 */
 	protected animateOut (result?: R) {
 		const animationConfig: KeyframeAnimationOptions = {
 			duration: this.duration,
@@ -84,21 +97,23 @@ export abstract class DialogBehavior<R, C extends Partial<IDialogBehaviorPropert
 			fill: "both"
 		};
 
-		// Cleans up the component and animation
+		// Cleans up the component and animation. We only want to run this function once.
 		let cleaned = false;
 		const cleanup = () => {
 			if (cleaned) return;
 			cleaned = true;
 
-			this.dispatchOverlayEvent(OverlayBehaviorEvent.HIDE, result);
 			this.resolve(result);
+			this.didHide(result);
 		};
 
+		// The animation of the dialog.
 		const dialogAnimation = this.$dialog.animate(<Keyframe[]>[
 			{transform: `translateY(0)`, opacity: `${1}`},
 			{transform: `translateY(30px)`, opacity: `${0}`}
 		], animationConfig);
 
+		// The animation of the backdrop.
 		const backdropAnimation = this.$backdrop.animate(<Keyframe[]>[
 			{opacity: `${1}`},
 			{opacity: `${0}`}
