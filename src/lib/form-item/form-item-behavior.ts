@@ -2,36 +2,43 @@ import { LitElement, property } from "lit-element";
 import { addListener, EventListenerSubscription, removeListeners } from "../util/event";
 
 export type FormItem =
-	HTMLInputElement
+	(HTMLInputElement
 	| HTMLOutputElement
 	| HTMLButtonElement
 	| HTMLObjectElement
 	| HTMLSelectElement
-	| HTMLTextAreaElement;
+	| HTMLTextAreaElement) & {value: string};
 const FORM_ITEM_EVENTS = ["valid", "invalid", "input"];
 
 export interface IFormItemBehaviorProperties {
 	disabled: boolean;
+	value: string;
 	readonly?: boolean;
 	required?: boolean;
-	invalid?: boolean;
 	name?: string;
-	value?: string;
 }
 
 export abstract class FormItemBehavior extends LitElement implements IFormItemBehaviorProperties {
 	@property({type: Boolean, reflect: true}) disabled: boolean = false;
 	@property({type: Boolean, reflect: true}) readonly?: boolean = false;
 	@property({type: Boolean, reflect: true}) required?: boolean = false;
-	@property({type: Boolean, reflect: true}) invalid?: boolean = false;
 	@property({type: String}) name?: string;
-	@property({type: String}) value?: string;
+	// @property({type: String}) value: string;
+
+	get value () { return this.getValue();  }
+	@property({type: String}) set value (value: string) {
+		this.setValue(value);
+	}
 
 	protected $formItem!: FormItem;
 	protected listeners: EventListenerSubscription[] = [];
 
 	get validationMessage (): string {
 		return this.$formItem.validationMessage;
+	}
+
+	get invalid (): boolean {
+		return this.$formItem.validity.valid;
 	}
 
 	get validity (): ValidityState {
@@ -53,15 +60,28 @@ export abstract class FormItemBehavior extends LitElement implements IFormItemBe
 	protected firstUpdated (props: Map<keyof IFormItemBehaviorProperties, unknown>) {
 		super.firstUpdated(props);
 
-		this.syncWithFormItem = this.syncWithFormItem.bind(this);
+		// this.syncWithFormItem = this.syncWithFormItem.bind(this);
+		// this.onInput = this.onInput.bind(this);
 
 		// Move the form item to the light DOM
 		this.$formItem = this.queryFormItem();
 		this.appendChild(this.$formItem);
 
-		this.listeners.push(
-			...FORM_ITEM_EVENTS.map(event => addListener(this.$formItem, event, this.syncWithFormItem))
-		);
+		// this.listeners.push(
+		// 	addListener(this.$formItem, "valid", this.syncWithFormItem, {passive: true}),
+		// 	addListener(this.$formItem, "invalid", this.syncWithFormItem, {passive: true}),
+		// 	// addListener(this.$formItem, "input", this.onInput, {passive: true})
+		// );
+	}
+
+	protected setValue (value: string) {
+		if (this.$formItem != null) {
+			this.$formItem.value = value;
+		}
+	}
+
+	protected getValue (): string {
+		return this.$formItem != null ? this.$formItem.value : "";
 	}
 
 	/**
@@ -87,13 +107,25 @@ export abstract class FormItemBehavior extends LitElement implements IFormItemBe
 		return this.$formItem.setCustomValidity(error);
 	}
 
-	/**
-	 * Syncs the component with the form item.
-	 */
-	protected syncWithFormItem () {
-		if (this.$formItem == null) return;
-		this.invalid = !this.$formItem.validity.valid;
-	}
+	// /**
+	//  * Syncs the component with the form item.
+	//  */
+	// protected syncWithFormItem (e: Event) {
+	// 	console.log("sync");
+	// 	if (this.$formItem == null) return;
+	// 	//this.invalid = !this.$formItem.validity.valid;
+	// 	//this.value = (<HTMLInputElement>e.target).value;
+	// 	// console.log(this.invalid);
+	// }
+	//
+	// /**
+	//  * Handles the input event.
+	//  * @param e
+	//  */
+	// protected onInput (e: KeyboardEvent) {
+	// 	console.log("INPUT");
+	// 	this.syncWithFormItem(e);
+	// }
 
 	/**
 	 * Queries the form item from the shadow root.

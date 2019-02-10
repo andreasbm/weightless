@@ -1,9 +1,14 @@
-import { html, property, PropertyValues } from "lit-element";
+import { html, property } from "lit-element";
 import { TemplateResult } from "lit-html";
 import { ifDefined } from "lit-html/directives/if-defined";
-import { FormItem, FormItemBehavior, IFormItemBehaviorProperties } from "../form-item/form-item-behavior";
+import { FormItemBehavior, IFormItemBehaviorProperties } from "../form-item/form-item-behavior";
+import { ENTER } from "../util/constant/keycode";
 import { addListener } from "../util/event";
 import { renderAttributes } from "../util/html";
+
+export enum InputBehaviorEvent {
+	SUBMIT = "submit"
+}
 
 export interface IInputBehaviorProperties extends IFormItemBehaviorProperties {
 	autocomplete: "on" | "off";
@@ -52,23 +57,31 @@ export abstract class InputBehavior extends FormItemBehavior implements IInputBe
 
 	connectedCallback () {
 		super.connectedCallback();
-		this.onChange = this.onChange.bind(this);
+		this.onInput = this.onInput.bind(this);
 		this.onBlur = this.onBlur.bind(this);
+		this.onKeyDown = this.onKeyDown.bind(this);
 		this.setAttribute("role", this.role);
 	}
 
 	firstUpdated (props: Map<keyof IInputBehaviorProperties, unknown>) {
 		super.firstUpdated(<Map<keyof IFormItemBehaviorProperties, unknown>>props);
-
 		this.listeners.push(
-			addListener(this.$formItem, "change", this.onChange, {passive: true}),
-			addListener(this.$formItem, "focusout", this.onBlur, {passive: true})
+			addListener(this.$formItem, "input", this.onInput, {passive: true}),
+			addListener(this.$formItem, "focusout", this.onBlur, {passive: true}),
+			addListener(this.$formItem, "keydown", this.onKeyDown, {passive: true})
 		);
 	}
 
 	protected updated (props: Map<keyof IInputBehaviorProperties, unknown>) {
 		super.updated(props);
+		this.refreshAttributes();
+	}
 
+	protected onInput (e: Event) {
+		this.refreshAttributes();
+	}
+
+	protected refreshAttributes () {
 		renderAttributes(this, {
 			dirty: this.dirty,
 			invalid: !this.valid && !this.pristine,
@@ -76,16 +89,26 @@ export abstract class InputBehavior extends FormItemBehavior implements IInputBe
 		});
 	}
 
-	protected onChange (e: Event) {
-		this.value = (<HTMLInputElement>e.target).value;
-	}
-
 	/**
 	 * Handles the on blur event.
 	 */
 	protected onBlur () {
 		this._pristine = false;
-		this.requestUpdate().then();
+		this.refreshAttributes();
+	}
+
+	/**
+	 * Handles the key up event.
+	 * @param e
+	 */
+	protected onKeyDown (e: KeyboardEvent) {
+		switch (e.code) {
+			case ENTER:
+				if (e.ctrlKey || e.metaKey) {
+					this.dispatchEvent(new CustomEvent(InputBehaviorEvent.SUBMIT));
+				}
+				break;
+		}
 	}
 
 	protected render (): TemplateResult {
@@ -103,6 +126,7 @@ export abstract class InputBehavior extends FormItemBehavior implements IInputBe
 	 * Returns the form item
 	 */
 	protected renderFormItem (): TemplateResult {
+		console.log("RENDER!!", this.value);
 		return html`
 			<input
 				id="form-item"

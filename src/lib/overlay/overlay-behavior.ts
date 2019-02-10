@@ -272,7 +272,7 @@ export abstract class OverlayBehavior<R, C extends Partial<IOverlayBehaviorBaseP
 			addListener(this.scrollContainer, "scroll", this.updatePosition, {passive: true}),
 
 			// Either attach a resize observer or fallback to listening to window resizes
-			"ResizeObserver" in window ? onSizeChanged(this, this.updatePosition) : addListener(window, "resize", this.updatePosition, {passive: true}),
+			"ResizeObserver" in window ? onSizeChanged(this, this.updatePosition, {debounceMs: 100}) : addListener(window, "resize", this.updatePosition, {passive: true}),
 		);
 
 		this.pauseAnimations();

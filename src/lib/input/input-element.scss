@@ -30,8 +30,6 @@ $textfield-placeholder-font-size: var(--textfield-placeholder-font-size, #{$font
 $textfield-placeholder-transition: var(--textfield-placeholder-transition, #{$transition-duration-fast} all #{$transition-linear});
 $textfield-placeholder-space: var(--textfield-placeholder-space, #{size(16)});
 
-$textfield-min-height: var(--textfield-min-height, #{size(60)});
-
 :host {
 	--_textfield-border-color: #{$textfield-border-color};
 	--_textfield-padding-left-right: #{$textfield-padding-left-right};
@@ -75,7 +73,7 @@ $textfield-min-height: var(--textfield-min-height, #{size(60)});
 	position: absolute;
 	pointer-events: none;
 	font-size: inherit;
-	line-height: 100%;
+	line-height: 1;
 	display: flex;
 	align-items: center;
 	white-space: nowrap;
@@ -137,9 +135,4 @@ $textfield-min-height: var(--textfield-min-height, #{size(60)});
 	&:-webkit-autofill {
 		-webkit-box-shadow: inset 0 0 0px 9999px white;
 	}
-}
-
-::slotted(textarea) {
-	min-height: #{$textfield-min-height};
-	resize: none;
 }

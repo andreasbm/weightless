@@ -44,6 +44,7 @@ $button-font-family: #{$font-family-sans-serif};
 
 	@include reset();
 
+	line-height: 1;
 	text-transform: uppercase;
 	cursor: pointer;
 	text-align: center;
