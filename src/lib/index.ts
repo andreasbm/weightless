@@ -7,3 +7,4 @@ export * from "./banner";
 export * from "./icon";
 export * from "./divider";
 export * from "./input";
+export * from "./textarea";

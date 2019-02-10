@@ -1,7 +1,7 @@
 @import "../style/base";
 
 @mixin _textfield-slotted-field() {
-	::slotted(input), ::slotted(textarea), ::slotted(select) {
+	::slotted(input), ::slotted(textarea) {
 		@content
 	}
 }
@@ -9,6 +9,7 @@
 $textfield-color-active: var(--textfield-color-active, #{color("primary")});
 $textfield-caret-color: var(--textfield-caret-color, #{$textfield-color-active});
 $textfield-border-color: var(--textfield-border-color, #{color("shade", 400)});
+$textfield-bg: var(--textfield-bg, #{$background});
 $textfield-border-color-active: var(--textfield-border-color-active, #{color("shade", 600)});
 
 $textfield-ruler-height: var(--textfield-line-height, #{size(2)});
@@ -27,7 +28,9 @@ $textfield-font-family: var(--textfield-font-family, #{$font-family-serif});
 $textfield-placeholder-color: var(--textfield-placeholder-color, #{color("shade", 600)});
 $textfield-placeholder-font-size: var(--textfield-placeholder-font-size, #{$font-size-s});
 $textfield-placeholder-transition: var(--textfield-placeholder-transition, #{$transition-duration-fast} all #{$transition-linear});
-$textfield-placeholder-space: var(--textfield-placeholder-space, #{$spacing-m});
+$textfield-placeholder-space: var(--textfield-placeholder-space, #{size(16)});
+
+$textfield-min-height: var(--textfield-min-height, #{size(60)});
 
 :host {
 	--_textfield-border-color: #{$textfield-border-color};
@@ -44,6 +47,7 @@ $textfield-placeholder-space: var(--textfield-placeholder-space, #{$spacing-m});
 #container {
 	font-size: #{$textfield-font-size};
 	font-family: #{$textfield-font-family};
+	background: #{$textfield-bg};
 	border-bottom: #{$textfield-ruler-height} solid var(--_textfield-border-color);
 	position: relative;
 }
@@ -62,16 +66,17 @@ $textfield-placeholder-space: var(--textfield-placeholder-space, #{$spacing-m});
 
 #placeholder {
 	left: var(--_textfield-padding-left-right);
-	//top: #{$textfield-padding-top-bottom};
 	color: #{$textfield-placeholder-color};
-	//transform: translateY(#{$textfield-placeholder-space});
+	top: calc(#{$textfield-padding-top-bottom} + (#{$textfield-placeholder-space} / 2)); // + #{$textfield-placeholder-space} + #{$textfield-ruler-height});
+	transform: translateY(0); //calc(#{$textfield-placeholder-space} / 2));
 	transition: #{$textfield-placeholder-transition};
+	background: #{$textfield-bg};
+	z-index: 1;
 	position: absolute;
 	pointer-events: none;
 	font-size: inherit;
 	line-height: 100%;
 	display: flex;
-	height: 100%;
 	align-items: center;
 	white-space: nowrap;
 }
@@ -89,8 +94,8 @@ $textfield-placeholder-space: var(--textfield-placeholder-space, #{$spacing-m});
 :host([dirty]), :host(:focus-within) {
 	#placeholder {
 		font-size: #{$textfield-placeholder-font-size};
-		transform: translateY(calc(#{$textfield-placeholder-space} * -1));
-		//transform: translateY(-50%);
+		transform: translateY(calc((#{$textfield-placeholder-space} / 2) * -1));
+		//transform: translateY(-100%);
 	}
 }
 
@@ -100,6 +105,18 @@ $textfield-placeholder-space: var(--textfield-placeholder-space, #{$spacing-m});
 	}
 }
 
+:host([box]) {
+	--_textfield-padding-left-right: #{$textfield-padding-left-right-box};
+
+	#container {
+		border: #{$textfield-ruler-height} solid var(--_textfield-border-color);
+		border-radius: #{$textfield-border-radius-box};
+	}
+
+	#ruler {
+		display: none;
+	}
+}
 
 @include _textfield-slotted-field () {
 	@include reset();
@@ -122,15 +139,7 @@ $textfield-placeholder-space: var(--textfield-placeholder-space, #{$spacing-m});
 	}
 }
 
-:host([box]) {
-	--_textfield-padding-left-right: #{$textfield-padding-left-right-box};
-
-	#container {
-		border: #{$textfield-ruler-height} solid var(--_textfield-border-color);
-		border-radius: #{$textfield-border-radius-box};
-	}
-
-	#ruler {
-		display: none;
-	}
+::slotted(textarea) {
+	min-height: #{$textfield-min-height};
+	resize: none;
 }

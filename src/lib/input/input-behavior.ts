@@ -88,6 +88,17 @@ export abstract class InputBehavior extends FormItemBehavior implements IInputBe
 		this.requestUpdate().then();
 	}
 
+	protected render (): TemplateResult {
+		return html`
+			<div id="container">
+				<div id="placeholder">${this.placeholder}</div>
+				<slot></slot>
+				<div id="ruler"></div>
+			</div>
+			${this.renderFormItem()}
+		`;
+	}
+
 	/**
 	 * Returns the form item
 	 */
