@@ -1,14 +1,14 @@
 import { LitElement, property } from "lit-element";
 import { addListener, EventListenerSubscription, removeListeners } from "../util/event";
+import { renderAttributes } from "../util/html";
 
 export type FormItem =
 	(HTMLInputElement
-	| HTMLOutputElement
-	| HTMLButtonElement
-	| HTMLObjectElement
-	| HTMLSelectElement
-	| HTMLTextAreaElement) & {value: string};
-const FORM_ITEM_EVENTS = ["valid", "invalid", "input"];
+		| HTMLOutputElement
+		| HTMLButtonElement
+		| HTMLObjectElement
+		| HTMLSelectElement
+		| HTMLTextAreaElement) & {value: string};
 
 export interface IFormItemBehaviorProperties {
 	disabled: boolean;
@@ -23,11 +23,13 @@ export abstract class FormItemBehavior extends LitElement implements IFormItemBe
 	@property({type: Boolean, reflect: true}) readonly?: boolean = false;
 	@property({type: Boolean, reflect: true}) required?: boolean = false;
 	@property({type: String}) name?: string;
-	// @property({type: String}) value: string;
 
-	get value () { return this.getValue();  }
 	@property({type: String}) set value (value: string) {
 		this.setValue(value);
+	}
+
+	get value () {
+		return this.getValue();
 	}
 
 	protected $formItem!: FormItem;
@@ -39,6 +41,29 @@ export abstract class FormItemBehavior extends LitElement implements IFormItemBe
 
 	get invalid (): boolean {
 		return this.$formItem.validity.valid;
+	}
+
+	/**
+	 * Whether the component is pristine or has been touched.
+	 */
+	private _pristine = true;
+	get pristine () {
+		return this._pristine;
+	}
+
+	/**
+	 * Whether the nativeInput is dirty or not.
+	 */
+	get dirty (): boolean {
+		return (this.value != null && this.value !== "");
+	}
+
+	/**
+	 * Whether the nativeInput is valid or not.
+	 * @returns {boolean}
+	 */
+	get valid (): boolean {
+		return (this.validity != null ? this.validity.valid : true);
 	}
 
 	get validity (): ValidityState {
@@ -60,28 +85,62 @@ export abstract class FormItemBehavior extends LitElement implements IFormItemBe
 	protected firstUpdated (props: Map<keyof IFormItemBehaviorProperties, unknown>) {
 		super.firstUpdated(props);
 
-		// this.syncWithFormItem = this.syncWithFormItem.bind(this);
-		// this.onInput = this.onInput.bind(this);
+		this.onInput = this.onInput.bind(this);
+		this.onBlur = this.onBlur.bind(this);
 
 		// Move the form item to the light DOM
 		this.$formItem = this.queryFormItem();
 		this.appendChild(this.$formItem);
 
-		// this.listeners.push(
-		// 	addListener(this.$formItem, "valid", this.syncWithFormItem, {passive: true}),
-		// 	addListener(this.$formItem, "invalid", this.syncWithFormItem, {passive: true}),
-		// 	// addListener(this.$formItem, "input", this.onInput, {passive: true})
-		// );
+		this.listeners.push(
+			addListener(this.$formItem, "input", this.onInput, {passive: true}),
+			addListener(this.$formItem, "focusout", this.onBlur, {passive: true})
+		);
 	}
 
+	/**
+	 * Sets the value of the form item.
+	 * @param value
+	 */
 	protected setValue (value: string) {
 		if (this.$formItem != null) {
 			this.$formItem.value = value;
+			this.refreshAttributes();
 		}
 	}
 
+	/**
+	 * Gets the value of the form item.
+	 */
 	protected getValue (): string {
 		return this.$formItem != null ? this.$formItem.value : "";
+	}
+
+	/**
+	 * Handles the input event.
+	 * @param e
+	 */
+	protected onInput (e: Event) {
+		this.refreshAttributes();
+	}
+
+	/**
+	 * Handles the on blur event.
+	 */
+	protected onBlur () {
+		this._pristine = false;
+		this.refreshAttributes();
+	}
+
+	/**
+	 * Refreshes the attributes.
+	 */
+	protected refreshAttributes () {
+		renderAttributes(this, {
+			dirty: this.dirty,
+			invalid: !this.valid && !this.pristine,
+			pristine: this.pristine
+		});
 	}
 
 	/**
@@ -106,26 +165,6 @@ export abstract class FormItemBehavior extends LitElement implements IFormItemBe
 	setCustomValidity (error: string) {
 		return this.$formItem.setCustomValidity(error);
 	}
-
-	// /**
-	//  * Syncs the component with the form item.
-	//  */
-	// protected syncWithFormItem (e: Event) {
-	// 	console.log("sync");
-	// 	if (this.$formItem == null) return;
-	// 	//this.invalid = !this.$formItem.validity.valid;
-	// 	//this.value = (<HTMLInputElement>e.target).value;
-	// 	// console.log(this.invalid);
-	// }
-	//
-	// /**
-	//  * Handles the input event.
-	//  * @param e
-	//  */
-	// protected onInput (e: KeyboardEvent) {
-	// 	console.log("INPUT");
-	// 	this.syncWithFormItem(e);
-	// }
 
 	/**
 	 * Queries the form item from the shadow root.

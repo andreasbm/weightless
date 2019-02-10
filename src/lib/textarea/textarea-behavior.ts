@@ -10,7 +10,6 @@ export interface ITextareaBehaviorProperties extends IInputBehaviorProperties {
 export abstract class TextareaBehavior extends InputBehavior implements ITextareaBehaviorProperties {
 	@property({type: Number, reflect: true}) rows?: number;
 	@property({type: Number, reflect: true}) cols?: number;
-	protected formItem!: HTMLTextAreaElement;
 
 	connectedCallback () {
 		super.connectedCallback();
@@ -66,7 +65,6 @@ export abstract class TextareaBehavior extends InputBehavior implements ITextare
 		return html`
 			<textarea
 				id="form-item"
-				.value="${ifDefined(this.value)}"
 				?required="${this.required}"
 				?disabled="${this.disabled}"
 				?readonly="${this.readonly}"

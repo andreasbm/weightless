@@ -4,3 +4,7 @@
 
 }
 
+::slotted(textarea) {
+	resize: none;
+}
+

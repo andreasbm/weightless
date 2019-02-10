@@ -2,7 +2,7 @@ import { html, property, PropertyValues, TemplateResult } from "lit-element";
 import { ifDefined } from "lit-html/directives/if-defined";
 import { FormItemBehavior, IFormItemBehaviorProperties } from "../form-item/form-item-behavior";
 import { ENTER, SPACE } from "../util/constant/keycode";
-import { addListener, EventListenerSubscription, removeListeners, stopEvent } from "../util/event";
+import { addListener, stopEvent } from "../util/event";
 
 export enum ButtonBehaviorEvent {
 	SUBMIT = "submit"
@@ -34,10 +34,22 @@ export abstract class ButtonBehavior extends FormItemBehavior implements IButton
 		this.setAttribute("role", this.role);
 
 		this.onClick = this.onClick.bind(this);
+		this.onKeyUp = this.onKeyUp.bind(this);
+
 		this.listeners.push(
 			addListener(this, "click", this.onClick),
-			addListener(this, "keyup", (e: KeyboardEvent) => e.code === ENTER || e.code === SPACE ? this.onClick(e) : undefined)
+			addListener(this, "keyup", this.onKeyUp)
 		);
+	}
+
+	/**
+	 * Handles the key up event.
+	 * @param e
+	 */
+	protected onKeyUp (e: KeyboardEvent) {
+		if (e.code === ENTER || e.code === SPACE) {
+			this.onClick(e);
+		}
 	}
 
 	/**
@@ -54,14 +66,14 @@ export abstract class ButtonBehavior extends FormItemBehavior implements IButton
 
 		// Simulate the click on the form item to interact with the form if there is one.
 		this.$formItem.click();
-		this.dispatchEvent(new CustomEvent(ButtonBehaviorEvent.SUBMIT))
+		this.dispatchEvent(new CustomEvent(ButtonBehaviorEvent.SUBMIT));
 	}
 
 	/**
 	 * Each time a property updates we need to check if we should respond.
 	 * @param props
 	 */
-	updated (props: PropertyValues) {
+	protected updated (props: PropertyValues) {
 		super.updated(props);
 
 		if (props.has("disabled")) {

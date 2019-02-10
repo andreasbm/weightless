@@ -1,23 +1,19 @@
 @import "../style/base";
 
-@mixin _textfield-slotted-field() {
-	::slotted(input), ::slotted(textarea) {
-		@content
-	}
-}
-
 $textfield-color-active: var(--textfield-color-active, #{color("primary")});
-$textfield-caret-color: var(--textfield-caret-color, #{$textfield-color-active});
+$textfield-color-invalid: var(--textfield-color-active, #{color("error")});
+
 $textfield-border-color: var(--textfield-border-color, #{color("shade", 400)});
+$textfield-border-color-hover: var(--textfield-border-color-hover, #{color("shade", 600)});
+
 $textfield-bg: var(--textfield-bg, #{$background});
-$textfield-border-color-active: var(--textfield-border-color-active, #{color("shade", 600)});
 
 $textfield-ruler-height: var(--textfield-line-height, #{size(2)});
 $textfield-ruler-transition: var(--textfield-line-transition, transform #{$transition-duration-fast} #{$transition-deceleration-curve});
 $textfield-font-size: var(--textfield-font-size, #{$font-size-m});
 
 $textfield-padding-left-right: var(--textfield-padding-left-right, 0);
-$textfield-padding-top-bottom: var(--textfield-padding-top-bottom, #{$spacing-m});
+$textfield-padding-top-bottom: var(--textfield-padding-top-bottom, #{size(8)});
 
 $textfield-padding-left-right-box: var(--textfield-padding-left-right-box, #{$spacing-m});
 $textfield-border-radius-box: var(--textfield-border-radius-box, #{$border-radius-m});
@@ -32,6 +28,7 @@ $textfield-placeholder-space: var(--textfield-placeholder-space, #{size(16)});
 
 :host {
 	--_textfield-border-color: #{$textfield-border-color};
+	--_textfield-state-color: #{$textfield-color-active};
 	--_textfield-padding-left-right: #{$textfield-padding-left-right};
 
 	transform: translateZ(0);
@@ -51,7 +48,7 @@ $textfield-placeholder-space: var(--textfield-placeholder-space, #{size(16)});
 }
 
 #ruler {
-	background: #{$textfield-color-active};
+	background: var(--_textfield-state-color);
 
 	height: #{$textfield-ruler-height};
 	transition: #{$textfield-ruler-transition};
@@ -65,8 +62,8 @@ $textfield-placeholder-space: var(--textfield-placeholder-space, #{size(16)});
 #placeholder {
 	left: var(--_textfield-padding-left-right);
 	color: #{$textfield-placeholder-color};
-	top: calc(#{$textfield-padding-top-bottom} + (#{$textfield-placeholder-space} / 2)); // + #{$textfield-placeholder-space} + #{$textfield-ruler-height});
-	transform: translateY(0); //calc(#{$textfield-placeholder-space} / 2));
+	top: calc(#{$textfield-padding-top-bottom} + (#{$textfield-placeholder-space} / 2));
+	transform: translateY(0);
 	transition: #{$textfield-placeholder-transition};
 	background: #{$textfield-bg};
 	z-index: 1;
@@ -80,7 +77,7 @@ $textfield-placeholder-space: var(--textfield-placeholder-space, #{size(16)});
 }
 
 :host(:hover) {
-	--_textfield-border-color: #{$textfield-border-color-active};
+	--_textfield-border-color: #{$textfield-border-color-hover};
 }
 
 :host(:focus-within) {
@@ -97,12 +94,6 @@ $textfield-placeholder-space: var(--textfield-placeholder-space, #{size(16)});
 	}
 }
 
-:host([placeholder]) {
-	@include _textfield-slotted-field () {
-		padding-top: calc(#{$textfield-padding-top-bottom} + #{$textfield-placeholder-space});
-	}
-}
-
 :host([box]) {
 	--_textfield-padding-left-right: #{$textfield-padding-left-right-box};
 
@@ -116,9 +107,9 @@ $textfield-placeholder-space: var(--textfield-placeholder-space, #{size(16)});
 	}
 }
 
-@include _textfield-slotted-field () {
+::slotted(#form-item) {
 	@include reset();
-	caret-color: var(--_textfield-color-state);
+	caret-color: var(--_textfield-color-sbtate);
 	padding: #{$textfield-padding-top-bottom} var(--_textfield-padding-left-right);
 
 	-webkit-overflow-scrolling: touch;
@@ -135,4 +126,15 @@ $textfield-placeholder-space: var(--textfield-placeholder-space, #{size(16)});
 	&:-webkit-autofill {
 		-webkit-box-shadow: inset 0 0 0px 9999px white;
 	}
+}
+
+:host([placeholder]) {
+	::slotted(#form-item) {
+		padding-top: calc(#{$textfield-padding-top-bottom} + #{$textfield-placeholder-space});
+	}
+}
+
+:host([invalid]) {
+	--_textfield-state-color: #{$textfield-color-invalid};
+	--_textfield-border-color: var(--_textfield-state-color);
 }
