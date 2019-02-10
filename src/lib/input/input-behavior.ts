@@ -52,7 +52,7 @@ export abstract class InputBehavior extends FormItemBehavior implements IInputBe
 
 	connectedCallback () {
 		super.connectedCallback();
-		this.onInput = this.onInput.bind(this);
+		this.onChange = this.onChange.bind(this);
 		this.onBlur = this.onBlur.bind(this);
 		this.setAttribute("role", this.role);
 	}
@@ -61,7 +61,7 @@ export abstract class InputBehavior extends FormItemBehavior implements IInputBe
 		super.firstUpdated(<Map<keyof IFormItemBehaviorProperties, unknown>>props);
 
 		this.listeners.push(
-			addListener(this.$formItem, "input", this.onInput, {passive: true}),
+			addListener(this.$formItem, "change", this.onChange, {passive: true}),
 			addListener(this.$formItem, "focusout", this.onBlur, {passive: true})
 		);
 	}
@@ -76,7 +76,7 @@ export abstract class InputBehavior extends FormItemBehavior implements IInputBe
 		});
 	}
 
-	protected onInput (e: KeyboardEvent) {
+	protected onChange (e: Event) {
 		this.value = (<HTMLInputElement>e.target).value;
 	}
 

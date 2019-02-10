@@ -16,7 +16,10 @@ $textfield-ruler-transition: var(--textfield-line-transition, transform #{$trans
 $textfield-font-size: var(--textfield-font-size, #{$font-size-m});
 
 $textfield-padding-left-right: var(--textfield-padding-left-right, 0);
-$textfield-padding-top-bottom: var(--textfield-padding-left-right, #{$spacing-m});
+$textfield-padding-top-bottom: var(--textfield-padding-top-bottom, #{$spacing-m});
+
+$textfield-padding-left-right-box: var(--textfield-padding-left-right-box, #{$spacing-m});
+$textfield-border-radius-box: var(--textfield-border-radius-box, #{$border-radius-m});
 
 $textfield-border-outlined: var(--textfield-border-outlined, #{$textfield-ruler-height});
 $textfield-font-family: var(--textfield-font-family, #{$font-family-serif});
@@ -24,7 +27,7 @@ $textfield-font-family: var(--textfield-font-family, #{$font-family-serif});
 $textfield-placeholder-color: var(--textfield-placeholder-color, #{color("shade", 600)});
 $textfield-placeholder-font-size: var(--textfield-placeholder-font-size, #{$font-size-s});
 $textfield-placeholder-transition: var(--textfield-placeholder-transition, #{$transition-duration-fast} all #{$transition-linear});
-$textfield-placeholder-space: var(--textfield-placeholder-space, #{size(8)});
+$textfield-placeholder-space: var(--textfield-placeholder-space, #{$spacing-m});
 
 :host {
 	--_textfield-border-color: #{$textfield-border-color};
@@ -59,15 +62,16 @@ $textfield-placeholder-space: var(--textfield-placeholder-space, #{size(8)});
 
 #placeholder {
 	left: var(--_textfield-padding-left-right);
-	top: #{$textfield-padding-top-bottom};
+	//top: #{$textfield-padding-top-bottom};
 	color: #{$textfield-placeholder-color};
-	transform: translateY(#{$textfield-placeholder-space});
+	//transform: translateY(#{$textfield-placeholder-space});
 	transition: #{$textfield-placeholder-transition};
 	position: absolute;
 	pointer-events: none;
 	font-size: inherit;
 	line-height: 100%;
 	display: flex;
+	height: 100%;
 	align-items: center;
 	white-space: nowrap;
 }
@@ -85,7 +89,8 @@ $textfield-placeholder-space: var(--textfield-placeholder-space, #{size(8)});
 :host([dirty]), :host(:focus-within) {
 	#placeholder {
 		font-size: #{$textfield-placeholder-font-size};
-		transform: translateY(-50%);
+		transform: translateY(calc(#{$textfield-placeholder-space} * -1));
+		//transform: translateY(-50%);
 	}
 }
 
@@ -114,5 +119,18 @@ $textfield-placeholder-space: var(--textfield-placeholder-space, #{size(8)});
 	// Remove ugly autofill
 	&:-webkit-autofill {
 		-webkit-box-shadow: inset 0 0 0px 9999px white;
+	}
+}
+
+:host([box]) {
+	--_textfield-padding-left-right: #{$textfield-padding-left-right-box};
+
+	#container {
+		border: #{$textfield-ruler-height} solid var(--_textfield-border-color);
+		border-radius: #{$textfield-border-radius-box};
+	}
+
+	#ruler {
+		display: none;
 	}
 }
