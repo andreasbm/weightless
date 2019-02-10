@@ -1,8 +1,8 @@
 @import "../style/base";
 
-$dialog-elevation: var(--dialog-elevation, #{elevation(2, #{color("shade", 600)})});
-$dialog-bg: var(--dialog-bg, #{color(white)});
-$dialog-color: var(--dialog-color, inherit);
+$dialog-elevation: var(--dialog-elevation, #{elevation(2, #{color("shade", $dark-hue)})});
+$dialog-bg: var(--dialog-bg, #{$background});
+$dialog-color: var(--dialog-color, #{$foreground});
 $dialog-border-radius: var(--dialog-border-radius, #{$border-radius-m});
 $dialog-z-index: var(--dialog-z-index, 1234567);
 $dialog-will-change: var(--dialog-will-change, transform, opacity);
@@ -30,7 +30,7 @@ $dialog-max-height: var(--dialog-max-height, 100vh);
 $dialog-width-auto: var(--dialog-width-auto, auto);
 $dialog-height-auto: var(--dialog-height-auto, auto);
 
-$dialog-scrollable-border: var(--dialog-scrollable-border, #{size(1)} solid #{color("shade", 400)});
+$dialog-scrollable-border: var(--dialog-scrollable-border, #{size(1)} solid #{color("shade", $light-hue)});
 
 /* Header */
 $dialog-header-padding: var(--dialog-header-padding, #{$spacing-l} #{$spacing-l} 0);

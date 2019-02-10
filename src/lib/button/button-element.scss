@@ -6,15 +6,15 @@ $button-color: var(--button-color,#{color-contrast("primary")});
 $button-bg: var(--button-bg, #{color("primary")});
 $button-shadow-color: var(--button-shadow-color, #{color("primary", $default-hue, 0.2)});
 
-$button-color-hover: var(--button-color-hover, #{color-contrast("primary", 400)});
-$button-bg-hover: var(--button-bg-hover, #{color("primary", 400)});
+$button-color-hover: var(--button-color-hover, #{color-contrast("primary", $light-hue)});
+$button-bg-hover: var(--button-bg-hover, #{color("primary", $light-hue)});
 $button-shadow-color-hover: var(--button-shadow-color-hover, #{color("primary", $default-hue, 0.5)});
 
-$button-color-active: var(--button-color-active, #{color-contrast("primary", 600)});
-$button-bg-active: var(--button-bg-active, #{color("primary", 600)});
+$button-color-active: var(--button-color-active, #{color-contrast("primary", $dark-hue)});
+$button-bg-active: var(--button-bg-active, #{color("primary", $dark-hue)});
 
-$button-color-disabled:  var(--button-color-disabled, #{color-contrast("shade", 400)});
-$button-bg-disabled: var(--button-bg-disabled, #{color("shade", 400)});
+$button-color-disabled:  var(--button-color-disabled, #{color-contrast("shade", $light-hue)});
+$button-bg-disabled: var(--button-bg-disabled, #{color("shade", $light-hue)});
 
 $button-border-outlined: var(--button-border-outlined, #{size(2)} solid currentColor);
 

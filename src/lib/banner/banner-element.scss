@@ -1,0 +1,39 @@
+@import "../style/base";
+
+$banner-icon-margin: var(--banner-icon-margin, 0 #{$spacing-m} 0 0);
+$banner-icon-color: var(--banner-icon-color, #{color("primary")});
+$banner-padding: var(--banner-padding, #{$spacing-s});
+$banner-color: var(--banner-color, #{$foreground});
+$banner-bg: var(--banner-bg, #{$background});
+$banner-content-padding: var(--banner-content-padding, #{$spacing-s});
+$banner-border-bottom: var(--banner-border-bottom, 1px solid #{color("shade", $light-hue)});
+
+:host {
+	padding: #{$banner-padding};
+	border-bottom: #{$banner-border-bottom};
+	color: #{$banner-color};
+	background: #{$banner-bg};
+
+	flex-wrap: wrap;
+	justify-content: flex-end;
+	text-align: left;
+}
+
+:host, #content, #actions {
+	display: flex;
+	align-items: center;
+}
+
+::slotted([slot="icon"]) {
+	margin: #{$banner-icon-margin};
+	color: #{$banner-icon-color};
+}
+
+#content {
+	padding: #{$banner-content-padding};
+	flex-grow: 1;
+}
+
+::slotted(button-element[slot="action"][inverted][flat]:last-child) {
+	padding-right: 0;
+}

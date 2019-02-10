@@ -1,6 +1,8 @@
 @import "functions";
 
+$light-hue: 400;
 $default-hue: 500;
+$dark-hue: 600;
 
 $palette-alias-map: (
 		primary: cobalt,
@@ -118,3 +120,6 @@ $palette-contrast-map: (
 		@return #{'rgb(#{$dynamic-color-contrast})'};
 	}
 }
+
+$foreground: #{color(black)};
+$background: #{color(white)};
