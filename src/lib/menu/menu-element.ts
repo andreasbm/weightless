@@ -1,18 +1,18 @@
 import { customElement } from "lit-element";
 import { sharedStyles } from "../style/shared";
 import { cssResult } from "../util/css";
-import { SnapBehavior } from "./snap-behavior";
+import { MenuBehavior } from "./menu-behavior";
 
-import styles from "./snap-element.scss";
+import styles from "./menu-element.scss";
 
-@customElement("snap-element")
-export class SnapElement<R> extends SnapBehavior<R> {
+@customElement("menu-element")
+export class MenuElement<R> extends MenuBehavior<R> {
 	static styles = [sharedStyles, cssResult(styles)];
 	protected role = "menu";
 }
 
 declare global {
 	interface HTMLElementTagNameMap {
-		"snap-element": SnapElement<any>;
+		"menu-element": MenuElement<any>;
 	}
 }

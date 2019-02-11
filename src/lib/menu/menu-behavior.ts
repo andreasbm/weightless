@@ -1,35 +1,35 @@
 import { FocusTrap } from "@appnest/focus-trap";
 import { html, property, query, TemplateResult } from "lit-element";
+import "../backdrop";
 import { BackdropElement } from "../backdrop/backdrop-element";
 import { IOverlayBehaviorBaseProperties, IOverlayBehaviorProperties, OverlayBehavior } from "../overlay/overlay-behavior";
 import { computeBoundingBox, DirectionX, DirectionY, getBoundingBoxOrigin, IBoundingBox, IBoundingBoxOrigin, IPositionStrategy, isBoundingBoxAllowed, OriginX, OriginY, positionStrategyFallback } from "../util/position";
 import { getOpacity, getScale } from "../util/style";
-import "../backdrop";
 
 /**
  * Base properties of the snap.
  */
-export interface ISnapBehaviorBaseProperties extends IPositionStrategy, IOverlayBehaviorBaseProperties {
+export interface IMenuBehaviorBaseProperties extends IPositionStrategy, IOverlayBehaviorBaseProperties {
 	closeOnClick: boolean;
 }
 
 /**
  * Properties of the snap.
  */
-export interface ISnapBehaviorProperties extends ISnapBehaviorBaseProperties, IOverlayBehaviorProperties {
+export interface IMenuBehaviorProperties extends IMenuBehaviorBaseProperties, IOverlayBehaviorProperties {
 }
 
 /**
  * Configuration for the menu.
  */
-export interface ISnapBehaviorConfig extends Partial<ISnapBehaviorBaseProperties> {
+export interface IMenuBehaviorConfig extends Partial<IMenuBehaviorBaseProperties> {
 	trigger?: Element;
 }
 
 /**
  * Default configuration for the menu.
  */
-export const defaultMenuConfig: ISnapBehaviorConfig = {
+export const defaultMenuConfig: IMenuBehaviorConfig = {
 	directionX: DirectionX.RIGHT,
 	directionY: DirectionY.DOWN,
 	originX: OriginX.START,
@@ -44,17 +44,17 @@ export const defaultMenuConfig: ISnapBehaviorConfig = {
 const MIN_MENU_HEIGHT = 200;
 const MIN_MENU_WIDTH = 280;
 
-export abstract class SnapBehavior<R> extends OverlayBehavior<R, ISnapBehaviorConfig> implements ISnapBehaviorProperties {
+export abstract class MenuBehavior<R> extends OverlayBehavior<R, IMenuBehaviorConfig> implements IMenuBehaviorProperties {
 	@property({type: Boolean}) closeOnClick = false;
 	@property({type: String}) directionX = DirectionX.RIGHT;
 	@property({type: String}) directionY = DirectionY.DOWN;
 	@property({type: String}) originX = OriginX.START;
 	@property({type: String}) originY = OriginY.TOP;
 
-	@query("#content") $focusTrap: FocusTrap;
-	@query("#bounding-box") $menuBoundingBox: HTMLElement;
-	@query("#menu") $menu: HTMLElement;
-	@query("#content") $menuContent: HTMLElement;
+	@query("#container") $focusTrap: FocusTrap;
+	@query("#container") $container: HTMLElement;
+	@query("#bounding-box") $boundingBox: HTMLElement;
+	@query("#content") $content: HTMLElement;
 	@query("#backdrop") $backdrop: BackdropElement;
 
 	private trigger: Element | null = null;
@@ -87,10 +87,10 @@ export abstract class SnapBehavior<R> extends OverlayBehavior<R, ISnapBehaviorCo
 	 * Shows the menu at a specified screen position.
 	 * @param {number} x
 	 * @param {number} y
-	 * @param {ISnapBehaviorConfig} config
+	 * @param {IMenuBehaviorConfig} config
 	 * @returns {Promise<R | null>}
 	 */
-	showAtPosition (x: number, y: number, config?: ISnapBehaviorConfig): Promise<R | null> {
+	showAtPosition (x: number, y: number, config?: IMenuBehaviorConfig): Promise<R | null> {
 		this.triggerOrigin = {
 			left: x,
 			top: y,
@@ -105,9 +105,9 @@ export abstract class SnapBehavior<R> extends OverlayBehavior<R, ISnapBehaviorCo
 
 	/**
 	 * Prepares the show animation by computing a bounding box origin.
-	 * @param {ISnapBehaviorConfig} config
+	 * @param {IMenuBehaviorConfig} config
 	 */
-	protected prepareShowAnimation (config?: ISnapBehaviorConfig) {
+	protected prepareShowAnimation (config?: IMenuBehaviorConfig) {
 		super.prepareShowAnimation(config);
 
 		// Compute bounding box origin if necessary
@@ -115,7 +115,7 @@ export abstract class SnapBehavior<R> extends OverlayBehavior<R, ISnapBehaviorCo
 			this.triggerOrigin = getBoundingBoxOrigin(this.trigger);
 		}
 
-		this.$menuContent.style.opacity = `0`;
+		this.$content.style.opacity = `0`;
 	}
 
 	/**
@@ -123,7 +123,7 @@ export abstract class SnapBehavior<R> extends OverlayBehavior<R, ISnapBehaviorCo
 	 */
 	protected prepareHideAnimation () {
 		super.prepareHideAnimation();
-		this.$menu.removeEventListener("click", this.onClick);
+		this.$container.removeEventListener("click", this.onClick);
 	}
 
 	/**
@@ -133,10 +133,10 @@ export abstract class SnapBehavior<R> extends OverlayBehavior<R, ISnapBehaviorCo
 		super.didShow();
 
 		// Add the end styles
-		this.$menuContent.style.opacity = null;
+		this.$content.style.opacity = null;
 
 		// Add event listeners
-		this.$menu.addEventListener("click", this.onClick);
+		this.$container.addEventListener("click", this.onClick);
 	}
 
 	/**
@@ -168,9 +168,9 @@ export abstract class SnapBehavior<R> extends OverlayBehavior<R, ISnapBehaviorCo
 		};
 
 		// Animate the menu in and take the intermediate stake into account
-		const menuScale = getScale(this.$menu);
-		const menuOpacity = getOpacity(this.$menu);
-		this.$menu.animate(<Keyframe[]>[
+		const menuScale = getScale(this.$container);
+		const menuOpacity = getOpacity(this.$container);
+		this.$container.animate(<Keyframe[]>[
 			{
 				transform: `scale(${menuScale.x}, ${menuScale.y})`,
 				opacity: `${menuOpacity > 0.5 ? menuOpacity : 0}`,
@@ -185,8 +185,8 @@ export abstract class SnapBehavior<R> extends OverlayBehavior<R, ISnapBehaviorCo
 		], animationConfig);
 
 		// Animate the menu content in with a delay
-		const menuAnimation = this.$menuContent.animate(<Keyframe[]>[
-			{opacity: getOpacity(this.$menuContent).toString()},
+		const menuAnimation = this.$content.animate(<Keyframe[]>[
+			{opacity: getOpacity(this.$content).toString()},
 			{opacity: 1}
 		], {
 			...animationConfig,
@@ -232,14 +232,14 @@ export abstract class SnapBehavior<R> extends OverlayBehavior<R, ISnapBehaviorCo
 		], animationConfig);
 
 		// Animate the menu content out
-		const menuContentAnimation = this.$menuContent.animate(<Keyframe[]>[
-			{opacity: getOpacity(this.$menuContent).toString()},
+		const menuContentAnimation = this.$content.animate(<Keyframe[]>[
+			{opacity: getOpacity(this.$content).toString()},
 			{opacity: 0}
 		], animationConfig);
 
 		// Animate the menu out
-		const menuAnimation = this.$menu.animate(<Keyframe[]>[
-			{opacity: getOpacity(this.$menu).toString()},
+		const menuAnimation = this.$container.animate(<Keyframe[]>[
+			{opacity: getOpacity(this.$container).toString()},
 			{opacity: 0}
 		], animationConfig);
 
@@ -287,7 +287,7 @@ export abstract class SnapBehavior<R> extends OverlayBehavior<R, ISnapBehaviorCo
 	private setBoundingBox (boundingBox: IBoundingBox) {
 		let {left, right, top, bottom, width, height, alignItems, justifyContent, transformOrigin} = boundingBox;
 
-		Object.assign(this.$menuBoundingBox.style, {
+		Object.assign(this.$boundingBox.style, {
 			left: left != null ? `${left}px` : null,
 			right: right != null ? `${right}px` : null,
 			top: top != null ? `${top}px` : null,
@@ -298,7 +298,7 @@ export abstract class SnapBehavior<R> extends OverlayBehavior<R, ISnapBehaviorCo
 			justifyContent: `flex-${justifyContent}`
 		});
 
-		this.$menu.style.transformOrigin = `${transformOrigin.x} ${transformOrigin.y} 0px`;
+		this.$container.style.transformOrigin = `${transformOrigin.x} ${transformOrigin.y} 0px`;
 	}
 
 	/**
@@ -311,16 +311,23 @@ export abstract class SnapBehavior<R> extends OverlayBehavior<R, ISnapBehaviorCo
 	}
 
 	/**
+	 * Renders the content.
+	 */
+	protected renderContent (): TemplateResult {
+		return html`<slot></slot>`;
+	}
+
+	/**
 	 * Returns the template for the component.
 	 */
 	protected render (): TemplateResult {
 		return html`
 			<div id="bounding-box">
-				<div id="menu" role="menu" ?aria-expanded="${this.open}">
-					<focus-trap id="content" inactive="${!this.open}">
-						<slot></slot>
-					</focus-trap>
-				</div>
+				<focus-trap id="container" ?aria-expanded="${this.open}">
+					<div id="content" inactive="${!this.open}">
+						${this.renderContent()}
+					</div>
+				</focus-trap>
 			</div>
 			<backdrop-element id="backdrop" @click="${() => this.backdropClick()}"></backdrop-element>
 		`;
