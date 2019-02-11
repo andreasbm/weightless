@@ -5,6 +5,7 @@ $textfield-color-invalid: var(--textfield-color-active, #{color("error")});
 
 $textfield-border-color: var(--textfield-border-color, #{color("shade", 400)});
 $textfield-border-color-hover: var(--textfield-border-color-hover, #{color("shade", 600)});
+$textfield-transition: var(--textfield-transition, border-color #{$transition-duration-fast} #{$transition-ease-in});
 
 $textfield-bg: var(--textfield-bg, #{$background});
 
@@ -44,6 +45,7 @@ $textfield-placeholder-space: var(--textfield-placeholder-space, #{size(16)});
 	font-family: #{$textfield-font-family};
 	background: #{$textfield-bg};
 	border-bottom: #{$textfield-ruler-height} solid var(--_textfield-border-color);
+	transition: #{$textfield-transition};
 	position: relative;
 }
 

@@ -25,7 +25,8 @@ export interface IOverlayBehaviorBaseProperties {
 	blockScrolling: boolean;
 	backdrop: boolean;
 	duration: number;
-	scrollContainer: HTMLElement;
+	fixed: boolean;
+	scrollTarget: EventTarget;
 }
 
 /**
@@ -55,6 +56,9 @@ export abstract class OverlayBehavior<R, C extends Partial<IOverlayBehaviorBaseP
 	// Whether the backdrop is visible or not.
 	@property({type: Boolean, reflect: true}) backdrop = false;
 
+	// Whether the overlay is fixed or not.
+	@property({type: Boolean, reflect: true}) fixed = false;
+
 	// Whether the overlay is persistent or not. When the overlay is persistent, ESCAPE and backdrop clicks won't close it.
 	@property({type: Boolean}) persistent = false;
 
@@ -65,7 +69,14 @@ export abstract class OverlayBehavior<R, C extends Partial<IOverlayBehaviorBaseP
 	@property({type: Number}) duration = 200;
 
 	// The container the overlay lives in.
-	@property({type: Object}) scrollContainer = document.body;
+	@property({type: Object}) scrollTarget = document;
+
+	/**
+	 * Returns the scroll container as an HTMLElement. Falls back to the document body.
+	 */
+	get $scrollContainer () {
+		return this.scrollTarget instanceof HTMLElement ? this.scrollTarget : document.body;
+	}
 
 	protected currentInAnimations: Animation[] = [];
 	protected currentOutAnimations: Animation[] = [];
@@ -265,11 +276,12 @@ export abstract class OverlayBehavior<R, C extends Partial<IOverlayBehaviorBaseP
 	 * @param config
 	 */
 	protected prepareShowAnimation (config?: C) {
+		addListener(this.scrollTarget, "scroll", () => console.log("Scroll"), {passive: true});
 
 		// Listen for events on when to update the position of the overlay
 		this.listeners.push(
 			addListener(this, "scroll", this.updatePosition, {passive: true}),
-			addListener(this.scrollContainer, "scroll", this.updatePosition, {passive: true}),
+			addListener(this.scrollTarget, "scroll", this.updatePosition, {passive: true}),
 
 			// Either attach a resize observer or fallback to listening to window resizes
 			"ResizeObserver" in window ? onSizeChanged(this, this.updatePosition, {debounceMs: 100}) : addListener(window, "resize", this.updatePosition, {passive: true}),
@@ -284,8 +296,9 @@ export abstract class OverlayBehavior<R, C extends Partial<IOverlayBehaviorBaseP
 
 		// Block the scrolling on the body element if necessary.
 		if (this.blockScrolling) {
-			this.scrollContainer.style.overflow = `hidden`;
-			this.scrollContainer.classList.add(scrollingBlockedClass(this.overlayId));
+			const $container = this.$scrollContainer;
+			$container.style.overflow = `hidden`;
+			$container.classList.add(scrollingBlockedClass(this.overlayId));
 		}
 	}
 
@@ -332,16 +345,19 @@ export abstract class OverlayBehavior<R, C extends Partial<IOverlayBehaviorBaseP
 	 * @param result
 	 */
 	protected didHide (result?: R) {
+
 		if (this.blockScrolling) {
+			const $container = this.$scrollContainer;
 
 			// Check whether other overlays are blocking the same scroll container.
 			// If that is the case, we do not have to release the scroll blocking yet.
-			const currentBlockingOverlays = this.scrollContainer.className.match(new RegExp(OVERLAY_SCROLLING_BLOCKED_CLASS_PREFIX, "gm"));
+			const currentBlockingOverlays = $container.className.match(new RegExp(OVERLAY_SCROLLING_BLOCKED_CLASS_PREFIX, "gm"));
+
 			if (currentBlockingOverlays === null || (currentBlockingOverlays != null && currentBlockingOverlays.length === 1)) {
-				this.scrollContainer.style.overflow = null;
+				$container.style.overflow = null;
 			}
 
-			this.scrollContainer.classList.remove(scrollingBlockedClass(this.overlayId));
+			$container.classList.remove(scrollingBlockedClass(this.overlayId));
 		}
 
 		// Focus on the element that was active before the overlay was opened

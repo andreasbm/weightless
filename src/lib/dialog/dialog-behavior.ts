@@ -10,19 +10,18 @@ export enum DialogSize {
 	FULLSCREEN = "fullscreen"
 }
 
-export interface IDialogBaseProperties extends IOverlayBehaviorBaseProperties {
+export interface IDialogBehaviorBaseProperties extends IOverlayBehaviorBaseProperties {
 	size: DialogSize | null;
 	scrollable: boolean;
-	fixed: boolean;
 }
 
-export interface IDialogBehaviorProperties extends IDialogBaseProperties, IOverlayBehaviorProperties {
+export interface IDialogBehaviorProperties extends IDialogBehaviorBaseProperties, IOverlayBehaviorProperties {
 }
 
-export interface IDialogConfig extends Partial<IDialogBaseProperties> {
+export interface IDialogBehaviorConfig extends Partial<IDialogBehaviorBaseProperties> {
 }
 
-export const defaultDialogConfig: IDialogConfig = {
+export const defaultDialogConfig: IDialogBehaviorConfig = {
 	size: DialogSize.MEDIUM,
 	blockScrolling: true,
 	backdrop: true,
@@ -41,9 +40,6 @@ export abstract class DialogBehavior<R, C extends Partial<IDialogBehaviorPropert
 
 	// Whether the dialog is scrollable or not
 	@property({type: Boolean, reflect: true}) scrollable = false;
-
-	// Whether the dialog is fixed or not
-	@property({type: Boolean, reflect: true}) fixed = false;
 
 	// Dialog element
 	protected abstract $dialog: HTMLElement;

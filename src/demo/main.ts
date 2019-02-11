@@ -2,6 +2,8 @@ import "../lib";
 import { html } from "lit-html";
 import { DialogElement } from "../lib/dialog/dialog-element";
 import { openDialog } from "../lib/dialog/open-dialog";
+import { defaultMenuConfig, ISnapBehaviorConfig } from "../lib/snap/snap-behavior";
+import { SnapElement } from "../lib/snap/snap-element";
 import { ENTER } from "../lib/util/constant/keycode";
 import "./main.scss";
 
@@ -47,3 +49,14 @@ document.querySelector("#open-dialog-2")!.addEventListener("click", async () => 
 	console.log(await ref.result);
 });
 
+function openMenu (e: MouseEvent, query: string, config?: ISnapBehaviorConfig) {
+	const menu = document.querySelector<SnapElement<any>>(query)!;
+	console.log(e, e.srcElement);
+	menu.show({...config, trigger: <HTMLElement>e.srcElement}).then(e => {
+		console.log("Result:", e);
+	});
+}
+
+document.querySelector("#open-menu-1")!.addEventListener("submit", (e: MouseEvent) => {
+	openMenu(e, "#menu-1", defaultMenuConfig);
+});
