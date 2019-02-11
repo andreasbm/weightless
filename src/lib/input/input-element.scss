@@ -1,36 +1,35 @@
 @import "../style/base";
 
-$textfield-color-active: var(--textfield-color-active, #{color("primary")});
-$textfield-color-invalid: var(--textfield-color-active, #{color("error")});
+$input-color-active: var(--input-color-active, #{color("primary")});
+$input-color-invalid: var(--input-color-active, #{color("error")});
 
-$textfield-border-color: var(--textfield-border-color, #{color("shade", 400)});
-$textfield-border-color-hover: var(--textfield-border-color-hover, #{color("shade", 600)});
-$textfield-transition: var(--textfield-transition, border-color #{$transition-duration-fast} #{$transition-ease-in});
+$input-border-color: var(--input-border-color, #{color("shade", 400)});
+$input-border-color-hover: var(--input-border-color-hover, #{color("shade", 600)});
+$input-transition: var(--input-transition, border-color #{$transition-duration-fast} #{$transition-ease-in});
 
-$textfield-bg: var(--textfield-bg, #{$background});
+$input-bg: var(--input-bg, #{$background});
 
-$textfield-ruler-height: var(--textfield-line-height, #{size(1)});
-$textfield-ruler-transition: var(--textfield-line-transition, transform #{$transition-duration-fast} #{$transition-deceleration-curve});
-$textfield-font-size: var(--textfield-font-size, #{$font-size-m});
+$input-ruler-height: var(--input-line-height, #{size(1)});
+$input-ruler-transition: var(--input-line-transition, transform #{$transition-duration-fast} #{$transition-deceleration-curve});
+$input-font-size: var(--input-font-size, #{$font-size-m});
 
-$textfield-padding-left-right: var(--textfield-padding-left-right, 0);
-$textfield-padding-top-bottom: var(--textfield-padding-top-bottom, #{size(8)});
+$input-padding-left-right: var(--input-padding-left-right, 0);
+$input-padding-top-bottom: var(--input-padding-top-bottom, #{size(8)});
 
-$textfield-padding-left-right-box: var(--textfield-padding-left-right-box, #{$spacing-m});
-$textfield-border-radius-box: var(--textfield-border-radius-box, #{$border-radius-m});
+$input-padding-left-right-box: var(--input-padding-left-right-box, #{$spacing-m});
+$input-border-radius-box: var(--input-border-radius-box, #{$border-radius-m});
 
-$textfield-border-outlined: var(--textfield-border-outlined, #{$textfield-ruler-height});
-$textfield-font-family: var(--textfield-font-family, #{$font-family-serif});
+$input-font-family: var(--input-font-family, #{$font-family-serif});
 
-$textfield-placeholder-color: var(--textfield-placeholder-color, #{color("shade", 600)});
-$textfield-placeholder-font-size: var(--textfield-placeholder-font-size, #{$font-size-s});
-$textfield-placeholder-transition: var(--textfield-placeholder-transition, #{$transition-duration-fast} all #{$transition-linear});
-$textfield-placeholder-space: var(--textfield-placeholder-space, #{size(16)});
+$input-placeholder-color: var(--input-placeholder-color, #{color("shade", 600)});
+$input-placeholder-font-size: var(--input-placeholder-font-size, #{$font-size-s});
+$input-placeholder-transition: var(--input-placeholder-transition, #{$transition-duration-fast} all #{$transition-linear});
+$input-placeholder-space: var(--input-placeholder-space, #{size(16)});
 
 :host {
-	--_textfield-border-color: #{$textfield-border-color};
-	--_textfield-state-color: #{$textfield-color-active};
-	--_textfield-padding-left-right: #{$textfield-padding-left-right};
+	--_input-border-color: #{$input-border-color};
+	--_input-state-color: #{$input-color-active};
+	--_input-padding-left-right: #{$input-padding-left-right};
 
 	transform: translateZ(0);
 	display: block;
@@ -41,33 +40,33 @@ $textfield-placeholder-space: var(--textfield-placeholder-space, #{size(16)});
 }
 
 #container {
-	font-size: #{$textfield-font-size};
-	font-family: #{$textfield-font-family};
-	background: #{$textfield-bg};
-	border-bottom: #{$textfield-ruler-height} solid var(--_textfield-border-color);
-	transition: #{$textfield-transition};
+	font-size: #{$input-font-size};
+	font-family: #{$input-font-family};
+	background: #{$input-bg};
+	border-bottom: #{$input-ruler-height} solid var(--_input-border-color);
+	transition: #{$input-transition};
 	position: relative;
 }
 
 #ruler {
-	background: var(--_textfield-state-color);
+	background: var(--_input-state-color);
 
-	height: #{$textfield-ruler-height};
-	transition: #{$textfield-ruler-transition};
+	height: #{$input-ruler-height};
+	transition: #{$input-ruler-transition};
 
 	width: 100%;
 	transform: scaleX(0);
 	position: absolute;
-	bottom: calc(#{$textfield-ruler-height} * -1);
+	bottom: calc(#{$input-ruler-height} * -1);
 }
 
 #placeholder {
-	left: var(--_textfield-padding-left-right);
-	color: #{$textfield-placeholder-color};
-	top: calc(#{$textfield-padding-top-bottom} + (#{$textfield-placeholder-space} / 2));
-	transform: translateY(0);
-	transition: #{$textfield-placeholder-transition};
-	background: #{$textfield-bg};
+	left: var(--_input-padding-left-right);
+	color: #{$input-placeholder-color};
+	//transform: translateY(calc(#{$input-padding-top-bottom} + (#{$input-placeholder-space} / 2)));
+	transform: translateY(calc(#{$input-padding-top-bottom} + #{$input-placeholder-space} - 50%));
+	transition: #{$input-placeholder-transition};
+	background: #{$input-bg};
 	z-index: 1;
 	position: absolute;
 	pointer-events: none;
@@ -79,7 +78,7 @@ $textfield-placeholder-space: var(--textfield-placeholder-space, #{size(16)});
 }
 
 :host(:hover) {
-	--_textfield-border-color: #{$textfield-border-color-hover};
+	--_input-border-color: #{$input-border-color-hover};
 }
 
 :host(:focus-within) {
@@ -90,18 +89,17 @@ $textfield-placeholder-space: var(--textfield-placeholder-space, #{size(16)});
 
 :host([dirty]), :host(:focus-within) {
 	#placeholder {
-		font-size: #{$textfield-placeholder-font-size};
-		transform: translateY(calc((#{$textfield-placeholder-space} / 2) * -1));
-		//transform: translateY(-100%);
+		font-size: #{$input-placeholder-font-size};
+		transform: translateY(#{$input-padding-top-bottom});
 	}
 }
 
 :host([box]) {
-	--_textfield-padding-left-right: #{$textfield-padding-left-right-box};
+	--_input-padding-left-right: #{$input-padding-left-right-box};
 
 	#container {
-		border: #{$textfield-ruler-height} solid var(--_textfield-border-color);
-		border-radius: #{$textfield-border-radius-box};
+		border: #{$input-ruler-height} solid var(--_input-border-color);
+		border-radius: #{$input-border-radius-box};
 	}
 
 	#ruler {
@@ -111,8 +109,8 @@ $textfield-placeholder-space: var(--textfield-placeholder-space, #{size(16)});
 
 ::slotted(#form-item) {
 	@include reset();
-	caret-color: var(--_textfield-color-sbtate);
-	padding: #{$textfield-padding-top-bottom} var(--_textfield-padding-left-right);
+	caret-color: var(--_input-color-sbtate);
+	padding: #{$input-padding-top-bottom} var(--_input-padding-left-right);
 
 	-webkit-overflow-scrolling: touch;
 	position: relative;
@@ -132,11 +130,11 @@ $textfield-placeholder-space: var(--textfield-placeholder-space, #{size(16)});
 
 :host([placeholder]) {
 	::slotted(#form-item) {
-		padding-top: calc(#{$textfield-padding-top-bottom} + #{$textfield-placeholder-space});
+		padding-top: calc(#{$input-padding-top-bottom} + #{$input-placeholder-space});
 	}
 }
 
 :host([invalid]) {
-	--_textfield-state-color: #{$textfield-color-invalid};
-	--_textfield-border-color: var(--_textfield-state-color);
+	--_input-state-color: #{$input-color-invalid};
+	--_input-border-color: var(--_input-state-color);
 }

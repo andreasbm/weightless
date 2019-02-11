@@ -1,6 +1,6 @@
 @import "../style/base";
 
-$menu-elevation: var(--menu-elevation, #{elevation(4, #{color(black)})});
+$menu-elevation: var(--menu-elevation, #{elevation(4, #{$shadow})});
 $menu-padding: var(--menu-padding, #{$spacing-s} 0);
 $menu-border-radius: var(--menu-border-radius, #{$border-radius-s});
 $menu-color: var(--menu-color, #{$foreground});
@@ -9,6 +9,7 @@ $menu-min-width: var(--menu-min-width, #{size(110)});
 $menu-max-width: var(--menu-max-width, #{size(280)});
 $menu-max-height: var(--menu-max-height, 100%);
 $menu-z-index: var(--menu-z-index, 123456789);
+$menu-backdrop-bg: var(--menu-backdrop-bg, rgba(0, 0, 0, 0));
 
 :host {
 	display: none;
@@ -38,6 +39,7 @@ $menu-z-index: var(--menu-z-index, 123456789);
 }
 
 #backdrop {
+	--backdrop-bg: #{$menu-backdrop-bg};
 	display: none;
 }
 

@@ -1,6 +1,6 @@
 @import "../style/base";
 
-$dialog-elevation: var(--dialog-elevation, #{elevation(2, #{color("shade", $dark-hue)})});
+$dialog-elevation: var(--dialog-elevation, #{elevation(4, #{$shadow})});
 $dialog-bg: var(--dialog-bg, #{$background});
 $dialog-color: var(--dialog-color, #{$foreground});
 $dialog-border-radius: var(--dialog-border-radius, #{$border-radius-m});

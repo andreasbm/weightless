@@ -37,7 +37,6 @@ export class InputElement extends FormItemBehavior implements IInputElementPrope
 	@property({type: Number, reflect: true}) maxLength?: number;
 	@property({type: Number, reflect: true}) minLength?: number;
 
-
 	firstUpdated (props: Map<keyof IInputElementProperties, unknown>) {
 		super.firstUpdated(<Map<keyof IFormItemBehaviorProperties, unknown>>props);
 		this.onKeyDown = this.onKeyDown.bind(this);
@@ -47,6 +46,10 @@ export class InputElement extends FormItemBehavior implements IInputElementPrope
 		);
 
 		this.value = this.getAttribute("value") || "";
+	}
+
+	focus () {
+		this.$formItem.focus();
 	}
 
 	protected updated (props: Map<keyof IInputElementProperties, unknown>) {

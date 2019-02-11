@@ -16,19 +16,13 @@ document.querySelector("#open-dialog-1")!.addEventListener("click", () => {
 		if (Boolean($input.value)) {
 			$dialog.hide($input.value);
 		} else {
+			console.log("focus");
 			$input.focus();
 		}
 	};
 
-	const keyup = (e: KeyboardEvent) => {
-		switch (e.code) {
-			case ENTER:
-				submit();
-		}
-	};
-
-	$input.addEventListener("keyup", keyup);
-	$submitButton.addEventListener("submit", submit);
+	$input.addEventListener("submit", submit);
+	$submitButton.addEventListener("click", submit);
 	$dialog.show().then((result: string | null) => {
 		console.log("Result from dialog:", result);
 		$input.value = "";

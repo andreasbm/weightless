@@ -7,6 +7,7 @@ import { addListener, EventListenerSubscription, removeListeners, stopEvent } fr
 import { renderAttributes } from "../util/html";
 import { onSizeChanged } from "../util/resize";
 import { uniqueID } from "../util/unique";
+import "@appnest/focus-trap";
 
 /**
  * Events the overlay behavior can dispatch.
