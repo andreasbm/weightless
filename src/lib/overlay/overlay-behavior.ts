@@ -81,7 +81,6 @@ export abstract class OverlayBehavior<R, C extends Partial<IOverlayBehaviorBaseP
 	protected currentInAnimations: Animation[] = [];
 	protected currentOutAnimations: Animation[] = [];
 	protected resolvers: OverlayResolver<R>[] = [];
-	protected abstract role: string;
 	protected abstract $focusTrap?: FocusTrap;
 	protected overlayId = uniqueID();
 	protected listeners: EventListenerSubscription[] = [];
@@ -108,9 +107,6 @@ export abstract class OverlayBehavior<R, C extends Partial<IOverlayBehaviorBaseP
 		this.didShow = this.didShow.bind(this);
 		this.didHide = this.didHide.bind(this);
 		this.updatePosition = this.updatePosition.bind(this);
-
-		// Set the role attribute for accessibility
-		this.setAttribute("role", this.role);
 	}
 
 	/**
