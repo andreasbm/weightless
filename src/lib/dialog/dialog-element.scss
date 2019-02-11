@@ -69,7 +69,8 @@ $dialog-footer-padding: #{$spacing-s};
 	}
 
 	::slotted([slot="content"]) {
-		overflow-y: auto;
+		overflow-y: scroll; /* Has to be scroll (not auto) to get smooth scrolling on iOS */
+		-webkit-overflow-scrolling: touch;
 	}
 }
 

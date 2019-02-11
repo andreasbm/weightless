@@ -1,0 +1,21 @@
+@import "../style/base";
+
+$card-transition: var(--card-transition, box-shadow #{$transition-duration-fast} #{$transition-ease});
+$card-elevation: var(--card-elevation, #{elevation(1, #{$shadow})});
+$card-elevation-hover: var(--card-elevation-hover, #{elevation(4, #{$shadow})});
+$card-color: var(--card-color, #{$foreground});
+$card-bg: var(--card-bg, #{$background});
+
+:host {
+  color: #{$card-color};
+  background: #{$card-bg};
+  transition: #{$card-transition};
+  box-shadow: #{$card-elevation};
+  display: block;
+  text-align: left;
+}
+
+:host([hoverable]:hover) {
+  box-shadow: #{$card-elevation-hover};
+}
+
