@@ -1,5 +1,5 @@
 import { FocusTrap } from "@appnest/focus-trap";
-import { html, property, query, TemplateResult } from "lit-element";
+import { property } from "lit-element";
 import "../backdrop";
 import { BackdropElement } from "../backdrop/backdrop-element";
 import { IOverlayBehaviorBaseProperties, IOverlayBehaviorProperties, OverlayBehavior } from "../overlay/overlay-behavior";
@@ -51,14 +51,14 @@ export abstract class MenuBehavior<R> extends OverlayBehavior<R, IMenuBehaviorCo
 	@property({type: String}) originX = OriginX.START;
 	@property({type: String}) originY = OriginY.TOP;
 
-	@query("#container") $focusTrap: FocusTrap;
-	@query("#container") $container: HTMLElement;
-	@query("#bounding-box") $boundingBox: HTMLElement;
-	@query("#content") $content: HTMLElement;
-	@query("#backdrop") $backdrop: BackdropElement;
-
 	private trigger: Element | null = null;
 	private triggerOrigin: IBoundingBoxOrigin | null = null;
+
+	protected abstract $focusTrap: FocusTrap;
+	protected abstract $container: HTMLElement;
+	protected abstract $boundingBox: HTMLElement;
+	protected abstract $content: HTMLElement;
+	protected abstract $backdrop: BackdropElement;
 
 	/**
 	 * The current position strategy of the menu.
@@ -137,6 +137,9 @@ export abstract class MenuBehavior<R> extends OverlayBehavior<R, IMenuBehaviorCo
 
 		// Add event listeners
 		this.$container.addEventListener("click", this.onClick);
+
+		// Focus the first element
+		this.$focusTrap.focusFirstElement();
 	}
 
 	/**
@@ -310,27 +313,5 @@ export abstract class MenuBehavior<R> extends OverlayBehavior<R, IMenuBehaviorCo
 		}
 	}
 
-	/**
-	 * Renders the content.
-	 */
-	protected renderContent (): TemplateResult {
-		return html`<slot></slot>`;
-	}
-
-	/**
-	 * Returns the template for the component.
-	 */
-	protected render (): TemplateResult {
-		return html`
-			<div id="bounding-box">
-				<focus-trap id="container" ?aria-expanded="${this.open}">
-					<div id="content" inactive="${!this.open}">
-						${this.renderContent()}
-					</div>
-				</focus-trap>
-			</div>
-			<backdrop-element id="backdrop" @click="${() => this.backdropClick()}"></backdrop-element>
-		`;
-	}
 
 }
