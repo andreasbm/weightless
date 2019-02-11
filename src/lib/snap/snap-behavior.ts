@@ -254,27 +254,30 @@ export abstract class SnapBehavior<R> extends OverlayBehavior<R, ISnapBehaviorCo
 	 * Updates the position of the menu.
 	 */
 	protected updatePosition () {
+		super.updatePosition();
+		requestAnimationFrame(() => {
 
-		// If there are no bounding box origin, the position cannot be updated.
-		if (this.triggerOrigin == null) {
-			return;
-		}
+			// If there are no bounding box origin, the position cannot be updated.
+			if (this.triggerOrigin == null) {
+				return;
+			}
 
-		// Recompute the trigger origin if a trigger was specified
-		if (this.trigger != null) {
-			this.triggerOrigin = getBoundingBoxOrigin(this.trigger);
-		}
+			// Recompute the trigger origin if a trigger was specified
+			if (this.trigger != null) {
+				this.triggerOrigin = getBoundingBoxOrigin(this.trigger);
+			}
 
-		console.log(this.trigger, this.triggerOrigin);
+			// Compute the bounding box
+			let boundingBox = computeBoundingBox(this.triggerOrigin, this.positionStrategy);
 
-		// Compute the bounding box
-		let boundingBox = computeBoundingBox(this.triggerOrigin, this.positionStrategy);
-		if (!isBoundingBoxAllowed(boundingBox, MIN_MENU_WIDTH, MIN_MENU_HEIGHT).isAllowed) {
-			const fallbackStrategy = positionStrategyFallback(this.positionStrategy, boundingBox, false, true);
-			boundingBox = computeBoundingBox(this.triggerOrigin, fallbackStrategy);
-		}
+			// If the bounding box is not allowed we compute a new bounding box based on the fallback strategy
+			if (!isBoundingBoxAllowed(boundingBox, MIN_MENU_WIDTH, MIN_MENU_HEIGHT).isAllowed) {
+				const fallbackStrategy = positionStrategyFallback(this.positionStrategy, boundingBox, false, true);
+				boundingBox = computeBoundingBox(this.triggerOrigin, fallbackStrategy);
+			}
 
-		this.setBoundingBox(boundingBox);
+			this.setBoundingBox(boundingBox);
+		});
 	}
 
 	/**
@@ -284,14 +287,16 @@ export abstract class SnapBehavior<R> extends OverlayBehavior<R, ISnapBehaviorCo
 	private setBoundingBox (boundingBox: IBoundingBox) {
 		let {left, right, top, bottom, width, height, alignItems, justifyContent, transformOrigin} = boundingBox;
 
-		this.$menuBoundingBox.style.left = left != null ? `${left}px` : null;
-		this.$menuBoundingBox.style.right = right != null ? `${right}px` : null;
-		this.$menuBoundingBox.style.top = top != null ? `${top}px` : null;
-		this.$menuBoundingBox.style.bottom = bottom != null ? `${bottom}px` : null;
-		this.$menuBoundingBox.style.width = `${width.toString()}px`;
-		this.$menuBoundingBox.style.height = `${height.toString()}px`;
-		this.$menuBoundingBox.style.alignItems = `flex-${alignItems}`;
-		this.$menuBoundingBox.style.justifyContent = `flex-${justifyContent}`;
+		Object.assign(this.$menuBoundingBox.style, {
+			left: left != null ? `${left}px` : null,
+			right: right != null ? `${right}px` : null,
+			top: top != null ? `${top}px` : null,
+			bottom: bottom != null ? `${bottom}px` : null,
+			width: `${width.toString()}px`,
+			height: `${height.toString()}px`,
+			alignItems: `flex-${alignItems}`,
+			justifyContent: `flex-${justifyContent}`
+		});
 
 		this.$menu.style.transformOrigin = `${transformOrigin.x} ${transformOrigin.y} 0px`;
 	}

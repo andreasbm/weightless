@@ -57,6 +57,6 @@ function openMenu (e: MouseEvent, query: string, config?: ISnapBehaviorConfig) {
 	});
 }
 
-document.querySelector("#open-menu-1")!.addEventListener("submit", (e: MouseEvent) => {
+document.querySelector("#open-menu-1")!.addEventListener("click", (e: MouseEvent) => {
 	openMenu(e, "#menu-1", defaultMenuConfig);
 });

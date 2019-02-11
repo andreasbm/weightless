@@ -4,10 +4,6 @@ import { FormItemBehavior, IFormItemBehaviorProperties } from "../form-item/form
 import { ENTER, SPACE } from "../util/constant/keycode";
 import { addListener, stopEvent } from "../util/event";
 
-export enum ButtonBehaviorEvent {
-	SUBMIT = "submit"
-}
-
 export interface IButtonBehaviorProperties extends IFormItemBehaviorProperties {
 	type: "button" | "submit";
 	inverted: boolean;
@@ -58,15 +54,18 @@ export abstract class ButtonBehavior extends FormItemBehavior implements IButton
 	 */
 	protected onClick (e: Event) {
 
+
 		// If disabled we stop the event here
 		if (this.disabled) {
 			stopEvent(e);
 			return;
 		}
 
-		// Simulate the click on the form item to interact with the form if there is one.
-		this.$formItem.click();
-		this.dispatchEvent(new CustomEvent(ButtonBehaviorEvent.SUBMIT));
+		// Re-fire the event on the inner form item to interact with the form if there is one
+		if (e.target == this) {
+			stopEvent(e);
+			this.$formItem.dispatchEvent(new MouseEvent("click"));
+		}
 	}
 
 	/**

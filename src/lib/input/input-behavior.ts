@@ -80,7 +80,6 @@ export abstract class InputBehavior extends FormItemBehavior implements IInputBe
 	 * Returns the form item
 	 */
 	protected renderFormItem (): TemplateResult {
-		console.log("RENDER!!", this.value);
 		return html`
 			<input
 				id="form-item"

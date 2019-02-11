@@ -44,6 +44,15 @@ export interface IPositionStrategy {
 }
 
 /**
+ * The validity of a bounding box.
+ */
+export interface BoundingBoxValidity {
+	isWidthAllowed: boolean,
+	isHeightAllowed: boolean,
+	isAllowed: boolean
+};
+
+/**
  * The possible flex values of the bounding box.
  */
 export declare type BoundingBoxFlex = "start" | "center" | "end";
@@ -124,6 +133,7 @@ export function getBoundingBoxOrigin (elem: Element): IBoundingBoxOrigin {
 export function computeBoundingBox (origin: IBoundingBoxOrigin, strategy: IPositionStrategy): IBoundingBox {
 	const windowWidth = window.innerWidth;
 	const windowHeight = window.innerHeight;
+	let {width: originWidth, height: originHeight, top: originTop, bottom: originBottom, left: originLeft, right: originRight} = origin;
 	let left, right, top, bottom: number | undefined = undefined;
 	let width = 0;
 	let height = 0;
@@ -132,28 +142,28 @@ export function computeBoundingBox (origin: IBoundingBoxOrigin, strategy: IPosit
 
 	switch (strategy.directionY) {
 		case DirectionY.DOWN:
-			top = strategy.originY === OriginY.CENTER ? origin.top + origin.height / 2
-				: (strategy.originY === OriginY.TOP ? origin.top : origin.top + origin.height);
+			top = strategy.originY === OriginY.CENTER ? originTop + originHeight / 2
+				: (strategy.originY === OriginY.TOP ? originTop : originTop + originHeight);
 			height = windowHeight - top;
 			break;
 		case DirectionY.UP:
-			bottom = windowHeight - (strategy.originY === OriginY.CENTER ? origin.bottom - origin.height / 2
-				: (strategy.originY === OriginY.TOP ? origin.bottom - origin.height : origin.bottom));
-			height = strategy.originY === OriginY.TOP ? origin.top : origin.bottom;
+			bottom = windowHeight - (strategy.originY === OriginY.CENTER ? originBottom - originHeight / 2
+				: (strategy.originY === OriginY.TOP ? originBottom - originHeight : originBottom));
+			height = strategy.originY === OriginY.TOP ? originTop : originBottom;
 			alignItems = "end";
 			break;
 	}
 
 	switch (strategy.directionX) {
 		case DirectionX.RIGHT:
-			left = strategy.originX === OriginX.CENTER ? origin.left + origin.width / 2
-				: (strategy.originX === OriginX.START ? origin.left : origin.left + origin.width);
+			left = strategy.originX === OriginX.CENTER ? originLeft + originWidth / 2
+				: (strategy.originX === OriginX.START ? originLeft : originLeft + originWidth);
 			width = windowWidth - left;
 			break;
 		case DirectionX.LEFT:
-			right = windowWidth - (strategy.originX === OriginX.CENTER ? origin.right - origin.width / 2
-				: (strategy.originX === OriginX.START ? (origin.right - origin.width) : origin.right));
-			width = strategy.originX === OriginX.START ? origin.left : origin.right;
+			right = windowWidth - (strategy.originX === OriginX.CENTER ? originRight - originWidth / 2
+				: (strategy.originX === OriginX.START ? (originRight - originWidth) : originRight));
+			width = strategy.originX === OriginX.START ? originLeft : originRight;
 			justifyContent = "end";
 			break;
 	}
@@ -165,14 +175,13 @@ export function computeBoundingBox (origin: IBoundingBoxOrigin, strategy: IPosit
 
 /**
  * Returns whether or not the bounding box is allowed.
- * @param {IBoundingBox} boundingBox
- * @param {number} minWidth
- * @param {number} minHeight
- * @returns {{isWidthAllowed: boolean; isHeightAllowed: boolean; isAllowed: boolean}}
+ * @param boundingBox
+ * @param minWidth
+ * @param minHeight
  */
 export function isBoundingBoxAllowed (boundingBox: IBoundingBox,
                                       minWidth: number,
-                                      minHeight: number): {isWidthAllowed: boolean, isHeightAllowed: boolean, isAllowed: boolean} {
+                                      minHeight: number): BoundingBoxValidity {
 	const isWidthAllowed = boundingBox.width >= minWidth;
 	const isHeightAllowed = boundingBox.height >= minHeight;
 	return {isWidthAllowed, isHeightAllowed, isAllowed: isWidthAllowed && isHeightAllowed};

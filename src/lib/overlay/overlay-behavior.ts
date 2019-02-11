@@ -276,11 +276,9 @@ export abstract class OverlayBehavior<R, C extends Partial<IOverlayBehaviorBaseP
 	 * @param config
 	 */
 	protected prepareShowAnimation (config?: C) {
-		addListener(this.scrollTarget, "scroll", () => console.log("Scroll"), {passive: true});
 
 		// Listen for events on when to update the position of the overlay
 		this.listeners.push(
-			addListener(this, "scroll", this.updatePosition, {passive: true}),
 			addListener(this.scrollTarget, "scroll", this.updatePosition, {passive: true}),
 
 			// Either attach a resize observer or fallback to listening to window resizes
