@@ -5,20 +5,21 @@ import { BackdropElement } from "../backdrop/backdrop-element";
 import { IOverlayBehaviorBaseProperties, IOverlayBehaviorProperties, OverlayBehavior } from "../overlay/overlay-behavior";
 import { sharedStyles } from "../style/shared";
 import { cssResult } from "../util/css";
-import { computeBoundingBox, DirectionX, DirectionY, getBoundingBoxOrigin, IBoundingBox, IBoundingBoxOrigin, IPositionStrategy, isBoundingBoxAllowed, OriginX, OriginY, positionStrategyFallback } from "../util/position";
+import { computeBoundingBox, DirectionX, DirectionY, getBoundingBoxOrigin, getPointBoundingBox, IBoundingBox, IBoundingBoxOrigin, IPositionStrategy, isBoundingBoxAllowed, OriginX, OriginY, positionStrategyFallback } from "../util/position";
 import { getOpacity, getScale } from "../util/style";
 import styles from "./menu-element.scss";
 
 /**
- * Base properties of the snap.
+ * Base properties of the menu.
  */
 export interface IMenuElementBaseProperties extends IPositionStrategy, IOverlayBehaviorBaseProperties {
 	closeOnClick: boolean;
 	role: string;
+	trigger: Element | string | null;
 }
 
 /**
- * Properties of the snap.
+ * Properties of the menu.
  */
 export interface IMenuElementProperties extends IMenuElementBaseProperties, IOverlayBehaviorProperties {
 }
@@ -27,7 +28,6 @@ export interface IMenuElementProperties extends IMenuElementBaseProperties, IOve
  * Configuration for the menu.
  */
 export interface IMenuBehaviorConfig extends Partial<IMenuElementBaseProperties> {
-	trigger?: Element;
 }
 
 /**
@@ -58,8 +58,8 @@ export class MenuElement<R> extends OverlayBehavior<R, IMenuBehaviorConfig> impl
 	@property({type: String}) originX = OriginX.START;
 	@property({type: String}) originY = OriginY.TOP;
 	@property({type: String, reflect: true}) role = "menu";
+	@property({type: Object}) trigger: Element | string | null = null;
 
-	private trigger: Element | null = null;
 	private triggerOrigin: IBoundingBoxOrigin | null = null;
 
 	@query("#container") $focusTrap: FocusTrap;
@@ -93,21 +93,12 @@ export class MenuElement<R> extends OverlayBehavior<R, IMenuBehaviorConfig> impl
 
 	/**
 	 * Shows the menu at a specified screen position.
-	 * @param {number} x
-	 * @param {number} y
-	 * @param {IMenuBehaviorConfig} config
-	 * @returns {Promise<R | null>}
+	 * @param x
+	 * @param y
+	 * @param config
 	 */
 	showAtPosition (x: number, y: number, config?: IMenuBehaviorConfig): Promise<R | null> {
-		this.triggerOrigin = {
-			left: x,
-			top: y,
-			right: x,
-			bottom: y,
-			width: 0,
-			height: 0
-		};
-
+		this.triggerOrigin = getPointBoundingBox({x, y});
 		return this.show(config);
 	}
 
@@ -120,7 +111,7 @@ export class MenuElement<R> extends OverlayBehavior<R, IMenuBehaviorConfig> impl
 
 		// Compute bounding box origin if necessary
 		if (this.trigger != null) {
-			this.triggerOrigin = getBoundingBoxOrigin(this.trigger);
+			this.triggerOrigin = this.getBoundingBoxOrigin();
 		}
 
 		this.$content.style.opacity = `0`;
@@ -275,7 +266,7 @@ export class MenuElement<R> extends OverlayBehavior<R, IMenuBehaviorConfig> impl
 
 			// Recompute the trigger origin if a trigger was specified
 			if (this.trigger != null) {
-				this.triggerOrigin = getBoundingBoxOrigin(this.trigger);
+				this.triggerOrigin = this.getBoundingBoxOrigin();
 			}
 
 			// Compute the bounding box
@@ -289,6 +280,40 @@ export class MenuElement<R> extends OverlayBehavior<R, IMenuBehaviorConfig> impl
 
 			this.setBoundingBox(boundingBox);
 		});
+	}
+
+	/**
+	 * Returns the origin of the bounding box.
+	 */
+	private getBoundingBoxOrigin (): IBoundingBoxOrigin {
+		let trigger = this.trigger;
+
+		// Ensure that a trigger exists.
+		if (this.trigger == null) {
+			throw new Error(`A trigger needs to be defined for the menu.`);
+		}
+
+		// Check if the trigger is an ID.
+		if (typeof trigger === "string" || trigger instanceof String) {
+			trigger = this.queryParentElement(<string>trigger);
+		}
+
+		return getBoundingBoxOrigin(<Element>trigger);
+	}
+
+	/**
+	 * Queries the parent element.
+	 * @param query
+	 */
+	protected queryParentElement (query: string): Element | null {
+		const $parent = this.parentElement || this;
+		const $match = $parent.querySelector(query);
+
+		if ($match == null) {
+			throw new Error(`The query "${query}" did not match any elements.`);
+		}
+
+		return $match;
 	}
 
 	/**

@@ -125,6 +125,22 @@ export function getBoundingBoxOrigin (elem: Element): IBoundingBoxOrigin {
 }
 
 /**
+ * Returns a bounding box for a point.
+ * @param x
+ * @param y
+ */
+export function getPointBoundingBox ({x, y}: {x: number, y: number}): IBoundingBoxOrigin {
+	return {
+		left: x,
+		top: y,
+		right: x,
+		bottom: y,
+		width: 0,
+		height: 0
+	};
+}
+
+/**
  * Computes a bounding box based on a poisition.
  * @param {IBoundingBoxOrigin} origin
  * @param {IPositionStrategy} strategy

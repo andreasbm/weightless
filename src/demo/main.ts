@@ -1,10 +1,8 @@
-import "../lib";
 import { html } from "lit-html";
+import "../lib";
 import { DialogElement } from "../lib/dialog/dialog-element";
 import { openDialog } from "../lib/dialog/open-dialog";
-import { defaultMenuConfig, IMenuBehaviorConfig } from "../lib/menu/menu-element";
-import { MenuElement } from "../lib/menu/menu-element";
-import { ENTER } from "../lib/util/constant/keycode";
+import { defaultMenuConfig, IMenuBehaviorConfig, MenuElement } from "../lib/menu/menu-element";
 import "./main.scss";
 
 document.querySelector("#open-dialog-1")!.addEventListener("click", () => {
@@ -46,7 +44,7 @@ document.querySelector("#open-dialog-2")!.addEventListener("click", async () => 
 function openMenu (e: MouseEvent, query: string, config?: IMenuBehaviorConfig) {
 	const menu = document.querySelector<MenuElement<any>>(query)!;
 	console.log(e, e.srcElement);
-	menu.show({...config, trigger: <HTMLElement>e.srcElement}).then(e => {
+	menu.show({...config, trigger: "#open-menu-1" /*trigger: <HTMLElement>e.srcElement*/}).then(e => {
 		console.log("Result:", e);
 	});
 }

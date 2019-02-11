@@ -9,3 +9,4 @@ export * from "./divider";
 export * from "./input";
 export * from "./textarea";
 export * from "./card";
+export * from "./menu";
