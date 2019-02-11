@@ -2,17 +2,20 @@ import { customElement, html, svg } from "lit-element";
 import { TemplateResult } from "lit-html";
 import { sharedStyles } from "../../style/shared";
 import { cssResult } from "../../util/css";
-import { ProgressBehavior, ProgressMode } from "../progress-behavior";
+import { IProgressBehaviorProperties, ProgressBehavior, ProgressMode } from "../progress-behavior";
 
 import styles from "./progress-spinner-element.scss";
+
+export interface IProgressSpinnerElementProperties extends IProgressBehaviorProperties {
+
+}
 
 const DASH_ARRAY = 285;
 
 @customElement("progress-spinner-element")
-export class ProgressSpinnerElement extends ProgressBehavior {
+export class ProgressSpinnerElement extends ProgressBehavior implements IProgressSpinnerElementProperties {
 
 	static styles = [cssResult(styles), sharedStyles];
-	protected role = "progressbar"; // TODO: Does a "progressspinner" role exist?
 
 	/**
 	 * Returns the template for the component.

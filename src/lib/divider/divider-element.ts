@@ -1,13 +1,16 @@
-import { customElement, html } from "lit-element";
+import { customElement, html, LitElement } from "lit-element";
 import { TemplateResult } from "lit-html";
 import { sharedStyles } from "../style/shared";
 import { cssResult } from "../util/css";
-import { DividerBehavior } from "./divider-behavior";
 
 import styles from "./divider-element.scss";
 
+export interface IDividerElementProperties {
+
+}
+
 @customElement("divider-element")
-export class DividerElement extends DividerBehavior {
+export class DividerElement extends LitElement implements IDividerElementProperties {
 	static styles = [cssResult(styles), sharedStyles];
 
 	protected render (): TemplateResult {

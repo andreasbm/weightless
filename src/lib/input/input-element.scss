@@ -9,7 +9,7 @@ $textfield-transition: var(--textfield-transition, border-color #{$transition-du
 
 $textfield-bg: var(--textfield-bg, #{$background});
 
-$textfield-ruler-height: var(--textfield-line-height, #{size(2)});
+$textfield-ruler-height: var(--textfield-line-height, #{size(1)});
 $textfield-ruler-transition: var(--textfield-line-transition, transform #{$transition-duration-fast} #{$transition-deceleration-curve});
 $textfield-font-size: var(--textfield-font-size, #{$font-size-m});
 

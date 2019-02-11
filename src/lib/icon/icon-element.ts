@@ -1,16 +1,22 @@
 import { html } from "@polymer/lit-element";
-import { customElement } from "lit-element";
+import { customElement, LitElement, property } from "lit-element";
 import { TemplateResult } from "lit-html";
 import { sharedStyles } from "../style/shared";
 import { cssResult } from "../util/css";
-import { IconBehavior } from "./icon-behavior";
 
 import styles from "./icon-element.scss";
 
+export interface IIconElementProperties {
+	role: string;
+}
+
 @customElement("icon-element")
-export class IconElement extends IconBehavior {
+export class IconElement extends LitElement implements IIconElementProperties {
+
+	// The role of the dialog
+	@property({type: String, reflect: true}) role = "img";
+
 	static styles = [cssResult(styles), sharedStyles];
-	protected role = "img";
 
 	/**
 	 * Returns the template for the component.

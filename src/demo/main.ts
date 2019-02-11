@@ -2,7 +2,7 @@ import "../lib";
 import { html } from "lit-html";
 import { DialogElement } from "../lib/dialog/dialog-element";
 import { openDialog } from "../lib/dialog/open-dialog";
-import { defaultMenuConfig, IMenuBehaviorConfig } from "../lib/menu/menu-behavior";
+import { defaultMenuConfig, IMenuBehaviorConfig } from "../lib/menu/menu-element";
 import { MenuElement } from "../lib/menu/menu-element";
 import { ENTER } from "../lib/util/constant/keycode";
 import "./main.scss";

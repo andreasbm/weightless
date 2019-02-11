@@ -12,6 +12,7 @@ export interface IButtonElementProperties extends IFormItemBehaviorProperties {
 	inverted: boolean;
 	outlined: boolean;
 	flat: boolean;
+	role: string;
 }
 
 /**
@@ -25,13 +26,13 @@ export class ButtonElement extends FormItemBehavior implements IButtonElementPro
 	@property({type: Boolean, reflect: true}) inverted = false;
 	@property({type: Boolean, reflect: true}) outlined = false;
 	@property({type: Boolean, reflect: true}) flat = false;
+	@property({type: String, reflect: true}) role = "button";
 
 	/**
 	 * Hook up the component.
 	 */
 	connectedCallback () {
 		super.connectedCallback();
-		this.setAttribute("role", "button");
 
 		this.onClick = this.onClick.bind(this);
 		this.onKeyUp = this.onKeyUp.bind(this);

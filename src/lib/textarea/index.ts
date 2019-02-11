@@ -1,2 +1,2 @@
 export * from "./textarea-element";
-export * from "./textarea-behavior";
+export * from "./textarea-element";

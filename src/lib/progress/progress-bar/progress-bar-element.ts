@@ -3,15 +3,18 @@ import { customElement } from "lit-element";
 import { TemplateResult } from "lit-html";
 import { sharedStyles } from "../../style/shared";
 import { cssResult } from "../../util/css";
-import { ProgressBehavior, ProgressMode } from "../progress-behavior";
+import { IProgressBehaviorProperties, ProgressBehavior, ProgressMode } from "../progress-behavior";
 
 import styles from "./progress-bar-element.scss";
 
+export interface IProgressBarElementProperties extends IProgressBehaviorProperties {
+
+}
+
 @customElement("progress-bar-element")
-export class ProgressBarElement extends ProgressBehavior {
+export class ProgressBarElement extends ProgressBehavior implements IProgressBarElementProperties {
 
 	static styles = [cssResult(styles), sharedStyles];
-	protected role = "progressbar";
 
 	/**
 	 * Returns the template for the component.

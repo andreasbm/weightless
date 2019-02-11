@@ -18,6 +18,7 @@ export enum DialogSize {
 export interface IDialogElementBaseProperties extends IOverlayBehaviorBaseProperties {
 	size: DialogSize | null;
 	scrollable: boolean;
+	role: string;
 }
 
 export interface IDialogElementProperties extends IDialogElementBaseProperties, IOverlayBehaviorProperties {

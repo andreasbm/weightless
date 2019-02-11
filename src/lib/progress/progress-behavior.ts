@@ -15,6 +15,7 @@ export interface IProgressBehaviorProperties {
 	buffer: number;
 	bufferMax: number;
 	bufferMin: number;
+	role: string;
 }
 
 /**
@@ -32,6 +33,8 @@ export abstract class ProgressBehavior extends LitElement implements IProgressBe
 	@property({type: Number}) bufferMax = 1;
 	@property({type: Number}) bufferMin = 0;
 
+	@property({type: String, reflect: true}) role = "progressbar";
+
 	get progressPerc (): number {
 		return clamp(this.value / (this.max - this.min), 0, 1);
 	}
@@ -39,8 +42,6 @@ export abstract class ProgressBehavior extends LitElement implements IProgressBe
 	get bufferPerc (): number {
 		return clamp(this.buffer / (this.bufferMax - this.bufferMin), 0, 1);
 	}
-
-	protected abstract role: string;
 
 	/**
 	 * Hooks up the component.
