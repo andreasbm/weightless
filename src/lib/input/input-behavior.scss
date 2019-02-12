@@ -1,0 +1,215 @@
+@import "../style/base";
+
+$input-color-active: var(--input-color-active, #{color("primary")});
+$input-color-invalid: var(--input-color-active, #{color("error")});
+
+$input-border-color: var(--input-border-color, #{color("shade", $light-hue)});
+$input-border-color-hover: var(--input-border-color-hover, #{color("shade", $dark-hue)});
+$input-transition: var(--input-transition, border-color #{$transition-duration-fast} #{$transition-ease}, background #{$transition-duration-fast} #{$transition-ease});
+
+$input-bg: var(--input-bg, #{$background});
+$input-bg-filled: var(--input-bg, #{color("shade", 100)});
+$input-bg-filled-hover: var(--input-bg-filled-hover, #{color("shade", 200)});
+
+$input-before-after-color: var(--input-before-after-color, #{color("shade", $default-hue)});
+
+$input-ruler-height: var(--input-ruler-height, #{size(1)});
+$input-ruler-transition: var(--input-line-transition, transform #{$transition-duration-fast} #{$transition-linear});
+$input-font-size: var(--input-font-size, #{$font-size-m});
+
+$input-padding-left-right: var(--input-padding-left-right, 0);
+$input-padding-top-bottom: var(--input-padding-top-bottom, #{size(8)});
+
+$input-padding-left-right-outlined: var(--input-padding-left-right-outlined, #{$spacing-m});
+$input-border-radius-filled: var(--input-border-radius-outlined, #{$border-radius-m} #{$border-radius-m} 0 0);
+$input-border-radius-outlined: var(--input-border-radius-outlined, #{$border-radius-m});
+
+$input-font-family: var(--input-font-family, #{$font-family-serif});
+
+$input-placeholder-color: var(--input-placeholder-color, #{color("shade", $dark-hue)});
+$input-placeholder-font-size: var(--input-placeholder-font-size, #{$font-size-s});
+$input-placeholder-transition: var(--input-placeholder-transition, transform #{$transition-duration-fast} #{$transition-linear}, font-size #{$transition-duration-fast} #{$transition-linear});
+$input-placeholder-space: var(--input-placeholder-space, #{size(14)});
+
+:host {
+	--_input-border-color: #{$input-border-color};
+	--_input-state-color: #{$input-color-active};
+	--_input-padding-left-right: #{$input-padding-left-right};
+	--_input-bg: #{$input-bg};
+	--_input-border-radius: 0;
+
+	transform: translateZ(0);
+	display: block;
+	outline: none;
+}
+
+:host([disabled]) {
+	pointer-events: none;
+}
+
+#container {
+	background: var(--_input-bg);
+	border-radius: var(--_input-border-radius);
+	font-size: #{$input-font-size};
+	font-family: #{$input-font-family};
+	border-bottom: #{$input-ruler-height} solid var(--_input-border-color);
+	transition: #{$input-transition};
+	position: relative;
+	display: flex;
+	align-items: center;
+}
+
+#wrapper {
+	position: relative;
+	flex-grow: 1;
+}
+
+#ruler {
+	background: var(--_input-state-color);
+
+	height: #{$input-ruler-height};
+	transition: #{$input-ruler-transition};
+	top: 100%;
+	width: 100%;
+	transform: scaleX(0);
+	position: absolute;
+}
+
+#placeholder {
+	left: var(--_input-padding-left-right);
+	color: #{$input-placeholder-color};
+	transition: #{$input-placeholder-transition};
+	font-family: #{$input-font-family};
+
+	// The placeholder should be slightly below the center when not filled or boxed
+	transform: translateY(calc(#{$input-padding-top-bottom} + #{$input-placeholder-space}));
+
+	z-index: 1;
+	position: absolute;
+	pointer-events: none;
+	font-size: inherit;
+	line-height: 1;
+	white-space: nowrap;
+}
+
+
+:host([filled]), :host([outlined]) {
+	--_input-padding-left-right: #{$input-padding-left-right-outlined};
+
+	// Make sure the placeholder is in the center when we have a background
+	#placeholder {
+		transform: translateY(calc(#{$input-padding-top-bottom} + (#{$input-placeholder-space} / 2)));
+	}
+}
+
+:host([filled]) {
+	--_input-border-radius: #{$input-border-radius-filled};
+	--_input-bg: #{$input-bg-filled};
+}
+
+:host([filled]:hover) {
+	--_input-bg: #{$input-bg-filled-hover};
+}
+
+:host([outlined]) {
+	--_input-border-radius: #{$input-border-radius-outlined};
+
+	#container {
+		border: #{$input-ruler-height} solid var(--_input-border-color);
+	}
+
+	#ruler {
+		display: none;
+	}
+}
+
+:host(:focus-within) {
+	#ruler {
+		transform: scaleX(1);
+	}
+}
+
+:host(:hover) {
+	--_input-border-color: #{$input-border-color-hover};
+}
+
+:host([dirty]), :host(:focus-within), :host([type="color"]), :host([type="date"]), :host([type="file"]) {
+	--_input-state-color: #{$input-color-active};
+
+	#placeholder {
+		font-size: #{$input-placeholder-font-size};
+		transform: translateY(#{$input-padding-top-bottom});
+	}
+}
+
+::slotted(input), ::slotted(textarea), ::slotted(select) {
+	caret-color: var(--_input-color-state);
+	padding: #{$input-padding-top-bottom} var(--_input-padding-left-right);
+	font-family: #{$input-font-family};
+	font-size: #{$input-font-size};
+	@include reset();
+
+	-webkit-overflow-scrolling: touch;
+	position: relative;
+	appearance: none;
+	border: none;
+	outline: none;
+	margin: 0;
+	background: transparent;
+	width: 100%;
+
+	// Remove ugly autofill
+	&:-webkit-autofill {
+		-webkit-outlined-shadow: inset 0 0 0px 9999px white;
+	}
+}
+
+:host([placeholder]) {
+	::slotted(input), ::slotted(textarea), ::slotted(select) {
+		padding-top: calc(#{$input-padding-top-bottom} + #{$input-placeholder-space});
+	}
+}
+
+:host([invalid]) {
+	--_input-state-color: #{$input-color-invalid};
+	--_input-border-color: var(--_input-state-color);
+}
+
+::slotted(input[type="color"]) {
+	height: #{size(60)};
+	cursor: pointer;
+
+	&::-webkit-color-swatch-wrapper {
+		padding: 0;
+	}
+
+	&::-webkit-color-swatch {
+		border: none;
+	}
+}
+
+::slotted([slot="before"]), ::slotted([slot="after"]) {
+	color: #{$input-before-after-color};
+}
+
+// When there are no padding on the input we add margin on the slots
+:host(:not([outlined]):not([filled])) {
+	::slotted([slot="before"]) {
+		margin-right: #{$input-padding-left-right-outlined};
+	}
+
+	::slotted([slot="after"]) {
+		margin-left: #{$input-padding-left-right-outlined};
+	}
+}
+
+:host([outlined]), :host([filled]) {
+	::slotted([slot="before"]) {
+		margin-left: #{$input-padding-left-right-outlined};
+	}
+
+	::slotted([slot="after"]) {
+		margin-right: #{$input-padding-left-right-outlined};
+	}
+}
+

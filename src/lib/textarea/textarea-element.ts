@@ -1,18 +1,19 @@
 import { customElement, html, property, TemplateResult } from "lit-element";
 import { ifDefined } from "lit-html/directives/if-defined";
-import { IInputElementProperties, InputElement } from "../input/input-element";
+import { IFormItemBehaviorProperties } from "../form-item/form-item-behavior";
+import { ITextfieldElementProperties, TextfieldElement } from "../textfield/textfield-element";
 import { cssResult } from "../util/css";
 import styles from "./textarea-element.scss";
 
-export interface ITextareaBehaviorProperties extends IInputElementProperties {
+export interface ITextareaBehaviorProperties extends ITextfieldElementProperties {
 	rows?: number;
 	cols?: number;
 }
 
 @customElement("textarea-element")
-export class TextareaElement extends InputElement implements ITextareaBehaviorProperties {
+export class TextareaElement extends TextfieldElement implements ITextareaBehaviorProperties {
 
-	static styles = [...InputElement.styles, cssResult(styles)];
+	static styles = [...TextfieldElement.styles, cssResult(styles)];
 
 	@property({type: Number, reflect: true}) rows?: number;
 	@property({type: Number, reflect: true}) cols?: number;
@@ -27,7 +28,7 @@ export class TextareaElement extends InputElement implements ITextareaBehaviorPr
 	 * @param props
 	 */
 	firstUpdated (props: Map<keyof ITextareaBehaviorProperties, unknown>) {
-		super.firstUpdated(<Map<keyof IInputElementProperties, unknown>>props);
+		super.firstUpdated(<Map<keyof IFormItemBehaviorProperties, unknown>>props);
 		this.refreshHeight();
 	}
 

@@ -39,7 +39,7 @@
 		<button-element flat inverted outlined disabled>Button</button-element>
 
 		<form>
-			<input-element placeholder="Required" required minlength="10" autocomplete="off"></input-element>
+			<textfield-element placeholder="Required" required minlength="10" autocomplete="off"></textfield-element>
 			<button-element>Button</button-element>
 		</form>
 
@@ -67,7 +67,7 @@
 		<dialog-element id="dialog-1" fixed backdrop blockScrolling>
 			<h3 slot="header">Hello my friend</h3>
 			<div slot="content">
-				<input-element id="dialog-1-input" placeholder="Enter your name"></input-element>
+				<textfield-element id="dialog-1-input" placeholder="Enter your name"></textfield-element>
 			</div>
 			<div slot="footer">
 				<button-element id="dialog-1-submit-button">Submit</button-element>
@@ -100,28 +100,45 @@
 			<p>Hello world!</p>
 		</menu-element>
 
-		<h3>input-element</h3>
-		<input-element></input-element>
-		<input-element placeholder="Hello World"></input-element>
+		<h3>textfield-element</h3>
+		<textfield-element></textfield-element>
+		<textfield-element placeholder="Hello World"></textfield-element>
 
-		<input-element box></input-element>
-		<input-element box placeholder="Hello World"></input-element>
+		<textfield-element outlined></textfield-element>
+		<textfield-element outlined placeholder="Hello World"></textfield-element>
 
-		<input-element placeholder="Password" type="password"></input-element>
-		<input-element placeholder="Email" type="email"></input-element>
-		<input-element placeholder="Number" type="number"></input-element>
-		<input-element placeholder="Color" type="color"></input-element>
-		<input-element placeholder="Date" type="date"></input-element>
-		<input-element placeholder="Search" type="search"></input-element>
-		<input-element placeholder="Tel" type="tel"></input-element>
-		<input-element placeholder="File" type="file"></input-element>
+		<textfield-element filled></textfield-element>
+		<textfield-element filled placeholder="Hello World"></textfield-element>
+		<textfield-element filled outlined placeholder="Hello World"></textfield-element>
+
+		<textfield-element placeholder="Hello World">
+			<icon-element slot="before">email</icon-element>
+			<icon-element slot="after">alternate_email</icon-element>
+		</textfield-element>
+
+		<textfield-element placeholder="Hello World" outlined>
+			<icon-element slot="before">email</icon-element>
+			<icon-element slot="after">alternate_email</icon-element>
+		</textfield-element>
+
+		<textfield-element placeholder="Password" type="password"></textfield-element>
+		<textfield-element placeholder="Email" type="email"></textfield-element>
+		<textfield-element placeholder="Number" type="number"></textfield-element>
+		<textfield-element placeholder="Color" type="color"></textfield-element>
+		<textfield-element placeholder="Date" type="date"></textfield-element>
+		<textfield-element placeholder="Search" type="search"></textfield-element>
+		<textfield-element placeholder="Tel" type="tel"></textfield-element>
+		<textfield-element placeholder="File" type="file"></textfield-element>
 
 		<h3>textarea-element</h3>
 		<textarea-element></textarea-element>
 		<textarea-element placeholder="Hello World"></textarea-element>
 
-		<textarea-element box></textarea-element>
-		<textarea-element box placeholder="Hello World"></textarea-element>
+		<textarea-element outlined></textarea-element>
+		<textarea-element outlined placeholder="Hello World"></textarea-element>
+
+		<textarea-element filled></textarea-element>
+		<textarea-element filled placeholder="Hello World"></textarea-element>
 
 		<h3>card-element</h3>
 		<card-element hoverable>
@@ -132,7 +149,7 @@
 		<input type="checkbox" id="cb" />
 		<label-element for="cb">This is a label</label-element>
 
-		<label-element nowrap style="width: 280px;">
+		<label-element nowrap style="width: 260px;">
 			<input type="checkbox" />
 			This is another label with nowrap
 		</label-element>

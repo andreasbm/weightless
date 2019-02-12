@@ -13,15 +13,15 @@ export type FormItem =
 export interface IFormItemBehaviorProperties {
 	disabled: boolean;
 	value: string;
-	readonly?: boolean;
-	required?: boolean;
+	readonly: boolean;
+	required: boolean;
 	name?: string;
 }
 
 export abstract class FormItemBehavior extends LitElement implements IFormItemBehaviorProperties {
 	@property({type: Boolean, reflect: true}) disabled: boolean = false;
-	@property({type: Boolean, reflect: true}) readonly?: boolean = false;
-	@property({type: Boolean, reflect: true}) required?: boolean = false;
+	@property({type: Boolean, reflect: true}) readonly: boolean = false;
+	@property({type: Boolean, reflect: true}) required: boolean = false;
 	@property({type: String}) name?: string;
 
 	@property({type: String}) set value (value: string) {
