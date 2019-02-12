@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
 	<base href="/">
 	<!--<base href="/focus-trap/">-->
-	<title>@appnest/elements</title>
+	<title>elements</title>
 
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
 
@@ -96,15 +96,9 @@
 
 		<h3>menu-element</h3>
 		<button-element id="open-menu-1">Open menu 1</button-element>
-		<menu-element id="menu-1">
+		<menu-element id="menu-1" target="#open-menu-1">
 			<p>Hello world!</p>
 		</menu-element>
-
-		<menu-trigger-element target="#open-menu-1">
-			<menu-element>
-				<p>Hello world!</p>
-			</menu-element>
-		</menu-trigger-element>
 
 		<h3>input-element</h3>
 		<input-element></input-element>
@@ -112,6 +106,15 @@
 
 		<input-element box></input-element>
 		<input-element box placeholder="Hello World"></input-element>
+
+		<input-element placeholder="Password" type="password"></input-element>
+		<input-element placeholder="Email" type="email"></input-element>
+		<input-element placeholder="Number" type="number"></input-element>
+		<input-element placeholder="Color" type="color"></input-element>
+		<input-element placeholder="Date" type="date"></input-element>
+		<input-element placeholder="Search" type="search"></input-element>
+		<input-element placeholder="Tel" type="tel"></input-element>
+		<input-element placeholder="File" type="file"></input-element>
 
 		<h3>textarea-element</h3>
 		<textarea-element></textarea-element>
@@ -124,6 +127,15 @@
 		<card-element hoverable>
 			<p>Hello World</p>
 		</card-element>
+
+		<h3>label-element</h3>
+		<input type="checkbox" id="cb" />
+		<label-element for="cb">This is a label</label-element>
+
+		<label-element nowrap style="width: 280px;">
+			<input type="checkbox" />
+			This is another label with nowrap
+		</label-element>
 
 	</section>
 

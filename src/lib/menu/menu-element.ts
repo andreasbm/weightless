@@ -5,6 +5,7 @@ import { BackdropElement } from "../backdrop/backdrop-element";
 import { IOverlayBehaviorBaseProperties, IOverlayBehaviorProperties, OverlayBehavior } from "../overlay/overlay-behavior";
 import { sharedStyles } from "../style/shared";
 import { cssResult } from "../util/css";
+import { queryParentElement } from "../util/html";
 import { computeBoundingBox, DirectionX, DirectionY, getBoundingBoxOrigin, getPointBoundingBox, IBoundingBox, IBoundingBoxOrigin, IPositionStrategy, isBoundingBoxAllowed, OriginX, OriginY, positionStrategyFallback } from "../util/position";
 import { getOpacity, getScale } from "../util/style";
 import styles from "./menu-element.scss";
@@ -15,7 +16,7 @@ import styles from "./menu-element.scss";
 export interface IMenuElementBaseProperties extends IPositionStrategy, IOverlayBehaviorBaseProperties {
 	closeOnClick: boolean;
 	role: string;
-	trigger: Element | string | null;
+	target: Element | string | null;
 }
 
 /**
@@ -58,9 +59,9 @@ export class MenuElement<R> extends OverlayBehavior<R, IMenuBehaviorConfig> impl
 	@property({type: String}) originX = OriginX.START;
 	@property({type: String}) originY = OriginY.TOP;
 	@property({type: String, reflect: true}) role = "menu";
-	@property({type: Object}) trigger: Element | string | null = null;
+	@property({type: String}) target: Element | string | null = null;
 
-	private triggerOrigin: IBoundingBoxOrigin | null = null;
+	private targetOrigin: IBoundingBoxOrigin | null = null;
 
 	@query("#container") $focusTrap: FocusTrap;
 	@query("#container") $container: HTMLElement;
@@ -98,7 +99,7 @@ export class MenuElement<R> extends OverlayBehavior<R, IMenuBehaviorConfig> impl
 	 * @param config
 	 */
 	showAtPosition (x: number, y: number, config?: IMenuBehaviorConfig): Promise<R | null> {
-		this.triggerOrigin = getPointBoundingBox({x, y});
+		this.targetOrigin = getPointBoundingBox({x, y});
 		return this.show(config);
 	}
 
@@ -110,8 +111,8 @@ export class MenuElement<R> extends OverlayBehavior<R, IMenuBehaviorConfig> impl
 		super.prepareShowAnimation(config);
 
 		// Compute bounding box origin if necessary
-		if (this.trigger != null) {
-			this.triggerOrigin = this.getBoundingBoxOrigin();
+		if (this.target != null) {
+			this.targetOrigin = this.getBoundingBoxOrigin();
 		}
 
 		this.$content.style.opacity = `0`;
@@ -146,8 +147,8 @@ export class MenuElement<R> extends OverlayBehavior<R, IMenuBehaviorConfig> impl
 	 */
 	protected didHide (result?: R) {
 		super.didHide(result);
-		this.trigger = null;
-		this.triggerOrigin = null;
+		this.target = null;
+		this.targetOrigin = null;
 	}
 
 	/**
@@ -260,22 +261,22 @@ export class MenuElement<R> extends OverlayBehavior<R, IMenuBehaviorConfig> impl
 		requestAnimationFrame(() => {
 
 			// If there are no bounding box origin, the position cannot be updated.
-			if (this.triggerOrigin == null) {
+			if (this.targetOrigin == null) {
 				return;
 			}
 
-			// Recompute the trigger origin if a trigger was specified
-			if (this.trigger != null) {
-				this.triggerOrigin = this.getBoundingBoxOrigin();
+			// Recompute the target origin if a target was specified
+			if (this.target != null) {
+				this.targetOrigin = this.getBoundingBoxOrigin();
 			}
 
 			// Compute the bounding box
-			let boundingBox = computeBoundingBox(this.triggerOrigin, this.positionStrategy);
+			let boundingBox = computeBoundingBox(this.targetOrigin, this.positionStrategy);
 
 			// If the bounding box is not allowed we compute a new bounding box based on the fallback strategy
 			if (!isBoundingBoxAllowed(boundingBox, MIN_MENU_WIDTH, MIN_MENU_HEIGHT).isAllowed) {
 				const fallbackStrategy = positionStrategyFallback(this.positionStrategy, boundingBox, false, true);
-				boundingBox = computeBoundingBox(this.triggerOrigin, fallbackStrategy);
+				boundingBox = computeBoundingBox(this.targetOrigin, fallbackStrategy);
 			}
 
 			this.setBoundingBox(boundingBox);
@@ -286,34 +287,19 @@ export class MenuElement<R> extends OverlayBehavior<R, IMenuBehaviorConfig> impl
 	 * Returns the origin of the bounding box.
 	 */
 	private getBoundingBoxOrigin (): IBoundingBoxOrigin {
-		let trigger = this.trigger;
+		let target = this.target;
 
-		// Ensure that a trigger exists.
-		if (this.trigger == null) {
-			throw new Error(`A trigger needs to be defined for the menu.`);
+		// Ensure that a target exists.
+		if (target == null) {
+			throw new Error(`A target needs to be defined for the menu.`);
 		}
 
-		// Check if the trigger is an ID.
-		if (typeof trigger === "string" || trigger instanceof String) {
-			trigger = this.queryParentElement(<string>trigger);
+		// Check if the target is an ID.
+		if (typeof target === "string" || target instanceof String) {
+			target = queryParentElement(this, <string>target);
 		}
 
-		return getBoundingBoxOrigin(<Element>trigger);
-	}
-
-	/**
-	 * Queries the parent element.
-	 * @param query
-	 */
-	protected queryParentElement (query: string): Element | null {
-		const $parent = this.parentElement || this;
-		const $match = $parent.querySelector(query);
-
-		if ($match == null) {
-			throw new Error(`The query "${query}" did not match any elements.`);
-		}
-
-		return $match;
+		return getBoundingBoxOrigin(<Element>target);
 	}
 
 	/**

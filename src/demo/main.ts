@@ -43,8 +43,7 @@ document.querySelector("#open-dialog-2")!.addEventListener("click", async () => 
 
 function openMenu (e: MouseEvent, query: string, config?: IMenuBehaviorConfig) {
 	const menu = document.querySelector<MenuElement<any>>(query)!;
-	console.log(e, e.srcElement);
-	menu.show({...config, trigger: "#open-menu-1" /*trigger: <HTMLElement>e.srcElement*/}).then(e => {
+	menu.show({...config, /*target: <HTMLElement>e.srcElement*/}).then(e => {
 		console.log("Result:", e);
 	});
 }

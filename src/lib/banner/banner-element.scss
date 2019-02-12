@@ -39,7 +39,3 @@ $banner-content-padding: var(--banner-content-padding, #{$spacing-s});
 	bottom: 0;
 	width: 100%;
 }
-
-::slotted(button-element[slot="action"][inverted][flat]:last-child) {
-	padding-right: 0;
-}

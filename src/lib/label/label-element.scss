@@ -1,0 +1,14 @@
+@import "../style/base";
+
+
+:host {
+	cursor: default;
+}
+
+:host([nowrap]) {
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	display: inline-block;
+	max-width: 100%;
+}

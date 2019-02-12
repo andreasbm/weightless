@@ -12,6 +12,7 @@ $button-shadow-color-hover: var(--button-shadow-color-hover, #{color("primary", 
 
 $button-color-active: var(--button-color-active, #{color-contrast("primary", $dark-hue)});
 $button-bg-active: var(--button-bg-active, #{color("primary", $dark-hue)});
+$button-bg-active-flat: var(--button-bg, #{color("primary", $default-hue, 0.03)});
 
 $button-color-disabled:  var(--button-color-disabled, #{color-contrast("shade", $light-hue)});
 $button-bg-disabled: var(--button-bg-disabled, #{color("shade", $light-hue)});
@@ -41,8 +42,6 @@ $button-font-family: #{$font-family-sans-serif};
 	font-family: #{$button-font-family};
 	transition: #{$button-transition};
 	letter-spacing: #{$button-letter-spacing};
-
-	@include reset();
 
 	line-height: 1;
 	text-transform: uppercase;
@@ -85,6 +84,10 @@ $button-font-family: #{$font-family-sans-serif};
 :host([flat]) {
 	box-shadow: none;
 	background: none;
+}
+
+:host([flat]:focus-within) {
+	background: #{$button-bg-active-flat};
 }
 
 :host([disabled]) {

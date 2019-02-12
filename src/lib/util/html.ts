@@ -16,3 +16,25 @@ export function renderAttributes (element: HTMLElement, attrMap: {[key: string]:
 		}
 	}
 }
+
+/**
+ * Queries the parent element.
+ * @param $elem
+ * @param query
+ */
+export function queryParentElement ($elem: Element, query: string): Element | null {
+
+	// Grab the parent element.
+	const $parent = $elem.parentElement;
+	if ($parent == null) {
+		return null;
+	}
+
+	// Find a match
+	const $match = $parent.querySelector(query);
+	if ($match == null) {
+		throw new Error(`The query "${query}" did not match any elements.`);
+	}
+
+	return $match;
+}

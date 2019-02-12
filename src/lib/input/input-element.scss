@@ -10,7 +10,7 @@ $input-transition: var(--input-transition, border-color #{$transition-duration-f
 $input-bg: var(--input-bg, #{$background});
 
 $input-ruler-height: var(--input-line-height, #{size(1)});
-$input-ruler-transition: var(--input-line-transition, transform #{$transition-duration-fast} #{$transition-deceleration-curve});
+$input-ruler-transition: var(--input-line-transition, transform #{$transition-duration-fast} #{$transition-linear});
 $input-font-size: var(--input-font-size, #{$font-size-m});
 
 $input-padding-left-right: var(--input-padding-left-right, 0);
@@ -87,7 +87,7 @@ $input-placeholder-space: var(--input-placeholder-space, #{size(16)});
 	}
 }
 
-:host([dirty]), :host(:focus-within) {
+:host([dirty]), :host(:focus-within), :host([type="color"]), :host([type="date"]), :host([type="file"]) {
 	#placeholder {
 		font-size: #{$input-placeholder-font-size};
 		transform: translateY(#{$input-padding-top-bottom});
@@ -107,8 +107,7 @@ $input-placeholder-space: var(--input-placeholder-space, #{size(16)});
 	}
 }
 
-::slotted(#form-item) {
-	@include reset();
+::slotted(input), ::slotted(textarea) {
 	caret-color: var(--_input-color-sbtate);
 	padding: #{$input-padding-top-bottom} var(--_input-padding-left-right);
 
@@ -129,7 +128,7 @@ $input-placeholder-space: var(--input-placeholder-space, #{size(16)});
 }
 
 :host([placeholder]) {
-	::slotted(#form-item) {
+	::slotted(input), ::slotted(textarea) {
 		padding-top: calc(#{$input-padding-top-bottom} + #{$input-placeholder-space});
 	}
 }
@@ -137,4 +136,17 @@ $input-placeholder-space: var(--input-placeholder-space, #{size(16)});
 :host([invalid]) {
 	--_input-state-color: #{$input-color-invalid};
 	--_input-border-color: var(--_input-state-color);
+}
+
+::slotted(input[type="color"]) {
+	height: #{size(60)};
+	cursor: pointer;
+
+	&::-webkit-color-swatch-wrapper {
+		padding: 0;
+	}
+
+	&::-webkit-color-swatch {
+		border: none;
+	}
 }
