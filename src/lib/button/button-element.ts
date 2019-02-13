@@ -50,6 +50,7 @@ export class ButtonElement extends FormItemBehavior implements IButtonElementPro
 	protected onKeyUp (e: KeyboardEvent) {
 		if (e.code === ENTER || e.code === SPACE) {
 			this.click();
+			stopEvent(e);
 		}
 	}
 

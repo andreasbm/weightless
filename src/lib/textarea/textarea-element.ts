@@ -45,6 +45,12 @@ export class TextareaElement extends TextfieldElement implements ITextareaBehavi
 	 * Refreshes the height of the textarea.
 	 */
 	refreshHeight () {
+
+		// Only refresh the height of the rows and cols are not defined
+		if (this.rows != null || this.cols != null) {
+			return;
+		}
+
 		requestAnimationFrame(() => {
 			// Reset height
 			this.setHeight(1);
@@ -75,7 +81,6 @@ export class TextareaElement extends TextfieldElement implements ITextareaBehavi
 				?required="${this.required}"
 				?disabled="${this.disabled}"
 				?readonly="${this.readonly}"
-				type="${ifDefined(this.type)}"
 				name="${ifDefined(this.name)}"
 				pattern="${ifDefined(this.pattern)}"
 				autocomplete="${ifDefined(this.autocomplete)}"

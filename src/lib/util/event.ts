@@ -10,7 +10,11 @@ export type EventListenerSubscription = (() => void);
  * @param options
  * @param debounceMs
  */
-export function addListener ($elem: EventTarget, type: string[] | string, listener: ((e?: Event) => void), options?: boolean | AddEventListenerOptions, debounceMs?: number): (() => void) {
+export function addListener ($elem: EventTarget,
+                             type: string[] | string,
+                             listener: ((e?: Event) => void),
+                             options?: boolean | AddEventListenerOptions,
+                             debounceMs?: number): EventListenerSubscription {
 	const types = Array.isArray(type) ? type : [type];
 
 	// Create a callback that can debounce the listener
@@ -21,7 +25,7 @@ export function addListener ($elem: EventTarget, type: string[] | string, listen
 	types.forEach(t => $elem.addEventListener(t, cb, options));
 
 	// Returns an unsubscribe function
-	return () => types.forEach(t => $elem.addEventListener(t, cb, options));
+	return () => types.forEach(t => $elem.removeEventListener(t, cb, options));
 }
 
 

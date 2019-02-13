@@ -66,6 +66,13 @@ export class LabelElement extends LitElement implements ILabelElementProperties 
 	}
 
 	/**
+	 * Creates a root that delegates the focus.
+	 */
+	protected createRenderRoot () {
+		return this.attachShadow({mode: "open", delegatesFocus: true});
+	}
+
+	/**
 	 * Returns an array of the slot elements.
 	 */
 	protected getSlotElements (): Element[] {

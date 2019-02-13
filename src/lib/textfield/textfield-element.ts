@@ -9,12 +9,14 @@ export interface ITextfieldElementProperties extends IInputBehaviorProperties {
 	pattern?: string;
 	maxLength?: number;
 	minLength?: number;
+	type: string;
 }
 
 @customElement("textfield-element")
 export class TextfieldElement extends InputBehavior implements ITextfieldElementProperties {
 	static styles = [...InputBehavior.styles, cssResult(styles)];
 
+	@property({type: String, reflect: true}) type: string = "text";
 	@property({type: String, reflect: true}) pattern?: string;
 	@property({type: Number, reflect: true}) maxLength?: number;
 	@property({type: Number, reflect: true}) minLength?: number;

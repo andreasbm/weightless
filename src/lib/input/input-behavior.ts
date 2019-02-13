@@ -15,7 +15,6 @@ export interface IInputBehaviorProperties extends IFormItemBehaviorProperties{
 	outlined: boolean;
 	role: string;
 	filled: boolean;
-	type: string;
 	placeholder?: string;
 }
 
@@ -25,7 +24,6 @@ export abstract class InputBehavior extends FormItemBehavior implements IInputBe
 	@property({type: String, reflect: true}) autocomplete: "on" | "off";
 	@property({type: Boolean, reflect: true}) outlined: boolean = false;
 	@property({type: Boolean, reflect: true}) filled: boolean = false;
-	@property({type: String, reflect: true}) type: string = "text";
 	@property({type: String, reflect: true}) role = "textbox";
 	@property({type: String, reflect: true}) placeholder?: string;
 

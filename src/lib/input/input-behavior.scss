@@ -1,35 +1,5 @@
 @import "../style/base";
-
-$input-color-active: var(--input-color-active, #{color("primary")});
-$input-color-invalid: var(--input-color-active, #{color("error")});
-
-$input-border-color: var(--input-border-color, #{color("shade", $light-hue)});
-$input-border-color-hover: var(--input-border-color-hover, #{color("shade", $dark-hue)});
-$input-transition: var(--input-transition, border-color #{$transition-duration-fast} #{$transition-ease}, background #{$transition-duration-fast} #{$transition-ease});
-
-$input-bg: var(--input-bg, #{$background});
-$input-bg-filled: var(--input-bg, #{color("shade", 100)});
-$input-bg-filled-hover: var(--input-bg-filled-hover, #{color("shade", 200)});
-
-$input-before-after-color: var(--input-before-after-color, #{color("shade", $default-hue)});
-
-$input-ruler-height: var(--input-ruler-height, #{size(1)});
-$input-ruler-transition: var(--input-line-transition, transform #{$transition-duration-fast} #{$transition-linear});
-$input-font-size: var(--input-font-size, #{$font-size-m});
-
-$input-padding-left-right: var(--input-padding-left-right, 0);
-$input-padding-top-bottom: var(--input-padding-top-bottom, #{size(8)});
-
-$input-padding-left-right-outlined: var(--input-padding-left-right-outlined, #{$spacing-m});
-$input-border-radius-filled: var(--input-border-radius-outlined, #{$border-radius-m} #{$border-radius-m} 0 0);
-$input-border-radius-outlined: var(--input-border-radius-outlined, #{$border-radius-m});
-
-$input-font-family: var(--input-font-family, #{$font-family-serif});
-
-$input-placeholder-color: var(--input-placeholder-color, #{color("shade", $dark-hue)});
-$input-placeholder-font-size: var(--input-placeholder-font-size, #{$font-size-s});
-$input-placeholder-transition: var(--input-placeholder-transition, transform #{$transition-duration-fast} #{$transition-linear}, font-size #{$transition-duration-fast} #{$transition-linear});
-$input-placeholder-space: var(--input-placeholder-space, #{size(14)});
+@import "./input-vars";
 
 :host {
 	--_input-border-color: #{$input-border-color};
@@ -81,8 +51,8 @@ $input-placeholder-space: var(--input-placeholder-space, #{size(14)});
 	transition: #{$input-placeholder-transition};
 	font-family: #{$input-font-family};
 
-	// The placeholder should be slightly below the center when not filled or boxed
-	transform: translateY(calc(#{$input-padding-top-bottom} + #{$input-placeholder-space}));
+	top: 50%;
+	transform: translateY(-50%);
 
 	z-index: 1;
 	position: absolute;
@@ -95,11 +65,6 @@ $input-placeholder-space: var(--input-placeholder-space, #{size(14)});
 
 :host([filled]), :host([outlined]) {
 	--_input-padding-left-right: #{$input-padding-left-right-outlined};
-
-	// Make sure the placeholder is in the center when we have a background
-	#placeholder {
-		transform: translateY(calc(#{$input-padding-top-bottom} + (#{$input-placeholder-space} / 2)));
-	}
 }
 
 :host([filled]) {
@@ -138,7 +103,8 @@ $input-placeholder-space: var(--input-placeholder-space, #{size(14)});
 
 	#placeholder {
 		font-size: #{$input-placeholder-font-size};
-		transform: translateY(#{$input-padding-top-bottom});
+		top: #{$input-padding-top-bottom};
+		transform: translateY(0);
 	}
 }
 

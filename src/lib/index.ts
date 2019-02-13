@@ -12,3 +12,4 @@ export * from "./card";
 export * from "./menu";
 export * from "./label";
 export * from "./input";
+export * from "./select";

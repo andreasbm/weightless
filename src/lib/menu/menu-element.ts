@@ -147,7 +147,6 @@ export class MenuElement<R> extends OverlayBehavior<R, IMenuBehaviorConfig> impl
 	 */
 	protected didHide (result?: R) {
 		super.didHide(result);
-		this.target = null;
 		this.targetOrigin = null;
 	}
 
@@ -260,14 +259,14 @@ export class MenuElement<R> extends OverlayBehavior<R, IMenuBehaviorConfig> impl
 		super.updatePosition();
 		requestAnimationFrame(() => {
 
-			// If there are no bounding box origin, the position cannot be updated.
-			if (this.targetOrigin == null) {
-				return;
-			}
-
 			// Recompute the target origin if a target was specified
 			if (this.target != null) {
 				this.targetOrigin = this.getBoundingBoxOrigin();
+			}
+
+			// If there are no bounding box origin, the position cannot be updated.
+			if (this.targetOrigin == null) {
+				return;
 			}
 
 			// Compute the bounding box

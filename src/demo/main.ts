@@ -4,6 +4,7 @@ import { DialogElement } from "../lib/dialog/dialog-element";
 import { openDialog } from "../lib/dialog/open-dialog";
 import { defaultMenuConfig, IMenuBehaviorConfig, MenuElement } from "../lib/menu/menu-element";
 import "./main.scss";
+import { DirectionY, OriginX, OriginY } from "../lib/util/position";
 
 document.querySelector("#open-dialog-1")!.addEventListener("click", () => {
 	const $dialog = document.querySelector<DialogElement<string>>("#dialog-1")!;
@@ -43,7 +44,7 @@ document.querySelector("#open-dialog-2")!.addEventListener("click", async () => 
 
 function openMenu (e: MouseEvent, query: string, config?: IMenuBehaviorConfig) {
 	const menu = document.querySelector<MenuElement<any>>(query)!;
-	menu.show({...config, /*target: <HTMLElement>e.srcElement*/}).then(e => {
+	menu.show({...config /*target: <HTMLElement>e.srcElement*/}).then(e => {
 		console.log("Result:", e);
 	});
 }

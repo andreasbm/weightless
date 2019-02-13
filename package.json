@@ -48,10 +48,10 @@
 		"publish:major": "npm run test && npm run bump:major && npm run b:lib && npm run publish"
 	},
 	"devDependencies": {
-		"@appnest/web-config": "0.3.9"
+		"@appnest/web-config": "0.3.11"
 	},
 	"dependencies": {
-		"@appnest/focus-trap": "0.0.20",
+		"@appnest/focus-trap": "0.0.21",
 		"lit-element": "^2.0.1",
 		"lit-html": "^1.0.0"
 	}
