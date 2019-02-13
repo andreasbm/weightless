@@ -5,7 +5,7 @@ import { BackdropElement } from "../backdrop/backdrop-element";
 import { IOverlayBehaviorBaseProperties, IOverlayBehaviorProperties, OverlayBehavior } from "../overlay/overlay-behavior";
 import { sharedStyles } from "../style/shared";
 import { cssResult } from "../util/css";
-import { queryParentElement } from "../util/html";
+import { queryParentRoots } from "../util/html";
 import { computeBoundingBox, DirectionX, DirectionY, getBoundingBoxOrigin, getPointBoundingBox, IBoundingBox, IBoundingBoxOrigin, IPositionStrategy, isBoundingBoxAllowed, OriginX, OriginY, positionStrategyFallback } from "../util/position";
 import { getOpacity, getScale } from "../util/style";
 import styles from "./menu-element.scss";
@@ -295,7 +295,7 @@ export class MenuElement<R> extends OverlayBehavior<R, IMenuBehaviorConfig> impl
 
 		// Check if the target is an ID.
 		if (typeof target === "string" || target instanceof String) {
-			target = queryParentElement(this, <string>target);
+			target = queryParentRoots(this, <string>target);
 		}
 
 		return getBoundingBoxOrigin(<Element>target);

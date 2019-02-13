@@ -76,11 +76,11 @@ export abstract class InputBehavior extends FormItemBehavior implements IInputBe
 				<div id="wrapper">
 					<div id="placeholder">${this.placeholder}</div>
 					<slot></slot>
+					${this.renderFormItem()}
 				</div>
 				<slot id="after" name="after"></slot>
 				<div id="ruler"></div>
 			</div>
-			${this.renderFormItem()}
 		`;
 	}
 }

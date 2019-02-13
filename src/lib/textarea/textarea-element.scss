@@ -8,15 +8,3 @@
 ::slotted(textarea) {
 	resize: none;
 }
-
-#placeholder {
-	top: 0;
-	transform: translateY(calc(#{$input-padding-top-bottom} + #{$input-placeholder-space}));
-}
-
-:host([dirty]), :host(:focus-within) {
-	#placeholder {
-		top: 0;
-		transform: translateY(#{$input-padding-top-bottom});
-	}
-}

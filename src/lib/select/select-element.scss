@@ -1,6 +1,17 @@
 @import "../style/base";
 
+$select-arrow-height: #{var(--select-arrow-height, #{size(8)})};
+
 :host {
 
+}
+
+#arrow {
+	height: #{$select-arrow-height};
+
+	position: absolute;
+	top: 50%;
+	right: 0;
+	transform: translate(-100%, -50%);
 }
 

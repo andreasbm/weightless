@@ -17,6 +17,9 @@ export class SelectElement extends InputBehavior implements ISelectElementProper
 	protected renderFormItem (): TemplateResult {
 		return html`
 			<select id="form-item"></select>
+			<svg id="arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 25" preserveAspectRatio="none">
+				<polygon points="0,0 50,0 25,25"/>
+			</svg>
 		`;
 	}
 }

@@ -3,8 +3,8 @@ import { customElement, LitElement, property } from "lit-element";
 import { TemplateResult } from "lit-html";
 import { sharedStyles } from "../style/shared";
 import { cssResult } from "../util/css";
-import { addListener, EventListenerSubscription, removeListeners } from "../util/event";
-import { queryParentElement } from "../util/html";
+import { addListener, EventListenerSubscription, removeListeners, stopEvent } from "../util/event";
+import { getSlottedElements, queryParentRoots } from "../util/html";
 
 import styles from "./label-element.scss";
 
@@ -41,10 +41,13 @@ export class LabelElement extends LitElement implements ILabelElementProperties 
 	/**
 	 * Refires the click event on the target.
 	 */
-	protected refireClick () {
+	protected refireClick (e: MouseEvent) {
 		const $target = this.getTargetElement();
-		if ($target != null) {
+
+		// Only refire the click if the target was not the target element to begin with
+		if ($target != null && e.target !== $target) {
 			$target.dispatchEvent(new MouseEvent("click", {relatedTarget: this}));
+			stopEvent(e);
 		}
 	}
 
@@ -55,29 +58,13 @@ export class LabelElement extends LitElement implements ILabelElementProperties 
 
 		// Only continue of a target was specified
 		if (this.for == null || this.for.length === 0) {
-			const $slotElements = this.getSlotElements();
-			return $slotElements.length > 0 ? $slotElements[0] : null;
+			const $elements = getSlottedElements(this.shadowRoot!);
+			return $elements.length > 0 ? $elements[0] : null;
 		}
 
 		// Make sure for is an id
 		const forId = this.for[0] === "#" ? this.for : `#${this.for}`;
-		return queryParentElement(this, forId);
-
-	}
-
-	/**
-	 * Creates a root that delegates the focus.
-	 */
-	protected createRenderRoot () {
-		return this.attachShadow({mode: "open", delegatesFocus: true});
-	}
-
-	/**
-	 * Returns an array of the slot elements.
-	 */
-	protected getSlotElements (): Element[] {
-		return <Element[]>Array.from(this.shadowRoot!.querySelector("slot")!.assignedNodes())
-		                       .filter(node => node.nodeName !== `#text`);
+		return queryParentRoots(this, forId);
 	}
 
 	/**

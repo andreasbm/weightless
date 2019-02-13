@@ -18,23 +18,32 @@ export function renderAttributes (element: HTMLElement, attrMap: {[key: string]:
 }
 
 /**
- * Queries the parent element.
+ * Traverses the roots and returns the first match.
  * @param $elem
  * @param query
  */
-export function queryParentElement ($elem: Element, query: string): Element | null {
+export function queryParentRoots<T> ($elem: Element, query: string): T | null {
 
-	// Grab the parent element.
-	const $parent = $elem.parentElement;
-	if ($parent == null) {
+	// If a shadow root doesn't exist we don't continue the traversal
+	if ($elem.shadowRoot == null) {
 		return null;
 	}
 
-	// Find a match
-	const $match = $parent.querySelector(query);
-	if ($match == null) {
-		throw new Error(`The query "${query}" did not match any elements.`);
+	// Grab the rood node and query it
+	const $root = (<any>$elem.shadowRoot.host).getRootNode();
+	const match = $root.querySelector(query);
+	if (match != null) {
+		return <T>match;
 	}
 
-	return $match;
+	// We continue the traversal if there was not matches
+	return queryParentRoots($root, query);
+}
+
+/**
+ * Returns the assigned elements to the first matching slot of the shadow root.
+ * @param root
+ */
+export function getSlottedElements (root: ShadowRoot): Element[] {
+	return <Element[]>Array.from(root.querySelector("slot")!.assignedNodes()).filter(node => node.nodeName !== `#text`);
 }
