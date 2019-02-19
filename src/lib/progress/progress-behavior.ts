@@ -1,5 +1,5 @@
 import { LitElement, property } from "lit-element";
-import { renderAttributes } from "../util/html";
+import { renderAttributes } from "../util/dom";
 import { clamp } from "../util/number";
 
 export enum ProgressMode {

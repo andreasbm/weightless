@@ -4,7 +4,7 @@ import { TemplateResult } from "lit-html";
 import { sharedStyles } from "../style/shared";
 import { cssResult } from "../util/css";
 import { addListener, EventListenerSubscription, removeListeners, stopEvent } from "../util/event";
-import { getSlottedElements, queryParentRoots } from "../util/html";
+import { getSlottedElements, queryParentRoots } from "../util/dom";
 
 import styles from "./label-element.scss";
 

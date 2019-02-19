@@ -27,6 +27,10 @@ export abstract class InputBehavior extends FormItemBehavior implements IInputBe
 	@property({type: String, reflect: true}) role = "textbox";
 	@property({type: String, reflect: true}) placeholder?: string;
 
+	get $slot (): HTMLSlotElement {
+		return this.shadowRoot!.querySelector<HTMLSlotElement>("#slot")!;
+	}
+
 	firstUpdated (props: Map<keyof IInputBehaviorProperties, unknown>) {
 		super.firstUpdated(<Map<keyof IFormItemBehaviorProperties, unknown>>props);
 		this.onKeyDown = this.onKeyDown.bind(this);
@@ -38,6 +42,9 @@ export abstract class InputBehavior extends FormItemBehavior implements IInputBe
 		this.value = this.getAttribute("value") || "";
 	}
 
+	/**
+	 * Focuses the form item.
+	 */
 	focus () {
 		this.$formItem.focus();
 	}
@@ -75,7 +82,7 @@ export abstract class InputBehavior extends FormItemBehavior implements IInputBe
 				<slot id="before" name="before"></slot>
 				<div id="wrapper">
 					<div id="placeholder">${this.placeholder}</div>
-					<slot></slot>
+					<slot id="slot"></slot>
 					${this.renderFormItem()}
 				</div>
 				<slot id="after" name="after"></slot>

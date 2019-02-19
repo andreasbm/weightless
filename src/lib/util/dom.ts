@@ -47,3 +47,13 @@ export function queryParentRoots<T> ($elem: Element, query: string): T | null {
 export function getSlottedElements (root: ShadowRoot): Element[] {
 	return <Element[]>Array.from(root.querySelector("slot")!.assignedNodes()).filter(node => node.nodeName !== `#text`);
 }
+
+/**
+ * Remove all children from a container.
+ * @param $container
+ */
+export function removeChildren ($container: HTMLElement) {
+	while ($container.firstChild) {
+		(<HTMLElement>$container.firstChild).remove();
+	}
+}

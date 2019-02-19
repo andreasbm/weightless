@@ -5,7 +5,7 @@ import { BackdropElement } from "../backdrop/backdrop-element";
 import { IOverlayBehaviorBaseProperties, IOverlayBehaviorProperties, OverlayBehavior } from "../overlay/overlay-behavior";
 import { sharedStyles } from "../style/shared";
 import { cssResult } from "../util/css";
-import { queryParentRoots } from "../util/html";
+import { queryParentRoots } from "../util/dom";
 import { computeBoundingBox, DirectionX, DirectionY, getBoundingBoxOrigin, getPointBoundingBox, IBoundingBox, IBoundingBoxOrigin, IPositionStrategy, isBoundingBoxAllowed, OriginX, OriginY, positionStrategyFallback } from "../util/position";
 import { getOpacity, getScale } from "../util/style";
 import styles from "./menu-element.scss";

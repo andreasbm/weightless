@@ -1,6 +1,6 @@
 import { LitElement, property } from "lit-element";
 import { addListener, EventListenerSubscription, removeListeners } from "../util/event";
-import { renderAttributes } from "../util/html";
+import { renderAttributes } from "../util/dom";
 
 export type FormItem =
 	(HTMLInputElement

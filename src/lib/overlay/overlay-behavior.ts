@@ -4,7 +4,7 @@ import { pauseAnimations } from "../util/animation";
 import { CUBIC_BEZIER } from "../util/constant/animation";
 import { ESCAPE } from "../util/constant/keycode";
 import { addListener, EventListenerSubscription, removeListeners, stopEvent } from "../util/event";
-import { renderAttributes } from "../util/html";
+import { renderAttributes } from "../util/dom";
 import { onSizeChanged } from "../util/resize";
 import { uniqueID } from "../util/unique";
 import "@appnest/focus-trap";

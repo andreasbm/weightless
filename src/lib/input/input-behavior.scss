@@ -2,8 +2,8 @@
 @import "./input-vars";
 
 :host {
-	--_input-border-color: #{$input-border-color};
-	--_input-state-color: #{$input-color-active};
+	--_input-state-color: #{$input-color-inactive};
+	//--_input-border-color: #{$input-color-inactive};
 	--_input-padding-left-right: #{$input-padding-left-right};
 	--_input-bg: #{$input-bg};
 	--_input-border-radius: 0;
@@ -22,11 +22,12 @@
 	border-radius: var(--_input-border-radius);
 	font-size: #{$input-font-size};
 	font-family: #{$input-font-family};
-	border-bottom: #{$input-ruler-height} solid var(--_input-border-color);
+	border-bottom: #{$input-ruler-height} solid var(--_input-state-color);
 	transition: #{$input-transition};
 	position: relative;
 	display: flex;
 	align-items: center;
+	overflow: hidden;
 }
 
 #wrapper {
@@ -35,8 +36,7 @@
 }
 
 #ruler {
-	background: var(--_input-state-color);
-
+	background: #{$input-color-active};
 	height: #{$input-ruler-height};
 	transition: #{$input-ruler-transition};
 	top: 100%;
@@ -62,6 +62,9 @@
 	white-space: nowrap;
 }
 
+:host(:hover) {
+	--_input-state-color: #{$input-color-hover};
+}
 
 :host([filled]), :host([outlined]) {
 	--_input-padding-left-right: #{$input-padding-left-right-outlined};
@@ -80,7 +83,7 @@
 	--_input-border-radius: #{$input-border-radius-outlined};
 
 	#container {
-		border: #{$input-ruler-height} solid var(--_input-border-color);
+		border: #{$input-ruler-height} solid var(--_input-state-color);
 	}
 
 	#ruler {
@@ -88,19 +91,22 @@
 	}
 }
 
+:host(:not([outlined]):focus-within) {
+	#container {
+		border-bottom-color: #{$input-color-hover};
+	}
+}
+
 :host(:focus-within) {
+	--_input-state-color: #{$input-color-active};
+
 	#ruler {
 		transform: scaleX(1);
 	}
 }
 
-:host(:hover) {
-	--_input-border-color: #{$input-border-color-hover};
-}
 
 :host([dirty]), :host(:focus-within), :host([type="color"]), :host([type="date"]), :host([type="file"]) {
-	--_input-state-color: #{$input-color-active};
-
 	#placeholder {
 		font-size: #{$input-placeholder-font-size};
 		top: #{$input-padding-top-bottom};
@@ -126,7 +132,7 @@
 
 	// Remove ugly autofill
 	&:-webkit-autofill {
-		-webkit-outlined-shadow: inset 0 0 0px 9999px white;
+		-webkit-outlined-shadow: 0 0 0px 9999px white inset !important;
 	}
 }
 
@@ -138,7 +144,6 @@
 
 :host([invalid]) {
 	--_input-state-color: #{$input-color-invalid};
-	--_input-border-color: var(--_input-state-color);
 }
 
 ::slotted(input[type="color"]) {

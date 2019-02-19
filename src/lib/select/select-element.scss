@@ -7,11 +7,19 @@ $select-arrow-height: #{var(--select-arrow-height, #{size(8)})};
 }
 
 #arrow {
+	fill: var(--_input-state-color);
 	height: #{$select-arrow-height};
-
 	position: absolute;
 	top: 50%;
 	right: 0;
 	transform: translate(-100%, -50%);
+}
+
+::slotted(option) {
+	display: none;
+}
+
+:host(:not([dirty])) ::slotted(select) {
+	opacity: 0;
 }
 

@@ -4,14 +4,14 @@
 	"license": "MIT",
 	"module": "index.js",
 	"author": "Appnest",
-	"description": "A lightweight web component to trap focus within a DOM node",
+	"description": "Elements",
 	"bugs": {
-		"url": "https://github.com/andreasbm/focus-trap/issues"
+		"url": "https://github.com/andreasbm/elements/issues"
 	},
-	"homepage": "https://github.com/andreasbm/focus-trap#readme",
+	"homepage": "https://github.com/andreasbm/elements#readme",
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/andreasbm/focus-trap.git"
+		"url": "git+https://github.com/andreasbm/elements.git"
 	},
 	"keywords": [
 		"custom",
@@ -19,12 +19,7 @@
 		"web",
 		"component",
 		"custom element",
-		"web component",
-		"focus",
-		"accessibility",
-		"dialog",
-		"focus trap",
-		"trap"
+		"web component"
 	],
 	"main": "index.js",
 	"types": "index.d.ts",
@@ -45,14 +40,27 @@
 		"bump:major": "npm version major && npm run git:add:commit:push",
 		"publish:patch": "npm run test && npm run bump:patch && npm run b:lib && npm run publish",
 		"publish:minor": "npm run test && npm run bump:minor && npm run b:lib && npm run publish",
-		"publish:major": "npm run test && npm run bump:major && npm run b:lib && npm run publish"
+		"publish:major": "npm run test && npm run bump:major && npm run b:lib && npm run publish",
+		"readme": "node node_modules/.bin/readme"
 	},
 	"devDependencies": {
+		"@appnest/readme": "^1.0.12",
 		"@appnest/web-config": "0.3.11"
 	},
 	"dependencies": {
 		"@appnest/focus-trap": "0.0.21",
 		"lit-element": "^2.0.1",
 		"lit-html": "^1.0.0"
+	},
+	"readme": {
+		"ids": {
+			"npm": "@appnest/elements",
+			"github": "andreasbm/elements"
+		},
+		"blueprint": [
+			"{{ template:title }}",
+			"{{ template:badges }}",
+			"{{ template:license }}"
+		]
 	}
 }
