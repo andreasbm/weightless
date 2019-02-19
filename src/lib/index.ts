@@ -13,3 +13,5 @@ export * from "./menu";
 export * from "./label";
 export * from "./input";
 export * from "./select";
+export * from "./ripple";
+export * from "./checkbox";

@@ -1,11 +1,13 @@
-import { customElement, html, property, PropertyValues, TemplateResult } from "lit-element";
+import { customElement, html, property, PropertyValues, query, TemplateResult } from "lit-element";
 import { ifDefined } from "lit-html/directives/if-defined";
 import { FormItemBehavior, IFormItemBehaviorProperties } from "../form-item/form-item-behavior";
+import { RippleElement } from "../ripple/ripple-element";
 import { sharedStyles } from "../style/shared";
 import { ENTER, SPACE } from "../util/constant/keycode";
 import { cssResult } from "../util/css";
 import { addListener, stopEvent } from "../util/event";
 import styles from "./button-element.scss";
+import "../ripple";
 
 export interface IButtonElementProperties extends IFormItemBehaviorProperties {
 	type: "button" | "submit";
@@ -27,6 +29,8 @@ export class ButtonElement extends FormItemBehavior implements IButtonElementPro
 	@property({type: Boolean, reflect: true}) outlined = false;
 	@property({type: Boolean, reflect: true}) flat = false;
 	@property({type: String, reflect: true}) role = "button";
+
+	@query("#ripple") $ripple!: RippleElement;
 
 	/**
 	 * Hook up the component.
@@ -50,6 +54,7 @@ export class ButtonElement extends FormItemBehavior implements IButtonElementPro
 	protected onKeyUp (e: KeyboardEvent) {
 		if (e.code === ENTER || e.code === SPACE) {
 			this.click();
+			this.$ripple.spawnRipple();
 			stopEvent(e);
 		}
 	}
@@ -59,7 +64,6 @@ export class ButtonElement extends FormItemBehavior implements IButtonElementPro
 	 * @param e
 	 */
 	protected onClick (e: Event) {
-
 
 		// If disabled we stop the event here
 		if (this.disabled) {
@@ -116,6 +120,7 @@ export class ButtonElement extends FormItemBehavior implements IButtonElementPro
 	 */
 	render (): TemplateResult {
 		return html`
+			<ripple-element id="ripple" overlay .target="${this}"></ripple-element>
 			<slot></slot>
 			${this.renderFormItem()}
 		`;

@@ -1,0 +1,30 @@
+@import "../style/base";
+
+$ripple-color: var(--ripple-color, #{color("shade", $default-hue, 0.3)});
+
+:host {
+	position: relative;
+	display: block;
+	outline: none;
+	user-select: none;
+}
+
+:host(:not([unbounded])) {
+	overflow: hidden;
+}
+
+:host([overlay]) {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+.ripple {
+	background: #{$ripple-color};
+	border-radius: 100%;
+	pointer-events: none;
+}
+
+

@@ -4,19 +4,15 @@ $input-color-inactive: var(--input-color-active, #{color("shade", $light-hue)});
 $input-color-active: var(--input-color-active, #{color("primary")});
 $input-color-hover: var(--input-border-color-hover, #{color("shade", $dark-hue)});
 $input-color-invalid: var(--input-color-active, #{color("error")});
-
-//$input-border-color: var(--input-border-color, #{color("shade", $light-hue)});
-//$input-border-color-hover: var(--input-border-color-hover, #{color("shade", $dark-hue)});
 $input-transition: var(--input-transition, border-color #{$transition-duration-fast} #{$transition-ease}, background #{$transition-duration-fast} #{$transition-ease});
 
 $input-bg: var(--input-bg, #{$background});
 $input-bg-filled: var(--input-bg, #{color("shade", 100)});
 $input-bg-filled-hover: var(--input-bg-filled-hover, #{color("shade", 200)});
 
+$input-border-width: #{size(1)};
 $input-before-after-color: var(--input-before-after-color, #{color("shade", $default-hue)});
 
-$input-ruler-height: var(--input-ruler-height, #{size(1)});
-$input-ruler-transition: var(--input-line-transition, transform #{$transition-duration-fast} #{$transition-linear});
 $input-font-size: var(--input-font-size, #{$font-size-m});
 
 $input-padding-left-right: var(--input-padding-left-right, 0);

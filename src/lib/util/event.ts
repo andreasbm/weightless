@@ -35,6 +35,7 @@ export function addListener ($elem: EventTarget,
  */
 export function removeListeners (listeners: EventListenerSubscription[]) {
 	listeners.forEach(unsub => unsub());
+	listeners.length = 0;
 }
 
 /**
