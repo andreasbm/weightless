@@ -2,21 +2,30 @@ import { customElement, html, LitElement, property } from "lit-element";
 import { TemplateResult } from "lit-html";
 import { sharedStyles } from "../style/shared";
 import { cssResult } from "../util/css";
-import { addListener, EventListenerSubscription, removeListeners } from "../util/event";
+import { addListener, EventListenerSubscription, removeListeners, stopEvent } from "../util/event";
 import { computeRadius } from "../util/number";
+import { getScale } from "../util/style";
 import { normalizePointerEvent } from "../util/swipe";
 
 import styles from "./ripple-element.scss";
 
-export interface IRippleElementProperties {
-	centered: boolean;
-	unbounded: boolean;
-	disabled: boolean;
+export interface IRippleElementBaseProperties {
 	autoRelease: boolean;
-	overlay: boolean;
 	initialDuration: number;
 	releaseDuration: number;
+}
+
+export interface IRippleElementProperties extends IRippleElementBaseProperties {
 	target: EventTarget;
+	overlay: boolean;
+	disabled: boolean;
+	unbounded: boolean;
+	centered: boolean;
+	focusable: boolean;
+}
+
+export interface IRippleConfig extends IRippleElementBaseProperties {
+
 }
 
 export declare type RippleReleaseFunction = (() => void);
@@ -38,6 +47,7 @@ export class RippleElement extends LitElement implements IRippleElementPropertie
 	@property({type: Boolean, reflect: true}) centered = false;
 	@property({type: Boolean, reflect: true}) overlay = false;
 	@property({type: Boolean, reflect: true}) disabled = false;
+	@property({type: Boolean, reflect: true}) focusable = false;
 	@property({type: Boolean, reflect: true}) autoRelease = false;
 	@property({type: Number}) initialDuration = 1000;
 	@property({type: Number}) releaseDuration = 500;
@@ -46,12 +56,17 @@ export class RippleElement extends LitElement implements IRippleElementPropertie
 
 	connectedCallback () {
 		super.connectedCallback();
+
 		this.spawnRipple = this.spawnRipple.bind(this);
 		this.releaseRipple = this.releaseRipple.bind(this);
+		this.onFocusIn = this.onFocusIn.bind(this);
+		this.onFocusOut = this.onFocusOut.bind(this);
 
 		this.listeners.push(
 			addListener(this.target, "mousedown", this.spawnRipple, {passive: true}),
-			addListener(this.target, "touchstart", this.spawnRipple, {passive: true})
+			addListener(this.target, "touchstart", this.spawnRipple, {passive: true}),
+			addListener(this.target, "focusin", this.onFocusIn, {passive: true}),
+			addListener(this.target, "focusout", this.onFocusOut, {passive: true})
 		);
 	}
 
@@ -64,8 +79,24 @@ export class RippleElement extends LitElement implements IRippleElementPropertie
 	 * Handles the mouse down events and spawns a ripple.
 	 * If no event is provided the ripple will spawn in the center.
 	 * @param {MouseEvent | TouchEvent} e
+	 * @param config
 	 */
-	spawnRipple (e?: MouseEvent | TouchEvent): RippleReleaseFunction {
+	spawnRipple (e?: MouseEvent | TouchEvent, config?: Partial<IRippleConfig>): RippleReleaseFunction {
+
+		// Check if the ripple is disabled
+		if (this.disabled) {
+
+			// Stop the event
+			if (e != null) {
+				stopEvent(e);
+			}
+
+			// Return an empty noop function
+			return (() => {
+			});
+		}
+
+		// Release the existing ripple if there is one
 		this.releaseRipple();
 
 		// Compute the spawn coordinates for the ripple
@@ -83,7 +114,7 @@ export class RippleElement extends LitElement implements IRippleElementPropertie
 		}
 
 		// Show the ripple and store the release function
-		const release = this.showRippleAtCoords({x, y});
+		const release = this.showRippleAtCoords({x, y}, config);
 
 		// Add listeners for when the ripple should be released
 		this.rippleAnimationListeners.push(
@@ -106,11 +137,21 @@ export class RippleElement extends LitElement implements IRippleElementPropertie
 	/**
 	 * Shows a ripple at a specific coordinate.
 	 * @param number
-	 * @param number
+	 * @param config
 	 */
-	showRippleAtCoords ({x, y}: {x: number, y: number}): RippleReleaseFunction {
+	showRippleAtCoords ({x, y}: {x: number, y: number}, config?: Partial<IRippleConfig>): RippleReleaseFunction {
 
 		const {offsetWidth, offsetHeight} = this;
+		const scale = getScale(window.getComputedStyle(this));
+		const {
+			releaseDuration = this.releaseDuration,
+			initialDuration = this.initialDuration,
+			autoRelease = this.autoRelease
+		} = config || {};
+
+		// Add the scale in case the ripple is transformed
+		x *= scale.x === 0 ? 1 : 1 / scale.x;
+		y *= scale.y === 0 ? 1 : 1 / scale.y;
 
 		// Create the ripple
 		const $ripple = document.createElement("div");
@@ -118,7 +159,7 @@ export class RippleElement extends LitElement implements IRippleElementPropertie
 
 		// Compute distance from the center of the rectangle (container) to its corner.
 		// If the coords are in the center the ripple would fill the entire container.
-		const containerRadius = computeRadius(this.offsetWidth, offsetHeight);
+		const containerRadius = computeRadius(offsetWidth, offsetHeight);
 
 		// Compute the additional distance we have to add to the radius to make sure it always fills
 		// the entire container. The extra distance will be the distance from the center to the coords.
@@ -126,7 +167,7 @@ export class RippleElement extends LitElement implements IRippleElementPropertie
 		const extraRadius = computeRadius(Math.abs((offsetWidth / 2) - x), Math.abs((offsetHeight / 2) - y));
 
 		// The size of the ripple is the diameter
-		const radius = containerRadius + (extraRadius * 2);
+		const radius = Math.round(containerRadius + (extraRadius * 2));
 		const diameter = radius * 2;
 
 		// Assign the styles that makes it spawn from the desired coords
@@ -147,7 +188,7 @@ export class RippleElement extends LitElement implements IRippleElementPropertie
 			// Fade the ripple out
 			const outAnimation = $ripple.animate(<PropertyIndexedKeyframes>{
 				opacity: [`1`, `0`]
-			}, {...ANIMATION_CONFIG, duration: this.releaseDuration});
+			}, {...ANIMATION_CONFIG, duration: releaseDuration});
 
 			// When the out animation finished we remove the ripple before the next frame
 			outAnimation.onfinish = () => {
@@ -163,16 +204,32 @@ export class RippleElement extends LitElement implements IRippleElementPropertie
 		this.shadowRoot!.appendChild($ripple);
 
 		// Release instantly if autorelease
-		if (this.autoRelease) {
+		if (autoRelease) {
 			release();
 		}
 
 		// Scale the ripple in
 		$ripple.animate(<PropertyIndexedKeyframes>{
 			transform: [`scale(0)`, `scale(1)`]
-		}, {...ANIMATION_CONFIG, duration: this.initialDuration});
+		}, {...ANIMATION_CONFIG, duration: initialDuration});
 
 		return release;
+	}
+
+	/**
+	 * Add a persistent ripple when the taget gains focus.
+	 */
+	protected onFocusIn () {
+		if (!this.focusable) return;
+		this.spawnRipple(undefined, {autoRelease: false});
+	}
+
+	/**
+	 * Release the current ripple when the focus is lost from the target.
+	 */
+	protected onFocusOut () {
+		if (!this.focusable) return;
+		this.releaseRipple();
 	}
 
 	/**

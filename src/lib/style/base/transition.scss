@@ -1,8 +1,8 @@
 @import "./size";
 
-$transition-duration-fast: var(--transition-duration-fast, 120ms);
-$transition-duration-medium: var(--transition-duration-medium, 200ms);
-$transition-duration-slow: var(--transition-duration-slow, 300ms);
+$transition-duration-fast: var(--transition-duration-fast, 100ms);
+$transition-duration-medium: var(--transition-duration-medium, 180ms);
+$transition-duration-slow: var(--transition-duration-slow, 250ms);
 
 $transition-timing-function-linear: linear;
 $transition-linear: var(--transition-timing-function-linear, #{$transition-timing-function-linear});

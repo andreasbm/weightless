@@ -1,7 +1,7 @@
 import { customElement, html, property } from "lit-element";
 import { TemplateResult } from "lit-html";
 import { ifDefined } from "lit-html/directives/if-defined";
-import { IInputBehaviorProperties, InputBehavior } from "../input/input-behavior";
+import { IInputBehaviorProperties, InputBehavior } from "../behavior/input-behavior/input-behavior";
 import { cssResult } from "../util/css";
 import styles from "./textfield-element.scss";
 
@@ -38,7 +38,7 @@ export class TextfieldElement extends InputBehavior implements ITextfieldElement
 				autocomplete="${ifDefined(this.autocomplete)}"
 				minlength="${ifDefined(this.minLength)}"
 				maxlength="${ifDefined(this.maxLength)}"
-				tabindex="${this.readonly || this.disabled ? "-1" : "0"}"
+				tabindex="${this.readonly ? "-1" : "0"}"
 			/>
 		`;
 	}

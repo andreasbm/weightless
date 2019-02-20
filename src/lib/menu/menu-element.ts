@@ -2,7 +2,7 @@ import { FocusTrap } from "@appnest/focus-trap";
 import { customElement, html, property, query, TemplateResult } from "lit-element";
 import "../backdrop";
 import { BackdropElement } from "../backdrop/backdrop-element";
-import { IOverlayBehaviorBaseProperties, IOverlayBehaviorProperties, OverlayBehavior } from "../overlay/overlay-behavior";
+import { IOverlayBehaviorBaseProperties, IOverlayBehaviorProperties, OverlayBehavior } from "../behavior/overlay-behavior/overlay-behavior";
 import { sharedStyles } from "../style/shared";
 import { cssResult } from "../util/css";
 import { queryParentRoots } from "../util/dom";
@@ -170,8 +170,10 @@ export class MenuElement<R> extends OverlayBehavior<R, IMenuBehaviorConfig> impl
 		};
 
 		// Animate the menu in and take the intermediate stake into account
-		const menuScale = getScale(this.$container);
-		const menuOpacity = getOpacity(this.$container);
+		const containerComputedStyle = window.getComputedStyle(this.$container);
+		const menuScale = getScale(containerComputedStyle);
+		const menuOpacity = getOpacity(containerComputedStyle);
+
 		this.$container.animate(<Keyframe[]>[
 			{
 				transform: `scale(${menuScale.x}, ${menuScale.y})`,
@@ -188,7 +190,7 @@ export class MenuElement<R> extends OverlayBehavior<R, IMenuBehaviorConfig> impl
 
 		// Animate the menu content in with a delay
 		const menuAnimation = this.$content.animate(<Keyframe[]>[
-			{opacity: getOpacity(this.$content).toString()},
+			{opacity: getOpacity(window.getComputedStyle(this.$content)).toString()},
 			{opacity: 1}
 		], {
 			...animationConfig,
@@ -197,7 +199,7 @@ export class MenuElement<R> extends OverlayBehavior<R, IMenuBehaviorConfig> impl
 
 		// Animate the backdrop in
 		const backdropAnimation = this.$backdrop.animate(<Keyframe[]>[
-			{opacity: getOpacity(this.$backdrop).toString()},
+			{opacity: getOpacity(window.getComputedStyle(this.$backdrop)).toString()},
 			{opacity: 1}
 		], animationConfig);
 
@@ -229,19 +231,19 @@ export class MenuElement<R> extends OverlayBehavior<R, IMenuBehaviorConfig> impl
 
 		// Animate the backdrop out
 		const backdropAnimation = this.$backdrop.animate(<Keyframe[]>[
-			{opacity: getOpacity(this.$backdrop).toString()},
+			{opacity: getOpacity(window.getComputedStyle(this.$backdrop)).toString()},
 			{opacity: 0}
 		], animationConfig);
 
 		// Animate the menu content out
 		const menuContentAnimation = this.$content.animate(<Keyframe[]>[
-			{opacity: getOpacity(this.$content).toString()},
+			{opacity: getOpacity(window.getComputedStyle(this.$content)).toString()},
 			{opacity: 0}
 		], animationConfig);
 
 		// Animate the menu out
 		const menuAnimation = this.$container.animate(<Keyframe[]>[
-			{opacity: getOpacity(this.$container).toString()},
+			{opacity: getOpacity(window.getComputedStyle(this.$container)).toString()},
 			{opacity: 0}
 		], animationConfig);
 

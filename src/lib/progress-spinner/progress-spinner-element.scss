@@ -1,4 +1,4 @@
-@import "../../style/base";
+@import "../style/base";
 
 $progress-spinner-stroke-width: var(--progress-spinner-stroke-width, 10%);
 $progress-spinner-size: var(--progress-spinner-size, #{size(48)});

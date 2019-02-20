@@ -1,9 +1,9 @@
 import { html, property, TemplateResult } from "lit-element";
-import { FormItemBehavior, IFormItemBehaviorProperties } from "../form-item/form-item-behavior";
-import { sharedStyles } from "../style/shared";
-import { ENTER } from "../util/constant/keycode";
-import { cssResult } from "../util/css";
-import { addListener } from "../util/event";
+import { sharedStyles } from "../../style/shared";
+import { ENTER } from "../../util/constant/keycode";
+import { cssResult } from "../../util/css";
+import { addListener } from "../../util/event";
+import { FormItemBehavior, IFormItemBehaviorProperties } from "../form-item-behavior/form-item-behavior";
 import styles from "./input-behavior.scss";
 
 export enum InputBehaviorEvent {

@@ -1,25 +1,31 @@
-import { customElement, html, LitElement, property } from "lit-element";
+import { customElement, html } from "lit-element";
 import { TemplateResult } from "lit-html";
-import { sharedStyles } from "../style/shared";
+import { CheckboxBehavior, ICheckboxBehaviorProperties } from "../behavior/checkbox-behavior/checkbox-behavior";
+
+import "../ripple";
 import { cssResult } from "../util/css";
 
 import styles from "./checkbox-element.scss";
 
-export interface ICheckboxElementProperties {
-	checked: boolean
+export interface ICheckboxElementProperties extends ICheckboxBehaviorProperties {
 }
 
 @customElement("checkbox-element")
-export class CheckboxElement extends LitElement implements ICheckboxElementProperties {
+export class CheckboxElement extends CheckboxBehavior implements ICheckboxElementProperties {
 
-	static styles = [sharedStyles, cssResult(styles)];
-	@property({reflect: true, type: Boolean}) checked = false;
+	static styles = [...CheckboxBehavior.styles, cssResult(styles)];
 
 	/**
 	 * Returns the template for the component.
 	 */
 	protected render (): TemplateResult {
-		return html`<p>Check</p>`;
+		return html`
+			<svg id="checkmark" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" preserveAspectRatio="none" viewBox="0 0 24 24">
+                <path id="path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59"></path>
+            </svg>
+			<ripple-element id="ripple" .target="${this}" focusable overlay unbounded centered initialDuration="200"></ripple-element>
+			${this.renderFormItem()}
+		`;
 	}
 }
 

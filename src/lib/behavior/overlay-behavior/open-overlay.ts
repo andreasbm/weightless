@@ -1,5 +1,5 @@
 import { render, TemplateResult } from "lit-html";
-import { addListener } from "../util/event";
+import { addListener } from "../../util/event";
 import { IOverlayBehaviorBaseProperties, OverlayBehavior, OverlayBehaviorEvent } from "./overlay-behavior";
 
 export interface IOpenOverlayConfig {

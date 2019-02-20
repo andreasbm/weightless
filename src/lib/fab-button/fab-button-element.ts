@@ -1,10 +1,9 @@
 import { customElement } from "lit-element";
-import { cssResult } from "../../util/css";
-import { ButtonElement, IButtonElementProperties } from "../button-element";
+import { ButtonElement, IButtonElementProperties } from "../button/button-element";
+import { cssResult } from "../util/css";
 import styles from "./fab-button-element.scss";
 
 export interface IFabButtonElementProperties extends IButtonElementProperties {
-
 }
 
 @customElement("fab-button-element")

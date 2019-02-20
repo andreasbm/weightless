@@ -1,6 +1,6 @@
 import { LitElement, property } from "lit-element";
-import { renderAttributes } from "../util/dom";
-import { clamp } from "../util/number";
+import { renderAttributes } from "../../util/dom";
+import { clamp } from "../../util/number";
 
 export enum ProgressMode {
 	INDETERMINATE = "indeterminate",

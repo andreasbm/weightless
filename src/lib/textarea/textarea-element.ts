@@ -1,6 +1,6 @@
 import { customElement, html, property, TemplateResult } from "lit-element";
 import { ifDefined } from "lit-html/directives/if-defined";
-import { IFormItemBehaviorProperties } from "../form-item/form-item-behavior";
+import { IFormItemBehaviorProperties } from "../behavior/form-item-behavior";
 import { ITextfieldElementProperties, TextfieldElement } from "../textfield/textfield-element";
 import { cssResult } from "../util/css";
 import styles from "./textarea-element.scss";
@@ -88,7 +88,7 @@ export class TextareaElement extends TextfieldElement implements ITextareaBehavi
 				maxlength="${ifDefined(this.maxLength)}"
 				rows="${ifDefined(this.rows)}"
 				cols="${ifDefined(this.cols)}"
-				tabindex="${this.readonly || this.disabled ? "-1" : "0"}"
+				tabindex="${this.disabled ? "-1" : "0"}"
 			></textarea>
 		`;
 	}

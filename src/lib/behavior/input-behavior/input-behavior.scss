@@ -1,11 +1,13 @@
-@import "../style/base";
-@import "./input-vars";
+@import "../../style/base";
+@import "input-vars";
 
 :host {
-	--_input-state-color: #{$input-color-inactive};
+	--_input-state-color: #{$input-state-color-inactive};
 	--_input-padding-left-right: #{$input-padding-left-right};
 	--_input-bg: #{$input-bg};
 	--_input-border-radius: 0;
+	--_input-color: #{$input-color};
+	--_input-placeholder-color: #{$input-placeholder-color};
 
 	transform: translateZ(0);
 	display: block;
@@ -14,10 +16,14 @@
 
 :host([disabled]) {
 	pointer-events: none;
+	--_input-state-color: #{$input-state-color-disabled};
+	--_input-placeholder-color: #{$input-placeholder-color-disabled};
+	--_input-color: #{$input-color-disabled};
 }
 
 #container {
 	background: var(--_input-bg);
+	color: var(--_input-color);
 	border-radius: var(--_input-border-radius);
 	font-size: #{$input-font-size};
 	font-family: #{$input-font-family};
@@ -36,7 +42,7 @@
 
 #placeholder {
 	left: var(--_input-padding-left-right);
-	color: #{$input-placeholder-color};
+	color: var(--_input-placeholder-color);
 	transition: #{$input-placeholder-transition};
 	font-family: #{$input-font-family};
 
@@ -52,7 +58,7 @@
 }
 
 :host(:hover) {
-	--_input-state-color: #{$input-color-hover};
+	--_input-state-color: #{$input-state-color-hover};
 }
 
 :host([filled]), :host([outlined]) {
@@ -77,7 +83,7 @@
 }
 
 :host(:focus-within) {
-	--_input-state-color: #{$input-color-active};
+	--_input-state-color: #{$input-state-color-active};
 }
 
 :host([dirty]), :host(:focus-within), :host([type="color"]), :host([type="date"]), :host([type="file"]) {
@@ -95,6 +101,7 @@
 	font-size: #{$input-font-size};
 	@include reset();
 
+	color: inherit;
 	-webkit-overflow-scrolling: touch;
 	position: relative;
 	appearance: none;
@@ -117,7 +124,7 @@
 }
 
 :host([invalid]) {
-	--_input-state-color: #{$input-color-invalid};
+	--_input-state-color: #{$input-state-color-invalid};
 }
 
 ::slotted(input[type="color"]) {

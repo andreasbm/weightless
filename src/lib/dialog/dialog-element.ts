@@ -1,7 +1,7 @@
 import { FocusTrap } from "@appnest/focus-trap";
 import { customElement, html, property, query, TemplateResult } from "lit-element";
 import "../backdrop";
-import { IOverlayBehaviorBaseProperties, IOverlayBehaviorProperties, OverlayBehavior } from "../overlay/overlay-behavior";
+import { IOverlayBehaviorBaseProperties, IOverlayBehaviorProperties, OverlayBehavior } from "../behavior/overlay-behavior/overlay-behavior";
 import { sharedStyles } from "../style/shared";
 import { CUBIC_BEZIER } from "../util/constant/animation";
 import { cssResult } from "../util/css";

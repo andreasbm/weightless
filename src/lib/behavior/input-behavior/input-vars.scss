@@ -1,14 +1,17 @@
-@import "../style/base";
+@import "../../style/base";
 
-$input-color-inactive: var(--input-color-active, #{color("shade", $light-hue)});
-$input-color-active: var(--input-color-active, #{color("primary")});
-$input-color-hover: var(--input-border-color-hover, #{color("shade", $dark-hue)});
-$input-color-invalid: var(--input-color-active, #{color("error")});
+$input-state-color-inactive: var(--input-state-color-inactive, #{color("shade", $light-hue)});
+$input-state-color-active: var(--input-state-color-active, #{color("primary")});
+$input-state-color-hover: var(--input-state-border-color-hover, #{color("shade", $dark-hue)});
+$input-state-color-invalid: var(--input-state-color-invalid, #{color("error")});
+$input-state-color-disabled: var(--input-state-color-disabled, #{color("shade", 200)});
+$input-color: var(--input-color, #{color(black, $default-hue)});
+$input-color-disabled: var(--input-color-disabled, #{color("shade", $light-hue)});
 $input-transition: var(--input-transition, border-color #{$transition-duration-fast} #{$transition-ease}, background #{$transition-duration-fast} #{$transition-ease});
 
 $input-bg: var(--input-bg, #{$background});
 $input-bg-filled: var(--input-bg, #{color("shade", 100)});
-$input-bg-filled-hover: var(--input-bg-filled-hover, #{color("shade", 200)});
+$input-bg-filled-hover: var(--input-bg-filled-hover, #{color("shade", 300)});
 
 $input-border-width: #{size(1)};
 $input-before-after-color: var(--input-before-after-color, #{color("shade", $default-hue)});
@@ -25,6 +28,7 @@ $input-border-radius-outlined: var(--input-border-radius-outlined, #{$border-rad
 $input-font-family: var(--input-font-family, #{$font-family-serif});
 
 $input-placeholder-color: var(--input-placeholder-color, #{color("shade", $dark-hue)});
+$input-placeholder-color-disabled: var(--input-placeholder-color-disabled, #{color("shade", $light-hue)});
 $input-placeholder-font-size: var(--input-placeholder-font-size, #{$font-size-s});
 $input-placeholder-transition: var(--input-placeholder-transition, top #{$transition-duration-fast} #{$transition-linear}, font-size #{$transition-duration-fast} #{$transition-linear}, transform #{$transition-duration-fast} #{$transition-linear});
 $input-placeholder-space: var(--input-placeholder-space, #{size(14)});

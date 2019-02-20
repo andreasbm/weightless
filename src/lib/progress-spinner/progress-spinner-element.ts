@@ -1,8 +1,8 @@
 import { customElement, html, svg } from "lit-element";
 import { TemplateResult } from "lit-html";
-import { sharedStyles } from "../../style/shared";
-import { cssResult } from "../../util/css";
-import { IProgressBehaviorProperties, ProgressBehavior, ProgressMode } from "../progress-behavior";
+import { sharedStyles } from "../style/shared";
+import { cssResult } from "../util/css";
+import { IProgressBehaviorProperties, ProgressBehavior, ProgressMode } from "../behavior/progress-behavior/progress-behavior";
 
 import styles from "./progress-spinner-element.scss";
 

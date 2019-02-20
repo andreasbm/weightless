@@ -1,13 +1,13 @@
 import { customElement, html, property, PropertyValues, query, TemplateResult } from "lit-element";
 import { ifDefined } from "lit-html/directives/if-defined";
-import { FormItemBehavior, IFormItemBehaviorProperties } from "../form-item/form-item-behavior";
+import { FormItemBehavior, IFormItemBehaviorProperties } from "../behavior/form-item-behavior/form-item-behavior";
+import "../ripple";
 import { RippleElement } from "../ripple/ripple-element";
 import { sharedStyles } from "../style/shared";
 import { ENTER, SPACE } from "../util/constant/keycode";
 import { cssResult } from "../util/css";
 import { addListener, stopEvent } from "../util/event";
 import styles from "./button-element.scss";
-import "../ripple";
 
 export interface IButtonElementProperties extends IFormItemBehaviorProperties {
 	type: "button" | "submit";
@@ -54,7 +54,7 @@ export class ButtonElement extends FormItemBehavior implements IButtonElementPro
 	protected onKeyUp (e: KeyboardEvent) {
 		if (e.code === ENTER || e.code === SPACE) {
 			this.click();
-			this.$ripple.spawnRipple();
+			this.$ripple.spawnRipple(undefined, {autoRelease: true});
 			stopEvent(e);
 		}
 	}
@@ -85,16 +85,10 @@ export class ButtonElement extends FormItemBehavior implements IButtonElementPro
 	protected updated (props: PropertyValues) {
 		super.updated(props);
 
+		// Update the tab index based on the disabled property.
 		if (props.has("disabled")) {
-			this.updateTabIndex();
+			this.tabIndex = this.disabled ? -1 : 0;
 		}
-	}
-
-	/**
-	 * Updates the tab index based on the disabled property.
-	 */
-	protected updateTabIndex () {
-		this.tabIndex = this.disabled ? -1 : 0;
 	}
 
 	/**

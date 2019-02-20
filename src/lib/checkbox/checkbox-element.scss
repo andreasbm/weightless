@@ -1,5 +1,97 @@
 @import "../style/base";
 
+$checkbox-size: var(--checkbox-size, #{size(16)});
+$checkbox-bg: var(--checkbox-bg, transparent);
+$checkbox-bg-checked: var(--checkbox-bg-checked, #{color("primary", $default-hue)});
+$checkbox-bg-disabled: var(--checkbox-bg-disabled, transparent);
+$checkbox-bg-disabled-checked: var(--checkbox-bg-disabled-checked, #{color("shade", $default-hue)});
+
+$checkbox-color: var(--checkbox-color, #{color("shade", $default-hue)});
+$checkbox-color-checked: var(--checkbox-color-checked, #{color("primary", $default-hue)});
+$checkbox-color-disabled: var(--checkbox-color-disabled, #{color("shade", $light-hue)});
+$checkbox-color-disabled-checked: var(--checkbox-color-disabled-checked, #{color("shade", $default-hue)});
+
+$checkbox-border-config: var(--checkbox-border-config, #{size(2)} solid);
+$checkbox-border-radius: var(--checkbox-border-radius, #{$border-radius-s});
+$checkbox-transition: var(--checkbox-transition, background #{$transition-duration-fast} #{$transition-acceleration-curve}, border-color #{$transition-duration-fast} #{$transition-acceleration-curve});
+
+$checkbox-checkmark-size: var(--checkbox-checkmark-size, #{size(12)});
+$checkbox-checkmark-stroke-color: var(--checkbox-checkmark-stroke-color, #{color-contrast("primary", $default-hue)});
+$checkbox-checkmark-transition: var(--checkbox-checkmark-transition, stroke-dashoffset #{$transition-duration-medium} #{$transition-acceleration-curve});
+$checkbox-checkmark-path-width: var(--checkbox-checkmark-path-width, #{size(3)});
+$checkbox-checkmark-path-dasharray: var(--checkbox-checkmark-path-dasharray, 30);
+$checkbox-checkmark-path-delay: var(--checkbox-checkmark-path-delay, 50ms);
+
+$checkbox-ripple-transform: var(--checkbox-ripple-transform, translate(-50%, -50%) scale(2));
+$checkbox-ripple-color: var(--checkbox-ripple-color, #{color("primary", $light-hue, 0.1)});
+
 :host {
+	--_checkbox-bg: #{$checkbox-bg};
+	--_checkbox-color: #{$checkbox-color};
+
+	background: var(--_checkbox-bg);
+	color: var(--_checkbox-color);
+	width: #{$checkbox-size};
+	height: #{$checkbox-size};
+	border: #{$checkbox-border-config} currentColor;
+	border-radius: #{$checkbox-border-radius};
+	transition: #{$checkbox-transition};
+
+	position: relative;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	outline: none;
+	user-select: none;
 }
 
+:host(:not([disabled])) {
+	cursor: pointer;
+}
+
+:host([checked]) {
+	--_checkbox-bg: #{$checkbox-bg-checked};
+	--_checkbox-color: #{$checkbox-color-checked};
+
+	#path {
+		stroke-dashoffset: 0;
+	}
+}
+
+:host(:hover), :host(:focus) {
+	will-change: border, background-color;
+
+	#path {
+		will-change: stroke-dashoffset;
+	}
+}
+
+:host([disabled]) {
+	--_checkbox-bg: #{$checkbox-bg-disabled};
+	--_checkbox-color: #{$checkbox-color-disabled};
+	pointer-events: none;
+}
+
+:host([disabled][checked]) {
+	--_checkbox-bg: #{$checkbox-bg-disabled-checked};
+	--_checkbox-color: #{$checkbox-color-disabled-checked};
+}
+
+#checkmark {
+	width: #{$checkbox-checkmark-size};
+	height: #{$checkbox-checkmark-size};
+}
+
+#path {
+	stroke-width: #{$checkbox-checkmark-path-width};
+	stroke-dasharray: #{$checkbox-checkmark-path-dasharray};
+	stroke-dashoffset: #{$checkbox-checkmark-path-dasharray};
+	transition: #{$checkbox-checkmark-transition};
+	stroke: #{$checkbox-checkmark-stroke-color};
+	transition-delay: #{$checkbox-checkmark-path-delay};
+}
+
+#ripple {
+	--ripple-color: #{$checkbox-ripple-color};
+	transform: #{$checkbox-ripple-transform};
+}
