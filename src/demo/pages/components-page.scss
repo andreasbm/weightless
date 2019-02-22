@@ -1,0 +1,22 @@
+:host {
+	display: flex;
+}
+
+#menu {
+	margin: 0 12px 0 0;
+	display: flex;
+	flex-direction: column;
+}
+
+#router {
+	flex-grow: 1;
+}
+
+.menu-item {
+	padding: 12px;
+	cursor: pointer;
+
+	&[active] {
+		background: lightgray;
+	}
+}

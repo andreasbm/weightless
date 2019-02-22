@@ -44,11 +44,12 @@
 		"readme": "node node_modules/.bin/readme"
 	},
 	"devDependencies": {
-		"@appnest/readme": "^1.0.12",
-		"@appnest/web-config": "0.3.11"
+		"@appnest/readme": "^1.0.21",
+		"@appnest/web-config": "0.3.23",
+		"@appnest/web-router": "^1.1.3"
 	},
 	"dependencies": {
-		"@appnest/focus-trap": "0.0.21",
+		"@appnest/focus-trap": "0.0.25",
 		"lit-element": "^2.0.1",
 		"lit-html": "^1.0.0"
 	},

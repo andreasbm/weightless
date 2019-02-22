@@ -1,5 +1,4 @@
-import { html } from "@polymer/lit-element";
-import { customElement, LitElement, property } from "lit-element";
+import { customElement, html, LitElement, property } from "lit-element";
 import { TemplateResult } from "lit-html";
 import { sharedStyles } from "../style/shared";
 import { cssResult } from "../util/css";

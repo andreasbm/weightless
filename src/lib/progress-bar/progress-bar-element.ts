@@ -1,9 +1,8 @@
-import { html } from "@polymer/lit-element";
-import { customElement } from "lit-element";
+import { customElement, html } from "lit-element";
 import { TemplateResult } from "lit-html";
+import { IProgressBehaviorProperties, ProgressBehavior, ProgressMode } from "../behavior/progress-behavior/progress-behavior";
 import { sharedStyles } from "../style/shared";
 import { cssResult } from "../util/css";
-import { IProgressBehaviorProperties, ProgressBehavior, ProgressMode } from "../behavior/progress-behavior/progress-behavior";
 
 import styles from "./progress-bar-element.scss";
 
