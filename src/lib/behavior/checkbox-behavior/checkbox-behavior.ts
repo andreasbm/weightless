@@ -2,7 +2,6 @@ import { html, property } from "lit-element";
 import { TemplateResult } from "lit-html";
 import { ifDefined } from "lit-html/directives/if-defined";
 
-import "../../ripple/index";
 import { sharedStyles } from "../../style/shared";
 import { SPACE } from "../../util/constant/keycode";
 import { cssResult } from "../../util/css";
@@ -22,6 +21,7 @@ export abstract class CheckboxBehavior extends FormItemBehavior implements IChec
 
 	@property({reflect: true, type: Boolean}) checked = false;
 	@property({type: String, reflect: true}) role = "checkbox";
+	protected type = "checkbox";
 
 	protected firstUpdated (props: Map<keyof ICheckboxBehaviorProperties, unknown>) {
 		super.firstUpdated(<Map<keyof IFormItemBehaviorProperties, unknown>>props);
@@ -50,6 +50,13 @@ export abstract class CheckboxBehavior extends FormItemBehavior implements IChec
 		}
 
 		// When disabled, the element is not tabbable.
+		this.updateTabindex(props);
+	}
+
+	/**
+	 * Updates the tabindex.
+	 */
+	protected updateTabindex (props: Map<keyof ICheckboxBehaviorProperties, unknown>) {
 		if (props.has("disabled")) {
 			this.tabIndex = this.disabled ? -1 : 0;
 		}
@@ -65,6 +72,13 @@ export abstract class CheckboxBehavior extends FormItemBehavior implements IChec
 			return;
 		}
 
+		this.toggle();
+	}
+
+	/**
+	 * Checks and unchecks the component.
+	 */
+	protected toggle () {
 		this.checked = !this.checked;
 	}
 
@@ -87,7 +101,7 @@ export abstract class CheckboxBehavior extends FormItemBehavior implements IChec
 		return html`
 			<input
 				id="form-item"
-				type="checkbox"
+				type="${this.type}"
 				?checked="${this.checked}"
 				?required="${this.required}"
 				?disabled="${this.disabled}"

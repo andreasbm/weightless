@@ -22,18 +22,18 @@ export function renderAttributes (element: HTMLElement, attrMap: {[key: string]:
  * @param $elem
  * @param query
  */
-export function queryParentRoots<T> ($elem: Element, query: string): T | null {
+export function queryParentRoots<T> ($elem: Element, query: string): T[] {
 
 	// If a shadow root doesn't exist we don't continue the traversal
 	if ($elem.shadowRoot == null) {
-		return null;
+		return [];
 	}
 
 	// Grab the rood node and query it
 	const $root = (<any>$elem.shadowRoot.host).getRootNode();
-	const match = $root.querySelector(query);
-	if (match != null) {
-		return <T>match;
+	const matches = $root.querySelectorAll(query);
+	if (matches.length > 0) {
+		return <T[]>Array.from(matches);
 	}
 
 	// We continue the traversal if there was not matches

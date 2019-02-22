@@ -16,3 +16,4 @@ export * from "./select";
 export * from "./ripple";
 export * from "./checkbox";
 export * from "./behavior";
+export * from "./radio";

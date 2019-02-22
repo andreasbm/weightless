@@ -297,7 +297,8 @@ export class MenuElement<R> extends OverlayBehavior<R, IMenuBehaviorConfig> impl
 
 		// Check if the target is an ID.
 		if (typeof target === "string" || target instanceof String) {
-			target = queryParentRoots(this, <string>target);
+			const matches = queryParentRoots<Element>(this, <string>target);
+			target = matches.length > 0 ? matches[0] : null;
 		}
 
 		return getBoundingBoxOrigin(<Element>target);

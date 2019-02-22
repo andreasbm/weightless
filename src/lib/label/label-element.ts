@@ -64,7 +64,8 @@ export class LabelElement extends LitElement implements ILabelElementProperties 
 
 		// Make sure for is an id
 		const forId = this.for[0] === "#" ? this.for : `#${this.for}`;
-		return queryParentRoots(this, forId);
+		const matches = queryParentRoots<Element>(this, forId);
+		return matches.length > 0 ? matches[0] : null;
 	}
 
 	/**
