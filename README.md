@@ -9,6 +9,24 @@
 <a href="https://github.com/andreasbm/elements/graphs/contributors"><img alt="Contributors" src="https://img.shields.io/github/contributors/andreasbm/elements.svg" height="20"/></a>
 	</p>
 
+<p align="center">
+  <b>High-quality Web Components</b></br>
+  <sub>Web Components built to be used. They are lightweight, have a simple API and are easy to extend.<sub>
+</p>
+
+<br />
+
+* **High-quality:** Centered around the best practices.
+* **Testable:** Hundreds of test-cases makes sure the library is stable.
+* **Easy-to-use:** But with a simple and understandable API.
+* **Extensible:** Easy to extend the base components.
+
+![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)
+
+## ➤ Table of Contents
+
+* [➤ Contributors](#-contributors)
+* [➤ License](#-license)
 
 ![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)
 

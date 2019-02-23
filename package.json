@@ -4,7 +4,7 @@
 	"license": "MIT",
 	"module": "index.js",
 	"author": "Appnest",
-	"description": "Elements",
+	"description": "High-quality Web Components",
 	"bugs": {
 		"url": "https://github.com/andreasbm/elements/issues"
 	},
@@ -67,10 +67,17 @@
 		}
 	],
 	"readme": {
+		"text": "Web Components built to be used. They are lightweight, have a simple API and are easy to extend.",
 		"ids": {
 			"npm": "@appnest/elements",
 			"github": "andreasbm/elements"
 		},
+		"bullets": [
+			"**High-quality:** Centered around the best practices.",
+			"**Testable:** Hundreds of test-cases makes sure the library is stable.",
+			"**Easy-to-use:** But with a simple and understandable API.",
+			"**Extensible:** Easy to extend the base components."
+		],
 		"logo": {
 			"src": "https://raw.githubusercontent.com/andreasbm/elements/master/assets/logo-text.png?token=AF-iBbtFwTGmTCr-w-ZKDUg3jJVXROsJks5ceq82wA%3D%3D",
 			"width": 400
@@ -79,6 +86,9 @@
 			"{{ template:logo }}",
 			"{{ template:title }}",
 			"{{ template:badges }}",
+			"{{ template:description }}",
+			"{{ readme.bullets }}",
+			"{{ template:toc }}",
 			"{{ template:contributors }}",
 			"{{ template:license }}"
 		]
