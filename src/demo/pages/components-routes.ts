@@ -39,7 +39,7 @@ export const COMPONENTS_ROUTES: IRoute<IRouteData>[] = [
 		data: {
 			title: "Textfield",
 			desc: "Singleline text fields",
-			img: iconPath("text_field")
+			img: iconPath("textfield")
 		}
 	},
 	{
@@ -48,7 +48,7 @@ export const COMPONENTS_ROUTES: IRoute<IRouteData>[] = [
 		data: {
 			title: "Textarea",
 			desc: "Multiline text fields",
-			img: iconPath("text_field")
+			img: iconPath("textarea")
 		}
 	},
 	{
@@ -156,7 +156,7 @@ export const COMPONENTS_ROUTES: IRoute<IRouteData>[] = [
 		data: {
 			title: "Label",
 			desc: "Make form elements accessible",
-			img: iconPath("formfield")
+			img: iconPath("label")
 		}
 	},
 	{
