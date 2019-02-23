@@ -44,7 +44,7 @@
 		"readme": "node node_modules/.bin/readme"
 	},
 	"devDependencies": {
-		"@appnest/readme": "^1.0.21",
+		"@appnest/readme": "^1.0.22",
 		"@appnest/web-config": "0.3.23",
 		"@appnest/web-router": "^1.1.5",
 		"code-prettify": "^0.1.0"
@@ -71,9 +71,15 @@
 			"npm": "@appnest/elements",
 			"github": "andreasbm/elements"
 		},
+		"logo": {
+			"src": "https://raw.githubusercontent.com/andreasbm/elements/master/assets/logo-text.png?token=AF-iBbtFwTGmTCr-w-ZKDUg3jJVXROsJks5ceq82wA%3D%3D",
+			"width": 400
+		},
 		"blueprint": [
+			"{{ template:logo }}",
 			"{{ template:title }}",
 			"{{ template:badges }}",
+			"{{ template:contributors }}",
 			"{{ template:license }}"
 		]
 	}
