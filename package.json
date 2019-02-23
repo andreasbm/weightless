@@ -45,7 +45,7 @@
 	},
 	"devDependencies": {
 		"@appnest/readme": "^1.0.22",
-		"@appnest/web-config": "0.3.23",
+		"@appnest/web-config": "0.3.24",
 		"@appnest/web-router": "^1.1.5",
 		"code-prettify": "^0.1.0"
 	},

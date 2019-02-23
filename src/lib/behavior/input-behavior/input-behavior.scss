@@ -120,7 +120,7 @@
 
 :host([placeholder]) {
 	::slotted(input), ::slotted(textarea), ::slotted(select) {
-		padding-top: calc(#{$input-padding-top-bottom} + #{$input-placeholder-space});
+		padding-top: calc(#{$input-placeholder-space} + #{$input-padding-top-bottom});
 	}
 }
 
@@ -165,4 +165,3 @@
 		margin-right: #{$input-padding-left-right-outlined};
 	}
 }
-

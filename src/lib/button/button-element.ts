@@ -43,19 +43,19 @@ export class ButtonElement extends FormItemBehavior implements IButtonElementPro
 		super.connectedCallback();
 
 		this.onClick = this.onClick.bind(this);
-		this.onKeyUp = this.onKeyUp.bind(this);
+		this.onKeyDown = this.onKeyDown.bind(this);
 
 		this.listeners.push(
 			addListener(this, "click", this.onClick),
-			addListener(this, "keyup", this.onKeyUp)
+			addListener(this, "keydown", this.onKeyDown)
 		);
 	}
 
 	/**
-	 * Handles the key up event.
+	 * Handles the key down event.
 	 * @param e
 	 */
-	protected onKeyUp (e: KeyboardEvent) {
+	protected onKeyDown (e: KeyboardEvent) {
 		if (e.code === ENTER || e.code === SPACE) {
 			this.click();
 			this.$ripple.spawnRipple(undefined, {autoRelease: true});

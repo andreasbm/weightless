@@ -46,6 +46,9 @@ export class LabelElement extends LitElement implements ILabelElementProperties 
 		// Only refire the click if the target was not the target element to begin with
 		if ($target != null && e.target !== $target) {
 			$target.dispatchEvent(new MouseEvent("click", {relatedTarget: this}));
+			if ($target instanceof HTMLElement) {
+				$target.focus();
+			}
 			stopEvent(e);
 		}
 	}

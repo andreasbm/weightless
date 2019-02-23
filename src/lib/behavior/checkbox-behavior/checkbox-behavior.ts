@@ -21,17 +21,17 @@ export abstract class CheckboxBehavior extends FormItemBehavior implements IChec
 
 	@property({reflect: true, type: Boolean}) checked = false;
 	@property({type: String, reflect: true}) role = "checkbox";
-	protected type = "checkbox";
+	protected formItemType = "checkbox";
 
 	protected firstUpdated (props: Map<keyof ICheckboxBehaviorProperties, unknown>) {
 		super.firstUpdated(<Map<keyof IFormItemBehaviorProperties, unknown>>props);
 
 		this.onClick = this.onClick.bind(this);
-		this.onKeyUp = this.onKeyUp.bind(this);
+		this.onKeyDown = this.onKeyDown.bind(this);
 
 		this.listeners.push(
 			addListener(this, "click", this.onClick),
-			addListener(this, "keyup", this.onKeyUp)
+			addListener(this, "keydown", this.onKeyDown)
 		);
 	}
 
@@ -83,10 +83,10 @@ export abstract class CheckboxBehavior extends FormItemBehavior implements IChec
 	}
 
 	/**
-	 * Handles the key up event.
+	 * Handles the key down event.
 	 * @param e
 	 */
-	protected onKeyUp (e: KeyboardEvent) {
+	protected onKeyDown (e: KeyboardEvent) {
 		if (e.code === SPACE) {
 			this.click();
 			stopEvent(e);
@@ -101,7 +101,7 @@ export abstract class CheckboxBehavior extends FormItemBehavior implements IChec
 		return html`
 			<input
 				id="form-item"
-				type="${this.type}"
+				type="${this.formItemType}"
 				?checked="${this.checked}"
 				?required="${this.required}"
 				?disabled="${this.disabled}"

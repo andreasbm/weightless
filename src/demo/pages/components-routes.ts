@@ -1,7 +1,7 @@
 import { IRoute } from "@appnest/web-router";
 
 function iconPath (name: string): string {
-	return `/assets/icon/${name}.svg`;
+	return `assets/icon/${name}.svg`;
 }
 
 export interface IRouteData {title: string, desc: string, img: string};

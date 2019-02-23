@@ -15,7 +15,7 @@ export abstract class RadioBehavior extends CheckboxBehavior implements IRadioBe
 
 	static styles = [...CheckboxBehavior.styles, cssResult(styles)];
 	@property({type: String, reflect: true}) role = "radio";
-	protected type = "radio";
+	protected formItemType = "radio";
 
 	/**
 	 * Checks and unchecks the component.
@@ -76,8 +76,8 @@ export abstract class RadioBehavior extends CheckboxBehavior implements IRadioBe
 	 * Adds support for rowing tabindex.
 	 * @param e
 	 */
-	protected onKeyUp (e: KeyboardEvent) {
-		super.onKeyUp(e);
+	protected onKeyDown (e: KeyboardEvent) {
+		super.onKeyDown(e);
 		const group = this.queryGroup();
 		const currentIndex = group.indexOf(this);
 		let newIndex: number | null = null;
