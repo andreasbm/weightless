@@ -11,7 +11,7 @@
 
 <p align="center">
   <b>High-quality Web Components</b></br>
-  <sub>Web Components built to be used. They are lightweight, have a simple API and are easy to extend.<sub>
+  <sub>Web Components built to be used. They are lightweight, have a simple API and are easy to extend and compose.<sub>
 </p>
 
 <br />
@@ -19,7 +19,7 @@
 * **High-quality:** Centered around the best practices.
 * **Testable:** Hundreds of test-cases makes sure the library is stable.
 * **Easy-to-use:** But with a simple and understandable API.
-* **Extensible:** Easy to extend the base components.
+* **Single-responsibility:** Each component does one thing really well. This makes them really easy to extend and compose.
 * **Accessible:** All components has been build with accessibility in mind.
 
 ![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/grass.png)
