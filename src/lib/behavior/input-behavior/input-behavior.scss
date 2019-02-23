@@ -55,6 +55,7 @@
 	font-size: inherit;
 	line-height: 1;
 	white-space: nowrap;
+	user-select: none;
 }
 
 :host(:hover) {

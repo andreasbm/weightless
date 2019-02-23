@@ -1,6 +1,6 @@
 @import "../style/base";
 
-$radio-size: var(--radio-size, #{size(16)});
+$radio-size: var(--radio-size, #{size(20)});
 $radio-bg: var(--radio-bg, transparent);
 $radio-bg-checked: var(--radio-bg-checked, transparent);
 $radio-bg-disabled: var(--radio-bg-disabled, transparent);

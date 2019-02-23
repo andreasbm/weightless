@@ -4,6 +4,7 @@ $card-transition: var(--card-transition, box-shadow #{$transition-duration-fast}
 $card-elevation: var(--card-elevation, #{elevation(1, #{$shadow})});
 $card-elevation-hover: var(--card-elevation-hover, #{elevation(4, #{$shadow})});
 $card-color: var(--card-color, #{$foreground});
+$card-border-radius: var(--card-border-radius, #{$border-radius-m});
 $card-bg: var(--card-bg, #{$background});
 
 :host {
@@ -11,6 +12,7 @@ $card-bg: var(--card-bg, #{$background});
   background: #{$card-bg};
   transition: #{$card-transition};
   box-shadow: #{$card-elevation};
+  border-radius: #{$card-border-radius};
   display: block;
   text-align: left;
 }

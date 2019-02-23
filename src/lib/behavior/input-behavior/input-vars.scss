@@ -9,7 +9,7 @@ $input-color: var(--input-color, #{color(black, $default-hue)});
 $input-color-disabled: var(--input-color-disabled, #{color("shade", $light-hue)});
 $input-transition: var(--input-transition, border-color #{$transition-duration-fast} #{$transition-ease}, background #{$transition-duration-fast} #{$transition-ease});
 
-$input-bg: var(--input-bg, #{$background});
+$input-bg: var(--input-bg, transparent);
 $input-bg-filled: var(--input-bg, #{color("shade", 100)});
 $input-bg-filled-hover: var(--input-bg-filled-hover, #{color("shade", 300)});
 

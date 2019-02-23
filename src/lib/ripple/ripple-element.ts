@@ -2,7 +2,7 @@ import { customElement, html, LitElement, property } from "lit-element";
 import { TemplateResult } from "lit-html";
 import { sharedStyles } from "../style/shared";
 import { cssResult } from "../util/css";
-import { addListener, EventListenerSubscription, removeListeners, stopEvent } from "../util/event";
+import { addListener, EventListenerSubscription, removeListeners } from "../util/event";
 import { computeRadius } from "../util/number";
 import { getScale } from "../util/style";
 import { normalizePointerEvent } from "../util/swipe";
@@ -22,6 +22,7 @@ export interface IRippleElementProperties extends IRippleElementBaseProperties {
 	unbounded: boolean;
 	centered: boolean;
 	focusable: boolean;
+	role: string;
 }
 
 export interface IRippleConfig extends IRippleElementBaseProperties {
@@ -51,9 +52,12 @@ export class RippleElement extends LitElement implements IRippleElementPropertie
 	@property({type: Boolean, reflect: true}) autoRelease = false;
 	@property({type: Number}) initialDuration = 1000;
 	@property({type: Number}) releaseDuration = 500;
-	@property({type: Object}) target = this;
 	@property({type: String, reflect: true}) role = "presentation";
+	@property({type: Object}) target: EventTarget = this;
 
+	/**
+	 * Hook up the component.
+	 */
 	connectedCallback () {
 		super.connectedCallback();
 
@@ -61,7 +65,36 @@ export class RippleElement extends LitElement implements IRippleElementPropertie
 		this.releaseRipple = this.releaseRipple.bind(this);
 		this.onFocusIn = this.onFocusIn.bind(this);
 		this.onFocusOut = this.onFocusOut.bind(this);
+		this.addListeners();
+	}
 
+	/**
+	 * Tears down the component.
+	 */
+	disconnectedCallback () {
+		super.disconnectedCallback();
+		this.removeListeners();
+	}
+
+	/**
+	 * Reacts on updated properties.
+	 * @param props
+	 */
+	updated (props: Map<keyof IRippleElementProperties, unknown>) {
+		super.updated(props);
+
+		// If the target has changed we need to hook up the new listeners
+		if (props.has("target") && this.target != null) {
+			this.removeListeners();
+			this.addListeners();
+		}
+	}
+
+	/**
+	 * Adds event listeners to the target.
+	 */
+	protected addListeners () {
+		if (this.target == null) return;
 		this.listeners.push(
 			addListener(this.target, "mousedown", this.spawnRipple, {passive: true}),
 			addListener(this.target, "touchstart", this.spawnRipple, {passive: true}),
@@ -70,8 +103,10 @@ export class RippleElement extends LitElement implements IRippleElementPropertie
 		);
 	}
 
-	disconnectedCallback () {
-		super.disconnectedCallback();
+	/**
+	 * Removes listeners.
+	 */
+	protected removeListeners () {
 		removeListeners(this.listeners);
 	}
 
@@ -85,11 +120,6 @@ export class RippleElement extends LitElement implements IRippleElementPropertie
 
 		// Check if the ripple is disabled
 		if (this.disabled) {
-
-			// Stop the event
-			if (e != null) {
-				stopEvent(e);
-			}
 
 			// Return an empty noop function
 			return (() => {
@@ -116,13 +146,17 @@ export class RippleElement extends LitElement implements IRippleElementPropertie
 		// Show the ripple and store the release function
 		const release = this.showRippleAtCoords({x, y}, config);
 
-		// Add listeners for when the ripple should be released
-		this.rippleAnimationListeners.push(
-			release,
-			addListener(this.target, "mouseup", this.releaseRipple, {passive: true}),
-			addListener(this.target, "mouseleave", this.releaseRipple, {passive: true}),
-			addListener(this.target, "touchend", this.releaseRipple, {passive: true})
-		);
+		// Add the release function to the array of listeners
+		this.rippleAnimationListeners.push(release);
+
+		// Only if the target is present or if the ripple is NOT focusable we attach the release listeners.
+		if (this.target != null && !this.focusable) {
+			this.rippleAnimationListeners.push(
+				addListener(this.target, "mouseup", this.releaseRipple, {passive: true}),
+				addListener(this.target, "mouseleave", this.releaseRipple, {passive: true}),
+				addListener(this.target, "touchend", this.releaseRipple, {passive: true})
+			);
+		}
 
 		return release;
 	}

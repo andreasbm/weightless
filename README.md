@@ -20,6 +20,7 @@
 * **Testable:** Hundreds of test-cases makes sure the library is stable.
 * **Easy-to-use:** But with a simple and understandable API.
 * **Extensible:** Easy to extend the base components.
+* **Accessible:** All components has been build with accessibility in mind.
 
 ![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/grass.png)
 

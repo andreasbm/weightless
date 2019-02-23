@@ -80,7 +80,12 @@ export const COMPONENTS_ROUTES: IRoute<IRouteData>[] = [
 	},
 	{
 		path: "title",
-		component: () => import("./components/title-page")
+		component: () => import("./components/title-page"),
+		data: {
+			title: "Title",
+			desc: "Indicate the start of a new section.",
+			img: iconPath("typography")
+		}
 	},
 	{
 		path: "dialog",

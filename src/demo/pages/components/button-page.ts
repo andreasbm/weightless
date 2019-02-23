@@ -71,6 +71,13 @@ export default class ButtonPage extends LitElement {
 					</button-element>
 				</code-example-element>
 			</demo-element>
+			
+			<title-element level="3">No ripple</title-element>
+			<demo-element>
+				<code-example-element>
+					<button-element noripple>Button</button-element>
+				</code-example-element>
+			</demo-element>
 		`;
 	}
 }

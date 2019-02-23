@@ -11,11 +11,10 @@ export interface IIconElementProperties {
 
 @customElement("icon-element")
 export class IconElement extends LitElement implements IIconElementProperties {
+	static styles = [cssResult(styles), sharedStyles];
 
-	// The role of the dialog
 	@property({type: String, reflect: true}) role = "img";
 
-	static styles = [cssResult(styles), sharedStyles];
 
 	/**
 	 * Returns the template for the component.

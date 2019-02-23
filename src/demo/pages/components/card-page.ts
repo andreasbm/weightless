@@ -1,7 +1,7 @@
 import { customElement, html, LitElement } from "lit-element";
+import { sharedStyles } from "../../style/shared";
 import "../../code-example/code-example-element";
 import "../../demo/demo-element";
-import { sharedStyles } from "../../style/shared";
 import "./../../../lib/card/card-element";
 import "./../../../lib/title/title-element";
 
@@ -19,7 +19,7 @@ export default class CardPage extends LitElement {
 			</demo-element>
 			
 			<title-element level="3">Hoverable</title-element>
-			<demo-element default>
+			<demo-element>
 				<code-example-element>
 					<card-element hoverable>Card</card-element>
 				</code-example-element>

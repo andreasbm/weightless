@@ -1,6 +1,6 @@
 @import "../style/base";
 
-$checkbox-size: var(--checkbox-size, #{size(16)});
+$checkbox-size: var(--checkbox-size, #{size(20)});
 $checkbox-bg: var(--checkbox-bg, transparent);
 $checkbox-bg-checked: var(--checkbox-bg-checked, #{color("primary", $default-hue)});
 $checkbox-bg-disabled: var(--checkbox-bg-disabled, transparent);
