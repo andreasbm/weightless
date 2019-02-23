@@ -19,8 +19,8 @@
 * **High-quality:** Centered around the best practices.
 * **Testable:** Hundreds of test-cases makes sure the library is stable.
 * **Easy-to-use:** But with a simple and understandable API.
-* **Single-responsibility:** Each component does one thing really well. This makes them really easy to extend and compose.
 * **Accessible:** All components has been build with accessibility in mind.
+* **Single-responsibility:** Each component does one thing really well. This makes them really easy to extend and compose.
 
 ![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/grass.png)
 
