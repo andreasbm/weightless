@@ -1,0 +1,62 @@
+@import "../style/base";
+
+$nav-bg: var(--nav-bg, #{color(white)});
+$nav-color: var(--nav-color, #{color-contrast(white)});
+$nav-z-index: var(--tolbar-z-index, 1234567);
+$nav-padding: var(--nav-padding, 0 #{$spacing-l});
+$nav-height: var(--nav-height, #{size(70)});
+$nav-elevation: var(--nav-elevation, #{elevation(4)});
+$nav-transition: var(--nav-transition, background #{$transition-duration-fast} #{$transition-deceleration-curve},
+		transform #{$transition-duration-medium} #{$transition-deceleration-curve},
+		box-shadow #{$transition-duration-medium} #{$transition-deceleration-curve});
+
+/* Title */
+$nav-title-font-size: var(--nav-title-font-size, #{$font-size-xm});
+$nav-title-font-weight: var(--nav-title-font-weight, #{$font-weight-strong});
+$nav-title-margin: var(--nav-title-margin, 0 0 0 #{$spacing-xl});
+
+:host {
+	color: #{$nav-color};
+	transition: #{$nav-transition};
+	height: #{$nav-height};
+	padding: #{$nav-padding};
+	background: #{$nav-bg};
+	font-size: #{$nav-title-font-size};
+	font-weight: #{$nav-title-font-weight};
+	z-index: #{$nav-z-index};
+
+	display: flex;
+	justify-content: space-between;
+	box-sizing: border-box;
+	flex-grow: 1;
+}
+
+:host([fixed]) {
+	position: fixed;
+	top: 0;
+	left: 0;
+}
+
+:host([shadow]) {
+	box-shadow: #{$nav-elevation};
+}
+
+#left-container, #right-container, ::slotted([slot="left"]), ::slotted([slot="right"]), ::slotted([slot="title"]) {
+	display: flex;
+	align-items: center;
+	height: 100%;
+}
+
+::slotted([slot="left"]) {
+	justify-self: flex-start;
+}
+
+::slotted([slot="right"]) {
+	justify-self: flex-end;
+}
+
+::slotted([slot="title"]) {
+	margin: #{$nav-title-margin};
+	font-size: #{$nav-title-font-size};
+	font-weight: #{$nav-title-font-weight};
+}

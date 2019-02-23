@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+    <title>progress_spinner</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="progress_spinner" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="download">
+            <path d="M21,11 C20.45,11 20,11.45 20,12 C20,16.41 16.41,20 12,20 C7.59,20 4,16.41 4,12 C4,7.59 7.59,4 12,4 C12.55,4 13,3.55 13,3 C13,2.45 12.55,2 12,2 C6.49,2 2,6.49 2,12 C2,17.51 6.49,22 12,22 C17.51,22 22,17.51 22,12 C22,11.45 21.55,11 21,11 Z" id="Shape" fill="#000000" fill-rule="nonzero"></path>
+            <polygon id="Shape" points="0 0 24 0 24 24 0 24"></polygon>
+        </g>
+    </g>
+</svg>

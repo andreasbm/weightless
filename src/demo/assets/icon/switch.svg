@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+    <title>switch</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="switch" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="download">
+            <path d="M19,9 L10.98,9 C10.06,7.79 8.63,7 7,7 C4.24,7 2,9.24 2,12 C2,14.76 4.24,17 7,17 C8.63,17 10.06,16.21 10.98,15 L19,15 C20.66,15 22,13.66 22,12 C22,10.34 20.66,9 19,9 Z M19,13 L11.9,13 C11.97,12.68 12,12.34 12,12 C12,11.66 11.96,11.32 11.9,11 L19,11 C19.55,11 20,11.45 20,12 C20,12.55 19.55,13 19,13 Z" id="Shape" fill="#000000" fill-rule="nonzero"></path>
+            <polygon id="Shape" points="0 0 24 0 24 24 0 24"></polygon>
+        </g>
+    </g>
+</svg>

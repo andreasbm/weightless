@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+    <title>tooltip</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="tooltip" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <rect id="Rectangle-5" fill="#000000" x="2" y="3" width="20" height="4"></rect>
+        <path d="M4,11 L20,11 C21.1045695,11 22,11.8954305 22,13 L22,20 C22,21.1045695 21.1045695,22 20,22 L4,22 C2.8954305,22 2,21.1045695 2,20 L2,13 C2,11.8954305 2.8954305,11 4,11 Z M4,13 L4,20 L20,20 L20,13 L4,13 Z" id="Combined-Shape" fill="#000000"></path>
+        <polygon id="Triangle" fill="#000000" points="5.5 8 7 11 4 11"></polygon>
+    </g>
+</svg>

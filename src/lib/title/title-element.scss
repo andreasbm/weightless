@@ -1,0 +1,38 @@
+@import "../style/base";
+
+$title-margin: var(--title-margin, #{$spacing-s} 0);
+$title-font-family: var(--title-font-family, #{$font-family-serif});
+$title-font-weight: var(--title-font-weight, #{$font-weight-bold});
+$title-font-size-level-1: var(--title-font-size-level-1, #{$font-size-xl});
+$title-font-size-level-2: var(--title-font-size-level-2, #{$font-size-l});
+$title-font-size-level-3: var(--title-font-size-level-3, #{$font-size-xm});
+$title-font-size-level-4: var(--title-font-size-level-4, #{$font-size-m});
+$title-font-size-level-5: var(--title-font-size-level-5, #{$font-size-s});
+$title-font-size-level-6: var(--title-font-size-level-6, #{$font-size-xs});
+
+:host {
+	margin: #{$title-margin};
+	font-family: #{$title-font-family};
+	font-weight: #{$title-font-weight};
+	cursor: default;
+	display: block;
+}
+
+:host([level="1"]) {
+	font-size: #{$title-font-size-level-1};
+}
+:host([level="2"]) {
+	font-size: #{$title-font-size-level-2};
+}
+:host([level="3"]) {
+	font-size: #{$title-font-size-level-3};
+}
+:host([level="4"]) {
+	font-size: #{$title-font-size-level-4};
+}
+:host([level="5"]) {
+	font-size: #{$title-font-size-level-5};
+}
+:host([level="6"]) {
+	font-size: #{$title-font-size-level-6};
+}

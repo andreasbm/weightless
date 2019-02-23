@@ -15,6 +15,7 @@ const folders = {
 	src: path.resolve(__dirname, "src/demo"),
 	dist: path.resolve(__dirname, "dist"),
 	assets: path.resolve(__dirname, "assets"),
+	demo_assets: path.resolve(__dirname, "src/demo/assets"),
 	dist_assets: path.resolve(__dirname, "dist/assets")
 };
 
@@ -43,7 +44,8 @@ export default {
 			},
 			copyConfig: {
 				resources: [
-					[folders.assets, folders.dist_assets]
+					[folders.assets, folders.dist_assets],
+					[folders.demo_assets, folders.dist_assets]
 				],
 			},
 			htmlTemplateConfig: {

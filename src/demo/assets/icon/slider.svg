@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+    <title>slider</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="slider" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="download">
+            <polygon id="Shape" points="0 0 24 0 24 24 0 24"></polygon>
+            <path d="M19,16 L5,16 C3.34,16 2,17.34 2,19 C2,20.66 3.34,22 5,22 L19,22 C20.66,22 22,20.66 22,19 C22,17.34 20.66,16 19,16 Z M19,20 L14,20 L14,18 L19,18 C19.55,18 20,18.45 20,19 C20,19.55 19.55,20 19,20 Z" id="Shape" fill="#000000" fill-rule="nonzero"></path>
+        </g>
+        <path d="M11.3897843,11.7350615 C9.41836569,11.0648599 8,9.19806848 8,7 C8,4.23857625 10.2385763,2 13,2 C15.7614237,2 18,4.23857625 18,7 C18,9.17826348 16.6070786,11.0311927 14.6633689,11.7166548 L13.1210976,15 L11.3897843,11.7350615 Z" id="Combined-Shape" fill="#000000"></path>
+    </g>
+</svg>

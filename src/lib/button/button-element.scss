@@ -1,8 +1,9 @@
 @import "../style/base";
 
 $button-letter-spacing: var(--button-letter-spacing, #{size(2)});
+$button-fab-size: var(--button-fab-size, #{size(40)});
 
-$button-color: var(--button-color,#{color-contrast("primary")});
+$button-color: var(--button-color, #{color-contrast("primary")});
 $button-bg: var(--button-bg, #{color("primary")});
 $button-shadow-color: var(--button-shadow-color, #{color("primary", $default-hue, 0.2)});
 
@@ -14,14 +15,14 @@ $button-color-active: var(--button-color-active, #{color-contrast("primary", $da
 $button-bg-active: var(--button-bg-active, #{color("primary", $dark-hue)});
 $button-bg-active-flat: var(--button-bg, #{color("primary", $default-hue, 0.05)});
 
-$button-color-disabled:  var(--button-color-disabled, #{color-contrast("shade", $light-hue)});
+$button-color-disabled: var(--button-color-disabled, #{color-contrast("shade", $light-hue)});
 $button-bg-disabled: var(--button-bg-disabled, #{color("shade", $light-hue)});
 
 $button-border-outlined: var(--button-border-outlined, #{size(2)} solid currentColor);
 
 $button-transition: box-shadow #{$transition-duration-slow} #{$transition-ease},
-										background #{$transition-duration-fast} #{$transition-ease},
-										color #{$transition-duration-fast} #{$transition-ease};
+background #{$transition-duration-fast} #{$transition-ease},
+color #{$transition-duration-fast} #{$transition-ease};
 $button-padding: #{$spacing-m} #{$spacing-l};
 $button-font-size: #{$font-size-m};
 $button-border-radius: #{$border-radius-m};
@@ -49,7 +50,9 @@ $button-font-family: #{$font-family-sans-serif};
 	text-align: center;
 	user-select: none;
 	outline: none;
-	display: inline-block;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
 
 	// Add ellipsis when the text is too long
 	white-space: nowrap;
@@ -65,6 +68,17 @@ $button-font-family: #{$font-family-sans-serif};
 	--_button-color: #{$button-color-hover};
 	--_button-bg: #{$button-bg-hover};
 	--_button-shadow-color: #{$button-shadow-color-hover};
+}
+
+:host([fab]) {
+	width: #{$button-fab-size};
+	height: #{$button-fab-size};
+
+	padding: 0;
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 100%;
 }
 
 :host([inverted]) {

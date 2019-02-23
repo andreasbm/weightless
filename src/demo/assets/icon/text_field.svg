@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+    <title>text_field</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="text_field" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="download">
+            <path d="M2,19 L22,19 L22,21 L2,21 L2,19 Z M19,3 L20,3 L20,17 L19,17 L19,3 Z M9.51,3 L4.01,17 L6.26,17 L7.38,14 L13.63,14 L14.75,17 L17,17 L11.51,3 L9.51,3 Z M8.13,12 L10.51,5.67 L12.89,12 L8.13,12 Z" id="Shape" fill="#000000" fill-rule="nonzero"></path>
+            <polygon id="Shape" points="0 0 24 0 24 24 0 24"></polygon>
+        </g>
+    </g>
+</svg>

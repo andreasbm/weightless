@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+    <title>progress_bar</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="progress_bar" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="download">
+            <path d="M19,9 L5,9 C3.34,9 2,10.34 2,12 C2,13.66 3.34,15 5,15 L19,15 C20.66,15 22,13.66 22,12 C22,10.34 20.66,9 19,9 Z M19,13 L14,13 L14,11 L19,11 C19.55,11 20,11.45 20,12 C20,12.55 19.55,13 19,13 Z" id="Shape" fill="#000000" fill-rule="nonzero"></path>
+            <polygon id="Shape" points="0 0 24 0 24 24 0 24"></polygon>
+        </g>
+    </g>
+</svg>

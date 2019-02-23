@@ -57,3 +57,15 @@ export function removeChildren ($container: HTMLElement) {
 		(<HTMLElement>$container.firstChild).remove();
 	}
 }
+
+/**
+ * Sanitizes dangerous HTML.
+ * @param html
+ */
+export function sanitize (html: string): string {
+	return html.replace(/&/g, "&amp;")
+	           .replace(/</g, "&lt;")
+	           .replace(/>/g, "&gt;")
+	           .replace(/'/g, "&#039;")
+	           .replace(/"/g, "&quot;");
+}

@@ -15,6 +15,8 @@ export interface IButtonElementProperties extends IFormItemBehaviorProperties {
 	outlined: boolean;
 	flat: boolean;
 	role: string;
+	noRipple: boolean;
+	fab: boolean;
 }
 
 /**
@@ -26,7 +28,9 @@ export class ButtonElement extends FormItemBehavior implements IButtonElementPro
 
 	@property({type: String}) type: "button" | "submit" = "submit";
 	@property({type: Boolean, reflect: true}) inverted = false;
+	@property({type: Boolean, reflect: true}) fab = false;
 	@property({type: Boolean, reflect: true}) outlined = false;
+	@property({type: Boolean, reflect: true}) noRipple = false;
 	@property({type: Boolean, reflect: true}) flat = false;
 	@property({type: String, reflect: true}) role = "button";
 
@@ -114,7 +118,7 @@ export class ButtonElement extends FormItemBehavior implements IButtonElementPro
 	 */
 	render (): TemplateResult {
 		return html`
-			<ripple-element id="ripple" overlay .target="${this}"></ripple-element>
+			<ripple-element id="ripple" overlay .target="${this}" ?disabled="${this.disabled || this.noRipple}"></ripple-element>
 			<slot></slot>
 			${this.renderFormItem()}
 		`;

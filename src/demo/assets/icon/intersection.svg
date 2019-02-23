@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+    <title>intersection</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="intersection" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="download">
+            <path d="M16,8.1 L16,2 L2,2 L2,16 L8.1,16 C8.6,19.4 11.5,22 15,22 C18.9,22 22,18.9 22,15 C22,11.5 19.4,8.6 16,8.1 Z M8.1,14 L4,14 L4,4 L14,4 L14,8.1 C10.9,8.5 8.5,10.9 8.1,14 Z M14,10.1 L14,14 L10.1,14 C10.5,12 12,10.5 14,10.1 Z M15,20 C12.6,20 10.6,18.3 10.1,16 L16,16 L16,10.1 C18.3,10.6 20,12.6 20,15 C20,17.8 17.8,20 15,20 Z" id="Shape" fill="#000000" fill-rule="nonzero"></path>
+            <polygon id="Shape" points="0 0 24 0 24 24 0 24"></polygon>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,12 @@
+@import "../../lib/style/base";
+
+:host {
+	background: #{color(white)};
+	padding: #{size(70)} #{size(50)};
+	margin: #{$spacing-m} 0 #{$spacing-l};
+	text-align: center;
+}
+
+:host([default]) {
+	background: #{color("shade", 200)};
+}

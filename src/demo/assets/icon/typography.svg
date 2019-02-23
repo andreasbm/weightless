@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+    <title>typography</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <polygon id="path-1" points="24 24 0 24 0 0 24 0"></polygon>
+    </defs>
+    <g id="typography" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="download">
+            <mask id="mask-2" fill="white">
+                <use xlink:href="#path-1"></use>
+            </mask>
+            <g id="a"></g>
+            <path d="M2.5,4 L2.5,7 L7.5,7 L7.5,19 L10.5,19 L10.5,7 L15.5,7 L15.5,4 L2.5,4 Z M21.5,9 L12.5,9 L12.5,12 L15.5,12 L15.5,19 L18.5,19 L18.5,12 L21.5,12 L21.5,9 Z" id="Shape" fill="#000000" fill-rule="nonzero" mask="url(#mask-2)"></path>
+        </g>
+    </g>
+</svg>

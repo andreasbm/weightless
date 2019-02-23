@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51 (57462) - http://www.bohemiancoding.com/sketch -->
+    <title>theme</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="theme" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Group-2" transform="translate(2.000000, 2.000000)" fill="#000000">
+            <g id="Group">
+                <circle id="Oval-4" cx="6.5" cy="6.5" r="6.5"></circle>
+            </g>
+            <g id="Group" transform="translate(13.000000, 0.000000)">
+                <circle id="Oval-4" cx="3.5" cy="3.5" r="3.5"></circle>
+            </g>
+            <g id="Group" transform="translate(10.000000, 10.000000)">
+                <circle id="Oval-4" cx="5" cy="5" r="5"></circle>
+            </g>
+        </g>
+    </g>
+</svg>

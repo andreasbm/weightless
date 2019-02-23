@@ -1,8 +1,55 @@
+@import "../lib/style/base";
+
 //:focus:focus-within {
 //	outline: 2px solid blue;
 //}
+
+html {
+	font-family: var(--font-family-serif, 'Roboto Slab', serif);
+}
+
+body {
+	margin: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: var(--font-family-sans-serif, 'Roboto Condensed', sans-serif)
+}
 
 section {
 	margin: 50px auto;
 	max-width: 450px;
 }
+
+#logo {
+	height: 40px;
+}
+
+
+#navbar {
+
+}
+
+#router {
+	height: 100%;
+}
+
+#router-slot {
+
+}
+
+#navbar {
+	flex-shrink: 0;
+}
+
+#app {
+	--nav-height: #{size(70)};
+	display: flex;
+	flex-direction: column;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+}
+

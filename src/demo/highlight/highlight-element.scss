@@ -1,0 +1,95 @@
+@import "../../lib/style/base";
+
+/*
+ * Derived from einaros's Sons of Obsidian theme at
+ * http://studiostyl.es/schemes/son-of-obsidian by
+ * Alex Ford of CodeTunnel:
+ * http://CodeTunnel.com/blog/post/71/google-code-prettify-obsidian-theme
+ */
+
+.str {
+	color: var(--str-color, #EC7600);
+}
+
+.kwd {
+	color: var(--kwd-color, #93C763);
+}
+
+.com {
+	color: var(--com-color, #66747B);
+}
+
+.typ {
+	color: var(--typ-color, #678CB1);
+}
+
+.lit {
+	color: var(--lit-color, #FACD22);
+}
+
+.pun {
+	color: var(--pun-color, #F1F2F3);
+}
+
+.pln {
+	color: var(--pln-color, #F1F2F3);
+}
+
+.tag {
+	color: var(--tag-color, var(--primary-default, #8AC763));
+}
+
+.atn {
+	color: var(--atn-color, #E0E2E4);
+}
+
+.atv {
+	color: var(--atv-color, var(--secondary-default, #EC7600));
+}
+
+.dec {
+	color: var(--dec-color, purple);
+}
+
+pre.prettyprint {
+	border: var(--pp-border, 0px solid #888);
+}
+
+ol.linenums {
+	margin-top: 0;
+	margin-bottom: 0;
+}
+.prettyprint {
+	background: var(--pp-bg, #000);
+}
+
+li.L0, li.L1, li.L2, li.L3, li.L4, li.L5, li.L6, li.L7, li.L8, li.L9 {
+	color: var(--pp-line-color, #555);
+	list-style-type: decimal;
+}
+
+li.L1, li.L3, li.L5, li.L7, li.L9 {
+	background: var(--pp-line-bg, #111);
+}
+
+:host {
+	overflow: hidden;
+	border-radius: #{$border-radius-l};
+	display: block;
+	margin: #{$spacing-m} 0 0 0;
+}
+
+header {
+	background: #{color("shade", 200)};
+	color: #{color("shade", 800)};
+	padding: #{$spacing-s} #{$spacing-l};
+}
+
+pre {
+	background: var(--highlight-bg, var(--black, black));
+	padding: #{$spacing-l};
+	overflow: auto;
+	margin: 0;
+	line-height: 160%;
+	font-size: #{$font-size-m};
+}

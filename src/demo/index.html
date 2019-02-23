@@ -13,22 +13,23 @@
 	      rel="stylesheet">
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<style>
-		html {
-			font-family: var(--font-family-serif, 'Roboto Slab', serif);
-		}
-
-		h1, h2, h3, h4, h5, h6 {
-			font-family: var(--font-family-sans-serif, 'Roboto Condensed', sans-serif)
-		}
 
 	</style>
 </head>
 <body>
 
-<div>
-	<img src="/assets/logo-text.svg" />
+<div id="app">
+	<nav-element id="navbar" shadow>
+		<div slot="left">
+			<img id="logo" src="/assets/logo-text.svg" />
+		</div>
+		<div slot="right">
+		</div>
+	</nav-element>
+	<div id="router">
+		<router-slot id="router-slot"></router-slot>
+	</div>
 </div>
-<router-slot id="router-slot"></router-slot>
 
 <noscript>
 	<p>Please enable Javascript in your browser.</p>
