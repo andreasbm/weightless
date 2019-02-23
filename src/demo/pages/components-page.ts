@@ -6,6 +6,7 @@ import { sharedStyles } from "../style/shared";
 import { COMPONENTS_ROUTES, IRouteData } from "./components-routes";
 
 import styles from "./components-page.scss";
+import { getMainScrollTarget, setMainScrollTarget } from "./main-scroll-target";
 
 @customElement("components-page")
 export default class ComponentsPage extends LitElement {
@@ -21,9 +22,11 @@ export default class ComponentsPage extends LitElement {
 		const $slot = this.shadowRoot!.querySelector<RouterSlot>(ROUTER_SLOT_TAG_NAME)!;
 		$slot.add(COMPONENTS_ROUTES);
 
+		setMainScrollTarget(this.$routerContainer);
+
 		GLOBAL_ROUTER_EVENTS_TARGET.addEventListener(GlobalRouterEventKind.NavigationEnd, (e: NavigationEndEvent<IRouteData>) => {
 			this.currentRoute = e.detail;
-			this.$routerContainer.scrollTo(0, 0);
+			getMainScrollTarget().scrollTo(0, 0);
 			this.requestUpdate().then();
 		});
 	}

@@ -290,6 +290,7 @@ export abstract class OverlayBehavior<R, C extends Partial<IOverlayBehaviorBaseP
 		}
 
 		// Block the scrolling on the body element if necessary.
+		console.log({asd: this.blockScrolling});
 		if (this.blockScrolling) {
 			const $container = this.$scrollContainer;
 			$container.style.overflow = `hidden`;

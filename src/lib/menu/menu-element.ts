@@ -171,7 +171,7 @@ export class MenuElement<R> extends OverlayBehavior<R, IMenuBehaviorConfig> impl
 
 		// Animate the menu in and take the intermediate stake into account
 		const containerComputedStyle = window.getComputedStyle(this.$container);
-		const menuScale = getScale(containerComputedStyle);
+		const menuScale = getScale(containerComputedStyle, this.$container.getBoundingClientRect());
 		const menuOpacity = getOpacity(containerComputedStyle);
 
 		this.$container.animate(<Keyframe[]>[
@@ -290,15 +290,16 @@ export class MenuElement<R> extends OverlayBehavior<R, IMenuBehaviorConfig> impl
 	private getBoundingBoxOrigin (): IBoundingBoxOrigin {
 		let target = this.target;
 
-		// Ensure that a target exists.
-		if (target == null) {
-			throw new Error(`A target needs to be defined for the menu.`);
-		}
 
 		// Check if the target is an ID.
 		if (typeof target === "string" || target instanceof String) {
 			const matches = queryParentRoots<Element>(this, <string>target);
 			target = matches.length > 0 ? matches[0] : null;
+		}
+
+		// Ensure that a target exists.
+		if (target == null) {
+			throw new Error(`No targets could be found for the menu.`);
 		}
 
 		return getBoundingBoxOrigin(<Element>target);

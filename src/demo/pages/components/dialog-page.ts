@@ -14,6 +14,7 @@ import "./../../../lib/title/title-element";
 import "./../../code-example/code-example-element";
 import "./../../demo/demo-element";
 import "./../../highlight/highlight-element";
+import { getMainScrollTarget } from "../main-scroll-target";
 
 async function openTemplateDialog (text: string, config: Partial<IDialogElementBaseProperties> = {}) {
 	const ref = await openDialog({
@@ -22,6 +23,7 @@ async function openTemplateDialog (text: string, config: Partial<IDialogElementB
 		blockScrolling: true,
 		container: document.body,
 		template: html`<p slot="content">${text}</p>`,
+		scrollTarget: getMainScrollTarget(),
 		...config
 	});
 
@@ -45,47 +47,40 @@ export default class DialogPage extends LitElement {
 		select-element:not(:last-child) {
 			margin: 0 12px 0 0;
 		}
-	
 	`)];
 
 	@query("#size-select") $sizeSelect!: SelectElement;
-	@query("#open-dialog-1") $openDialog1!: ButtonElement;
 	@query("#duration-select") $durationSelect!: SelectElement;
 
 	@property({type: String}) size: DialogSize = defaultDialogConfig.size!;
 	@property({type: Number}) duration: number = defaultDialogConfig.duration!;
 
-	firstUpdated (props: PropertyValues) {
-		super.firstUpdated(props);
+	/**
+	 * Opens the declarative dialog.
+	 */
+	private openDeclarativeDialog () {
+		const $dialog = this.shadowRoot!.querySelector<DialogElement<string>>("#dialog")!;
+		const $submitButton = this.shadowRoot!.querySelector("#dialog-submit-button")!;
+		const $input = this.shadowRoot!.querySelector<HTMLInputElement>("#dialog-input")!;
 
+		const submit = () => {
+			if (Boolean($input.value)) {
+				$dialog.hide($input.value);
+			} else {
+				console.log("focus");
+				$input.focus();
+			}
+		};
 
-		/**
-		 * Opens a dialog already in the DOM.
-		 */
-		this.$openDialog1!.addEventListener("click", () => {
-			const $dialog = this.shadowRoot!.querySelector<DialogElement<string>>("#dialog-1")!;
-			const $submitButton = this.shadowRoot!.querySelector("#dialog-1-submit-button")!;
-			const $input = this.shadowRoot!.querySelector<HTMLInputElement>("#dialog-1-input")!;
+		$input.addEventListener("submit", submit);
+		$submitButton.addEventListener("click", submit);
 
-			const submit = () => {
-				if (Boolean($input.value)) {
-					$dialog.hide($input.value);
-				} else {
-					console.log("focus");
-					$input.focus();
-				}
-			};
-
-			$input.addEventListener("submit", submit);
-			$submitButton.addEventListener("click", submit);
-
-			// Open the dialog
-			$dialog.show().then((result: string | null) => {
-				console.log("Result from dialog:", result);
-				$input.value = "";
-				$submitButton.removeEventListener("click", submit);
-				$input.removeEventListener("keyup", submit);
-			});
+		// Open the dialog
+		$dialog.show().then((result: string | null) => {
+			console.log("Result from dialog:", result);
+			$input.value = "";
+			$submitButton.removeEventListener("click", submit);
+			$input.removeEventListener("keyup", submit);
 		});
 	}
 
@@ -108,15 +103,15 @@ export default class DialogPage extends LitElement {
 			
 			<title-element level="3">Open dialog already in the DOM (declarative)</title-element>
 			<demo-element>
-				<code-example-element headline='this.shadowRoot.querySelector("#dialog-1").show().then(result => console.log(result));'>
-					<button-element id="open-dialog-1">Open</button-element>
-					<dialog-element id="dialog-1" fixed backdrop blockScrolling>
+				<code-example-element headline='this.shadowRoot.querySelector("#dialog").show().then(result => console.log(result));'>
+					<button-element id="open-dialog" @click="${() => this.openDeclarativeDialog()}">Open</button-element>
+					<dialog-element id="dialog" fixed backdrop blockScrolling .scrollTarget="${getMainScrollTarget()}">
 						<h3 slot="header">Hello my friend</h3>
 						<div slot="content">
-							<textfield-element id="dialog-1-input" placeholder="Enter your name"></textfield-element>
+							<textfield-element id="dialog-input" placeholder="Enter your name"></textfield-element>
 						</div>
 						<div slot="footer">
-							<button-element id="dialog-1-submit-button">Submit</button-element>
+							<button-element id="dialog-submit-button">Submit</button-element>
 						</div>
 					</dialog-element>
 				</code-example-element>

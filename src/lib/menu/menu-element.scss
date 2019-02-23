@@ -13,6 +13,8 @@ $menu-backdrop-bg: var(--menu-backdrop-bg, rgba(0, 0, 0, 0));
 
 :host {
 	display: none;
+	outline: none;
+	pointer-events: none;
 }
 
 :host([fixed]) {
@@ -33,6 +35,7 @@ $menu-backdrop-bg: var(--menu-backdrop-bg, rgba(0, 0, 0, 0));
 }
 
 :host([backdrop]) {
+	pointer-events: all;
 	#backdrop {
 		display: block;
 	}
@@ -61,6 +64,7 @@ $menu-backdrop-bg: var(--menu-backdrop-bg, rgba(0, 0, 0, 0));
 	max-width: #{$menu-max-width};
 	max-height: #{$menu-max-height};
 	z-index: 1;
+	pointer-events: all;
 	box-sizing: border-box;
 	overflow: auto;
 	display: inline-block;

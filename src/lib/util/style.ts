@@ -31,13 +31,15 @@ export function getTranslateY (computedStyle: CSSStyleDeclaration) {
 /**
  * Returns the scale of the element.
  * - If the element does not have a height or width, the scale is interpreted as 0.
+ * - Give the rect of the element for measuring based on how precise it should be.
  * @param computedStyle
+ * @param rect
  */
-export function getScale (computedStyle: CSSStyleDeclaration): {x: number, y: number} {
+export function getScale (computedStyle: CSSStyleDeclaration, rect?: ClientRect | DOMRect): {x: number, y: number} {
 	const matrix = getWebkitMatrix(computedStyle);
 	return {
-		x: computedStyle.getPropertyValue("width") === "0px" ? 0 : matrix.a,
-		y: computedStyle.getPropertyValue( "height") === "0px" ? 0 : matrix.d
+		x: (rect == null ? computedStyle.getPropertyValue("width") : rect.width) === 0 ? 0 : matrix.a,
+		y: (rect == null ? computedStyle.getPropertyValue("height") : rect.height) === 0 ? 0 : matrix.d
 	};
 
 	// SOLUTION WITHOUT WEBKIT
