@@ -38,7 +38,7 @@ export class TextfieldElement extends InputBehavior implements ITextfieldElement
 				autocomplete="${ifDefined(this.autocomplete)}"
 				minlength="${ifDefined(this.minLength)}"
 				maxlength="${ifDefined(this.maxLength)}"
-				tabindex="${this.readonly ? "-1" : "0"}"
+				tabindex="${this.disabled ? "-1" : "0"}"
 			/>
 		`;
 	}

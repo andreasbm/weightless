@@ -1,5 +1,6 @@
-import { customElement, html } from "lit-element";
+import { customElement, html, property } from "lit-element";
 import { TemplateResult } from "lit-html";
+import { ifDefined } from "lit-html/directives/if-defined";
 import { IInputBehaviorProperties, InputBehavior } from "../behavior/input-behavior/input-behavior";
 import { cssResult } from "../util/css";
 import { removeChildren } from "../util/dom";
@@ -12,6 +13,7 @@ export interface ISelectElementProperties extends IInputBehaviorProperties {
 @customElement("select-element")
 export class SelectElement extends InputBehavior implements ISelectElementProperties {
 	static styles = [...InputBehavior.styles, cssResult(styles)];
+	@property({type: String, reflect: true}) role = "listbox";
 
 	/**
 	 * Hook up the slot change event listener after first update.
@@ -55,8 +57,12 @@ export class SelectElement extends InputBehavior implements ISelectElementProper
 		}
 
 		// Find the new value. If the value before was not selected, use either the
-		// value set on the component or the selected value from the set of options.
-		const newValue = (valueBeforeUpdate === "") ? this.value : valueBeforeUpdate;
+		// initial value set before the form item was present or the selected value from the set of options.
+		// The initial value is important because if we simply relied on the native select to give us the correct
+		// value we would get an empty string because the native behavior is to return an empty string if trying
+		// to set a value with no corresponding options which will be the case if set initially before any
+		// options has been added.
+		const newValue = (valueBeforeUpdate === "") ? this.initialValue || this.value : valueBeforeUpdate;
 
 		// Keep the select in sync
 		if ($select.value !== newValue) {
@@ -74,7 +80,14 @@ export class SelectElement extends InputBehavior implements ISelectElementProper
 	 */
 	protected renderFormItem (): TemplateResult {
 		return html`
-			<select id="form-item"></select>
+			<select id="form-item"
+					.value="${this.value}"
+					?required="${this.required}"
+					?disabled="${this.disabled}"
+					?readonly="${this.readonly}"
+					name="${ifDefined(this.name)}"
+					autocomplete="${ifDefined(this.autocomplete)}"
+					tabindex="${this.disabled ? "-1" : "0"}"></select>
 			<svg id="arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 25" preserveAspectRatio="none">
 				<polygon points="0,0 50,0 25,25"/>
 			</svg>

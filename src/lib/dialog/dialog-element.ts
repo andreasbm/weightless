@@ -16,7 +16,7 @@ export enum DialogSize {
 }
 
 export interface IDialogElementBaseProperties extends IOverlayBehaviorBaseProperties {
-	size: DialogSize | null;
+	size?: DialogSize;
 	scrollable: boolean;
 	role: string;
 }
@@ -41,7 +41,7 @@ export class DialogElement<R> extends OverlayBehavior<R, Partial<IDialogElementP
 	static styles = [sharedStyles, cssResult(styles)];
 
 	// The size of the dialog
-	@property({type: String, reflect: true}) size: DialogSize | null = null;
+	@property({type: String, reflect: true}) size?: DialogSize;
 
 	// Whether the dialog is scrollable or not
 	@property({type: Boolean, reflect: true}) scrollable = false;

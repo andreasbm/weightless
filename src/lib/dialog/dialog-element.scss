@@ -41,7 +41,7 @@ $dialog-content-padding: var(--dialog-content-padding, #{$spacing-l});
 $dialog-content-color: var(--dialog-content-color, #{color("shade", 800)});
 
 /* Footer */
-$dialog-footer-padding: #{$spacing-s};
+$dialog-footer-padding: var(--dialog-footer-padding, #{$spacing-m});
 
 :host {
 	--_dialog-width: #{$dialog-width};

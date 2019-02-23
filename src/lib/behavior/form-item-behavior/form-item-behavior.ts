@@ -32,6 +32,10 @@ export abstract class FormItemBehavior extends LitElement implements IFormItemBe
 		return this.getValue();
 	}
 
+	// The initial value is only set if the form item doesn't exist which will be the case
+	// if it is set before the first update.
+	protected initialValue?: string;
+
 	protected $formItem!: FormItem;
 	protected listeners: EventListenerSubscription[] = [];
 
@@ -106,6 +110,9 @@ export abstract class FormItemBehavior extends LitElement implements IFormItemBe
 		if (this.$formItem != null) {
 			this.$formItem.value = value;
 			this.refreshAttributes();
+		} else {
+			// Store the initial value so the correct value can be set when the $formItem is added to the DOM.
+			this.initialValue = value;
 		}
 	}
 
@@ -113,7 +120,7 @@ export abstract class FormItemBehavior extends LitElement implements IFormItemBe
 	 * Gets the value of the form item.
 	 */
 	protected getValue (): string {
-		return this.$formItem != null ? this.$formItem.value : "";
+		return this.$formItem != null ? this.$formItem.value : this.initialValue || "";
 	}
 
 	/**

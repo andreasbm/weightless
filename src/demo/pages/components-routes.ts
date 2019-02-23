@@ -52,6 +52,15 @@ export const COMPONENTS_ROUTES: IRoute<IRouteData>[] = [
 		}
 	},
 	{
+		path: "select",
+		component: () => import("./components/select-page"),
+		data: {
+			title: "Select",
+			desc: "Select one or more values from a set of options.",
+			img: iconPath("select")
+		}
+	},
+	{
 		path: "checkbox",
 		component: () => import("./components/checkbox-page"),
 		data: {
@@ -139,15 +148,6 @@ export const COMPONENTS_ROUTES: IRoute<IRouteData>[] = [
 			title: "Menu",
 			desc: "Coming soon",
 			img: iconPath("menu")
-		}
-	},
-	{
-		path: "select",
-		component: () => import("./components/select-page"),
-		data: {
-			title: "Select",
-			desc: "Select one or more values from a set of options.",
-			img: iconPath("select")
 		}
 	},
 	{

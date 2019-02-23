@@ -1,5 +1,5 @@
 import { GLOBAL_ROUTER_EVENTS_TARGET, GlobalRouterEventKind, IRoute, NavigationEndEvent, ROUTER_SLOT_TAG_NAME, RouterSlot } from "@appnest/web-router";
-import { customElement, html, LitElement, PropertyValues } from "lit-element";
+import { customElement, html, LitElement, PropertyValues, query } from "lit-element";
 import { repeat } from "lit-html/directives/repeat";
 import { cssResult } from "../../lib/util/css";
 import { sharedStyles } from "../style/shared";
@@ -13,6 +13,8 @@ export default class ComponentsPage extends LitElement {
 	static styles = [sharedStyles, cssResult(styles)];
 	private currentRoute?: IRoute<IRouteData>;
 
+	@query("#router") $routerContainer: HTMLDivElement;
+
 	firstUpdated (props: PropertyValues) {
 		super.firstUpdated(props);
 
@@ -21,6 +23,7 @@ export default class ComponentsPage extends LitElement {
 
 		GLOBAL_ROUTER_EVENTS_TARGET.addEventListener(GlobalRouterEventKind.NavigationEnd, (e: NavigationEndEvent<IRouteData>) => {
 			this.currentRoute = e.detail;
+			this.$routerContainer.scrollTo(0, 0);
 			this.requestUpdate().then();
 		});
 	}

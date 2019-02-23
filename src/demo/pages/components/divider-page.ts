@@ -1,7 +1,9 @@
 import { customElement, html, LitElement } from "lit-element";
-import { cssResult } from "../../../lib/util/css";
 import { sharedStyles } from "../../style/shared";
 import "./../../../lib/divider/divider-element";
+import "./../../../lib/title/title-element";
+import "../../code-example/code-example-element";
+import "../../demo/demo-element";
 
 @customElement("divider-page")
 export default class DividerPage extends LitElement {
@@ -10,8 +12,11 @@ export default class DividerPage extends LitElement {
 
 	protected render () {
 		return html`
-			<h3>divider-element</h3>
-			<divider-element></divider-element>
+			<demo-element default>
+				<code-example-element>
+					<divider-element></divider-element>
+				</code-example-element>
+			</demo-element>
 		`;
 	}
 }
