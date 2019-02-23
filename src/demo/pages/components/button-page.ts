@@ -1,5 +1,9 @@
 import { customElement, html, LitElement } from "lit-element";
 import { sharedStyles } from "../../style/shared";
+import "./../../../lib/button/button-element";
+import "./../../../lib/textfield/textfield-element";
+import "./../../../lib/fab-button/fab-button-element";
+import "./../../../lib/icon/icon-element";
 
 @customElement("button-page")
 export default class ButtonPage extends LitElement {

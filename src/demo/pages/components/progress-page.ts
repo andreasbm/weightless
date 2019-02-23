@@ -1,6 +1,8 @@
 import { customElement, html, LitElement } from "lit-element";
 import { cssResult } from "../../../lib/util/css";
 import { sharedStyles } from "../../style/shared";
+import "./../../../lib/progress-spinner/progress-spinner-element";
+import "./../../../lib/progress-bar/progress-bar-element";
 
 @customElement("progress-page")
 export default class ProgressPage extends LitElement {

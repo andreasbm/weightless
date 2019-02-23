@@ -1,6 +1,7 @@
 import { customElement, html, LitElement } from "lit-element";
 import { cssResult } from "../../../lib/util/css";
 import { sharedStyles } from "../../style/shared";
+import "./../../../lib/radio/radio-element";
 
 @customElement("radio-page")
 export default class RadioPage extends LitElement {

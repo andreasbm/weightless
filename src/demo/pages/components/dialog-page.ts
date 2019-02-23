@@ -2,6 +2,8 @@ import { customElement, html, LitElement, PropertyValues } from "lit-element";
 import { DialogElement } from "../../../lib/dialog/dialog-element";
 import { openDialog } from "../../../lib/dialog/open-dialog";
 import { sharedStyles } from "../../style/shared";
+import "./../../../lib/textfield/textfield-element";
+import "./../../../lib/button/button-element";
 
 @customElement("dialog-page")
 export default class DialogPage extends LitElement {

@@ -1,6 +1,9 @@
 import { customElement, html, LitElement } from "lit-element";
 import { cssResult } from "../../../lib/util/css";
 import { sharedStyles } from "../../style/shared";
+import "./../../../lib/banner/banner-element";
+import "./../../../lib/icon/icon-element";
+import "./../../../lib/button/button-element";
 
 @customElement("banner-page")
 export default class BannerPage extends LitElement {

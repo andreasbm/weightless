@@ -2,6 +2,7 @@ import { customElement, html, LitElement, PropertyValues } from "lit-element";
 import { defaultMenuConfig, IMenuBehaviorConfig, MenuElement } from "../../../lib/menu/menu-element";
 import { cssResult } from "../../../lib/util/css";
 import { sharedStyles } from "../../style/shared";
+import "./../../../lib/button/button-element";
 
 @customElement("menu-page")
 export default class MenuPage extends LitElement {

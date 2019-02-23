@@ -1,6 +1,7 @@
 import { customElement, html, LitElement } from "lit-element";
 import { cssResult } from "../../../lib/util/css";
 import { sharedStyles } from "../../style/shared";
+import "./../../../lib/divider/divider-element";
 
 @customElement("divider-page")
 export default class DividerPage extends LitElement {

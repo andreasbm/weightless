@@ -13,7 +13,9 @@ import pkg from "./package.json";
 
 const folders = {
 	src: path.resolve(__dirname, "src/demo"),
-	dist: path.resolve(__dirname, "dist")
+	dist: path.resolve(__dirname, "dist"),
+	assets: path.resolve(__dirname, "assets"),
+	dist_assets: path.resolve(__dirname, "dist/assets")
 };
 
 const files = {
@@ -41,6 +43,7 @@ export default {
 			},
 			copyConfig: {
 				resources: [
+					[folders.assets, folders.dist_assets]
 				],
 			},
 			htmlTemplateConfig: {
