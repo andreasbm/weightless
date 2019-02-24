@@ -160,6 +160,15 @@ export const COMPONENTS_ROUTES: IRoute<IRouteData>[] = [
 		}
 	},
 	{
+		path: "theme",
+		component: () => import("./components/theme-page"),
+		data: {
+			title: "Theme",
+			desc: "Swap out the colors",
+			img: iconPath("theme")
+		}
+	},
+	{
 		path: "**",
 		redirectTo: "button"
 	}

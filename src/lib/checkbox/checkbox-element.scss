@@ -23,7 +23,6 @@ $checkbox-checkmark-path-dasharray: var(--checkbox-checkmark-path-dasharray, 30)
 $checkbox-checkmark-path-delay: var(--checkbox-checkmark-path-delay, 50ms);
 
 $checkbox-ripple-transform: var(--checkbox-ripple-transform, translate(-50%, -50%) scale(2));
-$checkbox-ripple-color: var(--checkbox-ripple-color, #{color("primary", $light-hue, 0.1)});
 
 :host {
 	--_checkbox-bg: #{$checkbox-bg};
@@ -92,6 +91,5 @@ $checkbox-ripple-color: var(--checkbox-ripple-color, #{color("primary", $light-h
 }
 
 #ripple {
-	--ripple-color: #{$checkbox-ripple-color};
 	transform: #{$checkbox-ripple-transform};
 }

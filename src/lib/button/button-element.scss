@@ -21,8 +21,9 @@ $button-bg-disabled: var(--button-bg-disabled, #{color("shade", $light-hue)});
 $button-border-outlined: var(--button-border-outlined, #{size(2)} solid currentColor);
 
 $button-transition: box-shadow #{$transition-duration-slow} #{$transition-ease},
-background #{$transition-duration-fast} #{$transition-ease},
-color #{$transition-duration-fast} #{$transition-ease};
+background #{$transition-duration-medium} #{$transition-ease},
+color #{$transition-duration-medium} #{$transition-ease};
+
 $button-padding: #{$spacing-m} #{$spacing-l};
 $button-font-size: #{$font-size-m};
 $button-border-radius: #{$border-radius-m};

@@ -20,7 +20,6 @@ $radio-dot-border-radius: var(--radio-dot-border-radius, 100%);
 $radio-dot-transition: var(--radio-dot-transition, transform #{$transition-duration-medium} #{$transition-deceleration-curve});
 
 $radio-ripple-transform: var(--radio-ripple-transform, translate(-50%, -50%) scale(2));
-$radio-ripple-color: var(--radio-ripple-color, #{color("primary", $light-hue, 0.1)});
 
 :host {
 	--_radio-bg: #{$radio-bg};
@@ -80,6 +79,5 @@ $radio-ripple-color: var(--radio-ripple-color, #{color("primary", $light-hue, 0.
 }
 
 #ripple {
-	--ripple-color: #{$radio-ripple-color};
 	transform: #{$radio-ripple-transform};
 }

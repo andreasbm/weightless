@@ -4,7 +4,7 @@ import { sharedStyles } from "../style/shared";
 import { cssResult } from "../util/css";
 import { addListener, EventListenerSubscription, removeListeners } from "../util/event";
 import { computeRadius } from "../util/number";
-import { getScale } from "../util/style";
+import { getOpacity, getScale } from "../util/style";
 import { normalizePointerEvent } from "../util/swipe";
 
 import styles from "./ripple-element.scss";
@@ -220,8 +220,9 @@ export class RippleElement extends LitElement implements IRippleElementPropertie
 			released = true;
 
 			// Fade the ripple out
+			const opacity = getOpacity(window.getComputedStyle($ripple));
 			const outAnimation = $ripple.animate(<PropertyIndexedKeyframes>{
-				opacity: [`1`, `0`]
+				opacity: [opacity.toString(), `0`]
 			}, {...ANIMATION_CONFIG, duration: releaseDuration});
 
 			// When the out animation finished we remove the ripple before the next frame

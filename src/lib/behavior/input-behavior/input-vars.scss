@@ -11,7 +11,7 @@ $input-transition: var(--input-transition, border-color #{$transition-duration-f
 
 $input-bg: var(--input-bg, transparent);
 $input-bg-filled: var(--input-bg, #{color("shade", 200)});
-$input-bg-filled-hover: var(--input-bg-filled-hover, #{color("shade", 300)});
+$input-bg-filled-hover: var(--input-bg-filled-hover, #{color("shade", 200, 0.5)});
 
 $input-border-width: #{size(1)};
 $input-before-after-color: var(--input-before-after-color, #{color("shade", $default-hue)});
@@ -30,6 +30,6 @@ $input-font-family: var(--input-font-family, #{$font-family-serif});
 $input-placeholder-color: var(--input-placeholder-color, #{color("shade", $dark-hue)});
 $input-placeholder-color-disabled: var(--input-placeholder-color-disabled, #{color("shade", $light-hue)});
 $input-placeholder-font-size: var(--input-placeholder-font-size, #{$font-size-s});
-$input-placeholder-transition: var(--input-placeholder-transition, top #{$transition-duration-fast} #{$transition-linear}, font-size #{$transition-duration-fast} #{$transition-linear}, transform #{$transition-duration-fast} #{$transition-linear});
+$input-placeholder-transition: var(--input-placeholder-transition, top #{$transition-duration-medium} #{$transition-linear}, font-size #{$transition-duration-fast} #{$transition-linear}, transform #{$transition-duration-fast} #{$transition-linear});
 $input-placeholder-space: var(--input-placeholder-space, #{size(14)});
 
