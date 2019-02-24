@@ -1,5 +1,5 @@
 import { customElement, html, LitElement, property } from "lit-element";
-import ".../../../../lib/title/title-element";
+import "../../../../lib/title/title-element";
 import "../../../../lib/button/button-element";
 import { defaultMenuConfig, IMenuElementBaseProperties, MenuElement } from "../../../../lib/menu/menu-element";
 import { openMenu } from "../../../../lib/menu/open-menu";
