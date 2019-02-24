@@ -6,6 +6,12 @@
 
 html {
 	font-family: var(--font-family-serif, 'Roboto Slab', serif);
+
+	&.theme-red {
+		@include theme-variables((
+			"primary": $palette-red
+		));
+	}
 }
 
 body {
@@ -54,7 +60,7 @@ section {
 }
 
 #menu-button {
-	@include color-vars("primary", get-entry($palette-map, "grey"));
+	@include color-variables("primary", $palette-grey);
 	display: none;
 }
 

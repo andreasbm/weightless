@@ -1,111 +1,47 @@
 @import "functions";
-
-$light-hue: 400;
-$default-hue: 500;
-$dark-hue: 600;
-
-$palette-alias-map: (
-		"primary": "cobalt",
-		"error": "red",
-		"accent": "pink",
-		"shade": "grey"
-);
-
-$palette-map: (
-		"black": (
-				400: '0,0,0',
-				500: '0,0,0',
-				600: '0,0,0'
-		),
-		"white": (
-				400: '255,255,255',
-				500: '255,255,255',
-				600: '255,255,255'
-		),
-		"white-dirty": (
-				400: '245, 246, 252',
-				500: '246, 247, 251',
-				600: '193, 200, 227'
-		),
-		"black-dirty": (
-				400: '28, 18, 18',
-				500: '23, 23, 23',
-				600: '10, 10, 10'
-		),
-		"grey": (
-				100: '249, 249, 255',
-				200: '242, 243, 251',
-				300: '227, 230, 237',
-				400: '199, 203, 208',
-				500: '170, 177, 186',
-				600: '119, 130, 146',
-				700: '79, 82, 95',
-				800: '45, 46, 50'
-		),
-		"cobalt": (
-				400: '86, 93, 250',
-				500: '19, 47, 242',
-				600: '0, 37, 204',
-		),
-		"red": (
-				400: '243, 94, 132',
-				500: '233, 30, 99',
-				600: '204, 0, 89'
-		)
-);
+@import "palette";
 
 /**
- * Returns a color from the palette.
+ * Returns a color from a palette.
  */
-@function get-color($color, $hue: $default-hue) {
-	@return get-entry(get-entry($palette-map, $color), $hue);
+@function _get-color($name, $hue: $default-hue, $palette-map: $palette-map) {
+	@return get-entry(get-entry($palette-map, $name), $hue);
 }
 
-$palette-contrast-map: (
-		"black": get-color("white"),
-		"white": get-color("black"),
-		"cobalt": get-color("white"),
-		"white-dirty": get-color("black"),
-		"black-dirty": get-color("white"),
-		"grey": (
-				100: get-color("black"),
-				200: get-color("black"),
-				300: get-color("black"),
-				400: get-color("white"),
-				500: get-color("white"),
-				600: get-color("white"),
-				700: get-color("white"),
-				800: get-color("white")
-		),
-);
-
 /**
- * Returns a contrast color to a color.
+ * Returns a contrast color to a color from a palette.
  */
-@function get-color-contrast($color, $hue: $default-hue) {
-	$match: get-entry($palette-contrast-map, $color);
-	@if (type-of($match) != map) {
-		@return $match;
+@function _get-color-contrast($name, $hue: $default-hue, $palette-map: $palette-map) {
+	$contrast: get-entry(get-entry($palette-map, $name), "contrast");
+
+	// If the match is NOT a match we can simply return the match because it is then a color.
+	@if (type-of($contrast) != map) {
+		@return $contrast;
+
 	} @else {
-		@return get-entry($match, $hue);
+		@return get-entry($contrast, $hue);
 	}
 }
 
-@function _get-dynamic-color($color, $hue: $default-hue) {
-	$default-value: if(map-has-key($palette-alias-map, $color), _get-dynamic-color(get-entry($palette-alias-map, $color), $hue), get-color($color, $hue));
-	@return #{'var(--#{$color}-#{$hue}, #{$default-value})'};
+/**
+ * Returns a dynamic color which is bound to a CSS variable.
+ */
+@function _get-dynamic-color($name, $hue: $default-hue, $palette-map: $palette-map) {
+	@return #{'var(--#{$name}-#{$hue}, #{_get-color($name, $hue, $palette-map)})'};
 }
 
-@function _get-dynamic-color-contrast($color, $hue: $default-hue) {
-	$default-value: if(map-has-key($palette-alias-map, $color), _get-dynamic-color-contrast(get-entry($palette-alias-map, $color), $hue), get-color-contrast($color, $hue));
-	@return #{'var(--#{$color}-#{$hue}-contrast, #{$default-value})'};
+/**
+ * Returns a dynamic color contrast which is bound to a CSS variable.
+ */
+@function _get-dynamic-color-contrast($name, $hue: $default-hue, $palette-map: $palette-map) {
+	@return #{'var(--#{$name}-#{$hue}-contrast, #{_get-color-contrast($name, $hue, $palette-map)})'};
 }
 
 /**
  * Returns a color variable.
  */
-@function color ($color, $hue: $default-hue, $alpha: null) {
-	$dynamic-color: _get-dynamic-color($color, $hue);
+@function color ($name, $hue: $default-hue, $alpha: null, $palette-map: $palette-map) {
+	$dynamic-color: _get-dynamic-color($name, $hue, $palette-map);
 	@if ($alpha and $alpha >= 0 and $alpha < 1) {
 		@return #{'rgba(#{$dynamic-color}, #{$alpha})'};
 
@@ -117,8 +53,8 @@ $palette-contrast-map: (
 /**
  * Returns a color contrast variable.
  */
-@function color-contrast ($color, $hue: $default-hue, $alpha: null) {
-	$dynamic-color-contrast: _get-dynamic-color-contrast($color, $hue);
+@function color-contrast ($name, $hue: $default-hue, $alpha: null, $palette-map: $palette-map) {
+	$dynamic-color-contrast: _get-dynamic-color-contrast($name, $hue, $palette-map);
 	@if ($alpha and $alpha >= 0 and $alpha < 1) {
 		@return #{'rgba(#{$dynamic-color-contrast}, #{$alpha})'};
 
@@ -127,12 +63,6 @@ $palette-contrast-map: (
 	}
 }
 
-$foreground: var(--foreground, #{color("black")});
-$background: var(--background, #{color("white")});
-$shadow: var(--shadow, #{color("black", $default-hue, 0.2)});
-
-@mixin color-vars ($name, $palette) {
-	@each $hue, $color in $palette {
-		--#{$name}-#{$hue}: #{$color};
-	}
-}
+$foreground: var(--foreground, black);
+$background: var(--background, white);
+$shadow: var(--shadow, rgba(0, 0, 0, 0.2));

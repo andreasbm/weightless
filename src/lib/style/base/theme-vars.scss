@@ -1,0 +1,55 @@
+@import "theme.scss";
+@import "functions";
+
+@function _is-contrast ($hue) {
+	@return type_of($hue) == "string" AND unquote($hue) == contrast
+}
+
+/**
+ * Generates color variables for each hue in the palette.
+ */
+@mixin color-variables ($name, $palette) {
+	@each $hue, $color in $palette {
+
+		// Check if the hue is the contrast
+		@if (_is-contrast($hue)) {
+
+			// We now know that the color is either a map with contrast colors or a contrast color
+			@if (type-of($color) != map) {
+
+				// Add a contrast color for each hue which is NOT the contrast hue because the contrast is a color.
+				@each $hue, $_ in $palette {
+					@if (_is-contrast($hue) == false) {
+						--#{$name}-#{$hue}-contrast: #{$color};
+					}
+				}
+
+			} @else {
+
+				// Add the contrast color for each hue defined in the contrast.
+				@each $hue, $contrast-color in $color {
+					--#{$name}-#{$hue}-contrast: #{$contrast-color};
+				}
+			}
+
+		} @else {
+			// Non contrast hue
+			--#{$name}-#{$hue}: #{$color};
+		}
+	}
+}
+
+/**
+ * Generates color variables for each color and it's hues and contrasts the palette map.
+ */
+@mixin theme-variables ($palette-map, $foreground: black, $background: white, $shadow: rgba(0, 0, 0, 0.2)) {
+	@each $name, $palette in $palette-map {
+		@include color-variables($name, $palette);
+	}
+
+	// Add the foreground, background and shadow
+	--foreground: #{$foreground};
+	--background: #{$background};
+	--shadow: #{$shadow};
+}
+
