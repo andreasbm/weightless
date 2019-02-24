@@ -44,7 +44,7 @@ export class ThemeComponent extends LitElement {
 				</div>
 				<div slot="right">
 					<div id="theme-selector" @click="${() => this.openThemeSelector()}"></div>
-					<popover-element id="theme-popover" target="#theme-selector" fixed backdrop closeOnClick originX="right" directionX="left">
+					<popover-element id="theme-popover" target="#theme-selector" fixed backdrop closeOnClick transformOriginX="right" anchorOriginY="top">
 						<theme-element></theme-element>
 					</popover-element>
 				</div>

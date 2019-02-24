@@ -39,8 +39,8 @@ export enum OriginY {
 export interface IPositionStrategy {
 	directionX: DirectionX;
 	directionY: DirectionY;
-	originX: OriginX,
-	originY: OriginY
+	anchorOriginX: OriginX,
+	anchorOriginY: OriginY
 }
 
 /**
@@ -158,28 +158,28 @@ export function computeBoundingBox (origin: IBoundingBoxOrigin, strategy: IPosit
 
 	switch (strategy.directionY) {
 		case DirectionY.DOWN:
-			top = strategy.originY === OriginY.CENTER ? originTop + originHeight / 2
-				: (strategy.originY === OriginY.TOP ? originTop : originTop + originHeight);
+			top = strategy.anchorOriginY === OriginY.CENTER ? originTop + originHeight / 2
+				: (strategy.anchorOriginY === OriginY.TOP ? originTop : originTop + originHeight);
 			height = windowHeight - top;
 			break;
 		case DirectionY.UP:
-			bottom = windowHeight - (strategy.originY === OriginY.CENTER ? originBottom - originHeight / 2
-				: (strategy.originY === OriginY.TOP ? originBottom - originHeight : originBottom));
-			height = strategy.originY === OriginY.TOP ? originTop : originBottom;
+			bottom = windowHeight - (strategy.anchorOriginY === OriginY.CENTER ? originBottom - originHeight / 2
+				: (strategy.anchorOriginY === OriginY.TOP ? originBottom - originHeight : originBottom));
+			height = strategy.anchorOriginY === OriginY.TOP ? originTop : originBottom;
 			alignItems = "end";
 			break;
 	}
 
 	switch (strategy.directionX) {
 		case DirectionX.RIGHT:
-			left = strategy.originX === OriginX.CENTER ? originLeft + originWidth / 2
-				: (strategy.originX === OriginX.START ? originLeft : originLeft + originWidth);
+			left = strategy.anchorOriginX === OriginX.CENTER ? originLeft + originWidth / 2
+				: (strategy.anchorOriginX === OriginX.START ? originLeft : originLeft + originWidth);
 			width = windowWidth - left;
 			break;
 		case DirectionX.LEFT:
-			right = windowWidth - (strategy.originX === OriginX.CENTER ? originRight - originWidth / 2
-				: (strategy.originX === OriginX.START ? (originRight - originWidth) : originRight));
-			width = strategy.originX === OriginX.START ? originLeft : originRight;
+			right = windowWidth - (strategy.anchorOriginX === OriginX.CENTER ? originRight - originWidth / 2
+				: (strategy.anchorOriginX === OriginX.START ? (originRight - originWidth) : originRight));
+			width = strategy.anchorOriginX === OriginX.START ? originLeft : originRight;
 			justifyContent = "end";
 			break;
 	}
@@ -264,10 +264,10 @@ export function positionStrategyFallback (strategy: IPositionStrategy,
 	const directionX = after! > before! ? DirectionX.RIGHT : DirectionX.LEFT;
 	const directionY = above! > below! ? DirectionY.UP : DirectionY.DOWN;
 
-	const originY = swapOriginY && strategy.directionY !== directionY ? oppositeOriginY(strategy.originY) : strategy.originY;
-	const originX = swapOriginX && strategy.directionX !== directionX ? oppositeOriginX(strategy.originX) : strategy.originX;
+	const originY = swapOriginY && strategy.directionY !== directionY ? oppositeOriginY(strategy.anchorOriginY) : strategy.anchorOriginY;
+	const originX = swapOriginX && strategy.directionX !== directionX ? oppositeOriginX(strategy.anchorOriginX) : strategy.anchorOriginX;
 
-	return {directionX, directionY, originX, originY};
+	return {directionX, directionY, anchorOriginX: originX, anchorOriginY: originY};
 }
 
 /**
@@ -287,9 +287,9 @@ export enum EdgePosition {
  */
 export function edgePositionToPositionStrategy (position: EdgePosition): IPositionStrategy {
 	return {
-		originX: (position === EdgePosition.ABOVE || position === EdgePosition.BELOW) ? OriginX.CENTER
+		anchorOriginX: (position === EdgePosition.ABOVE || position === EdgePosition.BELOW) ? OriginX.CENTER
 			: position === EdgePosition.BEFORE ? OriginX.START : OriginX.END,
-		originY: (position === EdgePosition.BEFORE || position === EdgePosition.AFTER) ? OriginY.CENTER
+		anchorOriginY: (position === EdgePosition.BEFORE || position === EdgePosition.AFTER) ? OriginY.CENTER
 			: position === EdgePosition.ABOVE ? OriginY.TOP : OriginY.BOTTOM,
 		directionX: position === EdgePosition.BEFORE ? DirectionX.LEFT : DirectionX.RIGHT,
 		directionY: position === EdgePosition.ABOVE ? DirectionY.UP : DirectionY.DOWN
@@ -302,14 +302,14 @@ export function edgePositionToPositionStrategy (position: EdgePosition): IPositi
  * @returns {any}
  */
 export function positionStrategyToEdgePosition (strategy: IPositionStrategy) {
-	switch (strategy.originX) {
+	switch (strategy.anchorOriginX) {
 		case OriginX.START:
 			return EdgePosition.BEFORE;
 		case OriginX.END:
 			return EdgePosition.AFTER;
 	}
 
-	switch (strategy.originY) {
+	switch (strategy.anchorOriginY) {
 		case OriginY.TOP:
 			return EdgePosition.ABOVE;
 		case OriginY.BOTTOM:

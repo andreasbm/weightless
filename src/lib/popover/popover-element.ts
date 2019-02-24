@@ -16,7 +16,7 @@ import styles from "./popover-element.scss";
 export interface IPopoverElementBaseProperties extends IPositionStrategy, IOverlayBehaviorBaseProperties {
 	closeOnClick: boolean;
 	role: string;
-	target: Element | string | null;
+	anchor: Element | string | null;
 }
 
 /**
@@ -37,8 +37,8 @@ export interface IPopoverBehaviorConfig extends Partial<IPopoverElementBasePrope
 export const defaultPopoverConfig: IPopoverBehaviorConfig = {
 	directionX: DirectionX.RIGHT,
 	directionY: DirectionY.DOWN,
-	originX: OriginX.START,
-	originY: OriginY.TOP,
+	anchorOriginX: OriginX.START,
+	anchorOriginY: OriginY.TOP,
 	backdrop: true,
 	persistent: false,
 	duration: 300,
@@ -56,12 +56,12 @@ export class PopoverElement<R = unknown> extends OverlayBehavior<R, IPopoverBeha
 	@property({type: Boolean}) closeOnClick = false;
 	@property({type: String}) directionX = DirectionX.RIGHT;
 	@property({type: String}) directionY = DirectionY.DOWN;
-	@property({type: String}) originX = OriginX.START;
-	@property({type: String}) originY = OriginY.TOP;
+	@property({type: String}) anchorOriginX = OriginX.START;
+	@property({type: String}) anchorOriginY = OriginY.TOP;
 	@property({type: String, reflect: true}) role = "popover";
-	@property({type: String}) target: Element | string | null = null;
+	@property({type: String}) anchor: Element | string | null = null;
 
-	private targetOrigin: IBoundingBoxOrigin | null = null;
+	private anchorOrigin: IBoundingBoxOrigin | null = null;
 
 	@query("#container") $focusTrap: FocusTrap;
 	@query("#container") $container: HTMLElement;
@@ -77,8 +77,8 @@ export class PopoverElement<R = unknown> extends OverlayBehavior<R, IPopoverBeha
 		return {
 			directionX: this.directionX,
 			directionY: this.directionY,
-			originX: this.originX,
-			originY: this.originY
+			anchorOriginX: this.anchorOriginX,
+			anchorOriginY: this.anchorOriginY
 		};
 	}
 
@@ -99,7 +99,7 @@ export class PopoverElement<R = unknown> extends OverlayBehavior<R, IPopoverBeha
 	 * @param config
 	 */
 	showAtPosition (x: number, y: number, config?: IPopoverBehaviorConfig): Promise<R | null> {
-		this.targetOrigin = getPointBoundingBox({x, y});
+		this.anchorOrigin = getPointBoundingBox({x, y});
 		return this.show(config);
 	}
 
@@ -111,8 +111,8 @@ export class PopoverElement<R = unknown> extends OverlayBehavior<R, IPopoverBeha
 		super.prepareShowAnimation(config);
 
 		// Compute bounding box origin if necessary
-		if (this.target != null) {
-			this.targetOrigin = this.getBoundingBoxOrigin();
+		if (this.anchor != null) {
+			this.anchorOrigin = this.getBoundingBoxOrigin();
 		}
 
 		this.$content.style.opacity = `0`;
@@ -147,7 +147,7 @@ export class PopoverElement<R = unknown> extends OverlayBehavior<R, IPopoverBeha
 	 */
 	protected didHide (result?: R) {
 		super.didHide(result);
-		this.targetOrigin = null;
+		this.anchorOrigin = null;
 	}
 
 	/**
@@ -261,23 +261,23 @@ export class PopoverElement<R = unknown> extends OverlayBehavior<R, IPopoverBeha
 		super.updatePosition();
 		requestAnimationFrame(() => {
 
-			// Recompute the target origin if a target was specified
-			if (this.target != null) {
-				this.targetOrigin = this.getBoundingBoxOrigin();
+			// Recompute the anchor origin if an anchor was specified
+			if (this.anchor != null) {
+				this.anchorOrigin = this.getBoundingBoxOrigin();
 			}
 
 			// If there are no bounding box origin, the position cannot be updated.
-			if (this.targetOrigin == null) {
+			if (this.anchorOrigin == null) {
 				return;
 			}
 
 			// Compute the bounding box
-			let boundingBox = computeBoundingBox(this.targetOrigin, this.positionStrategy);
+			let boundingBox = computeBoundingBox(this.anchorOrigin, this.positionStrategy);
 
 			// If the bounding box is not allowed we compute a new bounding box based on the fallback strategy
 			if (!isBoundingBoxAllowed(boundingBox, MIN_MENU_WIDTH, MIN_MENU_HEIGHT).isAllowed) {
 				const fallbackStrategy = positionStrategyFallback(this.positionStrategy, boundingBox, false, true);
-				boundingBox = computeBoundingBox(this.targetOrigin, fallbackStrategy);
+				boundingBox = computeBoundingBox(this.anchorOrigin, fallbackStrategy);
 			}
 
 			this.setBoundingBox(boundingBox);
@@ -288,21 +288,20 @@ export class PopoverElement<R = unknown> extends OverlayBehavior<R, IPopoverBeha
 	 * Returns the origin of the bounding box.
 	 */
 	private getBoundingBoxOrigin (): IBoundingBoxOrigin {
-		let target = this.target;
+		let anchor = this.anchor;
 
-
-		// Check if the target is an ID.
-		if (typeof target === "string" || target instanceof String) {
-			const matches = queryParentRoots<Element>(this, <string>target);
-			target = matches.length > 0 ? matches[0] : null;
+		// Check if the anchor is an ID.
+		if (typeof anchor === "string" || anchor instanceof String) {
+			const matches = queryParentRoots<Element>(this, <string>anchor);
+			anchor = matches.length > 0 ? matches[0] : null;
 		}
 
-		// Ensure that a target exists.
-		if (target == null) {
-			throw new Error(`No targets could be found for the popover.`);
+		// Ensure that an anchor exists.
+		if (anchor == null) {
+			throw new Error(`No anchor could be found for the popover.`);
 		}
 
-		return getBoundingBoxOrigin(<Element>target);
+		return getBoundingBoxOrigin(<Element>anchor);
 	}
 
 	/**

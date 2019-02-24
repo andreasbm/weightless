@@ -18,7 +18,7 @@ async function openTemplatePopover (target: Element, text: string, config: Parti
 		container: document.body,
 		template: html`<p>${text}</p>`,
 		scrollTarget: getMainScrollTarget(),
-		target,
+		anchor: target,
 		...config
 	});
 
@@ -46,8 +46,8 @@ export default class PopoverPage extends LitElement {
 
 	@property({type: String}) directionX = defaultPopoverConfig.directionX;
 	@property({type: String}) directionY = defaultPopoverConfig.directionY;
-	@property({type: String}) originX = defaultPopoverConfig.originX;
-	@property({type: String}) originY = defaultPopoverConfig.originY;
+	@property({type: String}) anchorOriginX = defaultPopoverConfig.anchorOriginX;
+	@property({type: String}) anchorOriginY = defaultPopoverConfig.anchorOriginY;
 
 	/**
 	 * Opens the declarative popover.
@@ -72,7 +72,7 @@ export default class PopoverPage extends LitElement {
 			<demo-element>
 				<code-example-element headline='this.shadowRoot.querySelector("#popover").show().then(result => console.log(result));'>
 					<button-element id="open-popover" @click="${() => this.openDeclarativePopover()}">Open popover 1</button-element>
-					<popover-element id="popover" target="#open-popover" backdrop fixed .scrollTarget="${getMainScrollTarget()}">
+					<popover-element id="popover" anchor="#open-popover" backdrop fixed .scrollTarget="${getMainScrollTarget()}">
 						<p>Hello world!</p>
 					</popover-element>
 				</code-example-element>
@@ -81,20 +81,22 @@ export default class PopoverPage extends LitElement {
 			<title-element level="3">Open popover from template (imperative)</title-element>
 			<demo-element>
 				<div id="selector">
-					<select-element outlined placeholder="Direction X" value="${this.directionX}" @change="${(e: Event) => this.directionX = (<DirectionX>(<HTMLSelectElement>e.target).value)}">
-						<option value="right">Right</option>
-						<option value="left">Left</option>
-					</select-element>
-					<select-element outlined placeholder="Direction Y" value="${this.directionY}" @change="${(e: Event) => this.directionY = (<DirectionY>(<HTMLSelectElement>e.target).value)}">
-						<option value="up">Up</option>
-						<option value="down">Down</option>
-					</select-element>
-					<select-element outlined placeholder="Origin X" value="${this.originX}" @change="${(e: Event) => this.originX = (<OriginX>(<HTMLSelectElement>e.target).value)}">
+					<select-element outlined placeholder="Transform Origin X" value="${this.directionX}" @change="${(e: Event) => this.directionX = (<DirectionX>(<HTMLSelectElement>e.target).value)}">
 						<option value="start">Start</option>
 						<option value="center">Center</option>
 						<option value="end">End</option>
 					</select-element>
-					<select-element outlined placeholder="Origin Y" value="${this.originY}" @change="${(e: Event) => this.originY = (<OriginY>(<HTMLSelectElement>e.target).value)}">
+					<select-element outlined placeholder="Transform Origin Y" value="${this.directionY}" @change="${(e: Event) => this.directionY = (<DirectionY>(<HTMLSelectElement>e.target).value)}">
+						<option value="top">Top</option>
+						<option value="center">Center</option>
+						<option value="end">Bottom</option>
+					</select-element>
+					<select-element outlined placeholder="Anchor Origin X" value="${this.anchorOriginX}" @change="${(e: Event) => this.anchorOriginX = (<OriginX>(<HTMLSelectElement>e.target).value)}">
+						<option value="start">Start</option>
+						<option value="center">Center</option>
+						<option value="end">End</option>
+					</select-element>
+					<select-element outlined placeholder="Anchor Origin Y" value="${this.anchorOriginY}" @change="${(e: Event) => this.anchorOriginY = (<OriginY>(<HTMLSelectElement>e.target).value)}">
 						<option value="top">Top</option>
 						<option value="center">Center</option>
 						<option value="end">Bottom</option>
@@ -104,8 +106,8 @@ export default class PopoverPage extends LitElement {
 					<button-element id="open-popover-2" @click="${() => openTemplatePopover(this.shadowRoot!.querySelector("#open-popover-2")!, "This is a template!", {
 			directionX: this.directionX,
 			directionY: this.directionY,
-			originX: this.originX,
-			originY: this.originY
+			anchorOriginX: this.anchorOriginX,
+			anchorOriginY: this.anchorOriginY
 		})}">Open</button-element>
 				</code-example-element>
 				<highlight-element language="javascript" text="${`
@@ -114,11 +116,11 @@ export default class PopoverPage extends LitElement {
 						backdrop: true,
 						blockScrolling: true,
 						container: document.body,
-						directionX: "${this.directionX}",
-						directionY: "${this.directionY}",
-						originX: "${this.originX}",
-						originY: "${this.originY}",
-						target: this.shadowRoot.querySelector("#open-popover-2"),
+						transformOriginX: "${this.directionX}",
+						transformOriginY: "${this.directionY}",
+						anchorOriginX: "${this.anchorOriginX}",
+						anchorOriginY: "${this.anchorOriginY}",
+						anchor: this.shadowRoot.querySelector("#open-popover-2"),
 						template: html\`<p>This is a template!</p>\`
 					});
 				`}"></highlight-element>
