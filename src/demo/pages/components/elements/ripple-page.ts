@@ -1,10 +1,10 @@
 import { customElement, html, LitElement, PropertyValues, query } from "lit-element";
+import "../../../../lib/label/label-element";
+import "../../../../lib/title/title-element";
 import { cssResult } from "../../../../lib/util/css";
+import "../../../code-example/code-example-element";
 import { DemoElement } from "../../../demo/demo-element";
 import { sharedStyles } from "../../../style/shared";
-import "../../../code-example/code-example-element";
-import "./../../../lib/title/title-element";
-import "./../../../lib/label/label-element";
 
 @customElement("ripple-page")
 export default class RipplePage extends LitElement {

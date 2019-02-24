@@ -1,9 +1,9 @@
 import { customElement, html, LitElement } from "lit-element";
-import { sharedStyles } from "../../../style/shared";
+import "../../../../lib/label/label-element";
+import "../../../../lib/title/title-element";
 import "../../../code-example/code-example-element";
-import "./../../../lib/title/title-element";
-import "./../../../lib/label/label-element";
-import "../../demo/demo-element";
+import "../../../demo/demo-element";
+import { sharedStyles } from "../../../style/shared";
 
 @customElement("title-page")
 export default class ButtonPage extends LitElement {

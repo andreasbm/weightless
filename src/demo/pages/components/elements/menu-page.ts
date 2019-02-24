@@ -1,14 +1,14 @@
 import { customElement, html, LitElement, property } from "lit-element";
+import ".../../../../lib/title/title-element";
+import "../../../../lib/button/button-element";
 import { defaultMenuConfig, IMenuElementBaseProperties, MenuElement } from "../../../../lib/menu/menu-element";
 import { openMenu } from "../../../../lib/menu/open-menu";
 import { cssResult } from "../../../../lib/util/css";
 import { DirectionX, DirectionY, OriginX, OriginY } from "../../../../lib/util/position";
 import "../../../code-example/code-example-element";
-import "../../demo/demo-element";
-import { sharedStyles } from "../../../style/shared";
+import "../../../demo/demo-element";
 import { getMainScrollTarget } from "../../../main-scroll-target";
-import "./../../../lib/button/button-element";
-import "./../../../lib/title/title-element";
+import { sharedStyles } from "../../../style/shared";
 
 async function openTemplateMenu (target: Element, text: string, config: Partial<IMenuElementBaseProperties> = {}) {
 	const ref = await openMenu({

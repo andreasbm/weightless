@@ -1,10 +1,10 @@
 import { customElement, html, LitElement } from "lit-element";
+import "../../../../lib/progress-bar/progress-bar-element";
+import "../../../../lib/title/title-element";
 import { cssResult } from "../../../../lib/util/css";
 import "../../../code-example/code-example-element";
-import "../../demo/demo-element";
+import "../../../demo/demo-element";
 import { sharedStyles } from "../../../style/shared";
-import "./../../../lib/progress-bar/progress-bar-element";
-import "./../../../lib/title/title-element";
 
 @customElement("progress-bar-page")
 export default class ProgressBarPage extends LitElement {

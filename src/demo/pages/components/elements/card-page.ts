@@ -1,9 +1,9 @@
 import { customElement, html, LitElement } from "lit-element";
-import { sharedStyles } from "../../../style/shared";
+import "../../../../lib/card/card-element";
+import "../../../../lib/title/title-element";
 import "../../../code-example/code-example-element";
-import "../../demo/demo-element";
-import "./../../../lib/card/card-element";
-import "./../../../lib/title/title-element";
+import "../../../demo/demo-element";
+import { sharedStyles } from "../../../style/shared";
 
 @customElement("card-page")
 export default class CardPage extends LitElement {

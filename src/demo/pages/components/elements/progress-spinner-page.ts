@@ -1,9 +1,9 @@
 import { customElement, html, LitElement } from "lit-element";
 import "../../../../lib/progress-spinner/progress-spinner-element";
-import { sharedStyles } from "../../style/shared";
-import "../../code-example/code-example-element";
-import "../../demo/demo-element";
-import "./../../../lib/title/title-element";
+import "../../../../lib/title/title-element";
+import "../../../code-example/code-example-element";
+import "../../../demo/demo-element";
+import { sharedStyles } from "../../../style/shared";
 
 @customElement("progress-spinner-page")
 export default class ProgressSpinnerPage extends LitElement {

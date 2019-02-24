@@ -1,10 +1,10 @@
 import { customElement, html, LitElement } from "lit-element";
-import { cssResult } from "../../../../lib/util/css";
-import { sharedStyles } from "../../../style/shared";
 import "../../../../lib/card/card-element";
-import "../../code-example/code-example-element";
-import "./../../../lib/title/title-element";
-import "../../demo/demo-element";
+import "../../../../lib/title/title-element";
+import { cssResult } from "../../../../lib/util/css";
+import "../../../code-example/code-example-element";
+import "../../../demo/demo-element";
+import { sharedStyles } from "../../../style/shared";
 
 @customElement("textarea-page")
 export default class TextareaPage extends LitElement {

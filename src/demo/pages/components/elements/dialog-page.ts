@@ -1,19 +1,19 @@
 import { customElement, html, LitElement, property, query } from "lit-element";
 import "../../../../lib/button/button-element";
+import "../../../../lib/card/card-element";
 import { defaultDialogConfig, DialogElement, DialogSize, IDialogElementBaseProperties } from "../../../../lib/dialog/dialog-element";
+import "../../../../lib/dialog/dialog-element";
 import { openDialog } from "../../../../lib/dialog/open-dialog";
 import { SelectElement } from "../../../../lib/select/select-element";
+import "../../../../lib/select/select-element";
+import "../../../../lib/textfield/textfield-element";
+import "../../../../lib/title/title-element";
 import { cssResult } from "../../../../lib/util/css";
-import { sharedStyles } from "../../../style/shared";
+import "../../../code-example/code-example-element";
+import "../../../demo/demo-element";
+import "../../../highlight/highlight-element";
 import { getMainScrollTarget } from "../../../main-scroll-target";
-import "./../../../lib/card/card-element";
-import "./../../../lib/dialog/dialog-element";
-import "./../../../lib/select/select-element";
-import "./../../../lib/textfield/textfield-element";
-import "./../../../lib/title/title-element";
-import "./../../code-example/code-example-element";
-import "./../../demo/demo-element";
-import "./../../highlight/highlight-element";
+import { sharedStyles } from "../../../style/shared";
 
 async function openTemplateDialog (text: string, config: Partial<IDialogElementBaseProperties> = {}) {
 	const ref = await openDialog({

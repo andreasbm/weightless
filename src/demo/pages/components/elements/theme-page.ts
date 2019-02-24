@@ -1,11 +1,11 @@
 import { customElement, html, LitElement } from "lit-element";
 import { repeat } from "lit-html/directives/repeat";
+import "../../../../lib/label/label-element";
+import "../../../../lib/title/title-element";
 import { cssResult } from "../../../../lib/util/css";
 import "../../../code-example/code-example-element";
-import "../../demo/demo-element";
+import "../../../demo/demo-element";
 import { sharedStyles } from "../../../style/shared";
-import "./../../../lib/label/label-element";
-import "./../../../lib/title/title-element";
 
 import styles from "./theme-page.scss";
 
