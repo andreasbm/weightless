@@ -30,6 +30,6 @@ $input-font-family: var(--input-font-family, #{$font-family-serif});
 $input-placeholder-color: var(--input-placeholder-color, #{color("shade", $dark-hue)});
 $input-placeholder-color-disabled: var(--input-placeholder-color-disabled, #{color("shade", $light-hue)});
 $input-placeholder-font-size: var(--input-placeholder-font-size, #{$font-size-s});
-$input-placeholder-transition: var(--input-placeholder-transition, top #{$transition-duration-medium} #{$transition-linear}, font-size #{$transition-duration-fast} #{$transition-linear}, transform #{$transition-duration-fast} #{$transition-linear});
+$input-placeholder-transition: var(--input-placeholder-transition, top #{$transition-duration-medium} #{$transition-linear}, font-size #{$transition-duration-medium} #{$transition-linear}, transform #{$transition-duration-medium} #{$transition-linear});
 $input-placeholder-space: var(--input-placeholder-space, #{size(14)});
 

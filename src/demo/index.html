@@ -16,23 +16,7 @@
 <body>
 
 <div id="app">
-	<nav-element id="navbar" shadow>
-		<div slot="left">
-			<button-element id="menu-button" fab inverted flat>
-				<icon-element>menu</icon-element>
-			</button-element>
-			<router-link id="logo-wrapper" path="/">
-				<img id="logo" src="assets/logo.svg" />
-				<img id="text" src="assets/text.svg" />
-			</router-link>
-		</div>
-		<div slot="right">
-			<div id="theme-selector"></div>
-			<menu-element id="theme-menu" target="#theme-selector" fixed backdrop closeOnClick originX="right" directionX="left">
-				<theme-element></theme-element>
-			</menu-element>
-		</div>
-	</nav-element>
+	<navbar-element id="navbar"></navbar-element>
 	<div id="router">
 		<router-slot id="router-slot"></router-slot>
 	</div>

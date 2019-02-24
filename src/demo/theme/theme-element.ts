@@ -20,10 +20,10 @@ export class ThemeComponent extends LitElement {
 
 	static styles = [sharedStyles, cssResult(styles)];
 
-	currentThemeName = "blue";
+	currentThemeName = "royal-blue";
 	themes: ITheme[] = [
 		{name: "red", baseColor: "rgb(233, 30, 99)"},
-		{name: "cobalt", baseColor: "rgb(19, 47, 242)"}
+		{name: "royal-blue", baseColor: "rgb(52, 77, 144)"}
 	];
 
 	connectedCallback () {

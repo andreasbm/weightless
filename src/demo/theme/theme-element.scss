@@ -6,7 +6,7 @@
 	padding: #{$spacing-m};
 	color: white;
 	grid-template-columns: repeat(auto-fit, #{size(40)});
-	width: 100px;
+	width: #{size(120)};
 }
 
 .theme-button {

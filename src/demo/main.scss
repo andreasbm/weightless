@@ -12,6 +12,10 @@ html {
 			"primary": $palette-red
 		), $validate: false);
 	}
+
+	&:not(.initialized) {
+		display: none;
+	}
 }
 
 body {
@@ -27,30 +31,6 @@ section {
 	max-width: 450px;
 }
 
-#logo-wrapper {
-	display: flex;
-	align-items: center;
-	cursor: pointer;
-
-	#logo {
-		margin: 0 8px 0 0;
-		height: 40px;
-		transform: rotate(0deg);
-		transform-origin: center center;
-		transition: transform 1s #{$transition-deceleration-curve};
-	}
-
-	#text {
-		height: 20px;
-	}
-
-	&:hover {
-		#logo {
-			$deg: 360 * -10;
-			transform: rotate(#{$deg}deg);
-		}
-	}
-}
 
 
 #navbar {
@@ -78,24 +58,5 @@ section {
 	left: 0;
 	width: 100vw;
 	height: 100vh;
-}
-
-#menu-button {
-	@include color-variables("primary", $palette-grey);
-	display: none;
-}
-
-@media #{$screen-s-and-down} {
-	#menu-button {
-		display: inline-flex;
-	}
-}
-
-#theme-selector {
-	background: #{color("primary")};
-	border-radius: 100%;
-	cursor: pointer;
-	width: #{size(40)};
-	height: #{size(40)};
 }
 
