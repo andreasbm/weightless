@@ -38,7 +38,7 @@ $dialog-header-padding-scrollable: var(--dialog-header-padding-scrollable, #{$sp
 
 /* Content */
 $dialog-content-padding: var(--dialog-content-padding, #{$spacing-l});
-$dialog-content-color: var(--dialog-content-color, #{color("shade", 800)});
+$dialog-content-color: var(--dialog-content-color, #{$foreground});
 
 /* Footer */
 $dialog-footer-padding: var(--dialog-footer-padding, #{$spacing-m});
