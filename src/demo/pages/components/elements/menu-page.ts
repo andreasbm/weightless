@@ -5,8 +5,8 @@ import { cssResult } from "../../../../lib/util/css";
 import { DirectionX, DirectionY, OriginX, OriginY } from "../../../../lib/util/position";
 import "../../../code-example/code-example-element";
 import "../../demo/demo-element";
-import { sharedStyles } from "../../style/shared";
-import { getMainScrollTarget } from "../main-scroll-target";
+import { sharedStyles } from "../../../style/shared";
+import { getMainScrollTarget } from "../../../main-scroll-target";
 import "./../../../lib/button/button-element";
 import "./../../../lib/title/title-element";
 
