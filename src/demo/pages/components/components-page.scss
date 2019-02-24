@@ -5,7 +5,7 @@
 	height: calc(100vh - var(--nav-height));
 }
 
-#menu {
+#popover {
 	overflow-y: auto;
 	flex-shrink: 0;
 	border-right: #{size(1)} solid #{color("shade", $light-hue)};
@@ -18,7 +18,7 @@
 	@include scroll-y();
 }
 
-.menu-item {
+.popover-item {
 	padding: #{$spacing-m};
 	cursor: pointer;
 	display: flex;
@@ -38,7 +38,7 @@
 		padding: #{$spacing-m};
 	}
 
-	#menu {
+	#popover {
 		position: fixed;
 		z-index: 12345;
 		bottom: 0;
@@ -46,13 +46,13 @@
 		transform: translateX(-100%);
 	}
 
-	#menu, #router {
+	#popover, #router {
 		transition: transform #{$transition-duration-medium} #{$transition-deceleration-curve};
 	}
 
-	:host([menu-visible]) {
+	:host([popover-visible]) {
 
-		#menu {
+		#popover {
 			transform: translateX(0);
 		}
 

@@ -16,7 +16,7 @@ export default class ComponentsPage extends LitElement {
 	private currentRoute?: IRoute<IRouteData>;
 
 	@query("#router") $routerContainer: HTMLDivElement;
-	@property({type: Boolean, reflect: true, attribute: "menu-visible"}) isMenuVisible = false;
+	@property({type: Boolean, reflect: true, attribute: "popover-visible"}) isPopoverVisible = false;
 
 	firstUpdated (props: PropertyValues) {
 		super.firstUpdated(props);
@@ -32,11 +32,11 @@ export default class ComponentsPage extends LitElement {
 			this.requestUpdate().then();
 		});
 
-		window.addEventListener("toggleMenu", () => {
-			this.isMenuVisible = !this.isMenuVisible;
-			if (this.isMenuVisible) {
+		window.addEventListener("togglePopover", () => {
+			this.isPopoverVisible = !this.isPopoverVisible;
+			if (this.isPopoverVisible) {
 				addListener(this, "click", () => {
-					window.dispatchEvent(new CustomEvent("toggleMenu"))
+					window.dispatchEvent(new CustomEvent("togglePopover"))
 				}, {once: true});
 			}
 		})
@@ -44,9 +44,9 @@ export default class ComponentsPage extends LitElement {
 
 	protected render () {
 		return html`
-			<div id="menu">
+			<div id="popover">
 				${repeat(COMPONENTS_ROUTES.filter(route => route.path !== "**"), route => html`
-					<router-link class="menu-item" path="${route.path}">
+					<router-link class="popover-item" path="${route.path}">
 						${route.data != null ? html`<img class="img" src="${route.data.img}" />` : ""}
 						<span>${route.data != null ? route.data.title : route.path}</span><br/>
 					</router-link>

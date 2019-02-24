@@ -142,10 +142,10 @@ export const COMPONENTS_ROUTES: IRoute<IRouteData>[] = [
 		}
 	},
 	{
-		path: "menu",
-		component: () => import("./elements/menu-page"),
+		path: "popover",
+		component: () => import("./elements/popover-page"),
 		data: {
-			title: "Menu",
+			title: "Popover",
 			desc: "Coming soon",
 			img: iconPath("menu")
 		}

@@ -8,33 +8,33 @@ import { cssResult } from "../util/css";
 import { queryParentRoots } from "../util/dom";
 import { computeBoundingBox, DirectionX, DirectionY, getBoundingBoxOrigin, getPointBoundingBox, IBoundingBox, IBoundingBoxOrigin, IPositionStrategy, isBoundingBoxAllowed, OriginX, OriginY, positionStrategyFallback } from "../util/position";
 import { getOpacity, getScale } from "../util/style";
-import styles from "./menu-element.scss";
+import styles from "./popover-element.scss";
 
 /**
- * Base properties of the menu.
+ * Base properties of the popover.
  */
-export interface IMenuElementBaseProperties extends IPositionStrategy, IOverlayBehaviorBaseProperties {
+export interface IPopoverElementBaseProperties extends IPositionStrategy, IOverlayBehaviorBaseProperties {
 	closeOnClick: boolean;
 	role: string;
 	target: Element | string | null;
 }
 
 /**
- * Properties of the menu.
+ * Properties of the popover.
  */
-export interface IMenuElementProperties extends IMenuElementBaseProperties, IOverlayBehaviorProperties {
+export interface IPopoverElementProperties extends IPopoverElementBaseProperties, IOverlayBehaviorProperties {
 }
 
 /**
- * Configuration for the menu.
+ * Configuration for the popover.
  */
-export interface IMenuBehaviorConfig extends Partial<IMenuElementBaseProperties> {
+export interface IPopoverBehaviorConfig extends Partial<IPopoverElementBaseProperties> {
 }
 
 /**
- * Default configuration for the menu.
+ * Default configuration for the popover.
  */
-export const defaultMenuConfig: IMenuBehaviorConfig = {
+export const defaultPopoverConfig: IPopoverBehaviorConfig = {
 	directionX: DirectionX.RIGHT,
 	directionY: DirectionY.DOWN,
 	originX: OriginX.START,
@@ -49,8 +49,8 @@ export const defaultMenuConfig: IMenuBehaviorConfig = {
 const MIN_MENU_HEIGHT = 200;
 const MIN_MENU_WIDTH = 280;
 
-@customElement("menu-element")
-export class MenuElement<R = unknown> extends OverlayBehavior<R, IMenuBehaviorConfig> implements IMenuElementProperties {
+@customElement("popover-element")
+export class PopoverElement<R = unknown> extends OverlayBehavior<R, IPopoverBehaviorConfig> implements IPopoverElementProperties {
 	static styles = [sharedStyles, cssResult(styles)];
 
 	@property({type: Boolean}) closeOnClick = false;
@@ -58,7 +58,7 @@ export class MenuElement<R = unknown> extends OverlayBehavior<R, IMenuBehaviorCo
 	@property({type: String}) directionY = DirectionY.DOWN;
 	@property({type: String}) originX = OriginX.START;
 	@property({type: String}) originY = OriginY.TOP;
-	@property({type: String, reflect: true}) role = "menu";
+	@property({type: String, reflect: true}) role = "popover";
 	@property({type: String}) target: Element | string | null = null;
 
 	private targetOrigin: IBoundingBoxOrigin | null = null;
@@ -70,7 +70,7 @@ export class MenuElement<R = unknown> extends OverlayBehavior<R, IMenuBehaviorCo
 	@query("#backdrop") $backdrop: BackdropElement;
 
 	/**
-	 * The current position strategy of the menu.
+	 * The current position strategy of the popover.
 	 * @returns {IPositionStrategy}
 	 */
 	get positionStrategy (): IPositionStrategy {
@@ -93,21 +93,21 @@ export class MenuElement<R = unknown> extends OverlayBehavior<R, IMenuBehaviorCo
 	}
 
 	/**
-	 * Shows the menu at a specified screen position.
+	 * Shows the popover at a specified screen position.
 	 * @param x
 	 * @param y
 	 * @param config
 	 */
-	showAtPosition (x: number, y: number, config?: IMenuBehaviorConfig): Promise<R | null> {
+	showAtPosition (x: number, y: number, config?: IPopoverBehaviorConfig): Promise<R | null> {
 		this.targetOrigin = getPointBoundingBox({x, y});
 		return this.show(config);
 	}
 
 	/**
 	 * Prepares the show animation by computing a bounding box origin.
-	 * @param {IMenuBehaviorConfig} config
+	 * @param {IPopoverBehaviorConfig} config
 	 */
-	protected prepareShowAnimation (config?: IMenuBehaviorConfig) {
+	protected prepareShowAnimation (config?: IPopoverBehaviorConfig) {
 		super.prepareShowAnimation(config);
 
 		// Compute bounding box origin if necessary
@@ -127,7 +127,7 @@ export class MenuElement<R = unknown> extends OverlayBehavior<R, IMenuBehaviorCo
 	}
 
 	/**
-	 * Adds event listeners after the menu has been shown.
+	 * Adds event listeners after the popover has been shown.
 	 */
 	protected didShow () {
 		super.didShow();
@@ -143,7 +143,7 @@ export class MenuElement<R = unknown> extends OverlayBehavior<R, IMenuBehaviorCo
 	}
 
 	/**
-	 * Resets the component after the menu has been hidden.
+	 * Resets the component after the popover has been hidden.
 	 */
 	protected didHide (result?: R) {
 		super.didHide(result);
@@ -151,10 +151,10 @@ export class MenuElement<R = unknown> extends OverlayBehavior<R, IMenuBehaviorCo
 	}
 
 	/**
-	 * Animates the menu in.
+	 * Animates the popover in.
 	 */
 	protected animateIn () {
-		const menuContentDelay = this.duration / 2;
+		const popoverContentDelay = this.duration / 2;
 		const animationConfig: KeyframeAnimationOptions = {
 			...this.animationConfig,
 			fill: "both"
@@ -169,32 +169,32 @@ export class MenuElement<R = unknown> extends OverlayBehavior<R, IMenuBehaviorCo
 			this.didShow();
 		};
 
-		// Animate the menu in and take the intermediate stake into account
+		// Animate the popover in and take the intermediate stake into account
 		const containerComputedStyle = window.getComputedStyle(this.$container);
-		const menuScale = getScale(containerComputedStyle, this.$container.getBoundingClientRect());
-		const menuOpacity = getOpacity(containerComputedStyle);
+		const popoverScale = getScale(containerComputedStyle, this.$container.getBoundingClientRect());
+		const popoverOpacity = getOpacity(containerComputedStyle);
 
 		this.$container.animate(<Keyframe[]>[
 			{
-				transform: `scale(${menuScale.x}, ${menuScale.y})`,
-				opacity: `${menuOpacity > 0.5 ? menuOpacity : 0}`,
+				transform: `scale(${popoverScale.x}, ${popoverScale.y})`,
+				opacity: `${popoverOpacity > 0.5 ? popoverOpacity : 0}`,
 				offset: 0
 			},
 			{
-				transform: `scale(1, ${menuScale.y > 0.5 ? menuScale.y : 0.5})`,
-				opacity: `${menuOpacity > 0.5 ? menuOpacity : 0.5}`,
+				transform: `scale(1, ${popoverScale.y > 0.5 ? popoverScale.y : 0.5})`,
+				opacity: `${popoverOpacity > 0.5 ? popoverOpacity : 0.5}`,
 				offset: 0.5
 			},
 			{transform: `scale(1, 1)`, opacity: 1, offset: 1}
 		], animationConfig);
 
-		// Animate the menu content in with a delay
-		const menuAnimation = this.$content.animate(<Keyframe[]>[
+		// Animate the popover content in with a delay
+		const popoverAnimation = this.$content.animate(<Keyframe[]>[
 			{opacity: getOpacity(window.getComputedStyle(this.$content)).toString()},
 			{opacity: 1}
 		], {
 			...animationConfig,
-			delay: menuContentDelay
+			delay: popoverContentDelay
 		});
 
 		// Animate the backdrop in
@@ -203,14 +203,14 @@ export class MenuElement<R = unknown> extends OverlayBehavior<R, IMenuBehaviorCo
 			{opacity: 1}
 		], animationConfig);
 
-		menuAnimation.onfinish = setup;
+		popoverAnimation.onfinish = setup;
 
-		this.currentInAnimations.push(menuAnimation, backdropAnimation);
+		this.currentInAnimations.push(popoverAnimation, backdropAnimation);
 		this.updatePosition();
 	}
 
 	/**
-	 * Animates the menu out.
+	 * Animates the popover out.
 	 * @param {R} result
 	 */
 	protected animateOut (result: R) {
@@ -235,27 +235,27 @@ export class MenuElement<R = unknown> extends OverlayBehavior<R, IMenuBehaviorCo
 			{opacity: 0}
 		], animationConfig);
 
-		// Animate the menu content out
-		const menuContentAnimation = this.$content.animate(<Keyframe[]>[
+		// Animate the popover content out
+		const popoverContentAnimation = this.$content.animate(<Keyframe[]>[
 			{opacity: getOpacity(window.getComputedStyle(this.$content)).toString()},
 			{opacity: 0}
 		], animationConfig);
 
-		// Animate the menu out
-		const menuAnimation = this.$container.animate(<Keyframe[]>[
+		// Animate the popover out
+		const popoverAnimation = this.$container.animate(<Keyframe[]>[
 			{opacity: getOpacity(window.getComputedStyle(this.$container)).toString()},
 			{opacity: 0}
 		], animationConfig);
 
 		backdropAnimation.onfinish = cleanup;
-		menuAnimation.onfinish = cleanup;
-		menuContentAnimation.onfinish = cleanup;
+		popoverAnimation.onfinish = cleanup;
+		popoverContentAnimation.onfinish = cleanup;
 
-		this.currentOutAnimations.push(backdropAnimation, menuAnimation, menuContentAnimation);
+		this.currentOutAnimations.push(backdropAnimation, popoverAnimation, popoverContentAnimation);
 	}
 
 	/**
-	 * Updates the position of the menu.
+	 * Updates the position of the popover.
 	 */
 	protected updatePosition () {
 		super.updatePosition();
@@ -299,7 +299,7 @@ export class MenuElement<R = unknown> extends OverlayBehavior<R, IMenuBehaviorCo
 
 		// Ensure that a target exists.
 		if (target == null) {
-			throw new Error(`No targets could be found for the menu.`);
+			throw new Error(`No targets could be found for the popover.`);
 		}
 
 		return getBoundingBoxOrigin(<Element>target);
@@ -327,7 +327,7 @@ export class MenuElement<R = unknown> extends OverlayBehavior<R, IMenuBehaviorCo
 	}
 
 	/**
-	 * Handles the click event on the menu.
+	 * Handles the click event on the popover.
 	 */
 	private onClick () {
 		if (this.open && this.closeOnClick) {
@@ -361,6 +361,6 @@ export class MenuElement<R = unknown> extends OverlayBehavior<R, IMenuBehaviorCo
 
 declare global {
 	interface HTMLElementTagNameMap {
-		"menu-element": MenuElement<any>;
+		"popover-element": PopoverElement<any>;
 	}
 }

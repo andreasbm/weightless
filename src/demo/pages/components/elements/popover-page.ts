@@ -1,8 +1,8 @@
 import { customElement, html, LitElement, property } from "lit-element";
 import "../../../../lib/title/title-element";
 import "../../../../lib/button/button-element";
-import { defaultMenuConfig, IMenuElementBaseProperties, MenuElement } from "../../../../lib/menu/menu-element";
-import { openMenu } from "../../../../lib/menu/open-menu";
+import { defaultPopoverConfig, IPopoverElementBaseProperties, PopoverElement } from "../../../../lib/popover/popover-element";
+import { openPopover } from "../../../../lib/popover/open-popover";
 import { cssResult } from "../../../../lib/util/css";
 import { DirectionX, DirectionY, OriginX, OriginY } from "../../../../lib/util/position";
 import "../../../code-example/code-example-element";
@@ -10,8 +10,8 @@ import "../../../demo/demo-element";
 import { getMainScrollTarget } from "../../../main-scroll-target";
 import { sharedStyles } from "../../../style/shared";
 
-async function openTemplateMenu (target: Element, text: string, config: Partial<IMenuElementBaseProperties> = {}) {
-	const ref = await openMenu({
+async function openTemplatePopover (target: Element, text: string, config: Partial<IPopoverElementBaseProperties> = {}) {
+	const ref = await openPopover({
 		fixed: true,
 		backdrop: true,
 		blockScrolling: true,
@@ -25,8 +25,8 @@ async function openTemplateMenu (target: Element, text: string, config: Partial<
 	console.log(await ref.result);
 }
 
-@customElement("menu-page")
-export default class MenuPage extends LitElement {
+@customElement("popover-page")
+export default class PopoverPage extends LitElement {
 
 	static styles = [sharedStyles, cssResult(`
 		#selector {
@@ -44,17 +44,17 @@ export default class MenuPage extends LitElement {
 		}
 	`)];
 
-	@property({type: String}) directionX = defaultMenuConfig.directionX;
-	@property({type: String}) directionY = defaultMenuConfig.directionY;
-	@property({type: String}) originX = defaultMenuConfig.originX;
-	@property({type: String}) originY = defaultMenuConfig.originY;
+	@property({type: String}) directionX = defaultPopoverConfig.directionX;
+	@property({type: String}) directionY = defaultPopoverConfig.directionY;
+	@property({type: String}) originX = defaultPopoverConfig.originX;
+	@property({type: String}) originY = defaultPopoverConfig.originY;
 
 	/**
-	 * Opens the declarative menu.
+	 * Opens the declarative popover.
 	 */
-	private async openDeclarativeMenu () {
-		const $menu = this.shadowRoot!.querySelector<MenuElement<string>>("#menu")!;
-		const res = await $menu.show();
+	private async openDeclarativePopover () {
+		const $popover = this.shadowRoot!.querySelector<PopoverElement<string>>("#popover")!;
+		const res = await $popover.show();
 		console.log("Result:", res);
 	}
 
@@ -62,23 +62,23 @@ export default class MenuPage extends LitElement {
 		return html`
 			<demo-element default>
 				<code-example-element>
-					<menu-element open>
-						<p>This is a menu!</p>
-					</menu-element>
+					<popover-element open>
+						<p>This is a popover!</p>
+					</popover-element>
 				</code-example-element>
 			</demo-element>
 			
-			<title-element level="3">Open menu already in the DOM (declarative)</title-element>
+			<title-element level="3">Open popover already in the DOM (declarative)</title-element>
 			<demo-element>
-				<code-example-element headline='this.shadowRoot.querySelector("#menu").show().then(result => console.log(result));'>
-					<button-element id="open-menu" @click="${() => this.openDeclarativeMenu()}">Open menu 1</button-element>
-					<menu-element id="menu" target="#open-menu" backdrop fixed .scrollTarget="${getMainScrollTarget()}">
+				<code-example-element headline='this.shadowRoot.querySelector("#popover").show().then(result => console.log(result));'>
+					<button-element id="open-popover" @click="${() => this.openDeclarativePopover()}">Open popover 1</button-element>
+					<popover-element id="popover" target="#open-popover" backdrop fixed .scrollTarget="${getMainScrollTarget()}">
 						<p>Hello world!</p>
-					</menu-element>
+					</popover-element>
 				</code-example-element>
 			</demo-element>
 			
-			<title-element level="3">Open menu from template (imperative)</title-element>
+			<title-element level="3">Open popover from template (imperative)</title-element>
 			<demo-element>
 				<div id="selector">
 					<select-element outlined placeholder="Direction X" value="${this.directionX}" @change="${(e: Event) => this.directionX = (<DirectionX>(<HTMLSelectElement>e.target).value)}">
@@ -101,7 +101,7 @@ export default class MenuPage extends LitElement {
 					</select-element>
 				</div>
 				<code-example-element>
-					<button-element id="open-menu-2" @click="${() => openTemplateMenu(this.shadowRoot!.querySelector("#open-menu-2")!, "This is a template!", {
+					<button-element id="open-popover-2" @click="${() => openTemplatePopover(this.shadowRoot!.querySelector("#open-popover-2")!, "This is a template!", {
 			directionX: this.directionX,
 			directionY: this.directionY,
 			originX: this.originX,
@@ -109,7 +109,7 @@ export default class MenuPage extends LitElement {
 		})}">Open</button-element>
 				</code-example-element>
 				<highlight-element language="javascript" text="${`
-					const ref = await openMenu({
+					const ref = await openPopover({
 						fixed: true,
 						backdrop: true,
 						blockScrolling: true,
@@ -118,7 +118,7 @@ export default class MenuPage extends LitElement {
 						directionY: "${this.directionY}",
 						originX: "${this.originX}",
 						originY: "${this.originY}",
-						target: this.shadowRoot.querySelector("#open-menu-2"),
+						target: this.shadowRoot.querySelector("#open-popover-2"),
 						template: html\`<p>This is a template!</p>\`
 					});
 				`}"></highlight-element>

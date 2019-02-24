@@ -1,0 +1,73 @@
+@import "../style/base";
+
+$popover-elevation: var(--popover-elevation, #{elevation(4, #{$shadow})});
+$popover-padding: var(--popover-padding, #{$spacing-s} 0);
+$popover-border-radius: var(--popover-border-radius, #{$border-radius-s});
+$popover-color: var(--popover-color, #{$foreground});
+$popover-bg: var(--popover-bg, #{$background});
+$popover-min-width: var(--popover-min-width, #{size(110)});
+$popover-max-width: var(--popover-max-width, #{size(280)});
+$popover-max-height: var(--popover-max-height, 100%);
+$popover-z-index: var(--popover-z-index, 123456789);
+$popover-backdrop-bg: var(--popover-backdrop-bg, rgba(0, 0, 0, 0));
+
+:host {
+	display: none;
+	outline: none;
+	pointer-events: none;
+}
+
+:host([fixed]) {
+	z-index: #{$popover-z-index};
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+
+	#bounding-box {
+		position: absolute;
+	}
+}
+
+:host([open]) {
+	display: block;
+}
+
+:host([backdrop]) {
+	pointer-events: all;
+	#backdrop {
+		display: block;
+	}
+}
+
+#backdrop {
+	--backdrop-bg: #{$popover-backdrop-bg};
+	display: none;
+}
+
+#bounding-box {
+	display: flex;
+}
+
+#content {
+	display: block;
+}
+
+#container {
+	box-shadow: #{$popover-elevation};
+	padding: #{$popover-padding};
+	border-radius: #{$popover-border-radius};
+	background: #{$popover-bg};
+	color: #{$popover-color};
+	min-width: #{$popover-min-width};
+	max-width: #{$popover-max-width};
+	max-height: #{$popover-max-height};
+	z-index: 1;
+	pointer-events: all;
+	box-sizing: border-box;
+	overflow: auto;
+	display: inline-block;
+}
+
+

@@ -3,8 +3,8 @@ import { customElement, html, LitElement, PropertyValues, query } from "lit-elem
 import "../../lib/button";
 import "../../lib/icon";
 import "../../lib/icon/icon-element";
-import { MenuElement } from "../../lib/menu";
-import "../../lib/menu";
+import { PopoverElement } from "../../lib/popover";
+import "../../lib/popover";
 import "../../lib/nav";
 import { cssResult } from "../../lib/util/css";
 import { sharedStyles } from "../style/shared";
@@ -16,26 +16,26 @@ export class ThemeComponent extends LitElement {
 
 	static styles = [sharedStyles, cssResult(styles)];
 
-	@query("#theme-menu") $themeMenu!: MenuElement;
+	@query("#theme-popover") $themePopover!: PopoverElement;
 
 	firstUpdated (props: PropertyValues) {
 		super.firstUpdated(props);
 	}
 
-	private toggleMenu () {
-		window.dispatchEvent(new CustomEvent("toggleMenu"));
+	private togglePopover () {
+		window.dispatchEvent(new CustomEvent("togglePopover"));
 	}
 
 	private openThemeSelector () {
-		this.$themeMenu.show();
+		this.$themePopover.show();
 	}
 
 	protected render () {
 		return html`
 			<nav-element id="navbar" shadow>
 				<div slot="left">
-					<button-element id="menu-button" fab inverted flat @click="${() => this.toggleMenu()}">
-						<icon-element>menu</icon-element>
+					<button-element id="popover-button" fab inverted flat @click="${() => this.togglePopover()}">
+						<icon-element>popover</icon-element>
 					</button-element>
 					<router-link id="logo-wrapper" path="/">
 						<img id="logo" src="assets/logo.svg" />
@@ -44,9 +44,9 @@ export class ThemeComponent extends LitElement {
 				</div>
 				<div slot="right">
 					<div id="theme-selector" @click="${() => this.openThemeSelector()}"></div>
-					<menu-element id="theme-menu" target="#theme-selector" fixed backdrop closeOnClick originX="right" directionX="left">
+					<popover-element id="theme-popover" target="#theme-selector" fixed backdrop closeOnClick originX="right" directionX="left">
 						<theme-element></theme-element>
-					</menu-element>
+					</popover-element>
 				</div>
 			</nav-element>
 		`;

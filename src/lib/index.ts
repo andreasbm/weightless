@@ -9,7 +9,7 @@ export * from "./divider";
 export * from "./textfield";
 export * from "./textarea";
 export * from "./card";
-export * from "./menu";
+export * from "./popover";
 export * from "./label";
 export * from "./select";
 export * from "./ripple";

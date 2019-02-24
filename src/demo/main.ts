@@ -20,7 +20,7 @@ customElements.whenDefined(ROUTER_SLOT_TAG_NAME).then(() => {
 			component: () => import("./pages/home/home-page")
 		},
 		{
-			path: "",
+			path: "...",
 			component: () => import("./pages/home/home-page")
 		},
 		{

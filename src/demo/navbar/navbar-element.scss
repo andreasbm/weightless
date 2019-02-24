@@ -29,13 +29,13 @@
 	}
 }
 
-#menu-button {
+#popover-button {
 	@include color-variables("primary", $palette-grey);
 	display: none;
 }
 
 @media #{$screen-s-and-down} {
-	#menu-button {
+	#popover-button {
 		display: inline-flex;
 	}
 }
