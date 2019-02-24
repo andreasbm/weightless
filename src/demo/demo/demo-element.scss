@@ -1,7 +1,7 @@
 @import "../../lib/style/base";
 
 :host {
-	background: #{color("white")};
+	background: #{$background};
 	padding: #{size(70)} #{size(50)};
 	margin: #{$spacing-m} 0 #{$spacing-l};
 	text-align: center;

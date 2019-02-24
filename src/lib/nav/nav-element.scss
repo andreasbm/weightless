@@ -1,7 +1,7 @@
 @import "../style/base";
 
-$nav-bg: var(--nav-bg, #{color("white")});
-$nav-color: var(--nav-color, #{color-contrast("white")});
+$nav-bg: var(--nav-bg, #{$background});
+$nav-color: var(--nav-color, #{$foreground});
 $nav-z-index: var(--tolbar-z-index, 1234567);
 $nav-padding: var(--nav-padding, 0 #{$spacing-l});
 $nav-height: var(--nav-height, #{size(70)});

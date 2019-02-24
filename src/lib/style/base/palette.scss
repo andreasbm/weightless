@@ -19,13 +19,6 @@ $palette-white: (
 		"contrast": $white-rgb
 );
 
-$palette-white-dirty: (
-		400: "245, 246, 252",
-		500: "246, 247, 251",
-		600: "193, 200, 227",
-		"contrast": $white-rgb
-);
-
 $palette-black-dirty: (
 		400: "28, 18, 18",
 		500: "23, 23, 23",
@@ -33,24 +26,10 @@ $palette-black-dirty: (
 		"contrast": $white-rgb
 );
 
-$palette-cobalt: (
-		400: "86, 93, 250",
-		500: "19, 47, 242",
-		600: "0, 37, 204",
-		"contrast": $white-rgb
-);
-
-$palette-red: (
-		400: "243, 94, 132",
-		500: "233, 30, 99",
-		600: "204, 0, 89",
-		"contrast": $white-rgb
-);
-
-$palette-orange: (
-		400: '255, 207, 99',
-		500: '255, 167, 38',
-		600: '204, 120, 4',
+$palette-white-dirty: (
+		400: "245, 246, 252",
+		500: "246, 247, 251",
+		600: "193, 200, 227",
 		"contrast": $white-rgb
 );
 
@@ -75,13 +54,30 @@ $palette-grey: (
 		)
 );
 
+$palette-cobalt: (
+		400: "86, 93, 250",
+		500: "19, 47, 242",
+		600: "0, 37, 204",
+		"contrast": $white-rgb
+);
+
+$palette-red: (
+		400: "243, 94, 132",
+		500: "233, 30, 99",
+		600: "204, 0, 89",
+		"contrast": $white-rgb
+);
+
+$palette-orange: (
+		400: '255, 207, 99',
+		500: '255, 167, 38',
+		600: '204, 120, 4',
+		"contrast": $white-rgb
+);
+
 $palette-map: (
 		"primary": $palette-cobalt,
 		"secondary": $palette-orange,
 		"error": $palette-red,
-		"shade": $palette-grey,
-		"black": $palette-black,
-		"white": $palette-white,
-		"white-dirty": $palette-white-dirty,
-		"black-dirty": $palette-black-dirty,
+		"shade": $palette-grey
 );

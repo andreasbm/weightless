@@ -5,7 +5,7 @@ $input-state-color-active: var(--input-state-color-active, #{color("primary")});
 $input-state-color-hover: var(--input-state-border-color-hover, #{color("shade", $dark-hue)});
 $input-state-color-invalid: var(--input-state-color-invalid, #{color("error")});
 $input-state-color-disabled: var(--input-state-color-disabled, #{color("shade", 300)});
-$input-color: var(--input-color, #{color("black", $default-hue)});
+$input-color: var(--input-color, #{$foreground});
 $input-color-disabled: var(--input-color-disabled, #{color("shade", $light-hue)});
 $input-transition: var(--input-transition, border-color #{$transition-duration-fast} #{$transition-ease}, background #{$transition-duration-fast} #{$transition-ease});
 
