@@ -47,6 +47,13 @@ $palette-red: (
 		"contrast": $white-rgb
 );
 
+$palette-orange: (
+		400: '255, 207, 99',
+		500: '255, 167, 38',
+		600: '204, 120, 4',
+		"contrast": $white-rgb
+);
+
 $palette-grey: (
 		100: "249, 249, 255",
 		200: "242, 243, 251",
@@ -70,6 +77,7 @@ $palette-grey: (
 
 $palette-map: (
 		"primary": $palette-cobalt,
+		"secondary": $palette-orange,
 		"error": $palette-red,
 		"shade": $palette-grey,
 		"black": $palette-black,

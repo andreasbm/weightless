@@ -50,7 +50,7 @@ const MIN_MENU_HEIGHT = 200;
 const MIN_MENU_WIDTH = 280;
 
 @customElement("menu-element")
-export class MenuElement<R> extends OverlayBehavior<R, IMenuBehaviorConfig> implements IMenuElementProperties {
+export class MenuElement<R = unknown> extends OverlayBehavior<R, IMenuBehaviorConfig> implements IMenuElementProperties {
 	static styles = [sharedStyles, cssResult(styles)];
 
 	@property({type: Boolean}) closeOnClick = false;

@@ -37,7 +37,7 @@ export const defaultDialogConfig: IDialogElementConfig = {
 };
 
 @customElement("dialog-element")
-export class DialogElement<R> extends OverlayBehavior<R, Partial<IDialogElementProperties>> implements IDialogElementProperties {
+export class DialogElement<R = unknown> extends OverlayBehavior<R, Partial<IDialogElementProperties>> implements IDialogElementProperties {
 	static styles = [sharedStyles, cssResult(styles)];
 
 	// The size of the dialog

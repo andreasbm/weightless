@@ -10,7 +10,7 @@ html {
 	&.theme-red {
 		@include theme-variables((
 			"primary": $palette-red
-		));
+		), $validate: false);
 	}
 }
 
@@ -68,5 +68,13 @@ section {
 	#menu-button {
 		display: inline-flex;
 	}
+}
+
+#theme-selector {
+	background: #{color("primary")};
+	border-radius: 100%;
+	cursor: pointer;
+	width: #{size(40)};
+	height: #{size(40)};
 }
 

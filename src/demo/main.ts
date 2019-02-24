@@ -5,6 +5,9 @@ import "../lib";
 import "../lib/nav";
 import "../lib/icon";
 import "../lib/button";
+import "../lib/menu";
+import "./theme/theme-element";
+import { MenuElement } from "../lib/menu";
 
 customElements.whenDefined(ROUTER_SLOT_TAG_NAME).then(() => {
 	const $slot = document.querySelector<RouterSlot>(ROUTER_SLOT_TAG_NAME)!;
@@ -24,5 +27,11 @@ const $menuButton = document.querySelector("#menu-button")!;
 $menuButton.addEventListener("click", () => {
 	window.dispatchEvent(new CustomEvent("toggleMenu"));
 }, {passive: true});
+
+const $themeSelector = document.querySelector("#theme-selector")!;
+$themeSelector.addEventListener("click", () => {
+	const $menu = document.querySelector<MenuElement<any>>("#theme-menu")!;
+	$menu.show();
+});
 
 

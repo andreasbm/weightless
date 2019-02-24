@@ -1,0 +1,25 @@
+@import "../../lib/style/base";
+
+:host {
+	display: grid;
+	grid-gap: #{$spacing-m};
+	padding: #{$spacing-m};
+	color: white;
+	grid-template-columns: repeat(auto-fit, #{size(40)});
+	width: 100px;
+}
+
+.theme-button {
+	border-radius: 100%;
+	width: #{size(40)};
+	height: #{size(40)};
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	outline: none;
+}
+
+.theme-button:focus {
+	box-shadow: elevation(4);
+}

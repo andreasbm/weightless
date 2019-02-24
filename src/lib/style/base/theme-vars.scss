@@ -1,6 +1,42 @@
 @import "theme.scss";
 @import "functions";
 
+$required-colors: "primary", "accent", "shade";
+$required-default-hues: 400, 500, 600;
+$required-shade-hues: 100, 200, 300, 400, 500, 600, 700, 800;
+
+/**
+ * Validates a palette map.
+ */
+@function _validate-palette-map ($palette-map) {
+
+	// Check the required colors
+	@each $required in $required-colors {
+		@if (get_entry($palette-map, $required) == null) {
+			@error "The palette map is missing a '#{$required}' color.";
+		}
+	}
+
+	@each $name, $palette in $palette-map {
+
+		// Ensure that a contrast is defined.
+		@if (get_entry($palette, "contrast") == null) {
+			@error "The palette '#{$name}' is missing a contrast color or map.";
+		}
+
+		// Ensure that the required hues are present
+		$required-hues: if($name == "shade", $required-shade-hues, $required-default-hues);
+		@each $required in $required-hues {
+			@if (get_entry($palette-map, $required) == null) {
+				@error "The palette '#{$name}' is missing a '#{$required}' hue.";
+			}
+		}
+	}
+}
+
+/**
+ * Determines whether a hue is the contrast map/color.
+ */
 @function _is-contrast ($hue) {
 	@return type_of($hue) == "string" AND unquote($hue) == contrast
 }
@@ -42,7 +78,14 @@
 /**
  * Generates color variables for each color and it's hues and contrasts the palette map.
  */
-@mixin theme-variables ($palette-map, $foreground: black, $background: white, $shadow: rgba(0, 0, 0, 0.2)) {
+@mixin theme-variables ($palette-map, $foreground: black, $background: white, $shadow: rgba(0, 0, 0, 0.2), $validate: true) {
+
+	// Validate the map if necessary
+	@if ($validate == true AND _validate-palette-map($palette-map) == false) {
+		// We only go here if the palette was not validated..
+	}
+
+	// Create color variables for each color
 	@each $name, $palette in $palette-map {
 		@include color-variables($name, $palette);
 	}

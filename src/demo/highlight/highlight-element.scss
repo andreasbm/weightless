@@ -36,7 +36,7 @@
 }
 
 .tag {
-	color: var(--tag-color, var(--primary-default, #8AC763));
+	color: var(--tag-color, #{color("primary")});
 }
 
 .atn {
@@ -44,7 +44,7 @@
 }
 
 .atv {
-	color: var(--atv-color, var(--secondary-default, #EC7600));
+	color: var(--atv-color, #{color("secondary")});
 }
 
 .dec {
