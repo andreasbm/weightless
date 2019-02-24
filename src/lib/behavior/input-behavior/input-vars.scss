@@ -7,7 +7,7 @@ $input-state-color-invalid: var(--input-state-color-invalid, #{color("error")});
 $input-state-color-disabled: var(--input-state-color-disabled, #{color("shade", 300)});
 $input-color: var(--input-color, #{$foreground});
 $input-color-disabled: var(--input-color-disabled, #{color("shade", $light-hue)});
-$input-transition: var(--input-transition, border-color #{$transition-duration-fast} #{$transition-ease}, background #{$transition-duration-fast} #{$transition-ease});
+$input-transition: var(--input-transition, border-color #{$transition-duration-medium} #{$transition-ease}, background #{$transition-duration-medium} #{$transition-ease});
 
 $input-bg: var(--input-bg, transparent);
 $input-bg-filled: var(--input-bg, #{color("shade", 200)});
@@ -30,6 +30,6 @@ $input-font-family: var(--input-font-family, #{$font-family-serif});
 $input-placeholder-color: var(--input-placeholder-color, #{color("shade", $dark-hue)});
 $input-placeholder-color-disabled: var(--input-placeholder-color-disabled, #{color("shade", $light-hue)});
 $input-placeholder-font-size: var(--input-placeholder-font-size, #{$font-size-s});
-$input-placeholder-transition: var(--input-placeholder-transition, top #{$transition-duration-medium} #{$transition-linear}, font-size #{$transition-duration-medium} #{$transition-linear}, transform #{$transition-duration-medium} #{$transition-linear});
+$input-placeholder-transition: var(--input-placeholder-transition, top #{$transition-duration-fast} #{$transition-linear}, font-size #{$transition-duration-fast} #{$transition-linear}, transform #{$transition-duration-fast} #{$transition-linear});
 $input-placeholder-space: var(--input-placeholder-space, #{size(14)});
 
