@@ -53,3 +53,7 @@ section {
 	height: 100vh;
 }
 
+#menu-button {
+	@include color-vars("primary", get-entry($palette-map, "grey"));
+}
+

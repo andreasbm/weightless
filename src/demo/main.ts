@@ -4,6 +4,7 @@ import "./main.scss";
 import "../lib";
 import "../lib/nav";
 import "../lib/icon";
+import "../lib/button";
 
 customElements.whenDefined(ROUTER_SLOT_TAG_NAME).then(() => {
 	const $slot = document.querySelector<RouterSlot>(ROUTER_SLOT_TAG_NAME)!;

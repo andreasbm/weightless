@@ -14,7 +14,7 @@
 #router {
 	padding: #{size(25)} #{size(50)};
 	flex-grow: 1;
-	overflow-y: auto;
+	@include scroll-y();
 }
 
 .menu-item {
