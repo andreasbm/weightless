@@ -1,9 +1,9 @@
 import { customElement, html, LitElement, property } from "lit-element";
-import { defaultMenuConfig, IMenuElementBaseProperties, MenuElement } from "../../../lib/menu/menu-element";
-import { openMenu } from "../../../lib/menu/open-menu";
-import { cssResult } from "../../../lib/util/css";
-import { DirectionX, DirectionY, OriginX, OriginY } from "../../../lib/util/position";
-import "../../code-example/code-example-element";
+import { defaultMenuConfig, IMenuElementBaseProperties, MenuElement } from "../../../../lib/menu/menu-element";
+import { openMenu } from "../../../../lib/menu/open-menu";
+import { cssResult } from "../../../../lib/util/css";
+import { DirectionX, DirectionY, OriginX, OriginY } from "../../../../lib/util/position";
+import "../../../code-example/code-example-element";
 import "../../demo/demo-element";
 import { sharedStyles } from "../../style/shared";
 import { getMainScrollTarget } from "../main-scroll-target";

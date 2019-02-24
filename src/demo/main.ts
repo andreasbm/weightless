@@ -13,8 +13,12 @@ customElements.whenDefined(ROUTER_SLOT_TAG_NAME).then(() => {
 	const $slot = document.querySelector<RouterSlot>(ROUTER_SLOT_TAG_NAME)!;
 	$slot.add([
 		{
+			path: "",
+			component: () => import("./pages/home/home-page")
+		},
+		{
 			path: "components",
-			component: () => import("./pages/components-page")
+			component: () => import("./pages/components/components-page")
 		},
 		{
 			path: "**",

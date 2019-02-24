@@ -1,7 +1,7 @@
 import { customElement, html, LitElement } from "lit-element";
 import { repeat } from "lit-html/directives/repeat";
-import { cssResult } from "../../../lib/util/css";
-import "../../code-example/code-example-element";
+import { cssResult } from "../../../../lib/util/css";
+import "../../../code-example/code-example-element";
 import "../../demo/demo-element";
 import { sharedStyles } from "../../style/shared";
 import "./../../../lib/label/label-element";

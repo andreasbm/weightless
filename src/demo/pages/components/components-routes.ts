@@ -8,7 +8,7 @@ export interface IRouteData {title: string, desc: string, img: string};
 export const COMPONENTS_ROUTES: IRoute<IRouteData>[] = [
 	{
 		path: "button",
-		component: () => import("./components/button-page"),
+		component: () => import("./elements/button-page"),
 		data: {
 			title: "Button",
 			desc: "Trigger actions by clicking or tapping buttons.",
@@ -17,7 +17,7 @@ export const COMPONENTS_ROUTES: IRoute<IRouteData>[] = [
 	},
 	{
 		path: "card",
-		component: () => import("./components/card-page"),
+		component: () => import("./elements/card-page"),
 		data: {
 			title: "Card",
 			desc: "Various card layout styles",
@@ -26,7 +26,7 @@ export const COMPONENTS_ROUTES: IRoute<IRouteData>[] = [
 	},
 	{
 		path: "icon",
-		component: () => import("./components/icon-page"),
+		component: () => import("./elements/icon-page"),
 		data: {
 			title: "Icon",
 			desc: "Use icons of various shapes and sizes",
@@ -35,7 +35,7 @@ export const COMPONENTS_ROUTES: IRoute<IRouteData>[] = [
 	},
 	{
 		path: "textfield",
-		component: () => import("./components/textfield-page"),
+		component: () => import("./elements/textfield-page"),
 		data: {
 			title: "Textfield",
 			desc: "Singleline text fields",
@@ -44,7 +44,7 @@ export const COMPONENTS_ROUTES: IRoute<IRouteData>[] = [
 	},
 	{
 		path: "textarea",
-		component: () => import("./components/textarea-page"),
+		component: () => import("./elements/textarea-page"),
 		data: {
 			title: "Textarea",
 			desc: "Multiline text fields",
@@ -53,7 +53,7 @@ export const COMPONENTS_ROUTES: IRoute<IRouteData>[] = [
 	},
 	{
 		path: "select",
-		component: () => import("./components/select-page"),
+		component: () => import("./elements/select-page"),
 		data: {
 			title: "Select",
 			desc: "Select one or more values from a set of options.",
@@ -62,7 +62,7 @@ export const COMPONENTS_ROUTES: IRoute<IRouteData>[] = [
 	},
 	{
 		path: "checkbox",
-		component: () => import("./components/checkbox-page"),
+		component: () => import("./elements/checkbox-page"),
 		data: {
 			title: "Checkbox",
 			desc: "Turn an option on or off.",
@@ -71,7 +71,7 @@ export const COMPONENTS_ROUTES: IRoute<IRouteData>[] = [
 	},
 	{
 		path: "radio",
-		component: () => import("./components/radio-page"),
+		component: () => import("./elements/radio-page"),
 		data: {
 			title: "Radio",
 			desc: "Single selection controls",
@@ -80,7 +80,7 @@ export const COMPONENTS_ROUTES: IRoute<IRouteData>[] = [
 	},
 	{
 		path: "ripple",
-		component: () => import("./components/ripple-page"),
+		component: () => import("./elements/ripple-page"),
 		data: {
 			title: "Ripple",
 			desc: "Indicate touch actions",
@@ -89,7 +89,7 @@ export const COMPONENTS_ROUTES: IRoute<IRouteData>[] = [
 	},
 	{
 		path: "title",
-		component: () => import("./components/title-page"),
+		component: () => import("./elements/title-page"),
 		data: {
 			title: "Title",
 			desc: "Indicate the start of a new section.",
@@ -98,7 +98,7 @@ export const COMPONENTS_ROUTES: IRoute<IRouteData>[] = [
 	},
 	{
 		path: "dialog",
-		component: () => import("./components/dialog-page"),
+		component: () => import("./elements/dialog-page"),
 		data: {
 			title: "Dialog",
 			desc: "Highly interruptive messages",
@@ -107,7 +107,7 @@ export const COMPONENTS_ROUTES: IRoute<IRouteData>[] = [
 	},
 	{
 		path: "progress-spinner",
-		component: () => import("./components/progress-spinner-page"),
+		component: () => import("./elements/progress-spinner-page"),
 		data: {
 			title: "Progress Spinner",
 			desc: "Fills a circle from 0% to 100%",
@@ -116,7 +116,7 @@ export const COMPONENTS_ROUTES: IRoute<IRouteData>[] = [
 	},
 	{
 		path: "progress-bar",
-		component: () => import("./components/progress-bar-page"),
+		component: () => import("./elements/progress-bar-page"),
 		data: {
 			title: "Progress Bar",
 			desc: "Fills a bar from 0% to 100%",
@@ -125,7 +125,7 @@ export const COMPONENTS_ROUTES: IRoute<IRouteData>[] = [
 	},
 	{
 		path: "divider",
-		component: () => import("./components/divider-page"),
+		component: () => import("./elements/divider-page"),
 		data: {
 			title: "Divider",
 			desc: "Thin line that groups content in lists and layouts",
@@ -134,7 +134,7 @@ export const COMPONENTS_ROUTES: IRoute<IRouteData>[] = [
 	},
 	{
 		path: "banner",
-		component: () => import("./components/banner-page"),
+		component: () => import("./elements/banner-page"),
 		data: {
 			title: "Banner",
 			desc: "Non-interruptive messages",
@@ -143,7 +143,7 @@ export const COMPONENTS_ROUTES: IRoute<IRouteData>[] = [
 	},
 	{
 		path: "menu",
-		component: () => import("./components/menu-page"),
+		component: () => import("./elements/menu-page"),
 		data: {
 			title: "Menu",
 			desc: "Coming soon",
@@ -152,7 +152,7 @@ export const COMPONENTS_ROUTES: IRoute<IRouteData>[] = [
 	},
 	{
 		path: "label",
-		component: () => import("./components/label-page"),
+		component: () => import("./elements/label-page"),
 		data: {
 			title: "Label",
 			desc: "Make form elements accessible",
@@ -161,7 +161,7 @@ export const COMPONENTS_ROUTES: IRoute<IRouteData>[] = [
 	},
 	{
 		path: "theme",
-		component: () => import("./components/theme-page"),
+		component: () => import("./elements/theme-page"),
 		data: {
 			title: "Theme",
 			desc: "Swap out the colors",

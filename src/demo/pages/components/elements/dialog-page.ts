@@ -1,11 +1,11 @@
 import { customElement, html, LitElement, property, PropertyValues, query } from "lit-element";
-import { ButtonElement } from "../../../lib/button/button-element";
-import { defaultDialogConfig, DialogElement, DialogSize, IDialogElementBaseProperties } from "../../../lib/dialog/dialog-element";
-import { openDialog } from "../../../lib/dialog/open-dialog";
-import { SelectElement } from "../../../lib/select/select-element";
-import { cssResult } from "../../../lib/util/css";
-import { sharedStyles } from "../../style/shared";
-import "./../../../lib/button/button-element";
+import { ButtonElement } from "../../../../lib/button/button-element";
+import { defaultDialogConfig, DialogElement, DialogSize, IDialogElementBaseProperties } from "../../../../lib/dialog/dialog-element";
+import { openDialog } from "../../../../lib/dialog/open-dialog";
+import { SelectElement } from "../../../../lib/select/select-element";
+import { cssResult } from "../../../../lib/util/css";
+import { sharedStyles } from "../../../style/shared";
+import "../../../../lib/button/button-element";
 import "./../../../lib/card/card-element";
 import "./../../../lib/dialog/dialog-element";
 import "./../../../lib/select/select-element";

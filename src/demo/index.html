@@ -21,7 +21,10 @@
 			<button-element id="menu-button" fab inverted flat>
 				<icon-element>menu</icon-element>
 			</button-element>
-			<img id="logo" src="assets/logo-text.svg" />
+			<router-link id="logo-wrapper" path="/">
+				<img id="logo" src="assets/logo.svg" />
+				<img id="text" src="assets/text.svg" />
+			</router-link>
 		</div>
 		<div slot="right">
 			<div id="theme-selector"></div>

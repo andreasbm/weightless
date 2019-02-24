@@ -1,13 +1,13 @@
 import { GLOBAL_ROUTER_EVENTS_TARGET, GlobalRouterEventKind, IRoute, NavigationEndEvent, ROUTER_SLOT_TAG_NAME, RouterSlot } from "@appnest/web-router";
 import { customElement, html, LitElement, property, PropertyValues, query } from "lit-element";
 import { repeat } from "lit-html/directives/repeat";
-import { cssResult } from "../../lib/util/css";
-import { addListener } from "../../lib/util/event";
-import { sharedStyles } from "../style/shared";
+import { cssResult } from "../../../lib/util/css";
+import { addListener } from "../../../lib/util/event";
+import { sharedStyles } from "../../style/shared";
 import { COMPONENTS_ROUTES, IRouteData } from "./components-routes";
 
 import styles from "./components-page.scss";
-import { getMainScrollTarget, setMainScrollTarget } from "./main-scroll-target";
+import { getMainScrollTarget, setMainScrollTarget } from "../../main-scroll-target";
 
 @customElement("components-page")
 export default class ComponentsPage extends LitElement {

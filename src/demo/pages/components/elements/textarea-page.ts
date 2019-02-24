@@ -1,7 +1,7 @@
 import { customElement, html, LitElement } from "lit-element";
-import { cssResult } from "../../../lib/util/css";
-import { sharedStyles } from "../../style/shared";
-import "./../../../lib/card/card-element";
+import { cssResult } from "../../../../lib/util/css";
+import { sharedStyles } from "../../../style/shared";
+import "../../../../lib/card/card-element";
 import "../../code-example/code-example-element";
 import "./../../../lib/title/title-element";
 import "../../demo/demo-element";

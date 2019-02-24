@@ -1,6 +1,6 @@
 import { customElement, html, LitElement } from "lit-element";
-import { sharedStyles } from "../../style/shared";
-import "./../../../lib/checkbox/checkbox-element";
+import { sharedStyles } from "../../../style/shared";
+import "../../../../lib/checkbox/checkbox-element";
 import "../../demo/demo-element";
 import "../../code-example/code-example-element";
 import "./../../../lib/title/title-element";

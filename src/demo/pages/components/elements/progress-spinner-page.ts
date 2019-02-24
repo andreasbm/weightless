@@ -1,5 +1,5 @@
 import { customElement, html, LitElement } from "lit-element";
-import "./../../../lib/progress-spinner/progress-spinner-element";
+import "../../../../lib/progress-spinner/progress-spinner-element";
 import { sharedStyles } from "../../style/shared";
 import "../../code-example/code-example-element";
 import "../../demo/demo-element";
