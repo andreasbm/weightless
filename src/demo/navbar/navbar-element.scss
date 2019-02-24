@@ -1,5 +1,9 @@
 @import "../../lib/style/base";
 
+:host {
+	position: relative;
+}
+
 #logo-wrapper {
 	display: flex;
 	align-items: center;
