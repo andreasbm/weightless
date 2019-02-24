@@ -1,7 +1,8 @@
 import { GLOBAL_ROUTER_EVENTS_TARGET, GlobalRouterEventKind, IRoute, NavigationEndEvent, ROUTER_SLOT_TAG_NAME, RouterSlot } from "@appnest/web-router";
-import { customElement, html, LitElement, PropertyValues, query } from "lit-element";
+import { customElement, html, LitElement, property, PropertyValues, query } from "lit-element";
 import { repeat } from "lit-html/directives/repeat";
 import { cssResult } from "../../lib/util/css";
+import { addListener } from "../../lib/util/event";
 import { sharedStyles } from "../style/shared";
 import { COMPONENTS_ROUTES, IRouteData } from "./components-routes";
 
@@ -15,6 +16,7 @@ export default class ComponentsPage extends LitElement {
 	private currentRoute?: IRoute<IRouteData>;
 
 	@query("#router") $routerContainer: HTMLDivElement;
+	@property({type: Boolean, reflect: true, attribute: "menu-visible"}) isMenuVisible = false;
 
 	firstUpdated (props: PropertyValues) {
 		super.firstUpdated(props);
@@ -26,9 +28,18 @@ export default class ComponentsPage extends LitElement {
 
 		GLOBAL_ROUTER_EVENTS_TARGET.addEventListener(GlobalRouterEventKind.NavigationEnd, (e: NavigationEndEvent<IRouteData>) => {
 			this.currentRoute = e.detail;
-			getMainScrollTarget().scrollTo(0, 0);
+			getMainScrollTarget().scrollTo({top: 0, left: 0});
 			this.requestUpdate().then();
 		});
+
+		window.addEventListener("toggleMenu", () => {
+			this.isMenuVisible = !this.isMenuVisible;
+			if (this.isMenuVisible) {
+				addListener(this, "click", () => {
+					window.dispatchEvent(new CustomEvent("toggleMenu"))
+				}, {once: true});
+			}
+		})
 	}
 
 	protected render () {

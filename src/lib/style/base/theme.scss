@@ -134,6 +134,5 @@ $shadow: var(--shadow, #{color("black", $default-hue, 0.2)});
 @mixin color-vars ($name, $palette) {
 	@each $hue, $color in $palette {
 		--#{$name}-#{$hue}: #{$color};
-		@debug $hue $color;
 	}
 }

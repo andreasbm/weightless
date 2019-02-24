@@ -10,3 +10,9 @@
 :host([default]) {
 	background: #{color("shade", 200)};
 }
+
+@media #{$screen-s-and-down} {
+	:host {
+		padding: #{size(25)} #{size(20)};
+	}
+}

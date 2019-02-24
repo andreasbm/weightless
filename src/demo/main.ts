@@ -20,4 +20,9 @@ customElements.whenDefined(ROUTER_SLOT_TAG_NAME).then(() => {
 	]);
 });
 
+const $menuButton = document.querySelector("#menu-button")!;
+$menuButton.addEventListener("click", () => {
+	window.dispatchEvent(new CustomEvent("toggleMenu"));
+}, {passive: true});
+
 

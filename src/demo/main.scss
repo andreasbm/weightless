@@ -55,5 +55,12 @@ section {
 
 #menu-button {
 	@include color-vars("primary", get-entry($palette-map, "grey"));
+	display: none;
+}
+
+@media #{$screen-s-and-down} {
+	#menu-button {
+		display: inline-flex;
+	}
 }
 

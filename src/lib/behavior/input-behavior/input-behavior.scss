@@ -100,8 +100,10 @@
 	padding: #{$input-padding-top-bottom} var(--_input-padding-left-right);
 	font-family: #{$input-font-family};
 	font-size: #{$input-font-size};
+
 	@include reset();
 
+	display: block;
 	color: inherit;
 	-webkit-overflow-scrolling: touch;
 	position: relative;

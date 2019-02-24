@@ -9,6 +9,7 @@
 	overflow-y: auto;
 	flex-shrink: 0;
 	border-right: #{size(1)} solid #{color("shade", $light-hue)};
+	background: #{$background};
 }
 
 #router {
@@ -31,3 +32,35 @@
 		background: #{color("shade", 200)};
 	}
 }
+
+@media #{$screen-s-and-down} {
+	#router {
+		padding: #{$spacing-m};
+	}
+
+	#menu {
+		position: fixed;
+		z-index: 12345;
+		bottom: 0;
+		top: var(--nav-height);
+		transform: translateX(-100%);
+	}
+
+	#menu, #router {
+		transition: transform #{$transition-duration-medium} #{$transition-deceleration-curve};
+	}
+
+	:host([menu-visible]) {
+
+		#menu {
+			transform: translateX(0);
+		}
+
+		#router {
+			transform: scale(0.9);
+			opacity: 0.3;
+			pointer-events: none;
+		}
+	}
+}
+
