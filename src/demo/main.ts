@@ -16,6 +16,10 @@ customElements.whenDefined(ROUTER_SLOT_TAG_NAME).then(() => {
 			component: () => import("./pages/components/components-page")
 		},
 		{
+			path: "getting-started",
+			component: () => import("./pages/home/home-page")
+		},
+		{
 			path: "",
 			component: () => import("./pages/home/home-page")
 		},
