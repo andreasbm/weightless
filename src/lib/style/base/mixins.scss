@@ -4,8 +4,3 @@
 	box-sizing: border-box;
 }
 
-@mixin scroll-y () {
-	-webkit-overflow-scrolling: touch;
-	overflow-x: hidden;
-	overflow-y: auto;
-}

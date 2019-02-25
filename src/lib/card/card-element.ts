@@ -20,9 +20,7 @@ export class CardElement extends LitElement implements ICardElementProperties {
 	 * Returns the template for the component.
 	 */
 	protected render (): TemplateResult {
-		return html`
-		<slot></slot>
-		`;
+		return html`<slot></slot>`;
 	}
 }
 

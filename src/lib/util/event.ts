@@ -4,13 +4,13 @@ export type EventListenerSubscription = (() => void);
 
 /**
  * Adds an event listener (or more) to an element and returns a function to unsubscribe.
- * @param $elem
+ * @param $target
  * @param type
  * @param listener
  * @param options
  * @param debounceMs
  */
-export function addListener ($elem: EventTarget,
+export function addListener ($target: EventTarget,
                              type: string[] | string,
                              listener: ((e?: Event) => void),
                              options?: boolean | AddEventListenerOptions,
@@ -22,10 +22,10 @@ export function addListener ($elem: EventTarget,
 	const cb = (e: Event) => debounceMs == null ? listener(e) : debounce(() => listener(e), debounceMs, debounceId);
 
 	// Hook up the listeners
-	types.forEach(t => $elem.addEventListener(t, cb, options));
+	types.forEach(t => $target.addEventListener(t, cb, options));
 
 	// Returns an unsubscribe function
-	return () => types.forEach(t => $elem.removeEventListener(t, cb, options));
+	return () => types.forEach(t => $target.removeEventListener(t, cb, options));
 }
 
 
@@ -45,4 +45,22 @@ export function removeListeners (listeners: EventListenerSubscription[]) {
 export function stopEvent (e: Event) {
 	e.preventDefault();
 	e.stopPropagation();
+}
+
+
+/**
+ * Invokes the callback when the user clicks outside the target.
+ * @param $area
+ * @param listener
+ */
+export function addClickAwayListener ($area: EventTarget, listener: ((e?: Event) => void)): EventListenerSubscription {
+	return addListener(window, "click", (e: Event) => {
+		if (!("composedPath" in e)) return;
+
+		// Check if the container is in the event path
+		const paths: EventTarget[] = (<any>e).composedPath();
+		if (!paths.includes($area)) {
+			listener();
+		}
+	}, {passive: true});
 }

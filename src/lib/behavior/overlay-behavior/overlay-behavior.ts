@@ -1,13 +1,13 @@
 import { FocusTrap } from "@appnest/focus-trap";
+import "@appnest/focus-trap";
 import { LitElement, property } from "lit-element";
 import { pauseAnimations } from "../../util/animation";
 import { CUBIC_BEZIER } from "../../util/constant/animation";
 import { ESCAPE } from "../../util/constant/keycode";
-import { addListener, EventListenerSubscription, removeListeners, stopEvent } from "../../util/event";
 import { renderAttributes } from "../../util/dom";
+import { addListener, EventListenerSubscription, removeListeners, stopEvent } from "../../util/event";
 import { onSizeChanged } from "../../util/resize";
 import { uniqueID } from "../../util/unique";
-import "@appnest/focus-trap";
 
 /**
  * Events the overlay behavior can dispatch.
@@ -82,7 +82,7 @@ export abstract class OverlayBehavior<R, C extends Partial<IOverlayBehaviorBaseP
 	protected currentInAnimations: Animation[] = [];
 	protected currentOutAnimations: Animation[] = [];
 	protected resolvers: OverlayResolver<R>[] = [];
-	protected abstract $focusTrap?: FocusTrap;
+	protected abstract readonly $focusTrap?: FocusTrap;
 	protected overlayId = uniqueID();
 	protected listeners: EventListenerSubscription[] = [];
 	protected activeElementBefore?: HTMLElement;
@@ -93,7 +93,8 @@ export abstract class OverlayBehavior<R, C extends Partial<IOverlayBehaviorBaseP
 	protected get animationConfig (): KeyframeAnimationOptions {
 		return {
 			duration: this.duration,
-			easing: CUBIC_BEZIER
+			easing: CUBIC_BEZIER,
+			fill: "both"
 		};
 	};
 
@@ -108,6 +109,7 @@ export abstract class OverlayBehavior<R, C extends Partial<IOverlayBehaviorBaseP
 		this.didShow = this.didShow.bind(this);
 		this.didHide = this.didHide.bind(this);
 		this.updatePosition = this.updatePosition.bind(this);
+		this.clickAway = this.clickAway.bind(this);
 	}
 
 	/**
@@ -223,16 +225,16 @@ export abstract class OverlayBehavior<R, C extends Partial<IOverlayBehaviorBaseP
 	/**
 	 * Hides the overlay if it's not persistent.
 	 */
-	protected backdropClick () {
-		if (!this.persistent) {
+	protected clickAway () {
+		if (!this.persistent && this.open) {
 			this.hide();
 		}
 	}
 
 	/**
 	 * Dispatches an overlay event.
-	 * @param {OverlayBehaviorEvent} e
-	 * @param {R} detail
+	 * @param e
+	 * @param detail
 	 */
 	protected dispatchOverlayEvent (e: OverlayBehaviorEvent, detail?: R | null) {
 		this.dispatchEvent(new CustomEvent(e, {detail}));
@@ -279,7 +281,7 @@ export abstract class OverlayBehavior<R, C extends Partial<IOverlayBehaviorBaseP
 			addListener(this.scrollTarget, "scroll", this.updatePosition, {passive: true}),
 
 			// Either attach a resize observer or fallback to listening to window resizes
-			"ResizeObserver" in window ? onSizeChanged(this, this.updatePosition, {debounceMs: 100}) : addListener(window, "resize", this.updatePosition, {passive: true}),
+			"ResizeObserver" in window ? onSizeChanged(this, this.updatePosition, {debounceMs: 100}) : addListener(window, "resize", this.updatePosition, {passive: true})
 		);
 
 		this.pauseAnimations();
@@ -308,19 +310,13 @@ export abstract class OverlayBehavior<R, C extends Partial<IOverlayBehaviorBaseP
 	/**
 	 * Animates the overlay in.
 	 */
-	protected animateIn () {
-		this.didShow();
-	}
+	protected abstract animateIn (): void;
 
 	/**
 	 * Animates the overlay out.
 	 * @param result
 	 */
-	protected animateOut (result?: R) {
-		this.open = false;
-		this.resolve(result);
-		this.didHide(result);
-	}
+	protected abstract animateOut (result?: R): void;
 
 	/**
 	 * Hooks up listeners and traps the focus.

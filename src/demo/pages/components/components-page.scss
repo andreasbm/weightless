@@ -15,7 +15,8 @@
 #router {
 	padding: #{size(25)} #{size(50)};
 	flex-grow: 1;
-	@include scroll-y();
+	--webkit-overflow-scrolling: touch;
+	overflow-y: overlay;
 }
 
 .popover-item {

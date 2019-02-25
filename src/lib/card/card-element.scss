@@ -13,7 +13,8 @@ $card-bg: var(--card-bg, #{$background});
   transition: #{$card-transition};
   box-shadow: #{$card-elevation};
   border-radius: #{$card-border-radius};
-  display: block;
+  display: flex;
+  flex-direction: column;
   text-align: left;
 }
 

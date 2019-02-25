@@ -6,7 +6,8 @@ import { IOverlayBehaviorBaseProperties, IOverlayBehaviorProperties, OverlayBeha
 import { sharedStyles } from "../style/shared";
 import { cssResult } from "../util/css";
 import { queryParentRoots } from "../util/dom";
-import { computeBoundingBox, DirectionX, DirectionY, getBoundingBoxOrigin, getPointBoundingBox, IBoundingBox, IBoundingBoxOrigin, IPositionStrategy, isBoundingBoxAllowed, OriginX, OriginY, positionStrategyFallback } from "../util/position";
+import { addClickAwayListener, addListener, EventListenerSubscription, removeListeners } from "../util/event";
+import { anchorPosition, fallbackStrategy, IAnchorPosition, IPositionStrategy, OriginX, OriginY, transformOrigin } from "../util/position";
 import { getOpacity, getScale } from "../util/style";
 import styles from "./popover-element.scss";
 
@@ -16,6 +17,7 @@ import styles from "./popover-element.scss";
 export interface IPopoverElementBaseProperties extends IPositionStrategy, IOverlayBehaviorBaseProperties {
 	closeOnClick: boolean;
 	role: string;
+	noFallback: boolean;
 	anchor: Element | string | null;
 }
 
@@ -35,51 +37,39 @@ export interface IPopoverBehaviorConfig extends Partial<IPopoverElementBasePrope
  * Default configuration for the popover.
  */
 export const defaultPopoverConfig: IPopoverBehaviorConfig = {
-	directionX: DirectionX.RIGHT,
-	directionY: DirectionY.DOWN,
-	anchorOriginX: OriginX.START,
+	transformOriginX: OriginX.LEFT,
+	transformOriginY: OriginY.TOP,
+	anchorOriginX: OriginX.LEFT,
 	anchorOriginY: OriginY.TOP,
-	backdrop: true,
+	backdrop: false,
 	persistent: false,
 	duration: 300,
 	closeOnClick: false,
 	fixed: true
 };
 
-const MIN_MENU_HEIGHT = 200;
-const MIN_MENU_WIDTH = 280;
-
 @customElement("popover-element")
 export class PopoverElement<R = unknown> extends OverlayBehavior<R, IPopoverBehaviorConfig> implements IPopoverElementProperties {
 	static styles = [sharedStyles, cssResult(styles)];
 
 	@property({type: Boolean}) closeOnClick = false;
-	@property({type: String}) directionX = DirectionX.RIGHT;
-	@property({type: String}) directionY = DirectionY.DOWN;
-	@property({type: String}) anchorOriginX = OriginX.START;
+	@property({type: Boolean}) noFallback = false;
+	@property({type: String}) transformOriginX = OriginX.LEFT;
+	@property({type: String}) transformOriginY = OriginY.TOP;
+	@property({type: String}) anchorOriginX = OriginX.LEFT;
 	@property({type: String}) anchorOriginY = OriginY.TOP;
-	@property({type: String, reflect: true}) role = "popover";
+	@property({type: String, reflect: true}) role = "menu";
 	@property({type: String}) anchor: Element | string | null = null;
 
-	private anchorOrigin: IBoundingBoxOrigin | null = null;
-
-	@query("#container") $focusTrap: FocusTrap;
+	@query("#content") $content: FocusTrap;
 	@query("#container") $container: HTMLElement;
-	@query("#bounding-box") $boundingBox: HTMLElement;
-	@query("#content") $content: HTMLElement;
 	@query("#backdrop") $backdrop: BackdropElement;
 
-	/**
-	 * The current position strategy of the popover.
-	 * @returns {IPositionStrategy}
-	 */
-	get positionStrategy (): IPositionStrategy {
-		return {
-			directionX: this.directionX,
-			directionY: this.directionY,
-			anchorOriginX: this.anchorOriginX,
-			anchorOriginY: this.anchorOriginY
-		};
+	private whileOpenListeners: EventListenerSubscription[] = [];
+	private anchorPosition?: IAnchorPosition;
+
+	get $focusTrap () {
+		return this.$content;
 	}
 
 	/**
@@ -89,33 +79,30 @@ export class PopoverElement<R = unknown> extends OverlayBehavior<R, IPopoverBeha
 		super.connectedCallback();
 		this.updatePosition = this.updatePosition.bind(this);
 		this.onKeyDown = this.onKeyDown.bind(this);
-		this.onClick = this.onClick.bind(this);
+		this.onContainerClick = this.onContainerClick.bind(this);
 	}
 
 	/**
 	 * Shows the popover at a specified screen position.
-	 * @param x
-	 * @param y
+	 * @param position
 	 * @param config
 	 */
-	showAtPosition (x: number, y: number, config?: IPopoverBehaviorConfig): Promise<R | null> {
-		this.anchorOrigin = getPointBoundingBox({x, y});
+	showAtPosition (position: IAnchorPosition, config?: IPopoverBehaviorConfig): Promise<R | null> {
+		this.anchorPosition = position;
 		return this.show(config);
 	}
 
 	/**
-	 * Prepares the show animation by computing a bounding box origin.
-	 * @param {IPopoverBehaviorConfig} config
+	 * The current position strategy of the popover.
+	 * @returns {IPositionStrategy}
 	 */
-	protected prepareShowAnimation (config?: IPopoverBehaviorConfig) {
-		super.prepareShowAnimation(config);
-
-		// Compute bounding box origin if necessary
-		if (this.anchor != null) {
-			this.anchorOrigin = this.getBoundingBoxOrigin();
-		}
-
-		this.$content.style.opacity = `0`;
+	protected getPositionStrategy (): IPositionStrategy {
+		return {
+			transformOriginX: this.transformOriginX,
+			transformOriginY: this.transformOriginY,
+			anchorOriginX: this.anchorOriginX,
+			anchorOriginY: this.anchorOriginY
+		};
 	}
 
 	/**
@@ -123,7 +110,7 @@ export class PopoverElement<R = unknown> extends OverlayBehavior<R, IPopoverBeha
 	 */
 	protected prepareHideAnimation () {
 		super.prepareHideAnimation();
-		this.$container.removeEventListener("click", this.onClick);
+		this.$container.removeEventListener("click", this.onContainerClick);
 	}
 
 	/**
@@ -132,14 +119,14 @@ export class PopoverElement<R = unknown> extends OverlayBehavior<R, IPopoverBeha
 	protected didShow () {
 		super.didShow();
 
-		// Add the end styles
-		this.$content.style.opacity = null;
-
-		// Add event listeners
-		this.$container.addEventListener("click", this.onClick);
-
 		// Focus the first element
 		this.$focusTrap.focusFirstElement();
+
+		// Hook up listener
+		this.whileOpenListeners.push(
+			addClickAwayListener(this.$container, this.clickAway),
+			addListener(this.$container, "click", this.onContainerClick)
+		);
 	}
 
 	/**
@@ -147,18 +134,13 @@ export class PopoverElement<R = unknown> extends OverlayBehavior<R, IPopoverBeha
 	 */
 	protected didHide (result?: R) {
 		super.didHide(result);
-		this.anchorOrigin = null;
+		this.anchorPosition = undefined;
 	}
 
 	/**
 	 * Animates the popover in.
 	 */
 	protected animateIn () {
-		const popoverContentDelay = this.duration / 2;
-		const animationConfig: KeyframeAnimationOptions = {
-			...this.animationConfig,
-			fill: "both"
-		};
 
 		// Callback for cleaning up the component and the animation
 		let ready = false;
@@ -169,56 +151,34 @@ export class PopoverElement<R = unknown> extends OverlayBehavior<R, IPopoverBeha
 			this.didShow();
 		};
 
-		// Animate the popover in and take the intermediate stake into account
-		const containerComputedStyle = window.getComputedStyle(this.$container);
-		const popoverScale = getScale(containerComputedStyle, this.$container.getBoundingClientRect());
-		const popoverOpacity = getOpacity(containerComputedStyle);
-
-		this.$container.animate(<Keyframe[]>[
-			{
-				transform: `scale(${popoverScale.x}, ${popoverScale.y})`,
-				opacity: `${popoverOpacity > 0.5 ? popoverOpacity : 0}`,
-				offset: 0
-			},
-			{
-				transform: `scale(1, ${popoverScale.y > 0.5 ? popoverScale.y : 0.5})`,
-				opacity: `${popoverOpacity > 0.5 ? popoverOpacity : 0.5}`,
-				offset: 0.5
-			},
-			{transform: `scale(1, 1)`, opacity: 1, offset: 1}
-		], animationConfig);
-
-		// Animate the popover content in with a delay
-		const popoverAnimation = this.$content.animate(<Keyframe[]>[
-			{opacity: getOpacity(window.getComputedStyle(this.$content)).toString()},
-			{opacity: 1}
-		], {
-			...animationConfig,
-			delay: popoverContentDelay
-		});
-
 		// Animate the backdrop in
-		const backdropAnimation = this.$backdrop.animate(<Keyframe[]>[
-			{opacity: getOpacity(window.getComputedStyle(this.$backdrop)).toString()},
-			{opacity: 1}
-		], animationConfig);
+		const backdropAnimation = this.$backdrop.animate(<PropertyIndexedKeyframes>{
+			opacity: [getOpacity(window.getComputedStyle(this.$backdrop)).toString(), `1`]
+		}, this.animationConfig);
 
-		popoverAnimation.onfinish = setup;
+		// Animate the popover in and take the intermediate stake into account
+		const contentComputedStyle = window.getComputedStyle(this.$content);
+		const contentScale = getScale(contentComputedStyle, this.$content.getBoundingClientRect());
+		const contentOpacity = getOpacity(contentComputedStyle);
 
-		this.currentInAnimations.push(popoverAnimation, backdropAnimation);
+		const contentAnimation = this.$content.animate(<PropertyIndexedKeyframes>{
+			transform: [`scale(${contentScale.x}, ${contentScale.y})`, `scale(1)`],
+			opacity: [`${contentOpacity > 0.5 ? contentOpacity : 0}`, 1]
+		}, this.animationConfig);
+
+		contentAnimation.onfinish = setup;
+		backdropAnimation.onfinish = setup;
+
+		this.currentInAnimations.push(contentAnimation, backdropAnimation);
 		this.updatePosition();
 	}
 
+
 	/**
 	 * Animates the popover out.
-	 * @param {R} result
+	 * @param result
 	 */
 	protected animateOut (result: R) {
-		const animationConfig: KeyframeAnimationOptions = {
-			...this.animationConfig,
-			fill: "both"
-		};
-
 		// Callback for cleaning up the component and the animation
 		let cleaned = false;
 		const cleanup = () => {
@@ -230,28 +190,24 @@ export class PopoverElement<R = unknown> extends OverlayBehavior<R, IPopoverBeha
 		};
 
 		// Animate the backdrop out
-		const backdropAnimation = this.$backdrop.animate(<Keyframe[]>[
-			{opacity: getOpacity(window.getComputedStyle(this.$backdrop)).toString()},
-			{opacity: 0}
-		], animationConfig);
+		const backdropAnimation = this.$backdrop.animate(<PropertyIndexedKeyframes>{
+			opacity: [getOpacity(window.getComputedStyle(this.$backdrop)).toString(), `0`]
+		}, this.animationConfig);
 
-		// Animate the popover content out
-		const popoverContentAnimation = this.$content.animate(<Keyframe[]>[
-			{opacity: getOpacity(window.getComputedStyle(this.$content)).toString()},
-			{opacity: 0}
-		], animationConfig);
-
-		// Animate the popover out
-		const popoverAnimation = this.$container.animate(<Keyframe[]>[
-			{opacity: getOpacity(window.getComputedStyle(this.$container)).toString()},
-			{opacity: 0}
-		], animationConfig);
+		// Animate the content out
+		const contentComputedStyle = window.getComputedStyle(this.$content);
+		const contentScale = getScale(contentComputedStyle, this.$content.getBoundingClientRect());
+		const contentOpacity = getOpacity(contentComputedStyle);
+		const contentAnimation = this.$content.animate(<PropertyIndexedKeyframes>{
+			opacity: [contentOpacity.toString(), 0],
+			transform: [`scale(${contentScale.x}, ${contentScale.y})`, `scale(0)`]
+		}, this.animationConfig);
 
 		backdropAnimation.onfinish = cleanup;
-		popoverAnimation.onfinish = cleanup;
-		popoverContentAnimation.onfinish = cleanup;
+		contentAnimation.onfinish = cleanup;
+		removeListeners(this.whileOpenListeners);
 
-		this.currentOutAnimations.push(backdropAnimation, popoverAnimation, popoverContentAnimation);
+		this.currentOutAnimations.push(backdropAnimation, contentAnimation);
 	}
 
 	/**
@@ -261,33 +217,45 @@ export class PopoverElement<R = unknown> extends OverlayBehavior<R, IPopoverBeha
 		super.updatePosition();
 		requestAnimationFrame(() => {
 
-			// Recompute the anchor origin if an anchor was specified
-			if (this.anchor != null) {
-				this.anchorOrigin = this.getBoundingBoxOrigin();
+			// Compute the transform origin
+			let strategy = this.getPositionStrategy();
+
+			// Compute the anchor position
+			const anchor = this.getAnchor();
+			let position!: IAnchorPosition;
+
+			// Always prioritize the anchor position set explicitly
+			if (this.anchorPosition != null) {
+				position = this.anchorPosition;
+
+			} else if (anchor != null) {
+				const anchorRect = anchor!.getBoundingClientRect();
+				position = anchorPosition(strategy, anchorRect);
+
+				// Compute a fallback strategy. Will not change if there are no need for a fallback.
+				if (!this.noFallback) {
+					const containerRect = this.$container.getBoundingClientRect();
+					strategy = fallbackStrategy(strategy, position, containerRect);
+					position = anchorPosition(strategy, anchorRect);
+				}
+			} else {
+				throw new Error(`No anchor could be found for the popover.`);
 			}
 
-			// If there are no bounding box origin, the position cannot be updated.
-			if (this.anchorOrigin == null) {
-				return;
-			}
-
-			// Compute the bounding box
-			let boundingBox = computeBoundingBox(this.anchorOrigin, this.positionStrategy);
-
-			// If the bounding box is not allowed we compute a new bounding box based on the fallback strategy
-			if (!isBoundingBoxAllowed(boundingBox, MIN_MENU_WIDTH, MIN_MENU_HEIGHT).isAllowed) {
-				const fallbackStrategy = positionStrategyFallback(this.positionStrategy, boundingBox, false, true);
-				boundingBox = computeBoundingBox(this.anchorOrigin, fallbackStrategy);
-			}
-
-			this.setBoundingBox(boundingBox);
+			const transform = transformOrigin(strategy);
+			this.$content.style.transformOrigin = `${strategy.transformOriginX} ${strategy.transformOriginY}`;
+			Object.assign(this.$container.style, {
+				"top": `${position.top}px`,
+				"left": `${position.left}px`,
+				"transform": `translate(${transform.x}, ${transform.y})`
+			});
 		});
 	}
 
 	/**
 	 * Returns the origin of the bounding box.
 	 */
-	private getBoundingBoxOrigin (): IBoundingBoxOrigin {
+	private getAnchor (): Element | null {
 		let anchor = this.anchor;
 
 		// Check if the anchor is an ID.
@@ -296,39 +264,13 @@ export class PopoverElement<R = unknown> extends OverlayBehavior<R, IPopoverBeha
 			anchor = matches.length > 0 ? matches[0] : null;
 		}
 
-		// Ensure that an anchor exists.
-		if (anchor == null) {
-			throw new Error(`No anchor could be found for the popover.`);
-		}
-
-		return getBoundingBoxOrigin(<Element>anchor);
-	}
-
-	/**
-	 * Sets the bounding box values.
-	 * @param {IBoundingBox} boundingBox
-	 */
-	private setBoundingBox (boundingBox: IBoundingBox) {
-		let {left, right, top, bottom, width, height, alignItems, justifyContent, transformOrigin} = boundingBox;
-
-		Object.assign(this.$boundingBox.style, {
-			left: left != null ? `${left}px` : null,
-			right: right != null ? `${right}px` : null,
-			top: top != null ? `${top}px` : null,
-			bottom: bottom != null ? `${bottom}px` : null,
-			width: `${width.toString()}px`,
-			height: `${height.toString()}px`,
-			alignItems: `flex-${alignItems}`,
-			justifyContent: `flex-${justifyContent}`
-		});
-
-		this.$container.style.transformOrigin = `${transformOrigin.x} ${transformOrigin.y} 0px`;
+		return anchor;
 	}
 
 	/**
 	 * Handles the click event on the popover.
 	 */
-	private onClick () {
+	private onContainerClick () {
 		if (this.open && this.closeOnClick) {
 			this.hide();
 		}
@@ -346,14 +288,12 @@ export class PopoverElement<R = unknown> extends OverlayBehavior<R, IPopoverBeha
 	 */
 	protected render (): TemplateResult {
 		return html`
-			<div id="bounding-box">
-				<focus-trap id="container" ?aria-expanded="${this.open}">
-					<div id="content" inactive="${!this.open}">
-						${this.renderContent()}
-					</div>
+			<backdrop-element id="backdrop" @click="${this.clickAway}"></backdrop-element>
+			<div id="container" ?aria-expanded="${this.open}" @clickAway="${this.clickAway}">
+				<focus-trap id="content" inactive="${!this.open}">
+					${this.renderContent()}
 				</focus-trap>
 			</div>
-			<backdrop-element id="backdrop" @click="${() => this.backdropClick()}"></backdrop-element>
 		`;
 	}
 }

@@ -1,28 +1,46 @@
 import { customElement, html, LitElement, property } from "lit-element";
-import "../../../../lib/title/title-element";
 import "../../../../lib/button/button-element";
-import { defaultPopoverConfig, IPopoverElementBaseProperties, PopoverElement } from "../../../../lib/popover/popover-element";
+import "../../../../lib/card/card-element";
 import { openPopover } from "../../../../lib/popover/open-popover";
+import { defaultPopoverConfig, IPopoverElementBaseProperties, PopoverElement } from "../../../../lib/popover/popover-element";
+import "../../../../lib/title/title-element";
 import { cssResult } from "../../../../lib/util/css";
-import { DirectionX, DirectionY, OriginX, OriginY } from "../../../../lib/util/position";
+import { OriginX, OriginY } from "../../../../lib/util/position";
 import "../../../code-example/code-example-element";
 import "../../../demo/demo-element";
 import { getMainScrollTarget } from "../../../main-scroll-target";
 import { sharedStyles } from "../../../style/shared";
 
-async function openTemplatePopover (target: Element, text: string, config: Partial<IPopoverElementBaseProperties> = {}) {
+async function openTemplatePopover (target: Element,
+                                    text: string,
+                                    config: Partial<IPopoverElementBaseProperties> = {}) {
 	const ref = await openPopover({
 		fixed: true,
-		backdrop: true,
 		blockScrolling: true,
 		container: document.body,
-		template: html`<p>${text}</p>`,
+		template: html`<card-element><p>${text}</p></card-element>`,
 		scrollTarget: getMainScrollTarget(),
 		anchor: target,
 		...config
 	});
 
 	console.log(await ref.result);
+}
+
+function originToFlex (origin: OriginY |OriginX): string {
+	switch (origin) {
+		case OriginY.TOP:
+		case OriginX.LEFT:
+			return "flex-start";
+		case OriginY.CENTER:
+		case OriginX.CENTER:
+			return "center";
+		case OriginY.BOTTOM:
+		case OriginX.RIGHT:
+			return "flex-end";
+	}
+
+	throw new Error("Wrong input");
 }
 
 @customElement("popover-page")
@@ -42,12 +60,38 @@ export default class PopoverPage extends LitElement {
 		select-element:not(:last-child) {
 			margin: 0 12px 0 0;
 		}
+		
+		
+		.anchor-container {
+			position: relative;
+            margin: 0 auto;
+            padding: 8px;
+		}
+		
+		.anchor-area {
+			display: inline-flex;
+		    z-index: 1;
+		    pointer-events: none;
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+		}
+		
+		.anchor-dot {
+			border-radius: 100%;
+			width: 16px;
+			height: 16px;
+			background: green;
+		}
+		
 	`)];
 
-	@property({type: String}) directionX = defaultPopoverConfig.directionX;
-	@property({type: String}) directionY = defaultPopoverConfig.directionY;
-	@property({type: String}) anchorOriginX = defaultPopoverConfig.anchorOriginX;
-	@property({type: String}) anchorOriginY = defaultPopoverConfig.anchorOriginY;
+	@property({type: String}) transformOriginX = defaultPopoverConfig.transformOriginX!;
+	@property({type: String}) transformOriginY = defaultPopoverConfig.transformOriginY!;
+	@property({type: String}) anchorOriginX = defaultPopoverConfig.anchorOriginX!;
+	@property({type: String}) anchorOriginY = defaultPopoverConfig.anchorOriginY!;
 
 	/**
 	 * Opens the declarative popover.
@@ -72,8 +116,8 @@ export default class PopoverPage extends LitElement {
 			<demo-element>
 				<code-example-element headline='this.shadowRoot.querySelector("#popover").show().then(result => console.log(result));'>
 					<button-element id="open-popover" @click="${() => this.openDeclarativePopover()}">Open popover 1</button-element>
-					<popover-element id="popover" anchor="#open-popover" backdrop fixed .scrollTarget="${getMainScrollTarget()}">
-						<p>Hello world!</p>
+					<popover-element id="popover" anchor="#open-popover" fixed .scrollTarget="${getMainScrollTarget()}">
+						<card-element><textarea-element></textarea-element><p>Hello world!</p></card-element>
 					</popover-element>
 				</code-example-element>
 			</demo-element>
@@ -81,47 +125,50 @@ export default class PopoverPage extends LitElement {
 			<title-element level="3">Open popover from template (imperative)</title-element>
 			<demo-element>
 				<div id="selector">
-					<select-element outlined placeholder="Transform Origin X" value="${this.directionX}" @change="${(e: Event) => this.directionX = (<DirectionX>(<HTMLSelectElement>e.target).value)}">
-						<option value="start">Start</option>
-						<option value="center">Center</option>
-						<option value="end">End</option>
-					</select-element>
-					<select-element outlined placeholder="Transform Origin Y" value="${this.directionY}" @change="${(e: Event) => this.directionY = (<DirectionY>(<HTMLSelectElement>e.target).value)}">
-						<option value="top">Top</option>
-						<option value="center">Center</option>
-						<option value="end">Bottom</option>
-					</select-element>
 					<select-element outlined placeholder="Anchor Origin X" value="${this.anchorOriginX}" @change="${(e: Event) => this.anchorOriginX = (<OriginX>(<HTMLSelectElement>e.target).value)}">
-						<option value="start">Start</option>
+						<option value="left">Left</option>
 						<option value="center">Center</option>
-						<option value="end">End</option>
+						<option value="right">Right</option>
 					</select-element>
 					<select-element outlined placeholder="Anchor Origin Y" value="${this.anchorOriginY}" @change="${(e: Event) => this.anchorOriginY = (<OriginY>(<HTMLSelectElement>e.target).value)}">
 						<option value="top">Top</option>
 						<option value="center">Center</option>
-						<option value="end">Bottom</option>
+						<option value="bottom">Bottom</option>
+					</select-element>
+					<select-element outlined placeholder="Transform Origin X" value="${this.transformOriginX}" @change="${(e: Event) => this.transformOriginX = (<OriginX>(<HTMLSelectElement>e.target).value)}">
+						<option value="left">Left</option>
+						<option value="center">Center</option>
+						<option value="right">Right</option>
+					</select-element>
+					<select-element outlined placeholder="Transform Origin Y" value="${this.transformOriginY}" @change="${(e: Event) => this.transformOriginY = (<OriginY>(<HTMLSelectElement>e.target).value)}">
+						<option value="top">Top</option>
+						<option value="center">Center</option>
+						<option value="bottom">Bottom</option>
 					</select-element>
 				</div>
-				<code-example-element>
+				<div class="anchor-container">
+					<div class="anchor-area" style="align-items: ${originToFlex(this.anchorOriginY)}; justify-content: ${originToFlex(this.anchorOriginX!)}">
+						<div class="anchor-dot"></div>
+					</div>
 					<button-element id="open-popover-2" @click="${() => openTemplatePopover(this.shadowRoot!.querySelector("#open-popover-2")!, "This is a template!", {
-			directionX: this.directionX,
-			directionY: this.directionY,
+			transformOriginX: this.transformOriginX,
+			transformOriginY: this.transformOriginY,
 			anchorOriginX: this.anchorOriginX,
 			anchorOriginY: this.anchorOriginY
 		})}">Open</button-element>
-				</code-example-element>
+				</div>
+				<highlight-element language="html" text="${`<button-element id="open-popover-2">Open</button-element>`}"></highlight-element>
 				<highlight-element language="javascript" text="${`
 					const ref = await openPopover({
 						fixed: true,
-						backdrop: true,
 						blockScrolling: true,
 						container: document.body,
-						transformOriginX: "${this.directionX}",
-						transformOriginY: "${this.directionY}",
+						transformOriginX: "${this.transformOriginX}",
+						transformOriginY: "${this.transformOriginY}",
 						anchorOriginX: "${this.anchorOriginX}",
 						anchorOriginY: "${this.anchorOriginY}",
 						anchor: this.shadowRoot.querySelector("#open-popover-2"),
-						template: html\`<p>This is a template!</p>\`
+						template: html\`<card-element><p>This is a template!</p></card-element>\`
 					});
 				`}"></highlight-element>
 		`;

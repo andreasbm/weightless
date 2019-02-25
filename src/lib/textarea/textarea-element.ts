@@ -3,6 +3,7 @@ import { ifDefined } from "lit-html/directives/if-defined";
 import { IFormItemBehaviorProperties } from "../behavior/form-item-behavior";
 import { ITextfieldElementProperties, TextfieldElement } from "../textfield/textfield-element";
 import { cssResult } from "../util/css";
+import { isHidden } from "../util/dom";
 import styles from "./textarea-element.scss";
 
 export interface ITextareaBehaviorProperties extends ITextfieldElementProperties {
@@ -47,7 +48,7 @@ export class TextareaElement extends TextfieldElement implements ITextareaBehavi
 	refreshHeight () {
 
 		// Only refresh the height of the rows and cols are not defined
-		if (this.rows != null || this.cols != null) {
+		if (this.rows != null || this.cols != null || isHidden(this)) {
 			return;
 		}
 

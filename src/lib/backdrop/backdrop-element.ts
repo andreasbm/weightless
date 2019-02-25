@@ -5,11 +5,11 @@ import { cssResult } from "../util/css";
 
 import styles from "./backdrop-element.scss";
 
-export interface IBackdropProperties {
+export interface IBackdropElementProperties {
 }
 
 @customElement("backdrop-element")
-export class BackdropElement extends LitElement implements IBackdropProperties {
+export class BackdropElement extends LitElement implements IBackdropElementProperties {
 
 	static styles = [cssResult(styles)];
 

@@ -69,3 +69,20 @@ export function sanitize (html: string): string {
 	           .replace(/'/g, "&#039;")
 	           .replace(/"/g, "&quot;");
 }
+
+/**
+ * Determines whether the element is hidden in the DOM.
+ * https://stackoverflow.com/questions/19669786/check-if-element-is-visible-in-dom
+ * @param $elem
+ * @param style
+ */
+export function isHidden ($elem: HTMLElement, style?: CSSStyleDeclaration) {
+
+	// A more precise (AND MUCH SLOWER) check
+	if (style != null) {
+		return (style.display === "none");
+	}
+
+	// If the element is hidden the offset parent will be null.
+	return ($elem.offsetParent === null);
+}

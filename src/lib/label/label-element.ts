@@ -49,7 +49,7 @@ export class LabelElement extends LitElement implements ILabelElementProperties 
 			if ($target instanceof HTMLElement) {
 				$target.focus();
 			}
-			stopEvent(e);
+			e.preventDefault();
 		}
 	}
 

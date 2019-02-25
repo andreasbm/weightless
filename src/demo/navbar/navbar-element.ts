@@ -2,6 +2,7 @@ import "@appnest/web-router";
 import { customElement, html, LitElement, PropertyValues, query } from "lit-element";
 import "../../lib/button";
 import "../../lib/icon";
+import "../../lib/card/card-element";
 import "../../lib/icon/icon-element";
 import { PopoverElement } from "../../lib/popover";
 import "../../lib/popover";
@@ -44,8 +45,10 @@ export class ThemeComponent extends LitElement {
 				</div>
 				<div slot="right">
 					<div id="theme-selector" @click="${() => this.openThemeSelector()}"></div>
-					<popover-element id="theme-popover" target="#theme-selector" fixed backdrop closeOnClick transformOriginX="right" anchorOriginY="top">
-						<theme-element></theme-element>
+					<popover-element id="theme-popover" anchor="#theme-selector" backdrop fixed closeOnClick transformOriginX="right" anchorOriginY="top">
+						<card-element>
+							<theme-element></theme-element>
+						</card-element>
 					</popover-element>
 				</div>
 			</nav-element>
