@@ -25,18 +25,20 @@ export interface IPopoverElementBaseProperties extends IPositionStrategy, IOverl
  * Properties of the popover.
  */
 export interface IPopoverElementProperties extends IPopoverElementBaseProperties, IOverlayBehaviorProperties {
+	autoOpenEvents?: string[];
+	autoCloseEvents?: string[];
 }
 
 /**
  * Configuration for the popover.
  */
-export interface IPopoverBehaviorConfig extends Partial<IPopoverElementBaseProperties> {
+export interface IPopoverElementConfig extends Partial<IPopoverElementBaseProperties> {
 }
 
 /**
  * Default configuration for the popover.
  */
-export const defaultPopoverConfig: IPopoverBehaviorConfig = {
+export const defaultPopoverConfig: IPopoverElementConfig = {
 	transformOriginX: OriginX.LEFT,
 	transformOriginY: OriginY.TOP,
 	anchorOriginX: OriginX.LEFT,
@@ -49,7 +51,7 @@ export const defaultPopoverConfig: IPopoverBehaviorConfig = {
 };
 
 @customElement("popover-element")
-export class PopoverElement<R = unknown> extends OverlayBehavior<R, IPopoverBehaviorConfig> implements IPopoverElementProperties {
+export class PopoverElement<R = unknown> extends OverlayBehavior<R, IPopoverElementConfig> implements IPopoverElementProperties {
 	static styles = [sharedStyles, cssResult(styles)];
 
 	@property({type: Boolean}) closeOnClick = false;
@@ -60,12 +62,16 @@ export class PopoverElement<R = unknown> extends OverlayBehavior<R, IPopoverBeha
 	@property({type: String, reflect: true}) anchorOriginY = OriginY.TOP;
 	@property({type: String, reflect: true}) role = "menu";
 	@property({type: String}) anchor: Element | string | null = null;
+	@property({type: Array}) autoOpenEvents?: string[];
+	@property({type: Array}) autoCloseEvents?: string[];
 
 	@query("#content") $content: FocusTrap;
 	@query("#container") $container: HTMLElement;
 	@query("#backdrop") $backdrop: BackdropElement;
 
-	private whileOpenListeners: EventListenerSubscription[] = [];
+	private clickAwayListeners: EventListenerSubscription[] = [];
+	private autoOpenEventListeners: EventListenerSubscription[] = [];
+	private autoCloseEventListeners: EventListenerSubscription[] = [];
 	private anchorPosition?: IAnchorPosition;
 
 	get $focusTrap () {
@@ -79,7 +85,36 @@ export class PopoverElement<R = unknown> extends OverlayBehavior<R, IPopoverBeha
 		super.connectedCallback();
 		this.updatePosition = this.updatePosition.bind(this);
 		this.onKeyDown = this.onKeyDown.bind(this);
+		this.show = this.show.bind(this);
 		this.onContainerClick = this.onContainerClick.bind(this);
+	}
+
+	/**
+	 * Reacts on the properties changed.
+	 * @param props
+	 */
+	protected updated (props: Map<keyof IPopoverElementProperties, unknown>) {
+		super.updated(<Map<keyof IOverlayBehaviorProperties, unknown>>props);
+
+		// Attach auto open events to anchor
+		if (props.has("autoOpenEvents") && this.autoOpenEvents != null) {
+			this.attachEventListenersToAnchor(this.autoOpenEventListeners, this.autoOpenEvents, () => !this.open && this.show());
+		}
+
+		// Attach auto close events to anchor
+		if (props.has("autoCloseEvents") && this.autoCloseEvents != null) {
+			this.attachEventListenersToAnchor(this.autoCloseEventListeners, this.autoCloseEvents, () => this.open && this.hide());
+		}
+	}
+
+	/**
+	 * Tears down the component.
+	 */
+	disconnectedCallback () {
+		super.disconnectedCallback();
+		this.detachClickAwayListeners();
+		removeListeners(this.autoOpenEventListeners);
+		removeListeners(this.autoCloseEventListeners);
 	}
 
 	/**
@@ -87,7 +122,7 @@ export class PopoverElement<R = unknown> extends OverlayBehavior<R, IPopoverBeha
 	 * @param position
 	 * @param config
 	 */
-	showAtPosition (position: IAnchorPosition, config?: IPopoverBehaviorConfig): Promise<R | null> {
+	showAtPosition (position: IAnchorPosition, config?: IPopoverElementConfig): Promise<R | null> {
 		this.anchorPosition = position;
 		return this.show(config);
 	}
@@ -106,14 +141,6 @@ export class PopoverElement<R = unknown> extends OverlayBehavior<R, IPopoverBeha
 	}
 
 	/**
-	 * Prepares the hide animation by removing event listeners.
-	 */
-	protected prepareHideAnimation () {
-		super.prepareHideAnimation();
-		this.$container.removeEventListener("click", this.onContainerClick);
-	}
-
-	/**
 	 * Adds event listeners after the popover has been shown.
 	 */
 	protected didShow () {
@@ -122,11 +149,8 @@ export class PopoverElement<R = unknown> extends OverlayBehavior<R, IPopoverBeha
 		// Focus the first element
 		this.$focusTrap.focusFirstElement();
 
-		// Hook up listener
-		this.whileOpenListeners.push(
-			addClickAwayListener(this.$container, this.clickAway),
-			addListener(this.$container, "click", this.onContainerClick)
-		);
+		// Attach click away listeners
+		this.attachClickAwayListeners();
 	}
 
 	/**
@@ -135,6 +159,52 @@ export class PopoverElement<R = unknown> extends OverlayBehavior<R, IPopoverBeha
 	protected didHide (result?: R) {
 		super.didHide(result);
 		this.anchorPosition = undefined;
+	}
+
+	/**
+	 * Attaches events to the anchor.
+	 * @param listeners
+	 * @param events
+	 * @param cb
+	 */
+	protected attachEventListenersToAnchor (listeners: EventListenerSubscription[],
+	                                        events: string[],
+	                                        cb: ((e: Event) => void)) {
+
+		// Detach the previous event listeners and attach the new ones.
+		removeListeners(listeners);
+
+		// Ensure that an anchor exists
+		const $anchor = this.getAnchor();
+		if ($anchor == null) {
+			return this.throwNoAnchorError();
+		}
+
+		// Add the listeners to the anchor
+		listeners.push(
+			addListener($anchor, events, cb)
+		);
+	}
+
+	/**
+	 * Throws an error that no anchor exists.
+	 */
+	protected throwNoAnchorError () {
+		throw new Error(`No anchor could be found for the popover.`);
+	}
+
+	/**
+	 * Attaches the click away listeners.
+	 */
+	protected attachClickAwayListeners () {
+		this.clickAwayListeners.push(
+			addClickAwayListener(this.$container, this.clickAway),
+			addListener(this.$container, "click", this.onContainerClick)
+		);
+	}
+
+	protected detachClickAwayListeners () {
+		removeListeners(this.clickAwayListeners);
 	}
 
 	/**
@@ -205,7 +275,7 @@ export class PopoverElement<R = unknown> extends OverlayBehavior<R, IPopoverBeha
 
 		backdropAnimation.onfinish = cleanup;
 		contentAnimation.onfinish = cleanup;
-		removeListeners(this.whileOpenListeners);
+		this.detachClickAwayListeners();
 
 		this.currentOutAnimations.push(backdropAnimation, contentAnimation);
 	}
@@ -239,7 +309,7 @@ export class PopoverElement<R = unknown> extends OverlayBehavior<R, IPopoverBeha
 					position = anchorPosition(strategy, anchorRect);
 				}
 			} else {
-				throw new Error(`No anchor could be found for the popover.`);
+				return this.throwNoAnchorError();
 			}
 
 			const transform = transformOrigin(strategy);

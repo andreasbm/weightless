@@ -7,6 +7,7 @@
   transition: #{$card-transition};
   box-shadow: #{$card-elevation};
   border-radius: #{$card-border-radius};
+  padding: #{$card-padding};
   display: flex;
   flex-direction: column;
   text-align: left;

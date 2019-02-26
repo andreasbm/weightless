@@ -119,8 +119,18 @@ export default class PopoverPage extends LitElement {
 			<demo-element>
 				<code-example-element headline='this.shadowRoot.querySelector("#popover").show().then(result => console.log(result));'>
 					<button-element id="open-popover" @click="${() => this.openDeclarativePopover()}">Open popover 1</button-element>
-					<popover-element id="popover" anchor="#open-popover" fixed .scrollTarget="${getMainScrollTarget()}">
+					<popover-element id="popover" anchor="#open-popover" .autoOpenEvents="${["click"]}" fixed .scrollTarget="${getMainScrollTarget()}">
 						<card-element><textarea-element></textarea-element><p>Hello world!</p></card-element>
+					</popover-element>
+				</code-example-element>
+			</demo-element>
+			
+			<title-element level="3">Auto open popovers anchored to an element</title-element>
+			<demo-element>
+				<code-example-element headline='<popover-element anchor="#auto-open-button" .autoOpenEvents="\${["mouseover"]}" fixed>...'>
+					<button-element id="auto-open-button">Hover me!</button-element>
+					<popover-element anchor="#auto-open-button" .autoOpenEvents="${["mouseover"]}" .scrollTarget="${getMainScrollTarget()}" fixed anchorOriginX="center" anchorOriginY="center" transformOriginX="center">
+						<popover-card-element>I auto opened!</popover-card-element>
 					</popover-element>
 				</code-example-element>
 			</demo-element>

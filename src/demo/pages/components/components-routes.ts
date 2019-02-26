@@ -146,8 +146,17 @@ export const COMPONENTS_ROUTES: IRoute<IRouteData>[] = [
 		component: () => import("./elements/popover-page"),
 		data: {
 			title: "Popover",
-			desc: "Coming soon",
+			desc: "Contextual anchored elements",
 			img: iconPath("menu")
+		}
+	},
+	{
+		path: "tooltip",
+		component: () => import("./elements/tooltip-page"),
+		data: {
+			title: "Tooltip",
+			desc: "Informative context related text",
+			img: iconPath("tooltip")
 		}
 	},
 	{

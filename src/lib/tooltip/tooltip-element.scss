@@ -1,0 +1,10 @@
+@import "../style/base";
+@import "tooltip-element-vars";
+
+:host {
+	--card-padding: #{$tooltip-padding};
+	--card-color: #{$tooltip-color};
+	--card-bg: #{$tooltip-bg};
+	--popover-card-arrow-fill: #{$tooltip-bg};
+	pointer-events: none;
+}

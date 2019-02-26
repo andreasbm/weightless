@@ -6,3 +6,4 @@ $card-elevation-hover: var(--card-elevation-hover, #{elevation(4, #{$shadow})});
 $card-color: var(--card-color, #{$foreground});
 $card-border-radius: var(--card-border-radius, #{$border-radius-m});
 $card-bg: var(--card-bg, #{$background});
+$card-padding: var(--card-padding, 0);
