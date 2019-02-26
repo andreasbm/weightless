@@ -18,7 +18,7 @@ export default class TextfieldPage extends LitElement {
 		return html`
 			<demo-element default>
 				<code-example-element>
-					<textfield-element onsubmit="alert('done')"></textfield-element>
+					<textfield-element></textfield-element>
 					<textfield-element placeholder="Placeholder"></textfield-element>
 				</code-example-element>
 			</demo-element>

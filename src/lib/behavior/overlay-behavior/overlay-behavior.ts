@@ -237,7 +237,7 @@ export abstract class OverlayBehavior<R, C extends Partial<IOverlayBehaviorBaseP
 	 * @param detail
 	 */
 	protected dispatchOverlayEvent (e: OverlayBehaviorEvent, detail?: R | null) {
-		this.dispatchEvent(new CustomEvent(e, {detail}));
+		this.dispatchEvent(new CustomEvent(e, {detail, composed: true}));
 	}
 
 	/**

@@ -56,10 +56,10 @@ export class PopoverElement<R = unknown> extends OverlayBehavior<R, IPopoverElem
 
 	@property({type: Boolean}) closeOnClick = false;
 	@property({type: Boolean}) noFallback = false;
-	@property({type: String}) transformOriginX = OriginX.LEFT;
-	@property({type: String}) transformOriginY = OriginY.TOP;
-	@property({type: String}) anchorOriginX = OriginX.LEFT;
-	@property({type: String}) anchorOriginY = OriginY.TOP;
+	@property({type: String, reflect: true}) transformOriginX = OriginX.LEFT;
+	@property({type: String, reflect: true}) transformOriginY = OriginY.TOP;
+	@property({type: String, reflect: true}) anchorOriginX = OriginX.LEFT;
+	@property({type: String, reflect: true}) anchorOriginY = OriginY.TOP;
 	@property({type: String, reflect: true}) role = "menu";
 	@property({type: String}) anchor: Element | string | null = null;
 	@property({type: Array}) autoOpenEvents?: string[];
