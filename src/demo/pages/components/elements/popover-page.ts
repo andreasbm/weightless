@@ -1,6 +1,7 @@
 import { customElement, html, LitElement, property } from "lit-element";
 import "../../../../lib/button/button-element";
 import "../../../../lib/card/card-element";
+import "../../../../lib/popover-card";
 import { openPopover } from "../../../../lib/popover/open-popover";
 import { defaultPopoverConfig, IPopoverElementBaseProperties, PopoverElement } from "../../../../lib/popover/popover-element";
 import "../../../../lib/title/title-element";
@@ -18,7 +19,7 @@ async function openTemplatePopover (target: Element,
 		fixed: true,
 		blockScrolling: true,
 		container: document.body,
-		template: html`<card-element><p>${text}</p></card-element>`,
+		template: html`<popover-card-element><p>${text}</p></popover-card-element>`,
 		scrollTarget: getMainScrollTarget(),
 		anchor: target,
 		...config
@@ -107,7 +108,9 @@ export default class PopoverPage extends LitElement {
 			<demo-element default>
 				<code-example-element>
 					<popover-element open>
-						<p>This is a popover!</p>
+						<popover-card-element>
+							<p>This is a popover!</p>
+						</popover-card-element>
 					</popover-element>
 				</code-example-element>
 			</demo-element>
@@ -168,7 +171,7 @@ export default class PopoverPage extends LitElement {
 						anchorOriginX: "${this.anchorOriginX}",
 						anchorOriginY: "${this.anchorOriginY}",
 						anchor: this.shadowRoot.querySelector("#open-popover-2"),
-						template: html\`<card-element><p>This is a template!</p></card-element>\`
+						template: html\`<popover-card-element><p>This is a template!</p></popover-card-element>\`
 					});
 				`}"></highlight-element>
 		`;

@@ -1,11 +1,5 @@
 @import "../style/base";
-
-$card-transition: var(--card-transition, box-shadow #{$transition-duration-fast} #{$transition-ease});
-$card-elevation: var(--card-elevation, #{elevation(1, #{$shadow})});
-$card-elevation-hover: var(--card-elevation-hover, #{elevation(4, #{$shadow})});
-$card-color: var(--card-color, #{$foreground});
-$card-border-radius: var(--card-border-radius, #{$border-radius-m});
-$card-bg: var(--card-bg, #{$background});
+@import "card-vars";
 
 :host {
   color: #{$card-color};

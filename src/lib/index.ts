@@ -18,3 +18,4 @@ export * from "./behavior";
 export * from "./radio";
 export * from "./nav";
 export * from "./title";
+export * from "./popover-card"

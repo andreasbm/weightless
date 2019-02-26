@@ -132,6 +132,6 @@ export class DialogElement<R = unknown> extends OverlayBehavior<R, Partial<IDial
 
 declare global {
 	interface HTMLElementTagNameMap {
-		"dialog-element": DialogElement<any>;
+		"dialog-element": DialogElement;
 	}
 }

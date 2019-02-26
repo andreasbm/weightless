@@ -4,6 +4,7 @@ import "../../lib/button";
 import "../../lib/icon";
 import "../../lib/card/card-element";
 import "../../lib/icon/icon-element";
+import "../../lib/popover-card/popover-card-element";
 import { PopoverElement } from "../../lib/popover";
 import "../../lib/popover";
 import "../../lib/nav";
@@ -36,7 +37,7 @@ export class ThemeComponent extends LitElement {
 			<nav-element id="navbar" shadow>
 				<div slot="left">
 					<button-element id="popover-button" fab inverted flat @click="${() => this.togglePopover()}">
-						<icon-element>popover</icon-element>
+						<icon-element>menu</icon-element>
 					</button-element>
 					<router-link id="logo-wrapper" path="/">
 						<img id="logo" src="assets/logo.svg" />
@@ -45,10 +46,10 @@ export class ThemeComponent extends LitElement {
 				</div>
 				<div slot="right">
 					<div id="theme-selector" @click="${() => this.openThemeSelector()}"></div>
-					<popover-element id="theme-popover" anchor="#theme-selector" backdrop fixed closeOnClick transformOriginX="right" anchorOriginY="top">
-						<card-element>
+					<popover-element id="theme-popover" anchor="#theme-selector" backdrop fixed closeOnClick transformOriginX="right" anchorOriginY="center" anchorOriginX="center">
+						<popover-card-element>
 							<theme-element></theme-element>
-						</card-element>
+						</popover-card-element>
 					</popover-element>
 				</div>
 			</nav-element>
