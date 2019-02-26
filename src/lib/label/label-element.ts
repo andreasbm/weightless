@@ -1,4 +1,4 @@
-import { customElement, LitElement, property, html } from "lit-element";
+import { customElement, LitElement, property, html, PropertyValues } from "lit-element";
 import { TemplateResult } from "lit-html";
 import { sharedStyles } from "../style/shared";
 import { cssResult } from "../util/css";
@@ -23,18 +23,30 @@ export class LabelElement extends LitElement implements ILabelElementProperties 
 
 	protected listeners: EventListenerSubscription[] = [];
 
-	connectedCallback () {
-		super.connectedCallback();
+	firstUpdated (props: PropertyValues) {
+		super.firstUpdated(props);
 		this.refireClick = this.refireClick.bind(this);
 
 		this.listeners.push(
 			addListener(this, "click", this.refireClick)
 		);
+
+		this.updateAria();
 	}
 
 	disconnectedCallback () {
 		super.disconnectedCallback();
 		removeListeners(this.listeners);
+	}
+
+	/**
+	 * Updates the aria attributes.
+	 */
+	protected updateAria () {
+		const $target = this.getTargetElement();
+		if ($target != null && this.id !== "") {
+			$target.setAttribute("aria-labelledby", this.id);
+		}
 	}
 
 	/**

@@ -5,9 +5,9 @@ import { BackdropElement } from "../backdrop/backdrop-element";
 import { IOverlayBehaviorBaseProperties, IOverlayBehaviorProperties, OverlayBehavior } from "../behavior/overlay-behavior/overlay-behavior";
 import { sharedStyles } from "../style/shared";
 import { cssResult } from "../util/css";
-import { queryParentRoots } from "../util/dom";
+import { queryParentRoots, renderAttributes } from "../util/dom";
 import { addClickAwayListener, addListener, EventListenerSubscription, removeListeners } from "../util/event";
-import { anchorPosition, fallbackStrategy, IAnchorPosition, IPositionStrategy, OriginX, OriginY, transformOrigin } from "../util/position";
+import { computeAnchorPosition, computeFallbackStrategy, IAnchorPosition, IPositionStrategy, OriginX, OriginY, computeTransformOrigin, areStrategiesEqual } from "../util/position";
 import { getOpacity, getScale } from "../util/style";
 import styles from "./popover-element.scss";
 
@@ -56,10 +56,10 @@ export class PopoverElement<R = unknown> extends OverlayBehavior<R, IPopoverElem
 
 	@property({type: Boolean}) closeOnClick = false;
 	@property({type: Boolean}) noFallback = false;
-	@property({type: String, reflect: true}) transformOriginX = OriginX.LEFT;
-	@property({type: String, reflect: true}) transformOriginY = OriginY.TOP;
-	@property({type: String, reflect: true}) anchorOriginX = OriginX.LEFT;
-	@property({type: String, reflect: true}) anchorOriginY = OriginY.TOP;
+	@property({type: String}) transformOriginX = OriginX.LEFT;
+	@property({type: String}) transformOriginY = OriginY.TOP;
+	@property({type: String}) anchorOriginX = OriginX.LEFT;
+	@property({type: String}) anchorOriginY = OriginY.TOP;
 	@property({type: String, reflect: true}) role = "menu";
 	@property({type: String}) anchor: Element | string | null = null;
 	@property({type: Array}) autoOpenEvents?: string[];
@@ -289,6 +289,7 @@ export class PopoverElement<R = unknown> extends OverlayBehavior<R, IPopoverElem
 
 			// Compute the transform origin
 			let strategy = this.getPositionStrategy();
+			let isUsingFallbackStrategy = false;
 
 			// Compute the anchor position
 			const anchor = this.getAnchor();
@@ -300,24 +301,39 @@ export class PopoverElement<R = unknown> extends OverlayBehavior<R, IPopoverElem
 
 			} else if (anchor != null) {
 				const anchorRect = anchor!.getBoundingClientRect();
-				position = anchorPosition(strategy, anchorRect);
+				position = computeAnchorPosition(strategy, anchorRect);
 
 				// Compute a fallback strategy. Will not change if there are no need for a fallback.
 				if (!this.noFallback) {
 					const containerRect = this.$container.getBoundingClientRect();
-					strategy = fallbackStrategy(strategy, position, containerRect);
-					position = anchorPosition(strategy, anchorRect);
+					const fallbackStrategy = computeFallbackStrategy(strategy, position, containerRect);
+
+					// Check whether the fallback strategy should be used
+					isUsingFallbackStrategy = areStrategiesEqual(strategy, fallbackStrategy);
+					if (isUsingFallbackStrategy) {
+						strategy = fallbackStrategy;
+						position = computeAnchorPosition(fallbackStrategy, anchorRect);
+					}
 				}
 			} else {
 				return this.throwNoAnchorError();
 			}
 
-			const transform = transformOrigin(strategy);
+			const transform = computeTransformOrigin(strategy);
 			this.$content.style.transformOrigin = `${strategy.transformOriginX} ${strategy.transformOriginY}`;
 			Object.assign(this.$container.style, {
 				"top": `${position.top}px`,
 				"left": `${position.left}px`,
-				"transform": `translate(${transform.x}, ${transform.y})`
+				"transform": `translate(${transform.x}, ${transform.y})`,
+			});
+
+			// Render the actual strategy. This is used for the arrow in the popover-card-element.
+			renderAttributes(this.$container, {
+				"data-fallback-strategy": isUsingFallbackStrategy,
+				"anchorOriginX": strategy.anchorOriginX,
+				"anchorOriginY": strategy.anchorOriginY,
+				"transformOriginX": strategy.transformOriginX,
+				"transformOriginY": strategy.transformOriginY,
 			});
 		});
 	}

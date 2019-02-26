@@ -15,7 +15,7 @@ export default class LabelPage extends LitElement {
 		return html`
 			<demo-element default>
 				<code-example-element>
-					<checkbox-element id="cb" aria-labelledby="lab"></checkbox-element>
+					<checkbox-element id="cb"></checkbox-element>
 					<label-element id="lab" for="cb">This is a label</label-element>
 				</code-example-element>
 			</demo-element>
@@ -33,7 +33,7 @@ export default class LabelPage extends LitElement {
 			<title-element level="3">Nowrap</title-element>
 			<demo-element>
 				<code-example-element>
-					<checkbox-element id="cb2" aria-labelledby="lab2"></checkbox-element>
+					<checkbox-element id="cb2"></checkbox-element>
 					<label-element id="lab2" for="cb2" nowrap style="width: 180px; text-align: left">
 						This is a label with nowrap
 					</label-element>

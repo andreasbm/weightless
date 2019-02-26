@@ -6,5 +6,8 @@
 	--card-color: #{$tooltip-color};
 	--card-bg: #{$tooltip-bg};
 	--popover-card-arrow-fill: #{$tooltip-bg};
+}
+
+#backdrop, #content {
 	pointer-events: none;
 }

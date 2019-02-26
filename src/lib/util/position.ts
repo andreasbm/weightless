@@ -49,8 +49,8 @@ export interface ITransformOrigin {
  * @param anchorOriginY
  * @param anchorRect
  */
-export function anchorPosition ({anchorOriginX, anchorOriginY}: IPositionStrategy,
-                                anchorRect: ClientRect | DOMRect): IAnchorPosition {
+export function computeAnchorPosition ({anchorOriginX, anchorOriginY}: IPositionStrategy,
+                                       anchorRect: ClientRect | DOMRect): IAnchorPosition {
 	let left = anchorRect.left;
 	let top = anchorRect.top;
 
@@ -80,7 +80,7 @@ export function anchorPosition ({anchorOriginX, anchorOriginY}: IPositionStrateg
  * @param transformOriginX
  * @param transformOriginY
  */
-export function transformOrigin ({transformOriginX, transformOriginY}: IPositionStrategy): ITransformOrigin {
+export function computeTransformOrigin ({transformOriginX, transformOriginY}: IPositionStrategy): ITransformOrigin {
 	let x: string | number = 0;
 	let y: string | number = 0;
 
@@ -106,6 +106,18 @@ export function transformOrigin ({transformOriginX, transformOriginY}: IPosition
 }
 
 /**
+ * Determines whether two strategies are equal.
+ * @param strategyA
+ * @param strategyB
+ */
+export function areStrategiesEqual (strategyA: IPositionStrategy, strategyB: IPositionStrategy): boolean {
+	return strategyA.transformOriginX !== strategyB.transformOriginX
+		|| strategyA.transformOriginY !== strategyB.transformOriginY
+		|| strategyA.anchorOriginX !== strategyB.anchorOriginX
+		|| strategyA.anchorOriginY !== strategyB.anchorOriginY;
+}
+
+/**
  * Computes a fallback strategy.
  * @param transformOriginX
  * @param transformOriginY
@@ -115,15 +127,17 @@ export function transformOrigin ({transformOriginX, transformOriginY}: IPosition
  * @param left
  * @param containerRect
  */
-export function fallbackStrategy ({transformOriginX, transformOriginY, anchorOriginX, anchorOriginY}: IPositionStrategy,
-                                  {top, left}: IAnchorPosition,
-                                  containerRect: ClientRect | DOMRect): IPositionStrategy {
+export function computeFallbackStrategy ({transformOriginX, transformOriginY, anchorOriginX, anchorOriginY}: IPositionStrategy,
+                                         {top, left}: IAnchorPosition,
+                                         containerRect: ClientRect | DOMRect): IPositionStrategy {
 	const {innerHeight, innerWidth} = window;
 	switch (transformOriginY) {
 		case OriginY.TOP:
 			if (top + containerRect.height > innerHeight) {
-				transformOriginY = anchorOriginY = OriginY.BOTTOM;
-
+				//transformOriginY = anchorOriginY = OriginY.BOTTOM;
+				//transformOriginY = OriginY.BOTTOM;
+				transformOriginY = OriginY.BOTTOM;
+				anchorOriginY = OriginY.TOP;
 				// Also change the anchor origin
 				// if (anchorOriginY !== OriginY.CENTER) {
 				// 	anchorOriginY = OriginY.BOTTOM;
@@ -137,7 +151,8 @@ export function fallbackStrategy ({transformOriginX, transformOriginY, anchorOri
 	switch (transformOriginX) {
 		case OriginX.LEFT:
 			if (left + containerRect.width > innerWidth) {
-				transformOriginX = anchorOriginX = OriginX.RIGHT;
+				transformOriginX = OriginX.RIGHT;
+				anchorOriginX = OriginX.LEFT;
 
 				// Also change the anchor origin
 				// if (anchorOriginX !== OriginX.CENTER) {
