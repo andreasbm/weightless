@@ -27,6 +27,7 @@
 		"{{ template:description }}",
 		"{{ readme.bullets }}",
 		"{{ template:toc }}",
+		"",
 		"{{ template:line }}",
 		"",
 		"{{ elements }}",
