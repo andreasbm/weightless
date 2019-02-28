@@ -51,7 +51,8 @@
 		"@appnest/readme": "^1.1.2",
 		"@appnest/web-config": "0.3.26",
 		"@appnest/web-router": "^1.1.6",
-		"code-prettify": "^0.1.0"
+		"code-prettify": "^0.1.0",
+		"karma-iframes": "^1.2.2"
 	},
 	"dependencies": {
 		"@appnest/focus-trap": "0.0.26",
