@@ -1,4 +1,4 @@
-<p align="center">`button-element`</p>
+<p align="center">button-element</p>
 
 ## Attributes
 

@@ -1,4 +1,4 @@
-<p align="center">`button-element`</p>
+<p align="center">button-element</p>
 
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#attributes)
@@ -13,7 +13,7 @@
 | `outlined` | boolean | Makes the button outlined. | `false` |
 | `noRipple` | boolean | Deactivates the ripple. | `false` |
 | `flat` | boolean | Makes the button flat. | `false` |
-| `role` | string | The role of the button. | `button` |
+| `role` | string | The role of the button. | `'button'` |
 
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#css-variables)
