@@ -21,17 +21,5 @@
 		["button-element", "Trigger actions by clicking or tapping buttons.", "[Documentation](/src/lib/button)"]
 	],
 	"input": [
-		"{{ template:logo }}",
-		"{{ template:title }}",
-		"{{ template:badges }}",
-		"{{ template:description }}",
-		"{{ readme.bullets }}",
-		"{{ template:toc }}",
-		"",
-		"{{ template:line }}",
-		"",
-		"{{ elements }}",
-		"{{ template:contributors }}",
-		"{{ template:license }}"
 	]
 }
