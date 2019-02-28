@@ -28,6 +28,7 @@
 		"{{ readme.bullets }}",
 		"{{ template:toc }}",
 		"{{ template:line }}",
+		"",
 		"{{ elements }}",
 		"{{ template:contributors }}",
 		"{{ template:license }}"
