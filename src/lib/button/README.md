@@ -1,5 +1,14 @@
 <h1 align="center">button-element</h1>
-<p align="center">Define touch areas where the user can trigger actions.. Go <a href="http://appnest-demo.firebaseapp.com/elements/button">here</a> to try the demo.</p>
+<p align="center">Define touch areas where the user can trigger actions. Go <a href="http://appnest-demo.firebaseapp.com/elements/button">here</a> to try the demo.</p>
+
+
+[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#usage)
+
+## ➤ Usage
+
+```javascript
+<button-element>This is a button</button-element>
+```
 
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#attributes)

@@ -2,7 +2,7 @@
 	"input": "src/lib/button/blueprint.md",
 	"output": "src/lib/button/README.md",
 	"tag": "button-element",
-	"text": "Define touch areas where the user can trigger actions.",
+	"text": "Define touch areas where the user can trigger actions",
 	"demo": "http://appnest-demo.firebaseapp.com/elements/button",
 	"attributes": [
 		["Name", "Type", "Description", "Default value"],
