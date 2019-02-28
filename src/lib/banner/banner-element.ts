@@ -1,4 +1,4 @@
-import { customElement, html, LitElement } from "lit-element";
+import { customElement, html, LitElement, property } from "lit-element";
 import { TemplateResult } from "lit-html";
 import "../divider";
 import { sharedStyles } from "../style/shared";
@@ -18,6 +18,11 @@ export interface IBannerElementProperties {
 @customElement("banner-element")
 export class BannerElement extends LitElement implements IBannerElementProperties {
 	static styles = [cssResult(styles), sharedStyles];
+
+	/**
+	 * Role of the banner.
+	 */
+	@property({type: String, reflect: true}) role = "banner";
 
 	/**
 	 * Returns the template of the element.

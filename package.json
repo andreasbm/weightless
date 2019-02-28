@@ -42,10 +42,10 @@
 		"publish:minor": "npm run test && npm run bump:minor && npm run b:lib && npm run publish",
 		"publish:major": "npm run test && npm run bump:major && npm run b:lib && npm run publish",
 		"readme": "node_modules/.bin/readme",
-		"readme:lib": "npm run readme && npm run readme:backdrop && npm run readme:button && npm run readme:banner",
 		"readme:button": "node_modules/.bin/readme -c=src/lib/button/blueprint.json",
 		"readme:backdrop": "node_modules/.bin/readme -c=src/lib/backdrop/blueprint.json",
-		"readme:banner": "node_modules/.bin/readme -c=src/lib/banner/blueprint.json"
+		"readme:banner": "node_modules/.bin/readme -c=src/lib/banner/blueprint.json",
+		"docs": "npm run readme && npm run readme:backdrop && npm run readme:button && npm run readme:banner"
 	},
 	"devDependencies": {
 		"@appnest/readme": "^1.1.2",

@@ -22,13 +22,7 @@
 
 | Name | Type | Description | Default value |
 | ------- | ------- | ------- | ------- |
-| `type` | 'button' \| 'submit' | Type of the button. | `'submit'` |
-| `inverted` | boolean | Inverts the colors of the button. | `false` |
-| `fab` | boolean | Makes the button round and squared. | `false` |
-| `outlined` | boolean | Makes the button outlined. | `false` |
-| `noRipple` | boolean | Deactivates the ripple. | `false` |
-| `flat` | boolean | Makes the button flat. | `false` |
-| `role` | string | Role of the button. | `'button'` |
+| `role` | string | Role of the banner. | `'banner'` |
 
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#css-variables)
@@ -53,7 +47,7 @@
 | ------- | ------- |
 | `icon` | Icon content. |
 | `text` | Text content. |
-| `action` | Action slot (you can have multiple of this slot). |
+| `action` | Action content (you can have multiple slots named action). |
 
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#contributors)
