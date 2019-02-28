@@ -2,7 +2,7 @@
 {{ template:title }}
 {{ template:badges }}
 {{ template:description }}
-{{ readme.bullets }}
+{{ bullets }}
 {{ template:toc }}
 
 ## Elements
