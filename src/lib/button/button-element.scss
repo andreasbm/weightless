@@ -1,33 +1,5 @@
 @import "../style/base";
-
-$button-letter-spacing: var(--button-letter-spacing, #{size(2)});
-$button-fab-size: var(--button-fab-size, #{size(40)});
-
-$button-color: var(--button-color, #{color-contrast("primary")});
-$button-bg: var(--button-bg, #{color("primary")});
-$button-shadow-color: var(--button-shadow-color, #{color("primary", $default-hue, 0.2)});
-
-$button-color-hover: var(--button-color-hover, #{color-contrast("primary", $light-hue)});
-$button-bg-hover: var(--button-bg-hover, #{color("primary", $light-hue)});
-$button-shadow-color-hover: var(--button-shadow-color-hover, #{color("primary", $default-hue, 0.5)});
-
-$button-color-active: var(--button-color-active, #{color-contrast("primary", $dark-hue)});
-$button-bg-active: var(--button-bg-active, #{color("primary", $dark-hue)});
-$button-bg-active-flat: var(--button-bg, #{color("primary", $default-hue, 0.05)});
-
-$button-color-disabled: var(--button-color-disabled, #{color-contrast("shade", $light-hue)});
-$button-bg-disabled: var(--button-bg-disabled, #{color("shade", $light-hue)});
-
-$button-border-outlined: var(--button-border-outlined, #{size(2)} solid currentColor);
-
-$button-transition: box-shadow #{$transition-duration-slow} #{$transition-ease},
-background #{$transition-duration-medium} #{$transition-ease},
-color #{$transition-duration-medium} #{$transition-ease};
-
-$button-padding: #{$spacing-m} #{$spacing-l};
-$button-font-size: #{$font-size-m};
-$button-border-radius: #{$border-radius-m};
-$button-font-family: #{$font-family-sans-serif};
+@import "button-vars";
 
 :host {
 	--_button-color: #{$button-color};

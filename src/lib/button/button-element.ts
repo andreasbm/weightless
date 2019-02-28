@@ -27,12 +27,39 @@ export interface IButtonElementProperties extends IFormItemBehaviorProperties {
 export class ButtonElement extends FormItemBehavior implements IButtonElementProperties {
 	static styles = [sharedStyles, cssResult(styles)];
 
+	/**
+	 * The type of the button.
+	 */
 	@property({type: String}) type: "button" | "submit" = "submit";
+
+	/**
+	 * Inverts the colors of the button.
+	 */
 	@property({type: Boolean, reflect: true}) inverted = false;
+
+	/**
+	 * Makes the button round and squared.
+	 */
 	@property({type: Boolean, reflect: true}) fab = false;
+
+	/**
+	 * Makes the button outlined.
+	 */
 	@property({type: Boolean, reflect: true}) outlined = false;
+
+	/**
+	 * Deactivates the ripple.
+	 */
 	@property({type: Boolean, reflect: true}) noRipple = false;
+
+	/**
+	 * Makes the button flat.
+	 */
 	@property({type: Boolean, reflect: true}) flat = false;
+
+	/**
+	 * The role of the button.
+	 */
 	@property({type: String, reflect: true}) role = "button";
 
 	@query("#ripple") $ripple!: RippleElement;

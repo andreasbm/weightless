@@ -42,6 +42,7 @@
 		"publish:minor": "npm run test && npm run bump:minor && npm run b:lib && npm run publish",
 		"publish:major": "npm run test && npm run bump:major && npm run b:lib && npm run publish",
 		"readme": "node_modules/.bin/readme",
+		"readme:lib": "npm run readme && npm run readme:button",
 		"readme:button": "node_modules/.bin/readme -c=src/lib/button/blueprint.json"
 	},
 	"devDependencies": {
