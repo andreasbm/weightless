@@ -1,11 +1,11 @@
-{{ template:logo }}",
-{{ template:title }}",
-{{ template:badges }}",
-{{ template:description }}",
-{{ readme.bullets }}",
-{{ template:toc }}",
+{{ template:logo }}
+{{ template:title }}
+{{ template:badges }}
+{{ template:description }}
+{{ readme.bullets }}
+{{ template:toc }}
 
 ## Elements
-{{ elements }}",
-{{ template:contributors }}",
+{{ elements }}
+{{ template:contributors }}
 {{ template:license }}"

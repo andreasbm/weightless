@@ -19,7 +19,5 @@
 	"elements": [
 		["Tag", "Description", "Documentation"],
 		["button-element", "Trigger actions by clicking or tapping buttons.", "[Documentation](/src/lib/button)"]
-	],
-	"input": [
 	]
 }
