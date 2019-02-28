@@ -9,7 +9,7 @@
 	width: #{size(120)};
 }
 
-.theme-button {
+.theme-button, #custom-color-picker {
 	border-radius: 100%;
 	width: #{size(40)};
 	height: #{size(40)};
@@ -18,8 +18,27 @@
 	align-items: center;
 	justify-content: center;
 	outline: none;
+	overflow: hidden;
+	border: none;
 }
 
 .theme-button:focus {
 	box-shadow: elevation(4);
+}
+
+#custom-color-picker {
+	position: relative;
+
+	&::-webkit-color-swatch-wrapper {
+		padding: 0;
+	}
+
+	&::-webkit-color-swatch {
+		border: none;
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		top: 0;
+		left: 0;
+	}
 }

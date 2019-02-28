@@ -46,9 +46,9 @@ export class ThemeComponent extends LitElement {
 				</div>
 				<div slot="right">
 					<div id="theme-selector" @click="${() => this.openThemeSelector()}"></div>
-					<popover-element id="theme-popover" anchor="#theme-selector" backdrop fixed closeOnClick transformOriginX="right" anchorOriginY="center" anchorOriginX="center">
+					<popover-element id="theme-popover" anchor="#theme-selector" backdrop fixed transformOriginX="right" anchorOriginY="center" anchorOriginX="center">
 						<popover-card-element>
-							<theme-element></theme-element>
+							<theme-element @update="${() => this.$themePopover.hide()}"></theme-element>
 						</popover-card-element>
 					</popover-element>
 				</div>
