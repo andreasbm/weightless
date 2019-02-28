@@ -1,5 +1,5 @@
-<h1 align="center">button-element</h1>
-<p align="center">Allow users to take actions, and make choices, with a single tap. Go <a href="http://appnest-demo.firebaseapp.com/elements/button">here</a> to try the demo.</p>
+<h1 align="center">banner-element</h1>
+<p align="center">Display a non-interruptive message and related optional actions. Go <a href="http://appnest-demo.firebaseapp.com/elements/banner">here</a> to try the demo.</p>
 
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#usage)
@@ -7,7 +7,12 @@
 ## ➤ Usage
 
 ```html
-<button-element>This is a button</button-element>
+<banner-element>
+  <icon-element slot="icon">account_box</icon-element>
+  <span slot="text">Your password was updated on your other device. Please sign in again.</span>
+  <button-element slot="action" flat inverted>Continue as guest</button-element>
+  <button-element slot="action" flat inverted>Sign in</button-element>
+</banner-element>
 ```
 
 
@@ -32,25 +37,12 @@
 
 | Name | Description |
 | ------- | ------- |
-| `--button-letter-spacing` | Letter spacing. |
-| `--button-fab-size` | Size of the button when fab attribute is present. |
-| `--button-color` | Default color. |
-| `--button-bg` | Default background. |
-| `--button-shadow-color` | Default shadow color. |
-| `--button-color-hover` | Color on :hover. |
-| `--button-bg-hover` | Background on :hover. |
-| `--button-shadow-color-hover` | Shadow color on hover. |
-| `--button-color-active` | Color on :active. |
-| `--button-bg-active` | Background on :active. |
-| `--button-bg-active-flat` | Background on :active when flat attribute is present. |
-| `--button-color-disabled` | Color when disabled. |
-| `--button-bg-disabled` | Background when disabled. |
-| `--button-border-outlined` | Border when outline attribute is present. |
-| `--button-transition` | Transition. |
-| `--button-padding` | Padding. |
-| `--button-font-size` | Font size. |
-| `--button-border-radius` | Border radius. |
-| `--button-font-family` | Font family. |
+| `--banner-icon-margin` | Margin of the icon slot. |
+| `--banner-icon-color` | Color of the icon. |
+| `--banner-padding` | Padding. |
+| `--banner-color` | Color. |
+| `--banner-bg` | Background. |
+| `--banner-content-padding` | Padding of the content slot. |
 
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#slots)
@@ -59,7 +51,9 @@
 
 | Name | Description |
 | ------- | ------- |
-| `unnamed` | Default content. |
+| `icon` | Icon content. |
+| `text` | Text content. |
+| `action` | Action slot (you can have multiple of this slot). |
 
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#contributors)

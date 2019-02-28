@@ -8,8 +8,12 @@ import { ENTER, SPACE } from "../util/constant/keycode";
 import { cssResult } from "../util/css";
 import { renderAttributes } from "../util/dom";
 import { addListener, stopEvent } from "../util/event";
+
 import styles from "./button-element.scss";
 
+/**
+ * Properties of the button.
+ */
 export interface IButtonElementProperties extends IFormItemBehaviorProperties {
 	type: "button" | "submit";
 	inverted: boolean;
@@ -21,14 +25,14 @@ export interface IButtonElementProperties extends IFormItemBehaviorProperties {
 }
 
 /**
- * Button behavior.
+ * Allow users to take actions, and make choices, with a single tap.
  */
 @customElement("button-element")
 export class ButtonElement extends FormItemBehavior implements IButtonElementProperties {
 	static styles = [sharedStyles, cssResult(styles)];
 
 	/**
-	 * The type of the button.
+	 * Type of the button.
 	 */
 	@property({type: String}) type: "button" | "submit" = "submit";
 
@@ -58,17 +62,17 @@ export class ButtonElement extends FormItemBehavior implements IButtonElementPro
 	@property({type: Boolean, reflect: true}) flat = false;
 
 	/**
-	 * The role of the button.
+	 * Role of the button.
 	 */
 	@property({type: String, reflect: true}) role = "button";
 
 	/**
-	 *
+	 * Ripple element.
 	 */
 	@query("#ripple") protected $ripple!: RippleElement;
 
 	/**
-	 * Hook up the component.
+	 * Hooks up the component.
 	 */
 	connectedCallback () {
 		super.connectedCallback();
@@ -95,7 +99,7 @@ export class ButtonElement extends FormItemBehavior implements IButtonElementPro
 	}
 
 	/**
-	 * Handle click events on the button.
+	 * Handles click events on the button.
 	 * @param e
 	 */
 	protected onClick (e: Event) {
@@ -114,7 +118,7 @@ export class ButtonElement extends FormItemBehavior implements IButtonElementPro
 	}
 
 	/**
-	 * Each time a property updates we need to check if we should respond.
+	 * Responds to property changes.
 	 * @param props
 	 */
 	protected updated (props: PropertyValues) {
@@ -146,7 +150,7 @@ export class ButtonElement extends FormItemBehavior implements IButtonElementPro
 	}
 
 	/**
-	 * Returns the template for the button.
+	 * Returns the template of the element.
 	 */
 	render (): TemplateResult {
 		return html`

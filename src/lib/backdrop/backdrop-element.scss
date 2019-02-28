@@ -1,6 +1,5 @@
 @import "../style/base";
-
-$backdrop-bg: var(--backdrop-bg, rgba(0, 0, 0, 0.4));
+@import "backdrop-element-vars";
 
 :host {
   background: #{$backdrop-bg};

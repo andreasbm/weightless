@@ -1,5 +1,5 @@
 @import "../style/base";
-@import "button-vars";
+@import "button-element-vars";
 
 :host {
 	--_button-color: #{$button-color};

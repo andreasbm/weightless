@@ -1,18 +1,31 @@
-import { html, LitElement } from "lit-element";
+import { html, LitElement, property } from "lit-element";
 import { customElement } from "lit-element";
 import { TemplateResult } from "lit-html";
 import { cssResult } from "../util/css";
 
 import styles from "./backdrop-element.scss";
 
+/**
+ * Backdrop properties.
+ */
 export interface IBackdropElementProperties {
 }
 
+/**
+ * Dark layer to use behind overlayed elements.
+ */
 @customElement("backdrop-element")
 export class BackdropElement extends LitElement implements IBackdropElementProperties {
-
 	static styles = [cssResult(styles)];
 
+	/**
+	 * Role of the backdrop.
+	 */
+	@property({type: String, reflect: true}) role = "presentation";
+
+	/**
+	 * Returns the template of the element.
+	 */
 	protected render (): TemplateResult {
 		return html``;
 	}

@@ -1,0 +1,15 @@
+{
+	"input": "src/lib/backdrop/blueprint.md",
+	"output": "src/lib/backdrop/README.md",
+	"tag": "backdrop-element",
+	"text": "Dark layer to use behind overlayed elements",
+	"demo": "http://appnest-demo.firebaseapp.com/elements/dialog",
+	"attributes": [
+		["Name", "Type", "Description", "Default value"],
+		["`role`", "string", "Role of the backdrop.", "`'presentation'`"]
+	],
+	"cssVariables": [
+		["Name", "Description"],
+		["`--backdrop-bg`", "Background."]
+	]
+}

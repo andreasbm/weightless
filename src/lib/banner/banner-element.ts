@@ -6,15 +6,22 @@ import { cssResult } from "../util/css";
 
 import styles from "./banner-element.scss";
 
+/**
+ * Properties of the banner.
+ */
 export interface IBannerElementProperties {
-
 }
 
+/**
+ * Display a non-interruptive message and related optional actions.
+ */
 @customElement("banner-element")
 export class BannerElement extends LitElement implements IBannerElementProperties {
-
 	static styles = [cssResult(styles), sharedStyles];
 
+	/**
+	 * Returns the template of the element.
+	 */
 	protected render (): TemplateResult {
 		return html`
 			<div id="content">

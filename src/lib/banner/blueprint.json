@@ -1,0 +1,32 @@
+{
+	"input": "src/lib/banner/blueprint.md",
+	"output": "src/lib/banner/README.md",
+	"tag": "banner-element",
+	"text": "Display a non-interruptive message and related optional actions",
+	"demo": "http://appnest-demo.firebaseapp.com/elements/banner",
+	"attributes": [
+		["Name", "Type", "Description", "Default value"],
+		["`type`", "'button' | 'submit'", "Type of the button.", "`'submit'`"],
+		["`inverted`", "boolean", "Inverts the colors of the button.", "`false`"],
+		["`fab`", "boolean", "Makes the button round and squared.", "`false`"],
+		["`outlined`", "boolean", "Makes the button outlined.", "`false`"],
+		["`noRipple`", "boolean", "Deactivates the ripple.", "`false`"],
+		["`flat`", "boolean", "Makes the button flat.", "`false`"],
+		["`role`", "string", "Role of the button.", "`'button'`"]
+	],
+	"cssVariables": [
+		["Name", "Description"],
+		["`--banner-icon-margin`", "Margin of the icon slot."],
+		["`--banner-icon-color`", "Color of the icon."],
+		["`--banner-padding`", "Padding."],
+		["`--banner-color`", "Color."],
+		["`--banner-bg`", "Background."],
+		["`--banner-content-padding`", "Padding of the content slot."]
+	],
+	"slots": [
+		["Name", "Description"],
+		["`icon`", "Icon content."],
+		["`text`", "Text content."],
+		["`action`", "Action slot (you can have multiple of this slot)."]
+	]
+}

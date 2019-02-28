@@ -4,7 +4,7 @@
 ## Usage
 
 ```html
-<button-element>This is a button</button-element>
+<backdrop-element></backdrop-element>
 ```
 
 ## Attributes
@@ -14,10 +14,6 @@
 ## CSS variables
 
 {{ cssVariables }}
-
-## Slots
-
-{{ slots }}
 
 {{ template:contributors }}
 {{ template:license }}

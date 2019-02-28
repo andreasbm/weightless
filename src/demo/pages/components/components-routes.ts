@@ -11,7 +11,7 @@ export const COMPONENTS_ROUTES: IRoute<IRouteData>[] = [
 		component: () => import("./elements/button-page"),
 		data: {
 			title: "Button",
-			desc: "Define touch areas where the user can trigger actions.",
+			desc: "Allow users to take actions, and make choices, with a single tap.",
 			img: iconPath("button")
 		}
 	},
@@ -137,7 +137,7 @@ export const COMPONENTS_ROUTES: IRoute<IRouteData>[] = [
 		component: () => import("./elements/banner-page"),
 		data: {
 			title: "Banner",
-			desc: "Non-interruptive messages",
+			desc: "Display a non-interruptive message and related optional actions",
 			img: iconPath("banner")
 		}
 	},

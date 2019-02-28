@@ -2,17 +2,17 @@
 	"input": "src/lib/button/blueprint.md",
 	"output": "src/lib/button/README.md",
 	"tag": "button-element",
-	"text": "Define touch areas where the user can trigger actions",
+	"text": "Allow users to take actions, and make choices, with a single tap",
 	"demo": "http://appnest-demo.firebaseapp.com/elements/button",
 	"attributes": [
 		["Name", "Type", "Description", "Default value"],
-		["`type`", "'button' | 'submit'", "The type of the button.", "`'submit'`"],
+		["`type`", "'button' | 'submit'", "Type of the button.", "`'submit'`"],
 		["`inverted`", "boolean", "Inverts the colors of the button.", "`false`"],
 		["`fab`", "boolean", "Makes the button round and squared.", "`false`"],
 		["`outlined`", "boolean", "Makes the button outlined.", "`false`"],
 		["`noRipple`", "boolean", "Deactivates the ripple.", "`false`"],
 		["`flat`", "boolean", "Makes the button flat.", "`false`"],
-		["`role`", "string", "The role of the button.", "`'button'`"]
+		["`role`", "string", "Role of the button.", "`'button'`"]
 	],
 	"cssVariables": [
 		["Name", "Description"],
