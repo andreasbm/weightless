@@ -65,7 +65,7 @@ export class ThemeComponent extends LitElement {
 					${theme.name === this.currentThemeName ? html`<icon-element>check</icon-element>` : ""}	 
 				</div>
 			`)}
-			<input id="custom-color-picker" type="color" @change="${(e: Event) => setThemeColor((<HTMLInputElement>e.target).value)}" />
+			<input id="custom-color-picker" type="color" value="#57FFAC" @change="${(e: Event) => setThemeColor((<HTMLInputElement>e.target).value)}" />
 		`;
 	}
 }
