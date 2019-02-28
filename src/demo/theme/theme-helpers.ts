@@ -38,3 +38,12 @@ export function hexToRGB (hex: string): Color {
 		b: parseInt(bHex, radix)
 	};
 }
+
+/**
+ * Computes the contrast color.
+ * @param color
+ */
+export function contrastColor ({r, g, b}: Color): Color {
+	const yiq = ((r * 299) + (g * 587) + (b * 114)) / 1000;
+	return (yiq >= 140) ? {r: 0, g: 0, b: 0} : {r: 255, g: 255, b: 255};
+}

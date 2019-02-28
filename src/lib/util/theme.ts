@@ -7,10 +7,14 @@ export type PaletteMap = {[name: string]: Palette};
  * @param name
  * @param hue
  * @param color
+ * @param isContrast
  * @param $target
  */
-export function setColor (name: string, hue: number, color: Color, $target: HTMLElement = document.documentElement) {
-	$target.style.setProperty(`--${name}-${hue}`, `${color.r}, ${color.g}, ${color.b}`);
+export function setColor (name: string,
+                          hue: number,
+                          color: Color,
+                          {isContrast = false, $target = document.documentElement}: Partial<{isContrast: boolean, $target: HTMLElement}> = {}) {
+	$target.style.setProperty(`--${name}-${hue}${isContrast ? `-contrast` : ""}`, `${color.r}, ${color.g}, ${color.b}`);
 }
 
 /**

@@ -6,7 +6,7 @@ import { setColor } from "../../lib/util/theme";
 import { sharedStyles } from "../style/shared";
 import styles from "./theme-element.scss";
 import "../../lib/icon/icon-element";
-import { hexToRGB, shadeColor } from "./theme-helpers";
+import { contrastColor, hexToRGB, shadeColor } from "./theme-helpers";
 
 const themeClass = (themeName: string) => {
 	return `theme-${themeName}`;
@@ -15,9 +15,15 @@ const themeClass = (themeName: string) => {
 const setThemeColor = (hex: string) => {
 	console.log(hex);
 	const rgb = hexToRGB(hex);
-	setColor("primary", 500, rgb);
+	const contrastRgb = contrastColor(rgb);
+
 	setColor("primary", 400, shadeColor(rgb, 5));
+	setColor("primary", 500, rgb);
 	setColor("primary", 600, shadeColor(rgb, -5));
+
+	setColor("primary", 400, contrastRgb, {isContrast: true});
+	setColor("primary", 500, contrastRgb, {isContrast: true});
+	setColor("primary", 600, contrastRgb, {isContrast: true});
 
 };
 
