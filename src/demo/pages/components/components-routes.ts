@@ -11,7 +11,7 @@ export const COMPONENTS_ROUTES: IRoute<IRouteData>[] = [
 		component: () => import("./elements/button-page"),
 		data: {
 			title: "Button",
-			desc: "Trigger actions by clicking or tapping buttons.",
+			desc: "Define touch areas where the user can trigger actions.",
 			img: iconPath("button")
 		}
 	},

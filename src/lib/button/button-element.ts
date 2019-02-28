@@ -62,7 +62,10 @@ export class ButtonElement extends FormItemBehavior implements IButtonElementPro
 	 */
 	@property({type: String, reflect: true}) role = "button";
 
-	@query("#ripple") $ripple!: RippleElement;
+	/**
+	 *
+	 */
+	@query("#ripple") protected $ripple!: RippleElement;
 
 	/**
 	 * Hook up the component.

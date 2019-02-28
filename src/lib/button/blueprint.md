@@ -1,4 +1,5 @@
-<p align="center">button-element</p>
+<h1 align="center">{{ tag }}</h1>
+<p align="center">{{ text }}</p>
 
 ## Attributes
 

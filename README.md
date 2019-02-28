@@ -36,7 +36,7 @@
 ## ➤ Elements
 | Tag | Description | Documentation |
 | ------- | ------- | ------- |
-| `button-element` | Trigger actions by clicking or tapping buttons. | [Documentation](/src/lib/button) |
+| `button-element` | Define touch areas where the user can trigger actions. | [Documentation](/src/lib/button) |
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/grass.png)](#contributors)
 

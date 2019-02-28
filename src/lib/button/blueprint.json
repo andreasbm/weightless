@@ -1,7 +1,8 @@
 {
 	"input": "src/lib/button/blueprint.md",
 	"output": "src/lib/button/README.md",
-	"text": "",
+	"tag": "button-element",
+	"text": "Define touch areas where the user can trigger actions.",
 	"attributes": [
 		["Name", "Type", "Description", "Default value"],
 		["`type`", "'button' | 'submit'", "The type of the button.", "`'submit'`"],
