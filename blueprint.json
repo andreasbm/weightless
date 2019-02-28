@@ -1,0 +1,35 @@
+{
+	"text": "Web Components built to be used. They are lightweight, have a simple API and are easy to extend and compose.",
+	"ids": {
+		"npm": "@appnest/elements",
+		"github": "andreasbm/elements"
+	},
+	"line": "grass",
+	"bullets": [
+		"**High-quality:** Centered around the best practices.",
+		"**Testable:** Hundreds of test-cases makes sure the library is stable.",
+		"**Easy-to-use:** But with a simple and understandable API.",
+		"**Accessible:** All components has been build with accessibility in mind.",
+		"**Single-responsibility:** Each component does one thing really well. This makes them really easy to extend and compose."
+	],
+	"logo": {
+		"src": "https://raw.githubusercontent.com/andreasbm/elements/master/assets/logo-text.png?token=AF-iBbtFwTGmTCr-w-ZKDUg3jJVXROsJks5ceq82wA%3D%3D",
+		"width": 400
+	},
+	"elements": [
+		["Tag", "Description", "Documentation"],
+		["button-element", "Trigger actions by clicking or tapping buttons.", "[Documentation](/src/lib/button)"]
+	],
+	"input": [
+		"{{ template:logo }}",
+		"{{ template:title }}",
+		"{{ template:badges }}",
+		"{{ template:description }}",
+		"{{ readme.bullets }}",
+		"{{ template:toc }}",
+		"{{ template:line }}",
+		"{{ elements }}",
+		"{{ template:contributors }}",
+		"{{ template:license }}"
+	]
+}

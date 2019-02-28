@@ -41,7 +41,8 @@
 		"publish:patch": "npm run test && npm run bump:patch && npm run b:lib && npm run publish",
 		"publish:minor": "npm run test && npm run bump:minor && npm run b:lib && npm run publish",
 		"publish:major": "npm run test && npm run bump:major && npm run b:lib && npm run publish",
-		"readme": "node node_modules/.bin/readme"
+		"readme": "node_modules/.bin/readme",
+		"readme:button": "node_modules/.bin/readme -c=src/lib/button/blueprint.json"
 	},
 	"devDependencies": {
 		"@appnest/readme": "^1.1.2",
@@ -65,34 +66,5 @@
 			"img": "https://joeschmoe.io/api/v1/random",
 			"url": "https://github.com/andreasbm/elements/blob/master/CONTRIBUTING.md"
 		}
-	],
-	"readme": {
-		"text": "Web Components built to be used. They are lightweight, have a simple API and are easy to extend and compose.",
-		"ids": {
-			"npm": "@appnest/elements",
-			"github": "andreasbm/elements"
-		},
-		"line": "grass",
-		"bullets": [
-			"**High-quality:** Centered around the best practices.",
-			"**Testable:** Hundreds of test-cases makes sure the library is stable.",
-			"**Easy-to-use:** But with a simple and understandable API.",
-			"**Accessible:** All components has been build with accessibility in mind.",
-			"**Single-responsibility:** Each component does one thing really well. This makes them really easy to extend and compose."
-		],
-		"logo": {
-			"src": "https://raw.githubusercontent.com/andreasbm/elements/master/assets/logo-text.png?token=AF-iBbtFwTGmTCr-w-ZKDUg3jJVXROsJks5ceq82wA%3D%3D",
-			"width": 400
-		},
-		"blueprint": [
-			"{{ template:logo }}",
-			"{{ template:title }}",
-			"{{ template:badges }}",
-			"{{ template:description }}",
-			"{{ readme.bullets }}",
-			"{{ template:toc }}",
-			"{{ template:contributors }}",
-			"{{ template:license }}"
-		]
-	}
+	]
 }

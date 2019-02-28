@@ -16,20 +16,20 @@
 
 <br />
 
-* **High-quality:** Centered around the best practices.
-* **Testable:** Hundreds of test-cases makes sure the library is stable.
-* **Easy-to-use:** But with a simple and understandable API.
-* **Accessible:** All components has been build with accessibility in mind.
-* **Single-responsibility:** Each component does one thing really well. This makes them really easy to extend and compose.
+readme.bullets
 
-![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/grass.png)
+[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/grass.png)](#table-of-contents)
 
 ## ➤ Table of Contents
 
 * [➤ Contributors](#-contributors)
 * [➤ License](#-license)
-
 ![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/grass.png)
+| Tag | Description | Documentation |
+| ------- | ------- | ------- |
+| button-element | Trigger actions by clicking or tapping buttons. | [Documentation](/src/lib/button) |
+
+[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/grass.png)](#contributors)
 
 ## ➤ Contributors
 	
@@ -37,7 +37,7 @@
 |:---: | :---:|
 |[Andreas Mehlsen](https://twitter.com/andreasmehlsen) | [You?](https://github.com/andreasbm/elements/blob/master/CONTRIBUTING.md)|
 
-![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/grass.png)
+[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/grass.png)](#license)
 
 ## ➤ License
 	

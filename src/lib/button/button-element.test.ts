@@ -47,7 +47,6 @@ describe("button-element", () => {
 		});
 	});
 
-
 	/**
 	 * ARIA TESTS: https://www.w3.org/TR/wai-aria-practices-1.1/#button
 	 */

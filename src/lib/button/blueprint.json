@@ -1,0 +1,4 @@
+{
+	"input": "src/lib/button/blueprint.md",
+	"output": "src/lib/button/README.md"
+}
