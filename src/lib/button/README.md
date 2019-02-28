@@ -6,7 +6,7 @@
 
 ## ➤ Usage
 
-```javascript
+```html
 <button-element>This is a button</button-element>
 ```
 

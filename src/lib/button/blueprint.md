@@ -3,7 +3,7 @@
 
 ## Usage
 
-```javascript
+```html
 <{{ tag }}>This is a button</{{ tag }}>
 ```
 
