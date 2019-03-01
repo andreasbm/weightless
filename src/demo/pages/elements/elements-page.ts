@@ -4,13 +4,13 @@ import { repeat } from "lit-html/directives/repeat";
 import { cssResult } from "../../../lib/util/css";
 import { addListener } from "../../../lib/util/event";
 import { sharedStyles } from "../../style/shared";
-import { COMPONENTS_ROUTES, IRouteData } from "./components-routes";
+import { COMPONENTS_ROUTES, IRouteData } from "./elements-routes";
 
-import styles from "./components-page.scss";
+import styles from "./elements-page.scss";
 import { getMainScrollContainer, setMainScrollContainer } from "../../main-scroll-target";
 
 @customElement("components-page")
-export default class ComponentsPage extends LitElement {
+export default class ElementsPage extends LitElement {
 
 	static styles = [sharedStyles, cssResult(styles)];
 	private currentRoute?: IRoute<IRouteData>;

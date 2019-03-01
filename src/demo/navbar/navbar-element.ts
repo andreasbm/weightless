@@ -55,10 +55,10 @@ export class ThemeComponent extends LitElement {
 					</router-link>
 				</div>
 				<div slot="right">
-					<button-element id="dark-mode" @click="${() => this.toggleDarkMode()}" fab inverted flat>
+					<button-element id="dark-mode" @click="${() => this.toggleDarkMode()}" fab inverted flat outlined>
 						${this.darkMode ? html`<icon-element>flash_off</icon-element>` : html`<icon-element>flash_on</icon-element>`}
 					</button-element>
-					<div id="theme-selector" @click="${() => this.openThemeSelector()}"></div>
+					<button-element fab id="theme-selector" @click="${() => this.openThemeSelector()}"></button-element>
 					<popover-element id="theme-popover" anchor="#theme-selector" backdrop fixed transformOriginX="right" anchorOriginY="center" anchorOriginX="center">
 						<popover-card-element>
 							<theme-element @update="${() => this.$themePopover.hide()}"></theme-element>

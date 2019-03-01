@@ -1,5 +1,5 @@
 <h1 align="center">card-element</h1>
-<p align="center">Group related content and action. Go <a href="http://elem.dev/card">here</a> to try the demo.</p>
+<p align="center">Group related content and action. Go <a href="http://elem.dev/demo/card">here</a> to try the demo.</p>
 
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#usage)

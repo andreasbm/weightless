@@ -3,7 +3,7 @@
 	"output": "src/lib/button/README.md",
 	"tag": "button-element",
 	"text": "Allow users to take actions, and make choices, with a single tap",
-	"demo": "http://elem.dev/button",
+	"demo": "http://elem.dev/demo/button",
 	"attributes": [
 		["Name", "Type", "Description", "Default value"],
 		["`type`", "'button' | 'submit'", "Type of the button.", "`'submit'`"],

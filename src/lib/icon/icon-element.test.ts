@@ -13,7 +13,7 @@ describe("divider-element", () => {
 	beforeEach(async () => {
 		$container.innerHTML = `<icon-element>flash_on</icon-element>`;
 		await waitForElement("icon-element");
-		$icon = $container.querySelector<IconElement>("divider-element")!;
+		$icon = $container.querySelector<IconElement>("icon-element")!;
 	});
 	after(() => removeContainer($container));
 

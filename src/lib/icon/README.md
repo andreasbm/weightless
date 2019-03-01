@@ -1,5 +1,5 @@
 <h1 align="center">icon-element</h1>
-<p align="center">Symbols for common actions and items. Go <a href="http://elem.dev/icon">here</a> to try the demo.</p>
+<p align="center">Symbols for common actions and items. Go <a href="http://elem.dev/demo/icon">here</a> to try the demo.</p>
 
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#usage)
@@ -47,7 +47,7 @@ Currently the `icon-element` has not been designed with no configuration in mind
 
 | Name | Description |
 | ------- | ------- |
-| `unnamed` | The name of the icon. |
+| `unnamed` | Name of the icon. |
 
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#contributors)

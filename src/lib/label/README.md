@@ -1,5 +1,5 @@
-<h1 align="center">divider-element</h1>
-<p align="center">Thin line that groups content in lists and layouts. Go <a href="http://elem.dev/demo/divider">here</a> to try the demo.</p>
+<h1 align="center">label-element</h1>
+<p align="center">Make form elements more accessible.. Go <a href="http://elem.dev/demo/label">here</a> to try the demo.</p>
 
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#usage)
@@ -7,7 +7,8 @@
 ## ➤ Usage
 
 ```html
-<divider-element></divider-element>
+<checkbox-element id="cb"></checkbox-element>
+<label-element for="cb">This is a label</label-element>
 ```
 
 
@@ -17,7 +18,9 @@
 
 | Name | Type | Description | Default value |
 | ------- | ------- | ------- | ------- |
-| `role` | string | Role of the divider. | `'separator'` |
+| `required` | boolean | Styles the label as required. | `false` |
+| `nowrap` | boolean | Caps the label element with ellipsis if overflowing. | `false` |
+| `for` | string | Query of the form element click events are re-fired upon. | `''` |
 
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#css-variables)
@@ -26,8 +29,17 @@
 
 | Name | Description |
 | ------- | ------- |
-| `--divider-color` | Color. |
-| `--divider-height` | Height. |
+| `--label-color` | Color. |
+| `--label-color-required` | Color of the asterisk (*) when required attributed is present. |
+
+
+[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#slots)
+
+## ➤ Slots
+
+| Name | Description |
+| ------- | ------- |
+| `unnamed` | Default content. If the first element is a form element, clicks on the entire label will be re-fired upon that element. |
 
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#contributors)

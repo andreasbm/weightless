@@ -164,7 +164,7 @@ export const COMPONENTS_ROUTES: IRoute<IRouteData>[] = [
 		component: () => import("./elements/label-page"),
 		data: {
 			title: "Label",
-			desc: "Make form elements accessible",
+			desc: "Make form elements more accessible",
 			img: iconPath("label")
 		}
 	},

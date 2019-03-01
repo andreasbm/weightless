@@ -1,5 +1,5 @@
 <h1 align="center">backdrop-element</h1>
-<p align="center">Dark layer to use behind overlayed elements. Go <a href="http://elem.dev/dialog">here</a> to try the demo.</p>
+<p align="center">Dark layer to use behind overlayed elements. Go <a href="http://elem.dev/demo/dialog">here</a> to try the demo.</p>
 
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#usage)

@@ -12,8 +12,8 @@ customElements.whenDefined(ROUTER_SLOT_TAG_NAME).then(() => {
 	const $slot = document.querySelector<RouterSlot>(ROUTER_SLOT_TAG_NAME)!;
 	$slot.add([
 		{
-			path: "components",
-			component: () => import("./pages/components/components-page")
+			path: "demo",
+			component: () => import("./pages/elements/elements-page")
 		},
 		{
 			path: "getting-started",
@@ -25,7 +25,7 @@ customElements.whenDefined(ROUTER_SLOT_TAG_NAME).then(() => {
 		},
 		{
 			path: "**",
-			redirectTo: "components"
+			redirectTo: "demo"
 		}
 	]);
 });

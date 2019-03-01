@@ -9,7 +9,7 @@ export function updateTabindex ($elem: HTMLElement, disabled: boolean) {
 
 /**
  * All possible aria roles.
- * Compiled from https://www.w3.org/WAI/PF/aria/roles.
+ * Compiled from https://www.w3.org/WAI/PF/aria/roles
  */
 export type AriaRole =
 	| "alert"
