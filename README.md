@@ -22,10 +22,11 @@
 * **Accessible:** All components has been build with accessibility in mind.
 * **Single-responsibility:** Each component does one thing really well. This makes them really easy to extend and compose.
 
-[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/grass.png)](#table-of-contents)
+[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#table-of-contents)
 
 ## ➤ Table of Contents
 
+* [➤ Installation](#-installation)
 * [➤ Elements](#-elements)
 * [➤ Design philosophy](#-design-philosophy)
 	* [⚙️ No configuration](#-no-configuration)
@@ -39,7 +40,16 @@
 * [➤ License](#-license)
 
 
-[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/grass.png)](#elements)
+[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#installation)
+
+## ➤ Installation
+
+```javascript
+npm i @appnest/elements
+```
+
+
+[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#elements)
 
 ## ➤ Elements
 | Tag | Description | Documentation |
@@ -54,7 +64,7 @@
 | `nav-element` | Provide access to destinations in your app. | [Documentation](/src/lib/nav) |
 
 
-[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/grass.png)](#design-philosophy)
+[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#design-philosophy)
 
 ## ➤ Design philosophy
 
@@ -87,7 +97,7 @@ All elements must follow the [best practices](https://www.w3.org/TR/using-aria) 
 If you are interested in learning more you can check out [Custom Element Best Practices](https://developers.google.com/web/fundamentals/web-components/best-practices) and [Inclusive Components](https://inclusive-components.design/#components).
 
 
-[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/grass.png)](#contributors)
+[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#contributors)
 
 ## ➤ Contributors
 	
@@ -95,7 +105,7 @@ If you are interested in learning more you can check out [Custom Element Best Pr
 |:---: | :---:|
 |[Andreas Mehlsen](https://twitter.com/andreasmehlsen) | [You?](https://github.com/andreasbm/elements/blob/master/CONTRIBUTING.md)|
 
-[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/grass.png)](#license)
+[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#license)
 
 ## ➤ License
 	

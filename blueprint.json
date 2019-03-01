@@ -4,7 +4,6 @@
 		"npm": "@appnest/elements",
 		"github": "andreasbm/elements"
 	},
-	"line": "grass",
 	"bullets": [
 		"**High-quality:** Centered around the best practices.",
 		"**Testable:** Hundreds of test-cases makes sure the library is stable.",

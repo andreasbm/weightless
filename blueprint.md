@@ -5,6 +5,12 @@
 {{ bullets }}
 {{ template:toc }}
 
+## Installation
+
+```javascript
+npm i {{ ids.npm }}
+```
+
 ## Elements
 {{ elements }}
 
