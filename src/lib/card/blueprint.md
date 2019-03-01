@@ -7,10 +7,6 @@
 <card-element>Card</card-element>
 ```
 
-<a href="{{ demo }}" align="center">
-  <img src="https://raw.githubusercontent.com/andreasbm/elements/master/screenshots/card-element.png?token=AF-iBRtJE_GTzhioseREII1n7Dpe30RLks5cgq2-wA%3D%3D" width="400" />
-<a/>
-
 ## Attributes
 
 {{ attributes }}
