@@ -5,75 +5,37 @@ const puppeteer = require("puppeteer");
 const fse = require("fs-extra");
 
 interface Group {
-	path: string;
-	screenshots: Screenshot[];
+	page: string;
+	folder?: string;
+	screenshots?: Screenshot[];
 }
 
 interface Screenshot {
-	name: string;
-	handle: string;
+	tag: string;
+	name?: string;
+	handle?: string;
 	options?: ScreenshotOptions;
 }
 
 const ORIGIN = `https://pwa-test-10072.firebaseapp.com`;
 const VIEWPORT = {width: 1000, height: 600, deviceScaleFactor: 2};
-const SCREENSHOT_OPTIONS = {omitBackground: true};
+const SCREENSHOT_OPTIONS: ScreenshotOptions = {omitBackground: true, type: "png"};
 
 /**
  * Screenshot instructions.
  */
 const INSTRUCTIONS: Group[] = [
 	{
-		path: "button",
-		screenshots: [
-			{
-				name: "default",
-				handle: `shadowRoot.querySelector('demo-element:nth-child(1) > code-example-element > button-element')`
-			},
-			{
-				name: "inverted",
-				handle: `shadowRoot.querySelector('demo-element:nth-child(3) > code-example-element > button-element:nth-child(1)')`
-			},
-			{
-				name: "outlined",
-				handle: `shadowRoot.querySelector('demo-element:nth-child(3) > code-example-element > button-element:nth-child(2)')`
-			},
-			{
-				name: "flat-inverted",
-				handle: `shadowRoot.querySelector('demo-element:nth-child(3) > code-example-element > button-element:nth-child(3)')`
-			},
-			{
-				name: "flat-inverted-outlined",
-				handle: `shadowRoot.querySelector('demo-element:nth-child(3) > code-example-element > button-element:nth-child(4)')`
-			}
-		]
+		page: "button"
 	},
 	{
-		path: "card",
-		screenshots: [
-			{
-				name: "default",
-				handle: `shadowRoot.querySelector('demo-element:nth-child(1) > code-example-element > card-element')`
-			}
-		]
+		page: "card"
 	},
 	{
-		path: "popover",
-		screenshots: [
-			{
-				name: "default",
-				handle: `shadowRoot.querySelector('demo-element:nth-child(1) > code-example-element > popover-element')`
-			}
-		]
+		page: "popover"
 	},
 	{
-		path: "dialog",
-		screenshots: [
-			{
-				name: "default",
-				handle: `shadowRoot.querySelector('demo-element:nth-child(1) > code-example-element > dialog-element')`
-			}
-		]
+		page: "dialog"
 	}
 ];
 
@@ -85,8 +47,13 @@ function getDemoUrl (path: string): string {
 	return `${ORIGIN}/demo/${path}`;
 }
 
-function getPageHandle (name: string): string {
-	return `document.querySelector('#router-slot > elements-page').shadowRoot.querySelector('#router > router-slot > ${name}-page')`;
+/**
+ * Returns the page handle.
+ * @param page
+ * @param tag
+ */
+function getHandle (page: string, tag: string): string {
+	return `document.querySelector('#router-slot > elements-page').shadowRoot.querySelector('#router > router-slot > ${page}-page').shadowRoot.querySelector('demo-element:nth-child(1) > code-example-element > ${tag}')`;
 }
 
 /**
@@ -99,21 +66,26 @@ const start = async () => {
 
 	// Go through all of the instructions
 	for (const instruction of INSTRUCTIONS) {
-		await page.goto(getDemoUrl(instruction.path), {waitUntil: "networkidle2"});
+		await page.goto(getDemoUrl(instruction.page), {waitUntil: "networkidle2"});
 
 		// Ensure that the screenshot path exists
-		const instructionFolder = path.resolve(__dirname, instruction.path);
+		const instructionFolder = path.resolve(__dirname, instruction.folder || "");
 		await fse.ensureDir(instructionFolder);
 
 		// Take a screenshot of all the elements
-		for (const screenshot of instruction.screenshots) {
-			const handle = `${getPageHandle(instruction.path)}.${screenshot.handle}`;
+		const screenshots = instruction.screenshots != null ? instruction.screenshots : [{tag: `${instruction.page}-element`}];
+		for (const screenshot of screenshots) {
+			const handle = `${screenshot.handle ? screenshot.handle : getHandle(instruction.page, screenshot.tag)}`;
 			const $elem = await page.evaluateHandle(handle);
 
-			await $elem.asElement()!.screenshot({
+			const options = {
 				...SCREENSHOT_OPTIONS,
 				...(screenshot.options || {}),
-				path: path.resolve(instructionFolder, `${screenshot.name}.png`)
+			};
+
+			await $elem.asElement()!.screenshot({
+				...options,
+				path: path.resolve(instructionFolder, `${screenshot.name || screenshot.tag}.${options.type}`)
 			});
 		}
 	}
