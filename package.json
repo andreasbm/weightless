@@ -41,6 +41,7 @@
 		"publish:patch": "npm run test && npm run bump:patch && npm run b:lib && npm run publish",
 		"publish:minor": "npm run test && npm run bump:minor && npm run b:lib && npm run publish",
 		"publish:major": "npm run test && npm run bump:major && npm run b:lib && npm run publish",
+		"deploy": "npm run b:prod && firebase deploy",
 		"readme": "node_modules/.bin/readme",
 		"readme:button": "node_modules/.bin/readme -c=src/lib/button/blueprint.json",
 		"readme:backdrop": "node_modules/.bin/readme -c=src/lib/backdrop/blueprint.json",

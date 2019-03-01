@@ -52,7 +52,7 @@ describe("button-element", () => {
 	it("should set aria-disabled to true when disabled", async () => {
 		$button.disabled = true;
 		await $button.updateComplete;
-		expect($button.hasAttribute("aria-disabled")).to.be.true;
+		expect($button.getAttribute("aria-disabled")).to.be.equal("true");
 	});
 
 	it("should be removed from the tab sequence when disabled", async () => {

@@ -127,7 +127,7 @@ export class ButtonElement extends FormItemBehavior implements IButtonElementPro
 		// Update the tab index and aria-disabled based on the disabled property.
 		if (props.has("disabled")) {
 			updateTabindex(this, this.disabled);
-			renderAttributes(this, {"aria-disabled": this.disabled});
+			renderAttributes(this, {"aria-disabled": `${this.disabled}`});
 		}
 	}
 
