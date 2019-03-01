@@ -1,9 +1,3 @@
-<p align="center">
-	<a href="http://elem.dev/demo/button" align="center">
-	  <img src="https://raw.githubusercontent.com/andreasbm/elements/master/screenshots/button/default.png?token=AF-iBX1UJdakDTBesGI7uTzbgKAsxydoks5cgqh5wA%3D%3D" width="100" />
-	<a/>
-</p>
-
 <h1 align="center">button-element</h1>
 <p align="center">Allow users to take actions, and make choices, with a single tap. Go <a href="http://elem.dev/demo/button">here</a> to try the demo.</p>
 
@@ -15,6 +9,10 @@
 ```html
 <button-element>This is a button</button-element>
 ```
+
+<a href="http://elem.dev/demo/button" align="center">
+  <img src="https://raw.githubusercontent.com/andreasbm/elements/master/screenshots/button/default.png?token=AF-iBX1UJdakDTBesGI7uTzbgKAsxydoks5cgqh5wA%3D%3D" width="100" />
+<a/>
 
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#attributes)
