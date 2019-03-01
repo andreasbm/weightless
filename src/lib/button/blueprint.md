@@ -8,7 +8,7 @@
 ```
 
 <a href="{{ demo }}" align="center">
-  <img src="https://raw.githubusercontent.com/andreasbm/elements/master/screenshots/button/default.png?token=AF-iBX1UJdakDTBesGI7uTzbgKAsxydoks5cgqh5wA%3D%3D" width="100" />
+  <img src="https://raw.githubusercontent.com/andreasbm/elements/master/screenshots/{{ tag }}.png?token=AF-iBV1pZn7D_ITJDLgD6NVlQjtvXupXks5cgq0VwA%3D%3D" width="100" />
 <a/>
 
 ## Attributes
