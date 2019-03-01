@@ -1,5 +1,5 @@
 <h1 align="center">button-element</h1>
-<p align="center">Allow users to take actions, and make choices, with a single tap. Go <a href="http://appnest-demo.firebaseapp.com/elements/button">here</a> to try the demo.</p>
+<p align="center">Allow users to take actions, and make choices, with a single tap. Go <a href="http://elem.dev/button">here</a> to try the demo.</p>
 
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#usage)

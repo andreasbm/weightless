@@ -1,7 +1,7 @@
 import "../banner";
 import "../button";
 import "../icon";
-import { createContainer, removeContainer, waitForElement } from "../../test/testing-helpers";
+import { assignedNodesMap, createContainer, removeContainer, waitForElement } from "../../test/testing-helpers";
 import { BannerElement } from "./banner-element";
 
 describe("banner-element", () => {
@@ -27,12 +27,11 @@ describe("banner-element", () => {
 	after(() => removeContainer($container));
 
 	it("should render the slots", async () => {
-		const assignedNodes = Array.from($banner.shadowRoot!.querySelectorAll("slot")).map($slot => $slot.assignedNodes());
+		const assignedNodes = assignedNodesMap($banner.shadowRoot!);
 
-		expect(assignedNodes.length).to.equal(3);
-		expect(assignedNodes[0].length).to.equal(1);
-		expect(assignedNodes[1].length).to.equal(1);
-		expect(assignedNodes[2].length).to.equal(2);
+		expect(assignedNodes["icon"].length).to.equal(1);
+		expect(assignedNodes["text"].length).to.equal(1);
+		expect(assignedNodes["action"].length).to.equal(2);
 	});
 
 	/**

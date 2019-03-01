@@ -14,6 +14,10 @@ export interface ICardElementProperties {
 export class CardElement extends LitElement implements ICardElementProperties {
 
 	static styles = [sharedStyles, cssResult(styles)];
+
+	/**
+	 * Makes the card hoverable.
+	 */
 	@property({reflect: true, type: Boolean}) hoverable = false;
 
 	/**

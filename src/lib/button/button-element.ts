@@ -6,7 +6,7 @@ import { RippleElement } from "../ripple/ripple-element";
 import { sharedStyles } from "../style/shared";
 import { ENTER, SPACE } from "../util/constant/keycode";
 import { cssResult } from "../util/css";
-import { renderAttributes } from "../util/dom";
+import { renderAttributes, updateTabindex } from "../util/dom";
 import { addListener, stopEvent } from "../util/event";
 
 import styles from "./button-element.scss";
@@ -126,7 +126,7 @@ export class ButtonElement extends FormItemBehavior implements IButtonElementPro
 
 		// Update the tab index and aria-disabled based on the disabled property.
 		if (props.has("disabled")) {
-			this.tabIndex = this.disabled ? -1 : 0;
+			updateTabindex(this, this.disabled);
 			renderAttributes(this, {"aria-disabled": this.disabled});
 		}
 	}

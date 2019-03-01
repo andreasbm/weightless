@@ -43,3 +43,15 @@ export function removeContainer ($container: HTMLElement) {
 export function average (arr: number[]): number {
 	return arr.reduce((p, c) => p + c, 0) / arr.length;
 }
+
+/**
+ * Returns a map with slot names mapped to assigned nodes.
+ * @param shadowRoot
+ */
+export function assignedNodesMap (shadowRoot: ShadowRoot): {[name: string]: Node[]} {
+	return Array.from(shadowRoot.querySelectorAll("slot"))
+	            .reduce((acc: {[name: string]: Node[]}, $slot: HTMLSlotElement) => {
+		            acc[<string>$slot.name] = <Node[]>$slot.assignedNodes();
+		            return acc;
+	            }, {});
+}

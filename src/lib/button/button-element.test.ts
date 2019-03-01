@@ -1,5 +1,5 @@
 import "../button";
-import { createContainer, removeContainer, waitForElement } from "../../test/testing-helpers";
+import { assignedNodesMap, createContainer, removeContainer, waitForElement } from "../../test/testing-helpers";
 import { ButtonElement } from "./button-element";
 
 describe("button-element", () => {
@@ -19,13 +19,8 @@ describe("button-element", () => {
 	after(() => removeContainer($container));
 
 	it("should render the slot", async () => {
-		const text = "Hello slot";
-
-		$button.innerText = text;
-		await $button.updateComplete;
-
-		const slotContent = $button.shadowRoot!.querySelector("slot")!.assignedNodes()[0].textContent;
-		expect(slotContent).to.equal(text);
+		const assignedNodes = assignedNodesMap($button.shadowRoot!);
+		expect(assignedNodes[""].length).to.equal(2);
 	});
 
 	it("should interact with form elements", done => {
@@ -60,10 +55,6 @@ describe("button-element", () => {
 		expect($button.hasAttribute("aria-disabled")).to.be.true;
 	});
 
-	it("should be inserted into the tab sequence as default", () => {
-		expect($button.getAttribute("tabindex")).to.equal("0");
-	});
-
 	it("should be removed from the tab sequence when disabled", async () => {
 		$button.disabled = true;
 		await $button.updateComplete;
@@ -71,5 +62,17 @@ describe("button-element", () => {
 		expect($button.hasAttribute("disabled")).to.be.true;
 		expect($button.getAttribute("tabindex")).to.equal("-1");
 	});
+
+	it("should be inserted into the tab sequence as default", () => {
+		expect($button.getAttribute("tabindex")).to.equal("0");
+	});
+
+	it("should be respect the tabindex set by the page author", async () => {
+		$button.tabIndex = 123;
+		await $button.updateComplete;
+
+		expect($button.getAttribute("tabindex")).to.equal("123");
+	});
+
 });
 

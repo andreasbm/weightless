@@ -86,3 +86,12 @@ export function isHidden ($elem: HTMLElement, style?: CSSStyleDeclaration) {
 	// If the element is hidden the offset parent will be null.
 	return ($elem.offsetParent === null);
 }
+
+/**
+ * Updates the tabindex and prioritizes tab index set by the page author.
+ * @param $elem
+ * @param disabled
+ */
+export function updateTabindex($elem: HTMLElement, disabled: boolean) {
+	$elem.tabIndex = disabled ? -1 : $elem.tabIndex < 0 ? 0 : $elem.tabIndex;
+}

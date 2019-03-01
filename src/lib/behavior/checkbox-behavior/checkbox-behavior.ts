@@ -5,7 +5,7 @@ import { ifDefined } from "lit-html/directives/if-defined";
 import { sharedStyles } from "../../style/shared";
 import { SPACE } from "../../util/constant/keycode";
 import { cssResult } from "../../util/css";
-import { renderAttributes } from "../../util/dom";
+import { renderAttributes, updateTabindex } from "../../util/dom";
 import { addListener, stopEvent } from "../../util/event";
 import { FormItemBehavior, IFormItemBehaviorProperties } from "../form-item-behavior";
 
@@ -58,7 +58,7 @@ export abstract class CheckboxBehavior extends FormItemBehavior implements IChec
 	 */
 	protected updateTabindex (props: Map<keyof ICheckboxBehaviorProperties, unknown>) {
 		if (props.has("disabled")) {
-			this.tabIndex = this.disabled ? -1 : 0;
+			updateTabindex(this, this.disabled);
 		}
 	}
 

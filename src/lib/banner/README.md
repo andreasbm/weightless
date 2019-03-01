@@ -1,5 +1,5 @@
 <h1 align="center">banner-element</h1>
-<p align="center">Display a non-interruptive message and related optional actions. Go <a href="http://appnest-demo.firebaseapp.com/elements/banner">here</a> to try the demo.</p>
+<p align="center">Display a non-interruptive message and related optional actions. Go <a href="http://elem.dev/banner">here</a> to try the demo.</p>
 
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#usage)

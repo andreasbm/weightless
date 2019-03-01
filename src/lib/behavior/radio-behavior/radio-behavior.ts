@@ -2,7 +2,7 @@ import { property } from "lit-element";
 import { ARROW_DOWN, ARROW_LEFT, ARROW_RIGHT, ARROW_UP } from "../../util/constant/keycode";
 
 import { cssResult } from "../../util/css";
-import { queryParentRoots } from "../../util/dom";
+import { queryParentRoots, updateTabindex } from "../../util/dom";
 import { stopEvent } from "../../util/event";
 import { CheckboxBehavior, ICheckboxBehaviorProperties } from "../checkbox-behavior/checkbox-behavior";
 
@@ -31,7 +31,7 @@ export abstract class RadioBehavior extends CheckboxBehavior implements IRadioBe
 
 		// Remove from tab order if disabled or if not checked and the group is checked.
 		if (props.has("disabled") || props.has("checked")) {
-			this.tabIndex = this.disabled || (!this.checked && this.isGroupedChecked()) ? -1 : 0;
+			updateTabindex(this, this.disabled || (!this.checked && this.isGroupedChecked()));
 		}
 
 		// Uncheck the rest of the group if this one is checked.

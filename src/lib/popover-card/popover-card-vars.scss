@@ -1,5 +1,5 @@
 @import "../style/base";
-@import "../card/card-vars";
+@import "../card/card-element-vars";
 
 $popover-card-arrow-width: var(--popover-card-arrow-width, #{size(10)});
 $popover-card-arrow-height: var(--popover-card-arrow-height, #{size(6)});

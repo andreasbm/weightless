@@ -20,7 +20,7 @@ export const COMPONENTS_ROUTES: IRoute<IRouteData>[] = [
 		component: () => import("./elements/card-page"),
 		data: {
 			title: "Card",
-			desc: "Various card layout styles",
+			desc: "Group related content and action.",
 			img: iconPath("card")
 		}
 	},

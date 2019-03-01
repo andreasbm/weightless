@@ -1,0 +1,25 @@
+{
+	"input": "src/lib/card/blueprint.md",
+	"output": "src/lib/card/README.md",
+	"tag": "card-element",
+	"text": "Group related content and action",
+	"demo": "http://elem.dev/card",
+	"attributes": [
+		["Name", "Type", "Description", "Default value"],
+		["`hoverable`", "boolean", "Makes the card hoverable.", "`false`"]
+	],
+	"cssVariables": [
+		["Name", "Description"],
+		["`--card-transition`", "Transition."],
+		["`--card-color`", "Color"],
+		["`--card-border-radius`", "Border radius."],
+		["`--card-bg`", "Background."],
+		["`--card-padding`", "Padding."],
+		["`--card-elevation`", "Default box shadow."],
+		["`--card-elevation-hover`", "Box shadow on :hover"]
+	],
+	"slots": [
+		["Name", "Description"],
+		["`unnamed`", "Default content."]
+	]
+}
