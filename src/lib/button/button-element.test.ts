@@ -71,8 +71,8 @@ describe("button-element", () => {
 		$button.tabIndex = 123;
 		await $button.updateComplete;
 
+
 		expect($button.getAttribute("tabindex")).to.equal("123");
 	});
-
 });
 

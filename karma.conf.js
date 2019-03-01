@@ -1,4 +1,5 @@
 const {defaultResolvePlugins, defaultKarmaConfig} = require("@appnest/web-config");
+const path = require("path");
 
 module.exports = (config) => {
 	config.set({
@@ -18,6 +19,12 @@ module.exports = (config) => {
 			captureConsole: true,
 			mocha: {
 				bail: true
+			}
+		},
+		customLaunchers: {
+			Chrome_with_debugging: {
+				base: "Chrome",
+				chromeDataDir: path.resolve(__dirname, '.chrome')
 			}
 		}
 	});
