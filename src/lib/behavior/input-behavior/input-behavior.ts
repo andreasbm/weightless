@@ -1,5 +1,5 @@
 import { html, property, TemplateResult } from "lit-element";
-import { sharedStyles } from "../../style/shared";
+import { AriaRole } from "../../util/aria";
 import { ENTER } from "../../util/constant/keycode";
 import { cssResult } from "../../util/css";
 import { addListener } from "../../util/event";
@@ -13,18 +13,18 @@ export enum InputBehaviorEvent {
 export interface IInputBehaviorProperties extends IFormItemBehaviorProperties{
 	autocomplete: "on" | "off";
 	outlined: boolean;
-	role: string;
+	role: AriaRole;
 	filled: boolean;
 	placeholder?: string;
 }
 
 export abstract class InputBehavior extends FormItemBehavior implements IInputBehaviorProperties {
-	static styles = [sharedStyles, cssResult(styles)];
+	static styles = [...FormItemBehavior.styles, cssResult(styles)];
 
 	@property({type: String, reflect: true}) autocomplete: "on" | "off";
 	@property({type: Boolean, reflect: true}) outlined: boolean = false;
 	@property({type: Boolean, reflect: true}) filled: boolean = false;
-	@property({type: String, reflect: true}) role = "textbox";
+	@property({type: String, reflect: true}) role: AriaRole = "textbox";
 	@property({type: String, reflect: true}) placeholder?: string;
 
 	get $slot (): HTMLSlotElement {

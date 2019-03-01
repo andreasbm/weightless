@@ -71,7 +71,6 @@ $palette-orange: (
 		"contrast": $white-rgb
 );
 
-
 $palette-royal-blue: (
 		400: "112, 130, 178",
 		500: "52, 77, 144",
@@ -107,6 +106,23 @@ $palette-dark-asphalt: (
 				500: $white-rgb,
 				600: $white-rgb,
 				700: $white-rgb
+		)
+);
+
+$palette-dark-asphalt-inverted: (
+		200: "38, 38, 38",
+		300: "77, 77, 77",
+		400: "155, 155, 155",
+		500: "153, 153, 153",
+		600: "191, 191, 191",
+		700: "230, 230, 230",
+		"contrast": (
+				200: $white-rgb,
+				300: $white-rgb,
+				400: $white-rgb,
+				500: $white-rgb,
+				600: $black-rgb,
+				700: $black-rgb
 		)
 );
 

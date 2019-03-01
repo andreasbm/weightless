@@ -3,7 +3,7 @@ import { customElement, html, property, query, TemplateResult } from "lit-elemen
 import "../backdrop";
 import { BackdropElement } from "../backdrop/backdrop-element";
 import { IOverlayBehaviorBaseProperties, IOverlayBehaviorProperties, OverlayBehavior } from "../behavior/overlay-behavior/overlay-behavior";
-import { sharedStyles } from "../style/shared";
+import { AriaRole } from "../util/aria";
 import { cssResult } from "../util/css";
 import { queryParentRoots, renderAttributes } from "../util/dom";
 import { addClickAwayListener, addListener, EventListenerSubscription, removeListeners } from "../util/event";
@@ -16,7 +16,7 @@ import styles from "./popover-element.scss";
  */
 export interface IPopoverElementBaseProperties extends IPositionStrategy, IOverlayBehaviorBaseProperties {
 	closeOnClick: boolean;
-	role: string;
+	role: AriaRole;
 	noFallback: boolean;
 	anchor: Element | string | null;
 }
@@ -52,15 +52,15 @@ export const defaultPopoverConfig: IPopoverElementConfig = {
 
 @customElement("popover-element")
 export class PopoverElement<R = unknown> extends OverlayBehavior<R, IPopoverElementConfig> implements IPopoverElementProperties {
-	static styles = [sharedStyles, cssResult(styles)];
+	static styles = [...OverlayBehavior.styles, cssResult(styles)];
 
-	@property({type: Boolean}) closeOnClick = false;
-	@property({type: Boolean}) noFallback = false;
-	@property({type: String, reflect: true}) transformOriginX = OriginX.LEFT;
-	@property({type: String, reflect: true}) transformOriginY = OriginY.TOP;
-	@property({type: String, reflect: true}) anchorOriginX = OriginX.LEFT;
-	@property({type: String, reflect: true}) anchorOriginY = OriginY.TOP;
-	@property({type: String, reflect: true}) role = "menu";
+	@property({type: Boolean}) closeOnClick: boolean = false;
+	@property({type: Boolean}) noFallback: boolean = false;
+	@property({type: String, reflect: true}) transformOriginX: OriginX = OriginX.LEFT;
+	@property({type: String, reflect: true}) transformOriginY: OriginY = OriginY.TOP;
+	@property({type: String, reflect: true}) anchorOriginX: OriginX = OriginX.LEFT;
+	@property({type: String, reflect: true}) anchorOriginY: OriginY = OriginY.TOP;
+	@property({type: String, reflect: true}) role: AriaRole = "menu";
 	@property({type: String}) anchor: Element | string | null = null;
 	@property({type: Array}) autoOpenEvents?: string[];
 	@property({type: Array}) autoCloseEvents?: string[];

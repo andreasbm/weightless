@@ -12,7 +12,7 @@ import { cssResult } from "../../../../lib/util/css";
 import "../../../code-example/code-example-element";
 import "../../../demo/demo-element";
 import "../../../highlight/highlight-element";
-import { getMainScrollTarget } from "../../../main-scroll-target";
+import { getMainScrollContainer } from "../../../main-scroll-target";
 import { sharedStyles } from "../../../style/shared";
 
 async function openTemplateDialog (text: string, config: Partial<IDialogElementBaseProperties> = {}) {
@@ -22,7 +22,7 @@ async function openTemplateDialog (text: string, config: Partial<IDialogElementB
 		blockScrolling: true,
 		container: document.body,
 		template: html`<p slot="content">${text}</p>`,
-		scrollTarget: getMainScrollTarget(),
+		scrollContainer: getMainScrollContainer(),
 		...config
 	});
 
@@ -104,7 +104,7 @@ export default class DialogPage extends LitElement {
 			<demo-element>
 				<code-example-element headline='this.shadowRoot.querySelector("#dialog").show().then(result => console.log(result));'>
 					<button-element id="open-dialog" @click="${() => this.openDeclarativeDialog()}">Open</button-element>
-					<dialog-element id="dialog" fixed backdrop blockScrolling .scrollTarget="${getMainScrollTarget()}">
+					<dialog-element id="dialog" fixed backdrop blockScrolling .scrollContainer="${getMainScrollContainer()}">
 						<h3 slot="header">Hello my friend</h3>
 						<div slot="content">
 							<textfield-element id="dialog-input" placeholder="Enter your name"></textfield-element>

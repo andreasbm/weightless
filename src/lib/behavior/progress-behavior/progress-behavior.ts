@@ -1,4 +1,6 @@
 import { LitElement, property } from "lit-element";
+import { sharedStyles } from "../../style/shared";
+import { AriaRole } from "../../util/aria";
 import { renderAttributes } from "../../util/dom";
 import { clamp } from "../../util/number";
 
@@ -15,25 +17,26 @@ export interface IProgressBehaviorProperties {
 	buffer: number;
 	bufferMax: number;
 	bufferMin: number;
-	role: string;
+	role: AriaRole;
 }
 
 /**
  * Progress behavior.
  */
 export abstract class ProgressBehavior extends LitElement implements IProgressBehaviorProperties {
+	static styles = [sharedStyles];
 
 	@property({type: String, reflect: true}) mode: ProgressMode = ProgressMode.INDETERMINATE;
 
-	@property({type: Number}) value = 0;
-	@property({type: Number}) max = 1;
-	@property({type: Number}) min = 0;
+	@property({type: Number}) value: number = 0;
+	@property({type: Number}) max: number = 1;
+	@property({type: Number}) min: number = 0;
 
-	@property({type: Number}) buffer = 0;
-	@property({type: Number}) bufferMax = 1;
-	@property({type: Number}) bufferMin = 0;
+	@property({type: Number}) buffer: number = 0;
+	@property({type: Number}) bufferMax: number = 1;
+	@property({type: Number}) bufferMin: number = 0;
 
-	@property({type: String, reflect: true}) role = "progressbar";
+	@property({type: String, reflect: true}) role: AriaRole = "progressbar";
 
 	get progressPerc (): number {
 		return clamp(this.value / (this.max - this.min), 0, 1);

@@ -1,8 +1,9 @@
 import { property } from "lit-element";
+import { AriaRole, updateTabindex } from "../../util/aria";
 import { ARROW_DOWN, ARROW_LEFT, ARROW_RIGHT, ARROW_UP } from "../../util/constant/keycode";
 
 import { cssResult } from "../../util/css";
-import { queryParentRoots, updateTabindex } from "../../util/dom";
+import { queryParentRoots } from "../../util/dom";
 import { stopEvent } from "../../util/event";
 import { CheckboxBehavior, ICheckboxBehaviorProperties } from "../checkbox-behavior/checkbox-behavior";
 
@@ -12,9 +13,9 @@ export interface IRadioBehaviorProperties extends ICheckboxBehaviorProperties {
 }
 
 export abstract class RadioBehavior extends CheckboxBehavior implements IRadioBehaviorProperties {
-
 	static styles = [...CheckboxBehavior.styles, cssResult(styles)];
-	@property({type: String, reflect: true}) role = "radio";
+
+	@property({type: String, reflect: true}) role: AriaRole = "radio";
 	protected formItemType = "radio";
 
 	/**

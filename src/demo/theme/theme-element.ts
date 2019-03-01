@@ -27,7 +27,6 @@ const setThemeColor = (hex: string) => {
 
 };
 
-
 interface ITheme {
 	name: string,
 	baseColor: string

@@ -2,7 +2,7 @@ import { FocusTrap } from "@appnest/focus-trap";
 import { customElement, html, property, query, TemplateResult } from "lit-element";
 import "../backdrop";
 import { IOverlayBehaviorBaseProperties, IOverlayBehaviorProperties, OverlayBehavior } from "../behavior/overlay-behavior/overlay-behavior";
-import { sharedStyles } from "../style/shared";
+import { AriaRole } from "../util/aria";
 import { cssResult } from "../util/css";
 import styles from "./dialog-element.scss";
 
@@ -17,7 +17,7 @@ export enum DialogSize {
 export interface IDialogElementBaseProperties extends IOverlayBehaviorBaseProperties {
 	size?: DialogSize;
 	scrollable: boolean;
-	role: string;
+	role: AriaRole;
 }
 
 export interface IDialogElementProperties extends IDialogElementBaseProperties, IOverlayBehaviorProperties {
@@ -37,16 +37,16 @@ export const defaultDialogConfig: IDialogElementConfig = {
 
 @customElement("dialog-element")
 export class DialogElement<R = unknown> extends OverlayBehavior<R, Partial<IDialogElementProperties>> implements IDialogElementProperties {
-	static styles = [sharedStyles, cssResult(styles)];
+	static styles = [...OverlayBehavior.styles, cssResult(styles)];
 
 	// The size of the dialog
 	@property({type: String, reflect: true}) size?: DialogSize;
 
 	// Whether the dialog is scrollable or not
-	@property({type: Boolean, reflect: true}) scrollable = false;
+	@property({type: Boolean, reflect: true}) scrollable: boolean = false;
 
 	// The role of the dialog
-	@property({type: String, reflect: true}) role = "dialog";
+	@property({type: String, reflect: true}) role: AriaRole = "dialog";
 
 	@query("#dialog") $focusTrap: FocusTrap;
 	@query("#dialog") $dialog: HTMLElement;

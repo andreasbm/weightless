@@ -17,7 +17,7 @@
 
 | Name | Type | Description | Default value |
 | ------- | ------- | ------- | ------- |
-| `hoverable` | boolean | Makes the card hoverable. | `false` |
+| `role` | string | Role of the backdrop. | `'presentation'` |
 
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#css-variables)

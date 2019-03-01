@@ -2,6 +2,7 @@ import { customElement, html, property } from "lit-element";
 import { TemplateResult } from "lit-html";
 import { ifDefined } from "lit-html/directives/if-defined";
 import { IInputBehaviorProperties, InputBehavior } from "../behavior/input-behavior/input-behavior";
+import { AriaRole } from "../util/aria";
 import { cssResult } from "../util/css";
 import { removeChildren } from "../util/dom";
 import { addListener } from "../util/event";
@@ -13,7 +14,7 @@ export interface ISelectElementProperties extends IInputBehaviorProperties {
 @customElement("select-element")
 export class SelectElement extends InputBehavior implements ISelectElementProperties {
 	static styles = [...InputBehavior.styles, cssResult(styles)];
-	@property({type: String, reflect: true}) role = "listbox";
+	@property({type: String, reflect: true}) role: AriaRole = "select";
 
 	/**
 	 * Hook up the slot change event listener after first update.

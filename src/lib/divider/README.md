@@ -1,5 +1,5 @@
-<h1 align="center">icon-element</h1>
-<p align="center">Symbols for common actions and items. Go <a href="http://elem.dev/icon">here</a> to try the demo.</p>
+<h1 align="center">divider-element</h1>
+<p align="center">Thin line that groups content in lists and layouts. Go <a href="http://elem.dev/divider">here</a> to try the demo.</p>
 
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#usage)
@@ -7,18 +7,7 @@
 ## ➤ Usage
 
 ```html
-<icon-element>flash_on</icon-element>
-```
-
-
-[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#-load-the-icon-font)
-
-## ➤ ⚠️ Load the icon font
-
-Currently the `icon-element` has not been designed with no configuration in mind. If you don't provide your own icon font via the `--icon-font` CSS variable you need to load the default google font material icons. You can do that by inserting the following link in the `head` tag of your `index.html` file. Check out the available icons [here](https://material.io/tools/icons/).
-
-```html
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<divider-element></divider-element>
 ```
 
 
@@ -28,7 +17,7 @@ Currently the `icon-element` has not been designed with no configuration in mind
 
 | Name | Type | Description | Default value |
 | ------- | ------- | ------- | ------- |
-| `role` | string | Role of the icon. | `'img'` |
+| `role` | string | Role of the divider. | `'separator'` |
 
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#css-variables)
@@ -37,17 +26,8 @@ Currently the `icon-element` has not been designed with no configuration in mind
 
 | Name | Description |
 | ------- | ------- |
-| `--icon-font` | Icon font family.  |
-| `--icon-size` | Font size. |
-
-
-[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#slots)
-
-## ➤ Slots
-
-| Name | Description |
-| ------- | ------- |
-| `unnamed` | The name of the icon. |
+| `--divider-color` | Color. |
+| `--divider-height` | Height. |
 
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#contributors)

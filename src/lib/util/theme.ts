@@ -1,3 +1,5 @@
+import { setProperty } from "./dom";
+
 export type Color = {r: number, g: number, b: number};
 export type Palette = {[hue: number]: Color} & {contrast: Color | {[hue: number]: Color}};
 export type PaletteMap = {[name: string]: Palette};
@@ -14,7 +16,7 @@ export function setColor (name: string,
                           hue: number,
                           color: Color,
                           {isContrast = false, $target = document.documentElement}: Partial<{isContrast: boolean, $target: HTMLElement}> = {}) {
-	$target.style.setProperty(`--${name}-${hue}${isContrast ? `-contrast` : ""}`, `${color.r}, ${color.g}, ${color.b}`);
+	setProperty(`--${name}-${hue}${isContrast ? `-contrast` : ""}`, `${color.r}, ${color.g}, ${color.b}`);
 }
 
 /**

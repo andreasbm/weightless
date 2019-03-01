@@ -24,10 +24,10 @@ export class CardElement extends LitElement implements ICardElementProperties {
 	/**
 	 * Makes the card hoverable.
 	 */
-	@property({reflect: true, type: Boolean}) hoverable = false;
+	@property({reflect: true, type: Boolean}) hoverable: boolean = false;
 
 	/**
-	 * Returns the template for the component.
+	 * Returns the template of the element.
 	 */
 	protected render (): TemplateResult {
 		return html`<slot></slot>`;

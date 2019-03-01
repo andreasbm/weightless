@@ -29,7 +29,7 @@ export const COMPONENTS_ROUTES: IRoute<IRouteData>[] = [
 		component: () => import("./elements/icon-page"),
 		data: {
 			title: "Icon",
-			desc: "Use icons of various shapes and sizes",
+			desc: "Symbols for common actions and items",
 			img: iconPath("icon")
 		}
 	},

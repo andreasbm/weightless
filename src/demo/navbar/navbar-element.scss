@@ -48,3 +48,8 @@
 	height: #{size(40)};
 }
 
+#dark-mode {
+	--button-fab-size: #{size(40)};
+	margin: 0 $spacing-m 0 0;
+}
+

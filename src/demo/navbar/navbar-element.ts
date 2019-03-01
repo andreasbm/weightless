@@ -1,14 +1,14 @@
 import "@appnest/web-router";
-import { customElement, html, LitElement, PropertyValues, query } from "lit-element";
+import { customElement, html, LitElement, property, PropertyValues, query } from "lit-element";
 import "../../lib/button";
 import "../../lib/icon";
-import "../../lib/card/card-element";
-import "../../lib/icon/icon-element";
+import "../../lib/card";
 import "../../lib/popover-card/popover-card-element";
 import { PopoverElement } from "../../lib/popover";
 import "../../lib/popover";
 import "../../lib/nav";
 import { cssResult } from "../../lib/util/css";
+import { setProperty } from "../../lib/util/dom";
 import { sharedStyles } from "../style/shared";
 import styles from "./navbar-element.scss";
 import "./../theme/theme-element";
@@ -18,6 +18,7 @@ export class ThemeComponent extends LitElement {
 
 	static styles = [sharedStyles, cssResult(styles)];
 
+	@property({type: Boolean, reflect: true}) darkMode = false;
 	@query("#theme-popover") $themePopover!: PopoverElement;
 
 	firstUpdated (props: PropertyValues) {
@@ -30,6 +31,15 @@ export class ThemeComponent extends LitElement {
 
 	private openThemeSelector () {
 		this.$themePopover.show();
+	}
+
+	private toggleDarkMode () {
+		this.darkMode = !this.darkMode;
+		const foreground = this.darkMode ? `white` : `black`;
+		const background = this.darkMode ? `black` : `white`;
+
+		setProperty("--foreground", foreground);
+		setProperty("--background", background);
 	}
 
 	protected render () {
@@ -45,6 +55,9 @@ export class ThemeComponent extends LitElement {
 					</router-link>
 				</div>
 				<div slot="right">
+					<button-element id="dark-mode" @click="${() => this.toggleDarkMode()}" fab inverted flat>
+						${this.darkMode ? html`<icon-element>flash_off</icon-element>` : html`<icon-element>flash_on</icon-element>`}
+					</button-element>
 					<div id="theme-selector" @click="${() => this.openThemeSelector()}"></div>
 					<popover-element id="theme-popover" anchor="#theme-selector" backdrop fixed transformOriginX="right" anchorOriginY="center" anchorOriginX="center">
 						<popover-card-element>

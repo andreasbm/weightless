@@ -1,11 +1,10 @@
 import { html, property } from "lit-element";
 import { TemplateResult } from "lit-html";
 import { ifDefined } from "lit-html/directives/if-defined";
-
-import { sharedStyles } from "../../style/shared";
+import { AriaRole, updateTabindex } from "../../util/aria";
 import { SPACE } from "../../util/constant/keycode";
 import { cssResult } from "../../util/css";
-import { renderAttributes, updateTabindex } from "../../util/dom";
+import { renderAttributes } from "../../util/dom";
 import { addListener, stopEvent } from "../../util/event";
 import { FormItemBehavior, IFormItemBehaviorProperties } from "../form-item-behavior";
 
@@ -16,12 +15,11 @@ export interface ICheckboxBehaviorProperties extends IFormItemBehaviorProperties
 }
 
 export abstract class CheckboxBehavior extends FormItemBehavior implements ICheckboxBehaviorProperties {
+	static styles = [...FormItemBehavior.styles, cssResult(styles)];
 
-	static styles = [sharedStyles, cssResult(styles)];
-
-	@property({reflect: true, type: Boolean}) checked = false;
-	@property({type: String, reflect: true}) role = "checkbox";
-	protected formItemType = "checkbox";
+	@property({type: Boolean, reflect: true}) checked: boolean = false;
+	@property({type: String, reflect: true}) role: AriaRole = "checkbox";
+	protected formItemType: string = "checkbox";
 
 	protected firstUpdated (props: Map<keyof ICheckboxBehaviorProperties, unknown>) {
 		super.firstUpdated(<Map<keyof IFormItemBehaviorProperties, unknown>>props);

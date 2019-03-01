@@ -1,4 +1,5 @@
 import { LitElement, property } from "lit-element";
+import { sharedStyles } from "../../style/shared";
 import { addListener, EventListenerSubscription, removeListeners } from "../../util/event";
 import { renderAttributes } from "../../util/dom";
 
@@ -19,6 +20,8 @@ export interface IFormItemBehaviorProperties {
 }
 
 export abstract class FormItemBehavior extends LitElement implements IFormItemBehaviorProperties {
+	static styles = [sharedStyles];
+
 	@property({type: Boolean, reflect: true}) disabled: boolean = false;
 	@property({type: Boolean, reflect: true}) readonly: boolean = false;
 	@property({type: Boolean, reflect: true}) required: boolean = false;

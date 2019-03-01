@@ -46,7 +46,9 @@
 		"readme:backdrop": "node_modules/.bin/readme -c=src/lib/backdrop/blueprint.json",
 		"readme:banner": "node_modules/.bin/readme -c=src/lib/banner/blueprint.json",
 		"readme:card": "node_modules/.bin/readme -c=src/lib/card/blueprint.json",
-		"docs": "npm run readme && npm run readme:backdrop && npm run readme:button && npm run readme:banner && npm run readme:card"
+		"readme:divider": "node_modules/.bin/readme -c=src/lib/divider/blueprint.json",
+		"readme:icon": "node_modules/.bin/readme -c=src/lib/icon/blueprint.json",
+		"docs": "npm run readme && npm run readme:backdrop && npm run readme:button && npm run readme:banner && npm run readme:card && npm run readme:divider && npm run readme:icon"
 	},
 	"devDependencies": {
 		"@appnest/readme": "^1.1.2",

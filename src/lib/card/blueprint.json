@@ -6,7 +6,7 @@
 	"demo": "http://elem.dev/card",
 	"attributes": [
 		["Name", "Type", "Description", "Default value"],
-		["`hoverable`", "boolean", "Makes the card hoverable.", "`false`"]
+		["`role`", "string", "Role of the backdrop.", "`'presentation'`"]
 	],
 	"cssVariables": [
 		["Name", "Description"],

@@ -1,6 +1,7 @@
 import { customElement, html, LitElement, property } from "lit-element";
 import { TemplateResult } from "lit-html";
 import { sharedStyles } from "../style/shared";
+import { AriaRole } from "../util/aria";
 import { cssResult } from "../util/css";
 import { renderAttributes } from "../util/dom";
 
@@ -8,15 +9,15 @@ import styles from "./title-element.scss";
 
 export interface ITitleElementProperties {
 	level: number;
-	role: string;
+	role: AriaRole;
 }
 
 @customElement("title-element")
 export class TitleElement extends LitElement implements ITitleElementProperties {
 	static styles = [sharedStyles, cssResult(styles)];
 
-	@property({type: Number, reflect: true}) level = 1;
-	@property({type: String, reflect: true}) role = "heading";
+	@property({type: Number, reflect: true}) level: 1 | 2 | 3 | 4 | 5 | 6 = 1;
+	@property({type: String, reflect: true}) role: AriaRole = "heading";
 
 	/**
 	 * Reflect the updates when properties change.

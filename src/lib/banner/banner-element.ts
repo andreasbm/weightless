@@ -2,6 +2,7 @@ import { customElement, html, LitElement, property } from "lit-element";
 import { TemplateResult } from "lit-html";
 import "../divider";
 import { sharedStyles } from "../style/shared";
+import { AriaRole } from "../util/aria";
 import { cssResult } from "../util/css";
 
 import styles from "./banner-element.scss";
@@ -22,7 +23,7 @@ export class BannerElement extends LitElement implements IBannerElementPropertie
 	/**
 	 * Role of the banner.
 	 */
-	@property({type: String, reflect: true}) role = "banner";
+	@property({type: String, reflect: true}) role: AriaRole = "banner";
 
 	/**
 	 * Returns the template of the element.

@@ -1,6 +1,7 @@
 import { customElement, html, LitElement, property } from "lit-element";
 import { TemplateResult } from "lit-html";
 import { sharedStyles } from "../style/shared";
+import { AriaRole } from "../util/aria";
 import { cssResult } from "../util/css";
 import { addListener, EventListenerSubscription, removeListeners } from "../util/event";
 import { computeRadius } from "../util/number";
@@ -22,7 +23,7 @@ export interface IRippleElementProperties extends IRippleElementBaseProperties {
 	unbounded: boolean;
 	centered: boolean;
 	focusable: boolean;
-	role: string;
+	role: AriaRole;
 }
 
 export interface IRippleConfig extends IRippleElementBaseProperties {
@@ -38,21 +39,20 @@ const ANIMATION_CONFIG: KeyframeAnimationOptions = {
 
 @customElement("ripple-element")
 export class RippleElement extends LitElement implements IRippleElementProperties {
+	static styles = [sharedStyles, cssResult(styles)];
 
 	private listeners: EventListenerSubscription[] = [];
 	private rippleAnimationListeners: EventListenerSubscription[] = [];
 
-	static styles = [sharedStyles, cssResult(styles)];
-
-	@property({type: Boolean, reflect: true}) unbounded = false;
-	@property({type: Boolean, reflect: true}) centered = false;
-	@property({type: Boolean, reflect: true}) overlay = false;
-	@property({type: Boolean, reflect: true}) disabled = false;
-	@property({type: Boolean, reflect: true}) focusable = false;
-	@property({type: Boolean, reflect: true}) autoRelease = false;
-	@property({type: Number}) initialDuration = 1000;
-	@property({type: Number}) releaseDuration = 500;
-	@property({type: String, reflect: true}) role = "presentation";
+	@property({type: Boolean, reflect: true}) unbounded: boolean = false;
+	@property({type: Boolean, reflect: true}) centered: boolean = false;
+	@property({type: Boolean, reflect: true}) overlay: boolean = false;
+	@property({type: Boolean, reflect: true}) disabled: boolean = false;
+	@property({type: Boolean, reflect: true}) focusable: boolean = false;
+	@property({type: Boolean, reflect: true}) autoRelease: boolean = false;
+	@property({type: Number}) initialDuration: number = 1000;
+	@property({type: Number}) releaseDuration: number = 500;
+	@property({type: String, reflect: true}) role: AriaRole = "presentation";
 	@property({type: Object}) target: EventTarget = this;
 
 	/**

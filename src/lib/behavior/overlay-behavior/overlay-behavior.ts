@@ -1,6 +1,7 @@
 import { FocusTrap } from "@appnest/focus-trap";
 import "@appnest/focus-trap";
 import { LitElement, property } from "lit-element";
+import { sharedStyles } from "../../style/shared";
 import { pauseAnimations } from "../../util/animation";
 import { CUBIC_BEZIER } from "../../util/constant/animation";
 import { ESCAPE } from "../../util/constant/keycode";
@@ -27,7 +28,7 @@ export interface IOverlayBehaviorBaseProperties {
 	backdrop: boolean;
 	duration: number;
 	fixed: boolean;
-	scrollTarget: EventTarget;
+	scrollContainer: EventTarget;
 }
 
 /**
@@ -50,33 +51,35 @@ const scrollingBlockedClass = (id: string) => `${OVERLAY_SCROLLING_BLOCKED_CLASS
  * This class defines all of the logic elements with an overlay requires.
  */
 export abstract class OverlayBehavior<R, C extends Partial<IOverlayBehaviorBaseProperties>> extends LitElement implements IOverlayBehaviorProperties {
+	static styles = [sharedStyles];
 
 	// Whether the overlay is open or not.
-	@property({type: Boolean, reflect: true}) open = false;
+	@property({type: Boolean, reflect: true}) open: boolean = false;
 
 	// Whether the backdrop is visible or not.
-	@property({type: Boolean, reflect: true}) backdrop = false;
+	@property({type: Boolean, reflect: true}) backdrop: boolean = false;
 
 	// Whether the overlay is fixed or not.
-	@property({type: Boolean, reflect: true}) fixed = false;
+	@property({type: Boolean, reflect: true}) fixed: boolean = false;
 
 	// Whether the overlay is persistent or not. When the overlay is persistent, ESCAPE and backdrop clicks won't close it.
-	@property({type: Boolean}) persistent = false;
+	@property({type: Boolean}) persistent: boolean = false;
 
 	// Whether the overlay blocks the scrolling on the scroll container.
-	@property({type: Boolean}) blockScrolling = false;
+	@property({type: Boolean}) blockScrolling: boolean = false;
 
 	// The duration of the animations.
-	@property({type: Number}) duration = 200;
+	@property({type: Number}) duration: number = 200;
 
 	// The container the overlay lives in.
-	@property({type: Object}) scrollTarget = document;
+	@property({type: Object}) scrollContainer: EventTarget = document.body;
 
 	/**
-	 * Returns the scroll container as an HTMLElement. Falls back to the document body.
+	 * Returns the scroll container as an HTMLElement. Falls back to the document body if the scroll
+	 * container is not blockable since the style attribute is required to set the overflow hidden.
 	 */
-	get $scrollContainer () {
-		return this.scrollTarget instanceof HTMLElement ? this.scrollTarget : document.body;
+	get $blockableScrollContainer () {
+		return this.scrollContainer instanceof HTMLElement ? this.scrollContainer : document.body;
 	}
 
 	protected currentInAnimations: Animation[] = [];
@@ -278,7 +281,7 @@ export abstract class OverlayBehavior<R, C extends Partial<IOverlayBehaviorBaseP
 
 		// Listen for events on when to update the position of the overlay
 		this.listeners.push(
-			addListener(this.scrollTarget, "scroll", this.updatePosition, {passive: true}),
+			addListener(this.scrollContainer, "scroll", this.updatePosition, {passive: true}),
 
 			// Either attach a resize observer or fallback to listening to window resizes
 			"ResizeObserver" in window ? onSizeChanged(this, this.updatePosition, {debounceMs: 100}) : addListener(window, "resize", this.updatePosition, {passive: true})
@@ -293,7 +296,7 @@ export abstract class OverlayBehavior<R, C extends Partial<IOverlayBehaviorBaseP
 
 		// Block the scrolling on the body element if necessary.
 		if (this.blockScrolling) {
-			const $container = this.$scrollContainer;
+			const $container = this.$blockableScrollContainer;
 			$container.style.overflow = `hidden`;
 			$container.classList.add(scrollingBlockedClass(this.overlayId));
 		}
@@ -338,7 +341,7 @@ export abstract class OverlayBehavior<R, C extends Partial<IOverlayBehaviorBaseP
 	protected didHide (result?: R) {
 
 		if (this.blockScrolling) {
-			const $container = this.$scrollContainer;
+			const $container = this.$blockableScrollContainer;
 
 			// Check whether other overlays are blocking the same scroll container.
 			// If that is the case, we do not have to release the scroll blocking yet.

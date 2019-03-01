@@ -88,10 +88,13 @@ export function isHidden ($elem: HTMLElement, style?: CSSStyleDeclaration) {
 }
 
 /**
- * Updates the tabindex and prioritizes tab index set by the page author.
- * @param $elem
- * @param disabled
+ * Sets a property on an element.
+ * @param $tname
+ * @param name
+ * @param value
+ * @param $target
  */
-export function updateTabindex($elem: HTMLElement, disabled: boolean) {
-	$elem.tabIndex = disabled ? -1 : $elem.tabIndex < 0 ? 0 : $elem.tabIndex;
+export function setProperty (name: string, value: string, {$target = document.documentElement}: Partial<{$target: HTMLElement}> = {}) {
+	$target.style.setProperty(name, value);
 }
+

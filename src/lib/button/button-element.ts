@@ -3,10 +3,10 @@ import { ifDefined } from "lit-html/directives/if-defined";
 import { FormItemBehavior, IFormItemBehaviorProperties } from "../behavior/form-item-behavior/form-item-behavior";
 import "../ripple";
 import { RippleElement } from "../ripple/ripple-element";
-import { sharedStyles } from "../style/shared";
+import { AriaRole, updateTabindex } from "../util/aria";
 import { ENTER, SPACE } from "../util/constant/keycode";
 import { cssResult } from "../util/css";
-import { renderAttributes, updateTabindex } from "../util/dom";
+import { renderAttributes } from "../util/dom";
 import { addListener, stopEvent } from "../util/event";
 
 import styles from "./button-element.scss";
@@ -19,7 +19,7 @@ export interface IButtonElementProperties extends IFormItemBehaviorProperties {
 	inverted: boolean;
 	outlined: boolean;
 	flat: boolean;
-	role: string;
+	role: AriaRole;
 	noRipple: boolean;
 	fab: boolean;
 }
@@ -29,7 +29,7 @@ export interface IButtonElementProperties extends IFormItemBehaviorProperties {
  */
 @customElement("button-element")
 export class ButtonElement extends FormItemBehavior implements IButtonElementProperties {
-	static styles = [sharedStyles, cssResult(styles)];
+	static styles = [...FormItemBehavior.styles, cssResult(styles)];
 
 	/**
 	 * Type of the button.
@@ -39,32 +39,32 @@ export class ButtonElement extends FormItemBehavior implements IButtonElementPro
 	/**
 	 * Inverts the colors of the button.
 	 */
-	@property({type: Boolean, reflect: true}) inverted = false;
+	@property({type: Boolean, reflect: true}) inverted: boolean = false;
 
 	/**
 	 * Makes the button round and squared.
 	 */
-	@property({type: Boolean, reflect: true}) fab = false;
+	@property({type: Boolean, reflect: true}) fab: boolean = false;
 
 	/**
 	 * Makes the button outlined.
 	 */
-	@property({type: Boolean, reflect: true}) outlined = false;
+	@property({type: Boolean, reflect: true}) outlined: boolean = false;
 
 	/**
 	 * Deactivates the ripple.
 	 */
-	@property({type: Boolean, reflect: true}) noRipple = false;
+	@property({type: Boolean, reflect: true}) noRipple: boolean = false;
 
 	/**
 	 * Makes the button flat.
 	 */
-	@property({type: Boolean, reflect: true}) flat = false;
+	@property({type: Boolean, reflect: true}) flat: boolean = false;
 
 	/**
 	 * Role of the button.
 	 */
-	@property({type: String, reflect: true}) role = "button";
+	@property({type: String, reflect: true}) role: AriaRole = "button";
 
 	/**
 	 * Ripple element.

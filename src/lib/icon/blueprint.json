@@ -1,0 +1,20 @@
+{
+	"input": "src/lib/icon/blueprint.md",
+	"output": "src/lib/icon/README.md",
+	"tag": "icon-element",
+	"text": "Symbols for common actions and items",
+	"demo": "http://elem.dev/icon",
+	"attributes": [
+		["Name", "Type", "Description", "Default value"],
+		["`role`", "string", "Role of the icon.", "`'img'`"]
+	],
+	"cssVariables": [
+		["Name", "Description"],
+		["`--icon-font`", "Icon font family. "],
+		["`--icon-size`", "Font size."]
+	],
+	"slots": [
+		["Name", "Description"],
+		["`unnamed`", "The name of the icon."]
+	]
+}

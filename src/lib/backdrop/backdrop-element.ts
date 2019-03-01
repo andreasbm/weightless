@@ -1,6 +1,7 @@
 import { html, LitElement, property } from "lit-element";
 import { customElement } from "lit-element";
 import { TemplateResult } from "lit-html";
+import { AriaRole } from "../util/aria";
 import { cssResult } from "../util/css";
 
 import styles from "./backdrop-element.scss";
@@ -21,7 +22,7 @@ export class BackdropElement extends LitElement implements IBackdropElementPrope
 	/**
 	 * Role of the backdrop.
 	 */
-	@property({type: String, reflect: true}) role = "presentation";
+	@property({type: String, reflect: true}) role: AriaRole = "presentation";
 
 	/**
 	 * Returns the template of the element.

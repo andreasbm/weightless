@@ -13,7 +13,6 @@ export interface ITextareaBehaviorProperties extends ITextfieldElementProperties
 
 @customElement("textarea-element")
 export class TextareaElement extends TextfieldElement implements ITextareaBehaviorProperties {
-
 	static styles = [...TextfieldElement.styles, cssResult(styles)];
 
 	@property({type: Number, reflect: true}) rows?: number;

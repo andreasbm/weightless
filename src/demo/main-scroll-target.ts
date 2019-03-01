@@ -1,9 +1,9 @@
 let mainScrollTarget: HTMLElement | Window = window;
 
-export function setMainScrollTarget (target: HTMLElement | Window) {
+export function setMainScrollContainer (target: HTMLElement | Window) {
 	mainScrollTarget = target;
 }
 
-export function getMainScrollTarget (): HTMLElement | Window {
+export function getMainScrollContainer (): HTMLElement | Window {
 	return mainScrollTarget;
 }

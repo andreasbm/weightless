@@ -1,0 +1,4 @@
+@import "../style/base";
+
+$divider-color: var(--divider-color, rgba(0, 0, 0, 0.15));
+$divider-height: var(--divider-height, #{size(1)});

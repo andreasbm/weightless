@@ -3,20 +3,24 @@ import { TemplateResult } from "lit-html";
 import { ifDefined } from "lit-html/directives/if-defined";
 import { IInputBehaviorProperties, InputBehavior } from "../behavior/input-behavior/input-behavior";
 import { cssResult } from "../util/css";
+import { InputType } from "./input-type";
 import styles from "./textfield-element.scss";
 
+/**
+ * Properties of the textfield element.
+ */
 export interface ITextfieldElementProperties extends IInputBehaviorProperties {
 	pattern?: string;
 	maxLength?: number;
 	minLength?: number;
-	type: string;
+	type: InputType;
 }
 
 @customElement("textfield-element")
 export class TextfieldElement extends InputBehavior implements ITextfieldElementProperties {
 	static styles = [...InputBehavior.styles, cssResult(styles)];
 
-	@property({type: String, reflect: true}) type: string = "text";
+	@property({type: String, reflect: true}) type: InputType = "text";
 	@property({type: String, reflect: true}) pattern?: string;
 	@property({type: Number, reflect: true}) maxLength?: number;
 	@property({type: Number, reflect: true}) minLength?: number;

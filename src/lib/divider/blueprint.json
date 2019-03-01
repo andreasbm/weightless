@@ -1,0 +1,16 @@
+{
+	"input": "src/lib/divider/blueprint.md",
+	"output": "src/lib/divider/README.md",
+	"tag": "divider-element",
+	"text": "Thin line that groups content in lists and layouts",
+	"demo": "http://elem.dev/divider",
+	"attributes": [
+		["Name", "Type", "Description", "Default value"],
+		["`role`", "string", "Role of the divider.", "`'separator'`"]
+	],
+	"cssVariables": [
+		["Name", "Description"],
+		["`--divider-color`", "Color."],
+		["`--divider-height`", "Height."]
+	]
+}

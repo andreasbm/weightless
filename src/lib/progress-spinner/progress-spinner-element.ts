@@ -14,8 +14,7 @@ const DASH_ARRAY = 285;
 
 @customElement("progress-spinner-element")
 export class ProgressSpinnerElement extends ProgressBehavior implements IProgressSpinnerElementProperties {
-
-	static styles = [cssResult(styles), sharedStyles];
+	static styles = [...ProgressBehavior.styles, cssResult(styles)];
 
 	/**
 	 * Returns the template for the component.
