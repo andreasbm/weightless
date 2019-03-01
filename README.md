@@ -11,7 +11,7 @@
 
 <p align="center">
   <b>High-quality Web Components</b></br>
-  <sub>Web Components built to be used. They are lightweight, have a simple API and are easy to extend and compose.<sub>
+  <sub>Web Components built to be used. They are lightweight, have a simple API and are easy to extend and compose. Go here to see a demo <a href="http://elem.dev">http://elem.dev</a>.<sub>
 </p>
 
 <br />

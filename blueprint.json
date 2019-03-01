@@ -1,5 +1,6 @@
 {
 	"text": "Web Components built to be used. They are lightweight, have a simple API and are easy to extend and compose.",
+	"demo": "http://elem.dev",
 	"ids": {
 		"npm": "@appnest/elements",
 		"github": "andreasbm/elements"
