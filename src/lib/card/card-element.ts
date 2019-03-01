@@ -6,10 +6,16 @@ import { cssResult } from "../util/css";
 
 import styles from "./card-element.scss";
 
+/**
+ * Properties of the card.
+ */
 export interface ICardElementProperties {
 	hoverable: boolean
 }
 
+/**
+ * Group related content and action.
+ */
 @customElement("card-element")
 export class CardElement extends LitElement implements ICardElementProperties {
 
