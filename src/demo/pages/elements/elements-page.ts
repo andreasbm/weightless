@@ -9,7 +9,7 @@ import { COMPONENTS_ROUTES, IRouteData } from "./elements-routes";
 import styles from "./elements-page.scss";
 import { getMainScrollContainer, setMainScrollContainer } from "../../main-scroll-target";
 
-@customElement("components-page")
+@customElement("elements-page")
 export default class ElementsPage extends LitElement {
 
 	static styles = [sharedStyles, cssResult(styles)];
