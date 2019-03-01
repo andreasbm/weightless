@@ -4,7 +4,7 @@
 ## Usage
 
 ```html
-<button-element>This is a button</button-element>
+<button-element>Button</button-element>
 ```
 
 <a href="{{ demo }}" align="center">

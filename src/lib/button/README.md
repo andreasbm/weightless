@@ -7,7 +7,7 @@
 ## ➤ Usage
 
 ```html
-<button-element>This is a button</button-element>
+<button-element>Button</button-element>
 ```
 
 <a href="http://elem.dev/demo/button" align="center">
