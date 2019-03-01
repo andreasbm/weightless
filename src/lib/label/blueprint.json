@@ -2,13 +2,13 @@
 	"input": "src/lib/label/blueprint.md",
 	"output": "src/lib/label/README.md",
 	"tag": "label-element",
-	"text": "Make form elements more accessible.",
+	"text": "Make form elements more accessible",
 	"demo": "http://elem.dev/demo/label",
 	"attributes": [
 		["Name", "Type", "Description", "Default value"],
 		["`required`", "boolean", "Styles the label as required.", "`false`"],
 		["`nowrap`", "boolean", "Caps the label element with ellipsis if overflowing.", "`false`"],
-		["`for`", "string", "Query of the form element click events are re-fired upon.", "`''`"]
+		["`for`", "string", "Query of the form element click events are re-fired upon.", "`undefined`"]
 	],
 	"cssVariables": [
 		["Name", "Description"],

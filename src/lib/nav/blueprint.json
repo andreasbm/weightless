@@ -1,0 +1,32 @@
+{
+	"input": "src/lib/nav/blueprint.md",
+	"output": "src/lib/nav/README.md",
+	"tag": "nav-element",
+	"text": "Provide access to destinations in your app",
+	"demo": "http://elem.dev/demo/nav",
+	"attributes": [
+		["Name", "Type", "Description", "Default value"],
+		["`shadow`", "boolean", "Gives the nav a shadow.", "`false`"],
+		["`fixed`", "boolean", "Fixes the nav to the top of the page.", "`false`"],
+		["`role`", "string", "Role of the nav.", "`navigation`"]
+	],
+	"cssVariables": [
+		["Name", "Description"],
+		["`--nav-bg`", "Background."],
+		["`--nav-color`", "Color."],
+		["`--tolbar-z-index`", "z-index."],
+		["`--nav-padding`", "Padding."],
+		["`--nav-height`", "Height."],
+		["`--nav-elevation`", "Box shadow."],
+		["`--nav-transition`", "Transition."],
+		["`--nav-title-font-size`", "Font size of the title."],
+		["`--nav-title-font-weight`", "Font weight of the title."],
+		["`--nav-title-margin`", "Margin of the title."]
+	],
+	"slots": [
+		["Name", "Description"],
+		["`left`", "Content positioned to the left."],
+		["`right`", "Content positioned to the right."],
+		["`title`", "Title."]
+	]
+}

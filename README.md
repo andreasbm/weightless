@@ -51,6 +51,7 @@
 | `divider-element` | Thin line that groups content in lists and layouts. | [Documentation](/src/lib/card) |
 | `icon-element` | Symbols for common actions and items. | [Documentation](/src/lib/icon) |
 | `label-element` | Make form elements more accessible. | [Documentation](/src/lib/label) |
+| `nav-element` | Provide access to destinations in your app. | [Documentation](/src/lib/nav) |
 
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/grass.png)](#design-philosophy)

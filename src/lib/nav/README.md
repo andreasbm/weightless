@@ -1,5 +1,5 @@
-<h1 align="center">label-element</h1>
-<p align="center">Make form elements more accessible. Go <a href="http://elem.dev/demo/label">here</a> to try the demo.</p>
+<h1 align="center">nav-element</h1>
+<p align="center">Provide access to destinations in your app. Go <a href="http://elem.dev/demo/nav">here</a> to try the demo.</p>
 
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#usage)
@@ -7,8 +7,15 @@
 ## ➤ Usage
 
 ```html
-<checkbox-element id="cb"></checkbox-element>
-<label-element for="cb">This is a label</label-element>
+<nav-element shadow fixed>
+  <div slot="left">
+    <img src="/my-logo.svg" alt="logo" />
+  </div>
+  <span slot="title">My app</span>
+  <div slot="right">
+    <button-element>Sign in</button-element>
+  </div>
+</nav-element>
 ```
 
 
@@ -18,9 +25,9 @@
 
 | Name | Type | Description | Default value |
 | ------- | ------- | ------- | ------- |
-| `required` | boolean | Styles the label as required. | `false` |
-| `nowrap` | boolean | Caps the label element with ellipsis if overflowing. | `false` |
-| `for` | string | Query of the form element click events are re-fired upon. | `undefined` |
+| `shadow` | boolean | Gives the nav a shadow. | `false` |
+| `fixed` | boolean | Fixes the nav to the top of the page. | `false` |
+| `role` | string | Role of the nav. | `navigation` |
 
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#css-variables)
@@ -29,8 +36,16 @@
 
 | Name | Description |
 | ------- | ------- |
-| `--label-color` | Color. |
-| `--label-color-required` | Color of the asterisk (*) when required attributed is present. |
+| `--nav-bg` | Background. |
+| `--nav-color` | Color. |
+| `--tolbar-z-index` | z-index. |
+| `--nav-padding` | Padding. |
+| `--nav-height` | Height. |
+| `--nav-elevation` | Box shadow. |
+| `--nav-transition` | Transition. |
+| `--nav-title-font-size` | Font size of the title. |
+| `--nav-title-font-weight` | Font weight of the title. |
+| `--nav-title-margin` | Margin of the title. |
 
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#slots)
@@ -39,7 +54,9 @@
 
 | Name | Description |
 | ------- | ------- |
-| `unnamed` | Default content. If the first element is a form element, clicks on the entire label will be re-fired upon that element. |
+| `left` | Content positioned to the left. |
+| `right` | Content positioned to the right. |
+| `title` | Title. |
 
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#contributors)

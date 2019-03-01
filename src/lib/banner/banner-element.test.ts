@@ -37,7 +37,7 @@ describe("banner-element", () => {
 	/**
 	 * ARIA TESTS: https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/Banner_role
 	 */
-	it("should have a button banner", () => {
+	it("should have a banner role", () => {
 		expect($banner.getAttribute("role")).to.equal("banner");
 	});
 });

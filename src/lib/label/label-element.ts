@@ -118,7 +118,7 @@ export class LabelElement extends LitElement implements ILabelElementProperties 
 	}
 
 	/**
-	 * Returns the template for the component.
+	 * Returns the template for the element.
 	 */
 	protected render (): TemplateResult {
 		return html`

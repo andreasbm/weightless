@@ -26,7 +26,7 @@ export class IconElement extends LitElement implements IIconElementProperties {
 	@property({type: String, reflect: true}) role: AriaRole = "img";
 
 	/**
-	 * Returns the template for the component.
+	 * Returns the template for the element.
 	 */
 	protected render (): TemplateResult {
 		return html`

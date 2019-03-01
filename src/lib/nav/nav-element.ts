@@ -6,23 +6,39 @@ import { cssResult } from "../util/css";
 
 import styles from "./nav-element.scss";
 
+/**
+ * Properties of the nav.
+ */
 export interface INavElementProperties {
 	shadow: boolean;
 	fixed: boolean;
 	role: AriaRole;
 }
 
+/**
+ * Provide access to destinations in your app.
+ */
 @customElement("nav-element")
 export class NavElement extends LitElement implements INavElementProperties {
-
 	static styles = [sharedStyles, cssResult(styles)];
 
+	/**
+	 * Gives the nav a shadow.
+	 */
 	@property({type: Boolean, reflect: true}) shadow: boolean = false;
+
+	/**
+	 * Fixes the nav to the top of the page.
+	 */
 	@property({type: Boolean, reflect: true}) fixed: boolean = false;
+
+	/**
+	 * Role of the nav.
+	 */
 	@property({type: String, reflect: true}) role: AriaRole = "navigation";
 
 	/**
-	 * Returns the template for the component.
+	 * Returns the template for the element.
 	 */
 	protected render (): TemplateResult {
 		return html`
@@ -34,5 +50,11 @@ export class NavElement extends LitElement implements INavElementProperties {
 				<slot name="right"></slot>
 			</aside>
 		`;
+	}
+}
+
+declare global {
+	interface HTMLElementTagNameMap {
+		"nav-element": NavElement;
 	}
 }
