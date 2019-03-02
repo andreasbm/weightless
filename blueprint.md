@@ -40,6 +40,10 @@ All elements must have sufficient up-to-date documentation.
 
 All elements must follow the [best practices](https://www.w3.org/TR/using-aria) when it comes to accessibility.
 
+### 🦶 Small footprint
+
+The footprint of each element must be as small as possible. For example importing a button must only import the absolute necessary code to render that element.
+
 ### ➡️ Learn more
 
 If you are interested in learning more you can check out [Custom Element Best Practices](https://developers.google.com/web/fundamentals/web-components/best-practices) and [Inclusive Components](https://inclusive-components.design/#components).

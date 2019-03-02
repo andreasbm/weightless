@@ -38,7 +38,9 @@ The `select-element` extends `InputBehavior`. Go to the [documentation](/src/lib
 
 | Name | Description |
 | ------- | ------- |
-| `unnamed` | Default content. |
+| `unnamed` | <option> elements go here. |
+
+The `select-element` extends `InputBehavior`. Go to the [documentation](/src/lib/behavior/input) to see more available slots.
 
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#contributors)
