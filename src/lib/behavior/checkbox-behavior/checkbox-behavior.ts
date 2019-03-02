@@ -10,17 +10,38 @@ import { FormItemBehavior, IFormItemBehaviorProperties } from "../form-item-beha
 
 import styles from "./checkbox-behavior.scss";
 
+/**
+ * Properties of the checkbox behavior.
+ */
 export interface ICheckboxBehaviorProperties extends IFormItemBehaviorProperties {
 	checked: boolean
 }
 
+/**
+ * Checkbox behavior.
+ */
 export abstract class CheckboxBehavior extends FormItemBehavior implements ICheckboxBehaviorProperties {
 	static styles = [...FormItemBehavior.styles, cssResult(styles)];
 
+	/**
+	 * Checks the checkbox.
+	 */
 	@property({type: Boolean, reflect: true}) checked: boolean = false;
+
+	/**
+	 * Role of the checkbox.
+	 */
 	@property({type: String, reflect: true}) role: AriaRole = "checkbox";
+
+	/**
+	 * Type of the form item.
+	 */
 	protected formItemType: string = "checkbox";
 
+	/**
+	 * Hooks up the element.
+	 * @param props
+	 */
 	protected firstUpdated (props: Map<keyof ICheckboxBehaviorProperties, unknown>) {
 		super.firstUpdated(<Map<keyof IFormItemBehaviorProperties, unknown>>props);
 
@@ -43,7 +64,7 @@ export abstract class CheckboxBehavior extends FormItemBehavior implements IChec
 		// When checked we need to show the aria checked attribute
 		if (props.has("checked")) {
 			renderAttributes(this, {
-				"aria-checked": this.checked
+				"aria-checked": this.checked.toString()
 			});
 		}
 
@@ -91,9 +112,8 @@ export abstract class CheckboxBehavior extends FormItemBehavior implements IChec
 		}
 	}
 
-
 	/**
-	 * Returns the form item
+	 * Returns the template for the form item
 	 */
 	protected renderFormItem (): TemplateResult {
 		return html`
