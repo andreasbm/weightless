@@ -77,7 +77,9 @@ export default {
 			...defaultProdPlugins({
 				dist: folders.dist,
 				minifyLitHtmlConfig: {
-					verbose: false
+					verbose: false,
+					// Exclude all files since we need the original formatting for the demo code blocks
+					exclude: /.*/
 				},
 				visualizerConfig: {
 					filename: path.join(folders.dist, "stats.html")
