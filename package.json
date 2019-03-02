@@ -59,7 +59,8 @@
 		"readme:progress-bar": "node_modules/.bin/readme -c=src/lib/progress-bar/blueprint.json",
 		"readme:progress-spinner": "node_modules/.bin/readme -c=src/lib/progress-spinner/blueprint.json",
 		"readme:radio": "node_modules/.bin/readme -c=src/lib/radio/blueprint.json",
-		"docs": "npm run readme && npm run readme:backdrop && npm run readme:button && npm run readme:banner && npm run readme:card && npm run readme:divider && npm run readme:icon && npm run readme:label && npm run readme:nav && npm run readme:checkbox && npm run readme:dialog && npm run readme:popover && npm run readme:popover-card && npm run readme:progress-bar && npm run readme:progress-spinner && npm run readme:radio"
+		"readme:ripple": "node_modules/.bin/readme -c=src/lib/ripple/blueprint.json",
+		"docs": "npm run readme && npm run readme:backdrop && npm run readme:button && npm run readme:banner && npm run readme:card && npm run readme:divider && npm run readme:icon && npm run readme:label && npm run readme:nav && npm run readme:checkbox && npm run readme:dialog && npm run readme:popover && npm run readme:popover-card && npm run readme:progress-bar && npm run readme:progress-spinner && npm run readme:radio && npm run readme:ripple"
 	},
 	"devDependencies": {
 		"@appnest/readme": "^1.1.2",

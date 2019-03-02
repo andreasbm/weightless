@@ -8,7 +8,7 @@
 
 <a href="http://elem.dev/demo/popover" align="center">
   <img src="https://raw.githubusercontent.com/andreasbm/elements/master/screenshots/popover-element.png?token=AF-iBcyjgC0OGnP3B1p7Fkc63gl-kwI9ks5cg6mQwA%3D%3D" width="700" />
-<a/
+</a>
 
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#-use-the-element-within-a-popover-context)

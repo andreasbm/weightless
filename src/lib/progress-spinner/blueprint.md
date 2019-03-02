@@ -4,7 +4,7 @@
 ## Usage
 <a href="{{ demo }}" align="center">
   <img src="{{ img }}" width="700" />
-<a/
+</a>
 
 ## Attributes
 

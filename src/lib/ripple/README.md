@@ -1,12 +1,12 @@
-<h1 align="center">progress-spinner-element</h1>
-<p align="center">Fills a circle from 0% to 100%. Go <a href="http://elem.dev/demo/progress-spinner">here</a> to try the demo.</p>
+<h1 align="center">ripple-element</h1>
+<p align="center">Indicate touch actions. Go <a href="http://elem.dev/demo/ripple">here</a> to try the demo.</p>
 
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#usage)
 
 ## ➤ Usage
-<a href="http://elem.dev/demo/progress-spinner" align="center">
-  <img src="https://raw.githubusercontent.com/andreasbm/elements/master/screenshots/progress-spinner.png?token=AF-iBcyjgC0OGnP3B1p7Fkc63gl-kwI9ks5cg6mQwA%3D%3D" width="700" />
+<a href="http://elem.dev/demo/ripple" align="center">
+  <img src="https://raw.githubusercontent.com/andreasbm/elements/master/screenshots/ripple-element.png?token=AF-iBcyjgC0OGnP3B1p7Fkc63gl-kwI9ks5cg6mQwA%3D%3D" width="700" />
 </a>
 
 
@@ -14,7 +14,18 @@
 
 ## ➤ Attributes
 
-The `progress-spinner-element` extends `ProgressBehavior`. Go to the [documentation](/src/lib/behavior/progress) to see the available attributes.
+| Name | Type | Description | Default value |
+| ------- | ------- | ------- | ------- |
+| `unbounded` | boolean | Makes the ripple visible outside the bounds. | `false` |
+| `centered` | boolean | Makes ripple appear from the center. | `false` |
+| `overlay` | boolean | Overlays the ripple. | `false` |
+| `disabled` | boolean | Disables the ripple. | `false` |
+| `focusable` | boolean | Allows focusin to spawn a ripple. | `false` |
+| `autoRelease` | boolean | Releases the ripple after it has been spawned. | `false` |
+| `initialDuration` | number | Initial animation duration. | `1000` |
+| `releaseDuration` | number | releaseDuration | `500` |
+| `role` | string | Role of the ripple. | `presentation` |
+| `target` | EventTarget | Target for the spawn ripple events. | `this` |
 
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#css-variables)
@@ -23,14 +34,8 @@ The `progress-spinner-element` extends `ProgressBehavior`. Go to the [documentat
 
 | Name | Description |
 | ------- | ------- |
-| `--progress-spinner-size` | Width and height. |
-| `--progress-spinner-color` | Color. |
-| `--progress-spinner-buffer-color` | Color of the buffer. |
-| `--progress-spinner-stroke-width` | Width of the spinner stroke. |
-| `--progress-spinner-indeterminate-container-duration` | Spinner container animation duration when indeterminate. |
-| `--progress-spinner-indeterminate-progress-duration` | Spinner animation duration when indeterminate. |
-| `--progress-spinner-indeterminate-timing-function` | Spinner animation timing function when indeterminate. |
-| `--progress-spinner-determinate-progress-transition` | Transition when determinate. |
+| `--ripple-color` | Color. |
+| `--ripple-opacity` | Opacity. |
 
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#contributors)

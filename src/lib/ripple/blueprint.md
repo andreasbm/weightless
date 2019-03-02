@@ -8,7 +8,7 @@
 
 ## Attributes
 
-The `{{ tag }}` extends `ProgressBehavior`. Go to the [documentation](/src/lib/behavior/progress) to see the available attributes.
+{{ attributes }}
 
 ## CSS variables
 
