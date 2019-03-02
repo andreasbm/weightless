@@ -41,6 +41,18 @@ export function queryParentRoots<T> ($elem: Element, query: string): T[] {
 }
 
 /**
+ * Traverses the tree of active elements down the shadow tree.
+ * @param activeElement
+ */
+export function traverseActiveElements (activeElement: Element | null = document.activeElement): Element | null {
+	if (activeElement != null && activeElement.shadowRoot != null && activeElement.shadowRoot.activeElement != null) {
+		return traverseActiveElements(activeElement.shadowRoot.activeElement);
+	}
+
+	return activeElement;
+}
+
+/**
  * Returns the assigned elements to the first matching slot of the shadow root.
  * @param root
  */
@@ -94,7 +106,9 @@ export function isHidden ($elem: HTMLElement, style?: CSSStyleDeclaration) {
  * @param value
  * @param $target
  */
-export function setProperty (name: string, value: string, {$target = document.documentElement}: Partial<{$target: HTMLElement}> = {}) {
+export function setProperty (name: string,
+                             value: string,
+                             {$target = document.documentElement}: Partial<{$target: HTMLElement}> = {}) {
 	$target.style.setProperty(name, value);
 }
 

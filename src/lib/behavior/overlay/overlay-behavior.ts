@@ -5,7 +5,7 @@ import { sharedStyles } from "../../style/shared";
 import { pauseAnimations } from "../../util/animation";
 import { CUBIC_BEZIER } from "../../util/constant/animation";
 import { ESCAPE } from "../../util/constant/keycode";
-import { renderAttributes } from "../../util/dom";
+import { renderAttributes, traverseActiveElements } from "../../util/dom";
 import { addListener, EventListenerSubscription, removeListeners, stopEvent } from "../../util/event";
 import { onSizeChanged } from "../../util/resize";
 import { uniqueID } from "../../util/unique";
@@ -88,7 +88,7 @@ export abstract class OverlayBehavior<R, C extends Partial<IOverlayBehaviorBaseP
 	protected abstract readonly $focusTrap?: FocusTrap;
 	protected overlayId = uniqueID();
 	protected listeners: EventListenerSubscription[] = [];
-	protected activeElementBefore?: HTMLElement;
+	protected activeElementBeforeOpen?: HTMLElement;
 
 	/**
 	 * Base configuration for the in and out animation.
@@ -122,7 +122,7 @@ export abstract class OverlayBehavior<R, C extends Partial<IOverlayBehaviorBaseP
 		if (this.$focusTrap != null) {
 
 			// Store the current active element so we can restore the focus on that element when the overlay is closed.
-			this.activeElementBefore = <HTMLElement>document.activeElement;
+			this.activeElementBeforeOpen = <HTMLElement | undefined>traverseActiveElements();
 
 			// Trap the focus on the first element of the overlay.
 			this.$focusTrap.focusFirstElement();
@@ -355,9 +355,9 @@ export abstract class OverlayBehavior<R, C extends Partial<IOverlayBehaviorBaseP
 		}
 
 		// Focus on the element that was active before the overlay was opened
-		if (this.activeElementBefore != null) {
-			this.activeElementBefore.focus();
-			this.activeElementBefore = undefined;
+		if (this.activeElementBeforeOpen != null) {
+			this.activeElementBeforeOpen.focus();
+			this.activeElementBeforeOpen = undefined;
 		}
 
 		this.currentOutAnimations.length = 0;
