@@ -119,7 +119,7 @@ export default class PopoverPage extends LitElement {
 			<demo-element>
 				<code-example-element headline='this.shadowRoot.querySelector("#popover").show().then(result => console.log(result));'>
 					<button-element id="open-popover" @click="${() => this.openDeclarativePopover()}">Open popover 1</button-element>
-					<popover-element id="popover" anchor="#open-popover" .autoOpenEvents="${["click"]}" fixed .scrollContainer="${getMainScrollContainer()}">
+					<popover-element id="popover" anchor="#open-popover" .anchorOpenEvents="${["click"]}" fixed .scrollContainer="${getMainScrollContainer()}">
 						<card-element><textarea-element></textarea-element><p>Hello world!</p></card-element>
 					</popover-element>
 				</code-example-element>
@@ -127,9 +127,9 @@ export default class PopoverPage extends LitElement {
 			
 			<title-element level="3">Auto open popovers anchored to an element</title-element>
 			<demo-element>
-				<code-example-element headline='<popover-element anchor="#auto-open-button" .autoOpenEvents="\${["mouseover"]}" fixed>...'>
+				<code-example-element headline='<popover-element anchor="#auto-open-button" .anchorOpenEvents="\${["mouseover"]}" fixed>...'>
 					<button-element id="auto-open-button">Hover me!</button-element>
-					<popover-element anchor="#auto-open-button" .autoOpenEvents="${["mouseover"]}" .scrollContainer="${getMainScrollContainer()}" fixed anchorOriginX="center" anchorOriginY="center" transformOriginX="center">
+					<popover-element anchor="#auto-open-button" .anchorOpenEvents="${["mouseover"]}" .scrollContainer="${getMainScrollContainer()}" fixed anchorOriginX="center" anchorOriginY="center" transformOriginX="center">
 						<popover-card-element>I auto opened!</popover-card-element>
 					</popover-element>
 				</code-example-element>

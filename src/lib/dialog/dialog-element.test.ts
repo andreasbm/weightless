@@ -1,4 +1,4 @@
-import { createContainer, removeContainer, waitForElements } from "../../test/testing-helpers";
+import { assignedNodesMap, createContainer, removeContainer, waitForElements } from "../../test/testing-helpers";
 import "../button";
 import "../dialog";
 import "../title";
@@ -25,7 +25,7 @@ describe("dialog-element", () => {
 				</div>
 			</dialog-element>`;
 
-		await waitForElements(["dialog-element"]);
+		await waitForElements(["dialog-element", "button-element", "title-element"]);
 		$dialog = $container.querySelector<DialogElement>("dialog-element")!;
 	});
 	after(() => removeContainer($container));
@@ -34,5 +34,14 @@ describe("dialog-element", () => {
 		expect($dialog.getAttribute("role")).to.be.equal("dialog");
 	});
 
+	it("should render the slots", async () => {
+		const assignedNodes = assignedNodesMap($dialog.shadowRoot!);
+
+		expect(assignedNodes["header"].length).to.be.above(0);
+		expect(assignedNodes["content"].length).to.be.above(0);
+		expect(assignedNodes["footer"].length).to.be.above(0);
+	});
+
+	// TODO: Add more tests for the dialog
 });
 

@@ -21,9 +21,9 @@ export default class TooltipPage extends LitElement {
 			
 			<title-element level="3">Auto open popovers anchored to an element</title-element>
 			<demo-element>
-				<code-example-element headline='<tooltip-element anchor="#auto-open-button" .autoOpenEvents="\${["mouseover"]}" .autoCloseEvents="\${["mouseout"]}" fixed>...</tooltip-element>'>
+				<code-example-element headline='<tooltip-element anchor="#auto-open-button" .anchorOpenEvents="\${["mouseover"]}" .anchorCloseEvents="\${["mouseout"]}" fixed>...</tooltip-element>'>
 					<button-element id="tooltip-button">Hover me!</button-element>
-					<tooltip-element anchor="#tooltip-button" .autoOpenEvents="${["mouseover"]}" .autoCloseEvents="${["mouseout"]}" .scrollContainer="${getMainScrollContainer()}" fixed anchorOriginX="center" anchorOriginY="bottom" transformOriginX="center">
+					<tooltip-element anchor="#tooltip-button" .anchorOpenEvents="${["mouseover"]}" .anchorCloseEvents="${["mouseout"]}" .scrollContainer="${getMainScrollContainer()}" fixed anchorOriginX="center" anchorOriginY="bottom" transformOriginX="center">
 						This is a tooltip
 					</tooltip-element>
 				</code-example-element>

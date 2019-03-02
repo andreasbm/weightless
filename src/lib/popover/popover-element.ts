@@ -18,15 +18,15 @@ export interface IPopoverElementBaseProperties extends IPositionStrategy, IOverl
 	closeOnClick: boolean;
 	role: AriaRole;
 	noFallback: boolean;
-	anchor: Element | string | null;
+	anchor?: Element | string;
 }
 
 /**
  * Properties of the popover.
  */
 export interface IPopoverElementProperties extends IPopoverElementBaseProperties, IOverlayBehaviorProperties {
-	autoOpenEvents?: string[];
-	autoCloseEvents?: string[];
+	anchorOpenEvents?: string[];
+	anchorCloseEvents?: string[];
 }
 
 /**
@@ -57,32 +57,101 @@ export const defaultPopoverConfig: IPopoverElementConfig = {
 export class PopoverElement<R = unknown> extends OverlayBehavior<R, IPopoverElementConfig> implements IPopoverElementProperties {
 	static styles = [...OverlayBehavior.styles, cssResult(styles)];
 
+	/**
+	 * Makes the popover close when it is clicked upon.
+	 */
 	@property({type: Boolean}) closeOnClick: boolean = false;
-	@property({type: Boolean}) noFallback: boolean = false;
-	@property({type: String, reflect: true}) transformOriginX: OriginX = OriginX.LEFT;
-	@property({type: String, reflect: true}) transformOriginY: OriginY = OriginY.TOP;
-	@property({type: String, reflect: true}) anchorOriginX: OriginX = OriginX.LEFT;
-	@property({type: String, reflect: true}) anchorOriginY: OriginY = OriginY.TOP;
-	@property({type: String, reflect: true}) role: AriaRole = "menu";
-	@property({type: String}) anchor: Element | string | null = null;
-	@property({type: Array}) autoOpenEvents?: string[];
-	@property({type: Array}) autoCloseEvents?: string[];
 
+	/**
+	 * Whether a fallback strategy for the positioning should be used when there are no room for the popover.
+	 */
+	@property({type: Boolean}) noFallback: boolean = false;
+
+	/**
+	 * X origin of the transform.
+	 */
+	@property({type: String, reflect: true}) transformOriginX: OriginX = OriginX.LEFT;
+
+	/**
+	 * Y origin of the transform.
+	 */
+	@property({type: String, reflect: true}) transformOriginY: OriginY = OriginY.TOP;
+
+	/**
+	 * X origin of the anchored point.
+	 */
+	@property({type: String, reflect: true}) anchorOriginX: OriginX = OriginX.LEFT;
+
+	/**
+	 * Y origin of the anchored point.
+	 */
+	@property({type: String, reflect: true}) anchorOriginY: OriginY = OriginY.TOP;
+
+	/**
+	 * Role of the popover.
+	 */
+	@property({type: String, reflect: true}) role: AriaRole = "menu";
+
+	/**
+	 * Anchor element or query.
+	 */
+	@property({type: String}) anchor?: Element | string;
+
+	/**
+	 * Events on the anchor that makes the popover open itself.
+	 */
+	@property({type: Array}) anchorOpenEvents?: string[];
+
+	/**
+	 * Events on the anchor that makes the popover close itself.
+	 */
+	@property({type: Array}) anchorCloseEvents?: string[];
+
+	/**
+	 * Content of the popover.
+	 */
 	@query("#content") $content: FocusTrap;
+
+	/**
+	 * Container element.
+	 */
 	@query("#container") $container: HTMLElement;
+
+	/**
+	 * Backdrop element.
+	 */
 	@query("#backdrop") $backdrop: BackdropElement;
 
+	/**
+	 * Listeners that reacts when the user clicks outside the popover.
+	 * Attached when when opened.
+	 */
 	private clickAwayListeners: EventListenerSubscription[] = [];
-	private autoOpenEventListeners: EventListenerSubscription[] = [];
-	private autoCloseEventListeners: EventListenerSubscription[] = [];
+
+	/**
+	 * Listeners that opens the popover when event happens on the anchor.
+	 */
+	private anchorOpenEventListeners: EventListenerSubscription[] = [];
+
+	/**
+	 * Listeners that closes the popover when event happens on the anchor.
+	 */
+	private anchorCloseEventListeners: EventListenerSubscription[] = [];
+
+	/**
+	 * Position of the anchor.
+	 */
 	private anchorPosition?: IAnchorPosition;
 
+	/**
+	 * Focus trap.
+	 */
 	get $focusTrap () {
 		return this.$content;
 	}
 
 	/**
-	 * Hooks up the component.
+	 * Hooks up the element.
 	 */
 	connectedCallback () {
 		super.connectedCallback();
@@ -93,6 +162,16 @@ export class PopoverElement<R = unknown> extends OverlayBehavior<R, IPopoverElem
 	}
 
 	/**
+	 * Tears down the component.
+	 */
+	disconnectedCallback () {
+		super.disconnectedCallback();
+		this.detachClickAwayListeners();
+		removeListeners(this.anchorOpenEventListeners);
+		removeListeners(this.anchorCloseEventListeners);
+	}
+
+	/**
 	 * Reacts on the properties changed.
 	 * @param props
 	 */
@@ -100,24 +179,14 @@ export class PopoverElement<R = unknown> extends OverlayBehavior<R, IPopoverElem
 		super.updated(<Map<keyof IOverlayBehaviorProperties, unknown>>props);
 
 		// Attach auto open events to anchor
-		if (props.has("autoOpenEvents") && this.autoOpenEvents != null) {
-			this.attachEventListenersToAnchor(this.autoOpenEventListeners, this.autoOpenEvents, () => !this.open && this.show());
+		if (props.has("anchorOpenEvents") && this.anchorOpenEvents != null) {
+			this.attachEventListenersToAnchor(this.anchorOpenEventListeners, this.anchorOpenEvents, () => !this.open && this.show());
 		}
 
 		// Attach auto close events to anchor
-		if (props.has("autoCloseEvents") && this.autoCloseEvents != null) {
-			this.attachEventListenersToAnchor(this.autoCloseEventListeners, this.autoCloseEvents, () => this.open && this.hide());
+		if (props.has("anchorCloseEvents") && this.anchorCloseEvents != null) {
+			this.attachEventListenersToAnchor(this.anchorCloseEventListeners, this.anchorCloseEvents, () => this.open && this.hide());
 		}
-	}
-
-	/**
-	 * Tears down the component.
-	 */
-	disconnectedCallback () {
-		super.disconnectedCallback();
-		this.detachClickAwayListeners();
-		removeListeners(this.autoOpenEventListeners);
-		removeListeners(this.autoCloseEventListeners);
 	}
 
 	/**
@@ -144,7 +213,7 @@ export class PopoverElement<R = unknown> extends OverlayBehavior<R, IPopoverElem
 	}
 
 	/**
-	 * Adds event listeners after the popover has been shown.
+	 * Adds event listeners and focuses the first element after the popover has been shown.
 	 */
 	protected didShow () {
 		super.didShow();
@@ -165,7 +234,7 @@ export class PopoverElement<R = unknown> extends OverlayBehavior<R, IPopoverElem
 	}
 
 	/**
-	 * Attaches events to the anchor.
+	 * Attaches events listeners to the anchor.
 	 * @param listeners
 	 * @param events
 	 * @param cb
@@ -193,7 +262,7 @@ export class PopoverElement<R = unknown> extends OverlayBehavior<R, IPopoverElem
 	 * Throws an error that no anchor exists.
 	 */
 	protected throwNoAnchorError () {
-		throw new Error(`No anchor could be found for the popover.`);
+		throw new Error(`No anchor could be found for the popover. "${this.anchor}" provided as anchor.`);
 	}
 
 	/**
@@ -206,6 +275,9 @@ export class PopoverElement<R = unknown> extends OverlayBehavior<R, IPopoverElem
 		);
 	}
 
+	/**
+	 * Detaches the click away listeners.
+	 */
 	protected detachClickAwayListeners () {
 		removeListeners(this.clickAwayListeners);
 	}
@@ -245,7 +317,6 @@ export class PopoverElement<R = unknown> extends OverlayBehavior<R, IPopoverElem
 		this.currentInAnimations.push(contentAnimation, backdropAnimation);
 		this.updatePosition();
 	}
-
 
 	/**
 	 * Animates the popover out.
@@ -344,13 +415,13 @@ export class PopoverElement<R = unknown> extends OverlayBehavior<R, IPopoverElem
 	/**
 	 * Returns the origin of the bounding box.
 	 */
-	private getAnchor (): Element | null {
+	private getAnchor (): Element | undefined {
 		let anchor = this.anchor;
 
 		// Check if the anchor is an ID.
 		if (typeof anchor === "string" || anchor instanceof String) {
 			const matches = queryParentRoots<Element>(this, <string>anchor);
-			anchor = matches.length > 0 ? matches[0] : null;
+			anchor = matches.length > 0 ? matches[0] : undefined;
 		}
 
 		return anchor;
@@ -373,12 +444,12 @@ export class PopoverElement<R = unknown> extends OverlayBehavior<R, IPopoverElem
 	}
 
 	/**
-	 * Returns the template for the component.
+	 * Returns the template for the element.
 	 */
 	protected render (): TemplateResult {
 		return html`
 			<backdrop-element id="backdrop" @click="${this.clickAway}"></backdrop-element>
-			<div id="container" ?aria-expanded="${this.open}" @clickAway="${this.clickAway}">
+			<div id="container" ?aria-expanded="${this.open}">
 				<focus-trap id="content" inactive="${!this.open}">
 					${this.renderContent()}
 				</focus-trap>

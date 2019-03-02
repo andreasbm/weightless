@@ -7,6 +7,9 @@
 html {
 	font-family: var(--font-family-serif, 'Roboto Slab', serif);
 
+	color: #{$foreground};
+	background: #{$background};
+
 	&.theme-red {
 		@include theme-variables((
 			"primary": $palette-red

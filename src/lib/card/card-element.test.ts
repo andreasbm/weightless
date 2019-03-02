@@ -20,7 +20,7 @@ describe("card-element", () => {
 
 	it("should render the slots", async () => {
 		const assignedNodes = assignedNodesMap($card.shadowRoot!);
-		expect(assignedNodes[""].length).to.equal(1);
+		expect(assignedNodes[""].length).to.be.above(0);
 	});
 });
 

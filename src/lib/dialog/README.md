@@ -1,11 +1,11 @@
 <h1 align="center">dialog-element</h1>
-<p align="center">Highly interruptive messages. Go <a href="http://elem.dev/demo/checkbox">here</a> to try the demo.</p>
+<p align="center">Highly interruptive messages. Go <a href="http://elem.dev/demo/dialog">here</a> to try the demo.</p>
 
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#usage)
 
 ## ➤ Usage
-<a href="http://elem.dev/demo/checkbox" align="center">
+<a href="http://elem.dev/demo/dialog" align="center">
   <img src="https://raw.githubusercontent.com/andreasbm/elements/documentation/screenshots/dialog-element.png?token=AF-iBQSqMzuMAQ5EiwnHa2DFSM_IS0ihks5cg7uDwA%3D%3D" width="700" />
 <a/>
 

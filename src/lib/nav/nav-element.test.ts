@@ -31,9 +31,9 @@ describe("banner-element", () => {
 	it("should render the slots", async () => {
 		const assignedNodes = assignedNodesMap($nav.shadowRoot!);
 
-		expect(assignedNodes["left"].length).to.equal(1);
-		expect(assignedNodes["right"].length).to.equal(1);
-		expect(assignedNodes["title"].length).to.equal(1);
+		expect(assignedNodes["left"].length).to.be.above(0);
+		expect(assignedNodes["right"].length).to.be.above(0);
+		expect(assignedNodes["title"].length).to.be.above(0);
 	});
 
 	it("should have a navigation role", () => {

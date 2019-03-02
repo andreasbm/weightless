@@ -1,0 +1,29 @@
+{
+	"input": "src/lib/popover/blueprint.md",
+	"output": "src/lib/popover/README.md",
+	"tag": "popover-element",
+	"text": "Contextual anchored elements",
+	"demo": "http://elem.dev/demo/popover",
+	"img": "https://raw.githubusercontent.com/andreasbm/elements/documentation/screenshots/popover-element.png?token=AF-iBQSqMzuMAQ5EiwnHa2DFSM_IS0ihks5cg7uDwA%3D%3D",
+	"attributes": [
+		["Name", "Type", "Description", "Default value"],
+		["`closeOnClick`", "boolean", "Makes the popover close when it is clicked upon.", "`false`"],
+		["`noFallback`", "boolean", "Whether a fallback strategy for the positioning should be used when there are no room for the popover.", "`false`"],
+		["`transformOriginX`", "'left' | 'center' | 'right'", "X origin of the transform.", "`'left'`"],
+		["`transformOriginY`", "'top' | 'center' | 'bottom'", "Y origin of the transform.", "`'top'`"],
+		["`anchorOriginX`", "'left' | 'center' | 'right'", "X origin of the anchored point.", "`'left'`"],
+		["`anchorOriginY`", "'top' | 'center' | 'bottom'", "Y origin of the anchored point.", "`'top'`"],
+		["`role`", "string", "Role of the popover.", "`menu`"],
+		["`anchor`", "Element | string | undefined", "Anchor element or query.", "`undefined`"],
+		["`anchorOpenEvents`", "string[] | undefined", "Events on the anchor that makes the popover open itself.", "`undefined`"],
+		["`anchorCloseEvents`", "string[] | undefined", "Events on the anchor that makes the popover close itself.", "`undefined`"]
+	],
+	"cssVariables": [
+		["Name", "Description"],
+		["`--popover-z-index", "z-index."]
+	],
+	"slots": [
+		["Name", "Description"],
+		["`unnamed`", "Default content."]
+	]
+}
