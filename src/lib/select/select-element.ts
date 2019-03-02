@@ -20,6 +20,10 @@ export interface ISelectElementProperties extends IInputBehaviorProperties {
 @customElement("select-element")
 export class SelectElement extends InputBehavior implements ISelectElementProperties {
 	static styles = [...InputBehavior.styles, cssResult(styles)];
+
+	/**
+	 * Role of the select.
+	 */
 	@property({type: String, reflect: true}) role: AriaRole = "select";
 
 	/**
