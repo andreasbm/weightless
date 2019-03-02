@@ -7,7 +7,7 @@ import { InputType } from "./input-type";
 import styles from "./textfield-element.scss";
 
 /**
- * Properties of the textfield element.
+ * Properties of the textfield.
  */
 export interface ITextfieldElementProperties extends IInputBehaviorProperties {
 	pattern?: string;
@@ -16,6 +16,9 @@ export interface ITextfieldElementProperties extends IInputBehaviorProperties {
 	type: InputType;
 }
 
+/**
+ * Singleline text fields.
+ */
 @customElement("textfield-element")
 export class TextfieldElement extends InputBehavior implements ITextfieldElementProperties {
 	static styles = [...InputBehavior.styles, cssResult(styles)];

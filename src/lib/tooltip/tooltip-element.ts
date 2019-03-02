@@ -5,9 +5,15 @@ import { cssResult } from "../util/css";
 
 import styles from "./tooltip-element.scss";
 
+/**
+ * Properties of the tooltip.
+ */
 export interface ITooltipElementProperties extends IPopoverElementProperties {
 }
 
+/**
+ * Informative context related text.
+ */
 @customElement("tooltip-element")
 export class TooltipElement extends PopoverElement implements ITooltipElementProperties {
 	static styles = [...PopoverElement.styles, cssResult(styles)];

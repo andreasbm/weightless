@@ -7,11 +7,17 @@ import { renderAttributes } from "../util/dom";
 
 import styles from "./title-element.scss";
 
+/**
+ * Properties of the title.
+ */
 export interface ITitleElementProperties {
 	level: number;
 	role: AriaRole;
 }
 
+/**
+ * Indicate the start of a new section.
+ */
 @customElement("title-element")
 export class TitleElement extends LitElement implements ITitleElementProperties {
 	static styles = [sharedStyles, cssResult(styles)];

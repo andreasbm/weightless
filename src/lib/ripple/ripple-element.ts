@@ -10,12 +10,18 @@ import { normalizePointerEvent } from "../util/swipe";
 
 import styles from "./ripple-element.scss";
 
+/**
+ * Base properties of the ripple. Used when showing a ripple.
+ */
 export interface IRippleElementBaseProperties {
 	autoRelease: boolean;
 	initialDuration: number;
 	releaseDuration: number;
 }
 
+/**
+ * Properties of the ripple.
+ */
 export interface IRippleElementProperties extends IRippleElementBaseProperties {
 	target: EventTarget;
 	overlay: boolean;
@@ -26,17 +32,28 @@ export interface IRippleElementProperties extends IRippleElementBaseProperties {
 	role: AriaRole;
 }
 
+/**
+ * Configuration when showing a ripple.
+ */
 export interface IRippleConfig extends IRippleElementBaseProperties {
-
 }
 
+/**
+ * Callback type used to release a ripple.
+ */
 export declare type RippleReleaseFunction = (() => void);
 
+/**
+ * Base configuration for the ripple animation.
+ */
 const ANIMATION_CONFIG: KeyframeAnimationOptions = {
 	easing: "ease-out",
 	fill: "both"
 };
 
+/**
+ * Indicate touch actions.
+ */
 @customElement("ripple-element")
 export class RippleElement extends LitElement implements IRippleElementProperties {
 	static styles = [sharedStyles, cssResult(styles)];

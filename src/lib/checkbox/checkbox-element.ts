@@ -1,15 +1,20 @@
 import { customElement, html } from "lit-element";
 import { TemplateResult } from "lit-html";
 import { CheckboxBehavior, ICheckboxBehaviorProperties } from "../behavior/checkbox-behavior/checkbox-behavior";
-
 import "../ripple";
 import { cssResult } from "../util/css";
 
 import styles from "./checkbox-element.scss";
 
+/**
+ * Properties of the checkbox.
+ */
 export interface ICheckboxElementProperties extends ICheckboxBehaviorProperties {
 }
 
+/**
+ * Turn an option on or off.
+ */
 @customElement("checkbox-element")
 export class CheckboxElement extends CheckboxBehavior implements ICheckboxElementProperties {
 

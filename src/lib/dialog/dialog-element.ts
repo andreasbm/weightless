@@ -6,6 +6,9 @@ import { AriaRole } from "../util/aria";
 import { cssResult } from "../util/css";
 import styles from "./dialog-element.scss";
 
+/**
+ * Available sizes of the dialog.
+ */
 export enum DialogSize {
 	SMALL = "small",
 	MEDIUM = "medium",
@@ -14,18 +17,30 @@ export enum DialogSize {
 	FULLSCREEN = "fullscreen"
 }
 
+/**
+ * Base properties of the dialog. These base properties are used when showing a dialog.
+ */
 export interface IDialogElementBaseProperties extends IOverlayBehaviorBaseProperties {
 	size?: DialogSize;
 	scrollable: boolean;
+}
+
+/**
+ * Properties of the dialog.
+ */
+export interface IDialogElementProperties extends IDialogElementBaseProperties, IOverlayBehaviorProperties {
 	role: AriaRole;
 }
 
-export interface IDialogElementProperties extends IDialogElementBaseProperties, IOverlayBehaviorProperties {
-}
-
+/**
+ * Configuration used when showing a dialog.
+ */
 export interface IDialogElementConfig extends Partial<IDialogElementBaseProperties> {
 }
 
+/**
+ * Default configuration when showing a dialog.
+ */
 export const defaultDialogConfig: IDialogElementConfig = {
 	size: DialogSize.MEDIUM,
 	blockScrolling: true,
@@ -35,6 +50,9 @@ export const defaultDialogConfig: IDialogElementConfig = {
 	fixed: true
 };
 
+/**
+ * Highly interruptive messages.
+ */
 @customElement("dialog-element")
 export class DialogElement<R = unknown> extends OverlayBehavior<R, Partial<IDialogElementProperties>> implements IDialogElementProperties {
 	static styles = [...OverlayBehavior.styles, cssResult(styles)];

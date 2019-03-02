@@ -6,11 +6,17 @@ import { cssResult } from "../util/css";
 import { isHidden } from "../util/dom";
 import styles from "./textarea-element.scss";
 
+/**
+ * Properties of the textarea.
+ */
 export interface ITextareaBehaviorProperties extends ITextfieldElementProperties {
 	rows?: number;
 	cols?: number;
 }
 
+/**
+ * Multiline text fields.
+ */
 @customElement("textarea-element")
 export class TextareaElement extends TextfieldElement implements ITextareaBehaviorProperties {
 	static styles = [...TextfieldElement.styles, cssResult(styles)];

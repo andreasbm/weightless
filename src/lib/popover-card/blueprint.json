@@ -1,0 +1,19 @@
+{
+	"input": "src/lib/popover-card/blueprint.md",
+	"output": "src/lib/popover-card/README.md",
+	"tag": "popover-card-element",
+	"text": "Give popovers a contextual flair",
+	"demo": "http://elem.dev/demo/popover",
+	"img": "https://raw.githubusercontent.com/andreasbm/elements/master/screenshots/popover-element.png?token=AF-iBcyjgC0OGnP3B1p7Fkc63gl-kwI9ks5cg6mQwA%3D%3D",
+	"cssVariables": [
+		["Name", "Description"],
+		["`--popover-card-arrow-width`", "Width of the arrow."],
+		["`--popover-card-arrow-height`", "Height of the arrow."],
+		["`--popover-card-arrow-fill`", "Color of the arrow."],
+		["`--popover-card-elevation`", "Box shadow of the card."]
+	],
+	"slots": [
+		["Name", "Description"],
+		["`unnamed`", "Default content."]
+	]
+}

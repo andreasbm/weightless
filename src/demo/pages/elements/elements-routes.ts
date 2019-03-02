@@ -4,8 +4,22 @@ function iconPath (name: string): string {
 	return `assets/icon/${name}.svg`;
 }
 
-export interface IRouteData {title: string, desc: string, img: string};
+export interface IRouteData {
+	title: string;
+	desc: string;
+	img: string;
+}
+
 export const COMPONENTS_ROUTES: IRoute<IRouteData>[] = [
+	{
+		path: "banner",
+		component: () => import("./elements/banner-page"),
+		data: {
+			title: "Banner",
+			desc: "Display a non-interruptive message and related optional actions.",
+			img: iconPath("banner")
+		}
+	},
 	{
 		path: "button",
 		component: () => import("./elements/button-page"),
@@ -25,30 +39,94 @@ export const COMPONENTS_ROUTES: IRoute<IRouteData>[] = [
 		}
 	},
 	{
+		path: "checkbox",
+		component: () => import("./elements/checkbox-page"),
+		data: {
+			title: "Checkbox",
+			desc: "Turn an option on or off.",
+			img: iconPath("checkbox")
+		}
+	},
+	{
+		path: "dialog",
+		component: () => import("./elements/dialog-page"),
+		data: {
+			title: "Dialog",
+			desc: "Highly interruptive messages.",
+			img: iconPath("dialog")
+		}
+	},
+	{
+		path: "divider",
+		component: () => import("./elements/divider-page"),
+		data: {
+			title: "Divider",
+			desc: "Thin line that groups content in lists and layouts.",
+			img: iconPath("divider")
+		}
+	},
+	{
 		path: "icon",
 		component: () => import("./elements/icon-page"),
 		data: {
 			title: "Icon",
-			desc: "Symbols for common actions and items",
+			desc: "Symbols for common actions and items.",
 			img: iconPath("icon")
 		}
 	},
 	{
-		path: "textfield",
-		component: () => import("./elements/textfield-page"),
+		path: "label",
+		component: () => import("./elements/label-page"),
 		data: {
-			title: "Textfield",
-			desc: "Singleline text fields",
-			img: iconPath("textfield")
+			title: "Label",
+			desc: "Make form elements more accessible.",
+			img: iconPath("label")
+		}
+	},
+	// Nav here
+	{
+		path: "popover",
+		component: () => import("./elements/popover-page"),
+		data: {
+			title: "Popover",
+			desc: "Contextual anchored elements.",
+			img: iconPath("menu")
 		}
 	},
 	{
-		path: "textarea",
-		component: () => import("./elements/textarea-page"),
+		path: "progress-bar",
+		component: () => import("./elements/progress-bar-page"),
 		data: {
-			title: "Textarea",
-			desc: "Multiline text fields",
-			img: iconPath("textarea")
+			title: "Progress Bar",
+			desc: "Fills a bar from 0% to 100%.",
+			img: iconPath("progress_bar")
+		}
+	},
+	{
+		path: "progress-spinner",
+		component: () => import("./elements/progress-spinner-page"),
+		data: {
+			title: "Progress Spinner",
+			desc: "Fills a circle from 0% to 100%.",
+			img: iconPath("progress_spinner")
+		}
+	},
+	{
+		path: "radio",
+		component: () => import("./elements/radio-page"),
+		data: {
+			title: "Radio",
+			desc: "Select one option from a set.",
+			img: iconPath("radio_button")
+		}
+	},
+	{
+		path: "ripple",
+		component: () => import("./elements/ripple-page"),
+		data: {
+			title: "Ripple",
+			desc: "Indicate touch actions.",
+			img: iconPath("ripple")
 		}
 	},
 	{
@@ -61,30 +139,21 @@ export const COMPONENTS_ROUTES: IRoute<IRouteData>[] = [
 		}
 	},
 	{
-		path: "checkbox",
-		component: () => import("./elements/checkbox-page"),
+		path: "textarea",
+		component: () => import("./elements/textarea-page"),
 		data: {
-			title: "Checkbox",
-			desc: "Turn an option on or off.",
-			img: iconPath("checkbox")
+			title: "Textarea",
+			desc: "Multiline text fields.",
+			img: iconPath("textarea")
 		}
 	},
 	{
-		path: "radio",
-		component: () => import("./elements/radio-page"),
+		path: "textfield",
+		component: () => import("./elements/textfield-page"),
 		data: {
-			title: "Radio",
-			desc: "Single selection controls",
-			img: iconPath("radio_button")
-		}
-	},
-	{
-		path: "ripple",
-		component: () => import("./elements/ripple-page"),
-		data: {
-			title: "Ripple",
-			desc: "Indicate touch actions",
-			img: iconPath("ripple")
+			title: "Textfield",
+			desc: "Singleline text fields.",
+			img: iconPath("textfield")
 		}
 	},
 	{
@@ -97,75 +166,12 @@ export const COMPONENTS_ROUTES: IRoute<IRouteData>[] = [
 		}
 	},
 	{
-		path: "dialog",
-		component: () => import("./elements/dialog-page"),
-		data: {
-			title: "Dialog",
-			desc: "Highly interruptive messages",
-			img: iconPath("dialog")
-		}
-	},
-	{
-		path: "progress-spinner",
-		component: () => import("./elements/progress-spinner-page"),
-		data: {
-			title: "Progress Spinner",
-			desc: "Fills a circle from 0% to 100%",
-			img: iconPath("progress_spinner")
-		}
-	},
-	{
-		path: "progress-bar",
-		component: () => import("./elements/progress-bar-page"),
-		data: {
-			title: "Progress Bar",
-			desc: "Fills a bar from 0% to 100%",
-			img: iconPath("progress_bar")
-		}
-	},
-	{
-		path: "divider",
-		component: () => import("./elements/divider-page"),
-		data: {
-			title: "Divider",
-			desc: "Thin line that groups content in lists and layouts",
-			img: iconPath("divider")
-		}
-	},
-	{
-		path: "banner",
-		component: () => import("./elements/banner-page"),
-		data: {
-			title: "Banner",
-			desc: "Display a non-interruptive message and related optional actions",
-			img: iconPath("banner")
-		}
-	},
-	{
-		path: "popover",
-		component: () => import("./elements/popover-page"),
-		data: {
-			title: "Popover",
-			desc: "Contextual anchored elements",
-			img: iconPath("menu")
-		}
-	},
-	{
 		path: "tooltip",
 		component: () => import("./elements/tooltip-page"),
 		data: {
 			title: "Tooltip",
 			desc: "Informative context related text",
 			img: iconPath("tooltip")
-		}
-	},
-	{
-		path: "label",
-		component: () => import("./elements/label-page"),
-		data: {
-			title: "Label",
-			desc: "Make form elements more accessible",
-			img: iconPath("label")
 		}
 	},
 	{

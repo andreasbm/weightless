@@ -5,10 +5,15 @@ import { cssResult } from "../util/css";
 
 import styles from "./progress-bar-element.scss";
 
+/**
+ * Properties of the progress bar.
+ */
 export interface IProgressBarElementProperties extends IProgressBehaviorProperties {
-
 }
 
+/**
+ * Fills a bar from 0% to 100%.
+ */
 @customElement("progress-bar-element")
 export class ProgressBarElement extends ProgressBehavior implements IProgressBarElementProperties {
 

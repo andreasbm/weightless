@@ -1,17 +1,24 @@
 import { customElement, html, svg } from "lit-element";
 import { TemplateResult } from "lit-html";
-import { sharedStyles } from "../style/shared";
-import { cssResult } from "../util/css";
 import { IProgressBehaviorProperties, ProgressBehavior, ProgressMode } from "../behavior/progress-behavior/progress-behavior";
+import { cssResult } from "../util/css";
 
 import styles from "./progress-spinner-element.scss";
 
+/**
+ * Properties of the progress spinner.
+ */
 export interface IProgressSpinnerElementProperties extends IProgressBehaviorProperties {
-
 }
 
+/**
+ * Base dash array length of the SVG circle.
+ */
 const DASH_ARRAY = 285;
 
+/**
+ * Fills a circle from 0% to 100%.
+ */
 @customElement("progress-spinner-element")
 export class ProgressSpinnerElement extends ProgressBehavior implements IProgressSpinnerElementProperties {
 	static styles = [...ProgressBehavior.styles, cssResult(styles)];

@@ -8,9 +8,15 @@ import { removeChildren } from "../util/dom";
 import { addListener } from "../util/event";
 import styles from "./select-element.scss";
 
+/**
+ * Properties of the select.
+ */
 export interface ISelectElementProperties extends IInputBehaviorProperties {
 }
 
+/**
+ * Select one or more values from a set of options.
+ */
 @customElement("select-element")
 export class SelectElement extends InputBehavior implements ISelectElementProperties {
 	static styles = [...InputBehavior.styles, cssResult(styles)];

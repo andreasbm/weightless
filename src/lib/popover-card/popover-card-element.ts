@@ -6,14 +6,22 @@ import "../card/card-element";
 
 import styles from "./popover-card-element.scss";
 
+/**
+ * Properties of the popover card.
+ */
 export interface IPopoverCardElementProperties {
-
 }
 
+/**
+ * Give popovers a contextual flair.
+ */
 @customElement("popover-card-element")
 export class PopoverCardElement extends LitElement implements IPopoverCardElementProperties {
 	static styles = [sharedStyles, cssResult(styles)];
 
+	/**
+	 * Returns the template for the element.
+	 */
 	protected render (): TemplateResult {
 		return html`
 			<svg id="arrow" viewBox="0 0 100 100" preserveAspectRatio="none" >

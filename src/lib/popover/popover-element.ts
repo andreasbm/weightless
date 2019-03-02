@@ -50,6 +50,9 @@ export const defaultPopoverConfig: IPopoverElementConfig = {
 	fixed: true
 };
 
+/**
+ * Contextual anchored elements.
+ */
 @customElement("popover-element")
 export class PopoverElement<R = unknown> extends OverlayBehavior<R, IPopoverElementConfig> implements IPopoverElementProperties {
 	static styles = [...OverlayBehavior.styles, cssResult(styles)];
