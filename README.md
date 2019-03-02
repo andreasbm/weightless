@@ -64,7 +64,7 @@ npm i @appnest/elements
 | !Icon | `icon-element` | Symbols for common actions and items. | [Documentation](/src/lib/icon) | [Demo](https://elem.dev/demo/icon) |
 | !Label | `label-element` | Make form elements more accessible. | [Documentation](/src/lib/label) | [Demo](https://elem.dev/demo/label) |
 | !Nav | `nav-element` | Provide access to destinations in your app. | [Documentation](/src/lib/nav) | [Demo](https://elem.dev/demo/nav) |
-| Popover | `popover-element` | Contextual anchored elements | [Documentation](/src/lib/popover) | [Demo](https://elem.dev/demo/popover) |
+| !Popover | `popover-element` | Contextual anchored elements | [Documentation](/src/lib/popover) | [Demo](https://elem.dev/demo/popover) |
 | !Popover Card | `popover-card-element` | Give popovers a contextual flair. | [Documentation](/src/lib/popover-card) | [Demo](https://elem.dev/demo/popover) |
 | Progress Bar | `progress-bar-element` | Fills a bar from 0% to 100%. | [Documentation](/src/lib/progress-bar) | [Demo](https://elem.dev/demo/progress-bar) |
 | Progress Spinner | `progress-spinner-element` | Fills a circle from 0% to 100%. | [Documentation](/src/lib/progress-spinner) | [Demo](https://elem.dev/demo/progress-spinner) |

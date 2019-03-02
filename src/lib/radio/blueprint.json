@@ -1,0 +1,27 @@
+{
+	"input": "src/lib/radio/blueprint.md",
+	"output": "src/lib/radio/README.md",
+	"tag": "radio-element",
+	"text": "Select one option from a set.",
+	"demo": "http://elem.dev/demo/radio",
+	"img": "https://raw.githubusercontent.com/andreasbm/elements/master/screenshots/radio-element.png?token=AF-iBcyjgC0OGnP3B1p7Fkc63gl-kwI9ks5cg6mQwA%3D%3D",
+	"cssVariables": [
+		["Name", "Description"],
+		["`--radio-size`", "Width and height."],
+		["`--radio-bg`", "Default background."],
+		["`--radio-bg-checked`", "Background when checked."],
+		["`--radio-bg-disabled`", "Background when disabled."],
+		["`--radio-bg-disabled-checked`", "Background when disabled and checked."],
+		["`--radio-color`", "Default color."],
+		["`--radio-color-checked`", "Color when checked."],
+		["`--radio-color-disabled`", "Color when disabled."],
+		["`--radio-color-disabled-checked`", "Color when disabled and checked."],
+		["`--radio-border-config`", "Border configuration (style and width)."],
+		["`--radio-border-radius`", "Border radius."],
+		["`--radio-transition`", "Transition."],
+		["`--radio-dot-size`", "Width and height of the dot."],
+		["`--radio-dot-border-radius`", "Border radius of the dot."],
+		["`--radio-dot-transition`", "Transition of the dot."],
+		["`--radio-ripple-transform`", "Transform of the ripple."]
+	]
+}

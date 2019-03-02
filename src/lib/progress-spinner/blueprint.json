@@ -1,7 +1,7 @@
 {
 	"input": "src/lib/progress-spinner/blueprint.md",
 	"output": "src/lib/progress-spinner/README.md",
-	"tag": "progress-bar-element",
+	"tag": "progress-spinner-element",
 	"text": "Fills a circle from 0% to 100%",
 	"demo": "http://elem.dev/demo/progress-spinner",
 	"img": "https://raw.githubusercontent.com/andreasbm/elements/master/screenshots/progress-spinner.png?token=AF-iBcyjgC0OGnP3B1p7Fkc63gl-kwI9ks5cg6mQwA%3D%3D",

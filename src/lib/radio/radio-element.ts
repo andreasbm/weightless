@@ -21,7 +21,7 @@ export class RadioElement extends RadioBehavior implements IRadioElementProperti
 	static styles = [...RadioBehavior.styles, cssResult(styles)];
 
 	/**
-	 * Returns the template for the component.
+	 * Returns the template for the element.
 	 */
 	protected render (): TemplateResult {
 		return html`
