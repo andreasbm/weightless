@@ -24,7 +24,7 @@ export class ProgressSpinnerElement extends ProgressBehavior implements IProgres
 	static styles = [...ProgressBehavior.styles, cssResult(styles)];
 
 	/**
-	 * Returns the template for the component.
+	 * Returns the template for the element.
 	 */
 	protected render (): TemplateResult {
 		return html`
