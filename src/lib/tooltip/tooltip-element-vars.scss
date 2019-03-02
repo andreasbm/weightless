@@ -1,5 +1,5 @@
 @import "../style/base";
 
 $tooltip-padding: var(--tooltip-padding, #{$spacing-m});
-$tooltip-bg: #{$foreground};
-$tooltip-color: #{$background};
+$tooltip-bg: var(--tooltip-bg, #{$foreground});
+$tooltip-color: var(--tooltip-color, #{$background});
