@@ -1,14 +1,5 @@
 @import "../style/base";
-
-$title-margin: var(--title-margin, #{$spacing-s} 0);
-$title-font-family: var(--title-font-family, #{$font-family-serif});
-$title-font-weight: var(--title-font-weight, #{$font-weight-bold});
-$title-font-size-level-1: var(--title-font-size-level-1, #{$font-size-xl});
-$title-font-size-level-2: var(--title-font-size-level-2, #{$font-size-l});
-$title-font-size-level-3: var(--title-font-size-level-3, #{$font-size-xm});
-$title-font-size-level-4: var(--title-font-size-level-4, #{$font-size-m});
-$title-font-size-level-5: var(--title-font-size-level-5, #{$font-size-s});
-$title-font-size-level-6: var(--title-font-size-level-6, #{$font-size-xs});
+@import "title-element-vars";
 
 :host {
 	margin: #{$title-margin};

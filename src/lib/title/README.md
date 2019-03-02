@@ -1,12 +1,12 @@
-<h1 align="center">textfield-element</h1>
-<p align="center">Singleline text fields. Go <a href="http://elem.dev/demo/textfield">here</a> to try the demo.</p>
+<h1 align="center">title-element</h1>
+<p align="center">Indicate the start of a new section. Go <a href="http://elem.dev/demo/title">here</a> to try the demo.</p>
 
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#usage)
 
 ## ➤ Usage
-<a href="http://elem.dev/demo/textfield" align="center">
-  <img src="https://raw.githubusercontent.com/andreasbm/elements/master/screenshots/textfield-element.png?token=AF-iBcyjgC0OGnP3B1p7Fkc63gl-kwI9ks5cg6mQwA%3D%3D" width="700" />
+<a href="http://elem.dev/demo/title" align="center">
+  <img src="https://raw.githubusercontent.com/andreasbm/elements/master/screenshots/title-element.png?token=AF-iBcyjgC0OGnP3B1p7Fkc63gl-kwI9ks5cg6mQwA%3D%3D" width="700" />
 </a>
 
 
@@ -16,26 +16,34 @@
 
 | Name | Type | Description | Default value |
 | ------- | ------- | ------- | ------- |
-| `type` | string | Type of the input. | `'text'` |
-| `pattern` | string | Value pattern. | `undefined` |
-| `minLength` | number | Min value length. | `undefined` |
-| `maxLength` | number | Max value length. | `undefined` |
-
-The `textfield-element` extends `InputBehavior`. Go to the [documentation](/src/lib/behavior/input) to see more available attributes.
+| `role` | string | Role of the title. | `'heading'` |
+| `level` | 1 \| 2 | 3 | 4 | 5 | 6 | Level of the title. | `1` |
 
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#css-variables)
 
 ## ➤ CSS variables
 
-The `textfield-element` extends `InputBehavior`. Go to the [documentation](/src/lib/behavior/input) to see the available CSS variables.
+| Name | Description |
+| ------- | ------- |
+| `--title-margin` | Margin. |
+| `--title-font-family` | Font family. |
+| `--title-font-weight` | Font weight. |
+| `--title-font-size-level-1` | Font size of level 1 heading. |
+| `--title-font-size-level-2` | Font size of level 2 heading. |
+| `--title-font-size-level-3` | Font size of level 3 heading. |
+| `--title-font-size-level-4` | Font size of level 4 heading. |
+| `--title-font-size-level-5` | Font size of level 5 heading. |
+| `--title-font-size-level-6` | Font size of level 6 heading. |
 
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#slots)
 
 ## ➤ Slots
 
-The `textfield-element` extends `InputBehavior`. Go to the [documentation](/src/lib/behavior/input) to see the available slots.
+| Name | Description |
+| ------- | ------- |
+| `unnamed` | Default content. |
 
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#contributors)
