@@ -1,6 +1,7 @@
 import { FocusTrap } from "@appnest/focus-trap";
 import { customElement, html, property, query, TemplateResult } from "lit-element";
 import "../backdrop";
+import { BackdropElement } from "../backdrop/backdrop-element";
 import { IOverlayBehaviorBaseProperties, IOverlayBehaviorProperties, OverlayBehavior } from "../behavior/overlay-behavior/overlay-behavior";
 import { AriaRole } from "../util/aria";
 import { cssResult } from "../util/css";
@@ -57,18 +58,35 @@ export const defaultDialogConfig: IDialogElementConfig = {
 export class DialogElement<R = unknown> extends OverlayBehavior<R, Partial<IDialogElementProperties>> implements IDialogElementProperties {
 	static styles = [...OverlayBehavior.styles, cssResult(styles)];
 
-	// The size of the dialog
+	/**
+	 * Size of the dialog.
+	 */
 	@property({type: String, reflect: true}) size?: DialogSize;
 
-	// Whether the dialog is scrollable or not
+	/**
+	 * Makes the dialog scrollable.
+	 */
 	@property({type: Boolean, reflect: true}) scrollable: boolean = false;
 
-	// The role of the dialog
+	/**
+	 * Role of the dialog.
+	 */
 	@property({type: String, reflect: true}) role: AriaRole = "dialog";
 
+	/**
+	 * Focus trap element.
+	 */
 	@query("#dialog") $focusTrap: FocusTrap;
+
+	/**
+	 * Dialog element.
+	 */
 	@query("#dialog") $dialog: HTMLElement;
-	@query("#backdrop") $backdrop: HTMLElement;
+
+	/**
+	 * Backdrop element.
+	 */
+	@query("#backdrop") $backdrop: BackdropElement;
 
 	/**
 	 * Animates the dialog in.

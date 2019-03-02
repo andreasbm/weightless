@@ -7,7 +7,7 @@
 	"img": "https://raw.githubusercontent.com/andreasbm/elements/documentation/screenshots/checkbox-element.png?token=AF-iBQSqMzuMAQ5EiwnHa2DFSM_IS0ihks5cg7uDwA%3D%3D",
 	"attributes": [
 		["Name", "Type", "Description", "Default value"],
-		["`checked`", "string", "Checks the checkbox.", "`false`"],
+		["`checked`", "boolean", "Checks the checkbox.", "`false`"],
 		["`role`", "string", "Role of the checkbox.", "`'checkbox'`"]
 	],
 	"cssVariables": [

@@ -49,11 +49,12 @@
 		"readme:button": "node_modules/.bin/readme -c=src/lib/button/blueprint.json",
 		"readme:card": "node_modules/.bin/readme -c=src/lib/card/blueprint.json",
 		"readme:checkbox": "node_modules/.bin/readme -c=src/lib/checkbox/blueprint.json",
+		"readme:dialog": "node_modules/.bin/readme -c=src/lib/dialog/blueprint.json",
 		"readme:divider": "node_modules/.bin/readme -c=src/lib/divider/blueprint.json",
 		"readme:icon": "node_modules/.bin/readme -c=src/lib/icon/blueprint.json",
 		"readme:label": "node_modules/.bin/readme -c=src/lib/label/blueprint.json",
 		"readme:nav": "node_modules/.bin/readme -c=src/lib/nav/blueprint.json",
-		"docs": "npm run readme && npm run readme:backdrop && npm run readme:button && npm run readme:banner && npm run readme:card && npm run readme:divider && npm run readme:icon && npm run readme:label && npm run readme:nav && npm run readme:checkbox"
+		"docs": "npm run readme && npm run readme:backdrop && npm run readme:button && npm run readme:banner && npm run readme:card && npm run readme:divider && npm run readme:icon && npm run readme:label && npm run readme:nav && npm run readme:checkbox && npm run readme:dialog"
 	},
 	"devDependencies": {
 		"@appnest/readme": "^1.1.2",

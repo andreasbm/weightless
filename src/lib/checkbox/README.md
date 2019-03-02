@@ -16,7 +16,7 @@
 
 | Name | Type | Description | Default value |
 | ------- | ------- | ------- | ------- |
-| `checked` | string | Checks the checkbox. | `false` |
+| `checked` | boolean | Checks the checkbox. | `false` |
 | `role` | string | Role of the checkbox. | `'checkbox'` |
 
 

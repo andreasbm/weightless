@@ -17,7 +17,6 @@ export interface ICheckboxElementProperties extends ICheckboxBehaviorProperties 
  */
 @customElement("checkbox-element")
 export class CheckboxElement extends CheckboxBehavior implements ICheckboxElementProperties {
-
 	static styles = [...CheckboxBehavior.styles, cssResult(styles)];
 
 	/**

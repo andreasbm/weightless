@@ -23,7 +23,7 @@
 		["!Button", "`button-element`", "Allow users to take actions, and make choices, with a single tap.", "[Documentation](/src/lib/button)", "[Demo](https://elem.dev/demo/button)"],
 		["!Card", "`card-element`", "Group related content and action.", "[Documentation](/src/lib/card)", "[Demo](https://elem.dev/demo/card)"],
 		["!Checkbox", "`checkbox-element`", "Turn an option on or off.", "[Documentation](/src/lib/checkbox)", "[Demo](https://elem.dev/demo/checkbox)"],
-		["Dialog", "`dialog-element`", "Highly interruptive messages.", "[Documentation](/src/lib/dialog)", "[Demo](https://elem.dev/demo/dialog)"],
+		["!Dialog", "`dialog-element`", "Highly interruptive messages.", "[Documentation](/src/lib/dialog)", "[Demo](https://elem.dev/demo/dialog)"],
 		["!Divider", "`divider-element`", "Thin line that groups content in lists and layouts.", "[Documentation](/src/lib/card)", "[Demo](https://elem.dev/demo/card)"],
 		["!Icon", "`icon-element`", "Symbols for common actions and items.", "[Documentation](/src/lib/icon)", "[Demo](https://elem.dev/demo/icon)"],
 		["!Label", "`label-element`", "Make form elements more accessible.", "[Documentation](/src/lib/label)", "[Demo](https://elem.dev/demo/label)"],
