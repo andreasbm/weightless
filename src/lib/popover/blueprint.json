@@ -2,9 +2,9 @@
 	"input": "src/lib/popover/blueprint.md",
 	"output": "src/lib/popover/README.md",
 	"tag": "popover-element",
-	"text": "Contextual anchored elements",
 	"demo": "http://elem.dev/demo/popover",
 	"img": "https://raw.githubusercontent.com/andreasbm/elements/documentation/screenshots/popover-element.png?token=AF-iBQSqMzuMAQ5EiwnHa2DFSM_IS0ihks5cg7uDwA%3D%3D",
+	"text": "Contextual anchored elements",
 	"attributes": [
 		["Name", "Type", "Description", "Default value"],
 		["`closeOnClick`", "boolean", "Makes the popover close when it is clicked upon.", "`false`"],

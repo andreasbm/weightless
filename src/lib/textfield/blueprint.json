@@ -2,9 +2,9 @@
 	"input": "src/lib/textfield/blueprint.md",
 	"output": "src/lib/textfield/README.md",
 	"tag": "textfield-element",
-	"text": "Singleline text fields",
 	"demo": "http://elem.dev/demo/textfield",
-	"img": "https://raw.githubusercontent.com/andreasbm/elements/master/screenshots/textfield-element.png?token=AF-iBcyjgC0OGnP3B1p7Fkc63gl-kwI9ks5cg6mQwA%3D%3D",
+	"img": "https://raw.githubusercontent.com/andreasbm/elements/master/screenshots/textfield-element.png?token=AF-iBfo3dTDYCa2E9l6FKRjQ5A6KLAGcks5chEsCwA%3D%3D",
+	"text": "Singleline text fields",
 	"attributes": [
 		["Name", "Type", "Description", "Default value"],
 		["`type`", "string", "Type of the input.", "`'text'`"],

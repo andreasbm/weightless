@@ -3,9 +3,9 @@
 
 ## Usage
 
-```html
-<icon-element>flash_on</icon-element>
-```
+<a href="{{ demo }}" align="center">
+  <img src="{{ img }}" width="700" />
+</a>
 
 ## ⚠️ Load the icon font
 

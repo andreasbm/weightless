@@ -3,10 +3,9 @@
 
 ## Usage
 
-```html
-<checkbox-element id="cb"></checkbox-element>
-<label-element for="cb">This is a label</label-element>
-```
+<a href="{{ demo }}" align="center">
+  <img src="{{ img }}" width="700" />
+</a>
 
 ## Attributes
 

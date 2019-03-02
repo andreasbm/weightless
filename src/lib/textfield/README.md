@@ -5,8 +5,9 @@
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#usage)
 
 ## ➤ Usage
+
 <a href="http://elem.dev/demo/textfield" align="center">
-  <img src="https://raw.githubusercontent.com/andreasbm/elements/master/screenshots/textfield-element.png?token=AF-iBcyjgC0OGnP3B1p7Fkc63gl-kwI9ks5cg6mQwA%3D%3D" width="700" />
+  <img src="https://raw.githubusercontent.com/andreasbm/elements/master/screenshots/textfield-element.png?token=AF-iBfo3dTDYCa2E9l6FKRjQ5A6KLAGcks5chEsCwA%3D%3D" width="700" />
 </a>
 
 

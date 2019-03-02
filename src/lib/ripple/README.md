@@ -5,8 +5,9 @@
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#usage)
 
 ## ➤ Usage
+
 <a href="http://elem.dev/demo/ripple" align="center">
-  <img src="https://raw.githubusercontent.com/andreasbm/elements/master/screenshots/ripple-element.png?token=AF-iBcyjgC0OGnP3B1p7Fkc63gl-kwI9ks5cg6mQwA%3D%3D" width="700" />
+  <img src="https://raw.githubusercontent.com/andreasbm/elements/master/screenshots/ripple-element.png?token=AF-iBfW58puayCKEgAhQxjkFbGJsFLBeks5chEq4wA%3D%3D" width="700" />
 </a>
 
 

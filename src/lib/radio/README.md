@@ -5,8 +5,9 @@
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#usage)
 
 ## ➤ Usage
+
 <a href="http://elem.dev/demo/radio" align="center">
-  <img src="https://raw.githubusercontent.com/andreasbm/elements/master/screenshots/radio-element.png?token=AF-iBcyjgC0OGnP3B1p7Fkc63gl-kwI9ks5cg6mQwA%3D%3D" width="700" />
+  <img src="https://raw.githubusercontent.com/andreasbm/elements/master/screenshots/radio-element.png?token=AF-iBcoNrrO2pTIZCQ-9BR6Ih6wh0bq7ks5chEqcwA%3D%3D" width="700" />
 </a>
 
 

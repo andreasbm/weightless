@@ -6,7 +6,7 @@
 
 ## ➤ Usage
 <a href="http://elem.dev/demo/textarea" align="center">
-  <img src="https://raw.githubusercontent.com/andreasbm/elements/master/screenshots/textarea-element.png?token=AF-iBcyjgC0OGnP3B1p7Fkc63gl-kwI9ks5cg6mQwA%3D%3D" width="700" />
+  <img src="https://raw.githubusercontent.com/andreasbm/elements/master/screenshots/textarea-element.png?token=AF-iBZJNydxFHIc4sQBFRLt8o2_qR34hks5chErwwA%3D%3D" width="700" />
 </a>
 
 

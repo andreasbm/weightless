@@ -5,8 +5,9 @@
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#usage)
 
 ## ➤ Usage
+
 <a href="http://elem.dev/demo/progress-spinner" align="center">
-  <img src="https://raw.githubusercontent.com/andreasbm/elements/master/screenshots/progress-spinner.png?token=AF-iBcyjgC0OGnP3B1p7Fkc63gl-kwI9ks5cg6mQwA%3D%3D" width="700" />
+  <img src="https://raw.githubusercontent.com/andreasbm/elements/master/screenshots/progress-spinner-element.png?token=AF-iBWI_tLK5VwvHN8ek2kaMbSWtaobnks5chEqCwA%3D%3D" width="700" />
 </a>
 
 

@@ -2,9 +2,9 @@
 	"input": "src/lib/radio/blueprint.md",
 	"output": "src/lib/radio/README.md",
 	"tag": "radio-element",
-	"text": "Select one option from a set.",
 	"demo": "http://elem.dev/demo/radio",
-	"img": "https://raw.githubusercontent.com/andreasbm/elements/master/screenshots/radio-element.png?token=AF-iBcyjgC0OGnP3B1p7Fkc63gl-kwI9ks5cg6mQwA%3D%3D",
+	"img": "https://raw.githubusercontent.com/andreasbm/elements/master/screenshots/radio-element.png?token=AF-iBcoNrrO2pTIZCQ-9BR6Ih6wh0bq7ks5chEqcwA%3D%3D",
+	"text": "Select one option from a set.",
 	"cssVariables": [
 		["Name", "Description"],
 		["`--radio-size`", "Width and height."],

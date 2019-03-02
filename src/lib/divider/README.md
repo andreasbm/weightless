@@ -7,7 +7,7 @@
 ## ➤ Usage
 
 <a href="http://elem.dev/demo/divider" align="center">
-  <img src="img" width="700" />
+  <img src="https://raw.githubusercontent.com/andreasbm/elements/master/screenshots/divider-element.png?token=AF-iBT7z17lNwSwyRFaeIaGSpsqbwB_1ks5chEl4wA%3D%3D" width="700" />
 </a>
 
 

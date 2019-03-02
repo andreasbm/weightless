@@ -2,8 +2,9 @@
 	"input": "src/lib/label/blueprint.md",
 	"output": "src/lib/label/README.md",
 	"tag": "label-element",
-	"text": "Make form elements more accessible",
 	"demo": "http://elem.dev/demo/label",
+	"img": "https://raw.githubusercontent.com/andreasbm/elements/master/screenshots/label-element.png?token=AF-iBft0B2brPzwNC_jHXJ7wZKxOtAoJks5chEnjwA%3D%3D",
+	"text": "Make form elements more accessible",
 	"attributes": [
 		["Name", "Type", "Description", "Default value"],
 		["`required`", "boolean", "Styles the label as required.", "`false`"],

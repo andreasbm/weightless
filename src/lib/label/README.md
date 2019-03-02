@@ -6,10 +6,9 @@
 
 ## ➤ Usage
 
-```html
-<checkbox-element id="cb"></checkbox-element>
-<label-element for="cb">This is a label</label-element>
-```
+<a href="http://elem.dev/demo/label" align="center">
+  <img src="https://raw.githubusercontent.com/andreasbm/elements/master/screenshots/label-element.png?token=AF-iBft0B2brPzwNC_jHXJ7wZKxOtAoJks5chEnjwA%3D%3D" width="700" />
+</a>
 
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#attributes)

@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://raw.githubusercontent.com/andreasbm/elements/master/assets/logo-text.png?token=AF-iBbtFwTGmTCr-w-ZKDUg3jJVXROsJks5ceq82wA%3D%3D" alt="Logo" width="400" height="auto" />
+  <img src="https://raw.githubusercontent.com/andreasbm/elements/master/assets/logo-text.png?token=AF-iBbIgtdFCIY4q_sujNYJVhEub5-sZks5chEtbwA%3D%3D" alt="Logo" width="400" height="auto" />
 </p>
 <h1 align="center">@appnest/elements</h1>
 <p align="center">
@@ -61,7 +61,7 @@ npm i @appnest/elements
 | Card | `card-element` | Group related content and action. | [Documentation](/src/lib/card) | [Demo](https://elem.dev/demo/card) |
 | Checkbox | `checkbox-element` | Turn an option on or off. | [Documentation](/src/lib/checkbox) | [Demo](https://elem.dev/demo/checkbox) |
 | Dialog | `dialog-element` | Highly interruptive messages. | [Documentation](/src/lib/dialog) | [Demo](https://elem.dev/demo/dialog) |
-| Divider | `divider-element` | Thin line that groups content in lists and layouts. | [Documentation](/src/lib/card) | [Demo](https://elem.dev/demo/card) |
+| Divider | `divider-element` | Thin line that groups content in lists and layouts. | [Documentation](/src/lib/divider) | [Demo](https://elem.dev/demo/divider) |
 | Icon | `icon-element` | Symbols for common actions and items. | [Documentation](/src/lib/icon) | [Demo](https://elem.dev/demo/icon) |
 | Label | `label-element` | Make form elements more accessible. | [Documentation](/src/lib/label) | [Demo](https://elem.dev/demo/label) |
 | Nav | `nav-element` | Provide access to destinations in your app. | [Documentation](/src/lib/nav) | [Demo](https://elem.dev/demo/nav) |

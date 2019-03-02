@@ -2,8 +2,9 @@
 	"input": "src/lib/divider/blueprint.md",
 	"output": "src/lib/divider/README.md",
 	"tag": "divider-element",
-	"text": "Thin line that groups content in lists and layouts",
 	"demo": "http://elem.dev/demo/divider",
+	"img": "https://raw.githubusercontent.com/andreasbm/elements/master/screenshots/divider-element.png?token=AF-iBT7z17lNwSwyRFaeIaGSpsqbwB_1ks5chEl4wA%3D%3D",
+	"text": "Thin line that groups content in lists and layouts",
 	"attributes": [
 		["Name", "Type", "Description", "Default value"],
 		["`role`", "string", "Role of the divider.", "`'separator'`"]

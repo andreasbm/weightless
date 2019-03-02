@@ -6,9 +6,9 @@
 
 ## ➤ Usage
 
-```html
-<icon-element>flash_on</icon-element>
-```
+<a href="http://elem.dev/demo/icon" align="center">
+  <img src="https://raw.githubusercontent.com/andreasbm/elements/master/screenshots/icon-element.png?token=AF-iBccPgS4Ki6G_fVHVhuvjSCR-236wks5chEm4wA%3D%3D" width="700" />
+</a>
 
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#-load-the-icon-font)
