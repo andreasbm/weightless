@@ -45,6 +45,16 @@ function getHandle (elem: string): string {
 }
 
 /**
+ * Waits.
+ * @param ms
+ */
+async function wait (ms: number) {
+	return new Promise(res => {
+		setTimeout(res, ms);
+	})
+}
+
+/**
  * Runs through the instructions and take screenshots.
  */
 const start = async () => {
@@ -57,6 +67,9 @@ const start = async () => {
 		console.log(`> "${elem}" screenshot...`);
 
 		await page.goto(getDemoUrl(elem), {waitUntil: "networkidle2"});
+
+		// Add 300ms timeout instead of customElements.whenDefined(..)
+		await wait(300);
 
 		const $elem = await page.evaluateHandle(getHandle(elem));
 

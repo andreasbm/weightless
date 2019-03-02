@@ -56,7 +56,8 @@
 		"readme:nav": "node_modules/.bin/readme -c=src/lib/nav/blueprint.json",
 		"readme:popover": "node_modules/.bin/readme -c=src/lib/popover/blueprint.json",
 		"readme:popover-card": "node_modules/.bin/readme -c=src/lib/popover-card/blueprint.json",
-		"docs": "npm run readme && npm run readme:backdrop && npm run readme:button && npm run readme:banner && npm run readme:card && npm run readme:divider && npm run readme:icon && npm run readme:label && npm run readme:nav && npm run readme:checkbox && npm run readme:dialog && npm run readme:popover && npm run readme:popover-card"
+		"readme:progress-bar": "node_modules/.bin/readme -c=src/lib/progress-bar/blueprint.json",
+		"docs": "npm run readme && npm run readme:backdrop && npm run readme:button && npm run readme:banner && npm run readme:card && npm run readme:divider && npm run readme:icon && npm run readme:label && npm run readme:nav && npm run readme:checkbox && npm run readme:dialog && npm run readme:popover && npm run readme:popover-card && npm run readme:progress-bar"
 	},
 	"devDependencies": {
 		"@appnest/readme": "^1.1.2",

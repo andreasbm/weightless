@@ -1,6 +1,6 @@
 import { customElement, html } from "lit-element";
 import { TemplateResult } from "lit-html";
-import { IRadioBehaviorProperties, RadioBehavior } from "../behavior/radio-behavior/radio-behavior";
+import { IRadioBehaviorProperties, RadioBehavior } from "../behavior/radio/radio-behavior";
 
 import "../ripple";
 import { cssResult } from "../util/css";

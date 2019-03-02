@@ -2,7 +2,7 @@ import { FocusTrap } from "@appnest/focus-trap";
 import { customElement, html, property, query, TemplateResult } from "lit-element";
 import "../backdrop";
 import { BackdropElement } from "../backdrop/backdrop-element";
-import { IOverlayBehaviorBaseProperties, IOverlayBehaviorProperties, OverlayBehavior } from "../behavior/overlay-behavior/overlay-behavior";
+import { IOverlayBehaviorBaseProperties, IOverlayBehaviorProperties, OverlayBehavior } from "../behavior/overlay/overlay-behavior";
 import { AriaRole } from "../util/aria";
 import { cssResult } from "../util/css";
 import styles from "./dialog-element.scss";

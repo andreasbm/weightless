@@ -1,6 +1,6 @@
 import { customElement, html, property, PropertyValues, query, TemplateResult } from "lit-element";
 import { ifDefined } from "lit-html/directives/if-defined";
-import { FormItemBehavior, IFormItemBehaviorProperties } from "../behavior/form-item-behavior/form-item-behavior";
+import { FormItemBehavior, IFormItemBehaviorProperties } from "../behavior/form-item/form-item-behavior";
 import "../ripple";
 import { RippleElement } from "../ripple/ripple-element";
 import { AriaRole, updateTabindex } from "../util/aria";

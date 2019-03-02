@@ -1,6 +1,6 @@
 import { customElement, html, property, TemplateResult } from "lit-element";
 import { ifDefined } from "lit-html/directives/if-defined";
-import { IFormItemBehaviorProperties } from "../behavior/form-item-behavior";
+import { IFormItemBehaviorProperties } from "../behavior/form-item";
 import { ITextfieldElementProperties, TextfieldElement } from "../textfield/textfield-element";
 import { cssResult } from "../util/css";
 import { isHidden } from "../util/dom";

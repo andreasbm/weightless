@@ -6,7 +6,7 @@ import { SPACE } from "../../util/constant/keycode";
 import { cssResult } from "../../util/css";
 import { renderAttributes } from "../../util/dom";
 import { addListener, stopEvent } from "../../util/event";
-import { FormItemBehavior, IFormItemBehaviorProperties } from "../form-item-behavior";
+import { FormItemBehavior, IFormItemBehaviorProperties } from "../form-item";
 
 import styles from "./checkbox-behavior.scss";
 

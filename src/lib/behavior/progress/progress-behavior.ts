@@ -4,11 +4,17 @@ import { AriaRole } from "../../util/aria";
 import { renderAttributes } from "../../util/dom";
 import { clamp } from "../../util/number";
 
+/**
+ * Mode of the progress.
+ */
 export enum ProgressMode {
 	INDETERMINATE = "indeterminate",
 	DETERMINATE = "determinate"
 }
 
+/**
+ * Properties of progress behavior.
+ */
 export interface IProgressBehaviorProperties {
 	mode: ProgressMode;
 	value: number;
@@ -21,33 +27,67 @@ export interface IProgressBehaviorProperties {
 }
 
 /**
- * Progress behavior.
+ * Behavior of progress elements.
  */
 export abstract class ProgressBehavior extends LitElement implements IProgressBehaviorProperties {
 	static styles = [sharedStyles];
 
+	/**
+	 * Animation mode.
+	 */
 	@property({type: String, reflect: true}) mode: ProgressMode = ProgressMode.INDETERMINATE;
 
+	/**
+	 * Progress value.
+	 */
 	@property({type: Number}) value: number = 0;
+
+	/**
+	 * Max progress value.
+	 */
 	@property({type: Number}) max: number = 1;
+
+	/**
+	 * Min progress value.
+	 */
 	@property({type: Number}) min: number = 0;
 
+	/**
+	 * Buffer progress value.
+	 */
 	@property({type: Number}) buffer: number = 0;
+
+	/**
+	 * Max buffer progress value.
+	 */
 	@property({type: Number}) bufferMax: number = 1;
+
+	/**
+	 * Min buffer progress value.
+	 */
 	@property({type: Number}) bufferMin: number = 0;
 
+	/**
+	 * Role of the progress behavior.
+	 */
 	@property({type: String, reflect: true}) role: AriaRole = "progressbar";
 
+	/**
+	 * Progress in percentage.
+	 */
 	get progressPerc (): number {
 		return clamp(this.value / (this.max - this.min), 0, 1);
 	}
 
+	/**
+	 * Buffer progress in percentage.
+	 */
 	get bufferPerc (): number {
 		return clamp(this.buffer / (this.bufferMax - this.bufferMin), 0, 1);
 	}
 
 	/**
-	 * Hooks up the component.
+	 * Hooks up the element.
 	 */
 	connectedCallback () {
 		super.connectedCallback();

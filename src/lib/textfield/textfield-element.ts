@@ -1,7 +1,7 @@
 import { customElement, html, property } from "lit-element";
 import { TemplateResult } from "lit-html";
 import { ifDefined } from "lit-html/directives/if-defined";
-import { IInputBehaviorProperties, InputBehavior } from "../behavior/input-behavior/input-behavior";
+import { IInputBehaviorProperties, InputBehavior } from "../behavior/input/input-behavior";
 import { cssResult } from "../util/css";
 import { InputType } from "./input-type";
 import styles from "./textfield-element.scss";
