@@ -2,9 +2,9 @@
 	"input": "src/lib/dialog/blueprint.md",
 	"output": "src/lib/dialog/README.md",
 	"tag": "dialog-element",
-	"text": "Highly interruptive messages",
 	"demo": "http://elem.dev/demo/dialog",
-	"img": "https://raw.githubusercontent.com/andreasbm/elements/documentation/screenshots/dialog-element.png?token=AF-iBQSqMzuMAQ5EiwnHa2DFSM_IS0ihks5cg7uDwA%3D%3D",
+	"img": "https://raw.githubusercontent.com/andreasbm/elements/master/screenshots/dialog-element.png?token=AF-iBdDsRo4rR9ss5Ix_SW9kpZMXCfILks5chEh-wA%3D%3D",
+	"text": "Highly interruptive messages",
 	"attributes": [
 		["Name", "Type", "Description", "Default value"],
 		["`size`", "'small' | 'medium' | 'large' | 'auto' | 'fullscreen'", "Size of the dialog.", "`undefined`"],

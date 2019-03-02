@@ -2,9 +2,9 @@
 	"input": "src/lib/button/blueprint.md",
 	"output": "src/lib/button/README.md",
 	"tag": "button-element",
-	"text": "Allow users to take actions, and make choices, with a single tap",
 	"img": "https://raw.githubusercontent.com/andreasbm/elements/master/screenshots/button-element.png?token=AF-iBV1pZn7D_ITJDLgD6NVlQjtvXupXks5cgq0VwA%3D%3D",
 	"demo": "http://elem.dev/demo/button",
+	"text": "Allow users to take actions, and make choices, with a single tap",
 	"attributes": [
 		["Name", "Type", "Description", "Default value"],
 		["`type`", "'button' | 'submit'", "Type of the button.", "`'submit'`"],

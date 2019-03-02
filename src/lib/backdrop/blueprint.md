@@ -3,9 +3,9 @@
 
 ## Usage
 
-<a href="{{ demo }}" align="center">
-  <img src="{{ img }}" width="700" />
-</a>
+```html
+<backdrop-element></backdrop-element>
+```
 
 ## Attributes
 

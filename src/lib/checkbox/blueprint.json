@@ -2,9 +2,9 @@
 	"input": "src/lib/checkbox/blueprint.md",
 	"output": "src/lib/checkbox/README.md",
 	"tag": "checkbox-element",
-	"text": "Turn an option on or off",
 	"demo": "http://elem.dev/demo/checkbox",
-	"img": "https://raw.githubusercontent.com/andreasbm/elements/documentation/screenshots/checkbox-element.png?token=AF-iBQSqMzuMAQ5EiwnHa2DFSM_IS0ihks5cg7uDwA%3D%3D",
+	"img": "https://raw.githubusercontent.com/andreasbm/elements/master/screenshots/checkbox-element.png?token=AF-iBe24iyQPNmcdPiK5oPZhd8a_acCTks5chEhjwA%3D%3D",
+	"text": "Turn an option on or off",
 	"attributes": [
 		["Name", "Type", "Description", "Default value"],
 		["`checked`", "boolean", "Checks the checkbox.", "`false`"],

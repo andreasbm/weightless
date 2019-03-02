@@ -3,7 +3,6 @@
 	"output": "src/lib/backdrop/README.md",
 	"tag": "backdrop-element",
 	"demo": "http://elem.dev/demo/dialog",
-	"img": "https://raw.githubusercontent.com/andreasbm/elements/master/screenshots/dialog-element.png?token=AF-iBXL4MK56eUYQrSsVvOvpCrUyxlbCks5chEPkwA%3D%3D",
 	"text": "Dark layer to use behind overlayed elements",
 	"attributes": [
 		[

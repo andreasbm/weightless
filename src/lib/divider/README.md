@@ -6,9 +6,9 @@
 
 ## ➤ Usage
 
-```html
-<divider-element></divider-element>
-```
+<a href="http://elem.dev/demo/divider" align="center">
+  <img src="img" width="700" />
+</a>
 
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#attributes)

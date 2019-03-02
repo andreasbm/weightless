@@ -5,8 +5,9 @@
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#usage)
 
 ## ➤ Usage
+
 <a href="http://elem.dev/demo/checkbox" align="center">
-  <img src="https://raw.githubusercontent.com/andreasbm/elements/documentation/screenshots/checkbox-element.png?token=AF-iBQSqMzuMAQ5EiwnHa2DFSM_IS0ihks5cg7uDwA%3D%3D" width="700" />
+  <img src="https://raw.githubusercontent.com/andreasbm/elements/master/screenshots/checkbox-element.png?token=AF-iBe24iyQPNmcdPiK5oPZhd8a_acCTks5chEhjwA%3D%3D" width="700" />
 </a>
 
 

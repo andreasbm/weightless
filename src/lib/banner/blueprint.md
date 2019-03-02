@@ -3,14 +3,9 @@
 
 ## Usage
 
-```html
-<banner-element>
-  <icon-element slot="icon">account_box</icon-element>
-  <span slot="text">Your password was updated on your other device. Please sign in again.</span>
-  <button-element slot="action" flat inverted>Continue as guest</button-element>
-  <button-element slot="action" flat inverted>Sign in</button-element>
-</banner-element>
-```
+<a href="{{ demo }}" align="center">
+  <img src="{{ img }}" width="700" />
+</a>
 
 ## Attributes
 

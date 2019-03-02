@@ -6,9 +6,9 @@
 
 ## ➤ Usage
 
-<a href="http://elem.dev/demo/dialog" align="center">
-  <img src="https://raw.githubusercontent.com/andreasbm/elements/master/screenshots/dialog-element.png?token=AF-iBXL4MK56eUYQrSsVvOvpCrUyxlbCks5chEPkwA%3D%3D" width="700" />
-</a>
+```html
+<backdrop-element></backdrop-element>
+```
 
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#attributes)

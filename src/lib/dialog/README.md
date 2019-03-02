@@ -5,8 +5,9 @@
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#usage)
 
 ## ➤ Usage
+
 <a href="http://elem.dev/demo/dialog" align="center">
-  <img src="https://raw.githubusercontent.com/andreasbm/elements/documentation/screenshots/dialog-element.png?token=AF-iBQSqMzuMAQ5EiwnHa2DFSM_IS0ihks5cg7uDwA%3D%3D" width="700" />
+  <img src="https://raw.githubusercontent.com/andreasbm/elements/master/screenshots/dialog-element.png?token=AF-iBdDsRo4rR9ss5Ix_SW9kpZMXCfILks5chEh-wA%3D%3D" width="700" />
 </a>
 
 

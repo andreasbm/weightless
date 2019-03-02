@@ -6,14 +6,9 @@
 
 ## ➤ Usage
 
-```html
-<banner-element>
-  <icon-element slot="icon">account_box</icon-element>
-  <span slot="text">Your password was updated on your other device. Please sign in again.</span>
-  <button-element slot="action" flat inverted>Continue as guest</button-element>
-  <button-element slot="action" flat inverted>Sign in</button-element>
-</banner-element>
-```
+<a href="http://elem.dev/demo/banner" align="center">
+  <img src="https://raw.githubusercontent.com/andreasbm/elements/master/screenshots/banner-element.png?token=AF-iBbNvw_OKWWkTFf2wuzBu9bJLwio1ks5chEfywA%3D%3D" width="700" />
+</a>
 
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#attributes)

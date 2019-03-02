@@ -13,7 +13,7 @@ const ELEMENTS = [
 	"card",
 	"checkbox",
 	"dialog",
-	"card",
+	"divider",
 	"icon",
 	"label",
 	"popover",
