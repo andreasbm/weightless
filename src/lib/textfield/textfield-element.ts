@@ -23,13 +23,28 @@ export interface ITextfieldElementProperties extends IInputBehaviorProperties {
 export class TextfieldElement extends InputBehavior implements ITextfieldElementProperties {
 	static styles = [...InputBehavior.styles, cssResult(styles)];
 
+	/**
+	 * Type of the input.
+	 */
 	@property({type: String, reflect: true}) type: InputType = "text";
+
+	/**
+	 * Value pattern.
+	 */
 	@property({type: String, reflect: true}) pattern?: string;
-	@property({type: Number, reflect: true}) maxLength?: number;
+
+	/**
+	 * Min value length.
+	 */
 	@property({type: Number, reflect: true}) minLength?: number;
 
 	/**
-	 * Returns the form item
+	 * Max value length.
+	 */
+	@property({type: Number, reflect: true}) maxLength?: number;
+
+	/**
+	 * Renders the form item
 	 */
 	protected renderFormItem (): TemplateResult {
 		return html`

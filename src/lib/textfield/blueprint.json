@@ -1,0 +1,15 @@
+{
+	"input": "src/lib/textfield/blueprint.md",
+	"output": "src/lib/textfield/README.md",
+	"tag": "textfield-element",
+	"text": "Singleline text fields",
+	"demo": "http://elem.dev/demo/textfield",
+	"img": "https://raw.githubusercontent.com/andreasbm/elements/master/screenshots/textfield-element.png?token=AF-iBcyjgC0OGnP3B1p7Fkc63gl-kwI9ks5cg6mQwA%3D%3D",
+	"attributes": [
+		["Name", "Type", "Description", "Default value"],
+		["`type`", "string", "Type of the input.", "`'text'`"],
+		["`pattern`", "string", "Value pattern.", "`undefined`"],
+		["`minLength`", "number", "Min value length.", "`undefined`"],
+		["`maxLength`", "number", "Max value length.", "`undefined`"]
+	]
+}
