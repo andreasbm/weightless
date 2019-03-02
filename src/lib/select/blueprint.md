@@ -22,5 +22,7 @@ The `{{ tag }}` extends `InputBehavior`. Go to the [documentation](/src/lib/beha
 
 {{ slots }}
 
+The `{{ tag }}` extends `InputBehavior`. Go to the [documentation](/src/lib/behavior/input) to see more available slots.
+
 {{ template:contributors }}
 {{ template:license }}

@@ -15,6 +15,6 @@
 	],
 	"slots": [
 		["Name", "Description"],
-		["`unnamed`", "Default content."]
+		["`unnamed`", "<option> elements go here."]
 	]
 }

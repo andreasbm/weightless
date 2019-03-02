@@ -21,9 +21,19 @@ export interface ITextareaBehaviorProperties extends ITextfieldElementProperties
 export class TextareaElement extends TextfieldElement implements ITextareaBehaviorProperties {
 	static styles = [...TextfieldElement.styles, cssResult(styles)];
 
+	/**
+	 * Amount of rows.
+	 */
 	@property({type: Number, reflect: true}) rows?: number;
+
+	/**
+	 * Amount of columns.
+	 */
 	@property({type: Number, reflect: true}) cols?: number;
 
+	/**
+	 * Hooks up the element.
+	 */
 	connectedCallback () {
 		super.connectedCallback();
 		this.setAttribute("aria-multiline", "true");

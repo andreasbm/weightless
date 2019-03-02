@@ -1,9 +1,6 @@
 @import "../style/base";
 @import "../behavior/input/input-vars";
-
-:host {
-
-}
+@import "textarea-element-vars";
 
 ::slotted(textarea) {
 	resize: none;
