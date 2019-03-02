@@ -5,13 +5,8 @@
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#usage)
 
 ## ➤ Usage
-
-```html
-<button-element>Button</button-element>
-```
-
 <a href="http://elem.dev/demo/button" align="center">
-  <img src="https://raw.githubusercontent.com/andreasbm/elements/master/screenshots/button-element.png?token=AF-iBV1pZn7D_ITJDLgD6NVlQjtvXupXks5cgq0VwA%3D%3D" width="130" />
+  <img src="https://raw.githubusercontent.com/andreasbm/elements/master/screenshots/button-element.png?token=AF-iBV1pZn7D_ITJDLgD6NVlQjtvXupXks5cgq0VwA%3D%3D" width="700" />
 <a/>
 
 
