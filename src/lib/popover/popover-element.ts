@@ -450,7 +450,7 @@ export class PopoverElement<R = unknown> extends OverlayBehavior<R, IPopoverElem
 		return html`
 			<backdrop-element id="backdrop" @click="${this.clickAway}"></backdrop-element>
 			<div id="container" ?aria-expanded="${this.open}">
-				<focus-trap id="content" inactive="${!this.open}">
+				<focus-trap id="content" ?inactive="${!this.open}">
 					${this.renderContent()}
 				</focus-trap>
 			</div>
