@@ -20,7 +20,7 @@ describe("button-element", () => {
 
 	it("should render the slot", async () => {
 		const assignedNodes = assignedNodesMap($button.shadowRoot!);
-		expect(assignedNodes[""].length).to.equal(2);
+		expect(assignedNodes[""].length).to.be.above(0);
 	});
 
 	it("should interact with form elements", done => {

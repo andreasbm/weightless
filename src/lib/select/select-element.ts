@@ -1,7 +1,7 @@
 import { customElement, html, property } from "lit-element";
 import { TemplateResult } from "lit-html";
 import { ifDefined } from "lit-html/directives/if-defined";
-import { IInputBehaviorProperties, InputBehavior } from "../behavior/input-behavior/input-behavior";
+import { IInputBehaviorProperties, InputBehavior } from "../behavior/input/input-behavior";
 import { AriaRole } from "../util/aria";
 import { cssResult } from "../util/css";
 import { removeChildren } from "../util/dom";
@@ -20,6 +20,10 @@ export interface ISelectElementProperties extends IInputBehaviorProperties {
 @customElement("select-element")
 export class SelectElement extends InputBehavior implements ISelectElementProperties {
 	static styles = [...InputBehavior.styles, cssResult(styles)];
+
+	/**
+	 * Role of the select.
+	 */
 	@property({type: String, reflect: true}) role: AriaRole = "select";
 
 	/**

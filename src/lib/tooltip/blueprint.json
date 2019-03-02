@@ -1,0 +1,18 @@
+{
+	"input": "src/lib/tooltip/blueprint.md",
+	"output": "src/lib/tooltip/README.md",
+	"tag": "tooltip-element",
+	"text": "Informative context related text",
+	"demo": "http://elem.dev/demo/tooltip",
+	"img": "https://raw.githubusercontent.com/andreasbm/elements/master/screenshots/tooltip-element.png?token=AF-iBcyjgC0OGnP3B1p7Fkc63gl-kwI9ks5cg6mQwA%3D%3D",
+	"cssVariables": [
+		["Name", "Description"],
+		["`--tooltip-padding`", "Padding."],
+		["`--tooltip-bg`", "Background."],
+		["`--tooltip-color", "Color."]
+	],
+	"slots": [
+		["Name", "Description"],
+		["`unnamed`", "Default content."]
+	]
+}

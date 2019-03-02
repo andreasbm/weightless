@@ -1,6 +1,5 @@
 @import "../style/base";
-
-$popover-z-index: var(--popover-z-index, 12345678);
+@import "popover-element-vars";
 
 :host {
 	display: none;

@@ -1,6 +1,6 @@
 import { customElement, html } from "lit-element";
 import { TemplateResult } from "lit-html";
-import { CheckboxBehavior, ICheckboxBehaviorProperties } from "../behavior/checkbox-behavior/checkbox-behavior";
+import { CheckboxBehavior, ICheckboxBehaviorProperties } from "../behavior/checkbox/checkbox-behavior";
 import "../ripple";
 import { cssResult } from "../util/css";
 
@@ -17,7 +17,6 @@ export interface ICheckboxElementProperties extends ICheckboxBehaviorProperties 
  */
 @customElement("checkbox-element")
 export class CheckboxElement extends CheckboxBehavior implements ICheckboxElementProperties {
-
 	static styles = [...CheckboxBehavior.styles, cssResult(styles)];
 
 	/**

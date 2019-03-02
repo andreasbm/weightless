@@ -1,0 +1,3 @@
+@import "../style/base";
+
+$select-arrow-height: #{var(--select-arrow-height, #{size(8)})};

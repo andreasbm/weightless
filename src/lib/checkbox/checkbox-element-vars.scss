@@ -1,0 +1,25 @@
+@import "../style/base";
+
+$checkbox-size: var(--checkbox-size, #{size(20)});
+$checkbox-bg: var(--checkbox-bg, transparent);
+$checkbox-bg-checked: var(--checkbox-bg-checked, #{color("primary", $default-hue)});
+$checkbox-bg-disabled: var(--checkbox-bg-disabled, transparent);
+$checkbox-bg-disabled-checked: var(--checkbox-bg-disabled-checked, #{color("shade", $default-hue)});
+
+$checkbox-color: var(--checkbox-color, #{color("shade", $default-hue)});
+$checkbox-color-checked: var(--checkbox-color-checked, #{color("primary", $default-hue)});
+$checkbox-color-disabled: var(--checkbox-color-disabled, #{color("shade", $light-hue)});
+$checkbox-color-disabled-checked: var(--checkbox-color-disabled-checked, #{color("shade", $default-hue)});
+
+$checkbox-border-config: var(--checkbox-border-config, #{size(2)} solid);
+$checkbox-border-radius: var(--checkbox-border-radius, #{$border-radius-s});
+$checkbox-transition: var(--checkbox-transition, background #{$transition-duration-fast} #{$transition-deceleration-curve}, border-color #{$transition-duration-fast} #{$transition-deceleration-curve});
+
+$checkbox-checkmark-size: var(--checkbox-checkmark-size, #{size(12)});
+$checkbox-checkmark-stroke-color: var(--checkbox-checkmark-stroke-color, #{color-contrast("primary", $default-hue)});
+$checkbox-checkmark-transition: var(--checkbox-checkmark-transition, stroke-dashoffset #{$transition-duration-medium} #{$transition-deceleration-curve});
+$checkbox-checkmark-path-width: var(--checkbox-checkmark-path-width, #{size(3)});
+$checkbox-checkmark-path-dasharray: var(--checkbox-checkmark-path-dasharray, 30);
+$checkbox-checkmark-path-delay: var(--checkbox-checkmark-path-delay, 50ms);
+
+$checkbox-ripple-transform: var(--checkbox-ripple-transform, translate(-50%, -50%) scale(2));

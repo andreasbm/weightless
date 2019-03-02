@@ -5,7 +5,7 @@ import { ARROW_DOWN, ARROW_LEFT, ARROW_RIGHT, ARROW_UP } from "../../util/consta
 import { cssResult } from "../../util/css";
 import { queryParentRoots } from "../../util/dom";
 import { stopEvent } from "../../util/event";
-import { CheckboxBehavior, ICheckboxBehaviorProperties } from "../checkbox-behavior/checkbox-behavior";
+import { CheckboxBehavior, ICheckboxBehaviorProperties } from "../checkbox/checkbox-behavior";
 
 import styles from "./radio-behavior.scss";
 

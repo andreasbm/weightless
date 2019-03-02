@@ -8,6 +8,11 @@ import { renderAttributes } from "../util/dom";
 import styles from "./title-element.scss";
 
 /**
+ * Title levels.
+ */
+export type TitleLevel = 1 | 2 | 3 | 4 | 5 | 6;
+
+/**
  * Properties of the title.
  */
 export interface ITitleElementProperties {
@@ -22,7 +27,14 @@ export interface ITitleElementProperties {
 export class TitleElement extends LitElement implements ITitleElementProperties {
 	static styles = [sharedStyles, cssResult(styles)];
 
-	@property({type: Number, reflect: true}) level: 1 | 2 | 3 | 4 | 5 | 6 = 1;
+	/**
+	 * Level of the title.
+	 */
+	@property({type: Number, reflect: true}) level: TitleLevel = 1;
+
+	/**
+	 * Role of the title.
+	 */
 	@property({type: String, reflect: true}) role: AriaRole = "heading";
 
 	/**
@@ -41,7 +53,7 @@ export class TitleElement extends LitElement implements ITitleElementProperties 
 	}
 
 	/**
-	 * Returns the template for the component.
+	 * Returns the template for the element.
 	 */
 	protected render (): TemplateResult {
 		return html`

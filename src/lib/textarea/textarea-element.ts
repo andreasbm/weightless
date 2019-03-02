@@ -1,6 +1,6 @@
 import { customElement, html, property, TemplateResult } from "lit-element";
 import { ifDefined } from "lit-html/directives/if-defined";
-import { IFormItemBehaviorProperties } from "../behavior/form-item-behavior";
+import { IFormItemBehaviorProperties } from "../behavior/form-item";
 import { ITextfieldElementProperties, TextfieldElement } from "../textfield/textfield-element";
 import { cssResult } from "../util/css";
 import { isHidden } from "../util/dom";
@@ -21,9 +21,19 @@ export interface ITextareaBehaviorProperties extends ITextfieldElementProperties
 export class TextareaElement extends TextfieldElement implements ITextareaBehaviorProperties {
 	static styles = [...TextfieldElement.styles, cssResult(styles)];
 
+	/**
+	 * Amount of rows.
+	 */
 	@property({type: Number, reflect: true}) rows?: number;
+
+	/**
+	 * Amount of columns.
+	 */
 	@property({type: Number, reflect: true}) cols?: number;
 
+	/**
+	 * Hooks up the element.
+	 */
 	connectedCallback () {
 		super.connectedCallback();
 		this.setAttribute("aria-multiline", "true");

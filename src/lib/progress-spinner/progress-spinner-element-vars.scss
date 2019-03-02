@@ -1,0 +1,14 @@
+@import "../style/base";
+
+$progress-spinner-size: var(--progress-spinner-size, #{size(48)});
+
+$progress-spinner-color: var(--progress-spinner-color, #{color("primary")});
+$progress-spinner-buffer-color: var(--progress-spinner-buffer-color, #{color("primary", 500, 0.2)});
+
+$progress-spinner-stroke-width: var(--progress-spinner-stroke-width, 10%);
+
+$progress-spinner-indeterminate-container-duration: var(--progress-spinner-indeterminate-container-duration, 2s);
+$progress-spinner-indeterminate-progress-duration: var(--progress-spinner-indeterminate-progress-duration, 4s);
+$progress-spinner-indeterminate-timing-function: var(--progress-spinner-indeterminate-timing-function, #{$transition-standard-curve});
+
+$progress-spinner-determinate-progress-transition: var(--progress-spinner-determinate-progress-transition, stroke-dashoffset #{$transition-linear});

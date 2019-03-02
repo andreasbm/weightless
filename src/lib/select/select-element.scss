@@ -1,10 +1,5 @@
 @import "../style/base";
-
-$select-arrow-height: #{var(--select-arrow-height, #{size(8)})};
-
-:host {
-
-}
+@import "select-element-vars";
 
 #arrow {
 	fill: var(--_input-state-color);

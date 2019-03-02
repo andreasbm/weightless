@@ -1,0 +1,51 @@
+{
+	"input": "src/lib/dialog/blueprint.md",
+	"output": "src/lib/dialog/README.md",
+	"tag": "dialog-element",
+	"text": "Highly interruptive messages",
+	"demo": "http://elem.dev/demo/dialog",
+	"img": "https://raw.githubusercontent.com/andreasbm/elements/documentation/screenshots/dialog-element.png?token=AF-iBQSqMzuMAQ5EiwnHa2DFSM_IS0ihks5cg7uDwA%3D%3D",
+	"attributes": [
+		["Name", "Type", "Description", "Default value"],
+		["`size`", "'small' | 'medium' | 'large' | 'auto' | 'fullscreen'", "Size of the dialog.", "`undefined`"],
+		["`scrollable`", "boolean", "Makes the dialog scrollable.", "`false`"],
+		["`role`", "string", "Role of the dialog.", "`'dialog'`"]
+	],
+	"cssVariables": [
+		["Name", "Description"],
+		["`--dialog-elevation", "Box shadow."],
+		["`--dialog-bg`", "Background."],
+		["`--dialog-color`", "Color."],
+		["`--dialog-border-radius`", "Border radius."],
+		["`--dialog-z-index`", "z-index."],
+		["`--dialog-will-change`", "Will change."],
+		["`--dialog-width`", "Default width."],
+		["`--dialog-height`", "Default height."],
+		["`--dialog-width-s`", "Small width."],
+		["`--dialog-height-s`", "Small height"],
+		["`--dialog-width-m`", "Medium width."],
+		["`--dialog-height-m`", "Medium height"],
+		["`--dialog-width-l`", "Large width."],
+		["`--dialog-height-l`", "Large height"],
+		["`--dialog-width-fullscreen`", "Fullscreen width."],
+		["`--dialog-height-fullscreen`", "Fullscreen height"],
+		["`--dialog-width-auto`", "Auto width."],
+		["`--dialog-height-auto`", "Auto height."],
+		["`--dialog-min-width`", "Min width."],
+		["`--dialog-min-height`", "Min height."],
+		["`--dialog-max-width`", "Max width."],
+		["`--dialog-max-height`", "Max height."],
+		["`--dialog-scrollable-border`", "Border when scrollable."],
+		["`--dialog-header-padding`", "Padding of the header slot."],
+		["`--dialog-header-padding-scrollable`", "Padding of the header slot when scrollable."],
+		["`--dialog-content-padding`", "Padding of the content slot."],
+		["`--dialog-footer-padding`", "Padding of the footer slot."]
+	],
+	"slots": [
+		["Name", "Description"],
+		["`header`", "Header content."],
+		["`content`", "Body content."],
+		["`footer`", "Footer content."],
+		["`unnamed`", "Default content."]
+	]
+}

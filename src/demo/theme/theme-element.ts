@@ -62,7 +62,7 @@ export class ThemeComponent extends LitElement {
 	protected render () {
 		return html`
 			${repeat(this.themes, theme => html`
-				<div class="theme-button theme-${theme}"
+				<div class="theme-button theme-${theme.name}"
 					 tabIndex="0"
 					 @keydown="${(e: KeyboardEvent) => e.code === ENTER ? this.setTheme(theme.name) : null}"
 					 style="background: ${theme.baseColor}"

@@ -1,6 +1,6 @@
 import { customElement, html } from "lit-element";
 import { TemplateResult } from "lit-html";
-import { IProgressBehaviorProperties, ProgressBehavior, ProgressMode } from "../behavior/progress-behavior/progress-behavior";
+import { IProgressBehaviorProperties, ProgressBehavior, ProgressMode } from "../behavior/progress/progress-behavior";
 import { cssResult } from "../util/css";
 
 import styles from "./progress-bar-element.scss";
@@ -16,11 +16,10 @@ export interface IProgressBarElementProperties extends IProgressBehaviorProperti
  */
 @customElement("progress-bar-element")
 export class ProgressBarElement extends ProgressBehavior implements IProgressBarElementProperties {
-
 	static styles = [...ProgressBehavior.styles, cssResult(styles)];
 
 	/**
-	 * Returns the template for the component.
+	 * Returns the template for the element.
 	 */
 	protected render (): TemplateResult {
 		return html`

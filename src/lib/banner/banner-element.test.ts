@@ -29,9 +29,9 @@ describe("banner-element", () => {
 	it("should render the slots", async () => {
 		const assignedNodes = assignedNodesMap($banner.shadowRoot!);
 
-		expect(assignedNodes["icon"].length).to.equal(1);
-		expect(assignedNodes["text"].length).to.equal(1);
-		expect(assignedNodes["action"].length).to.equal(2);
+		expect(assignedNodes["icon"].length).to.be.above(0);
+		expect(assignedNodes["text"].length).to.be.above(0);
+		expect(assignedNodes["action"].length).to.be.above(0);
 	});
 
 	/**

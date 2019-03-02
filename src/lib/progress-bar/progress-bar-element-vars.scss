@@ -1,0 +1,13 @@
+@import "../style/base";
+
+$progress-bar-height: var(--progress-bar-height, #{size(4)});
+
+$progress-bar-bg: var(--progress-bar-bg, #{color("shade", 300)});
+$progress-bar-color: var(--progress-bar-color, #{color("primary", 500)});
+$progress-bar-buffer-color: var(--progress-bar-buffer-color, #{color("primary", 500, 0.5)});
+
+$progress-bar-determinate-transition: var(--progress-bar-determinate-transition, transform #{$transition-linear});
+
+$progress-bar-indeterminate-duration: var(--progress-bar-indeterminate-duration, 2.1s);
+$progress-bar-indeterminate-short-delay: var(--progress-bar-indeterminate-short-delay, 1.15s);
+$progress-bar-indeterminate-timing-function: var(--progress-bar-indeterminate-timing-function, #{$transition-standard-curve});

@@ -58,22 +58,68 @@ const ANIMATION_CONFIG: KeyframeAnimationOptions = {
 export class RippleElement extends LitElement implements IRippleElementProperties {
 	static styles = [sharedStyles, cssResult(styles)];
 
-	private listeners: EventListenerSubscription[] = [];
-	private rippleAnimationListeners: EventListenerSubscription[] = [];
-
+	/**
+	 * Makes the ripple visible outside the bounds.
+	 */
 	@property({type: Boolean, reflect: true}) unbounded: boolean = false;
+
+	/**
+	 * Makes ripple appear from the center.
+	 */
 	@property({type: Boolean, reflect: true}) centered: boolean = false;
+
+	/**
+	 * Overlays the ripple.
+	 */
 	@property({type: Boolean, reflect: true}) overlay: boolean = false;
+
+	/**
+	 * Disables the ripple.
+	 */
 	@property({type: Boolean, reflect: true}) disabled: boolean = false;
+
+	/**
+	 * Allows focusin to spawn a ripple.
+	 */
 	@property({type: Boolean, reflect: true}) focusable: boolean = false;
+
+	/**
+	 * Releases the ripple after it has been spawned.
+	 */
 	@property({type: Boolean, reflect: true}) autoRelease: boolean = false;
+
+	/**
+	 * Initial animation duration.
+	 */
 	@property({type: Number}) initialDuration: number = 1000;
+
+	/**
+	 * Fade out animation duration.
+	 */
 	@property({type: Number}) releaseDuration: number = 500;
+
+	/**
+	 * Role of the ripple.
+	 */
 	@property({type: String, reflect: true}) role: AriaRole = "presentation";
+
+	/**
+	 * Target for the spawn ripple events.
+	 */
 	@property({type: Object}) target: EventTarget = this;
 
 	/**
-	 * Hook up the component.
+	 * Event subscribers on the target.
+	 */
+	private listeners: EventListenerSubscription[] = [];
+
+	/**
+	 * Event subscribers present during the ripple animation.
+	 */
+	private rippleAnimationListeners: EventListenerSubscription[] = [];
+
+	/**
+	 * Hooks up the element.
 	 */
 	connectedCallback () {
 		super.connectedCallback();
@@ -86,7 +132,7 @@ export class RippleElement extends LitElement implements IRippleElementPropertie
 	}
 
 	/**
-	 * Tears down the component.
+	 * Tears down the element.
 	 */
 	disconnectedCallback () {
 		super.disconnectedCallback();
@@ -285,7 +331,7 @@ export class RippleElement extends LitElement implements IRippleElementPropertie
 	}
 
 	/**
-	 * Returns the template for the component.
+	 * Returns the template for the element.
 	 */
 	protected render (): TemplateResult {
 		return html``;

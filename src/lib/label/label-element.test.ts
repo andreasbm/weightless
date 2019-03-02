@@ -44,10 +44,13 @@ describe("label-element", () => {
 	 * @param $checkbox
 	 * @param done
 	 */
-	function testRefireClick ($label: LabelElement, $checkbox: CheckboxElement, done: (() => void)) {
+	function expectRefireClick ($label: LabelElement, $checkbox: CheckboxElement, done: (() => void)) {
 
 		// Listen for click event (prevent the default reload behavior).
-		$checkbox.addEventListener("click", () => done());
+		$checkbox.addEventListener("click", e => {
+			e.preventDefault();
+			done();
+		});
 
 		// Ensure that the targeted elements are correct
 		expect($label.getTargetElement()).to.be.equal($checkbox);
@@ -58,15 +61,19 @@ describe("label-element", () => {
 
 	it("should render the slots", async () => {
 		const assignedNodes = assignedNodesMap($label2.shadowRoot!);
-		expect(assignedNodes[""].length).to.equal(3);
+		expect(assignedNodes[""].length).to.be.above(0);
 	});
 
 	it("should interact with associated element via the for attribute", done => {
-		testRefireClick($label1, $checkbox1, done);
+		expectRefireClick($label1, $checkbox1, done);
 	});
 
 	it("should interact with associated element via the slot", done => {
-		testRefireClick($label2, $checkbox2, done);
+		expectRefireClick($label2, $checkbox2, done);
+	});
+
+	it("should add aria-labelledby when using the for attribute", () => {
+		expect($checkbox1.getAttribute("aria-labelledby")).to.equal($label1.id);
 	});
 });
 

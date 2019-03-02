@@ -1,6 +1,6 @@
 import { customElement, html } from "lit-element";
 import { TemplateResult } from "lit-html";
-import { IRadioBehaviorProperties, RadioBehavior } from "../behavior/radio-behavior/radio-behavior";
+import { IRadioBehaviorProperties, RadioBehavior } from "../behavior/radio/radio-behavior";
 
 import "../ripple";
 import { cssResult } from "../util/css";
@@ -21,7 +21,7 @@ export class RadioElement extends RadioBehavior implements IRadioElementProperti
 	static styles = [...RadioBehavior.styles, cssResult(styles)];
 
 	/**
-	 * Returns the template for the component.
+	 * Returns the template for the element.
 	 */
 	protected render (): TemplateResult {
 		return html`

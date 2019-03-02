@@ -3,46 +3,29 @@ import { ScreenshotOptions } from "puppeteer";
 const path = require("path");
 const puppeteer = require("puppeteer");
 
-interface Group {
-	page: string;
-	folder?: string;
-	screenshots?: Screenshot[];
-}
-
-interface Screenshot {
-	tag: string;
-	name?: string;
-	handle?: string;
-	options?: ScreenshotOptions;
-}
-
 const ORIGIN = `https://pwa-test-10072.firebaseapp.com`;
 const VIEWPORT = {width: 1000, height: 1000, deviceScaleFactor: 2};
 const SCREENSHOT_OPTIONS: ScreenshotOptions = {omitBackground: true, type: "png"};
 
 const ELEMENTS = [
+	"banner",
 	"button",
+	"card",
+	"checkbox",
 	"dialog",
 	"card",
-	"popover"
-];
-
-/**
- * Screenshot instructions.
- */
-const INSTRUCTIONS: Group[] = [
-	{
-		page: "button"
-	},
-	{
-		page: "card"
-	},
-	{
-		page: "popover"
-	},
-	{
-		page: "dialog"
-	}
+	"icon",
+	"label",
+	"popover",
+	"progress-bar",
+	"progress-spinner",
+	"radio",
+	"ripple",
+	"select",
+	"textarea",
+	"textfield",
+	"title",
+	"tooltip"
 ];
 
 /**
@@ -58,7 +41,17 @@ function getDemoUrl (elem: string): string {
  * @param elem
  */
 function getHandle (elem: string): string {
-	return `document.querySelector('#router-slot > elements-page').shadowRoot.querySelector('#router > router-slot > ${elem}-page').shadowRoot.querySelector('demo-element:nth-child(1)')`;
+	return `document.querySelector('#router-slot > elements-page').shadowRoot.querySelector('#router > router-slot > ${elem}-page').shadowRoot.querySelector('demo-element[default]')`;
+}
+
+/**
+ * Waits.
+ * @param ms
+ */
+async function wait (ms: number) {
+	return new Promise(res => {
+		setTimeout(res, ms);
+	})
 }
 
 /**
@@ -71,7 +64,12 @@ const start = async () => {
 
 	// Go through all of the instructions
 	for (const elem of ELEMENTS) {
+		console.log(`> "${elem}" screenshot...`);
+
 		await page.goto(getDemoUrl(elem), {waitUntil: "networkidle2"});
+
+		// Add 300ms timeout instead of customElements.whenDefined(..)
+		await wait(300);
 
 		const $elem = await page.evaluateHandle(getHandle(elem));
 
@@ -90,3 +88,4 @@ const start = async () => {
 
 
 start().then();
+
