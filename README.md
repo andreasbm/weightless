@@ -1,12 +1,12 @@
 <p align="center">
-  <img src="https://raw.githubusercontent.com/andreasbm/elements/master/assets/logo-text.png?token=AF-iBbIgtdFCIY4q_sujNYJVhEub5-sZks5chEtbwA%3D%3D" alt="Logo" width="400" height="auto" />
+  <img src="https://raw.githubusercontent.com/andreasbm/elements/master/assets/logo-text-dark.png?token=AF-iBdlG6k8f6xzqhH4Olmo4eCu6LGLWks5chPVBwA%3D%3D" alt="Logo" width="400" height="auto" />
 </p>
-<h1 align="center">@appnest/elements</h1>
+<h1 align="center">@appnest/weightless</h1>
 <p align="center">
-		<a href="https://npmcharts.com/compare/@appnest/elements?minimal=true"><img alt="Downloads per month" src="https://img.shields.io/npm/dm/@appnest/elements.svg" height="20"/></a>
-<a href="https://www.npmjs.com/package/@appnest/elements"><img alt="NPM Version" src="https://img.shields.io/npm/v/@appnest/elements.svg" height="20"/></a>
-<a href="https://david-dm.org/andreasbm/elements"><img alt="Dependencies" src="https://img.shields.io/david/andreasbm/elements.svg" height="20"/></a>
-<a href="https://github.com/andreasbm/weightless/graphs/contributors"><img alt="Contributors" src="https://img.shields.io/github/contributors/andreasbm/elements.svg" height="20"/></a>
+		<a href="https://npmcharts.com/compare/@weightless/all?minimal=true"><img alt="Downloads per month" src="https://img.shields.io/npm/dm/@weightless/all.svg" height="20"/></a>
+<a href="https://www.npmjs.com/package/@weightless/all"><img alt="NPM Version" src="https://img.shields.io/npm/v/@weightless/all.svg" height="20"/></a>
+<a href="https://david-dm.org/andreasbm/weightless"><img alt="Dependencies" src="https://img.shields.io/david/andreasbm/weightless.svg" height="20"/></a>
+<a href="https://github.com/andreasbm/weightless/graphs/contributors"><img alt="Contributors" src="https://img.shields.io/github/contributors/andreasbm/weightless.svg" height="20"/></a>
 	</p>
 
 <p align="center">
@@ -46,7 +46,7 @@
 ## ➤ Installation
 
 ```javascript
-npm i @appnest/elements
+npm i @weightless/all
 ```
 
 
