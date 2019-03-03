@@ -9,7 +9,7 @@
 	</p>
 
 <p align="center">
-  <b>High-quality Web Components</b></br>
+  <b>High-quality Web Components with a small footprint</b></br>
   <sub>Web Components built to be used. They are lightweight, have a simple API and are easy to extend and compose. Go here to see a demo <a href="https://weightless.dev/demo">https://weightless.dev/demo</a>.<sub>
 </p>
 

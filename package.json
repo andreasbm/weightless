@@ -4,7 +4,7 @@
 	"license": "MIT",
 	"module": "index.js",
 	"author": "Appnest",
-	"description": "High-quality Web Components",
+	"description": "High-quality Web Components with a small footprint",
 	"bugs": {
 		"url": "https://github.com/andreasbm/weightless/issues"
 	},
@@ -14,12 +14,17 @@
 		"url": "git+https://github.com/andreasbm/weightless.git"
 	},
 	"keywords": [
+		"web",
+		"components",
 		"custom",
 		"elements",
-		"web",
+		"lit-element",
+		"lit-html",
+		"lit",
+		"ui",
+		"library",
 		"component",
-		"custom element",
-		"web component"
+		"element"
 	],
 	"main": "index.js",
 	"types": "index.d.ts",
