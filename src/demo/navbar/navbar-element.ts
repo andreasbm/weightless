@@ -88,7 +88,7 @@ export class ThemeComponent extends LitElement {
 					</button-element>
 					<router-link id="logo-wrapper" path="/">
 						<img id="logo" src="assets/logo.svg" />
-						<img id="text" src="assets/text.svg" />
+						<img id="text" src="${this.darkMode ? `assets/text-light.svg` : `assets/text-dark.svg`}" />
 					</router-link>
 				</div>
 				<div slot="right">
