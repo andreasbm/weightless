@@ -1,7 +1,6 @@
 <p align="center">
   <img src="https://raw.githubusercontent.com/andreasbm/elements/master/assets/logo-text-dark.png?token=AF-iBdlG6k8f6xzqhH4Olmo4eCu6LGLWks5chPVBwA%3D%3D" alt="Logo" width="400" height="auto" />
 </p>
-<h1 align="center">@appnest/weightless</h1>
 <p align="center">
 		<a href="https://npmcharts.com/compare/@weightless/all?minimal=true"><img alt="Downloads per month" src="https://img.shields.io/npm/dm/@weightless/all.svg" height="20"/></a>
 <a href="https://www.npmjs.com/package/@weightless/all"><img alt="NPM Version" src="https://img.shields.io/npm/v/@weightless/all.svg" height="20"/></a>
