@@ -129,7 +129,7 @@ export default class PopoverPage extends LitElement {
 			<demo-element>
 				<code-example-element headline='<popover-element anchor="#auto-open-button" .anchorOpenEvents="\${["mouseover"]}" fixed>...'>
 					<button-element id="auto-open-button">Hover me!</button-element>
-					<popover-element anchor="#auto-open-button" .anchorOpenEvents="${["mouseover"]}" .scrollContainer="${getMainScrollContainer()}" fixed anchorOriginX="center" anchorOriginY="center" transformOriginX="center">
+					<popover-element anchor="#auto-open-button" .anchorOpenEvents="${["mouseover"]}" .scrollContainer="${getMainScrollContainer()}" fixed disableFocusTrap anchorOriginX="center" anchorOriginY="center" transformOriginX="center">
 						<popover-card-element>I auto opened!</popover-card-element>
 					</popover-element>
 				</code-example-element>

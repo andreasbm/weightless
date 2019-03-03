@@ -28,6 +28,7 @@ export interface IOverlayBehaviorBaseProperties {
 	backdrop: boolean;
 	duration: number;
 	fixed: boolean;
+	disableFocusTrap: boolean;
 	scrollContainer: EventTarget;
 }
 
@@ -55,6 +56,9 @@ export abstract class OverlayBehavior<R, C extends Partial<IOverlayBehaviorBaseP
 
 	// Whether the overlay is open or not.
 	@property({type: Boolean, reflect: true}) open: boolean = false;
+
+	// Whether the focus trap be disabled.
+	@property({type: Boolean, reflect: true}) disableFocusTrap: boolean = false;
 
 	// Whether the backdrop is visible or not.
 	@property({type: Boolean, reflect: true}) backdrop: boolean = false;
@@ -330,7 +334,11 @@ export abstract class OverlayBehavior<R, C extends Partial<IOverlayBehaviorBaseP
 			addListener(this, "keydown", this.onKeyDown)
 		);
 
-		this.trapFocus();
+		// Focus the first element if element should be trap
+		if (!this.disableFocusTrap) {
+			this.trapFocus();
+		}
+
 		this.dispatchOverlayEvent(OverlayBehaviorEvent.DID_SHOW);
 	}
 

@@ -156,7 +156,7 @@ export class DialogElement<R = unknown> extends OverlayBehavior<R, Partial<IDial
 	render (): TemplateResult {
 		return html`
 			<backdrop-element id="backdrop" @click="${this.clickAway}"></backdrop-element>
-			<focus-trap id="dialog" ?inactive="${!this.open}">
+			<focus-trap id="dialog" ?inactive="${!this.open || this.disableFocusTrap}">
 				<slot name="header"></slot>
 				<slot name="content"></slot>
 				<slot></slot>
