@@ -2,7 +2,7 @@
 	"input": "src/lib/radio/blueprint.md",
 	"output": "src/lib/radio/README.md",
 	"tag": "radio-element",
-	"demo": "http://elem.dev/demo/radio",
+	"demo": "https://weightless.dev/demo/radio",
 	"img": "https://raw.githubusercontent.com/andreasbm/elements/master/screenshots/radio-element.png?token=AF-iBcoNrrO2pTIZCQ-9BR6Ih6wh0bq7ks5chEqcwA%3D%3D",
 	"text": "Select one option from a set.",
 	"cssVariables": [

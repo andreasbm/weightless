@@ -1,17 +1,17 @@
 {
-	"name": "@appnest/elements",
+	"name": "@appnest/weightless",
 	"version": "0.0.19",
 	"license": "MIT",
 	"module": "index.js",
 	"author": "Appnest",
 	"description": "High-quality Web Components",
 	"bugs": {
-		"url": "https://github.com/andreasbm/elements/issues"
+		"url": "https://github.com/andreasbm/weightless/issues"
 	},
-	"homepage": "https://github.com/andreasbm/elements#readme",
+	"homepage": "https://github.com/andreasbm/weightless#readme",
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/andreasbm/elements.git"
+		"url": "git+https://github.com/andreasbm/weightless.git"
 	},
 	"keywords": [
 		"custom",
@@ -92,7 +92,7 @@
 		{
 			"name": "You?",
 			"img": "https://joeschmoe.io/api/v1/random",
-			"url": "https://github.com/andreasbm/elements/blob/master/CONTRIBUTING.md"
+			"url": "https://github.com/andreasbm/weightless/blob/master/CONTRIBUTING.md"
 		}
 	]
 }

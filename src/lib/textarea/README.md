@@ -1,11 +1,11 @@
 <h1 align="center">textarea-element</h1>
-<p align="center">Multiline text fields. Go <a href="http://elem.dev/demo/textarea">here</a> to try the demo.</p>
+<p align="center">Multiline text fields. Go <a href="https://weightless.dev/demo/textarea">here</a> to try the demo.</p>
 
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#usage)
 
 ## ➤ Usage
-<a href="http://elem.dev/demo/textarea" align="center">
+<a href="https://weightless.dev/demo/textarea" align="center">
   <img src="https://raw.githubusercontent.com/andreasbm/elements/master/screenshots/textarea-element.png?token=AF-iBZJNydxFHIc4sQBFRLt8o2_qR34hks5chErwwA%3D%3D" width="700" />
 </a>
 
@@ -40,9 +40,9 @@ The `textarea-element` extends `TextfieldElement`. Go to the [documentation](/sr
 
 ## ➤ Contributors
 	
-|[<img alt="Andreas Mehlsen" src="https://avatars1.githubusercontent.com/u/6267397?s=460&v=4" width="100">](https://twitter.com/andreasmehlsen) | [<img alt="You?" src="https://joeschmoe.io/api/v1/random" width="100">](https://github.com/andreasbm/elements/blob/master/CONTRIBUTING.md)|
+|[<img alt="Andreas Mehlsen" src="https://avatars1.githubusercontent.com/u/6267397?s=460&v=4" width="100">](https://twitter.com/andreasmehlsen) | [<img alt="You?" src="https://joeschmoe.io/api/v1/random" width="100">](https://github.com/andreasbm/weightless/blob/master/CONTRIBUTING.md)|
 |:---: | :---:|
-|[Andreas Mehlsen](https://twitter.com/andreasmehlsen) | [You?](https://github.com/andreasbm/elements/blob/master/CONTRIBUTING.md)|
+|[Andreas Mehlsen](https://twitter.com/andreasmehlsen) | [You?](https://github.com/andreasbm/weightless/blob/master/CONTRIBUTING.md)|
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#license)
 

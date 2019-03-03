@@ -2,7 +2,7 @@
 	"input": "src/lib/tooltip/blueprint.md",
 	"output": "src/lib/tooltip/README.md",
 	"tag": "tooltip-element",
-	"demo": "http://elem.dev/demo/tooltip",
+	"demo": "https://weightless.dev/demo/tooltip",
 	"img": "https://raw.githubusercontent.com/andreasbm/elements/master/screenshots/tooltip-element.png?token=AF-iBYKqW5Hm2x5ac_PMHEQ6wGDqACyVks5chEsqwA%3D%3D",
 	"text": "Informative context related text",
 	"cssVariables": [

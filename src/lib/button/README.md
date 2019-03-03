@@ -1,12 +1,12 @@
 <h1 align="center">button-element</h1>
-<p align="center">Allow users to take actions, and make choices, with a single tap. Go <a href="http://elem.dev/demo/button">here</a> to try the demo.</p>
+<p align="center">Allow users to take actions, and make choices, with a single tap. Go <a href="https://weightless.dev/demo/button">here</a> to try the demo.</p>
 
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#usage)
 
 ## ➤ Usage
 
-<a href="http://elem.dev/demo/button" align="center">
+<a href="https://weightless.dev/demo/button" align="center">
   <img src="https://raw.githubusercontent.com/andreasbm/elements/master/screenshots/button-element.png?token=AF-iBV1pZn7D_ITJDLgD6NVlQjtvXupXks5cgq0VwA%3D%3D" width="700" />
 </a>
 
@@ -66,9 +66,9 @@
 
 ## ➤ Contributors
 	
-|[<img alt="Andreas Mehlsen" src="https://avatars1.githubusercontent.com/u/6267397?s=460&v=4" width="100">](https://twitter.com/andreasmehlsen) | [<img alt="You?" src="https://joeschmoe.io/api/v1/random" width="100">](https://github.com/andreasbm/elements/blob/master/CONTRIBUTING.md)|
+|[<img alt="Andreas Mehlsen" src="https://avatars1.githubusercontent.com/u/6267397?s=460&v=4" width="100">](https://twitter.com/andreasmehlsen) | [<img alt="You?" src="https://joeschmoe.io/api/v1/random" width="100">](https://github.com/andreasbm/weightless/blob/master/CONTRIBUTING.md)|
 |:---: | :---:|
-|[Andreas Mehlsen](https://twitter.com/andreasmehlsen) | [You?](https://github.com/andreasbm/elements/blob/master/CONTRIBUTING.md)|
+|[Andreas Mehlsen](https://twitter.com/andreasmehlsen) | [You?](https://github.com/andreasbm/weightless/blob/master/CONTRIBUTING.md)|
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#license)
 

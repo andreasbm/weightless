@@ -2,7 +2,7 @@
 	"input": "src/lib/label/blueprint.md",
 	"output": "src/lib/label/README.md",
 	"tag": "label-element",
-	"demo": "http://elem.dev/demo/label",
+	"demo": "https://weightless.dev/demo/label",
 	"img": "https://raw.githubusercontent.com/andreasbm/elements/master/screenshots/label-element.png?token=AF-iBft0B2brPzwNC_jHXJ7wZKxOtAoJks5chEnjwA%3D%3D",
 	"text": "Make form elements more accessible",
 	"attributes": [

@@ -2,7 +2,7 @@
 	"input": "src/lib/banner/blueprint.md",
 	"output": "src/lib/banner/README.md",
 	"tag": "banner-element",
-	"demo": "http://elem.dev/demo/banner",
+	"demo": "https://weightless.dev/demo/banner",
 	"img": "https://raw.githubusercontent.com/andreasbm/elements/master/screenshots/banner-element.png?token=AF-iBbNvw_OKWWkTFf2wuzBu9bJLwio1ks5chEfywA%3D%3D",
 	"text": "Display a non-interruptive message and related optional actions",
 	"attributes": [

@@ -2,7 +2,7 @@
 	"input": "src/lib/checkbox/blueprint.md",
 	"output": "src/lib/checkbox/README.md",
 	"tag": "checkbox-element",
-	"demo": "http://elem.dev/demo/checkbox",
+	"demo": "https://weightless.dev/demo/checkbox",
 	"img": "https://raw.githubusercontent.com/andreasbm/elements/master/screenshots/checkbox-element.png?token=AF-iBe24iyQPNmcdPiK5oPZhd8a_acCTks5chEhjwA%3D%3D",
 	"text": "Turn an option on or off",
 	"attributes": [

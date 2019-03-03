@@ -2,7 +2,7 @@
 	"input": "src/lib/popover-card/blueprint.md",
 	"output": "src/lib/popover-card/README.md",
 	"tag": "popover-card-element",
-	"demo": "http://elem.dev/demo/popover",
+	"demo": "https://weightless.dev/demo/popover",
 	"img": "https://raw.githubusercontent.com/andreasbm/elements/documentation/screenshots/popover-element.png?token=AF-iBQSqMzuMAQ5EiwnHa2DFSM_IS0ihks5cg7uDwA%3D%3D",
 	"text": "Give popovers a contextual flair",
 	"cssVariables": [

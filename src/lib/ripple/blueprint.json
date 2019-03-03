@@ -2,7 +2,7 @@
 	"input": "src/lib/ripple/blueprint.md",
 	"output": "src/lib/ripple/README.md",
 	"tag": "ripple-element",
-	"demo": "http://elem.dev/demo/ripple",
+	"demo": "https://weightless.dev/demo/ripple",
 	"img": "https://raw.githubusercontent.com/andreasbm/elements/master/screenshots/ripple-element.png?token=AF-iBfW58puayCKEgAhQxjkFbGJsFLBeks5chEq4wA%3D%3D",
 	"text": "Indicate touch actions",
 	"attributes": [
