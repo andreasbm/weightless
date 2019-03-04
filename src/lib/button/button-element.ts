@@ -154,7 +154,7 @@ export class ButtonElement extends FormItemBehavior implements IButtonElementPro
 	 */
 	render (): TemplateResult {
 		return html`
-			<ripple-element id="ripple" overlay .target="${this}" ?disabled="${this.disabled || this.noRipple}"></ripple-element>
+			<ripple-element id="ripple" overlay .target="${this}" ?centered="${this.fab}" ?disabled="${this.disabled || this.noRipple}"></ripple-element>
 			<slot></slot>
 			${this.renderFormItem()}
 		`;

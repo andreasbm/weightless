@@ -37,7 +37,7 @@ All elements must have sufficient up-to-date documentation.
 
 ### 🔦 Accessible
 
-All elements must follow the [best practices](https://www.w3.org/TR/using-aria) when it comes to accessibility.
+All elements must follow the [best practices](https://www.w3.org/WAI/standards-guidelines/aria/) when it comes to accessibility.
 
 ### 🦶 Small footprint
 

@@ -10,8 +10,9 @@ import "../../../lib/popover-card/popover-card-element";
 import { cssResult } from "../../../lib/util/css";
 import { setProperty } from "../../../lib/util/dom";
 import { Palette, setPalette } from "../../../lib/util/theme";
+import { GITHUB_URL } from "../../constants";
 import { sharedStyles } from "../../style/shared";
-import "../octo-banner/octo-element";
+import "../octo/octo-element";
 import "../theme/theme-element";
 import styles from "./navbar-element.scss";
 
@@ -120,7 +121,7 @@ export class ThemeComponent extends LitElement {
 							<theme-element @update="${() => this.$themePopover.hide()}"></theme-element>
 						</popover-card-element>
 					</popover-element>
-					<a id="octo" href="https://github.com/andreasbm/weightless" target="_blank"><octo-element></octo-element></a>
+					<a id="octo" href="${GITHUB_URL}" target="_blank"><octo-element></octo-element></a>
 				</div>
 			</nav-element>
 		`;
