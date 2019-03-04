@@ -4,8 +4,8 @@ import "../../../../lib/button/button-element";
 import "../../../../lib/textfield/textfield-element";
 import "../../../../lib/icon/icon-element";
 import "../../../../lib/title/title-element";
-import "../../../code-example/code-example-element";
-import "../../../demo/demo-element";
+import "../../../elements/code-example/code-example-element";
+import "../../../elements/demo/demo-element";
 
 @customElement("button-page")
 export default class ButtonPage extends LitElement {

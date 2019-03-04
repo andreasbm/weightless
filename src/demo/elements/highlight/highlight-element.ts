@@ -1,9 +1,9 @@
 import { customElement, html, LitElement, property, PropertyValues, query } from "lit-element";
-import { sanitize } from "../../lib/util/dom";
+import { sanitize } from "../../../lib/util/dom";
 
-import codeStyles from "./../../../node_modules/code-prettify/loader/prettify.css";
+import codeStyles from "../../../../node_modules/code-prettify/loader/prettify.css";
 import styles from "./highlight-element.scss";
-import "./../../../node_modules/code-prettify/loader/run_prettify.js";
+import "../../../../node_modules/code-prettify/loader/run_prettify.js";
 
 declare const PR: {
 	prettyPrint (): void,

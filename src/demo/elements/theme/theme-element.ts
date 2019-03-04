@@ -1,11 +1,11 @@
 import { customElement, html, LitElement } from "lit-element";
 import { repeat } from "lit-html/directives/repeat";
-import { ENTER } from "../../lib/util/constant/keycode";
-import { cssResult } from "../../lib/util/css";
-import { setColor } from "../../lib/util/theme";
-import { sharedStyles } from "../style/shared";
+import { ENTER } from "../../../lib/util/constant/keycode";
+import { cssResult } from "../../../lib/util/css";
+import { setColor } from "../../../lib/util/theme";
+import { sharedStyles } from "../../style/shared";
 import styles from "./theme-element.scss";
-import "../../lib/icon/icon-element";
+import "../../../lib/icon/icon-element";
 import { contrastColor, hexToRGB, shadeColor } from "./theme-helpers";
 
 const themeClass = (themeName: string) => {

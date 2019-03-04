@@ -1,4 +1,4 @@
-import { Color } from "../../lib/util/theme";
+import { Color } from "../../../lib/util/theme";
 
 /**
  * Shades a color.

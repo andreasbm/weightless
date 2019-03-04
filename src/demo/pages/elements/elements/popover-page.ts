@@ -7,8 +7,8 @@ import { defaultPopoverConfig, IPopoverElementBaseProperties, PopoverElement } f
 import "../../../../lib/title/title-element";
 import { cssResult } from "../../../../lib/util/css";
 import { OriginX, OriginY } from "../../../../lib/util/position";
-import "../../../code-example/code-example-element";
-import "../../../demo/demo-element";
+import "../../../elements/code-example/code-example-element";
+import "../../../elements/demo/demo-element";
 import { getMainScrollContainer } from "../../../main-scroll-target";
 import { sharedStyles } from "../../../style/shared";
 

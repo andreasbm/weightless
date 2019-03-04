@@ -1,17 +1,17 @@
 import "@appnest/web-router";
 import { customElement, html, LitElement, property, PropertyValues, query } from "lit-element";
-import "../../lib/button";
-import "../../lib/card";
-import "../../lib/icon";
-import "../../lib/nav";
-import { PopoverElement } from "../../lib/popover";
-import "../../lib/popover";
-import "../../lib/popover-card/popover-card-element";
-import { cssResult } from "../../lib/util/css";
-import { setProperty } from "../../lib/util/dom";
-import { Palette, setPalette } from "../../lib/util/theme";
-import { sharedStyles } from "../style/shared";
-import "./../theme/theme-element";
+import "../../../lib/button";
+import "../../../lib/card";
+import "../../../lib/icon";
+import "../../../lib/nav";
+import { PopoverElement } from "../../../lib/popover";
+import "../../../lib/popover";
+import "../../../lib/popover-card/popover-card-element";
+import { cssResult } from "../../../lib/util/css";
+import { setProperty } from "../../../lib/util/dom";
+import { Palette, setPalette } from "../../../lib/util/theme";
+import { sharedStyles } from "../../style/shared";
+import "../theme/theme-element";
 import styles from "./navbar-element.scss";
 
 const greyPalette: Palette = {

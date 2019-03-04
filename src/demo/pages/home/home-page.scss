@@ -1,2 +1,43 @@
 @import "../../../lib/style/base";
 
+:host {
+	--webkit-overflow-scrolling: touch;
+	overflow-y: overlay;
+	display: block;
+}
+
+:host, #main-container {
+	height: calc(100vh - var(--nav-height));
+}
+
+#main-container {
+	min-height: #{size(500)};
+	text-align: center;
+	position: relative;
+
+	.title {
+		font-size: #{size(60)};
+	}
+
+	.text {
+		font-size: $font-size-l;
+	}
+
+	.cta-area {
+		margin: $spacing-l 0 0 0;
+	}
+
+	.version-area {
+		background: $foreground;
+		color: $background;
+		padding: $spacing-m;
+		text-align: center;
+		position: absolute;
+		width: 100%;
+		left: 0;
+		bottom: 0;
+	}
+}
+
+
+

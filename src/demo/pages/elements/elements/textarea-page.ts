@@ -2,8 +2,8 @@ import { customElement, html, LitElement } from "lit-element";
 import "../../../../lib/card/card-element";
 import "../../../../lib/title/title-element";
 import { cssResult } from "../../../../lib/util/css";
-import "../../../code-example/code-example-element";
-import "../../../demo/demo-element";
+import "../../../elements/code-example/code-example-element";
+import "../../../elements/demo/demo-element";
 import { sharedStyles } from "../../../style/shared";
 
 @customElement("textarea-page")

@@ -1,6 +1,6 @@
 import { customElement, html, LitElement } from "lit-element";
-import "../../../code-example/code-example-element";
-import "../../../demo/demo-element";
+import "../../../elements/code-example/code-example-element";
+import "../../../elements/demo/demo-element";
 import "../../../../lib/banner/banner-element";
 import "../../../../lib/button/button-element";
 import "../../../../lib/icon/icon-element";

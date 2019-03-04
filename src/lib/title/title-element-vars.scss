@@ -1,7 +1,7 @@
 @import "../style/base";
 
 $title-margin: var(--title-margin, #{$spacing-s} 0);
-$title-font-family: var(--title-font-family, #{$font-family-serif});
+$title-font-family: var(--title-font-family, #{$font-family-sans-serif});
 $title-font-weight: var(--title-font-weight, #{$font-weight-bold});
 $title-font-size-level-1: var(--title-font-size-level-1, #{$font-size-xl});
 $title-font-size-level-2: var(--title-font-size-level-2, #{$font-size-l});

@@ -2,8 +2,8 @@ import { customElement, html, LitElement, PropertyValues, query } from "lit-elem
 import "../../../../lib/label/label-element";
 import "../../../../lib/title/title-element";
 import { cssResult } from "../../../../lib/util/css";
-import "../../../code-example/code-example-element";
-import { DemoElement } from "../../../demo/demo-element";
+import "../../../elements/code-example/code-example-element";
+import { DemoElement } from "../../../elements/demo/demo-element";
 import { sharedStyles } from "../../../style/shared";
 
 @customElement("ripple-page")
