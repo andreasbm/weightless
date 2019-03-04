@@ -1,0 +1,42 @@
+@import "../../../lib/style/base";
+
+$octo-size: var(--octo-size, #{size(60)});
+$octo-bg: var(--octo-bg, #{$background});
+$octo-color: var(--octo-color, #{$foreground});
+$octo-animation: var(--octo-animation, 500ms ease-in-out wave);
+
+:host {
+	width: $octo-size;
+	height: $octo-size;
+	display: block;
+}
+
+:host(:hover) {
+	#octo-arm {
+		animation: $octo-animation;
+	}
+}
+
+#octo {
+	fill: $octo-bg;
+}
+
+#octo-arm {
+	transform-origin: 130px 106px;
+}
+
+#octo-banner {
+	fill: $octo-color;
+}
+
+@keyframes wave {
+	0%, 100% {
+		transform: rotate(0deg);
+	}
+	20%, 60% {
+		transform: rotate(-25deg);
+	}
+	40%, 80% {
+		transform: rotate(10deg);
+	}
+}

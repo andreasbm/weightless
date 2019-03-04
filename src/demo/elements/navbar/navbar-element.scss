@@ -1,7 +1,13 @@
 @import "../../../lib/style/base";
 
+$navbar-octo-size: var(--navbar-octo-size, var(--nav-height));
+
 :host {
 	position: relative;
+}
+
+nav-element {
+	--nav-padding: 0 #{$navbar-octo-size} 0 #{$spacing-m};
 }
 
 #logo-wrapper {
@@ -11,12 +17,14 @@
 
 	#logo {
 		margin: 0 8px 0 0;
-		height: 40px;
+		height: #{size(35)};
+		width: #{size(35)};
 		transform-origin: center center;
+		fill: #{'rgb(var(--primary-500, 132 165 255))'};
 	}
 
 	#text {
-		height: 20px;
+		height: #{size(15)};
 	}
 
 	&:hover {
@@ -69,4 +77,11 @@
 			cursor: pointer;
 		}
 	}
+}
+
+#octo {
+	--octo-size: #{$navbar-octo-size};
+	position: absolute;
+	top: 0;
+	right: 0;
 }

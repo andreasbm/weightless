@@ -2,6 +2,7 @@
 
 :host {
 	padding: var(--container-padding, #{size(100)} #{$spacing-m});
+	display: block;
 }
 
 :host([centered]) {
