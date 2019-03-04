@@ -2,7 +2,7 @@
 	"input": "src/lib/card/blueprint.md",
 	"output": "src/lib/card/README.md",
 	"tag": "card-element",
-	"demo": "https://weightless.dev/demo/card",
+	"demo": "https://weightless.dev/elements/card",
 	"img": "https://raw.githubusercontent.com/andreasbm/elements/master/screenshots/card-element.png?token=AF-iBRxtZw427RRZkAkbgF5eNXYE3TP3ks5chEg_wA%3D%3D",
 	"text": "Group related content and action",
 	"attributes": [

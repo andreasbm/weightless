@@ -1,12 +1,12 @@
 <h1 align="center">progress-spinner-element</h1>
-<p align="center">Fills a circle from 0% to 100%. Go <a href="https://weightless.dev/demo/progress-spinner">here</a> to try the demo.</p>
+<p align="center">Fills a circle from 0% to 100%. Go <a href="https://weightless.dev/elements/progress-spinner">here</a> to try the demo.</p>
 
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#usage)
 
 ## ➤ Usage
 
-<a href="https://weightless.dev/demo/progress-spinner" align="center">
+<a href="https://weightless.dev/elements/progress-spinner" align="center">
   <img src="https://raw.githubusercontent.com/andreasbm/elements/master/screenshots/progress-spinner-element.png?token=AF-iBWI_tLK5VwvHN8ek2kaMbSWtaobnks5chEqCwA%3D%3D" width="700" />
 </a>
 

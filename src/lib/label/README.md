@@ -1,12 +1,12 @@
 <h1 align="center">label-element</h1>
-<p align="center">Make form elements more accessible. Go <a href="https://weightless.dev/demo/label">here</a> to try the demo.</p>
+<p align="center">Make form elements more accessible. Go <a href="https://weightless.dev/elements/label">here</a> to try the demo.</p>
 
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#usage)
 
 ## ➤ Usage
 
-<a href="https://weightless.dev/demo/label" align="center">
+<a href="https://weightless.dev/elements/label" align="center">
   <img src="https://raw.githubusercontent.com/andreasbm/elements/master/screenshots/label-element.png?token=AF-iBft0B2brPzwNC_jHXJ7wZKxOtAoJks5chEnjwA%3D%3D" width="700" />
 </a>
 

@@ -1,12 +1,12 @@
 <h1 align="center">popover-card-element</h1>
-<p align="center">Give popovers a contextual flair. Go <a href="https://weightless.dev/demo/popover">here</a> to try the demo.</p>
+<p align="center">Give popovers a contextual flair. Go <a href="https://weightless.dev/elements/popover">here</a> to try the demo.</p>
 
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#usage)
 
 ## ➤ Usage
 
-<a href="https://weightless.dev/demo/popover" align="center">
+<a href="https://weightless.dev/elements/popover" align="center">
   <img src="https://raw.githubusercontent.com/andreasbm/elements/documentation/screenshots/popover-element.png?token=AF-iBQSqMzuMAQ5EiwnHa2DFSM_IS0ihks5cg7uDwA%3D%3D" width="700" />
 </a>
 

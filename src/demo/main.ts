@@ -12,7 +12,7 @@ customElements.whenDefined(ROUTER_SLOT_TAG_NAME).then(() => {
 	const $slot = document.querySelector<RouterSlot>(ROUTER_SLOT_TAG_NAME)!;
 	$slot.add([
 		{
-			path: "demo",
+			path: "elements",
 			component: () => import("./pages/elements/elements-page")
 		},
 		{

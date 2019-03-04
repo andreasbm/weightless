@@ -2,7 +2,7 @@
 	"input": "src/lib/popover/blueprint.md",
 	"output": "src/lib/popover/README.md",
 	"tag": "popover-element",
-	"demo": "https://weightless.dev/demo/popover",
+	"demo": "https://weightless.dev/elements/popover",
 	"img": "https://raw.githubusercontent.com/andreasbm/elements/documentation/screenshots/popover-element.png?token=AF-iBQSqMzuMAQ5EiwnHa2DFSM_IS0ihks5cg7uDwA%3D%3D",
 	"text": "Contextual anchored elements",
 	"attributes": [

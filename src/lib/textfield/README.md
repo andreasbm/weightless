@@ -1,12 +1,12 @@
 <h1 align="center">textfield-element</h1>
-<p align="center">Singleline text fields. Go <a href="https://weightless.dev/demo/textfield">here</a> to try the demo.</p>
+<p align="center">Singleline text fields. Go <a href="https://weightless.dev/elements/textfield">here</a> to try the demo.</p>
 
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#usage)
 
 ## ➤ Usage
 
-<a href="https://weightless.dev/demo/textfield" align="center">
+<a href="https://weightless.dev/elements/textfield" align="center">
   <img src="https://raw.githubusercontent.com/andreasbm/elements/master/screenshots/textfield-element.png?token=AF-iBfo3dTDYCa2E9l6FKRjQ5A6KLAGcks5chEsCwA%3D%3D" width="700" />
 </a>
 

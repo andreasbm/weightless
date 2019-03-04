@@ -101,7 +101,7 @@ export class ThemeComponent extends LitElement {
 				<div slot="right">
 					<div id="navigation">
 						<router-link class="link" path="/get-started">Get Started</router-link>
-						<router-link class="link" path="/demo">Elements</router-link>
+						<router-link class="link" path="/elements">Elements</router-link>
 					</div>
 					<button-element id="dark-mode" @click="${() => this.toggleDarkMode()}" fab inverted flat outlined>
 						${this.darkMode ? html`<icon-element>flash_off</icon-element>` : html`<icon-element>flash_on</icon-element>`}

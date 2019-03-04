@@ -1,5 +1,5 @@
 <h1 align="center">nav-element</h1>
-<p align="center">Provide access to destinations in your app. Go <a href="https://weightless.dev/demo/nav">here</a> to try the demo.</p>
+<p align="center">Provide access to destinations in your app. Go <a href="https://weightless.dev/elements/nav">here</a> to try the demo.</p>
 
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#usage)

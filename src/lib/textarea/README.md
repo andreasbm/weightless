@@ -1,11 +1,11 @@
 <h1 align="center">textarea-element</h1>
-<p align="center">Multiline text fields. Go <a href="https://weightless.dev/demo/textarea">here</a> to try the demo.</p>
+<p align="center">Multiline text fields. Go <a href="https://weightless.dev/elements/textarea">here</a> to try the demo.</p>
 
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#usage)
 
 ## ➤ Usage
-<a href="https://weightless.dev/demo/textarea" align="center">
+<a href="https://weightless.dev/elements/textarea" align="center">
   <img src="https://raw.githubusercontent.com/andreasbm/elements/master/screenshots/textarea-element.png?token=AF-iBZJNydxFHIc4sQBFRLt8o2_qR34hks5chErwwA%3D%3D" width="700" />
 </a>
 

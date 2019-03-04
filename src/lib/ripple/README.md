@@ -1,12 +1,12 @@
 <h1 align="center">ripple-element</h1>
-<p align="center">Indicate touch actions. Go <a href="https://weightless.dev/demo/ripple">here</a> to try the demo.</p>
+<p align="center">Indicate touch actions. Go <a href="https://weightless.dev/elements/ripple">here</a> to try the demo.</p>
 
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#usage)
 
 ## ➤ Usage
 
-<a href="https://weightless.dev/demo/ripple" align="center">
+<a href="https://weightless.dev/elements/ripple" align="center">
   <img src="https://raw.githubusercontent.com/andreasbm/elements/master/screenshots/ripple-element.png?token=AF-iBfW58puayCKEgAhQxjkFbGJsFLBeks5chEq4wA%3D%3D" width="700" />
 </a>
 

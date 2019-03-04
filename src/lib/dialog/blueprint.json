@@ -2,7 +2,7 @@
 	"input": "src/lib/dialog/blueprint.md",
 	"output": "src/lib/dialog/README.md",
 	"tag": "dialog-element",
-	"demo": "https://weightless.dev/demo/dialog",
+	"demo": "https://weightless.dev/elements/dialog",
 	"img": "https://raw.githubusercontent.com/andreasbm/elements/master/screenshots/dialog-element.png?token=AF-iBdDsRo4rR9ss5Ix_SW9kpZMXCfILks5chEh-wA%3D%3D",
 	"text": "Highly interruptive messages",
 	"attributes": [
