@@ -2,6 +2,9 @@
 
 :host {
 	padding: var(--container-padding, #{size(100)} #{$spacing-m});
+}
+
+:host([centered]) {
 	display: flex;
 	align-items: center;
 	justify-content: center;

@@ -12,9 +12,7 @@
 	#logo {
 		margin: 0 8px 0 0;
 		height: 40px;
-		transform: rotate(0deg);
 		transform-origin: center center;
-		transition: transform 1s #{$transition-deceleration-curve};
 	}
 
 	#text {
@@ -53,3 +51,22 @@
 	margin: 0 $spacing-m 0 0;
 }
 
+#navigation {
+	display: flex;
+
+	.link {
+		color: #{color("shade", 400)};
+		font-weight: $font-weight-regular;
+		margin: 0 $spacing-l 0 0;
+		border-bottom: #{size(2)} solid transparent;
+
+		&[active] {
+			color: #{color("primary")};
+			border-color: currentColor;
+		}
+
+		&:not([active]) {
+			cursor: pointer;
+		}
+	}
+}

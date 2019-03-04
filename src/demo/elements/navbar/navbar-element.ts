@@ -55,6 +55,7 @@ export class ThemeComponent extends LitElement {
 
 	@property({type: Boolean, reflect: true}) darkMode = false;
 	@query("#theme-popover") $themePopover!: PopoverElement;
+	@query("#logo") $logo: HTMLImageElement;
 
 	firstUpdated (props: PropertyValues) {
 		super.firstUpdated(props);
@@ -79,6 +80,12 @@ export class ThemeComponent extends LitElement {
 		setPalette("shade", shade);
 	}
 
+	private rotateLogo () {
+		this.$logo.animate(<PropertyIndexedKeyframes>{
+			transform: [`rotate(0deg)`, `rotate(${360 * 5}deg)`]
+		}, {easing: "ease-out", duration: 1500});
+	}
+
 	protected render () {
 		return html`
 			<nav-element id="navbar" shadow>
@@ -86,12 +93,16 @@ export class ThemeComponent extends LitElement {
 					<button-element id="popover-button" fab inverted flat @click="${() => this.togglePopover()}">
 						<icon-element>menu</icon-element>
 					</button-element>
-					<router-link id="logo-wrapper" path="/">
+					<router-link id="logo-wrapper" path="/" @click="${() => this.rotateLogo()}">
 						<img id="logo" src="assets/logo.svg" />
 						<img id="text" src="${this.darkMode ? `assets/text-light.svg` : `assets/text-dark.svg`}" />
 					</router-link>
 				</div>
 				<div slot="right">
+					<div id="navigation">
+						<router-link class="link" path="/get-started">Get Started</router-link>
+						<router-link class="link" path="/demo">Elements</router-link>
+					</div>
 					<button-element id="dark-mode" @click="${() => this.toggleDarkMode()}" fab inverted flat outlined>
 						${this.darkMode ? html`<icon-element>flash_off</icon-element>` : html`<icon-element>flash_on</icon-element>`}
 					</button-element>

@@ -15,11 +15,11 @@ export default class HomePage extends LitElement {
 
 	protected render () {
 		return html`
-			<container-element id="main-container">
+			<container-element id="main-container" centered>
 				<title-element class="title">Weightless</title-element>
 				<span class="text">High quality Web Components with a small footprint.</span>
 				<div class="cta-area">
-					<router-link path="demo"><button-element>Get Started</button-element></router-link>
+					<router-link path="get-started"><button-element>Get Started</button-element></router-link>
 				</div>
 				<div class="version-area">
 					<span>Latest version :github: Weightless 1.3.2</span>
