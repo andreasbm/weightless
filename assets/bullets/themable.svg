@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="200px" height="200px" viewBox="0 0 200 200" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.3 (57544) - http://www.bohemiancoding.com/sketch -->
+    <title>themable</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="themable" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="palette" transform="translate(9.000000, 0.000000)" fill-rule="nonzero">
+            <path d="M168.632258,86.9266129 C149.690726,65.3423387 129.922581,60.3245968 129.922581,36.5233871 C129.922581,10.5826613 108.014113,-9.31008065 69.6689516,4.5391129 C28.5548387,19.3883065 0.0838709677,55.2060484 0.0838709677,99.8298387 C0.0838709677,155.058065 44.8552419,199.829839 100.083871,199.829839 C109.167339,199.829839 117.968548,198.618548 126.333468,196.349194 L126.331048,196.33871 C168.632258,184.104032 203.309677,126.442742 168.632258,86.9266129 Z M126.092339,76.4879032 C120.245161,83.9697581 104.04879,79.5955645 97.7979839,69.0092742 C92.2883065,59.678629 94.3044355,46.3350806 103.841532,40.4520161 C109.369758,37.0419355 116.660484,40.3975806 118.047581,46.7431452 C119.176613,51.9068548 121.492339,58.3040323 126.208468,64.1572581 C129.082661,67.7258065 128.914113,72.8774194 126.092339,76.4879032 Z" id="Shape" fill="#E6E6E6"></path>
+            <circle id="Oval" fill="#BFBFBF" cx="58.1040323" cy="54.7129032" r="19.3104839"></circle>
+            <circle id="Oval" fill="#FFFFFF" opacity="0.201618304" cx="62.8790323" cy="49.8850806" r="6.75887097"></circle>
+            <circle id="Oval" fill="#999999" cx="38.7491935" cy="103.1" r="19.3104839"></circle>
+            <circle id="Oval" fill="#FFFFFF" opacity="0.201618304" cx="43.5241935" cy="98.2721774" r="6.75887097"></circle>
+            <circle id="Oval" fill="#737373" cx="61.2415323" cy="148.172984" r="19.3104839"></circle>
+            <circle id="Oval" fill="#FFFFFF" opacity="0.201618304" cx="66.016129" cy="143.345161" r="6.75887097"></circle>
+            <circle id="Oval" fill="#4D4D4D" cx="109.716935" cy="164.390323" r="19.3104839"></circle>
+            <circle id="Oval" fill="#FFFFFF" opacity="0.201618304" cx="114.491532" cy="159.5625" r="6.75887097"></circle>
+            <circle id="Oval" fill="#262626" cx="145.200806" cy="128.818145" r="19.3104839"></circle>
+            <circle id="Oval" fill="#FFFFFF" opacity="0.201618304" cx="149.975403" cy="123.990323" r="6.75887097"></circle>
+        </g>
+    </g>
+</svg>

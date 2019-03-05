@@ -76,7 +76,7 @@ export default class HomePage extends LitElement {
 				<div id="bullets">
 					${repeat(this.bullets, bullet => html`
 						<div class="bullet">
-							<img class="img" src="${bullet.img}" />
+							<img class="img" src="/assets/bullets/${bullet.img}.svg" />
 							<aside>
 								<title-element class="title" level="4">${bullet.title}</title-element>
 								<span class="text">${bullet.text}</span>

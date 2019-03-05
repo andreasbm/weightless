@@ -63,8 +63,8 @@
 #bullets {
 	margin-top: #{size(40)};
 	display: grid;
-	grid-template-columns: repeat(auto-fit, #{size(250)});
-	grid-gap: $spacing-l;
+	grid-template-columns: repeat(auto-fit, #{size(320)});
+	grid-gap: $spacing-xl;
 	justify-content: center;
 
 	.bullet {
@@ -86,7 +86,7 @@
 }
 
 #octocat-container {
-	--container-padding: #{$spacing-m};
+	--container-padding: #{$spacing-xl};
 	position: relative;
 	text-decoration: none;
 	color: inherit;
