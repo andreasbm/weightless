@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg width="200px" height="200px" viewBox="0 0 200 200" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     <!-- Generator: Sketch 51.3 (57544) - http://www.bohemiancoding.com/sketch -->
-    <title>framework-agnostic</title>
+    <title>frameworks</title>
     <desc>Created with Sketch.</desc>
     <defs></defs>
-    <g id="framework-agnostic" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+    <g id="frameworks" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
         <g id="Angular_full_color_logo" transform="translate(101.000000, 10.000000)" fill-rule="nonzero">
             <polygon id="Shape" fill="#E6E6E6" points="41.4204545 0 41.4204545 0 41.4204545 0 0 14.94 6.31762035 70.335 41.4204545 90 41.4204545 90 41.4204545 90 76.5232887 70.335 82.8409091 14.94"></polygon>
             <polygon id="Shape" fill="#999999" points="41.9318182 0 41.9318182 9.99 41.9318182 9.945 41.9318182 55.53 41.9318182 55.53 41.9318182 90 41.9318182 90 77.4680207 70.335 83.8636364 14.94"></polygon>

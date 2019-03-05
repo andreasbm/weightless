@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg width="200px" height="200px" viewBox="0 0 200 200" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     <!-- Generator: Sketch 51.3 (57544) - http://www.bohemiancoding.com/sketch -->
-    <title>free-forever</title>
+    <title>party</title>
     <desc>Created with Sketch.</desc>
     <defs></defs>
-    <g id="free-forever" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+    <g id="party" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
         <g id="confetti" transform="translate(3.000000, 0.000000)" fill-rule="nonzero">
             <path d="M99.5513514,82.9438669 C73.7683992,57.1642412 45.4972973,43.6357588 36.4029106,52.7268191 C35.4049896,53.7721414 34.6706861,55.0399168 34.2607069,56.4257796 L34.1143451,56.2794179 L25.429106,91.8719335 L16.7804574,127.358004 L6.52848233,169.377131 L0.0386694387,195.988358 L38.4619543,181.448649 L87.3334719,162.957173 L126.322245,148.204574 L126.275676,148.158004 C127.580873,147.741788 128.775052,147.035759 129.768399,146.092308 C138.862786,136.997921 125.334304,108.726819 99.5513514,82.9438669 Z" id="Shape" fill="#999999"></path>
             <ellipse id="Oval" fill="#E6E6E6" transform="translate(83.086447, 99.398216) rotate(-135.000000) translate(-83.086447, -99.398216) " cx="83.0864468" cy="99.3982157" rx="66.0189095" ry="23.2846"></ellipse>

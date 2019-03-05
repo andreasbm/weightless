@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg width="200px" height="200px" viewBox="0 0 200 200" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     <!-- Generator: Sketch 51.3 (57544) - http://www.bohemiancoding.com/sketch -->
-    <title>performant</title>
+    <title>speed</title>
     <desc>Created with Sketch.</desc>
     <defs></defs>
-    <g id="performant" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+    <g id="speed" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
         <g id="racing-car" fill-rule="nonzero">
             <path d="M199.796605,100 C199.796605,155.11722 155.11722,199.796605 100,199.796605 C44.8827798,199.796605 0.20339527,155.11722 0.20339527,100 C0.20339527,44.8827798 44.8827798,0.20339527 100,0.20339527 C155.11722,0.20339527 199.796605,44.8827798 199.796605,100 Z" id="Shape" fill="#E6E6E6"></path>
             <path d="M100,39.4246696 L100,14.2291095 C77.4046199,14.2291095 56.8547429,22.9719832 41.5340942,37.2513228 L58.6610536,55.7268296 C69.4865456,45.6147889 84.0195112,39.4246696 100,39.4246696 Z" id="Shape" fill="#737373"></path>

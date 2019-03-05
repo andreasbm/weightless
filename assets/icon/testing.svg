@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg width="200px" height="200px" viewBox="0 0 200 200" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     <!-- Generator: Sketch 51.3 (57544) - http://www.bohemiancoding.com/sketch -->
-    <title>well-tested</title>
+    <title>testing</title>
     <desc>Created with Sketch.</desc>
     <defs></defs>
-    <g id="well-tested" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+    <g id="testing" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
         <g id="flask" transform="translate(26.000000, 0.000000)" fill-rule="nonzero">
             <path d="M145.871434,170.866611 L93.2227925,90.7044743 L93.2227925,12.0805369 L55.7707193,12.0805369 L55.7707193,90.7044743 L3.12168715,170.866611 C-5.08421813,183.360906 3.84537044,200 18.7571475,200 L130.235974,200 C145.147751,200 154.07773,183.360906 145.871434,170.866611 Z" id="Shape" fill="#E6E6E6"></path>
             <path d="M138.02728,176.167586 L115.61646,142.335633 C115.040484,141.464178 114.059726,140.939597 113.011503,140.939597 L35.9819874,140.939597 C34.9341551,140.939597 33.9530066,141.464178 33.3770303,142.335633 L10.9662104,176.166034 C9.03472055,179.079163 8.87639531,182.646854 10.5395902,185.703932 C12.1942059,188.771487 15.2772583,190.604027 18.7806916,190.604027 L130.212799,190.604027 C133.716232,190.604027 136.799675,188.771487 138.450781,185.711693 C140.117485,182.646854 139.95916,179.079163 138.02728,176.167586 Z" id="Shape" fill="#BFBFBF"></path>

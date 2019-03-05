@@ -12,6 +12,7 @@
 
 #main-container {
 	min-height: #{size(500)};
+	max-height: #{size(800)};
 	text-align: center;
 	position: relative;
 
@@ -63,9 +64,9 @@
 #bullets {
 	margin-top: #{size(40)};
 	display: grid;
-	grid-template-columns: repeat(auto-fit, #{size(320)});
 	grid-gap: $spacing-xl;
 	justify-content: center;
+	grid-template-columns: repeat(auto-fit, #{size(300)});
 
 	.bullet {
 		display: flex;
@@ -86,7 +87,7 @@
 }
 
 #octocat-container {
-	--container-padding: #{$spacing-xl};
+	--container-padding: #{size(60)} 0;
 	position: relative;
 	text-decoration: none;
 	color: inherit;
@@ -116,6 +117,38 @@
 	.img {
 		height: #{size(150)};
 		margin: 0 $spacing-l 0 0;
+	}
+}
+
+#browser-support-container {
+	.title, .text {
+		margin-right: auto;
+		margin-left: auto;
+		text-align: center;
+	}
+
+	.text {
+		max-width: #{size(700)};
+		display: block;
+	}
+}
+
+#browsers {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+
+	.browser {
+		display: flex;
+		align-items: center;
+		text-transform: uppercase;
+		margin: $spacing-l;
+		font-weight: $font-weight-bold;
+
+		.img {
+			width: #{size(40)};
+			margin: 0 $spacing-m 0 0;
+		}
 	}
 }
 

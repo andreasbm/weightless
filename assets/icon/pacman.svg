@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg width="200px" height="200px" viewBox="0 0 200 200" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     <!-- Generator: Sketch 51.3 (57544) - http://www.bohemiancoding.com/sketch -->
-    <title>consume</title>
+    <title>pacman</title>
     <desc>Created with Sketch.</desc>
     <defs></defs>
-    <g id="consume" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+    <g id="pacman" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
         <g id="pac-man" transform="translate(0.000000, 5.000000)" fill-rule="nonzero">
             <path d="M160.379327,28.4933354 C123.690427,-8.19556399 64.2056794,-8.19556399 27.5167799,28.4933354 C-9.17211949,65.1822349 -9.17211949,124.666983 27.5167799,161.355882 C64.2056794,198.044782 123.690427,198.044782 160.379327,161.355882 L93.9482641,94.9243981 L160.379327,28.4933354 Z" id="Shape" fill="#E6E6E6"></path>
             <g id="Group" transform="translate(133.185817, 83.544597)" fill="#737373">
