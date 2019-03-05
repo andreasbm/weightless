@@ -5,6 +5,7 @@ import { cssResult } from "../../../lib/util/css";
 import { addListener } from "../../../lib/util/event";
 import { sharedStyles } from "../../style/shared";
 import { COMPONENTS_ROUTES, IRouteData } from "./elements-routes";
+import "../../elements/footer/footer-element";
 
 import styles from "./elements-page.scss";
 import { getMainScrollContainer, setMainScrollContainer } from "../../main-scroll-target";
@@ -58,6 +59,7 @@ export default class ElementsPage extends LitElement {
 					<label-element>${this.currentRoute.data.desc}</label-element>
 				` : ""}
 				<router-slot></router-slot>
+				<footer-element id="footer"></footer-element>
 			</div>
 		`;
 	}

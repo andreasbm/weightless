@@ -7,6 +7,7 @@ import "../../../lib/title/title-element";
 import { cssResult } from "../../../lib/util/css";
 import { BROWSER_SUPPORT, BULLETS, GITHUB_URL, NPM_URL } from "../../constants";
 import "../../elements/container/container-element";
+import "../../elements/footer/footer-element";
 import { sharedStyles } from "../../style/shared";
 
 import styles from "./home-page.scss";
@@ -149,7 +150,7 @@ export default class HomePage extends LitElement {
 					`)}
 				</div>
 			</container-element>
-			
+			<footer-element></footer-element>
 		`;
 	}
 }
