@@ -34,10 +34,18 @@ section {
 	max-width: 450px;
 }
 
+#body {
+	overflow-y: overlay;
+	--webkit-overflow-scrolling: touch;
+}
 
 
 #navbar {
 
+}
+
+#router {
+	padding-top: var(--nav-height);
 }
 
 #router, #router-slot {
@@ -50,12 +58,5 @@ section {
 
 #app {
 	--nav-height: #{size(60)};
-	display: flex;
-	flex-direction: column;
-	position: fixed;
-	top: 0;
-	left: 0;
-	width: 100vw;
-	height: 100vh;
 }
 

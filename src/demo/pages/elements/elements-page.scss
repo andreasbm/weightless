@@ -1,25 +1,25 @@
 @import "../../../lib/style/base";
 
+$elements-page-menu-width: #{size(250)};
+
 :host {
-	display: flex;
-	height: calc(100vh - var(--nav-height));
+	padding: #{size(25)} #{size(50)} #{size(25)} calc(#{$elements-page-menu-width} + #{size(50)});
+	display: block;
 }
 
-#popover {
+#menu {
+	width: $elements-page-menu-width;
 	overflow-y: auto;
 	flex-shrink: 0;
 	border-right: #{size(1)} solid #{color("shade", $light-hue)};
 	background: #{$background};
+	position: fixed;
+	left: 0;
+	top: var(--nav-height);
+	height: calc(100vh - var(--nav-height));
 }
 
-#router {
-	padding: #{size(25)} #{size(50)};
-	flex-grow: 1;
-	--webkit-overflow-scrolling: touch;
-	overflow-y: overlay;
-}
-
-.popover-item {
+.menu-item {
 	padding: #{$spacing-m};
 	cursor: pointer;
 	display: flex;
@@ -35,11 +35,11 @@
 }
 
 @media #{$screen-s-and-down} {
-	#router {
+	:host {
 		padding: #{$spacing-m};
 	}
 
-	#popover {
+	#menu {
 		position: fixed;
 		z-index: 12345;
 		bottom: 0;
@@ -47,18 +47,17 @@
 		transform: translateX(-100%);
 	}
 
-	#popover, #router {
+	#menu, #router {
 		transition: transform #{$transition-duration-medium} #{$transition-deceleration-curve};
 	}
 
 	:host([popover-visible]) {
 
-		#popover {
+		#menu {
 			transform: translateX(0);
 		}
 
 		#router {
-			transform: scale(0.9);
 			opacity: 0.3;
 			pointer-events: none;
 		}

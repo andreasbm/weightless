@@ -46,7 +46,7 @@ export class NavElement extends LitElement implements INavElementProperties {
 				<slot name="left"></slot>
 				<slot name="title"></slot>
 			</aside>
-			<aside id="right_container">
+			<aside id="right-container">
 				<slot name="right"></slot>
 			</aside>
 		`;

@@ -1,9 +1,6 @@
 @import "../../../lib/style/base";
 
 :host {
-	height: calc(100vh - var(--nav-height));
-	--webkit-overflow-scrolling: touch;
-	overflow-y: overlay;
 	display: block;
 }
 

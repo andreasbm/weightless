@@ -4,9 +4,6 @@ $navbar-octo-size: var(--navbar-octo-size, var(--nav-height));
 
 :host {
 	position: relative;
-}
-
-nav-element {
 	--nav-padding: 0 #{$navbar-octo-size} 0 #{$spacing-m};
 }
 
