@@ -2,7 +2,7 @@
 	"input": "src/lib/select/blueprint.md",
 	"output": "src/lib/select/README.md",
 	"tag": "select-element",
-	"demo": "https://weightless.dev/demo/select",
+	"demo": "https://weightless.dev/elements/select",
 	"img": "https://raw.githubusercontent.com/andreasbm/elements/master/screenshots/select-element.png?token=AF-iBTO_RaKyKWe0-e20FJ7G6-t3khpRks5chErVwA%3D%3D",
 	"text": "Select one or more values from a set of options",
 	"attributes": [

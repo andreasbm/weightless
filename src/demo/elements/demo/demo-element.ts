@@ -1,6 +1,6 @@
 import { customElement, html, property } from "lit-element";
-import { CardElement } from "../../lib/card/card-element";
-import { cssResult } from "../../lib/util/css";
+import { CardElement } from "../../../lib/card/card-element";
+import { cssResult } from "../../../lib/util/css";
 
 import styles from "./demo-element.scss";
 

@@ -1,12 +1,12 @@
 <h1 align="center">icon-element</h1>
-<p align="center">Symbols for common actions and items. Go <a href="https://weightless.dev/demo/icon">here</a> to try the demo.</p>
+<p align="center">Symbols for common actions and items. Go <a href="https://weightless.dev/elements/icon">here</a> to try the demo.</p>
 
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#usage)
 
 ## ➤ Usage
 
-<a href="https://weightless.dev/demo/icon" align="center">
+<a href="https://weightless.dev/elements/icon" align="center">
   <img src="https://raw.githubusercontent.com/andreasbm/elements/master/screenshots/icon-element.png?token=AF-iBccPgS4Ki6G_fVHVhuvjSCR-236wks5chEm4wA%3D%3D" width="700" />
 </a>
 

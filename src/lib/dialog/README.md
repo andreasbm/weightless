@@ -1,12 +1,12 @@
 <h1 align="center">dialog-element</h1>
-<p align="center">Highly interruptive messages. Go <a href="https://weightless.dev/demo/dialog">here</a> to try the demo.</p>
+<p align="center">Highly interruptive messages. Go <a href="https://weightless.dev/elements/dialog">here</a> to try the demo.</p>
 
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#usage)
 
 ## ➤ Usage
 
-<a href="https://weightless.dev/demo/dialog" align="center">
+<a href="https://weightless.dev/elements/dialog" align="center">
   <img src="https://raw.githubusercontent.com/andreasbm/elements/master/screenshots/dialog-element.png?token=AF-iBdDsRo4rR9ss5Ix_SW9kpZMXCfILks5chEh-wA%3D%3D" width="700" />
 </a>
 

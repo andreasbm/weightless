@@ -1,7 +1,7 @@
 import { customElement, html, LitElement } from "lit-element";
 import "../../../../lib/checkbox/checkbox-element";
-import "../../../code-example/code-example-element";
-import "../../../demo/demo-element";
+import "../../../elements/code-example/code-example-element";
+import "../../../elements/demo/demo-element";
 import "../../../../lib/title/title-element";
 import { sharedStyles } from "../../../style/shared";
 

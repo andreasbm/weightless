@@ -1,12 +1,12 @@
 <h1 align="center">title-element</h1>
-<p align="center">Indicate the start of a new section. Go <a href="https://weightless.dev/demo/title">here</a> to try the demo.</p>
+<p align="center">Indicate the start of a new section. Go <a href="https://weightless.dev/elements/title">here</a> to try the demo.</p>
 
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#usage)
 
 ## ➤ Usage
 
-<a href="https://weightless.dev/demo/title" align="center">
+<a href="https://weightless.dev/elements/title" align="center">
   <img src="https://raw.githubusercontent.com/andreasbm/elements/master/screenshots/title-element.png?token=AF-iBdhHfU2b4hLu53mNAJaVMKMrvQbtks5chEsZwA%3D%3D" width="700" />
 </a>
 

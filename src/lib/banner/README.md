@@ -1,12 +1,12 @@
 <h1 align="center">banner-element</h1>
-<p align="center">Display a non-interruptive message and related optional actions. Go <a href="https://weightless.dev/demo/banner">here</a> to try the demo.</p>
+<p align="center">Display a non-interruptive message and related optional actions. Go <a href="https://weightless.dev/elements/banner">here</a> to try the demo.</p>
 
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#usage)
 
 ## ➤ Usage
 
-<a href="https://weightless.dev/demo/banner" align="center">
+<a href="https://weightless.dev/elements/banner" align="center">
   <img src="https://raw.githubusercontent.com/andreasbm/elements/master/screenshots/banner-element.png?token=AF-iBbNvw_OKWWkTFf2wuzBu9bJLwio1ks5chEfywA%3D%3D" width="700" />
 </a>
 

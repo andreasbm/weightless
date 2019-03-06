@@ -1,12 +1,12 @@
 <h1 align="center">button-element</h1>
-<p align="center">Allow users to take actions, and make choices, with a single tap. Go <a href="https://weightless.dev/demo/button">here</a> to try the demo.</p>
+<p align="center">Allow users to take actions, and make choices, with a single tap. Go <a href="https://weightless.dev/elements/button">here</a> to try the demo.</p>
 
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#usage)
 
 ## ➤ Usage
 
-<a href="https://weightless.dev/demo/button" align="center">
+<a href="https://weightless.dev/elements/button" align="center">
   <img src="https://raw.githubusercontent.com/andreasbm/elements/master/screenshots/button-element.png?token=AF-iBV1pZn7D_ITJDLgD6NVlQjtvXupXks5cgq0VwA%3D%3D" width="700" />
 </a>
 

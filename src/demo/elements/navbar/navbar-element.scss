@@ -1,0 +1,87 @@
+@import "../../../lib/style/base";
+
+$navbar-octo-size: var(--navbar-octo-size, var(--nav-height));
+
+:host {
+	position: relative;
+}
+
+nav-element {
+	--nav-padding: 0 #{$navbar-octo-size} 0 #{$spacing-m};
+}
+
+#logo-wrapper {
+	display: flex;
+	align-items: center;
+	cursor: pointer;
+
+	#logo {
+		margin: 0 8px 0 0;
+		height: #{size(35)};
+		width: #{size(35)};
+		transform-origin: center center;
+		fill: #{'rgb(var(--primary-500, 132 165 255))'};
+	}
+
+	#text {
+		height: #{size(15)};
+	}
+
+	&:hover {
+		#logo {
+			$deg: 360 * -10;
+			transform: rotate(#{$deg}deg);
+		}
+	}
+}
+
+#popover-button {
+	@include color-variables("primary", $palette-grey);
+	display: none;
+}
+
+@media #{$screen-s-and-down} {
+	#popover-button {
+		display: inline-flex;
+	}
+}
+
+#theme-selector {
+	background: #{color("primary")};
+	border-radius: 100%;
+	cursor: pointer;
+	width: #{size(40)};
+	height: #{size(40)};
+}
+
+#dark-mode {
+	--button-fab-size: #{size(40)};
+	margin: 0 $spacing-m 0 0;
+}
+
+#navigation {
+	display: flex;
+
+	.link {
+		color: #{color("shade", 400)};
+		font-weight: $font-weight-regular;
+		margin: 0 $spacing-l 0 0;
+		border-bottom: #{size(2)} solid transparent;
+
+		&[active] {
+			color: #{color("primary")};
+			border-color: currentColor;
+		}
+
+		&:not([active]) {
+			cursor: pointer;
+		}
+	}
+}
+
+#octo {
+	--octo-size: #{$navbar-octo-size};
+	position: absolute;
+	top: 0;
+	right: 0;
+}

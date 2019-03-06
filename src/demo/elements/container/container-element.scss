@@ -1,0 +1,18 @@
+@import "../../../lib/style/base";
+
+:host {
+	padding: var(--container-padding, #{size(100)} #{$spacing-m});
+	display: block;
+}
+
+:host([centered]) {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+#container {
+	max-width: var(--container-max-width, #{size(1000)});
+	margin: 0 auto;
+}
+

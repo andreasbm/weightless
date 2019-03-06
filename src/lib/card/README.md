@@ -1,12 +1,12 @@
 <h1 align="center">card-element</h1>
-<p align="center">Group related content and action. Go <a href="https://weightless.dev/demo/card">here</a> to try the demo.</p>
+<p align="center">Group related content and action. Go <a href="https://weightless.dev/elements/card">here</a> to try the demo.</p>
 
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#usage)
 
 ## ➤ Usage
 
-<a href="https://weightless.dev/demo/card" align="center">
+<a href="https://weightless.dev/elements/card" align="center">
   <img src="https://raw.githubusercontent.com/andreasbm/elements/master/screenshots/card-element.png?token=AF-iBRxtZw427RRZkAkbgF5eNXYE3TP3ks5chEg_wA%3D%3D" width="700" />
 </a>
 

@@ -2,7 +2,7 @@ import { GLOBAL_ROUTER_EVENTS_TARGET, GlobalRouterEventKind, ROUTER_SLOT_TAG_NAM
 import "@appnest/web-router";
 import "../lib";
 import "./main.scss";
-import "./navbar/navbar-element";
+import "./elements/navbar/navbar-element";
 
 GLOBAL_ROUTER_EVENTS_TARGET.addEventListener(GlobalRouterEventKind.NavigationEnd, () => {
 	document.documentElement.classList.add("initialized");
@@ -12,20 +12,20 @@ customElements.whenDefined(ROUTER_SLOT_TAG_NAME).then(() => {
 	const $slot = document.querySelector<RouterSlot>(ROUTER_SLOT_TAG_NAME)!;
 	$slot.add([
 		{
-			path: "demo",
+			path: "elements",
 			component: () => import("./pages/elements/elements-page")
 		},
 		{
-			path: "getting-started",
-			component: () => import("./pages/home/home-page")
+			path: "get-started",
+			component: () => import("./pages/get-started/get-started-page")
 		},
 		{
-			path: "...",
+			path: "",
 			component: () => import("./pages/home/home-page")
 		},
 		{
 			path: "**",
-			redirectTo: "demo"
+			redirectTo: "home"
 		}
 	]);
 });

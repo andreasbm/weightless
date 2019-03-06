@@ -1,0 +1,25 @@
+@import "../../../lib/style/base";
+
+:host {
+	position: relative;
+	justify-content: space-between;
+	background: #{color("shade", 200)};
+	padding: $spacing-l $spacing-xl;
+}
+
+:host, aside {
+	display: flex;
+	align-items: center;
+}
+
+.social {
+	margin: 0 0 0 $spacing-m;
+
+	.img {
+		width: #{size(30)};
+	}
+
+	&:hover {
+		opacity: 0.8;
+	}
+}

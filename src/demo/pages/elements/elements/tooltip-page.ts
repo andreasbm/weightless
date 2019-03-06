@@ -1,8 +1,8 @@
 import { customElement, html, LitElement } from "lit-element";
 import "../../../../lib/title/title-element";
 import "../../../../lib/tooltip/tooltip-element";
-import "../../../code-example/code-example-element";
-import "../../../demo/demo-element";
+import "../../../elements/code-example/code-example-element";
+import "../../../elements/demo/demo-element";
 import { getMainScrollContainer } from "../../../main-scroll-target";
 import { sharedStyles } from "../../../style/shared";
 

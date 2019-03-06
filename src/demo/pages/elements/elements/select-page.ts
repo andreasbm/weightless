@@ -2,8 +2,8 @@ import { customElement, html, LitElement } from "lit-element";
 import { cssResult } from "../../../../lib/util/css";
 import { sharedStyles } from "../../../style/shared";
 import "../../../../lib/title/title-element";
-import "../../../code-example/code-example-element";
-import "../../../demo/demo-element";
+import "../../../elements/code-example/code-example-element";
+import "../../../elements/demo/demo-element";
 
 @customElement("select-page")
 export default class SelectPage extends LitElement {

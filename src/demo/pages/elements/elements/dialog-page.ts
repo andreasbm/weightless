@@ -9,9 +9,9 @@ import "../../../../lib/select/select-element";
 import "../../../../lib/textfield/textfield-element";
 import "../../../../lib/title/title-element";
 import { cssResult } from "../../../../lib/util/css";
-import "../../../code-example/code-example-element";
-import "../../../demo/demo-element";
-import "../../../highlight/highlight-element";
+import "../../../elements/code-example/code-example-element";
+import "../../../elements/demo/demo-element";
+import "../../../elements/highlight/highlight-element";
 import { getMainScrollContainer } from "../../../main-scroll-target";
 import { sharedStyles } from "../../../style/shared";
 

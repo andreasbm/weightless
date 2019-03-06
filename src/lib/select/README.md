@@ -1,12 +1,12 @@
 <h1 align="center">select-element</h1>
-<p align="center">Select one or more values from a set of options. Go <a href="https://weightless.dev/demo/select">here</a> to try the demo.</p>
+<p align="center">Select one or more values from a set of options. Go <a href="https://weightless.dev/elements/select">here</a> to try the demo.</p>
 
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#usage)
 
 ## ➤ Usage
 
-<a href="https://weightless.dev/demo/select" align="center">
+<a href="https://weightless.dev/elements/select" align="center">
   <img src="https://raw.githubusercontent.com/andreasbm/elements/master/screenshots/select-element.png?token=AF-iBTO_RaKyKWe0-e20FJ7G6-t3khpRks5chErVwA%3D%3D" width="700" />
 </a>
 
