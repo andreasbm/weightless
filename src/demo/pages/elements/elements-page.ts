@@ -28,7 +28,7 @@ export default class ElementsPage extends LitElement {
 		setMainScrollContainer(this.$routerContainer);
 
 		GLOBAL_ROUTER_EVENTS_TARGET.addEventListener(GlobalRouterEventKind.NavigationEnd, (e: NavigationEndEvent<IRouteData>) => {
-			this.currentRoute = e.detail.route;
+			this.currentRoute = e.detail.match.route;
 			getMainScrollContainer().scrollTo({top: 0, left: 0});
 			this.requestUpdate().then();
 		});
