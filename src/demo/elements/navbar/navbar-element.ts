@@ -1,4 +1,5 @@
-import "@appnest/web-router";
+import { currentPath, GLOBAL_ROUTER_EVENTS_TARGET, GlobalRouterEventKind } from "@appnest/web-router";
+import "@appnest/web-router";;
 import { customElement, html, property, PropertyValues, query } from "lit-element";
 import "../../../lib/button";
 import "../../../lib/card";
@@ -62,6 +63,10 @@ export class ThemeComponent extends NavElement {
 
 	firstUpdated (props: PropertyValues) {
 		super.firstUpdated(props);
+
+		GLOBAL_ROUTER_EVENTS_TARGET.addEventListener(GlobalRouterEventKind.ChangeState, () => {
+			this.requestUpdate().then();
+		});
 	}
 
 	private togglePopover () {
@@ -92,9 +97,9 @@ export class ThemeComponent extends NavElement {
 	protected render () {
 		return html`
 			<aside id="left-container">
-				<button-element id="popover-button" fab inverted flat @click="${() => this.togglePopover()}">
+				${currentPath() !== "/" ? html`<button-element id="popover-button" fab inverted flat @click="${() => this.togglePopover()}">
 					<icon-element>menu</icon-element>
-				</button-element>
+				</button-element>` : ""}
 				<router-link id="logo-wrapper" path="/" @click="${() => this.rotateLogo()}">
 					<svg id="logo" width="100%" height="100%" viewBox="0 0 264 264" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
 						<g fill-rule="nonzero">

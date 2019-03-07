@@ -9,6 +9,10 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
+
+	@media #{$screen-s-and-down} {
+		flex-direction: column;
+	}
 }
 
 #container {

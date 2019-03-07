@@ -25,6 +25,12 @@
 	height: #{$popover-card-arrow-height};
 	fill: #{$popover-card-arrow-fill};
 	z-index: 1;
+	display: none;
+}
+
+// Only display the arrow if host-context is supported
+:host-context([transformOriginX][transformOriginY]) #arrow {
+	display: block;
 }
 
 // Position the arrow inside the arrow container according to the transform origin.

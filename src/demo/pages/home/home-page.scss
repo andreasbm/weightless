@@ -92,17 +92,23 @@
 
 	.container {
 		background: #{color("shade", 200)};
+
+		#arm {
+			transform-origin: 176px 222px;
+		}
+
+		#eyes {
+			transform-origin: center center;
+		}
 	}
 
 	&.intersecting {
 		#arm {
 			animation: 2000ms linear wave infinite;
-			transform-origin: 165px 228px;
 		}
 
 		#eyes {
 			animation: 2000ms ease-in-out pulse infinite;
-			transform-origin: center center;
 		}
 	}
 }

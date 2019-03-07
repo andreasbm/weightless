@@ -23,6 +23,8 @@ html {
 
 body {
 	margin: 0;
+	overflow: hidden overlay;
+	--webkit-overflow-scrolling: touch;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -33,12 +35,6 @@ section {
 	margin: 50px auto;
 	max-width: 450px;
 }
-
-#body {
-	overflow-y: overlay;
-	--webkit-overflow-scrolling: touch;
-}
-
 
 #navbar {
 

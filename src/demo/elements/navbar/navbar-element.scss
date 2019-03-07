@@ -17,7 +17,7 @@ $navbar-octo-size: var(--navbar-octo-size, var(--nav-height));
 		height: #{size(35)};
 		width: #{size(35)};
 		transform-origin: center center;
-		fill: #{'rgb(var(--primary-500, 132 165 255))'};
+		fill: #{'rgb(var(--primary-500, 132, 165, 255))'};
 	}
 
 	#text {
@@ -73,6 +73,10 @@ $navbar-octo-size: var(--navbar-octo-size, var(--nav-height));
 		&:not([active]) {
 			cursor: pointer;
 		}
+	}
+
+	@media #{$screen-s-and-down} {
+		display: none;
 	}
 }
 
