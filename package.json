@@ -74,14 +74,14 @@
 	},
 	"devDependencies": {
 		"@appnest/readme": "^1.1.2",
-		"@appnest/web-config": "0.3.28",
+		"@appnest/web-config": "0.3.29",
 		"@appnest/web-router": "^1.1.10",
 		"@types/puppeteer": "^1.12.1",
 		"code-prettify": "^0.1.0",
 		"fs-extra": "^7.0.1",
 		"karma-iframes": "^1.2.2",
 		"puppeteer": "^1.13.0",
-		"ts-node": "^8.0.2"
+		"ts-node": "^8.0.3"
 	},
 	"dependencies": {
 		"@appnest/focus-trap": "0.0.26",

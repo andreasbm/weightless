@@ -85,7 +85,7 @@ export const BROWSER_SUPPORT: IBrowserSupport[] = [
 		text: "Opera"
 	},
 	{
-		img: "Safari",
+		img: "safari",
 		text: "Safari"
 	},
 	{

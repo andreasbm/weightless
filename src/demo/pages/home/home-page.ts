@@ -66,9 +66,9 @@ export default class HomePage extends LitElement {
 				<button-element class="arrow-down" fab inverted flat @click="${this.scrollToBullets}">
 					<icon-element>keyboard_arrow_down</icon-element>
 				</button-element>
-				<a class="version-area" href="${NPM_URL}" target="_blank">
+				<a class="version-area" href="${NPM_URL}" rel="noopener" target="_blank">
 					<span>Latest version</span>
-					<img class="npm" src="/assets/npm-logo.svg" />
+					<img class="npm" src="/assets/npm-logo.svg" alt="NPM" />
 					<span>@weightless/all - <b>v1.0.3</b></span>
 				</a>
 			</container-element>
@@ -77,7 +77,7 @@ export default class HomePage extends LitElement {
 				<div id="bullets">
 					${repeat(this.bullets, bullet => html`
 						<div class="bullet">
-							<img class="img" src="/assets/icon/${bullet.img}.svg" />
+							<img class="img" src="/assets/icon/${bullet.img}.svg" alt="${bullet.title}" />
 							<aside>
 								<title-element class="title" level="4">${bullet.title}</title-element>
 								<span class="text">${bullet.text}</span>
@@ -116,11 +116,11 @@ export default class HomePage extends LitElement {
 			
 			<container-element id="browser-support-container">
 				<title-element class="text" level="2">Browser Support</title-element>
-				<span class="text">Weightless elements are supported on all modern browsers. If you want to support old school browsers you’ll need to import polyfills. Luckily it is super easy if you use <a href="https://polyfill.dev" target="_blank">polyfill.dev</a> or something similar.</span>
+				<span class="text">Weightless elements are supported on all modern browsers. If you want to support old school browsers you’ll need to load polyfills. Luckily it is super easy if you use <a href="https://polyfill.dev" target="_blank" rel="noopener">polyfill.dev</a> or something similar.</span>
 				<div id="browsers">
 					${repeat(BROWSER_SUPPORT, support => html`
 						<div class="browser">
-							<img class="img" src="/assets/browser/${support.img}.svg" />
+							<img class="img" src="/assets/browser/${support.img}.svg" alt="${support.text}" />
 							<span>${support.text}</span>
 						</div>
 					`)}

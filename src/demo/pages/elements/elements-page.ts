@@ -46,7 +46,7 @@ export default class ElementsPage extends LitElement {
 			<div id="menu">
 				${repeat(COMPONENTS_ROUTES.filter(route => route.path !== "**"), route => html`
 					<router-link class="menu-item" path="${route.path}">
-						${route.data != null ? html`<img class="img" src="${route.data.img}" />` : ""}
+						${route.data != null ? html`<img class="img" src="${route.data.img}" alt="Icon" />` : ""}
 						<span>${route.data != null ? route.data.title : route.path}</span><br/>
 					</router-link>
 				`)}

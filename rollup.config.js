@@ -6,7 +6,8 @@ import {
 	defaultServePlugins,
 	isLibrary,
 	isProd,
-	isServe
+	isServe,
+	workbox
 } from "@appnest/web-config";
 import path from "path";
 import pkg from "./package.json";
@@ -21,7 +22,10 @@ const folders = {
 const files = {
 	main: path.join(folders.src, "main.ts"),
 	src_index: path.join(folders.src, "index.html"),
-	dist_index: path.join(folders.dist, "index.html")
+	src_robots: path.join(folders.src, "robots.txt"),
+	dist_index: path.join(folders.dist, "index.html"),
+	dist_robots: path.join(folders.dist, "robots.txt"),
+	dist_service_worker: path.join(folders.dist, "sw.js")
 };
 
 export default {
@@ -43,7 +47,8 @@ export default {
 			},
 			copyConfig: {
 				resources: [
-					[folders.assets, folders.dist_assets]
+					[folders.assets, folders.dist_assets],
+					[files.src_robots, files.dist_robots]
 				],
 			},
 			htmlTemplateConfig: {
@@ -87,8 +92,16 @@ export default {
 						output: path.join(folders.dist, "licenses.txt")
 					}
 				}
+			}),
+			workbox({
+				mode: "generateSW",
+				workboxConfig: {
+					globDirectory: folders.dist,
+					swDest: files.dist_service_worker,
+					globPatterns: [ `**/*.{js,png,html,css}`]
+				}
 			})
-		] : [])
+		] : []),
 	],
 	external: [
 		...(isLibrary ? [
@@ -98,3 +111,4 @@ export default {
 	treeshake: isProd,
 	context: "window"
 }
+
