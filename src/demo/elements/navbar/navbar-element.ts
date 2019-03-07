@@ -109,7 +109,7 @@ export class ThemeComponent extends NavElement {
 							<path d="M132 217.5v-20h22.5c49.43 0 89.5-40.07 89.5-89.5 0-5.523 4.477-10 10-10s10 4.477 10 10c0 60.475-49.025 109.5-109.5 109.5H132z"/>
 						</g>
 					</svg>
-					<img id="text" src="${this.darkMode ? `assets/text-light.svg` : `assets/text-dark.svg`}" />
+					<img id="text" src="${this.darkMode ? `assets/brand/text-light.svg` : `assets/brand/text-dark.svg`}" />
 				</router-link>
 			</aside>
 			<aside id="right-container">
