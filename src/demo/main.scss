@@ -9,6 +9,7 @@ html {
 
 	color: #{$foreground};
 	background: #{$background};
+	overflow-x: hidden;
 
 	&.theme-red {
 		@include theme-variables((

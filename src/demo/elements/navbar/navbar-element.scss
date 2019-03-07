@@ -22,6 +22,10 @@ $navbar-octo-size: var(--navbar-octo-size, var(--nav-height));
 
 	#text {
 		height: #{size(15)};
+
+		@media #{$screen-s-and-down} {
+			display: none;
+		}
 	}
 
 	&:hover {

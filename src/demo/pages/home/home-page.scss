@@ -85,7 +85,7 @@
 }
 
 #octocat-container {
-	--container-padding: #{size(60)} 0;
+	--container-padding: #{size(60)} #{$spacing-m};
 	position: relative;
 	text-decoration: none;
 	color: inherit;
@@ -119,8 +119,14 @@
 	align-items: center;
 
 	.img {
-		height: #{size(150)};
+		width: #{size(200)};
+		height: #{size(155)};
+		flex-shrink: 0;
 		margin: 0 $spacing-l 0 0;
+	}
+
+	@media #{$screen-s-and-down} {
+		flex-direction: column;
 	}
 }
 
