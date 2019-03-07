@@ -5,11 +5,12 @@
 //}
 
 html {
-	font-family: var(--font-family-serif, 'Roboto Slab', serif);
-
+	font-family: #{$font-family-serif};
 	color: #{$foreground};
 	background: #{$background};
 	overflow-x: hidden;
+	overflow-y: overlay;
+	--webkit-overflow-scrolling: touch;
 
 	&.theme-red {
 		@include theme-variables((
@@ -24,17 +25,6 @@ html {
 
 body {
 	margin: 0;
-	overflow: hidden overlay;
-	--webkit-overflow-scrolling: touch;
-}
-
-h1, h2, h3, h4, h5, h6 {
-	font-family: var(--font-family-sans-serif, 'Roboto Condensed', sans-serif)
-}
-
-section {
-	margin: 50px auto;
-	max-width: 450px;
 }
 
 #navbar {

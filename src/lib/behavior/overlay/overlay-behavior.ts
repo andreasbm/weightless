@@ -76,7 +76,7 @@ export abstract class OverlayBehavior<R, C extends Partial<IOverlayBehaviorBaseP
 	@property({type: Number}) duration: number = 200;
 
 	// The container the overlay lives in.
-	@property({type: Object}) scrollContainer: EventTarget = document.body;
+	@property({type: Object}) scrollContainer: EventTarget = document.documentElement;
 
 	/**
 	 * Returns the scroll container as an HTMLElement. Falls back to the document body if the scroll

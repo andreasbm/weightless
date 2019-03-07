@@ -3,6 +3,7 @@ import "@appnest/web-router";
 import "../lib";
 import "./main.scss";
 import "./elements/navbar/navbar-element";
+import { setMainScrollContainer } from "./main-scroll-target";
 
 GLOBAL_ROUTER_EVENTS_TARGET.addEventListener(GlobalRouterEventKind.NavigationEnd, () => {
 	document.documentElement.classList.add("initialized");
@@ -29,5 +30,7 @@ customElements.whenDefined(ROUTER_SLOT_TAG_NAME).then(() => {
 		}
 	]);
 });
+
+setMainScrollContainer(document.documentElement);
 
 
