@@ -64,7 +64,7 @@ export default class HomePage extends LitElement {
 					<router-link path="get-started"><button-element>Get Started</button-element></router-link>
 				</div>
 				<button-element class="arrow-down" fab inverted flat @click="${this.scrollToBullets}">
-					<icon-element>keyboard_arrow_down</icon-element>
+					<icon-element alt="Down">keyboard_arrow_down</icon-element>
 				</button-element>
 				<a class="version-area" href="${NPM_URL}" rel="noopener" target="_blank">
 					<span>Latest version</span>
@@ -86,7 +86,7 @@ export default class HomePage extends LitElement {
 					`)}
 				</div>
 			</container-element>
-			<a id="octocat-container" href="${GITHUB_URL}/stargazers" target="_blank" class="${this.isIntersectingOctocat ? `intersecting` : ""}">
+			<a id="octocat-container" href="${GITHUB_URL}/stargazers" target="_blank" rel="noopener" class="${this.isIntersectingOctocat ? `intersecting` : ""}">
 				<container-element class="container" centered>
 					<div id="octocat-area">
 						<svg class="img" width="362" height="279" viewBox="0 0 362 279" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">

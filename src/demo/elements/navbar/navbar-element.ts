@@ -98,7 +98,7 @@ export class ThemeComponent extends NavElement {
 		return html`
 			<aside id="left-container">
 				${currentPath() !== "/" ? html`<button-element id="popover-button" fab inverted flat @click="${() => this.togglePopover()}">
-					<icon-element>menu</icon-element>
+					<icon-element alt="menu">menu</icon-element>
 				</button-element>` : ""}
 				<router-link id="logo-wrapper" path="/" @click="${() => this.rotateLogo()}">
 					<svg id="logo" width="100%" height="100%" viewBox="0 0 264 264" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
@@ -118,7 +118,7 @@ export class ThemeComponent extends NavElement {
 					<router-link class="link" path="/elements">Elements</router-link>
 				</div>
 				<button-element id="dark-mode" @click="${() => this.toggleDarkMode()}" fab inverted flat outlined>
-					${this.darkMode ? html`<icon-element>flash_off</icon-element>` : html`<icon-element>flash_on</icon-element>`}
+					${this.darkMode ? html`<icon-element alt="Darkmode off">flash_off</icon-element>` : html`<icon-element alt="Darkmode on">flash_on</icon-element>`}
 				</button-element>
 				<button-element fab id="theme-selector" @click="${() => this.openThemeSelector()}"></button-element>
 				<popover-element id="theme-popover" anchor="#theme-selector" backdrop fixed transformOriginX="right" anchorOriginY="center" anchorOriginX="center">
@@ -126,7 +126,7 @@ export class ThemeComponent extends NavElement {
 						<theme-element @update="${() => this.$themePopover.hide()}"></theme-element>
 					</popover-card-element>
 				</popover-element>
-				<a id="octo" href="${GITHUB_URL}" target="_blank"><octo-element></octo-element></a>
+				<a id="octo" href="${GITHUB_URL}" target="_blank" rel="noopener"><octo-element></octo-element></a>
 			</aside>
 		`;
 	}
