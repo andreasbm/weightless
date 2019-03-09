@@ -79,11 +79,11 @@ export abstract class OverlayBehavior<R, C extends Partial<IOverlayBehaviorBaseP
 	@property({type: Object}) scrollContainer: EventTarget = document.documentElement;
 
 	/**
-	 * Returns the scroll container as an HTMLElement. Falls back to the document body if the scroll
+	 * Returns the scroll container as an HTMLElement. Falls back to the documentElement if the scroll
 	 * container is not blockable since the style attribute is required to set the overflow hidden.
 	 */
 	get $blockableScrollContainer () {
-		return this.scrollContainer instanceof HTMLElement ? this.scrollContainer : document.body;
+		return this.scrollContainer instanceof HTMLElement ? this.scrollContainer : document.documentElement;
 	}
 
 	protected currentInAnimations: Animation[] = [];

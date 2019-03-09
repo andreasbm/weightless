@@ -10,6 +10,7 @@ export class DemoElement extends CardElement {
 
 	@property({type: Boolean, reflect: true}) default = false;
 
+
 	/**
 	 * Returns the template for the component.
 	 */

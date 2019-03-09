@@ -23,12 +23,12 @@ export class HighlightElement extends LitElement {
 
 	@query("pre") private $pre: HTMLElement;
 
-	get sanitizedText () {
+	get cleanedText () {
+
 		// Remove empty attributes (eg. disabled="") (warning: this will also remove const myVar="";)
 		let text = this.text!.replace(/=""/gm, "");
 
-		text = sanitize(text.trim());
-
+		text = text.trim();
 
 		// Find the least executive tabs. Those are the leading tabs.
 		const matches = text.match(/^([\t]+)/gm) || [];
@@ -45,10 +45,13 @@ export class HighlightElement extends LitElement {
 			text = text.replace(new RegExp(`^[\t]{${leastTabs}}`, "gm"), "");
 		}
 
-		// Replace tabs with spaces
-		text = text.replace(/\t/g, "   ");
 
-		return text;
+		// Replace tabs with spaces
+		return text.replace(/\t/g, "   ");
+	}
+
+	get sanitizedText () {
+		return sanitize(this.cleanedText);
 	}
 
 	/**

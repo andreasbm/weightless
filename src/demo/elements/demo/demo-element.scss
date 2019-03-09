@@ -5,6 +5,7 @@
 	padding: #{size(70)} #{size(50)};
 	margin: #{$spacing-m} 0 #{$spacing-l};
 	text-align: center;
+	position: relative;
 }
 
 :host([default]) {

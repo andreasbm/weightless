@@ -1,20 +1,25 @@
-import { customElement, html, LitElement, property } from "lit-element";
+import { customElement, html, LitElement, property, query } from "lit-element";
+import { HighlightElement } from "../highlight/highlight-element";
 import "../highlight/highlight-element";
 import "../../../lib/button";
 import "../../../lib/icon";
 import { ifDefined } from "lit-html/directives/if-defined";
+import { cssResult } from "../../../lib/util/css";
 import { openCodepen } from "../../codepen";
+import styles from "code-example-element.scss";
 
 /**
  * Highlights the initial HTML in the slot.
  */
 @customElement("code-example-element")
 export class CodeExampleElement extends LitElement {
+	static styles = [cssResult(styles)];
 
 	@property() lang = "html";
 	@property({type: Boolean}) lineNumber = false;
 	@property() headline?: string;
 	@property() text?: string;
+	@query("#highlighter") $highlighter: HighlightElement;
 
 	private cachedSlotString = "";
 
@@ -34,7 +39,7 @@ export class CodeExampleElement extends LitElement {
 
 	openCodepen () {
 		openCodepen({
-			html: this.cachedSlotString
+			html: this.$highlighter.cleanedText
 		});
 	}
 
@@ -43,28 +48,6 @@ export class CodeExampleElement extends LitElement {
 	 */
 	protected render () {
 		return html`
-			<style>
-				#highlighter {
-					text-align: left;
-				}
-				
-				:host(:hover) #open {
-					opacity: 1;
-				}
-				
-				:host {
-					position: relative;
-				}
-				
-				#open {
-					opacity: 0;
-					transition: 100ms ease opacity;
-					position: absolute;
-					top: 12px;
-					right: 12px;
-				}
-				
-			</style>
 			<button-element id="open" inverted flat fab @click="${() => this.openCodepen()}">
 				<icon-element>open_in_new</icon-element>
 			</button-element>

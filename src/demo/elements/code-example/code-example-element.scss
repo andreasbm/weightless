@@ -1,0 +1,19 @@
+@import "../../../lib/style/base";
+
+:host(:hover) {
+	#open {
+		opacity: 1;
+	}
+}
+
+#highlighter {
+	text-align: left;
+}
+
+#open {
+	opacity: 0;
+	transition: #{$transition-duration-fast} #{$transition-ease} opacity;
+	position: absolute;
+	top: $spacing-m;
+	right: $spacing-m;
+}
