@@ -16,7 +16,7 @@ export abstract class RadioBehavior extends CheckboxBehavior implements IRadioBe
 	static styles = [...CheckboxBehavior.styles, cssResult(styles)];
 
 	@property({type: String, reflect: true}) role: AriaRole = "radio";
-	protected formItemType = "radio";
+	protected formElementType = "radio";
 
 	/**
 	 * Checks and unchecks the component.

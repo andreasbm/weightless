@@ -3,14 +3,14 @@ import { AriaRole } from "../../util/aria";
 import { ENTER } from "../../util/constant/keycode";
 import { cssResult } from "../../util/css";
 import { addListener } from "../../util/event";
-import { FormItemBehavior, IFormItemBehaviorProperties } from "../form-item/form-item-behavior";
+import { FormElementBehavior, IFormElementBehaviorProperties } from "../form-element/form-element-behavior";
 import styles from "./input-behavior.scss";
 
 export enum InputBehaviorEvent {
 	SUBMIT = "submit"
 }
 
-export interface IInputBehaviorProperties extends IFormItemBehaviorProperties{
+export interface IInputBehaviorProperties extends IFormElementBehaviorProperties{
 	autocomplete: "on" | "off";
 	outlined: boolean;
 	role: AriaRole;
@@ -18,8 +18,8 @@ export interface IInputBehaviorProperties extends IFormItemBehaviorProperties{
 	placeholder?: string;
 }
 
-export abstract class InputBehavior extends FormItemBehavior implements IInputBehaviorProperties {
-	static styles = [...FormItemBehavior.styles, cssResult(styles)];
+export abstract class InputBehavior extends FormElementBehavior implements IInputBehaviorProperties {
+	static styles = [...FormElementBehavior.styles, cssResult(styles)];
 
 	@property({type: String, reflect: true}) autocomplete: "on" | "off";
 	@property({type: Boolean, reflect: true}) outlined: boolean = false;
@@ -32,21 +32,21 @@ export abstract class InputBehavior extends FormItemBehavior implements IInputBe
 	}
 
 	firstUpdated (props: Map<keyof IInputBehaviorProperties, unknown>) {
-		super.firstUpdated(<Map<keyof IFormItemBehaviorProperties, unknown>>props);
+		super.firstUpdated(<Map<keyof IFormElementBehaviorProperties, unknown>>props);
 		this.onKeyDown = this.onKeyDown.bind(this);
 
 		this.listeners.push(
-			addListener(this.$formItem, "keydown", this.onKeyDown, {passive: true})
+			addListener(this.$formElement, "keydown", this.onKeyDown, {passive: true})
 		);
 
 		this.value = this.getAttribute("value") || "";
 	}
 
 	/**
-	 * Focuses the form item.
+	 * Focuses the form element.
 	 */
 	focus () {
-		this.$formItem.focus();
+		this.$formElement.focus();
 	}
 
 	protected updated (props: Map<keyof IInputBehaviorProperties, unknown>) {
@@ -69,9 +69,9 @@ export abstract class InputBehavior extends FormItemBehavior implements IInputBe
 	}
 
 	/**
-	 * Returns the form item
+	 * Returns the form element
 	 */
-	protected abstract renderFormItem (): TemplateResult;
+	protected abstract renderFormElement (): TemplateResult;
 
 	/**
 	 * Renders the textfield.
@@ -83,7 +83,7 @@ export abstract class InputBehavior extends FormItemBehavior implements IInputBe
 				<div id="wrapper">
 					<div id="placeholder">${this.placeholder}</div>
 					<slot id="slot"></slot>
-					${this.renderFormItem()}
+					${this.renderFormElement()}
 				</div>
 				<slot id="after" name="after"></slot>
 			</div>

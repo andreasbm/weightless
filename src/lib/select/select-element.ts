@@ -46,8 +46,8 @@ export class SelectElement extends InputBehavior implements ISelectElementProper
 	 * and that the options from the slot had to be cloned in order to not be removed from the slot.
 	 */
 	private updateOptions () {
-		if (this.$formItem == null) return;
-		const $select = <HTMLSelectElement>this.$formItem;
+		if (this.$formElement == null) return;
+		const $select = <HTMLSelectElement>this.$formElement;
 		const nodes = <Element[]>this.$slot.assignedNodes().filter(node => node.nodeName !== `#text`);
 
 		// Grab the options from the slot and clone them. This prevents the nodes being removed
@@ -68,7 +68,7 @@ export class SelectElement extends InputBehavior implements ISelectElementProper
 		}
 
 		// Find the new value. If the value before was not selected, use either the
-		// initial value set before the form item was present or the selected value from the set of options.
+		// initial value set before the form element was present or the selected value from the set of options.
 		// The initial value is important because if we simply relied on the native select to give us the correct
 		// value we would get an empty string because the native behavior is to return an empty string if trying
 		// to set a value with no corresponding options which will be the case if set initially before any
@@ -87,11 +87,11 @@ export class SelectElement extends InputBehavior implements ISelectElementProper
 	}
 
 	/**
-	 * Returns the form item
+	 * Returns the form element
 	 */
-	protected renderFormItem (): TemplateResult {
+	protected renderFormElement (): TemplateResult {
 		return html`
-			<select id="form-item"
+			<select id="${this.formElementId}"
 					.value="${this.value}"
 					?required="${this.required}"
 					?disabled="${this.disabled}"

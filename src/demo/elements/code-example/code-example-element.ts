@@ -1,4 +1,5 @@
 import { customElement, html, LitElement, property, query } from "lit-element";
+import { copyToClipboard } from "../../copy-to-clipboard";
 import { HighlightElement } from "../highlight/highlight-element";
 import "../highlight/highlight-element";
 import "../../../lib/button";
@@ -43,14 +44,23 @@ export class CodeExampleElement extends LitElement {
 		});
 	}
 
+	copyToClipboard () {
+		copyToClipboard(this.$highlighter.cleanedText);
+	}
+
 	/**
 	 * Renders the component.
 	 */
 	protected render () {
 		return html`
-			<button-element id="open" inverted flat fab @click="${() => this.openCodepen()}">
-				<icon-element>open_in_new</icon-element>
-			</button-element>
+			<div id="tools" tabindex="-1">
+				<button-element inverted flat fab @click="${() => this.copyToClipboard()}">
+					<icon-element>file_copy</icon-element>
+				</button-element>
+				<button-element inverted flat fab @click="${() => this.openCodepen()}">
+					<icon-element>open_in_new</icon-element>
+				</button-element>
+			</div>
 			<slot></slot>
 			<highlight-element id="highlighter" lang="${ifDefined(this.lang)}" ?lineNumber="${this.lineNumber}" headline="${ifDefined(this.headline)}" text="${ifDefined(this.cachedSlotString)}"></highlight-element>
 		`;

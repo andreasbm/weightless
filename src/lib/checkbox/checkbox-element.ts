@@ -28,7 +28,7 @@ export class CheckboxElement extends CheckboxBehavior implements ICheckboxElemen
                 <path id="path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59"></path>
             </svg>
 			<ripple-element id="ripple" .target="${this}" focusable overlay unbounded centered initialDuration="200"></ripple-element>
-			${this.renderFormItem()}
+			${this.renderFormElement()}
 		`;
 	}
 }

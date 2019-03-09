@@ -44,12 +44,12 @@ export class TextfieldElement extends InputBehavior implements ITextfieldElement
 	@property({type: Number, reflect: true}) maxLength?: number;
 
 	/**
-	 * Renders the form item
+	 * Renders the form element
 	 */
-	protected renderFormItem (): TemplateResult {
+	protected renderFormElement (): TemplateResult {
 		return html`
 			<input
-				id="form-item"
+				id="${this.formElementId}"
 				.value="${ifDefined(this.value)}"
 				?required="${this.required}"
 				?disabled="${this.disabled}"

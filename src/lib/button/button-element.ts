@@ -1,6 +1,6 @@
 import { customElement, html, property, PropertyValues, query, TemplateResult } from "lit-element";
 import { ifDefined } from "lit-html/directives/if-defined";
-import { FormItemBehavior, IFormItemBehaviorProperties } from "../behavior/form-item/form-item-behavior";
+import { FormElementBehavior, IFormElementBehaviorProperties } from "../behavior/form-element/form-element-behavior";
 import "../ripple";
 import { RippleElement } from "../ripple/ripple-element";
 import { AriaRole, updateTabindex } from "../util/aria";
@@ -14,7 +14,7 @@ import styles from "./button-element.scss";
 /**
  * Properties of the button.
  */
-export interface IButtonElementProperties extends IFormItemBehaviorProperties {
+export interface IButtonElementProperties extends IFormElementBehaviorProperties {
 	type: "button" | "submit";
 	inverted: boolean;
 	outlined: boolean;
@@ -48,8 +48,8 @@ export interface IButtonElementProperties extends IFormItemBehaviorProperties {
  * @cssprop --button-font-family - Font family.
  */
 @customElement("button-element")
-export class ButtonElement extends FormItemBehavior implements IButtonElementProperties {
-	static styles = [...FormItemBehavior.styles, cssResult(styles)];
+export class ButtonElement extends FormElementBehavior implements IButtonElementProperties {
+	static styles = [...FormElementBehavior.styles, cssResult(styles)];
 
 	/**
 	 * Type of the button.
@@ -138,9 +138,9 @@ export class ButtonElement extends FormItemBehavior implements IButtonElementPro
 			return;
 		}
 
-		// Re-fire the event on the inner form item to interact with the form if there is one
+		// Re-fire the event on the inner form element to interact with the form if there is one
 		if (e.target == this && !e.defaultPrevented) {
-			this.$formItem.dispatchEvent(new MouseEvent("click", {relatedTarget: this, composed: true}));
+			this.$formElement.dispatchEvent(new MouseEvent("click", {relatedTarget: this, composed: true}));
 			e.preventDefault();
 		}
 	}
@@ -160,12 +160,12 @@ export class ButtonElement extends FormItemBehavior implements IButtonElementPro
 	}
 
 	/**
-	 * Returns the form item
+	 * Returns the form element
 	 */
-	protected renderFormItem (): TemplateResult {
+	protected renderFormElement (): TemplateResult {
 		return html`
 			<button
-				id="form-item"
+				id="${this.formElementId}"
 				style="display: none"
 				aria-hidden="true"
 				tabindex="-1"
@@ -184,7 +184,7 @@ export class ButtonElement extends FormItemBehavior implements IButtonElementPro
 		return html`
 			<ripple-element id="ripple" overlay .target="${this}" ?centered="${this.fab}" ?disabled="${this.disabled || this.noRipple}"></ripple-element>
 			<slot></slot>
-			${this.renderFormItem()}
+			${this.renderFormElement()}
 		`;
 	}
 }

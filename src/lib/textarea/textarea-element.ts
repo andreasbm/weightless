@@ -1,6 +1,6 @@
 import { customElement, html, property, TemplateResult } from "lit-element";
 import { ifDefined } from "lit-html/directives/if-defined";
-import { IFormItemBehaviorProperties } from "../behavior/form-item";
+import { IFormElementBehaviorProperties } from "../behavior/form-element";
 import { ITextfieldElementProperties, TextfieldElement } from "../textfield/textfield-element";
 import { cssResult } from "../util/css";
 import { isHidden } from "../util/dom";
@@ -44,7 +44,7 @@ export class TextareaElement extends TextfieldElement implements ITextareaBehavi
 	 * @param props
 	 */
 	firstUpdated (props: Map<keyof ITextareaBehaviorProperties, unknown>) {
-		super.firstUpdated(<Map<keyof IFormItemBehaviorProperties, unknown>>props);
+		super.firstUpdated(<Map<keyof IFormElementBehaviorProperties, unknown>>props);
 		this.refreshHeight();
 	}
 
@@ -72,7 +72,7 @@ export class TextareaElement extends TextfieldElement implements ITextareaBehavi
 			this.setHeight(1);
 
 			// Compute scroll height
-			const scrollHeight = this.$formItem.scrollHeight;
+			const scrollHeight = this.$formElement.scrollHeight;
 
 			// Set the new height
 			this.setHeight(scrollHeight);
@@ -80,20 +80,20 @@ export class TextareaElement extends TextfieldElement implements ITextareaBehavi
 	}
 
 	/**
-	 * Sets the height of the form item.
+	 * Sets the height of the form element.
 	 * @param height
 	 */
 	protected setHeight (height?: number) {
-		this.$formItem.style.minHeight = this.$formItem.style.height = height == null ? null : `${height}px`;
+		this.$formElement.style.minHeight = this.$formElement.style.height = height == null ? null : `${height}px`;
 	}
 
 	/**
-	 * Returns the form item
+	 * Returns the form element
 	 */
-	protected renderFormItem (): TemplateResult {
+	protected renderFormElement (): TemplateResult {
 		return html`
 			<textarea
-				id="form-item"
+				id="${this.formElementId}"
 				?required="${this.required}"
 				?disabled="${this.disabled}"
 				?readonly="${this.readonly}"

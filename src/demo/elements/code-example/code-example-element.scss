@@ -1,7 +1,7 @@
 @import "../../../lib/style/base";
 
 :host(:hover) {
-	#open {
+	#tools {
 		opacity: 1;
 	}
 }
@@ -10,10 +10,11 @@
 	text-align: left;
 }
 
-#open {
+#tools {
 	opacity: 0;
 	transition: #{$transition-duration-fast} #{$transition-ease} opacity;
 	position: absolute;
 	top: $spacing-m;
 	right: $spacing-m;
+	display: flex;
 }

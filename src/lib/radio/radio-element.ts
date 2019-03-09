@@ -27,7 +27,7 @@ export class RadioElement extends RadioBehavior implements IRadioElementProperti
 		return html`
             <div id="dot"></div>
 			<ripple-element id="ripple" .target="${this}" focusable overlay unbounded centered initialDuration="200"></ripple-element>
-			${this.renderFormItem()}
+			${this.renderFormElement()}
 		`;
 	}
 }

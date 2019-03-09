@@ -6,22 +6,22 @@ import { SPACE } from "../../util/constant/keycode";
 import { cssResult } from "../../util/css";
 import { renderAttributes } from "../../util/dom";
 import { addListener, stopEvent } from "../../util/event";
-import { FormItemBehavior, IFormItemBehaviorProperties } from "../form-item";
+import { FormElementBehavior, IFormElementBehaviorProperties } from "../form-element";
 
 import styles from "./checkbox-behavior.scss";
 
 /**
  * Properties of the checkbox behavior.
  */
-export interface ICheckboxBehaviorProperties extends IFormItemBehaviorProperties {
+export interface ICheckboxBehaviorProperties extends IFormElementBehaviorProperties {
 	checked: boolean
 }
 
 /**
  * Checkbox behavior.
  */
-export abstract class CheckboxBehavior extends FormItemBehavior implements ICheckboxBehaviorProperties {
-	static styles = [...FormItemBehavior.styles, cssResult(styles)];
+export abstract class CheckboxBehavior extends FormElementBehavior implements ICheckboxBehaviorProperties {
+	static styles = [...FormElementBehavior.styles, cssResult(styles)];
 
 	/**
 	 * Checks the checkbox.
@@ -34,16 +34,16 @@ export abstract class CheckboxBehavior extends FormItemBehavior implements IChec
 	@property({type: String, reflect: true}) role: AriaRole = "checkbox";
 
 	/**
-	 * Type of the form item.
+	 * Type of the form element.
 	 */
-	protected formItemType: string = "checkbox";
+	protected formElementType: string = "checkbox";
 
 	/**
 	 * Hooks up the element.
 	 * @param props
 	 */
 	protected firstUpdated (props: Map<keyof ICheckboxBehaviorProperties, unknown>) {
-		super.firstUpdated(<Map<keyof IFormItemBehaviorProperties, unknown>>props);
+		super.firstUpdated(<Map<keyof IFormElementBehaviorProperties, unknown>>props);
 
 		this.onClick = this.onClick.bind(this);
 		this.onKeyDown = this.onKeyDown.bind(this);
@@ -113,13 +113,13 @@ export abstract class CheckboxBehavior extends FormItemBehavior implements IChec
 	}
 
 	/**
-	 * Returns the template for the form item
+	 * Returns the template for the form element
 	 */
-	protected renderFormItem (): TemplateResult {
+	protected renderFormElement (): TemplateResult {
 		return html`
 			<input
-				id="form-item"
-				type="${this.formItemType}"
+				id="${this.formElementId}"
+				type="${this.formElementType}"
 				?checked="${this.checked}"
 				?required="${this.required}"
 				?disabled="${this.disabled}"
