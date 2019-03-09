@@ -75,8 +75,8 @@
 	"devDependencies": {
 		"@appnest/readme": "^1.1.2",
 		"@appnest/web-config": "0.3.29",
-		"@appnest/web-router": "^1.1.10",
-		"@types/puppeteer": "^1.12.1",
+		"@appnest/web-router": "^1.2.1",
+		"@types/puppeteer": "^1.12.2",
 		"code-prettify": "^0.1.0",
 		"fs-extra": "^7.0.1",
 		"karma-iframes": "^1.2.2",

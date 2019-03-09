@@ -1,5 +1,5 @@
-import { currentPath, GLOBAL_ROUTER_EVENTS_TARGET, GlobalRouterEventKind } from "@appnest/web-router";
-import "@appnest/web-router";;
+import { path, GLOBAL_ROUTER_EVENTS_TARGET, GlobalRouterEventKind } from "@appnest/web-router";
+import "@appnest/web-router";
 import { customElement, html, property, PropertyValues, query } from "lit-element";
 import "../../../lib/button";
 import "../../../lib/card";
@@ -97,7 +97,7 @@ export class ThemeComponent extends NavElement {
 	protected render () {
 		return html`
 			<aside id="left-container">
-				${currentPath() !== "/" ? html`<button-element id="popover-button" fab inverted flat @click="${() => this.togglePopover()}">
+				${path() !== "/" ? html`<button-element id="popover-button" fab inverted flat @click="${() => this.togglePopover()}">
 					<icon-element alt="menu">menu</icon-element>
 				</button-element>` : ""}
 				<router-link id="logo-wrapper" path="/" @click="${() => this.rotateLogo()}">

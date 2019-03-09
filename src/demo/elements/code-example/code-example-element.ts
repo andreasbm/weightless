@@ -1,6 +1,9 @@
 import { customElement, html, LitElement, property } from "lit-element";
 import "../highlight/highlight-element";
+import "../../../lib/button";
+import "../../../lib/icon";
 import { ifDefined } from "lit-html/directives/if-defined";
+import { openCodepen } from "../../codepen";
 
 /**
  * Highlights the initial HTML in the slot.
@@ -29,6 +32,12 @@ export class CodeExampleElement extends LitElement {
 		this.requestUpdate().then();
 	}
 
+	openCodepen () {
+		openCodepen({
+			html: this.cachedSlotString
+		});
+	}
+
 	/**
 	 * Renders the component.
 	 */
@@ -38,7 +47,27 @@ export class CodeExampleElement extends LitElement {
 				#highlighter {
 					text-align: left;
 				}
+				
+				:host(:hover) #open {
+					opacity: 1;
+				}
+				
+				:host {
+					position: relative;
+				}
+				
+				#open {
+					opacity: 0;
+					transition: 100ms ease opacity;
+					position: absolute;
+					top: 12px;
+					right: 12px;
+				}
+				
 			</style>
+			<button-element id="open" inverted flat fab @click="${() => this.openCodepen()}">
+				<icon-element>open_in_new</icon-element>
+			</button-element>
 			<slot></slot>
 			<highlight-element id="highlighter" lang="${ifDefined(this.lang)}" ?lineNumber="${this.lineNumber}" headline="${ifDefined(this.headline)}" text="${ifDefined(this.cachedSlotString)}"></highlight-element>
 		`;

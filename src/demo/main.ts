@@ -1,30 +1,28 @@
-import { currentPath, GLOBAL_ROUTER_EVENTS_TARGET, GlobalRouterEventKind, ROUTER_SLOT_TAG_NAME, RouterSlot } from "@appnest/web-router";
+import { path, GLOBAL_ROUTER_EVENTS_TARGET, GlobalRouterEventKind, ROUTER_SLOT_TAG_NAME, RouterSlot } from "@appnest/web-router";
 import "@appnest/web-router";
-import "../lib";
-import "./main.scss";
 import "./elements/navbar/navbar-element";
+import "./main.scss";
 import { NavElement } from "../lib/nav/nav-element";
+import { openCodepen } from "./codepen";
 import { getMainScrollContainer, setMainScrollContainer } from "./main-scroll-target";
 
 const $navbar = document.querySelector<NavElement>("#navbar")!;
 
-let path = currentPath();
+let currentPath = path();
 
 function updateShadow () {
 	let shadow = true;
-	if (window.scrollY <= 100 && !path.startsWith("/elements")) {
+	if (window.scrollY <= 100 && !currentPath.startsWith("/elements")) {
 		shadow = false;
 	}
 
 	if ($navbar.shadow != shadow) {
 		$navbar.shadow = shadow;
 	}
-
-	console.log($navbar.shadow);
 }
 
 GLOBAL_ROUTER_EVENTS_TARGET.addEventListener(GlobalRouterEventKind.ChangeState, () => {
-	path = currentPath();
+	currentPath = path();
 	updateShadow();
 });
 

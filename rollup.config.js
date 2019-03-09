@@ -4,6 +4,7 @@ import {
 	defaultPlugins,
 	defaultProdPlugins,
 	defaultServePlugins,
+	copy,
 	isLibrary,
 	isProd,
 	isServe,
@@ -23,6 +24,8 @@ const files = {
 	main: path.join(folders.src, "main.ts"),
 	src_index: path.join(folders.src, "index.html"),
 	src_robots: path.join(folders.src, "robots.txt"),
+	src_sw_extension: path.join(folders.src, "sw-extension.js"),
+	dist_sw_extension: path.join(folders.dist, "sw-extension.js"),
 	dist_index: path.join(folders.dist, "index.html"),
 	dist_robots: path.join(folders.dist, "robots.txt"),
 	dist_service_worker: path.join(folders.dist, "sw.js")
@@ -47,9 +50,8 @@ export default {
 			},
 			copyConfig: {
 				resources: [
-					[folders.assets, folders.dist_assets],
-					[files.src_robots, files.dist_robots]
-				],
+					[folders.assets, folders.dist_assets]
+				]
 			},
 			htmlTemplateConfig: {
 				template: files.src_index,
@@ -93,12 +95,20 @@ export default {
 					}
 				}
 			}),
+			copy({
+				resources: [
+					[files.src_robots, files.dist_robots],
+					[files.src_sw_extension, files.dist_sw_extension],
+				]
+			}),
 			workbox({
 				mode: "generateSW",
 				workboxConfig: {
 					globDirectory: folders.dist,
 					swDest: files.dist_service_worker,
-					globPatterns: [ `**/*.{js,png,html,css}`]
+					globPatterns: [ `**/*.{js,png,html,css}`],
+					navigateFallback: "/index.html",
+					importScripts: [`sw-extension.js`]
 				}
 			})
 		] : []),
