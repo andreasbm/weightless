@@ -1,15 +1,3 @@
-<h1 align="center">button-element</h1>
-<p align="center">Allow users to take actions, and make choices, with a single tap. Go <a href="https://weightless.dev/elements/button">here</a> to try the demo.</p>
-
-
-[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#usage)
-
-## ➤ Usage
-
-<a href="https://weightless.dev/elements/button" align="center">
-  <img src="https://raw.githubusercontent.com/andreasbm/elements/master/screenshots/button-element.png?token=AF-iBV1pZn7D_ITJDLgD6NVlQjtvXupXks5cgq0VwA%3D%3D" width="700" />
-</a>
-
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#button-element)
 
@@ -19,22 +7,32 @@ Allow users to take actions, and make choices, with a single tap.
 
 ### Properties
 
-| Property   | Attribute  | Description                         | Type                  | Default  |
-|------------|------------|-------------------------------------|-----------------------|----------|
-| `disabled` | `disabled` |                                     | `boolean`             | false    |
-| `fab`      | `fab`      | Makes the button round and squared. | `boolean`             | false    |
-| `flat`     | `flat`     | Makes the button flat.              | `boolean`             | false    |
-| `inverted` | `inverted` | Inverts the colors of the button.   | `boolean`             | false    |
-| `name`     | `name`     |                                     | `string`              |          |
-| `noRipple` | `noRipple` | Deactivates the ripple.             | `boolean`             | false    |
-| `outlined` | `outlined` | Makes the button outlined.          | `boolean`             | false    |
-| `readonly` | `readonly` |                                     | `boolean`             | false    |
-| `required` | `required` |                                     | `boolean`             | false    |
-| `role`     | `role`     | Role of the button.                 | `AriaRole`            | "button" |
-| `type`     | `type`     | Type of the button.                 | `"button" | "submit"` | "submit" |
-| `value`    |            |                                     | `string`              |          |
+| Property   | Attribute  | Description                                      | Type                  | Default  |
+|------------|------------|--------------------------------------------------|-----------------------|----------|
+| `disabled` | `disabled` | Disables the element.                            | `boolean`             | false    |
+| `fab`      | `fab`      | Makes the button round and squared.              | `boolean`             | false    |
+| `flat`     | `flat`     | Makes the button flat.                           | `boolean`             | false    |
+| `inverted` | `inverted` | Inverts the colors of the button.                | `boolean`             | false    |
+| `name`     | `name`     | Name of the native form element.                 | `string`              |          |
+| `noRipple` | `noRipple` | Deactivates the ripple.                          | `boolean`             | false    |
+| `outlined` | `outlined` | Makes the button outlined.                       | `boolean`             | false    |
+| `readonly` | `readonly` | Makes the element readonly (disabled but tabbable) | `boolean`             | false    |
+| `required` | `required` | Makes the element required in a form context.    | `boolean`             | false    |
+| `role`     | `role`     | Role of the button.                              | `AriaRole`            | "button" |
+| `type`     | `type`     | Type of the button.                              | `"button" | "submit"` | "submit" |
+| `value`    |            | Value of the form element.                       | `string`              |          |
 
 
+
+
+[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#usage)
+
+## ➤ Usage
+<p align="center">Go <a href="https://weightless.dev/elements/button">here</a> to try the demo.</p>
+
+<a href="https://weightless.dev/elements/button" align="center">
+  <img src="https://raw.githubusercontent.com/andreasbm/elements/master/screenshots/button-element.png?token=AF-iBV1pZn7D_ITJDLgD6NVlQjtvXupXks5cgq0VwA%3D%3D" width="700" />
+</a>
 
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#contributors)

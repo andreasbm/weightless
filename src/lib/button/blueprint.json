@@ -3,42 +3,5 @@
 	"output": "src/lib/button/README.md",
 	"tag": "button-element",
 	"img": "https://raw.githubusercontent.com/andreasbm/elements/master/screenshots/button-element.png?token=AF-iBV1pZn7D_ITJDLgD6NVlQjtvXupXks5cgq0VwA%3D%3D",
-	"demo": "https://weightless.dev/elements/button",
-	"text": "Allow users to take actions, and make choices, with a single tap",
-	"attributes": [
-		["Name", "Type", "Description", "Default value"],
-		["`type`", "'button' | 'submit'", "Type of the button.", "`'submit'`"],
-		["`inverted`", "boolean", "Inverts the colors of the button.", "`false`"],
-		["`fab`", "boolean", "Makes the button round and squared.", "`false`"],
-		["`outlined`", "boolean", "Makes the button outlined.", "`false`"],
-		["`noRipple`", "boolean", "Deactivates the ripple.", "`false`"],
-		["`flat`", "boolean", "Makes the button flat.", "`false`"],
-		["`role`", "string", "Role of the button.", "`'button'`"]
-	],
-	"cssVariables": [
-		["Name", "Description"],
-		["`--button-letter-spacing`", "Letter spacing."],
-		["`--button-fab-size`", "Size of the button when fab attribute is present."],
-		["`--button-color`", "Default color."],
-		["`--button-bg`", "Default background."],
-		["`--button-shadow-color`", "Default shadow color."],
-		["`--button-color-hover`", "Color on :hover."],
-		["`--button-bg-hover`", "Background on :hover."],
-		["`--button-shadow-color-hover`", "Shadow color on hover."],
-		["`--button-color-active`", "Color on :active."],
-		["`--button-bg-active`", "Background on :active."],
-		["`--button-bg-active-flat`", "Background on :active when flat attribute is present."],
-		["`--button-color-disabled`", "Color when disabled."],
-		["`--button-bg-disabled`", "Background when disabled."],
-		["`--button-border-outlined`", "Border when outline attribute is present."],
-		["`--button-transition`", "Transition."],
-		["`--button-padding`", "Padding."],
-		["`--button-font-size`", "Font size."],
-		["`--button-border-radius`", "Border radius."],
-		["`--button-font-family`", "Font family."]
-	],
-	"slots": [
-		["Name", "Description"],
-		["`unnamed`", "Default content."]
-	]
+	"demo": "https://weightless.dev/elements/button"
 }
