@@ -42,6 +42,11 @@ export interface IOverlayBehaviorProperties {
 // Type of an overlay resolver.
 export declare type OverlayResolver<R> = ((result: R | null | undefined) => void);
 
+/**
+ * Default scroll container.
+ */
+export const DEFAULT_OVERLAY_SCROLL_CONTAINER = document.documentElement;
+
 // Prefix infront of the class indicating that an overlay is blocking the scrolling
 const OVERLAY_SCROLLING_BLOCKED_CLASS_PREFIX = `overlay`;
 
@@ -76,14 +81,14 @@ export abstract class OverlayBehavior<R, C extends Partial<IOverlayBehaviorBaseP
 	@property({type: Number}) duration: number = 200;
 
 	// The container the overlay lives in.
-	@property({type: Object}) scrollContainer: EventTarget = document.documentElement;
+	@property({type: Object}) scrollContainer: EventTarget = DEFAULT_OVERLAY_SCROLL_CONTAINER;
 
 	/**
 	 * Returns the scroll container as an HTMLElement. Falls back to the documentElement if the scroll
 	 * container is not blockable since the style attribute is required to set the overflow hidden.
 	 */
 	get $blockableScrollContainer () {
-		return this.scrollContainer instanceof HTMLElement ? this.scrollContainer : document.documentElement;
+		return this.scrollContainer instanceof HTMLElement ? this.scrollContainer : DEFAULT_OVERLAY_SCROLL_CONTAINER;
 	}
 
 	protected currentInAnimations: Animation[] = [];

@@ -11,55 +11,30 @@
 </a>
 
 
-[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#attributes)
+[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#button-element)
 
-## ➤ Attributes
+## ➤ button-element
 
-| Name | Type | Description | Default value |
-| ------- | ------- | ------- | ------- |
-| `type` | 'button' \| 'submit' | Type of the button. | `'submit'` |
-| `inverted` | boolean | Inverts the colors of the button. | `false` |
-| `fab` | boolean | Makes the button round and squared. | `false` |
-| `outlined` | boolean | Makes the button outlined. | `false` |
-| `noRipple` | boolean | Deactivates the ripple. | `false` |
-| `flat` | boolean | Makes the button flat. | `false` |
-| `role` | string | Role of the button. | `'button'` |
+Allow users to take actions, and make choices, with a single tap.
 
+### Properties
 
-[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#css-variables)
-
-## ➤ CSS variables
-
-| Name | Description |
-| ------- | ------- |
-| `--button-letter-spacing` | Letter spacing. |
-| `--button-fab-size` | Size of the button when fab attribute is present. |
-| `--button-color` | Default color. |
-| `--button-bg` | Default background. |
-| `--button-shadow-color` | Default shadow color. |
-| `--button-color-hover` | Color on :hover. |
-| `--button-bg-hover` | Background on :hover. |
-| `--button-shadow-color-hover` | Shadow color on hover. |
-| `--button-color-active` | Color on :active. |
-| `--button-bg-active` | Background on :active. |
-| `--button-bg-active-flat` | Background on :active when flat attribute is present. |
-| `--button-color-disabled` | Color when disabled. |
-| `--button-bg-disabled` | Background when disabled. |
-| `--button-border-outlined` | Border when outline attribute is present. |
-| `--button-transition` | Transition. |
-| `--button-padding` | Padding. |
-| `--button-font-size` | Font size. |
-| `--button-border-radius` | Border radius. |
-| `--button-font-family` | Font family. |
+| Property   | Attribute  | Description                         | Type                  | Default  |
+|------------|------------|-------------------------------------|-----------------------|----------|
+| `disabled` | `disabled` |                                     | `boolean`             | false    |
+| `fab`      | `fab`      | Makes the button round and squared. | `boolean`             | false    |
+| `flat`     | `flat`     | Makes the button flat.              | `boolean`             | false    |
+| `inverted` | `inverted` | Inverts the colors of the button.   | `boolean`             | false    |
+| `name`     | `name`     |                                     | `string`              |          |
+| `noRipple` | `noRipple` | Deactivates the ripple.             | `boolean`             | false    |
+| `outlined` | `outlined` | Makes the button outlined.          | `boolean`             | false    |
+| `readonly` | `readonly` |                                     | `boolean`             | false    |
+| `required` | `required` |                                     | `boolean`             | false    |
+| `role`     | `role`     | Role of the button.                 | `AriaRole`            | "button" |
+| `type`     | `type`     | Type of the button.                 | `"button" | "submit"` | "submit" |
+| `value`    |            |                                     | `string`              |          |
 
 
-[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#slots)
-
-## ➤ Slots
-
-| Name | Description |
-| ------- | ------- |
-| `unnamed` | Default content. |
 
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#contributors)

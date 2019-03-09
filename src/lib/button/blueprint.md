@@ -7,17 +7,7 @@
   <img src="{{ img }}" width="700" />
 </a>
 
-## Attributes
-
-{{ attributes }}
-
-## CSS variables
-
-{{ cssVariables }}
-
-## Slots
-
-{{ slots }}
+{{ doc:src/lib/button/button-element.ts }}
 
 {{ template:contributors }}
 {{ template:license }}
