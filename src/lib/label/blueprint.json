@@ -3,21 +3,5 @@
 	"output": "src/lib/label/README.md",
 	"tag": "label-element",
 	"demo": "https://weightless.dev/elements/label",
-	"img": "https://raw.githubusercontent.com/andreasbm/elements/master/screenshots/label-element.png?token=AF-iBft0B2brPzwNC_jHXJ7wZKxOtAoJks5chEnjwA%3D%3D",
-	"text": "Make form elements more accessible",
-	"attributes": [
-		["Name", "Type", "Description", "Default value"],
-		["`required`", "boolean", "Styles the label as required.", "`false`"],
-		["`nowrap`", "boolean", "Caps the label element with ellipsis if overflowing.", "`false`"],
-		["`for`", "string", "Query of the form element click events are re-fired upon.", "`undefined`"]
-	],
-	"cssVariables": [
-		["Name", "Description"],
-		["`--label-color`", "Color."],
-		["`--label-color-required`", "Color of the asterisk (*) when required attributed is present."]
-	],
-	"slots": [
-		["Name", "Description"],
-		["`unnamed`", "Default content. If the first element is a form element, clicks on the entire label will be re-fired upon that element."]
-	]
+	"img": "https://raw.githubusercontent.com/andreasbm/elements/master/screenshots/label-element.png?token=AF-iBft0B2brPzwNC_jHXJ7wZKxOtAoJks5chEnjwA%3D%3D"
 }

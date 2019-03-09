@@ -2,30 +2,5 @@
 	"input": "src/lib/backdrop/blueprint.md",
 	"output": "src/lib/backdrop/README.md",
 	"tag": "backdrop-element",
-	"demo": "https://weightless.dev/elements/dialog",
-	"text": "Dark layer to use behind overlayed elements",
-	"attributes": [
-		[
-			"Name",
-			"Type",
-			"Description",
-			"Default value"
-		],
-		[
-			"`role`",
-			"string",
-			"Role of the backdrop.",
-			"`'presentation'`"
-		]
-	],
-	"cssVariables": [
-		[
-			"Name",
-			"Description"
-		],
-		[
-			"`--backdrop-bg`",
-			"Background."
-		]
-	]
+	"demo": "https://weightless.dev/elements/dialog"
 }

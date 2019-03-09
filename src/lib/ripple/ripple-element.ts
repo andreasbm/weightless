@@ -53,6 +53,8 @@ const ANIMATION_CONFIG: KeyframeAnimationOptions = {
 
 /**
  * Indicate touch actions.
+ * @cssprop --ripple-color - Color.
+ * @cssprop --ripple-opacity - Opacity.
  */
 @customElement("ripple-element")
 export class RippleElement extends LitElement implements IRippleElementProperties {
@@ -60,51 +62,61 @@ export class RippleElement extends LitElement implements IRippleElementPropertie
 
 	/**
 	 * Makes the ripple visible outside the bounds.
+	 * @attr
 	 */
 	@property({type: Boolean, reflect: true}) unbounded: boolean = false;
 
 	/**
 	 * Makes ripple appear from the center.
+	 * @attr
 	 */
 	@property({type: Boolean, reflect: true}) centered: boolean = false;
 
 	/**
 	 * Overlays the ripple.
+	 * @attr
 	 */
 	@property({type: Boolean, reflect: true}) overlay: boolean = false;
 
 	/**
 	 * Disables the ripple.
+	 * @attr
 	 */
 	@property({type: Boolean, reflect: true}) disabled: boolean = false;
 
 	/**
 	 * Allows focusin to spawn a ripple.
+	 * @attr
 	 */
 	@property({type: Boolean, reflect: true}) focusable: boolean = false;
 
 	/**
 	 * Releases the ripple after it has been spawned.
+	 * @attr
 	 */
 	@property({type: Boolean, reflect: true}) autoRelease: boolean = false;
 
 	/**
 	 * Initial animation duration.
+	 * @attr
 	 */
 	@property({type: Number}) initialDuration: number = 1000;
 
 	/**
 	 * Fade out animation duration.
+	 * @attr
 	 */
 	@property({type: Number}) releaseDuration: number = 500;
 
 	/**
 	 * Role of the ripple.
+	 * @attr
 	 */
 	@property({type: String, reflect: true}) role: AriaRole = "presentation";
 
 	/**
 	 * Target for the spawn ripple events.
+	 * @attr
 	 */
 	@property({type: Object}) target: EventTarget = this;
 

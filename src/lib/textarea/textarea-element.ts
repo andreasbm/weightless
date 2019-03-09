@@ -23,11 +23,13 @@ export class TextareaElement extends TextfieldElement implements ITextareaBehavi
 
 	/**
 	 * Amount of rows.
+	 * @attr
 	 */
 	@property({type: Number, reflect: true}) rows?: number;
 
 	/**
 	 * Amount of columns.
+	 * @attr
 	 */
 	@property({type: Number, reflect: true}) cols?: number;
 

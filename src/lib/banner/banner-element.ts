@@ -15,6 +15,15 @@ export interface IBannerElementProperties {
 
 /**
  * Display a non-interruptive message and related optional actions.
+ * @slot icon - Icon content.
+ * @slot text - Text content.
+ * @slot action - Action content (you can have multiple slots named action).
+ * @cssprop --banner-icon-margin - Margin of the icon slot.
+ * @cssprop --banner-icon-color - Color of the icon.
+ * @cssprop --banner-padding - Padding.
+ * @cssprop --banner-color - Color.
+ * @cssprop --banner-bg - Background.
+ * @cssprop --banner-content-padding - Padding of the content slot.
  */
 @customElement("banner-element")
 export class BannerElement extends LitElement implements IBannerElementProperties {
@@ -22,6 +31,7 @@ export class BannerElement extends LitElement implements IBannerElementPropertie
 
 	/**
 	 * Role of the banner.
+	 * @attr
 	 */
 	@property({type: String, reflect: true}) role: AriaRole = "banner";
 

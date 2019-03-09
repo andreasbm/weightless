@@ -52,6 +52,8 @@ export const defaultPopoverConfig: IPopoverElementConfig = {
 
 /**
  * Contextual anchored elements.
+ * @slot - Default content.
+ * @cssprop --popover-z-index - z-index.
  */
 @customElement("popover-element")
 export class PopoverElement<R = unknown> extends OverlayBehavior<R, IPopoverElementConfig> implements IPopoverElementProperties {
@@ -59,66 +61,79 @@ export class PopoverElement<R = unknown> extends OverlayBehavior<R, IPopoverElem
 
 	/**
 	 * Makes the popover close when it is clicked upon.
+	 * @attr
 	 */
 	@property({type: Boolean}) closeOnClick: boolean = false;
 
 	/**
 	 * Whether a fallback strategy for the positioning should be used when there are no room for the popover.
+	 * @attr
 	 */
 	@property({type: Boolean}) noFallback: boolean = false;
 
 	/**
 	 * X origin of the transform.
+	 * @attr
 	 */
 	@property({type: String, reflect: true}) transformOriginX: OriginX = OriginX.LEFT;
 
 	/**
 	 * Y origin of the transform.
+	 * @attr
 	 */
 	@property({type: String, reflect: true}) transformOriginY: OriginY = OriginY.TOP;
 
 	/**
 	 * X origin of the anchored point.
+	 * @attr
 	 */
 	@property({type: String, reflect: true}) anchorOriginX: OriginX = OriginX.LEFT;
 
 	/**
 	 * Y origin of the anchored point.
+	 * @attr
 	 */
 	@property({type: String, reflect: true}) anchorOriginY: OriginY = OriginY.TOP;
 
 	/**
 	 * Role of the popover.
+	 * @attr
 	 */
 	@property({type: String, reflect: true}) role: AriaRole = "menu";
 
 	/**
 	 * Anchor element or query.
+	 * @attr
 	 */
 	@property({type: String}) anchor?: Element | string;
 
 	/**
 	 * Events on the anchor that makes the popover open itself.
+	 * @attr
 	 */
 	@property({type: Array}) anchorOpenEvents?: string[];
 
 	/**
 	 * Events on the anchor that makes the popover close itself.
+	 * @attr
 	 */
 	@property({type: Array}) anchorCloseEvents?: string[];
 
 	/**
 	 * Content of the popover.
+	 * @attr
 	 */
 	@query("#content") $content: FocusTrap;
 
 	/**
 	 * Container element.
+	 * @attr
 	 */
 	@query("#container") $container: HTMLElement;
 
 	/**
 	 * Backdrop element.
+	 * @attr
 	 */
 	@query("#backdrop") $backdrop: BackdropElement;
 
@@ -314,7 +329,7 @@ export class PopoverElement<R = unknown> extends OverlayBehavior<R, IPopoverElem
 		contentAnimation.onfinish = setup;
 		backdropAnimation.onfinish = setup;
 
-		this.currentInAnimations.push(contentAnimation, backdropAnimation);
+		this.activeInAnimations.push(contentAnimation, backdropAnimation);
 		this.updatePosition();
 	}
 
@@ -351,7 +366,7 @@ export class PopoverElement<R = unknown> extends OverlayBehavior<R, IPopoverElem
 		contentAnimation.onfinish = cleanup;
 		this.detachClickAwayListeners();
 
-		this.currentOutAnimations.push(backdropAnimation, contentAnimation);
+		this.activeOutAnimations.push(backdropAnimation, contentAnimation);
 	}
 
 	/**
@@ -449,7 +464,7 @@ export class PopoverElement<R = unknown> extends OverlayBehavior<R, IPopoverElem
 	protected render (): TemplateResult {
 		return html`
 			<backdrop-element id="backdrop" @click="${this.clickAway}"></backdrop-element>
-			<div id="container" ?aria-expanded="${this.open}">
+			<div id="container" aria-expanded="${this.open}">
 				<focus-trap id="content" ?inactive="${!this.open || this.disableFocusTrap}">
 					${this.renderContent()}
 				</focus-trap>

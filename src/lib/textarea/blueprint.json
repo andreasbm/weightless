@@ -3,11 +3,5 @@
 	"output": "src/lib/textarea/README.md",
 	"tag": "textarea-element",
 	"demo": "https://weightless.dev/elements/textarea",
-	"img": "https://raw.githubusercontent.com/andreasbm/elements/master/screenshots/textarea-element.png?token=AF-iBZJNydxFHIc4sQBFRLt8o2_qR34hks5chErwwA%3D%3D",
-	"text": "Multiline text fields",
-	"attributes": [
-		["Name", "Type", "Description", "Default value"],
-		["`rows`", "number", "Amount of rows.", "`undefined`"],
-		["`cols`", "number", "Amount of columns.", "`undefined`"]
-	]
+	"img": "https://raw.githubusercontent.com/andreasbm/elements/master/screenshots/textarea-element.png?token=AF-iBZJNydxFHIc4sQBFRLt8o2_qR34hks5chErwwA%3D%3D"
 }

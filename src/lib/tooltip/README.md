@@ -1,45 +1,48 @@
-<h1 align="center">tooltip-element</h1>
-<p align="center">Informative context related text. Go <a href="https://weightless.dev/elements/tooltip">here</a> to try the demo.</p>
+
+[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#tooltip-element)
+
+## ➤ tooltip-element
+
+Informative context related text.
+
+### Properties
+
+| Property            | Attribute           | Description                                      | Type               | Default                          |
+|---------------------|---------------------|--------------------------------------------------|--------------------|----------------------------------|
+| `$backdrop`         | `$backdrop`         | Backdrop element.                                | `BackdropElement`  |                                  |
+| `$container`        | `$container`        | Container element.                               | `HTMLElement`      |                                  |
+| `$content`          | `$content`          | Content of the popover.                          | `FocusTrap`        |                                  |
+| `anchor`            | `anchor`            | Anchor element or query.                         | `string | Element` |                                  |
+| `anchorCloseEvents` | `anchorCloseEvents` | Events on the anchor that makes the popover close itself. | `string[]`         |                                  |
+| `anchorOpenEvents`  | `anchorOpenEvents`  | Events on the anchor that makes the popover open itself. | `string[]`         |                                  |
+| `anchorOriginX`     | `anchorOriginX`     | X origin of the anchored point.                  | `OriginX`          | OriginX.LEFT                     |
+| `anchorOriginY`     | `anchorOriginY`     | Y origin of the anchored point.                  | `OriginY`          | OriginY.TOP                      |
+| `backdrop`          | `backdrop`          |                                                  | `boolean`          | false                            |
+| `blockScrolling`    | `blockScrolling`    |                                                  | `boolean`          | false                            |
+| `closeOnClick`      | `closeOnClick`      | Makes the popover close when it is clicked upon. | `boolean`          | false                            |
+| `disableFocusTrap`  | `disableFocusTrap`  |                                                  | `boolean`          | false                            |
+| `duration`          | `duration`          |                                                  | `number`           | 200                              |
+| `fixed`             | `fixed`             |                                                  | `boolean`          | false                            |
+| `noFallback`        | `noFallback`        | Whether a fallback strategy for the positioning should be used when there are no room for the popover. | `boolean`          | false                            |
+| `open`              | `open`              |                                                  | `boolean`          | false                            |
+| `persistent`        | `persistent`        |                                                  | `boolean`          | false                            |
+| `role`              | `role`              | Role of the popover.                             | `AriaRole`         | "menu"                           |
+| `scrollContainer`   | `scrollContainer`   |                                                  | `EventTarget`      | DEFAULT_OVERLAY_SCROLL_CONTAINER |
+| `transformOriginX`  | `transformOriginX`  | X origin of the transform.                       | `OriginX`          | OriginX.LEFT                     |
+| `transformOriginY`  | `transformOriginY`  | Y origin of the transform.                       | `OriginY`          | OriginY.TOP                      |
+
+
 
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#usage)
 
 ## ➤ Usage
 
+Go [here](https://weightless.dev/elements/tooltip) to try the demo.
+
 <a href="https://weightless.dev/elements/tooltip" align="center">
   <img src="https://raw.githubusercontent.com/andreasbm/elements/master/screenshots/tooltip-element.png?token=AF-iBYKqW5Hm2x5ac_PMHEQ6wGDqACyVks5chEsqwA%3D%3D" width="700" />
 </a>
-
-
-[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#attributes)
-
-## ➤ Attributes
-
-The `tooltip-element` extends `PopoverElement`. Go to the [documentation](/src/lib/popover) to see available attributes.
-
-
-[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#css-variables)
-
-## ➤ CSS variables
-
-| Name | Description |
-| ------- | ------- |
-| `--tooltip-padding` | Padding. |
-| `--tooltip-bg` | Background. |
-| `--tooltip-color | Color. |
-
-The `tooltip-element` extends `PopoverElement`. Go to the [documentation](/src/lib/popover) to see the available CSS variables.
-
-
-[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#slots)
-
-## ➤ Slots
-
-| Name | Description |
-| ------- | ------- |
-| `unnamed` | Default content. |
-
-The `tooltip-element` extends `PopoverElement`. Go to the [documentation](/src/lib/popover) to see more available slots.
 
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#contributors)

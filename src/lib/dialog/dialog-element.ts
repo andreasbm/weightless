@@ -1,4 +1,5 @@
 import { FocusTrap } from "@appnest/focus-trap";
+import "@appnest/focus-trap";
 import { customElement, html, property, query, TemplateResult } from "lit-element";
 import "../backdrop";
 import { BackdropElement } from "../backdrop/backdrop-element";
@@ -53,6 +54,37 @@ export const defaultDialogConfig: IDialogElementConfig = {
 
 /**
  * Highly interruptive messages.
+ * @slot header - Header content.
+ * @slot content - Body content.
+ * @slot footer - Footer content.
+ * @slot - Default content.
+ * @cssprop --dialog-elevation - Box shadow.
+ * @cssprop --dialog-bg - Background.
+ * @cssprop --dialog-color - Color.
+ * @cssprop --dialog-border-radius - Border radius.
+ * @cssprop --dialog-z-index - z-index.
+ * @cssprop --dialog-will-change - Will change.
+ * @cssprop --dialog-width - Default width.
+ * @cssprop --dialog-height - Default height.
+ * @cssprop --dialog-width-s - Small width.
+ * @cssprop --dialog-height-s - Small height
+ * @cssprop --dialog-width-m - Medium width.
+ * @cssprop --dialog-height-m - Medium height
+ * @cssprop --dialog-width-l - Large width.
+ * @cssprop --dialog-height-l - Large height
+ * @cssprop --dialog-width-fullscreen - Fullscreen width.
+ * @cssprop --dialog-height-fullscreen - Fullscreen height
+ * @cssprop --dialog-width-auto - Auto width.
+ * @cssprop --dialog-height-auto - Auto height.
+ * @cssprop --dialog-min-width - Min width.
+ * @cssprop --dialog-min-height - Min height.
+ * @cssprop --dialog-max-width - Max width.
+ * @cssprop --dialog-max-height - Max height.
+ * @cssprop --dialog-scrollable-border - Border when scrollable.
+ * @cssprop --dialog-header-padding - Padding of the header slot.
+ * @cssprop --dialog-header-padding-scrollable - Padding of the header slot when scrollable.
+ * @cssprop --dialog-content-padding - Padding of the content slot.
+ * @cssprop --dialog-footer-padding - Padding of the footer slot.
  */
 @customElement("dialog-element")
 export class DialogElement<R = unknown> extends OverlayBehavior<R, Partial<IDialogElementProperties>> implements IDialogElementProperties {
@@ -60,31 +92,37 @@ export class DialogElement<R = unknown> extends OverlayBehavior<R, Partial<IDial
 
 	/**
 	 * Size of the dialog.
+	 * @attr
 	 */
 	@property({type: String, reflect: true}) size?: DialogSize;
 
 	/**
 	 * Makes the dialog scrollable.
+	 * @attr
 	 */
 	@property({type: Boolean, reflect: true}) scrollable: boolean = false;
 
 	/**
 	 * Role of the dialog.
+	 * @attr
 	 */
 	@property({type: String, reflect: true}) role: AriaRole = "dialog";
 
 	/**
 	 * Focus trap element.
+	 * @attr
 	 */
 	@query("#dialog") $focusTrap: FocusTrap;
 
 	/**
 	 * Dialog element.
+	 * @attr
 	 */
 	@query("#dialog") $dialog: HTMLElement;
 
 	/**
 	 * Backdrop element.
+	 * @attr
 	 */
 	@query("#backdrop") $backdrop: BackdropElement;
 
@@ -116,7 +154,7 @@ export class DialogElement<R = unknown> extends OverlayBehavior<R, Partial<IDial
 		dialogAnimation.onfinish = setup;
 		backdropAnimation.onfinish = setup;
 
-		this.currentInAnimations.push(dialogAnimation, backdropAnimation);
+		this.activeInAnimations.push(dialogAnimation, backdropAnimation);
 	}
 
 	/**
@@ -150,7 +188,7 @@ export class DialogElement<R = unknown> extends OverlayBehavior<R, Partial<IDial
 		dialogAnimation.onfinish = cleanup;
 		backdropAnimation.onfinish = cleanup;
 
-		this.currentOutAnimations.push(dialogAnimation, backdropAnimation);
+		this.activeOutAnimations.push(dialogAnimation, backdropAnimation);
 	}
 
 	render (): TemplateResult {

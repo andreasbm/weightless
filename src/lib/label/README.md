@@ -1,44 +1,30 @@
-<h1 align="center">label-element</h1>
-<p align="center">Make form elements more accessible. Go <a href="https://weightless.dev/elements/label">here</a> to try the demo.</p>
+
+[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#label-element)
+
+## ➤ label-element
+
+Make form elements more accessible.
+
+### Properties
+
+| Property   | Attribute  | Description                                      | Type      | Default |
+|------------|------------|--------------------------------------------------|-----------|---------|
+| `for`      | `for`      | Query of the form element click events are re-fired upon. | `string`  |         |
+| `nowrap`   | `nowrap`   | Caps the label element with ellipsis if overflowing. | `boolean` | false   |
+| `required` | `required` | Styles the label as required.                    | `boolean` | false   |
+
+
 
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#usage)
 
 ## ➤ Usage
 
+Go [here](https://weightless.dev/elements/label) to try the demo.
+
 <a href="https://weightless.dev/elements/label" align="center">
   <img src="https://raw.githubusercontent.com/andreasbm/elements/master/screenshots/label-element.png?token=AF-iBft0B2brPzwNC_jHXJ7wZKxOtAoJks5chEnjwA%3D%3D" width="700" />
 </a>
-
-
-[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#attributes)
-
-## ➤ Attributes
-
-| Name | Type | Description | Default value |
-| ------- | ------- | ------- | ------- |
-| `required` | boolean | Styles the label as required. | `false` |
-| `nowrap` | boolean | Caps the label element with ellipsis if overflowing. | `false` |
-| `for` | string | Query of the form element click events are re-fired upon. | `undefined` |
-
-
-[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#css-variables)
-
-## ➤ CSS variables
-
-| Name | Description |
-| ------- | ------- |
-| `--label-color` | Color. |
-| `--label-color-required` | Color of the asterisk (*) when required attributed is present. |
-
-
-[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#slots)
-
-## ➤ Slots
-
-| Name | Description |
-| ------- | ------- |
-| `unnamed` | Default content. If the first element is a form element, clicks on the entire label will be re-fired upon that element. |
 
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#contributors)

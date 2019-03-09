@@ -18,18 +18,20 @@ export interface ICheckboxBehaviorProperties extends IFormElementBehaviorPropert
 }
 
 /**
- * Checkbox behavior.
+ * Provides checkbox behavior.
  */
 export abstract class CheckboxBehavior extends FormElementBehavior implements ICheckboxBehaviorProperties {
 	static styles = [...FormElementBehavior.styles, cssResult(styles)];
 
 	/**
 	 * Checks the checkbox.
+	 * @attr
 	 */
 	@property({type: Boolean, reflect: true}) checked: boolean = false;
 
 	/**
 	 * Role of the checkbox.
+	 * @attr
 	 */
 	@property({type: String, reflect: true}) role: AriaRole = "checkbox";
 

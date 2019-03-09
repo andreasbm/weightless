@@ -17,6 +17,19 @@ export interface INavElementProperties {
 
 /**
  * Provide access to destinations in your app.
+ * @slot left - Content positioned to the left.
+ * @slot right - Content positioned to the right.
+ * @slot title - Title.
+ * @cssprop --nav-bg - Background.
+ * @cssprop --nav-color - Color.
+ * @cssprop --tolbar-z-index - z-index.
+ * @cssprop --nav-padding - Padding.
+ * @cssprop --nav-height - Height.
+ * @cssprop --nav-elevation - Box shadow.
+ * @cssprop --nav-transition - Transition.
+ * @cssprop --nav-title-font-size - Font size of the title.
+ * @cssprop --nav-title-font-weight - Font weight of the title.
+ * @cssprop --nav-title-margin - Margin of the title.
  */
 @customElement("nav-element")
 export class NavElement extends LitElement implements INavElementProperties {
@@ -24,16 +37,19 @@ export class NavElement extends LitElement implements INavElementProperties {
 
 	/**
 	 * Gives the nav a shadow.
+	 * @attr
 	 */
 	@property({type: Boolean, reflect: true}) shadow: boolean = false;
 
 	/**
 	 * Fixes the nav to the top of the page.
+	 * @attr
 	 */
 	@property({type: Boolean, reflect: true}) fixed: boolean = false;
 
 	/**
 	 * Role of the nav.
+	 * @attr
 	 */
 	@property({type: String, reflect: true}) role: AriaRole = "navigation";
 

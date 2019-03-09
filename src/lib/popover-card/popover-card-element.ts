@@ -14,6 +14,11 @@ export interface IPopoverCardElementProperties {
 
 /**
  * Give popovers a contextual flair.
+ * @slot - Default content.
+ * @cssprop --popover-card-arrow-width - Width of the arrow.
+ * @cssprop --popover-card-arrow-height - Height of the arrow.
+ * @cssprop --popover-card-arrow-fill - Color of the arrow.
+ * @cssprop --popover-card-elevation - Box shadow of the card.
  */
 @customElement("popover-card-element")
 export class PopoverCardElement extends LitElement implements IPopoverCardElementProperties {

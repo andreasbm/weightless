@@ -15,6 +15,9 @@ export interface IIconElementProperties {
 
 /**
  * Symbols for common actions and items.
+ * @slot - Name of the icon.
+ * @cssprop --icon-font - Icon font family.
+ * @cssprop --icon-size - Font size.
  */
 @customElement("icon-element")
 export class IconElement extends LitElement implements IIconElementProperties {
@@ -22,6 +25,7 @@ export class IconElement extends LitElement implements IIconElementProperties {
 
 	/**
 	 * Roles of the icon.
+	 * @attr
 	 */
 	@property({type: String, reflect: true}) role: AriaRole = "img";
 

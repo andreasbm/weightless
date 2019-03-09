@@ -14,6 +14,8 @@ export interface IDividerElementProperties {
 
 /**
  * Thin line that groups content in lists and layouts.
+ * @cssprop --divider-color - Color.
+ * @cssprop --divider-height - Height.
  */
 @customElement("divider-element")
 export class DividerElement extends LitElement implements IDividerElementProperties {
@@ -21,6 +23,7 @@ export class DividerElement extends LitElement implements IDividerElementPropert
 
 	/**
 	 * Role of the backdrop.
+	 * @attr
 	 */
 	@property({type: String, reflect: true}) role: AriaRole = "separator";
 

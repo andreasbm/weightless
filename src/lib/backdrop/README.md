@@ -1,32 +1,28 @@
-<h1 align="center">backdrop-element</h1>
-<p align="center">Dark layer to use behind overlayed elements. Go <a href="https://weightless.dev/elements/dialog">here</a> to try the demo.</p>
+
+[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#backdrop-element)
+
+## ➤ backdrop-element
+
+Dark layer to use behind overlayed elements.
+
+### Properties
+
+| Property | Attribute | Description           | Type       | Default        |
+|----------|-----------|-----------------------|------------|----------------|
+| `role`   | `role`    | Role of the backdrop. | `AriaRole` | "presentation" |
+
+
 
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#usage)
 
 ## ➤ Usage
 
+Go [here](https://weightless.dev/elements/dialog) to try the demo.
+
 ```html
 <backdrop-element></backdrop-element>
 ```
-
-
-[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#attributes)
-
-## ➤ Attributes
-
-| Name | Type | Description | Default value |
-| ------- | ------- | ------- | ------- |
-| `role` | string | Role of the backdrop. | `'presentation'` |
-
-
-[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#css-variables)
-
-## ➤ CSS variables
-
-| Name | Description |
-| ------- | ------- |
-| `--backdrop-bg` | Background. |
 
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#contributors)

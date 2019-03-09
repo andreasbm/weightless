@@ -5,10 +5,12 @@ import { sharedStyles } from "../../style/shared";
 import { pauseAnimations } from "../../util/animation";
 import { CUBIC_BEZIER } from "../../util/constant/animation";
 import { ESCAPE } from "../../util/constant/keycode";
+import { cssResult } from "../../util/css";
 import { renderAttributes, traverseActiveElements } from "../../util/dom";
 import { addListener, EventListenerSubscription, removeListeners, stopEvent } from "../../util/event";
 import { onSizeChanged } from "../../util/resize";
 import { uniqueID } from "../../util/unique";
+import styles from "overlay-behavior.scss";
 
 /**
  * Events the overlay behavior can dispatch.
@@ -54,33 +56,59 @@ const OVERLAY_SCROLLING_BLOCKED_CLASS_PREFIX = `overlay`;
 const scrollingBlockedClass = (id: string) => `${OVERLAY_SCROLLING_BLOCKED_CLASS_PREFIX}-${id}`;
 
 /**
- * This class defines all of the logic elements with an overlay requires.
+ * Provides overlay behavior.
+ * @event didshow - Dispatches after the overlay has been shown.
+ * @event didhide - Dispatches after the overlay has been hidden.
  */
 export abstract class OverlayBehavior<R, C extends Partial<IOverlayBehaviorBaseProperties>> extends LitElement implements IOverlayBehaviorProperties {
-	static styles = [sharedStyles];
+	static styles = [sharedStyles, cssResult(styles)];
 
-	// Whether the overlay is open or not.
+	/**
+	 * Whether the overlay is open or not.
+	 * @attr
+	 */
 	@property({type: Boolean, reflect: true}) open: boolean = false;
 
-	// Whether the focus trap be disabled.
+	/**
+	 * Whether the focus trap be disabled.
+	 * @attr
+	 */
 	@property({type: Boolean, reflect: true}) disableFocusTrap: boolean = false;
 
-	// Whether the backdrop is visible or not.
+	/**
+	 * Whether the backdrop is visible or not.
+	 * @attr
+	 */
 	@property({type: Boolean, reflect: true}) backdrop: boolean = false;
 
-	// Whether the overlay is fixed or not.
+	/**
+	 * Whether the overlay is fixed or not.
+	 * @attr
+	 */
 	@property({type: Boolean, reflect: true}) fixed: boolean = false;
 
-	// Whether the overlay is persistent or not. When the overlay is persistent, ESCAPE and backdrop clicks won't close it.
+	/**
+	 * Whether the overlay is persistent or not. When the overlay is persistent, ESCAPE and backdrop clicks won't close it.
+	 * @attr
+	 */
 	@property({type: Boolean}) persistent: boolean = false;
 
-	// Whether the overlay blocks the scrolling on the scroll container.
+	/**
+	 * Whether the overlay blocks the scrolling on the scroll container.
+	 * @attr
+	 */
 	@property({type: Boolean}) blockScrolling: boolean = false;
 
-	// The duration of the animations.
+	/**
+	 * The duration of the animations.
+	 * @attr
+	 */
 	@property({type: Number}) duration: number = 200;
 
-	// The container the overlay lives in.
+	/**
+	 * The container the overlay lives in.
+	 * @attr
+	 */
 	@property({type: Object}) scrollContainer: EventTarget = DEFAULT_OVERLAY_SCROLL_CONTAINER;
 
 	/**
@@ -91,13 +119,40 @@ export abstract class OverlayBehavior<R, C extends Partial<IOverlayBehaviorBaseP
 		return this.scrollContainer instanceof HTMLElement ? this.scrollContainer : DEFAULT_OVERLAY_SCROLL_CONTAINER;
 	}
 
-	protected currentInAnimations: Animation[] = [];
-	protected currentOutAnimations: Animation[] = [];
+	/**
+	 * Active in animation.
+	 */
+	protected activeInAnimations: Animation[] = [];
+	
+	/**
+	 * Active out animations.
+	 */
+	protected activeOutAnimations: Animation[] = [];
+
+	/**
+	 * Resolvers that resolves when the overlay is closed.
+	 */
 	protected resolvers: OverlayResolver<R>[] = [];
-	protected abstract readonly $focusTrap?: FocusTrap;
+
+	/**
+	 * Unique ID of the overlay.
+	 */
 	protected overlayId = uniqueID();
+
+	/**
+	 * Active event listeners.
+	 */
 	protected listeners: EventListenerSubscription[] = [];
+
+	/**
+	 * Element that was active before the overlay was opened.
+	 */
 	protected activeElementBeforeOpen?: HTMLElement;
+
+	/**
+	 * Trap where focus is going to be trapped within.
+	 */
+	protected abstract readonly $focusTrap?: FocusTrap;
 
 	/**
 	 * Base configuration for the in and out animation.
@@ -145,7 +200,7 @@ export abstract class OverlayBehavior<R, C extends Partial<IOverlayBehaviorBaseP
 	show (config?: C): Promise<R | null> {
 
 		// If an in animation is already playing return a new resolver.
-		if (this.currentInAnimations.length > 0) {
+		if (this.activeInAnimations.length > 0) {
 			return this.createResolver();
 		}
 
@@ -170,7 +225,7 @@ export abstract class OverlayBehavior<R, C extends Partial<IOverlayBehaviorBaseP
 
 		// If there are out animations already being played, we simply return
 		// knowing that the current out animation will finish soon.
-		if (this.currentOutAnimations.length > 0) {
+		if (this.activeOutAnimations.length > 0) {
 			return;
 		}
 
@@ -272,14 +327,14 @@ export abstract class OverlayBehavior<R, C extends Partial<IOverlayBehaviorBaseP
 	 * Pauses all ongoing in animations.
 	 */
 	protected pauseInAnimations () {
-		pauseAnimations(this.currentInAnimations);
+		pauseAnimations(this.activeInAnimations);
 	}
 
 	/**
 	 * Pauses all ongoing out animations.
 	 */
 	protected pauseOutAnimations () {
-		pauseAnimations(this.currentOutAnimations);
+		pauseAnimations(this.activeOutAnimations);
 	}
 
 	/**
@@ -334,7 +389,7 @@ export abstract class OverlayBehavior<R, C extends Partial<IOverlayBehaviorBaseP
 	 * Hooks up listeners and traps the focus.
 	 */
 	protected didShow () {
-		this.currentInAnimations.length = 0;
+		this.activeInAnimations.length = 0;
 		this.listeners.push(
 			addListener(this, "keydown", this.onKeyDown)
 		);
@@ -373,7 +428,7 @@ export abstract class OverlayBehavior<R, C extends Partial<IOverlayBehaviorBaseP
 			this.activeElementBeforeOpen = undefined;
 		}
 
-		this.currentOutAnimations.length = 0;
+		this.activeOutAnimations.length = 0;
 		this.open = false;
 		this.dispatchOverlayEvent(OverlayBehaviorEvent.DID_HIDE, result);
 	}

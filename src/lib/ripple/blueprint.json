@@ -3,24 +3,5 @@
 	"output": "src/lib/ripple/README.md",
 	"tag": "ripple-element",
 	"demo": "https://weightless.dev/elements/ripple",
-	"img": "https://raw.githubusercontent.com/andreasbm/elements/master/screenshots/ripple-element.png?token=AF-iBfW58puayCKEgAhQxjkFbGJsFLBeks5chEq4wA%3D%3D",
-	"text": "Indicate touch actions",
-	"attributes": [
-		["Name", "Type", "Description", "Default value"],
-		["`unbounded`", "boolean", "Makes the ripple visible outside the bounds.", "`false`"],
-		["`centered`", "boolean", "Makes ripple appear from the center.", "`false`"],
-		["`overlay`", "boolean", "Overlays the ripple.", "`false`"],
-		["`disabled`", "boolean", "Disables the ripple.", "`false`"],
-		["`focusable`", "boolean", "Allows focusin to spawn a ripple.", "`false`"],
-		["`autoRelease`", "boolean", "Releases the ripple after it has been spawned.", "`false`"],
-		["`initialDuration`", "number", "Initial animation duration.", "`1000`"],
-		["`releaseDuration`", "number", "releaseDuration", "`500`"],
-		["`role`", "string", "Role of the ripple.", "`presentation`"],
-		["`target`", "EventTarget", "Target for the spawn ripple events.", "`this`"]
-	],
-	"cssVariables": [
-		["Name", "Description"],
-		["`--ripple-color`", "Color."],
-		["`--ripple-opacity`", "Opacity."]
-	]
+	"img": "https://raw.githubusercontent.com/andreasbm/elements/master/screenshots/ripple-element.png?token=AF-iBfW58puayCKEgAhQxjkFbGJsFLBeks5chEq4wA%3D%3D"
 }

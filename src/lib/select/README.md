@@ -1,47 +1,37 @@
-<h1 align="center">select-element</h1>
-<p align="center">Select one or more values from a set of options. Go <a href="https://weightless.dev/elements/select">here</a> to try the demo.</p>
+
+[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#select-element)
+
+## ➤ select-element
+
+Select one or more values from a set of options.
+
+### Properties
+
+| Property       | Attribute      | Description                                      | Type           | Default  |
+|----------------|----------------|--------------------------------------------------|----------------|----------|
+| `autocomplete` | `autocomplete` |                                                  | `"on" | "off"` |          |
+| `disabled`     | `disabled`     | Disables the element.                            | `boolean`      | false    |
+| `filled`       | `filled`       |                                                  | `boolean`      | false    |
+| `name`         | `name`         | Name of the native form element.                 | `string`       |          |
+| `outlined`     | `outlined`     |                                                  | `boolean`      | false    |
+| `placeholder`  | `placeholder`  |                                                  | `string`       |          |
+| `readonly`     | `readonly`     | Makes the element readonly (disabled but tabbable) | `boolean`      | false    |
+| `required`     | `required`     | Makes the element required in a form context.    | `boolean`      | false    |
+| `role`         | `role`         | Role of the select.                              | `AriaRole`     | "select" |
+| `value`        |                | Value of the form element.                       | `string`       |          |
+
+
 
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#usage)
 
 ## ➤ Usage
 
+Go [here](https://weightless.dev/elements/select) to try the demo.
+
 <a href="https://weightless.dev/elements/select" align="center">
   <img src="https://raw.githubusercontent.com/andreasbm/elements/master/screenshots/select-element.png?token=AF-iBTO_RaKyKWe0-e20FJ7G6-t3khpRks5chErVwA%3D%3D" width="700" />
 </a>
-
-
-[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#attributes)
-
-## ➤ Attributes
-
-| Name | Type | Description | Default value |
-| ------- | ------- | ------- | ------- |
-| `role` | string | Role of the select. | `'menu'` |
-
-The `select-element` extends `InputBehavior`. Go to the [documentation](/src/lib/behavior/input) to see more available attributes.
-
-
-[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#css-variables)
-
-## ➤ CSS variables
-
-| Name | Description |
-| ------- | ------- |
-| `--select-arrow-height` | Height of the select arrow. |
-
-The `select-element` extends `InputBehavior`. Go to the [documentation](/src/lib/behavior/input) to see more available CSS variables.
-
-
-[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#slots)
-
-## ➤ Slots
-
-| Name | Description |
-| ------- | ------- |
-| `unnamed` | <option> elements go here. |
-
-The `select-element` extends `InputBehavior`. Go to the [documentation](/src/lib/behavior/input) to see more available slots.
 
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#contributors)

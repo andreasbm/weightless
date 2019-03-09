@@ -1,8 +1,10 @@
 import { LitElement, property } from "lit-element";
 import { sharedStyles } from "../../style/shared";
 import { AriaRole } from "../../util/aria";
+import { cssResult } from "../../util/css";
 import { renderAttributes } from "../../util/dom";
 import { clamp } from "../../util/number";
+import styles from "progress-behavior.scss";
 
 /**
  * Mode of the progress.
@@ -27,48 +29,56 @@ export interface IProgressBehaviorProperties {
 }
 
 /**
- * Behavior of progress elements.
+ * Provides progress behavior.
  */
 export abstract class ProgressBehavior extends LitElement implements IProgressBehaviorProperties {
-	static styles = [sharedStyles];
+	static styles = [sharedStyles, cssResult(styles)];
 
 	/**
 	 * Animation mode.
+	 * @attr
 	 */
 	@property({type: String, reflect: true}) mode: ProgressMode = ProgressMode.INDETERMINATE;
 
 	/**
 	 * Progress value.
+	 * @attr
 	 */
 	@property({type: Number}) value: number = 0;
 
 	/**
 	 * Max progress value.
+	 * @attr
 	 */
 	@property({type: Number}) max: number = 1;
 
 	/**
 	 * Min progress value.
+	 * @attr
 	 */
 	@property({type: Number}) min: number = 0;
 
 	/**
 	 * Buffer progress value.
+	 * @attr
 	 */
 	@property({type: Number}) buffer: number = 0;
 
 	/**
 	 * Max buffer progress value.
+	 * @attr
 	 */
 	@property({type: Number}) bufferMax: number = 1;
 
 	/**
 	 * Min buffer progress value.
+	 * @attr
 	 */
 	@property({type: Number}) bufferMin: number = 0;
 
 	/**
 	 * Role of the progress behavior.
+	 * @attr
 	 */
 	@property({type: String, reflect: true}) role: AriaRole = "progressbar";
 

@@ -1,8 +1,10 @@
 import { LitElement, property } from "lit-element";
 import { sharedStyles } from "../../style/shared";
+import { cssResult } from "../../util/css";
 import { addListener, EventListenerSubscription, removeListeners } from "../../util/event";
 import { renderAttributes } from "../../util/dom";
 import { uniqueID } from "../../util/unique";
+import styles from "form-element-behavior.scss";
 
 export type FormElement =
 	(HTMLInputElement
@@ -20,8 +22,11 @@ export interface IFormElementBehaviorProperties {
 	name?: string;
 }
 
+/**
+ * Provides form element behavior that interacts with forms.
+ */
 export abstract class FormElementBehavior extends LitElement implements IFormElementBehaviorProperties {
-	static styles = [sharedStyles];
+	static styles = [sharedStyles, cssResult(styles)];
 
 	/**
 	 * Disables the element.
@@ -43,11 +48,13 @@ export abstract class FormElementBehavior extends LitElement implements IFormEle
 
 	/**
 	 * Name of the native form element.
+	 * @attr
 	 */
 	@property({type: String}) name?: string;
 
 	/**
 	 * Value of the form element.
+	 * @attr
 	 * @param value
 	 */
 	@property({type: String}) set value (value: string) {
@@ -67,7 +74,7 @@ export abstract class FormElementBehavior extends LitElement implements IFormEle
 	/**
 	 * Id of the native form element.
 	 */
-	protected formElementId = uniqueID(6);
+	protected formElementId = uniqueID();
 
 	/**
 	 * Native form element.
@@ -123,6 +130,9 @@ export abstract class FormElementBehavior extends LitElement implements IFormEle
 		return this.$formElement.willValidate;
 	}
 
+	/**
+	 * Returns the associated form of the native form element.
+	 */
 	get form (): HTMLFormElement | null {
 		return this.$formElement.form;
 	}

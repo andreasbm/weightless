@@ -25,21 +25,25 @@ export class TextfieldElement extends InputBehavior implements ITextfieldElement
 
 	/**
 	 * Type of the input.
+	 * @attr
 	 */
 	@property({type: String, reflect: true}) type: InputType = "text";
 
 	/**
 	 * Value pattern.
+	 * @attr
 	 */
 	@property({type: String, reflect: true}) pattern?: string;
 
 	/**
 	 * Min value length.
+	 * @attr
 	 */
 	@property({type: Number, reflect: true}) minLength?: number;
 
 	/**
 	 * Max value length.
+	 * @attr
 	 */
 	@property({type: Number, reflect: true}) maxLength?: number;
 

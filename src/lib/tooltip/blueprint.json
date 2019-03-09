@@ -3,16 +3,5 @@
 	"output": "src/lib/tooltip/README.md",
 	"tag": "tooltip-element",
 	"demo": "https://weightless.dev/elements/tooltip",
-	"img": "https://raw.githubusercontent.com/andreasbm/elements/master/screenshots/tooltip-element.png?token=AF-iBYKqW5Hm2x5ac_PMHEQ6wGDqACyVks5chEsqwA%3D%3D",
-	"text": "Informative context related text",
-	"cssVariables": [
-		["Name", "Description"],
-		["`--tooltip-padding`", "Padding."],
-		["`--tooltip-bg`", "Background."],
-		["`--tooltip-color", "Color."]
-	],
-	"slots": [
-		["Name", "Description"],
-		["`unnamed`", "Default content."]
-	]
+	"img": "https://raw.githubusercontent.com/andreasbm/elements/master/screenshots/tooltip-element.png?token=AF-iBYKqW5Hm2x5ac_PMHEQ6wGDqACyVks5chEsqwA%3D%3D"
 }

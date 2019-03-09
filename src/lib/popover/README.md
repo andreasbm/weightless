@@ -1,50 +1,48 @@
-<h1 align="center">popover-element</h1>
-<p align="center">Contextual anchored elements. Go <a href="https://weightless.dev/elements/popover">here</a> to try the demo.</p>
+
+[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#popover-element)
+
+## ➤ popover-element
+
+Contextual anchored elements.
+
+### Properties
+
+| Property            | Attribute           | Description                                      | Type               | Default                          |
+|---------------------|---------------------|--------------------------------------------------|--------------------|----------------------------------|
+| `$backdrop`         | `$backdrop`         | Backdrop element.                                | `BackdropElement`  |                                  |
+| `$container`        | `$container`        | Container element.                               | `HTMLElement`      |                                  |
+| `$content`          | `$content`          | Content of the popover.                          | `FocusTrap`        |                                  |
+| `anchor`            | `anchor`            | Anchor element or query.                         | `string | Element` |                                  |
+| `anchorCloseEvents` | `anchorCloseEvents` | Events on the anchor that makes the popover close itself. | `string[]`         |                                  |
+| `anchorOpenEvents`  | `anchorOpenEvents`  | Events on the anchor that makes the popover open itself. | `string[]`         |                                  |
+| `anchorOriginX`     | `anchorOriginX`     | X origin of the anchored point.                  | `OriginX`          | OriginX.LEFT                     |
+| `anchorOriginY`     | `anchorOriginY`     | Y origin of the anchored point.                  | `OriginY`          | OriginY.TOP                      |
+| `backdrop`          | `backdrop`          |                                                  | `boolean`          | false                            |
+| `blockScrolling`    | `blockScrolling`    |                                                  | `boolean`          | false                            |
+| `closeOnClick`      | `closeOnClick`      | Makes the popover close when it is clicked upon. | `boolean`          | false                            |
+| `disableFocusTrap`  | `disableFocusTrap`  |                                                  | `boolean`          | false                            |
+| `duration`          | `duration`          |                                                  | `number`           | 200                              |
+| `fixed`             | `fixed`             |                                                  | `boolean`          | false                            |
+| `noFallback`        | `noFallback`        | Whether a fallback strategy for the positioning should be used when there are no room for the popover. | `boolean`          | false                            |
+| `open`              | `open`              |                                                  | `boolean`          | false                            |
+| `persistent`        | `persistent`        |                                                  | `boolean`          | false                            |
+| `role`              | `role`              | Role of the popover.                             | `AriaRole`         | "menu"                           |
+| `scrollContainer`   | `scrollContainer`   |                                                  | `EventTarget`      | DEFAULT_OVERLAY_SCROLL_CONTAINER |
+| `transformOriginX`  | `transformOriginX`  | X origin of the transform.                       | `OriginX`          | OriginX.LEFT                     |
+| `transformOriginY`  | `transformOriginY`  | Y origin of the transform.                       | `OriginY`          | OriginY.TOP                      |
+
+
 
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#usage)
 
 ## ➤ Usage
 
+Go [here](https://weightless.dev/elements/popover) to try the demo.
+
 <a href="https://weightless.dev/elements/popover" align="center">
   <img src="https://raw.githubusercontent.com/andreasbm/elements/documentation/screenshots/popover-element.png?token=AF-iBQSqMzuMAQ5EiwnHa2DFSM_IS0ihks5cg7uDwA%3D%3D" width="700" />
 </a>
-
-
-[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#attributes)
-
-## ➤ Attributes
-
-| Name | Type | Description | Default value |
-| ------- | ------- | ------- | ------- |
-| `closeOnClick` | boolean | Makes the popover close when it is clicked upon. | `false` |
-| `noFallback` | boolean | Whether a fallback strategy for the positioning should be used when there are no room for the popover. | `false` |
-| `transformOriginX` | 'left' \| 'center' | 'right' | X origin of the transform. | `'left'` |
-| `transformOriginY` | 'top' \| 'center' | 'bottom' | Y origin of the transform. | `'top'` |
-| `anchorOriginX` | 'left' \| 'center' | 'right' | X origin of the anchored point. | `'left'` |
-| `anchorOriginY` | 'top' \| 'center' | 'bottom' | Y origin of the anchored point. | `'top'` |
-| `role` | string | Role of the popover. | `menu` |
-| `anchor` | Element \| string | undefined | Anchor element or query. | `undefined` |
-| `anchorOpenEvents` | string[] \| undefined | Events on the anchor that makes the popover open itself. | `undefined` |
-| `anchorCloseEvents` | string[] \| undefined | Events on the anchor that makes the popover close itself. | `undefined` |
-
-
-[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#css-variables)
-
-## ➤ CSS variables
-
-| Name | Description |
-| ------- | ------- |
-| `--popover-z-index | z-index. |
-
-
-[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#slots)
-
-## ➤ Slots
-
-| Name | Description |
-| ------- | ------- |
-| `unnamed` | Default content. |
 
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#contributors)

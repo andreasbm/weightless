@@ -16,6 +16,8 @@ export interface ISelectElementProperties extends IInputBehaviorProperties {
 
 /**
  * Select one or more values from a set of options.
+ * @slot - <option> elements go here.
+ * @cssprop --select-arrow-height - Height of the select arrow.
  */
 @customElement("select-element")
 export class SelectElement extends InputBehavior implements ISelectElementProperties {

@@ -3,25 +3,5 @@
 	"output": "src/lib/radio/README.md",
 	"tag": "radio-element",
 	"demo": "https://weightless.dev/elements/radio",
-	"img": "https://raw.githubusercontent.com/andreasbm/elements/master/screenshots/radio-element.png?token=AF-iBcoNrrO2pTIZCQ-9BR6Ih6wh0bq7ks5chEqcwA%3D%3D",
-	"text": "Select one option from a set.",
-	"cssVariables": [
-		["Name", "Description"],
-		["`--radio-size`", "Width and height."],
-		["`--radio-bg`", "Default background."],
-		["`--radio-bg-checked`", "Background when checked."],
-		["`--radio-bg-disabled`", "Background when disabled."],
-		["`--radio-bg-disabled-checked`", "Background when disabled and checked."],
-		["`--radio-color`", "Default color."],
-		["`--radio-color-checked`", "Color when checked."],
-		["`--radio-color-disabled`", "Color when disabled."],
-		["`--radio-color-disabled-checked`", "Color when disabled and checked."],
-		["`--radio-border-config`", "Border configuration (style and width)."],
-		["`--radio-border-radius`", "Border radius."],
-		["`--radio-transition`", "Transition."],
-		["`--radio-dot-size`", "Width and height of the dot."],
-		["`--radio-dot-border-radius`", "Border radius of the dot."],
-		["`--radio-dot-transition`", "Transition of the dot."],
-		["`--radio-ripple-transform`", "Transform of the ripple."]
-	]
+	"img": "https://raw.githubusercontent.com/andreasbm/elements/master/screenshots/radio-element.png?token=AF-iBcoNrrO2pTIZCQ-9BR6Ih6wh0bq7ks5chEqcwA%3D%3D"
 }

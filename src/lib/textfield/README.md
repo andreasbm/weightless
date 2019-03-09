@@ -1,42 +1,41 @@
-<h1 align="center">textfield-element</h1>
-<p align="center">Singleline text fields. Go <a href="https://weightless.dev/elements/textfield">here</a> to try the demo.</p>
+
+[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#textfield-element)
+
+## ➤ textfield-element
+
+Singleline text fields.
+
+### Properties
+
+| Property       | Attribute      | Description                                      | Type           | Default   |
+|----------------|----------------|--------------------------------------------------|----------------|-----------|
+| `autocomplete` | `autocomplete` |                                                  | `"on" | "off"` |           |
+| `disabled`     | `disabled`     | Disables the element.                            | `boolean`      | false     |
+| `filled`       | `filled`       |                                                  | `boolean`      | false     |
+| `maxLength`    | `maxLength`    | Max value length.                                | `number`       |           |
+| `minLength`    | `minLength`    | Min value length.                                | `number`       |           |
+| `name`         | `name`         | Name of the native form element.                 | `string`       |           |
+| `outlined`     | `outlined`     |                                                  | `boolean`      | false     |
+| `pattern`      | `pattern`      | Value pattern.                                   | `string`       |           |
+| `placeholder`  | `placeholder`  |                                                  | `string`       |           |
+| `readonly`     | `readonly`     | Makes the element readonly (disabled but tabbable) | `boolean`      | false     |
+| `required`     | `required`     | Makes the element required in a form context.    | `boolean`      | false     |
+| `role`         | `role`         |                                                  | `AriaRole`     | "textbox" |
+| `type`         | `type`         | Type of the input.                               | `InputType`    | "text"    |
+| `value`        |                | Value of the form element.                       | `string`       |           |
+
+
 
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#usage)
 
 ## ➤ Usage
 
+Go [here](https://weightless.dev/elements/textfield) to try the demo.
+
 <a href="https://weightless.dev/elements/textfield" align="center">
   <img src="https://raw.githubusercontent.com/andreasbm/elements/master/screenshots/textfield-element.png?token=AF-iBfo3dTDYCa2E9l6FKRjQ5A6KLAGcks5chEsCwA%3D%3D" width="700" />
 </a>
-
-
-[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#attributes)
-
-## ➤ Attributes
-
-| Name | Type | Description | Default value |
-| ------- | ------- | ------- | ------- |
-| `type` | string | Type of the input. | `'text'` |
-| `pattern` | string | Value pattern. | `undefined` |
-| `minLength` | number | Min value length. | `undefined` |
-| `maxLength` | number | Max value length. | `undefined` |
-
-The `textfield-element` extends `InputBehavior`. Go to the [documentation](/src/lib/behavior/input) to see more available attributes.
-
-
-[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#css-variables)
-
-## ➤ CSS variables
-
-The `textfield-element` extends `InputBehavior`. Go to the [documentation](/src/lib/behavior/input) to see the available CSS variables.
-
-
-[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#slots)
-
-## ➤ Slots
-
-The `textfield-element` extends `InputBehavior`. Go to the [documentation](/src/lib/behavior/input) to see the available slots.
 
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#contributors)

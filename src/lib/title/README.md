@@ -1,50 +1,29 @@
-<h1 align="center">title-element</h1>
-<p align="center">Indicate the start of a new section. Go <a href="https://weightless.dev/elements/title">here</a> to try the demo.</p>
+
+[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#title-element)
+
+## ➤ title-element
+
+Indicate the start of a new section.
+
+### Properties
+
+| Property | Attribute | Description         | Type         | Default   |
+|----------|-----------|---------------------|--------------|-----------|
+| `level`  | `level`   | Level of the title. | `TitleLevel` | 1         |
+| `role`   | `role`    | Role of the title.  | `AriaRole`   | "heading" |
+
+
 
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#usage)
 
 ## ➤ Usage
 
+Go [here](https://weightless.dev/elements/title) to try the demo.
+
 <a href="https://weightless.dev/elements/title" align="center">
   <img src="https://raw.githubusercontent.com/andreasbm/elements/master/screenshots/title-element.png?token=AF-iBdhHfU2b4hLu53mNAJaVMKMrvQbtks5chEsZwA%3D%3D" width="700" />
 </a>
-
-
-[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#attributes)
-
-## ➤ Attributes
-
-| Name | Type | Description | Default value |
-| ------- | ------- | ------- | ------- |
-| `role` | string | Role of the title. | `'heading'` |
-| `level` | 1 \| 2 | 3 | 4 | 5 | 6 | Level of the title. | `1` |
-
-
-[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#css-variables)
-
-## ➤ CSS variables
-
-| Name | Description |
-| ------- | ------- |
-| `--title-margin` | Margin. |
-| `--title-font-family` | Font family. |
-| `--title-font-weight` | Font weight. |
-| `--title-font-size-level-1` | Font size of level 1 heading. |
-| `--title-font-size-level-2` | Font size of level 2 heading. |
-| `--title-font-size-level-3` | Font size of level 3 heading. |
-| `--title-font-size-level-4` | Font size of level 4 heading. |
-| `--title-font-size-level-5` | Font size of level 5 heading. |
-| `--title-font-size-level-6` | Font size of level 6 heading. |
-
-
-[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#slots)
-
-## ➤ Slots
-
-| Name | Description |
-| ------- | ------- |
-| `unnamed` | Default content. |
 
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#contributors)

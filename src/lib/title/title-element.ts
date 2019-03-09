@@ -22,6 +22,16 @@ export interface ITitleElementProperties {
 
 /**
  * Indicate the start of a new section.
+ * @slot - Default content.
+ * @cssprop --title-margin - Margin.
+ * @cssprop --title-font-family - Font family.
+ * @cssprop --title-font-weight - Font weight.
+ * @cssprop --title-font-size-level-1 - Font size of level 1 heading.
+ * @cssprop --title-font-size-level-2 - Font size of level 2 heading.
+ * @cssprop --title-font-size-level-3 - Font size of level 3 heading.
+ * @cssprop --title-font-size-level-4 - Font size of level 4 heading.
+ * @cssprop --title-font-size-level-5 - Font size of level 5 heading.
+ * @cssprop --title-font-size-level-6 - Font size of level 6 heading.
  */
 @customElement("title-element")
 export class TitleElement extends LitElement implements ITitleElementProperties {
@@ -29,11 +39,13 @@ export class TitleElement extends LitElement implements ITitleElementProperties 
 
 	/**
 	 * Level of the title.
+	 * @attr
 	 */
 	@property({type: Number, reflect: true}) level: TitleLevel = 1;
 
 	/**
 	 * Role of the title.
+	 * @attr
 	 */
 	@property({type: String, reflect: true}) role: AriaRole = "heading";
 

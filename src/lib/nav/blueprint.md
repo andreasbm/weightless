@@ -1,7 +1,8 @@
-<h1 align="center">{{ tag }}</h1>
-<p align="center">{{ text }}. Go <a href="{{ demo }}">here</a> to try the demo.</p>
+{{ doc:src/lib/nav/nav-element.ts }}
 
 ## Usage
+
+Go [here]({{ demo }}) to try the demo.
 
 ```html
 <nav-element shadow fixed>
@@ -14,18 +15,6 @@
   </div>
 </nav-element>
 ```
-
-## Attributes
-
-{{ attributes }}
-
-## CSS variables
-
-{{ cssVariables }}
-
-## Slots
-
-{{ slots }}
 
 {{ template:contributors }}
 {{ template:license }}

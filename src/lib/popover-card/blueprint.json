@@ -3,17 +3,5 @@
 	"output": "src/lib/popover-card/README.md",
 	"tag": "popover-card-element",
 	"demo": "https://weightless.dev/elements/popover",
-	"img": "https://raw.githubusercontent.com/andreasbm/elements/documentation/screenshots/popover-element.png?token=AF-iBQSqMzuMAQ5EiwnHa2DFSM_IS0ihks5cg7uDwA%3D%3D",
-	"text": "Give popovers a contextual flair",
-	"cssVariables": [
-		["Name", "Description"],
-		["`--popover-card-arrow-width`", "Width of the arrow."],
-		["`--popover-card-arrow-height`", "Height of the arrow."],
-		["`--popover-card-arrow-fill`", "Color of the arrow."],
-		["`--popover-card-elevation`", "Box shadow of the card."]
-	],
-	"slots": [
-		["Name", "Description"],
-		["`unnamed`", "Default content."]
-	]
+	"img": "https://raw.githubusercontent.com/andreasbm/elements/documentation/screenshots/popover-element.png?token=AF-iBQSqMzuMAQ5EiwnHa2DFSM_IS0ihks5cg7uDwA%3D%3D"
 }

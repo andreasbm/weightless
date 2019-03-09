@@ -19,6 +19,9 @@ export interface ILabelElementProperties {
 
 /**
  * Make form elements more accessible.
+ * @slot - Default content. If the first element is a form element, clicks on the entire label will be re-fired upon that element.
+ * @cssprop --label-color - Color.
+ * @cssprop --label-color-required - Color of the asterisk (*) when required attributed is present.
  */
 @customElement("label-element")
 export class LabelElement extends LitElement implements ILabelElementProperties {
@@ -26,16 +29,19 @@ export class LabelElement extends LitElement implements ILabelElementProperties 
 
 	/**
 	 * Styles the label as required.
+	 * @attr
 	 */
 	@property({type: Boolean}) required: boolean = false;
 
 	/**
 	 * Caps the label element with ellipsis if overflowing.
+	 * @attr
 	 */
 	@property({type: Boolean}) nowrap: boolean = false;
 
 	/**
 	 * Query of the form element click events are re-fired upon.
+	 * @attr
 	 */
 	@property({type: String}) for?: string;
 

@@ -1,10 +1,26 @@
-<h1 align="center">nav-element</h1>
-<p align="center">Provide access to destinations in your app. Go <a href="https://weightless.dev/elements/nav">here</a> to try the demo.</p>
+
+[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#nav-element)
+
+## ➤ nav-element
+
+Provide access to destinations in your app.
+
+### Properties
+
+| Property | Attribute | Description                           | Type       | Default      |
+|----------|-----------|---------------------------------------|------------|--------------|
+| `fixed`  | `fixed`   | Fixes the nav to the top of the page. | `boolean`  | false        |
+| `role`   | `role`    | Role of the nav.                      | `AriaRole` | "navigation" |
+| `shadow` | `shadow`  | Gives the nav a shadow.               | `boolean`  | false        |
+
+
 
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#usage)
 
 ## ➤ Usage
+
+Go [here](https://weightless.dev/elements/nav) to try the demo.
 
 ```html
 <nav-element shadow fixed>
@@ -17,46 +33,6 @@
   </div>
 </nav-element>
 ```
-
-
-[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#attributes)
-
-## ➤ Attributes
-
-| Name | Type | Description | Default value |
-| ------- | ------- | ------- | ------- |
-| `shadow` | boolean | Gives the nav a shadow. | `false` |
-| `fixed` | boolean | Fixes the nav to the top of the page. | `false` |
-| `role` | string | Role of the nav. | `navigation` |
-
-
-[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#css-variables)
-
-## ➤ CSS variables
-
-| Name | Description |
-| ------- | ------- |
-| `--nav-bg` | Background. |
-| `--nav-color` | Color. |
-| `--tolbar-z-index` | z-index. |
-| `--nav-padding` | Padding. |
-| `--nav-height` | Height. |
-| `--nav-elevation` | Box shadow. |
-| `--nav-transition` | Transition. |
-| `--nav-title-font-size` | Font size of the title. |
-| `--nav-title-font-weight` | Font weight of the title. |
-| `--nav-title-margin` | Margin of the title. |
-
-
-[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#slots)
-
-## ➤ Slots
-
-| Name | Description |
-| ------- | ------- |
-| `left` | Content positioned to the left. |
-| `right` | Content positioned to the right. |
-| `title` | Title. |
 
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#contributors)

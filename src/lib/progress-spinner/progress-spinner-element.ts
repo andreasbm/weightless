@@ -18,6 +18,14 @@ const DASH_ARRAY = 285;
 
 /**
  * Fills a circle from 0% to 100%.
+ * @cssprop --progress-spinner-size - Width and height.
+ * @cssprop --progress-spinner-color - Color.
+ * @cssprop --progress-spinner-buffer-color - Color of the buffer.
+ * @cssprop --progress-spinner-stroke-width - Width of the spinner stroke.
+ * @cssprop --progress-spinner-indeterminate-container-duration - Spinner container animation duration when indeterminate.
+ * @cssprop --progress-spinner-indeterminate-progress-duration - Spinner animation duration when indeterminate.
+ * @cssprop --progress-spinner-indeterminate-timing-function - Spinner animation timing function when indeterminate.
+ * @cssprop --progress-spinner-determinate-progress-transition - Transition when determinate.
  */
 @customElement("progress-spinner-element")
 export class ProgressSpinnerElement extends ProgressBehavior implements IProgressSpinnerElementProperties {

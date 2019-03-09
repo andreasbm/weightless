@@ -12,10 +12,21 @@ import styles from "./radio-behavior.scss";
 export interface IRadioBehaviorProperties extends ICheckboxBehaviorProperties {
 }
 
+/**
+ * Provides radio behavior.
+ */
 export abstract class RadioBehavior extends CheckboxBehavior implements IRadioBehaviorProperties {
 	static styles = [...CheckboxBehavior.styles, cssResult(styles)];
 
+	/**
+	 * Role of the radio behavior.
+	 * @attr
+	 */
 	@property({type: String, reflect: true}) role: AriaRole = "radio";
+
+	/**
+	 * Form element type.
+	 */
 	protected formElementType = "radio";
 
 	/**
@@ -89,6 +100,7 @@ export abstract class RadioBehavior extends CheckboxBehavior implements IRadioBe
 			case ARROW_DOWN:
 				newIndex = currentIndex + 1 > group.length - 1 ? 0 : currentIndex + 1;
 				break;
+
 			// Previous
 			case ARROW_LEFT:
 			case ARROW_UP:

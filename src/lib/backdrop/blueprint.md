@@ -1,19 +1,12 @@
-<h1 align="center">{{ tag }}</h1>
-<p align="center">{{ text }}. Go <a href="{{ demo }}">here</a> to try the demo.</p>
+{{ doc:src/lib/backdrop/backdrop-element.ts }}
 
 ## Usage
+
+Go [here]({{ demo }}) to try the demo.
 
 ```html
 <backdrop-element></backdrop-element>
 ```
-
-## Attributes
-
-{{ attributes }}
-
-## CSS variables
-
-{{ cssVariables }}
 
 {{ template:contributors }}
 {{ template:license }}

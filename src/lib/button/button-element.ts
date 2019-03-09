@@ -26,7 +26,7 @@ export interface IButtonElementProperties extends IFormElementBehaviorProperties
 
 /**
  * Allow users to take actions, and make choices, with a single tap.
- * @slot Default content.
+ * @slot - Default content.
  * @cssprop --button-letter-spacing - Letter spacing.
  * @cssprop --button-fab-size - Size of the button when fab attribute is present.
  * @cssprop --button-color - Default color.

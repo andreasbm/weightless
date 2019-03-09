@@ -15,6 +15,14 @@ export interface ICardElementProperties {
 
 /**
  * Group related content and action.
+ * @slot - Default content.
+ * @cssprop --card-transition - Transition.
+ * @cssprop --card-color - Color
+ * @cssprop --card-border-radius - Border radius.
+ * @cssprop --card-bg - Background.
+ * @cssprop --card-padding - Padding.
+ * @cssprop --card-elevation - Default box shadow.
+ * @cssprop --card-elevation-hover - Box shadow on :hover.
  */
 @customElement("card-element")
 export class CardElement extends LitElement implements ICardElementProperties {
@@ -23,6 +31,7 @@ export class CardElement extends LitElement implements ICardElementProperties {
 
 	/**
 	 * Makes the card hoverable.
+	 * @attr
 	 */
 	@property({reflect: true, type: Boolean}) hoverable: boolean = false;
 

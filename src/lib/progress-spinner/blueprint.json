@@ -3,17 +3,5 @@
 	"output": "src/lib/progress-spinner/README.md",
 	"tag": "progress-spinner-element",
 	"demo": "https://weightless.dev/elements/progress-spinner",
-	"img": "https://raw.githubusercontent.com/andreasbm/elements/master/screenshots/progress-spinner-element.png?token=AF-iBWI_tLK5VwvHN8ek2kaMbSWtaobnks5chEqCwA%3D%3D",
-	"text": "Fills a circle from 0% to 100%",
-	"cssVariables": [
-		["Name", "Description"],
-		["`--progress-spinner-size`", "Width and height."],
-		["`--progress-spinner-color`", "Color."],
-		["`--progress-spinner-buffer-color`", "Color of the buffer."],
-		["`--progress-spinner-stroke-width`", "Width of the spinner stroke."],
-		["`--progress-spinner-indeterminate-container-duration`", "Spinner container animation duration when indeterminate."],
-		["`--progress-spinner-indeterminate-progress-duration`", "Spinner animation duration when indeterminate."],
-		["`--progress-spinner-indeterminate-timing-function`", "Spinner animation timing function when indeterminate."],
-		["`--progress-spinner-determinate-progress-transition`", "Transition when determinate."]
-	]
+	"img": "https://raw.githubusercontent.com/andreasbm/elements/master/screenshots/progress-spinner-element.png?token=AF-iBWI_tLK5VwvHN8ek2kaMbSWtaobnks5chEqCwA%3D%3D"
 }

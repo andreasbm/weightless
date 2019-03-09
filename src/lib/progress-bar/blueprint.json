@@ -3,17 +3,5 @@
 	"output": "src/lib/progress-bar/README.md",
 	"tag": "progress-bar-element",
 	"demo": "https://weightless.dev/elements/progress-bar",
-	"img": "https://raw.githubusercontent.com/andreasbm/elements/master/screenshots/progress-bar-element.png?token=AF-iBfAIx-CJ8LWZEMLgTkOsTWpyCMEWks5chEprwA%3D%3D",
-	"text": "Fills a bar from 0% to 100%",
-	"cssVariables": [
-		["Name", "Description"],
-		["`--progress-bar-height`", "Height."],
-		["`--progress-bar-bg`", "Background."],
-		["`--progress-bar-color`", "Color."],
-		["`--progress-bar-buffer-color`", "Color of the buffer."],
-		["`--progress-bar-determinate-transition`", "Transition of when determinate."],
-		["`--progress-bar-indeterminate-duration`", "Duration of the transition when indeterminate."],
-		["`--progress-bar-indeterminate-short-delay`", "Duration of the short bar transition when indeterminate."],
-		["`--progress-bar-indeterminate-timing-function`", "Timing function when indeterminate."]
-	]
+	"img": "https://raw.githubusercontent.com/andreasbm/elements/master/screenshots/progress-bar-element.png?token=AF-iBfAIx-CJ8LWZEMLgTkOsTWpyCMEWks5chEprwA%3D%3D"
 }

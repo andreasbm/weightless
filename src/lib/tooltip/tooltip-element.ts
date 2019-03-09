@@ -13,6 +13,9 @@ export interface ITooltipElementProperties extends IPopoverElementProperties {
 
 /**
  * Informative context related text.
+ * @cssprop --tooltip-padding - Padding.
+ * @cssprop --tooltip-bg - Background.
+ * @cssprop --tooltip-color - Color.
  */
 @customElement("tooltip-element")
 export class TooltipElement extends PopoverElement implements ITooltipElementProperties {

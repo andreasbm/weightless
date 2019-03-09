@@ -1,72 +1,41 @@
-<h1 align="center">dialog-element</h1>
-<p align="center">Highly interruptive messages. Go <a href="https://weightless.dev/elements/dialog">here</a> to try the demo.</p>
+
+[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#dialog-element)
+
+## ➤ dialog-element
+
+Highly interruptive messages.
+
+### Properties
+
+| Property           | Attribute          | Description                  | Type              | Default                          |
+|--------------------|--------------------|------------------------------|-------------------|----------------------------------|
+| `$backdrop`        | `$backdrop`        | Backdrop element.            | `BackdropElement` |                                  |
+| `$dialog`          | `$dialog`          | Dialog element.              | `HTMLElement`     |                                  |
+| `$focusTrap`       | `$focusTrap`       | Focus trap element.          | `FocusTrap`       |                                  |
+| `backdrop`         | `backdrop`         |                              | `boolean`         | false                            |
+| `blockScrolling`   | `blockScrolling`   |                              | `boolean`         | false                            |
+| `disableFocusTrap` | `disableFocusTrap` |                              | `boolean`         | false                            |
+| `duration`         | `duration`         |                              | `number`          | 200                              |
+| `fixed`            | `fixed`            |                              | `boolean`         | false                            |
+| `open`             | `open`             |                              | `boolean`         | false                            |
+| `persistent`       | `persistent`       |                              | `boolean`         | false                            |
+| `role`             | `role`             | Role of the dialog.          | `AriaRole`        | "dialog"                         |
+| `scrollContainer`  | `scrollContainer`  |                              | `EventTarget`     | DEFAULT_OVERLAY_SCROLL_CONTAINER |
+| `scrollable`       | `scrollable`       | Makes the dialog scrollable. | `boolean`         | false                            |
+| `size`             | `size`             | Size of the dialog.          | `DialogSize`      |                                  |
+
+
 
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#usage)
 
 ## ➤ Usage
 
+Go [here](https://weightless.dev/elements/dialog) to try the demo.
+
 <a href="https://weightless.dev/elements/dialog" align="center">
   <img src="https://raw.githubusercontent.com/andreasbm/elements/master/screenshots/dialog-element.png?token=AF-iBdDsRo4rR9ss5Ix_SW9kpZMXCfILks5chEh-wA%3D%3D" width="700" />
 </a>
-
-
-[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#attributes)
-
-## ➤ Attributes
-
-| Name | Type | Description | Default value |
-| ------- | ------- | ------- | ------- |
-| `size` | 'small' \| 'medium' | 'large' | 'auto' | 'fullscreen' | Size of the dialog. | `undefined` |
-| `scrollable` | boolean | Makes the dialog scrollable. | `false` |
-| `role` | string | Role of the dialog. | `'dialog'` |
-
-
-[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#css-variables)
-
-## ➤ CSS variables
-
-| Name | Description |
-| ------- | ------- |
-| `--dialog-elevation | Box shadow. |
-| `--dialog-bg` | Background. |
-| `--dialog-color` | Color. |
-| `--dialog-border-radius` | Border radius. |
-| `--dialog-z-index` | z-index. |
-| `--dialog-will-change` | Will change. |
-| `--dialog-width` | Default width. |
-| `--dialog-height` | Default height. |
-| `--dialog-width-s` | Small width. |
-| `--dialog-height-s` | Small height |
-| `--dialog-width-m` | Medium width. |
-| `--dialog-height-m` | Medium height |
-| `--dialog-width-l` | Large width. |
-| `--dialog-height-l` | Large height |
-| `--dialog-width-fullscreen` | Fullscreen width. |
-| `--dialog-height-fullscreen` | Fullscreen height |
-| `--dialog-width-auto` | Auto width. |
-| `--dialog-height-auto` | Auto height. |
-| `--dialog-min-width` | Min width. |
-| `--dialog-min-height` | Min height. |
-| `--dialog-max-width` | Max width. |
-| `--dialog-max-height` | Max height. |
-| `--dialog-scrollable-border` | Border when scrollable. |
-| `--dialog-header-padding` | Padding of the header slot. |
-| `--dialog-header-padding-scrollable` | Padding of the header slot when scrollable. |
-| `--dialog-content-padding` | Padding of the content slot. |
-| `--dialog-footer-padding` | Padding of the footer slot. |
-
-
-[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#slots)
-
-## ➤ Slots
-
-| Name | Description |
-| ------- | ------- |
-| `header` | Header content. |
-| `content` | Body content. |
-| `footer` | Footer content. |
-| `unnamed` | Default content. |
 
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#contributors)

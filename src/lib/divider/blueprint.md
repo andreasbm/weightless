@@ -1,19 +1,12 @@
-<h1 align="center">{{ tag }}</h1>
-<p align="center">{{ text }}. Go <a href="{{ demo }}">here</a> to try the demo.</p>
+{{ doc:src/lib/divider/divider-element.ts }}
 
 ## Usage
+
+Go [here]({{ demo }}) to try the demo.
 
 <a href="{{ demo }}" align="center">
   <img src="{{ img }}" width="700" />
 </a>
-
-## Attributes
-
-{{ attributes }}
-
-## CSS variables
-
-{{ cssVariables }}
 
 {{ template:contributors }}
 {{ template:license }}

@@ -14,6 +14,7 @@ export interface IBackdropElementProperties {
 
 /**
  * Dark layer to use behind overlayed elements.
+ * @cssprop --backdrop-bg - Background.
  */
 @customElement("backdrop-element")
 export class BackdropElement extends LitElement implements IBackdropElementProperties {
@@ -21,6 +22,7 @@ export class BackdropElement extends LitElement implements IBackdropElementPrope
 
 	/**
 	 * Role of the backdrop.
+	 * @attr
 	 */
 	@property({type: String, reflect: true}) role: AriaRole = "presentation";
 

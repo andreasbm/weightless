@@ -1,37 +1,35 @@
-<h1 align="center">progress-bar-element</h1>
-<p align="center">Fills a bar from 0% to 100%. Go <a href="https://weightless.dev/elements/progress-bar">here</a> to try the demo.</p>
+
+[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#progress-bar-element)
+
+## ➤ progress-bar-element
+
+Fills a bar from 0% to 100%.
+
+### Properties
+
+| Property    | Attribute   | Description                    | Type           | Default                    |
+|-------------|-------------|--------------------------------|----------------|----------------------------|
+| `buffer`    | `buffer`    | Buffer progress value.         | `number`       | 0                          |
+| `bufferMax` | `bufferMax` | Max buffer progress value.     | `number`       | 1                          |
+| `bufferMin` | `bufferMin` | Min buffer progress value.     | `number`       | 0                          |
+| `max`       | `max`       | Max progress value.            | `number`       | 1                          |
+| `min`       | `min`       | Min progress value.            | `number`       | 0                          |
+| `mode`      | `mode`      | Animation mode.                | `ProgressMode` | ProgressMode.INDETERMINATE |
+| `role`      | `role`      | Role of the progress behavior. | `AriaRole`     | "progressbar"              |
+| `value`     | `value`     | Progress value.                | `number`       | 0                          |
+
+
 
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#usage)
 
 ## ➤ Usage
 
+Go [here](https://weightless.dev/elements/progress-bar) to try the demo.
+
 <a href="https://weightless.dev/elements/progress-bar" align="center">
   <img src="https://raw.githubusercontent.com/andreasbm/elements/master/screenshots/progress-bar-element.png?token=AF-iBfAIx-CJ8LWZEMLgTkOsTWpyCMEWks5chEprwA%3D%3D" width="700" />
 </a>
-
-
-[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#attributes)
-
-## ➤ Attributes
-
-The `progress-bar-element` extends `ProgressBehavior`. Go to the [documentation](/src/lib/behavior/progress) to see the available attributes.
-
-
-[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#css-variables)
-
-## ➤ CSS variables
-
-| Name | Description |
-| ------- | ------- |
-| `--progress-bar-height` | Height. |
-| `--progress-bar-bg` | Background. |
-| `--progress-bar-color` | Color. |
-| `--progress-bar-buffer-color` | Color of the buffer. |
-| `--progress-bar-determinate-transition` | Transition of when determinate. |
-| `--progress-bar-indeterminate-duration` | Duration of the transition when indeterminate. |
-| `--progress-bar-indeterminate-short-delay` | Duration of the short bar transition when indeterminate. |
-| `--progress-bar-indeterminate-timing-function` | Timing function when indeterminate. |
 
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#contributors)

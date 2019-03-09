@@ -3,18 +3,5 @@
 	"output": "src/lib/select/README.md",
 	"tag": "select-element",
 	"demo": "https://weightless.dev/elements/select",
-	"img": "https://raw.githubusercontent.com/andreasbm/elements/master/screenshots/select-element.png?token=AF-iBTO_RaKyKWe0-e20FJ7G6-t3khpRks5chErVwA%3D%3D",
-	"text": "Select one or more values from a set of options",
-	"attributes": [
-		["Name", "Type", "Description", "Default value"],
-		["`role`", "string", "Role of the select.", "`'menu'`"]
-	],
-	"cssVariables": [
-		["Name", "Description"],
-		["`--select-arrow-height`", "Height of the select arrow."]
-	],
-	"slots": [
-		["Name", "Description"],
-		["`unnamed`", "<option> elements go here."]
-	]
+	"img": "https://raw.githubusercontent.com/andreasbm/elements/master/screenshots/select-element.png?token=AF-iBTO_RaKyKWe0-e20FJ7G6-t3khpRks5chErVwA%3D%3D"
 }

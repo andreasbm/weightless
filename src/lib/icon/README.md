@@ -1,10 +1,24 @@
-<h1 align="center">icon-element</h1>
-<p align="center">Symbols for common actions and items. Go <a href="https://weightless.dev/elements/icon">here</a> to try the demo.</p>
+
+[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#icon-element)
+
+## ➤ icon-element
+
+Symbols for common actions and items.
+
+### Properties
+
+| Property | Attribute | Description        | Type       | Default |
+|----------|-----------|--------------------|------------|---------|
+| `role`   | `role`    | Roles of the icon. | `AriaRole` | "img"   |
+
+
 
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#usage)
 
 ## ➤ Usage
+
+Go [here](https://weightless.dev/elements/icon) to try the demo.
 
 <a href="https://weightless.dev/elements/icon" align="center">
   <img src="https://raw.githubusercontent.com/andreasbm/elements/master/screenshots/icon-element.png?token=AF-iBccPgS4Ki6G_fVHVhuvjSCR-236wks5chEm4wA%3D%3D" width="700" />
@@ -20,34 +34,6 @@ Currently the `icon-element` has not been designed with no configuration in mind
 ```html
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 ```
-
-
-[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#attributes)
-
-## ➤ Attributes
-
-| Name | Type | Description | Default value |
-| ------- | ------- | ------- | ------- |
-| `role` | string | Role of the icon. | `'img'` |
-
-
-[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#css-variables)
-
-## ➤ CSS variables
-
-| Name | Description |
-| ------- | ------- |
-| `--icon-font` | Icon font family.  |
-| `--icon-size` | Font size. |
-
-
-[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#slots)
-
-## ➤ Slots
-
-| Name | Description |
-| ------- | ------- |
-| `unnamed` | Name of the icon. |
 
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#contributors)
