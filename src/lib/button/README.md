@@ -28,7 +28,7 @@ Allow users to take actions, and make choices, with a single tap.
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#usage)
 
 ## ➤ Usage
-<p align="center">Go <a href="https://weightless.dev/elements/button">here</a> to try the demo.</p>
+Go [here](https://weightless.dev/elements/button) to try the demo.
 
 <a href="https://weightless.dev/elements/button" align="center">
   <img src="https://raw.githubusercontent.com/andreasbm/elements/master/screenshots/button-element.png?token=AF-iBV1pZn7D_ITJDLgD6NVlQjtvXupXks5cgq0VwA%3D%3D" width="700" />

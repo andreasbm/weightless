@@ -1,7 +1,7 @@
 {{ doc:src/lib/button/button-element.ts }}
 
 ## Usage
-<p align="center">Go <a href="{{ demo }}">here</a> to try the demo.</p>
+Go [here]({{ demo }}) to try the demo.
 
 <a href="{{ demo }}" align="center">
   <img src="{{ img }}" width="700" />
