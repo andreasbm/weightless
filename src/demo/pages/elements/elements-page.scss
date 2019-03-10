@@ -34,6 +34,22 @@ $elements-page-menu-width: #{size(250)};
 	}
 }
 
+#header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+
+	#open-docs {
+		display: flex;
+		align-items: center;
+		line-height: 1;
+
+		span {
+			margin: 0 $spacing-m 0 0;
+		}
+	}
+}
+
 @media #{$screen-s-and-down} {
 	:host {
 		padding: #{$spacing-m};
@@ -49,6 +65,12 @@ $elements-page-menu-width: #{size(250)};
 
 	#menu, #router {
 		transition: transform #{$transition-duration-medium} #{$transition-deceleration-curve};
+	}
+
+	#header {
+		flex-direction: column;
+		justify-content: flex-start;
+		align-items: flex-start;
 	}
 
 	:host([popover-visible]) {

@@ -53,7 +53,7 @@ export class CodeExampleElement extends LitElement {
 	 */
 	protected render () {
 		return html`
-			<div id="tools" tabindex="-1">
+			<div id="tools">
 				<button-element inverted flat fab @click="${() => this.copyToClipboard()}">
 					<icon-element>file_copy</icon-element>
 				</button-element>

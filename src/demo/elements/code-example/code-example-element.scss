@@ -1,20 +1,18 @@
 @import "../../../lib/style/base";
 
-:host(:hover) {
-	#tools {
-		opacity: 1;
-	}
-}
-
 #highlighter {
 	text-align: left;
 }
 
 #tools {
-	opacity: 0;
+	opacity: 0.2;
 	transition: #{$transition-duration-fast} #{$transition-ease} opacity;
 	position: absolute;
 	top: $spacing-m;
 	right: $spacing-m;
 	display: flex;
+
+	&:hover, &:focus-within {
+		opacity: 1;
+	}
 }

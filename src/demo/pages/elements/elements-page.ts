@@ -1,9 +1,12 @@
 import { GLOBAL_ROUTER_EVENTS_TARGET, GlobalRouterEventKind, IRoute, NavigationEndEvent, ROUTER_SLOT_TAG_NAME, RouterSlot } from "@appnest/web-router";
 import { customElement, html, LitElement, property, PropertyValues, query } from "lit-element";
 import { repeat } from "lit-html/directives/repeat";
+import "../../../lib/button/button-element";
+import "../../../lib/icon/icon-element";
 import { cssResult } from "../../../lib/util/css";
 import { addListener } from "../../../lib/util/event";
 import "../../elements/footer/footer-element";
+import { DOCS_URL } from "../../constants";
 import { getMainScrollContainer } from "../../main-scroll-target";
 import { sharedStyles } from "../../style/shared";
 
@@ -53,8 +56,18 @@ export default class ElementsPage extends LitElement {
 			</div>
 			<div id="router">
 				${this.currentRoute != null && this.currentRoute.data != null ? html`
-					<title-element level="1">${this.currentRoute.data.title}</title-element>
-					<label-element>${this.currentRoute.data.desc}</label-element>
+					<header id="header">
+						<aside>
+							<title-element level="1">${this.currentRoute.data.title}</title-element>
+							<label-element>${this.currentRoute.data.desc}</label-element>
+						</aside>
+						<a href="${DOCS_URL(this.currentRoute.path)}" target="_blank" rel="noopener">
+							<button-element id="open-docs" inverted flat>
+								<span>Documentation</span>
+								<icon-element>open_in_new</icon-element>
+							</button-element>
+						</a>
+					</header>
 				` : ""}
 				<router-slot></router-slot>
 				<footer-element id="footer"></footer-element>

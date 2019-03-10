@@ -1,10 +1,9 @@
-import { path, GLOBAL_ROUTER_EVENTS_TARGET, GlobalRouterEventKind, ROUTER_SLOT_TAG_NAME, RouterSlot } from "@appnest/web-router";
+import { GLOBAL_ROUTER_EVENTS_TARGET, GlobalRouterEventKind, path, ROUTER_SLOT_TAG_NAME, RouterSlot } from "@appnest/web-router";
 import "@appnest/web-router";
-import "./elements/navbar/navbar-element";
-import "./main.scss";
 import { NavElement } from "../lib/nav/nav-element";
-import { openCodepen } from "./codepen";
+import "./elements/navbar/navbar-element";
 import { getMainScrollContainer, setMainScrollContainer } from "./main-scroll-target";
+import "./main.scss";
 
 const $navbar = document.querySelector<NavElement>("#navbar")!;
 
@@ -24,6 +23,7 @@ function updateShadow () {
 GLOBAL_ROUTER_EVENTS_TARGET.addEventListener(GlobalRouterEventKind.ChangeState, () => {
 	currentPath = path();
 	updateShadow();
+	getMainScrollContainer().scrollTo({top: 0, left: 0});
 });
 
 customElements.whenDefined(ROUTER_SLOT_TAG_NAME).then(() => {
@@ -54,7 +54,7 @@ updateShadow();
 
 // Register the service worker
 if ("serviceWorker" in navigator) {
-	navigator.serviceWorker.register('/sw.js').then(res => {
+	navigator.serviceWorker.register("/sw.js").then(res => {
 		console.log(`Service worker registered`, res);
 	});
 }

@@ -25,6 +25,16 @@ export interface IButtonElementProperties extends IFormElementBehaviorProperties
 }
 
 /**
+ * Default ripple duration.
+ */
+const BUTTON_RIPPLE_DURATION = 1000;
+
+/**
+ * Ripple duration when fab.
+ */
+const FAB_BUTTON_RIPPLE_DURATION = 200;
+
+/**
  * Allow users to take actions, and make choices, with a single tap.
  * @slot - Default content.
  * @cssprop --button-letter-spacing - Letter spacing.
@@ -141,7 +151,7 @@ export class ButtonElement extends FormElementBehavior implements IButtonElement
 		// Re-fire the event on the inner form element to interact with the form if there is one
 		if (e.target == this && !e.defaultPrevented) {
 			this.$formElement.dispatchEvent(new MouseEvent("click", {relatedTarget: this, composed: true}));
-			e.preventDefault();
+			e.stopPropagation();
 		}
 	}
 
@@ -182,7 +192,7 @@ export class ButtonElement extends FormElementBehavior implements IButtonElement
 	 */
 	render (): TemplateResult {
 		return html`
-			<ripple-element id="ripple" overlay .target="${this}" ?centered="${this.fab}" ?disabled="${this.disabled || this.noRipple}"></ripple-element>
+			<ripple-element id="ripple" overlay .target="${this}" ?centered="${this.fab}" ?disabled="${this.disabled || this.noRipple}" initialDuration="${this.fab ? FAB_BUTTON_RIPPLE_DURATION : BUTTON_RIPPLE_DURATION}"></ripple-element>
 			<slot></slot>
 			${this.renderFormElement()}
 		`;
