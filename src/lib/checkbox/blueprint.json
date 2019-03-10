@@ -2,7 +2,7 @@
 	"extend": "blueprint.json",
 	"input": "src/lib/checkbox/blueprint.md",
 	"output": "src/lib/checkbox/README.md",
-	"tag": "checkbox-element",
+	"tag": "wl-checkbox",
 	"demo": "https://weightless.dev/elements/checkbox",
-	"img": "https://raw.githubusercontent.com/andreasbm/elements/master/screenshots/checkbox-element.png?token=AF-iBe24iyQPNmcdPiK5oPZhd8a_acCTks5chEhjwA%3D%3D"
+	"img": "https://raw.githubusercontent.com/andreasbm/elements/master/screenshots/wl-checkbox.png?token=AF-iBe24iyQPNmcdPiK5oPZhd8a_acCTks5chEhjwA%3D%3D"
 }

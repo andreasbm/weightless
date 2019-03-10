@@ -1,11 +1,11 @@
 import { GLOBAL_ROUTER_EVENTS_TARGET, GlobalRouterEventKind, path, ROUTER_SLOT_TAG_NAME, RouterSlot } from "@appnest/web-router";
 import "@appnest/web-router";
-import { NavElement } from "../lib/nav/nav-element";
+import { WlNav } from "../lib/nav/wl-nav";
 import "./elements/navbar/navbar-element";
 import { getMainScrollContainer, setMainScrollContainer } from "./main-scroll-target";
 import "./main.scss";
 
-const $navbar = document.querySelector<NavElement>("#navbar")!;
+const $navbar = document.querySelector<WlNav>("#navbar")!;
 
 let currentPath = path();
 

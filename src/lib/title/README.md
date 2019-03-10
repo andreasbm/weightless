@@ -1,7 +1,7 @@
 
-[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#title-element)
+[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#wl-title)
 
-# ➤ title-element
+# ➤ wl-title
 
 Indicate the start of a new section.
 
@@ -49,7 +49,7 @@ Indicate the start of a new section.
 Go [here](https://weightless.dev/elements/title) to try the demo.
 
 <a href="https://weightless.dev/elements/title" align="center">
-  <img src="https://raw.githubusercontent.com/andreasbm/elements/master/screenshots/title-element.png?token=AF-iBdhHfU2b4hLu53mNAJaVMKMrvQbtks5chEsZwA%3D%3D" width="700" />
+  <img src="https://raw.githubusercontent.com/andreasbm/elements/master/screenshots/wl-title.png?token=AF-iBdhHfU2b4hLu53mNAJaVMKMrvQbtks5chEsZwA%3D%3D" width="700" />
 </a>
 
 

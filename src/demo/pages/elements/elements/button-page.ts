@@ -1,9 +1,9 @@
 import { customElement, html, LitElement } from "lit-element";
 import { sharedStyles } from "../../../style/shared";
-import "../../../../lib/button/button-element";
-import "../../../../lib/textfield/textfield-element";
-import "../../../../lib/icon/icon-element";
-import "../../../../lib/title/title-element";
+import "../../../../lib/button/wl-button";
+import "../../../../lib/textfield/wl-textfield";
+import "../../../../lib/icon/wl-icon";
+import "../../../../lib/title/wl-title";
 import "../../../elements/code-example/code-example-element";
 import "../../../elements/demo/demo-element";
 
@@ -16,66 +16,66 @@ export default class ButtonPage extends LitElement {
 		return html`
 			<demo-element default>
 				<code-example-element>
-					<button-element>Button</button-element>
+					<wl-button>Button</wl-button>
 				</code-example-element>
 			</demo-element>
 			
-			<title-element level="3">Inverted, outlined and flat</title-element>
+			<wl-title level="3">Inverted, outlined and flat</wl-title>
 			<demo-element>
 				<code-example-element>
-					<button-element inverted>Button</button-element>
-					<button-element outlined>Button</button-element>
-					<button-element flat inverted>Button</button-element>
-					<button-element flat inverted outlined>Button</button-element>
+					<wl-button inverted>Button</wl-button>
+					<wl-button outlined>Button</wl-button>
+					<wl-button flat inverted>Button</wl-button>
+					<wl-button flat inverted outlined>Button</wl-button>
 				</code-example-element>
 			</demo-element>
 
-			<title-element level="3">Disabled</title-element>
+			<wl-title level="3">Disabled</wl-title>
 			<demo-element>
 				<code-example-element>
-					<button-element disabled>Button</button-element>
-					<button-element inverted disabled>Button</button-element>
-					<button-element outlined disabled>Button</button-element>
-					<button-element flat inverted disabled>Button</button-element>
-					<button-element flat inverted outlined disabled>Button</button-element>
+					<wl-button disabled>Button</wl-button>
+					<wl-button inverted disabled>Button</wl-button>
+					<wl-button outlined disabled>Button</wl-button>
+					<wl-button flat inverted disabled>Button</wl-button>
+					<wl-button flat inverted outlined disabled>Button</wl-button>
 				</code-example-element>
 			</demo-element>
 			
-			<title-element level="3">Interacts with forms</title-element>
+			<wl-title level="3">Interacts with forms</wl-title>
 			<demo-element>
 				<code-example-element>
 					<form style="display: inline-flex; align-items: center; margin: auto;">
-						<textfield-element placeholder="Required" required minlength="10" autocomplete="off"></textfield-element>
-						<button-element>Button</button-element>
+						<wl-textfield placeholder="Required" required minlength="10" autocomplete="off"></wl-textfield>
+						<wl-button>Button</wl-button>
 					</form>
 				</code-example-element>
 			</demo-element>
 			
-			<title-element level="3">Fab</title-element>
+			<wl-title level="3">Fab</wl-title>
 			<demo-element>
 				<code-example-element>
-					<button-element fab>
-						<icon-element>warning</icon-element>
-					</button-element>
-					<button-element fab inverted>
-						<icon-element>delete</icon-element>
-					</button-element>
-					<button-element fab outlined>
-						<icon-element>done</icon-element>
-					</button-element>
-					<button-element fab flat inverted>
-						<icon-element>info</icon-element>
-					</button-element>
-					<button-element fab flat inverted outlined>
-						<icon-element>print</icon-element>
-					</button-element>
+					<wl-button fab>
+						<wl-icon>warning</wl-icon>
+					</wl-button>
+					<wl-button fab inverted>
+						<wl-icon>delete</wl-icon>
+					</wl-button>
+					<wl-button fab outlined>
+						<wl-icon>done</wl-icon>
+					</wl-button>
+					<wl-button fab flat inverted>
+						<wl-icon>info</wl-icon>
+					</wl-button>
+					<wl-button fab flat inverted outlined>
+						<wl-icon>print</wl-icon>
+					</wl-button>
 				</code-example-element>
 			</demo-element>
 			
-			<title-element level="3">No ripple</title-element>
+			<wl-title level="3">No ripple</wl-title>
 			<demo-element>
 				<code-example-element>
-					<button-element noripple>Button</button-element>
+					<wl-button noripple>Button</wl-button>
 				</code-example-element>
 			</demo-element>
 		`;

@@ -1,7 +1,7 @@
 
-[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#label-element)
+[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#wl-label)
 
-# ➤ label-element
+# ➤ wl-label
 
 Make form elements more accessible.
 
@@ -43,7 +43,7 @@ Make form elements more accessible.
 Go [here](https://weightless.dev/elements/label) to try the demo.
 
 <a href="https://weightless.dev/elements/label" align="center">
-  <img src="https://raw.githubusercontent.com/andreasbm/elements/master/screenshots/label-element.png?token=AF-iBft0B2brPzwNC_jHXJ7wZKxOtAoJks5chEnjwA%3D%3D" width="700" />
+  <img src="https://raw.githubusercontent.com/andreasbm/elements/master/screenshots/wl-label.png?token=AF-iBft0B2brPzwNC_jHXJ7wZKxOtAoJks5chEnjwA%3D%3D" width="700" />
 </a>
 
 

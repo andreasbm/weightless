@@ -1,7 +1,7 @@
 import { customElement, html, LitElement } from "lit-element";
 import { sharedStyles } from "../../../style/shared";
-import "../../../../lib/divider/divider-element";
-import "../../../../lib/title/title-element";
+import "../../../../lib/divider/wl-divider";
+import "../../../../lib/title/wl-title";
 import "../../../elements/code-example/code-example-element";
 import "../../../elements/demo/demo-element";
 
@@ -14,7 +14,7 @@ export default class DividerPage extends LitElement {
 		return html`
 			<demo-element default>
 				<code-example-element>
-					<divider-element></divider-element>
+					<wl-divider></wl-divider>
 				</code-example-element>
 			</demo-element>
 		`;

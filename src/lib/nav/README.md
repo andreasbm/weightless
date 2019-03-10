@@ -1,7 +1,7 @@
 
-[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#nav-element)
+[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#wl-nav)
 
-# ➤ nav-element
+# ➤ wl-nav
 
 Provide access to destinations in your app.
 
@@ -53,15 +53,15 @@ Provide access to destinations in your app.
 Go [here](https://weightless.dev/elements/nav) to try the demo.
 
 ```html
-<nav-element shadow fixed>
+<wl-nav shadow fixed>
   <div slot="left">
     <img src="/my-logo.svg" alt="logo" />
   </div>
   <span slot="title">My app</span>
   <div slot="right">
-    <button-element>Sign in</button-element>
+    <wl-button>Sign in</wl-button>
   </div>
-</nav-element>
+</wl-nav>
 ```
 
 

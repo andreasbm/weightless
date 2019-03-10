@@ -1,1 +1,1 @@
-export * from "./select-element";
+export * from "./wl-select";

@@ -2,7 +2,7 @@
 	"extend": "blueprint.json",
 	"input": "src/lib/progress-spinner/blueprint.md",
 	"output": "src/lib/progress-spinner/README.md",
-	"tag": "progress-spinner-element",
+	"tag": "wl-progress-spinner",
 	"demo": "https://weightless.dev/elements/progress-spinner",
-	"img": "https://raw.githubusercontent.com/andreasbm/elements/master/screenshots/progress-spinner-element.png?token=AF-iBWI_tLK5VwvHN8ek2kaMbSWtaobnks5chEqCwA%3D%3D"
+	"img": "https://raw.githubusercontent.com/andreasbm/elements/master/screenshots/wl-progress-spinner.png?token=AF-iBWI_tLK5VwvHN8ek2kaMbSWtaobnks5chEqCwA%3D%3D"
 }

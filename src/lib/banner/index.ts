@@ -1,1 +1,1 @@
-export * from "./banner-element";
+export * from "./wl-banner";

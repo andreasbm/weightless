@@ -1,0 +1,7 @@
+@import "../style/base";
+@import "../behavior/input/input-vars";
+@import "wl-textarea-vars";
+
+::slotted(textarea) {
+	resize: none;
+}

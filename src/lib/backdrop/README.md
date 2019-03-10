@@ -1,7 +1,7 @@
 
-[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#backdrop-element)
+[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#wl-backdrop)
 
-# ➤ backdrop-element
+# ➤ wl-backdrop
 
 Dark layer to use behind overlayed elements.
 
@@ -31,7 +31,7 @@ Dark layer to use behind overlayed elements.
 Go [here](https://weightless.dev/elements/dialog) to try the demo.
 
 ```html
-<backdrop-element></backdrop-element>
+<wl-backdrop></wl-backdrop>
 ```
 
 

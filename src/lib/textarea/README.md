@@ -1,7 +1,7 @@
 
-[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#textarea-element)
+[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#wl-textarea)
 
-# ➤ textarea-element
+# ➤ wl-textarea
 
 Multiline text fields.
 
@@ -89,7 +89,7 @@ Multiline text fields.
 Go [here](https://weightless.dev/elements/textarea) to try the demo.
 
 <a href="https://weightless.dev/elements/textarea" align="center">
-  <img src="https://raw.githubusercontent.com/andreasbm/elements/master/screenshots/textarea-element.png?token=AF-iBZJNydxFHIc4sQBFRLt8o2_qR34hks5chErwwA%3D%3D" width="700" />
+  <img src="https://raw.githubusercontent.com/andreasbm/elements/master/screenshots/wl-textarea.png?token=AF-iBZJNydxFHIc4sQBFRLt8o2_qR34hks5chErwwA%3D%3D" width="700" />
 </a>
 
 

@@ -1,7 +1,7 @@
 import { customElement, html, LitElement } from "lit-element";
-import "../../../../lib/checkbox/checkbox-element";
-import "../../../../lib/radio/radio-element";
-import "../../../../lib/title/title-element";
+import "../../../../lib/checkbox/wl-checkbox";
+import "../../../../lib/radio/wl-radio";
+import "../../../../lib/title/wl-title";
 import "../../../elements/code-example/code-example-element";
 import "../../../elements/demo/demo-element";
 import { sharedStyles } from "../../../style/shared";
@@ -15,17 +15,17 @@ export default class RadioPage extends LitElement {
 		return html`
 			<demo-element default>
 				<code-example-element>
-					<radio-element name="food" value="salad"></radio-element>
-					<radio-element name="food" value="burger"></radio-element>
-					<radio-element name="food" value="pizza"></radio-element>
+					<wl-radio name="food" value="salad"></wl-radio>
+					<wl-radio name="food" value="burger"></wl-radio>
+					<wl-radio name="food" value="pizza"></wl-radio>
 				</code-example-element>
 			</demo-element>
 			
-			<title-element level="3">Disabled</title-element>
+			<wl-title level="3">Disabled</wl-title>
 			<demo-element>
 				<code-example-element>
-					<radio-element disabled></radio-element>
-					<radio-element checked disabled></radio-element>
+					<wl-radio disabled></wl-radio>
+					<wl-radio checked disabled></wl-radio>
 				</code-example-element>
 			</demo-element>
 		`;

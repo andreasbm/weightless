@@ -1,1 +1,1 @@
-export * from "./dialog-element";
+export * from "./wl-dialog";

@@ -1,7 +1,7 @@
 
-[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#icon-element)
+[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#wl-icon)
 
-# ➤ icon-element
+# ➤ wl-icon
 
 Symbols for common actions and items.
 
@@ -41,7 +41,7 @@ Symbols for common actions and items.
 Go [here](https://weightless.dev/elements/icon) to try the demo.
 
 <a href="https://weightless.dev/elements/icon" align="center">
-  <img src="https://raw.githubusercontent.com/andreasbm/elements/master/screenshots/icon-element.png?token=AF-iBccPgS4Ki6G_fVHVhuvjSCR-236wks5chEm4wA%3D%3D" width="700" />
+  <img src="https://raw.githubusercontent.com/andreasbm/elements/master/screenshots/wl-icon.png?token=AF-iBccPgS4Ki6G_fVHVhuvjSCR-236wks5chEm4wA%3D%3D" width="700" />
 </a>
 
 
@@ -49,7 +49,7 @@ Go [here](https://weightless.dev/elements/icon) to try the demo.
 
 ## ➤ ⚠️ Load the icon font
 
-Currently the `icon-element` has not been designed with no configuration in mind. If you don't provide your own icon font via the `--icon-font` CSS variable you need to load the default google font material icons. You can do that by inserting the following link in the `head` tag of your `index.html` file. Check out the available icons [here](https://material.io/tools/icons/).
+Currently the `wl-icon` has not been designed with no configuration in mind. If you don't provide your own icon font via the `--icon-font` CSS variable you need to load the default google font material icons. You can do that by inserting the following link in the `head` tag of your `index.html` file. Check out the available icons [here](https://material.io/tools/icons/).
 
 ```html
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">

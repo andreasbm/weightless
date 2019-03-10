@@ -1,7 +1,7 @@
 
-[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#ripple-element)
+[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#wl-ripple)
 
-# ➤ ripple-element
+# ➤ wl-ripple
 
 Indicate touch actions.
 
@@ -15,7 +15,7 @@ Indicate touch actions.
 | `centered`        | `centered`        | `boolean`     | false          | Makes ripple appear from the center.           |
 | `disabled`        | `disabled`        | `boolean`     | false          | Disables the ripple.                           |
 | `focusable`       | `focusable`       | `boolean`     | false          | Allows focusin to spawn a ripple.              |
-| `initialDuration` | `initialDuration` | `number`      | 1000           | Initial animation duration.                    |
+| `initialDuration` | `initialDuration` | `number`      | 800            | Initial animation duration.                    |
 | `overlay`         | `overlay`         | `boolean`     | false          | Overlays the ripple.                           |
 | `releaseDuration` | `releaseDuration` | `number`      | 500            | Fade out animation duration.                   |
 | `role`            | `role`            | `AriaRole`    | "presentation" | Role of the ripple.                            |
@@ -43,7 +43,7 @@ Indicate touch actions.
 Go [here](https://weightless.dev/elements/ripple) to try the demo.
 
 <a href="https://weightless.dev/elements/ripple" align="center">
-  <img src="https://raw.githubusercontent.com/andreasbm/elements/master/screenshots/ripple-element.png?token=AF-iBfW58puayCKEgAhQxjkFbGJsFLBeks5chEq4wA%3D%3D" width="700" />
+  <img src="https://raw.githubusercontent.com/andreasbm/elements/master/screenshots/wl-ripple.png?token=AF-iBfW58puayCKEgAhQxjkFbGJsFLBeks5chEq4wA%3D%3D" width="700" />
 </a>
 
 

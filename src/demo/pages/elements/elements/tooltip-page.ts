@@ -1,6 +1,6 @@
 import { customElement, html, LitElement } from "lit-element";
-import "../../../../lib/title/title-element";
-import "../../../../lib/tooltip/tooltip-element";
+import "../../../../lib/title/wl-title";
+import "../../../../lib/tooltip/wl-tooltip";
 import "../../../elements/code-example/code-example-element";
 import "../../../elements/demo/demo-element";
 import { getMainScrollContainer } from "../../../main-scroll-target";
@@ -15,17 +15,17 @@ export default class TooltipPage extends LitElement {
 		return html`
 			<demo-element default>
 				<code-example-element>
-					<tooltip-element open>This is a tooltip</tooltip-element>
+					<wl-tooltip open>This is a tooltip</wl-tooltip>
 				</code-example-element>
 			</demo-element>
 			
-			<title-element level="3">Auto open popovers anchored to an element</title-element>
+			<wl-title level="3">Auto open popovers anchored to an element</wl-title>
 			<demo-element>
-				<code-example-element headline='<tooltip-element anchor="#auto-open-button" .anchorOpenEvents="\${["mouseover"]}" .anchorCloseEvents="\${["mouseout"]}" fixed>...</tooltip-element>'>
-					<button-element id="tooltip-button">Hover me!</button-element>
-					<tooltip-element anchor="#tooltip-button" .anchorOpenEvents="${["mouseover"]}" .anchorCloseEvents="${["mouseout"]}" .scrollContainer="${getMainScrollContainer()}" fixed anchorOriginX="center" anchorOriginY="bottom" transformOriginX="center">
+				<code-example-element headline='<wl-tooltip anchor="#auto-open-button" .anchorOpenEvents="\${["mouseover"]}" .anchorCloseEvents="\${["mouseout"]}" fixed>...</wl-tooltip>'>
+					<wl-button id="tooltip-button">Hover me!</wl-button>
+					<wl-tooltip anchor="#tooltip-button" .anchorOpenEvents="${["mouseover"]}" .anchorCloseEvents="${["mouseout"]}" .scrollContainer="${getMainScrollContainer()}" fixed anchorOriginX="center" anchorOriginY="bottom" transformOriginX="center">
 						This is a tooltip
-					</tooltip-element>
+					</wl-tooltip>
 				</code-example-element>
 			</demo-element>
 		`;

@@ -1,7 +1,7 @@
 
-[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#radio-element)
+[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#wl-radio)
 
-# ➤ radio-element
+# ➤ wl-radio
 
 Select one option from a set.
 
@@ -52,7 +52,7 @@ Select one option from a set.
 Go [here](https://weightless.dev/elements/radio) to try the demo.
 
 <a href="https://weightless.dev/elements/radio" align="center">
-  <img src="https://raw.githubusercontent.com/andreasbm/elements/master/screenshots/radio-element.png?token=AF-iBcoNrrO2pTIZCQ-9BR6Ih6wh0bq7ks5chEqcwA%3D%3D" width="700" />
+  <img src="https://raw.githubusercontent.com/andreasbm/elements/master/screenshots/wl-radio.png?token=AF-iBcoNrrO2pTIZCQ-9BR6Ih6wh0bq7ks5chEqcwA%3D%3D" width="700" />
 </a>
 
 

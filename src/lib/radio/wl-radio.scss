@@ -1,0 +1,63 @@
+@import "../style/base";
+@import "wl-radio-vars";
+
+:host {
+	--_radio-bg: #{$radio-bg};
+	--_radio-color: #{$radio-color};
+
+	background: var(--_radio-bg);
+	color: var(--_radio-color);
+	width: #{$radio-size};
+	height: #{$radio-size};
+	border: #{$radio-border-config} currentColor;
+	border-radius: #{$radio-border-radius};
+	transition: #{$radio-transition};
+
+	position: relative;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	outline: none;
+	user-select: none;
+}
+
+:host(:not([disabled])) {
+	cursor: pointer;
+}
+
+:host([checked]) {
+	--_radio-bg: #{$radio-bg-checked};
+	--_radio-color: #{$radio-color-checked};
+
+	#dot {
+		transform: scale(1);
+	}
+}
+
+:host(:hover), :host(:focus) {
+	will-change: border, background-color;
+}
+
+:host([disabled]) {
+	--_radio-bg: #{$radio-bg-disabled};
+	--_radio-color: #{$radio-color-disabled};
+	pointer-events: none;
+}
+
+:host([disabled][checked]) {
+	--_radio-bg: #{$radio-bg-disabled-checked};
+	--_radio-color: #{$radio-color-disabled-checked};
+}
+
+#dot {
+	background: currentColor;
+	width: #{$radio-dot-size};
+	height: #{$radio-dot-size};
+	border-radius: #{$radio-dot-border-radius};
+	transition: #{$radio-dot-transition};
+	transform: scale(0);
+}
+
+#ripple {
+	transform: #{$radio-ripple-transform};
+}

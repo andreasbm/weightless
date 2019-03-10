@@ -1,9 +1,9 @@
 import "@appnest/web-router";
 import { customElement, html, LitElement, PropertyValues, query } from "lit-element";
 import { repeat } from "lit-html/directives/repeat";
-import "../../../lib/button/button-element";
-import "../../../lib/icon/icon-element";
-import "../../../lib/title/title-element";
+import "../../../lib/button/wl-button";
+import "../../../lib/icon/wl-icon";
+import "../../../lib/title/wl-title";
 import { cssResult } from "../../../lib/util/css";
 import { BROWSER_SUPPORT, BULLETS, GITHUB_URL, NPM_URL } from "../../constants";
 import "../../elements/container/container-element";
@@ -58,14 +58,14 @@ export default class HomePage extends LitElement {
 	protected render () {
 		return html`
 			<container-element id="main-container" centered>
-				<title-element class="title">Weightless</title-element>
+				<wl-title class="title">Weightless</wl-title>
 				<span class="text">High quality Web Components with a small footprint.</span>
 				<div class="cta-area">
-					<router-link path="get-started"><button-element>Get Started</button-element></router-link>
+					<router-link path="get-started"><wl-button>Get Started</wl-button></router-link>
 				</div>
-				<button-element aria-label="Scroll down" class="arrow-down" fab inverted flat @click="${this.scrollToBullets}">
-					<icon-element alt="Down">keyboard_arrow_down</icon-element>
-				</button-element>
+				<wl-button aria-label="Scroll down" class="arrow-down" fab inverted flat @click="${this.scrollToBullets}">
+					<wl-icon alt="Down">keyboard_arrow_down</wl-icon>
+				</wl-button>
 				<a class="version-area" href="${NPM_URL}" rel="noopener" target="_blank">
 					<span>Latest version</span>
 					<img class="npm" src="/assets/npm-logo.svg" alt="NPM" />
@@ -73,13 +73,13 @@ export default class HomePage extends LitElement {
 				</a>
 			</container-element>
 			<container-element id="bullets-container">
-				<title-element class="title" level="2">Why Weightless?</title-element>
+				<wl-title class="title" level="2">Why Weightless?</wl-title>
 				<div id="bullets">
 					${repeat(this.bullets, bullet => html`
 						<div class="bullet">
 							<img class="img" src="/assets/icon/${bullet.img}.svg" alt="${bullet.title}" />
 							<aside>
-								<title-element class="title" level="4">${bullet.title}</title-element>
+								<wl-title class="title" level="4">${bullet.title}</wl-title>
 								<span class="text">${bullet.text}</span>
 							</aside>
 						</div>
@@ -107,7 +107,7 @@ export default class HomePage extends LitElement {
 							</g>
 						</svg>
 						<aside>
-							<title-element class="title" level="2">Our Octocat is hungry!</title-element>
+							<wl-title class="title" level="2">Our Octocat is hungry!</wl-title>
 							<span>Do you find this library inspiring? Help us feed our Octocat by becoming a stargazer.</span>
 						</aside>
 					</div>
@@ -115,7 +115,7 @@ export default class HomePage extends LitElement {
 			</a>
 			
 			<container-element id="browser-support-container">
-				<title-element class="text" level="2">Browser Support</title-element>
+				<wl-title class="text" level="2">Browser Support</wl-title>
 				<span class="text">Weightless elements are supported on all modern browsers. If you want to support old school browsers you’ll need to load polyfills. Luckily it is super easy if you use <a href="https://polyfill.dev" target="_blank" rel="noopener">polyfill.dev</a> or something similar.</span>
 				<div id="browsers">
 					${repeat(BROWSER_SUPPORT, support => html`

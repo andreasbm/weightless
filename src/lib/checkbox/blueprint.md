@@ -1,4 +1,4 @@
-{{ doc:src/lib/checkbox/checkbox-element.ts }}
+{{ doc:src/lib/checkbox/wl-checkbox.ts }}
 
 ## Usage
 

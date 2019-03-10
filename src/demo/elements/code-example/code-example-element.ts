@@ -54,12 +54,12 @@ export class CodeExampleElement extends LitElement {
 	protected render () {
 		return html`
 			<div id="tools">
-				<button-element inverted flat fab @click="${() => this.copyToClipboard()}">
-					<icon-element>file_copy</icon-element>
-				</button-element>
-				<button-element inverted flat fab @click="${() => this.openCodepen()}">
-					<icon-element>open_in_new</icon-element>
-				</button-element>
+				<wl-button inverted flat fab @click="${() => this.copyToClipboard()}">
+					<wl-icon>file_copy</wl-icon>
+				</wl-button>
+				<wl-button inverted flat fab @click="${() => this.openCodepen()}">
+					<wl-icon>open_in_new</wl-icon>
+				</wl-button>
 			</div>
 			<slot></slot>
 			<highlight-element id="highlighter" lang="${ifDefined(this.lang)}" ?lineNumber="${this.lineNumber}" headline="${ifDefined(this.headline)}" text="${ifDefined(this.cachedSlotString)}"></highlight-element>

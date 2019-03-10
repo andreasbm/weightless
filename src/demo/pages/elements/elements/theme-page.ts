@@ -1,7 +1,7 @@
 import { customElement, html, LitElement } from "lit-element";
 import { repeat } from "lit-html/directives/repeat";
-import "../../../../lib/label/label-element";
-import "../../../../lib/title/title-element";
+import "../../../../lib/label/wl-label";
+import "../../../../lib/title/wl-title";
 import { cssResult } from "../../../../lib/util/css";
 import "../../../elements/code-example/code-example-element";
 import "../../../elements/demo/demo-element";
@@ -25,7 +25,7 @@ export default class ThemePage extends LitElement {
 					<div id="palette">
 						${repeat(color == "shade" ? requiredShadeHues : requiredDefaultHues, hue => html`
 							<div class="color ${color}-${hue}" title="${color}-${hue}">
-								<label-element nowrap class="text">${color}-${hue}</label-element>
+								<wl-label nowrap class="text">${color}-${hue}</wl-label>
 							</div>
 						`)}
 					</div>

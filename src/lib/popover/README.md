@@ -1,7 +1,7 @@
 
-[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#popover-element)
+[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#wl-popover)
 
-# ➤ popover-element
+# ➤ wl-popover
 
 Contextual anchored elements.
 
@@ -11,7 +11,7 @@ Contextual anchored elements.
 
 | Property            | Attribute           | Type                | Default      | Description                                      |
 |---------------------|---------------------|---------------------|--------------|--------------------------------------------------|
-| `$backdrop`         |                     | `BackdropElement`   | **required** | Backdrop element.                                |
+| `$backdrop`         |                     | `WlBackdrop`        | **required** | Backdrop element.                                |
 | `$container`        |                     | `HTMLElement`       | **required** | Container element.                               |
 | `$content`          |                     | `FocusTrap`         | **required** | Content of the popover.                          |
 | `anchor`            | `anchor`            | `string \| Element` | **required** | Anchor element or query.                         |
@@ -70,7 +70,7 @@ Contextual anchored elements.
 Go [here](https://weightless.dev/elements/popover) to try the demo.
 
 <a href="https://weightless.dev/elements/popover" align="center">
-  <img src="https://raw.githubusercontent.com/andreasbm/elements/documentation/screenshots/popover-element.png?token=AF-iBQSqMzuMAQ5EiwnHa2DFSM_IS0ihks5cg7uDwA%3D%3D" width="700" />
+  <img src="https://raw.githubusercontent.com/andreasbm/elements/documentation/screenshots/wl-popover.png?token=AF-iBQSqMzuMAQ5EiwnHa2DFSM_IS0ihks5cg7uDwA%3D%3D" width="700" />
 </a>
 
 

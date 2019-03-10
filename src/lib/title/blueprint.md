@@ -1,4 +1,4 @@
-{{ doc:src/lib/title/title-element.ts }}
+{{ doc:src/lib/title/wl-title.ts }}
 
 ## Usage
 

@@ -1,11 +1,11 @@
-{{ doc:src/lib/backdrop/backdrop-element.ts }}
+{{ doc:src/lib/backdrop/wl-backdrop.ts }}
 
 ## Usage
 
 Go [here]({{ demo }}) to try the demo.
 
 ```html
-<backdrop-element></backdrop-element>
+<wl-backdrop></wl-backdrop>
 ```
 
 {{ template:contributors }}

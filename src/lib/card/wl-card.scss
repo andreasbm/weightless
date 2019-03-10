@@ -1,0 +1,19 @@
+@import "../style/base";
+@import "wl-card-vars";
+
+:host {
+  color: #{$card-color};
+  background: #{$card-bg};
+  transition: #{$card-transition};
+  box-shadow: #{$card-elevation};
+  border-radius: #{$card-border-radius};
+  padding: #{$card-padding};
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+:host([hoverable]:hover) {
+  box-shadow: #{$card-elevation-hover};
+}
+

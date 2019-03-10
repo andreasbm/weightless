@@ -1,7 +1,7 @@
 import { customElement, html, LitElement } from "lit-element";
 import { cssResult } from "../../../../lib/util/css";
 import { sharedStyles } from "../../../style/shared";
-import "../../../../lib/title/title-element";
+import "../../../../lib/title/wl-title";
 import "../../../elements/code-example/code-example-element";
 import "../../../elements/demo/demo-element";
 
@@ -9,7 +9,7 @@ import "../../../elements/demo/demo-element";
 export default class SelectPage extends LitElement {
 
 	static styles = [sharedStyles, cssResult(`
-		select-element:not(:last-child) {
+		wl-select:not(:last-child) {
 			margin: 0 0 12px;
 		}
 	`)];
@@ -18,66 +18,66 @@ export default class SelectPage extends LitElement {
 		return html`
 			<demo-element default>
 				<code-example-element>
-					<select-element placeholder="Select something">
+					<wl-select placeholder="Select something">
 						<option value="" disabled selected>Select something</option>
 						<option value="1">Option 1</option>
 						<option value="2">Option 2</option>
 						<option value="3">Option 3</option>
 						<option value="4">Option 4</option>
-					</select-element>
+					</wl-select>
 				</code-example-element>
 			</demo-element>
 			
-			<title-element level="3">Outlined</title-element>
+			<wl-title level="3">Outlined</wl-title>
 			<demo-element>
 				<code-example-element>
-					<select-element outlined placeholder="Select something">
+					<wl-select outlined placeholder="Select something">
 						<option value="" disabled selected>Select something</option>
 						<option value="1">Option 1</option>
 						<option value="2">Option 2</option>
 						<option value="3">Option 3</option>
 						<option value="4">Option 4</option>
-					</select-element>
+					</wl-select>
 				</code-example-element>
 			</demo-element>
 			
-			<title-element level="3">Filled</title-element>
+			<wl-title level="3">Filled</wl-title>
 			<demo-element>
 				<code-example-element>
-					<select-element filled placeholder="Select something">
+					<wl-select filled placeholder="Select something">
 						<option value="" disabled selected>Select something</option>
 						<option value="1">Option 1</option>
 						<option value="2">Option 2</option>
 						<option value="3">Option 3</option>
 						<option value="4">Option 4</option>
-					</select-element>
+					</wl-select>
 				</code-example-element>
 			</demo-element>
 			
-			<title-element level="3">Disabled</title-element>
+			<wl-title level="3">Disabled</wl-title>
 			<demo-element>
 				<code-example-element>
-					<select-element disabled value="3">
+					<wl-select disabled value="3">
 						<option value="" disabled selected>Select something</option>
 						<option value="1">Option 1</option>
 						<option value="2">Option 2</option>
 						<option value="3">Option 3</option>
 						<option value="4">Option 4</option>
-					</select-element>
-					<select-element disabled outlined value="3">
+					</wl-select>
+					<wl-select disabled outlined value="3">
 						<option value="" disabled selected>Select something</option>
 						<option value="1">Option 1</option>
 						<option value="2">Option 2</option>
 						<option value="3">Option 3</option>
 						<option value="4">Option 4</option>
-					</select-element>
-					<select-element disabled filled value="3">
+					</wl-select>
+					<wl-select disabled filled value="3">
 						<option value="" disabled selected>Select something</option>
 						<option value="1">Option 1</option>
 						<option value="2">Option 2</option>
 						<option value="3">Option 3</option>
 						<option value="4">Option 4</option>
-					</select-element>
+					</wl-select>
 				</code-example-element>
 			</demo-element>
 		`;

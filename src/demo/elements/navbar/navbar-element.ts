@@ -5,10 +5,10 @@ import "../../../lib/button";
 import "../../../lib/card";
 import "../../../lib/icon";
 import "../../../lib/nav";
-import { NavElement } from "../../../lib/nav/nav-element";
-import { PopoverElement } from "../../../lib/popover";
+import { WlNav } from "../../../lib/nav/wl-nav";
+import { WlPopover } from "../../../lib/popover";
 import "../../../lib/popover";
-import "../../../lib/popover-card/popover-card-element";
+import "../../../lib/popover-card/wl-popover-card";
 import { cssResult } from "../../../lib/util/css";
 import { setProperty } from "../../../lib/util/dom";
 import { Palette, setPalette } from "../../../lib/util/theme";
@@ -53,12 +53,12 @@ const greyReversedPalette: Palette = {
 };
 
 @customElement("navbar-element")
-export class ThemeComponent extends NavElement {
+export class ThemeComponent extends WlNav {
 
-	static styles = [...NavElement.styles, sharedStyles, cssResult(styles)];
+	static styles = [...WlNav.styles, sharedStyles, cssResult(styles)];
 
 	@property({type: Boolean, reflect: true}) darkMode = false;
-	@query("#theme-popover") $themePopover!: PopoverElement;
+	@query("#theme-popover") $themePopover!: WlPopover;
 	@query("#logo") $logo: HTMLImageElement;
 
 	firstUpdated (props: PropertyValues) {
@@ -97,9 +97,9 @@ export class ThemeComponent extends NavElement {
 	protected render () {
 		return html`
 			<aside id="left-container">
-				${path().startsWith("/elements") ? html`<button-element aria-label="Toggle menu" id="menu-button" fab inverted flat @click="${() => this.toggleMenu()}">
-					<icon-element alt="menu">menu</icon-element>
-				</button-element>` : ""}
+				${path().startsWith("/elements") ? html`<wl-button aria-label="Toggle menu" id="menu-button" fab inverted flat @click="${() => this.toggleMenu()}">
+					<wl-icon alt="menu">menu</wl-icon>
+				</wl-button>` : ""}
 				<router-link id="logo-wrapper" path="/" @click="${() => this.rotateLogo()}">
 					<svg id="logo" width="100%" height="100%" viewBox="0 0 264 264" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
 						<g fill-rule="nonzero">
@@ -117,15 +117,15 @@ export class ThemeComponent extends NavElement {
 					<router-link tabindex="0" class="link" path="/get-started">Get Started</router-link>
 					<router-link tabindex="0" class="link" path="/elements">Elements</router-link>
 				</div>
-				<button-element aria-label="Toggle darkmode" id="dark-mode" @click="${() => this.toggleDarkMode()}" fab inverted flat outlined>
-					${this.darkMode ? html`<icon-element>flash_off</icon-element>` : html`<icon-element>flash_on</icon-element>`}
-				</button-element>
-				<button-element aria-label="Open theme" fab id="theme-selector" @click="${() => this.openThemeSelector()}"></button-element>
-				<popover-element id="theme-popover" anchor="#theme-selector" backdrop fixed transformOriginX="right" anchorOriginY="center" anchorOriginX="center">
-					<popover-card-element>
+				<wl-button aria-label="Toggle darkmode" id="dark-mode" @click="${() => this.toggleDarkMode()}" fab inverted flat outlined>
+					${this.darkMode ? html`<wl-icon>flash_off</wl-icon>` : html`<wl-icon>flash_on</wl-icon>`}
+				</wl-button>
+				<wl-button aria-label="Open theme" fab id="theme-selector" @click="${() => this.openThemeSelector()}"></wl-button>
+				<wl-popover id="theme-popover" anchor="#theme-selector" backdrop fixed transformOriginX="right" anchorOriginY="center" anchorOriginX="center">
+					<wl-popover-card>
 						<theme-element @update="${() => this.$themePopover.hide()}"></theme-element>
-					</popover-card-element>
-				</popover-element>
+					</wl-popover-card>
+				</wl-popover>
 				<a id="octo" href="${GITHUB_URL}" target="_blank" rel="noopener" aria-label="Open Github"><octo-element></octo-element></a>
 			</aside>
 		`;

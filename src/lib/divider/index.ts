@@ -1,1 +1,1 @@
-export * from "./divider-element";
+export * from "./wl-divider";

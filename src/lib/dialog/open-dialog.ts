@@ -1,6 +1,6 @@
 import { IOpenOverlayConfig, openOverlay } from "../behavior/overlay/open-overlay";
-import { DialogElement, IDialogElementBaseProperties } from "./dialog-element";
+import { WlDialog, IDialogBaseProperties } from "./wl-dialog";
 
-export function openDialog<R> (config: IOpenOverlayConfig & Partial<IDialogElementBaseProperties>) {
-	return openOverlay(config, () => new DialogElement<R>());
+export function openDialog<R> (config: IOpenOverlayConfig & Partial<IDialogBaseProperties>) {
+	return openOverlay(config, () => new WlDialog<R>());
 }

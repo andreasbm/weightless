@@ -1,7 +1,7 @@
 
-[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#select-element)
+[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#wl-select)
 
-# ➤ select-element
+# ➤ wl-select
 
 Select one or more values from a set of options.
 
@@ -85,7 +85,7 @@ Select one or more values from a set of options.
 Go [here](https://weightless.dev/elements/select) to try the demo.
 
 <a href="https://weightless.dev/elements/select" align="center">
-  <img src="https://raw.githubusercontent.com/andreasbm/elements/master/screenshots/select-element.png?token=AF-iBTO_RaKyKWe0-e20FJ7G6-t3khpRks5chErVwA%3D%3D" width="700" />
+  <img src="https://raw.githubusercontent.com/andreasbm/elements/master/screenshots/wl-select.png?token=AF-iBTO_RaKyKWe0-e20FJ7G6-t3khpRks5chErVwA%3D%3D" width="700" />
 </a>
 
 

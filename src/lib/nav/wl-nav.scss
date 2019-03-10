@@ -1,0 +1,47 @@
+@import "../style/base";
+@import "wl-nav-vars";
+
+:host {
+	color: #{$nav-color};
+	transition: #{$nav-transition};
+	height: #{$nav-height};
+	padding: #{$nav-padding};
+	background: #{$nav-bg};
+	z-index: #{$nav-z-index};
+
+	display: flex;
+	justify-content: space-between;
+	box-sizing: border-box;
+	flex-grow: 1;
+}
+
+:host([fixed]) {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+}
+
+:host([shadow]) {
+	box-shadow: #{$nav-elevation};
+}
+
+#left-container, #right-container, ::slotted([slot="left"]), ::slotted([slot="right"]), ::slotted([slot="title"]) {
+	display: flex;
+	align-items: center;
+	height: 100%;
+}
+
+::slotted([slot="left"]) {
+	justify-self: flex-start;
+}
+
+::slotted([slot="right"]) {
+	justify-self: flex-end;
+}
+
+::slotted([slot="title"]) {
+	margin: #{$nav-title-margin};
+	font-size: #{$nav-title-font-size};
+	font-weight: #{$nav-title-font-weight};
+}
