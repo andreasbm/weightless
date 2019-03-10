@@ -1,22 +1,50 @@
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#checkbox-element)
 
-## ➤ checkbox-element
+# ➤ checkbox-element
 
 Turn an option on or off.
 
-### Properties
+[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#properties)
+
+## ➤ Properties
 
 | Property   | Attribute  | Description                                      | Type       | Default    |
 |------------|------------|--------------------------------------------------|------------|------------|
 | `checked`  | `checked`  | Checks the checkbox.                             | `boolean`  | false      |
 | `disabled` | `disabled` | Disables the element.                            | `boolean`  | false      |
-| `name`     | `name`     | Name of the native form element.                 | `string`   |            |
+| `name`     | `name`     | Name of the native form element.                 | `string`   | `required` |
 | `readonly` | `readonly` | Makes the element readonly (disabled but tabbable) | `boolean`  | false      |
 | `required` | `required` | Makes the element required in a form context.    | `boolean`  | false      |
 | `role`     | `role`     | Role of the checkbox.                            | `AriaRole` | "checkbox" |
-| `value`    |            | Value of the form element.                       | `string`   |            |
+| `value`    | `value`    | Value of the form element.                       | `string`   |            |
 
+
+[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#css-custom-properties)
+
+## ➤ CSS Custom Properties
+
+| Property                            | Description                                  |
+|-------------------------------------|----------------------------------------------|
+| --checkbox-bg                       | Default background.                          |
+| --checkbox-bg-checked               | Background when checked.                     |
+| --checkbox-bg-disabled              | Background when disabled.                    |
+| --checkbox-bg-disabled-checked      | Background when disabled and checked         |
+| --checkbox-border-config            | Border configuration (width and style)       |
+| --checkbox-border-radius            | Border radius.                               |
+| --checkbox-checkmark-path-dasharray | Dasharray of the checkmark.                  |
+| --checkbox-checkmark-path-delay     | Transition delay of the checkmark animation. |
+| --checkbox-checkmark-path-width     | Width of the checkmark.                      |
+| --checkbox-checkmark-size           | Width and height of the checkmark.           |
+| --checkbox-checkmark-stroke-color   | Color of the checkmark.                      |
+| --checkbox-checkmark-transition     | Transition of the checkmark.                 |
+| --checkbox-color                    | Default color.                               |
+| --checkbox-color-checked            | Color when checked.                          |
+| --checkbox-color-disabled           | Color when disabled.                         |
+| --checkbox-color-disabled-checked   | Color when disabled and checked.             |
+| --checkbox-ripple-transform         | Transform of the ripple.                     |
+| --checkbox-size                     | Width and height.                            |
+| --checkbox-transition               | Transition.                                  |
 
 
 

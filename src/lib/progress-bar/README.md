@@ -1,11 +1,13 @@
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#progress-bar-element)
 
-## ➤ progress-bar-element
+# ➤ progress-bar-element
 
 Fills a bar from 0% to 100%.
 
-### Properties
+[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#properties)
+
+## ➤ Properties
 
 | Property    | Attribute   | Description                    | Type           | Default                    |
 |-------------|-------------|--------------------------------|----------------|----------------------------|
@@ -18,6 +20,21 @@ Fills a bar from 0% to 100%.
 | `role`      | `role`      | Role of the progress behavior. | `AriaRole`     | "progressbar"              |
 | `value`     | `value`     | Progress value.                | `number`       | 0                          |
 
+
+[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#css-custom-properties)
+
+## ➤ CSS Custom Properties
+
+| Property                                     | Description                                      |
+|----------------------------------------------|--------------------------------------------------|
+| --progress-bar-bg                            | Background.                                      |
+| --progress-bar-buffer-color                  | Color of the buffer.                             |
+| --progress-bar-color                         | Color.                                           |
+| --progress-bar-determinate-transition        | Transition of when determinate.                  |
+| --progress-bar-height                        | Height.                                          |
+| --progress-bar-indeterminate-duration        | Duration of the transition when indeterminate.   |
+| --progress-bar-indeterminate-short-delay     | Duration of the short bar transition when indeterminate. |
+| --progress-bar-indeterminate-timing-function | Timing function when indeterminate.              |
 
 
 

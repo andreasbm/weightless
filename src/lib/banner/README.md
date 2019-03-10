@@ -1,16 +1,42 @@
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#banner-element)
 
-## ➤ banner-element
+# ➤ banner-element
 
 Display a non-interruptive message and related optional actions.
 
-### Properties
+[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#properties)
+
+## ➤ Properties
 
 | Property | Attribute | Description         | Type       | Default  |
 |----------|-----------|---------------------|------------|----------|
 | `role`   | `role`    | Role of the banner. | `AriaRole` | "banner" |
 
+
+[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#slots)
+
+## ➤ Slots
+
+| Slot   | Description                                      |
+|--------|--------------------------------------------------|
+| action | Action content (you can have multiple slots named action). |
+| icon   | Icon content.                                    |
+| text   | Text content.                                    |
+
+
+[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#css-custom-properties)
+
+## ➤ CSS Custom Properties
+
+| Property                 | Description                  |
+|--------------------------|------------------------------|
+| --banner-bg              | Background.                  |
+| --banner-color           | Color.                       |
+| --banner-content-padding | Padding of the content slot. |
+| --banner-icon-color      | Color of the icon.           |
+| --banner-icon-margin     | Margin of the icon slot.     |
+| --banner-padding         | Padding.                     |
 
 
 

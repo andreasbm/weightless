@@ -1,18 +1,38 @@
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#label-element)
 
-## ➤ label-element
+# ➤ label-element
 
 Make form elements more accessible.
 
-### Properties
+[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#properties)
 
-| Property   | Attribute  | Description                                      | Type      | Default |
-|------------|------------|--------------------------------------------------|-----------|---------|
-| `for`      | `for`      | Query of the form element click events are re-fired upon. | `string`  |         |
-| `nowrap`   | `nowrap`   | Caps the label element with ellipsis if overflowing. | `boolean` | false   |
-| `required` | `required` | Styles the label as required.                    | `boolean` | false   |
+## ➤ Properties
 
+| Property   | Attribute  | Description                                      | Type      | Default    |
+|------------|------------|--------------------------------------------------|-----------|------------|
+| `for`      | `for`      | Query of the form element click events are re-fired upon. | `string`  | `required` |
+| `nowrap`   | `nowrap`   | Caps the label element with ellipsis if overflowing. | `boolean` | false      |
+| `required` | `required` | Styles the label as required.                    | `boolean` | false      |
+
+
+[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#slots)
+
+## ➤ Slots
+
+| Description                                      |
+|--------------------------------------------------|
+| Default content. If the first element is a form element, clicks on the entire label will be re-fired upon that element. |
+
+
+[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#css-custom-properties)
+
+## ➤ CSS Custom Properties
+
+| Property               | Description                                      |
+|------------------------|--------------------------------------------------|
+| --label-color          | Color.                                           |
+| --label-color-required | Color of the asterisk (*) when required attributed is present. |
 
 
 

@@ -1,11 +1,13 @@
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#nav-element)
 
-## ➤ nav-element
+# ➤ nav-element
 
 Provide access to destinations in your app.
 
-### Properties
+[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#properties)
+
+## ➤ Properties
 
 | Property | Attribute | Description                           | Type       | Default      |
 |----------|-----------|---------------------------------------|------------|--------------|
@@ -13,6 +15,34 @@ Provide access to destinations in your app.
 | `role`   | `role`    | Role of the nav.                      | `AriaRole` | "navigation" |
 | `shadow` | `shadow`  | Gives the nav a shadow.               | `boolean`  | false        |
 
+
+[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#slots)
+
+## ➤ Slots
+
+| Slot  | Description                      |
+|-------|----------------------------------|
+| left  | Content positioned to the left.  |
+| right | Content positioned to the right. |
+| title | Title.                           |
+
+
+[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#css-custom-properties)
+
+## ➤ CSS Custom Properties
+
+| Property                | Description               |
+|-------------------------|---------------------------|
+| --nav-bg                | Background.               |
+| --nav-color             | Color.                    |
+| --nav-elevation         | Box shadow.               |
+| --nav-height            | Height.                   |
+| --nav-padding           | Padding.                  |
+| --nav-title-font-size   | Font size of the title.   |
+| --nav-title-font-weight | Font weight of the title. |
+| --nav-title-margin      | Margin of the title.      |
+| --nav-transition        | Transition.               |
+| --tolbar-z-index        | z-index.                  |
 
 
 

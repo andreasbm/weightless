@@ -1,11 +1,13 @@
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#progress-spinner-element)
 
-## ➤ progress-spinner-element
+# ➤ progress-spinner-element
 
 Fills a circle from 0% to 100%.
 
-### Properties
+[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#properties)
+
+## ➤ Properties
 
 | Property    | Attribute   | Description                    | Type           | Default                    |
 |-------------|-------------|--------------------------------|----------------|----------------------------|
@@ -18,6 +20,21 @@ Fills a circle from 0% to 100%.
 | `role`      | `role`      | Role of the progress behavior. | `AriaRole`     | "progressbar"              |
 | `value`     | `value`     | Progress value.                | `number`       | 0                          |
 
+
+[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#css-custom-properties)
+
+## ➤ CSS Custom Properties
+
+| Property                                         | Description                                      |
+|--------------------------------------------------|--------------------------------------------------|
+| --progress-spinner-buffer-color                  | Color of the buffer.                             |
+| --progress-spinner-color                         | Color.                                           |
+| --progress-spinner-determinate-progress-transition | Transition when determinate.                     |
+| --progress-spinner-indeterminate-container-duration | Spinner container animation duration when indeterminate. |
+| --progress-spinner-indeterminate-progress-duration | Spinner animation duration when indeterminate.   |
+| --progress-spinner-indeterminate-timing-function | Spinner animation timing function when indeterminate. |
+| --progress-spinner-size                          | Width and height.                                |
+| --progress-spinner-stroke-width                  | Width of the spinner stroke.                     |
 
 
 

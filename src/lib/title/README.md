@@ -1,17 +1,44 @@
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#title-element)
 
-## ➤ title-element
+# ➤ title-element
 
 Indicate the start of a new section.
 
-### Properties
+[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#properties)
+
+## ➤ Properties
 
 | Property | Attribute | Description         | Type         | Default   |
 |----------|-----------|---------------------|--------------|-----------|
 | `level`  | `level`   | Level of the title. | `TitleLevel` | 1         |
 | `role`   | `role`    | Role of the title.  | `AriaRole`   | "heading" |
 
+
+[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#slots)
+
+## ➤ Slots
+
+| Description      |
+|------------------|
+| Default content. |
+
+
+[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#css-custom-properties)
+
+## ➤ CSS Custom Properties
+
+| Property                  | Description                   |
+|---------------------------|-------------------------------|
+| --title-font-family       | Font family.                  |
+| --title-font-size-level-1 | Font size of level 1 heading. |
+| --title-font-size-level-2 | Font size of level 2 heading. |
+| --title-font-size-level-3 | Font size of level 3 heading. |
+| --title-font-size-level-4 | Font size of level 4 heading. |
+| --title-font-size-level-5 | Font size of level 5 heading. |
+| --title-font-size-level-6 | Font size of level 6 heading. |
+| --title-font-weight       | Font weight.                  |
+| --title-margin            | Margin.                       |
 
 
 

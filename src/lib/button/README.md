@@ -1,27 +1,64 @@
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#button-element)
 
-## ➤ button-element
+# ➤ button-element
 
 Allow users to take actions, and make choices, with a single tap.
 
-### Properties
+[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#properties)
 
-| Property   | Attribute  | Description                                      | Type                  | Default  |
-|------------|------------|--------------------------------------------------|-----------------------|----------|
-| `disabled` | `disabled` | Disables the element.                            | `boolean`             | false    |
-| `fab`      | `fab`      | Makes the button round and squared.              | `boolean`             | false    |
-| `flat`     | `flat`     | Makes the button flat.                           | `boolean`             | false    |
-| `inverted` | `inverted` | Inverts the colors of the button.                | `boolean`             | false    |
-| `name`     | `name`     | Name of the native form element.                 | `string`              |          |
-| `noRipple` | `noRipple` | Deactivates the ripple.                          | `boolean`             | false    |
-| `outlined` | `outlined` | Makes the button outlined.                       | `boolean`             | false    |
-| `readonly` | `readonly` | Makes the element readonly (disabled but tabbable) | `boolean`             | false    |
-| `required` | `required` | Makes the element required in a form context.    | `boolean`             | false    |
-| `role`     | `role`     | Role of the button.                              | `AriaRole`            | "button" |
-| `type`     | `type`     | Type of the button.                              | `"button" | "submit"` | "submit" |
-| `value`    |            | Value of the form element.                       | `string`              |          |
+## ➤ Properties
 
+| Property   | Attribute  | Description                                      | Type                  | Default    |
+|------------|------------|--------------------------------------------------|-----------------------|------------|
+| `disabled` | `disabled` | Disables the element.                            | `boolean`             | false      |
+| `fab`      | `fab`      | Makes the button round and squared.              | `boolean`             | false      |
+| `flat`     | `flat`     | Makes the button flat.                           | `boolean`             | false      |
+| `inverted` | `inverted` | Inverts the colors of the button.                | `boolean`             | false      |
+| `name`     | `name`     | Name of the native form element.                 | `string`              | `required` |
+| `noRipple` | `noRipple` | Deactivates the ripple.                          | `boolean`             | false      |
+| `outlined` | `outlined` | Makes the button outlined.                       | `boolean`             | false      |
+| `readonly` | `readonly` | Makes the element readonly (disabled but tabbable) | `boolean`             | false      |
+| `required` | `required` | Makes the element required in a form context.    | `boolean`             | false      |
+| `role`     | `role`     | Role of the button.                              | `AriaRole`            | "button"   |
+| `type`     | `type`     | Type of the button.                              | `"button" | "submit"` | "submit"   |
+| `value`    | `value`    | Value of the form element.                       | `string`              |            |
+
+
+[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#slots)
+
+## ➤ Slots
+
+| Description      |
+|------------------|
+| Default content. |
+
+
+[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#css-custom-properties)
+
+## ➤ CSS Custom Properties
+
+| Property                    | Description                                      |
+|-----------------------------|--------------------------------------------------|
+| --button-bg                 | Default background.                              |
+| --button-bg-active          | Background on :active.                           |
+| --button-bg-active-flat     | Background on :active when flat attribute is present. |
+| --button-bg-disabled        | Background when disabled.                        |
+| --button-bg-hover           | Background on :hover.                            |
+| --button-border-outlined    | Border when outline attribute is present.        |
+| --button-border-radius      | Border radius.                                   |
+| --button-color              | Default color.                                   |
+| --button-color-active       | Color on :active.                                |
+| --button-color-disabled     | Color when disabled.                             |
+| --button-color-hover        | Color on :hover.                                 |
+| --button-fab-size           | Size of the button when fab attribute is present. |
+| --button-font-family        | Font family.                                     |
+| --button-font-size          | Font size.                                       |
+| --button-letter-spacing     | Letter spacing.                                  |
+| --button-padding            | Padding.                                         |
+| --button-shadow-color       | Default shadow color.                            |
+| --button-shadow-color-hover | Shadow color on hover.                           |
+| --button-transition         | Transition.                                      |
 
 
 

@@ -1,16 +1,27 @@
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#divider-element)
 
-## ➤ divider-element
+# ➤ divider-element
 
 Thin line that groups content in lists and layouts.
 
-### Properties
+[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#properties)
+
+## ➤ Properties
 
 | Property | Attribute | Description           | Type       | Default     |
 |----------|-----------|-----------------------|------------|-------------|
 | `role`   | `role`    | Role of the backdrop. | `AriaRole` | "separator" |
 
+
+[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#css-custom-properties)
+
+## ➤ CSS Custom Properties
+
+| Property         | Description |
+|------------------|-------------|
+| --divider-color  | Color.      |
+| --divider-height | Height.     |
 
 
 

@@ -1,11 +1,13 @@
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#ripple-element)
 
-## ➤ ripple-element
+# ➤ ripple-element
 
 Indicate touch actions.
 
-### Properties
+[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#properties)
+
+## ➤ Properties
 
 | Property          | Attribute         | Description                                    | Type          | Default        |
 |-------------------|-------------------|------------------------------------------------|---------------|----------------|
@@ -19,9 +21,18 @@ Indicate touch actions.
 | `role`            | `role`            | Role of the ripple.                            | `AriaRole`    | "presentation" |
 | `target`          | `target`          | Target for the spawn ripple events.            | `EventTarget` | this           |
 | `unbounded`       | `unbounded`       | Makes the ripple visible outside the bounds.   | `boolean`     | false          |
-| `x`               |                   |                                                | `number`      |                |
-| `y`               |                   |                                                | `number`      |                |
+| `x`               |                   |                                                | `number`      | `required`     |
+| `y`               |                   |                                                | `number`      | `required`     |
 
+
+[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#css-custom-properties)
+
+## ➤ CSS Custom Properties
+
+| Property         | Description |
+|------------------|-------------|
+| --ripple-color   | Color.      |
+| --ripple-opacity | Opacity.    |
 
 
 

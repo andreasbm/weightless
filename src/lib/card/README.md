@@ -1,16 +1,41 @@
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#card-element)
 
-## ➤ card-element
+# ➤ card-element
 
 Group related content and action.
 
-### Properties
+[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#properties)
+
+## ➤ Properties
 
 | Property    | Attribute   | Description               | Type      | Default |
 |-------------|-------------|---------------------------|-----------|---------|
 | `hoverable` | `hoverable` | Makes the card hoverable. | `boolean` | false   |
 
+
+[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#slots)
+
+## ➤ Slots
+
+| Description      |
+|------------------|
+| Default content. |
+
+
+[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#css-custom-properties)
+
+## ➤ CSS Custom Properties
+
+| Property               | Description           |
+|------------------------|-----------------------|
+| --card-bg              | Background.           |
+| --card-border-radius   | Border radius.        |
+| --card-color           | Color                 |
+| --card-elevation       | Default box shadow.   |
+| --card-elevation-hover | Box shadow on :hover. |
+| --card-padding         | Padding.              |
+| --card-transition      | Transition.           |
 
 
 

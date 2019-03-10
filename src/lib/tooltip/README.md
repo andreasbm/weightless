@@ -1,36 +1,68 @@
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#tooltip-element)
 
-## ➤ tooltip-element
+# ➤ tooltip-element
 
 Informative context related text.
 
-### Properties
+[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#properties)
+
+## ➤ Properties
 
 | Property            | Attribute           | Description                                      | Type               | Default                          |
 |---------------------|---------------------|--------------------------------------------------|--------------------|----------------------------------|
-| `$backdrop`         | `$backdrop`         | Backdrop element.                                | `BackdropElement`  |                                  |
-| `$container`        | `$container`        | Container element.                               | `HTMLElement`      |                                  |
-| `$content`          | `$content`          | Content of the popover.                          | `FocusTrap`        |                                  |
-| `anchor`            | `anchor`            | Anchor element or query.                         | `string | Element` |                                  |
-| `anchorCloseEvents` | `anchorCloseEvents` | Events on the anchor that makes the popover close itself. | `string[]`         |                                  |
-| `anchorOpenEvents`  | `anchorOpenEvents`  | Events on the anchor that makes the popover open itself. | `string[]`         |                                  |
+| `$backdrop`         | `$backdrop`         | Backdrop element.                                | `BackdropElement`  | `required`                       |
+| `$container`        | `$container`        | Container element.                               | `HTMLElement`      | `required`                       |
+| `$content`          | `$content`          | Content of the popover.                          | `FocusTrap`        | `required`                       |
+| `anchor`            | `anchor`            | Anchor element or query.                         | `string | Element` | `required`                       |
+| `anchorCloseEvents` | `anchorCloseEvents` | Events on the anchor that makes the popover close itself. | `string[]`         | `required`                       |
+| `anchorOpenEvents`  | `anchorOpenEvents`  | Events on the anchor that makes the popover open itself. | `string[]`         | `required`                       |
 | `anchorOriginX`     | `anchorOriginX`     | X origin of the anchored point.                  | `OriginX`          | OriginX.LEFT                     |
 | `anchorOriginY`     | `anchorOriginY`     | Y origin of the anchored point.                  | `OriginY`          | OriginY.TOP                      |
-| `backdrop`          | `backdrop`          |                                                  | `boolean`          | false                            |
-| `blockScrolling`    | `blockScrolling`    |                                                  | `boolean`          | false                            |
+| `backdrop`          | `backdrop`          | Whether the backdrop is visible or not.          | `boolean`          | false                            |
+| `blockScrolling`    | `blockScrolling`    | Whether the overlay blocks the scrolling on the scroll container. | `boolean`          | false                            |
 | `closeOnClick`      | `closeOnClick`      | Makes the popover close when it is clicked upon. | `boolean`          | false                            |
-| `disableFocusTrap`  | `disableFocusTrap`  |                                                  | `boolean`          | false                            |
-| `duration`          | `duration`          |                                                  | `number`           | 200                              |
-| `fixed`             | `fixed`             |                                                  | `boolean`          | false                            |
+| `disableFocusTrap`  | `disableFocusTrap`  | Whether the focus trap be disabled.              | `boolean`          | false                            |
+| `duration`          | `duration`          | The duration of the animations.                  | `number`           | 200                              |
+| `fixed`             | `fixed`             | Whether the overlay is fixed or not.             | `boolean`          | false                            |
 | `noFallback`        | `noFallback`        | Whether a fallback strategy for the positioning should be used when there are no room for the popover. | `boolean`          | false                            |
-| `open`              | `open`              |                                                  | `boolean`          | false                            |
-| `persistent`        | `persistent`        |                                                  | `boolean`          | false                            |
+| `open`              | `open`              | Whether the overlay is open or not.              | `boolean`          | false                            |
+| `persistent`        | `persistent`        | Whether the overlay is persistent or not. When the overlay is persistent, ESCAPE and backdrop clicks won't close it. | `boolean`          | false                            |
 | `role`              | `role`              | Role of the popover.                             | `AriaRole`         | "menu"                           |
-| `scrollContainer`   | `scrollContainer`   |                                                  | `EventTarget`      | DEFAULT_OVERLAY_SCROLL_CONTAINER |
+| `scrollContainer`   | `scrollContainer`   | The container the overlay lives in.              | `EventTarget`      | DEFAULT_OVERLAY_SCROLL_CONTAINER |
 | `transformOriginX`  | `transformOriginX`  | X origin of the transform.                       | `OriginX`          | OriginX.LEFT                     |
 | `transformOriginY`  | `transformOriginY`  | Y origin of the transform.                       | `OriginY`          | OriginY.TOP                      |
 
+
+[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#slots)
+
+## ➤ Slots
+
+| Description      |
+|------------------|
+| Default content. |
+
+
+[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#events)
+
+## ➤ Events
+
+| Event   | Description                                   |
+|---------|-----------------------------------------------|
+| didhide | Dispatches after the overlay has been hidden. |
+| didshow | Dispatches after the overlay has been shown.  |
+
+
+[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#css-custom-properties)
+
+## ➤ CSS Custom Properties
+
+| Property          | Description |
+|-------------------|-------------|
+| --popover-z-index | z-index.    |
+| --tooltip-bg      | Background. |
+| --tooltip-color   | Color.      |
+| --tooltip-padding | Padding.    |
 
 
 
