@@ -9,16 +9,16 @@ Fills a circle from 0% to 100%.
 
 ## ➤ Properties
 
-| Property    | Attribute   | Description                    | Type           | Default         |
-|-------------|-------------|--------------------------------|----------------|-----------------|
-| `buffer`    | `buffer`    | Buffer progress value.         | `number`       |                 |
-| `bufferMax` | `bufferMax` | Max buffer progress value.     | `number`       | 1               |
-| `bufferMin` | `bufferMin` | Min buffer progress value.     | `number`       |                 |
-| `max`       | `max`       | Max progress value.            | `number`       | 1               |
-| `min`       | `min`       | Min progress value.            | `number`       |                 |
-| `mode`      | `mode`      | Animation mode.                | `ProgressMode` | "indeterminate" |
-| `role`      | `role`      | Role of the progress behavior. | `AriaRole`     | "progressbar"   |
-| `value`     | `value`     | Progress value.                | `number`       |                 |
+| Property    | Attribute   | Type           | Description                    |
+|-------------|-------------|----------------|--------------------------------|
+| `buffer`    | `buffer`    | `number`       | Buffer progress value.         |
+| `bufferMax` | `bufferMax` | `number`       | Max buffer progress value.     |
+| `bufferMin` | `bufferMin` | `number`       | Min buffer progress value.     |
+| `max`       | `max`       | `number`       | Max progress value.            |
+| `min`       | `min`       | `number`       | Min progress value.            |
+| `mode`      | `mode`      | `ProgressMode` | Animation mode.                |
+| `role`      | `role`      | `AriaRole`     | Role of the progress behavior. |
+| `value`     | `value`     | `number`       | Progress value.                |
 
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#css-custom-properties)
@@ -27,14 +27,14 @@ Fills a circle from 0% to 100%.
 
 | Property                                         | Description                                      |
 |--------------------------------------------------|--------------------------------------------------|
-| --progress-spinner-buffer-color                  | Color of the buffer.                             |
-| --progress-spinner-color                         | Color.                                           |
-| --progress-spinner-determinate-progress-transition | Transition when determinate.                     |
-| --progress-spinner-indeterminate-container-duration | Spinner container animation duration when indeterminate. |
-| --progress-spinner-indeterminate-progress-duration | Spinner animation duration when indeterminate.   |
-| --progress-spinner-indeterminate-timing-function | Spinner animation timing function when indeterminate. |
-| --progress-spinner-size                          | Width and height.                                |
-| --progress-spinner-stroke-width                  | Width of the spinner stroke.                     |
+| `--progress-spinner-buffer-color`                | Color of the buffer.                             |
+| `--progress-spinner-color`                       | Color.                                           |
+| `--progress-spinner-determinate-progress-transition` | Transition when determinate.                     |
+| `--progress-spinner-indeterminate-container-duration` | Spinner container animation duration when indeterminate. |
+| `--progress-spinner-indeterminate-progress-duration` | Spinner animation duration when indeterminate.   |
+| `--progress-spinner-indeterminate-timing-function` | Spinner animation timing function when indeterminate. |
+| `--progress-spinner-size`                        | Width and height.                                |
+| `--progress-spinner-stroke-width`                | Width of the spinner stroke.                     |
 
 
 

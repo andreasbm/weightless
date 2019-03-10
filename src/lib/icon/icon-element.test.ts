@@ -17,8 +17,8 @@ describe("divider-element", () => {
 	});
 	after(() => removeContainer($container));
 
-	it("should have an img role", () => {
-		expect($icon.getAttribute("role")).to.equal("img");
+	it("should have an presentation role", () => {
+		expect($icon.getAttribute("role")).to.equal("presentation");
 	});
 
 	it("should render the slots", async () => {

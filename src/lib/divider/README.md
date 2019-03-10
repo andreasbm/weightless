@@ -9,19 +9,19 @@ Thin line that groups content in lists and layouts.
 
 ## ➤ Properties
 
-| Property | Attribute | Description           | Type       | Default     |
-|----------|-----------|-----------------------|------------|-------------|
-| `role`   | `role`    | Role of the backdrop. | `AriaRole` | "separator" |
+| Property | Attribute | Type       | Description           |
+|----------|-----------|------------|-----------------------|
+| `role`   | `role`    | `AriaRole` | Role of the backdrop. |
 
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#css-custom-properties)
 
 ## ➤ CSS Custom Properties
 
-| Property         | Description |
-|------------------|-------------|
-| --divider-color  | Color.      |
-| --divider-height | Height.     |
+| Property           | Description |
+|--------------------|-------------|
+| `--divider-color`  | Color.      |
+| `--divider-height` | Height.     |
 
 
 

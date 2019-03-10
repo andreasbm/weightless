@@ -9,21 +9,21 @@ Make form elements more accessible.
 
 ## ➤ Properties
 
-| Property   | Attribute  | Description                                      | Type      | Default    |
-|------------|------------|--------------------------------------------------|-----------|------------|
-| `for`      | `for`      | Query of the form element click events are re-fired upon. | `string`  | `required` |
-| `nowrap`   | `nowrap`   | Caps the label element with ellipsis if overflowing. | `boolean` |            |
-| `required` | `required` | Styles the label as required.                    | `boolean` |            |
+| Property   | Attribute  | Type      | Default      | Description                                      |
+|------------|------------|-----------|--------------|--------------------------------------------------|
+| `for`      | `for`      | `string`  | **required** | Query of the form element click events are re-fired upon. |
+| `nowrap`   | `nowrap`   | `boolean` |              | Caps the label element with ellipsis if overflowing. |
+| `required` | `required` | `boolean` |              | Styles the label as required.                    |
 
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#css-custom-properties)
 
 ## ➤ CSS Custom Properties
 
-| Property               | Description                                      |
-|------------------------|--------------------------------------------------|
-| --label-color          | Color.                                           |
-| --label-color-required | Color of the asterisk (*) when required attributed is present. |
+| Property                 | Description                                      |
+|--------------------------|--------------------------------------------------|
+| `--label-color`          | Color.                                           |
+| `--label-color-required` | Color of the asterisk (*) when required attributed is present. |
 
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#slots)

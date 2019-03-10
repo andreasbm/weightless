@@ -9,27 +9,27 @@ Indicate the start of a new section.
 
 ## ➤ Properties
 
-| Property | Attribute | Description         | Type         | Default   |
-|----------|-----------|---------------------|--------------|-----------|
-| `level`  | `level`   | Level of the title. | `TitleLevel` | 1         |
-| `role`   | `role`    | Role of the title.  | `AriaRole`   | "heading" |
+| Property | Attribute | Type         | Description         |
+|----------|-----------|--------------|---------------------|
+| `level`  | `level`   | `TitleLevel` | Level of the title. |
+| `role`   | `role`    | `AriaRole`   | Role of the title.  |
 
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#css-custom-properties)
 
 ## ➤ CSS Custom Properties
 
-| Property                  | Description                   |
-|---------------------------|-------------------------------|
-| --title-font-family       | Font family.                  |
-| --title-font-size-level-1 | Font size of level 1 heading. |
-| --title-font-size-level-2 | Font size of level 2 heading. |
-| --title-font-size-level-3 | Font size of level 3 heading. |
-| --title-font-size-level-4 | Font size of level 4 heading. |
-| --title-font-size-level-5 | Font size of level 5 heading. |
-| --title-font-size-level-6 | Font size of level 6 heading. |
-| --title-font-weight       | Font weight.                  |
-| --title-margin            | Margin.                       |
+| Property                    | Description                   |
+|-----------------------------|-------------------------------|
+| `--title-font-family`       | Font family.                  |
+| `--title-font-size-level-1` | Font size of level 1 heading. |
+| `--title-font-size-level-2` | Font size of level 2 heading. |
+| `--title-font-size-level-3` | Font size of level 3 heading. |
+| `--title-font-size-level-4` | Font size of level 4 heading. |
+| `--title-font-size-level-5` | Font size of level 5 heading. |
+| `--title-font-size-level-6` | Font size of level 6 heading. |
+| `--title-font-weight`       | Font weight.                  |
+| `--title-margin`            | Margin.                       |
 
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#slots)

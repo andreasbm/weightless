@@ -9,72 +9,72 @@ Select one or more values from a set of options.
 
 ## ➤ Properties
 
-| Property       | Attribute      | Description                                      | Type            | Default    |
-|----------------|----------------|--------------------------------------------------|-----------------|------------|
-| `autocomplete` | `autocomplete` | Whether autocomplete is on or off.               | `"on" \| "off"` | `required` |
-| `disabled`     | `disabled`     | Disables the element.                            | `boolean`       |            |
-| `filled`       | `filled`       | Fills the input with a solid color.              | `boolean`       |            |
-| `name`         | `name`         | Name of the native form element.                 | `string`        | `required` |
-| `outlined`     | `outlined`     | Makes the input outlined.                        | `boolean`       |            |
-| `placeholder`  | `placeholder`  | Placeholder text.                                | `string`        | `required` |
-| `readonly`     | `readonly`     | Makes the element readonly (disabled but tabbable) | `boolean`       |            |
-| `required`     | `required`     | Makes the element required in a form context.    | `boolean`       |            |
-| `role`         | `role`         | Role of the select.                              | `AriaRole`      | "select"   |
-| `value`        | `value`        | Value of the form element.                       | `string`        |            |
+| Property       | Attribute      | Type            | Default      | Description                                      |
+|----------------|----------------|-----------------|--------------|--------------------------------------------------|
+| `autocomplete` | `autocomplete` | `"on" \| "off"` | **required** | Whether autocomplete is on or off.               |
+| `disabled`     | `disabled`     | `boolean`       |              | Disables the element.                            |
+| `filled`       | `filled`       | `boolean`       |              | Fills the input with a solid color.              |
+| `name`         | `name`         | `string`        | **required** | Name of the native form element.                 |
+| `outlined`     | `outlined`     | `boolean`       |              | Makes the input outlined.                        |
+| `placeholder`  | `placeholder`  | `string`        | **required** | Placeholder text.                                |
+| `readonly`     | `readonly`     | `boolean`       |              | Makes the element readonly (disabled but tabbable) |
+| `required`     | `required`     | `boolean`       |              | Makes the element required in a form context.    |
+| `role`         | `role`         | `AriaRole`      |              | Role of the select.                              |
+| `value`        | `value`        | `string`        |              | Value of the form element.                       |
 
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#events)
 
 ## ➤ Events
 
-| Event  | Description                                      |
-|--------|--------------------------------------------------|
-| submit | Dispatched when the enter key is hit while holding down ctrl or the meta-key. |
+| Event    | Description                                      |
+|----------|--------------------------------------------------|
+| `submit` | Dispatched when the enter key is hit while holding down ctrl or the meta-key. |
 
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#css-custom-properties)
 
 ## ➤ CSS Custom Properties
 
-| Property                            | Description                                   |
-|-------------------------------------|-----------------------------------------------|
-| --input-before-after-color          | Color of the before and after slots.          |
-| --input-bg                          | Default background.                           |
-| --input-bg-filled                   | Background when filled.                       |
-| --input-bg-filled-hover             | Background on :hover.                         |
-| --input-border-radius-filled        | Border radius when filled.                    |
-| --input-border-radius-outlined      | Border radius when outlined.                  |
-| --input-border-width                | Width of the border.                          |
-| --input-color                       | Default color.                                |
-| --input-color-disabled              | Color when disabled.                          |
-| --input-font-family                 | Font family.                                  |
-| --input-font-size                   | Font size.                                    |
-| --input-padding-left-right          | Padding for the left and right.               |
-| --input-padding-left-right-outlined | Padding for the left and right when outlined. |
-| --input-padding-top-bottom          | Padding for the top and bottom.               |
-| --input-placeholder-color           | Color of the placeholder.                     |
-| --input-placeholder-color-disabled  | Color of the placeholder when disabled.       |
-| --input-placeholder-font-size       | Font size of the placeholder.                 |
-| --input-placeholder-space           | Space between placeholder and input content.  |
-| --input-placeholder-transition      | Transition of the placeholder.                |
-| --input-state-color-active          | State color when active.                      |
-| --input-state-color-disabled        | State color when disabled.                    |
-| --input-state-color-hover           | State color on :hover.                        |
-| --input-state-color-inactive        | State color when inactive.                    |
-| --input-state-color-invalid         | State color when invalid.                     |
-| --input-transition                  | Transition.                                   |
-| --select-arrow-height               | Height of the select arrow.                   |
+| Property                              | Description                                   |
+|---------------------------------------|-----------------------------------------------|
+| `--input-before-after-color`          | Color of the before and after slots.          |
+| `--input-bg`                          | Default background.                           |
+| `--input-bg-filled`                   | Background when filled.                       |
+| `--input-bg-filled-hover`             | Background on :hover.                         |
+| `--input-border-radius-filled`        | Border radius when filled.                    |
+| `--input-border-radius-outlined`      | Border radius when outlined.                  |
+| `--input-border-width`                | Width of the border.                          |
+| `--input-color`                       | Default color.                                |
+| `--input-color-disabled`              | Color when disabled.                          |
+| `--input-font-family`                 | Font family.                                  |
+| `--input-font-size`                   | Font size.                                    |
+| `--input-padding-left-right`          | Padding for the left and right.               |
+| `--input-padding-left-right-outlined` | Padding for the left and right when outlined. |
+| `--input-padding-top-bottom`          | Padding for the top and bottom.               |
+| `--input-placeholder-color`           | Color of the placeholder.                     |
+| `--input-placeholder-color-disabled`  | Color of the placeholder when disabled.       |
+| `--input-placeholder-font-size`       | Font size of the placeholder.                 |
+| `--input-placeholder-space`           | Space between placeholder and input content.  |
+| `--input-placeholder-transition`      | Transition of the placeholder.                |
+| `--input-state-color-active`          | State color when active.                      |
+| `--input-state-color-disabled`        | State color when disabled.                    |
+| `--input-state-color-hover`           | State color on :hover.                        |
+| `--input-state-color-inactive`        | State color when inactive.                    |
+| `--input-state-color-invalid`         | State color when invalid.                     |
+| `--input-transition`                  | Transition.                                   |
+| `--select-arrow-height`               | Height of the select arrow.                   |
 
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#slots)
 
 ## ➤ Slots
 
-| Name   | Description                |
-|--------|----------------------------|
-|        | <option> elements go here. |
-| after  | Content after the input.   |
-| before | Content before the input.  |
+| Name     | Description                |
+|----------|----------------------------|
+|          | <option> elements go here. |
+| `after`  | Content after the input.   |
+| `before` | Content before the input.  |
 
 
 

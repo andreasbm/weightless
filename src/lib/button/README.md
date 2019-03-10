@@ -9,47 +9,47 @@ Allow users to take actions, and make choices, with a single tap.
 
 ## ➤ Properties
 
-| Property   | Attribute  | Description                                      | Type                   | Default    |
-|------------|------------|--------------------------------------------------|------------------------|------------|
-| `disabled` | `disabled` | Disables the element.                            | `boolean`              |            |
-| `fab`      | `fab`      | Makes the button round and squared.              | `boolean`              |            |
-| `flat`     | `flat`     | Makes the button flat.                           | `boolean`              |            |
-| `inverted` | `inverted` | Inverts the colors of the button.                | `boolean`              |            |
-| `name`     | `name`     | Name of the native form element.                 | `string`               | `required` |
-| `noRipple` | `noRipple` | Deactivates the ripple.                          | `boolean`              |            |
-| `outlined` | `outlined` | Makes the button outlined.                       | `boolean`              |            |
-| `readonly` | `readonly` | Makes the element readonly (disabled but tabbable) | `boolean`              |            |
-| `required` | `required` | Makes the element required in a form context.    | `boolean`              |            |
-| `role`     | `role`     | Role of the button.                              | `AriaRole`             | "button"   |
-| `type`     | `type`     | Type of the button.                              | `"button" \| "submit"` | "submit"   |
-| `value`    | `value`    | Value of the form element.                       | `string`               |            |
+| Property   | Attribute  | Type                   | Default      | Description                                      |
+|------------|------------|------------------------|--------------|--------------------------------------------------|
+| `disabled` | `disabled` | `boolean`              |              | Disables the element.                            |
+| `fab`      | `fab`      | `boolean`              |              | Makes the button round and squared.              |
+| `flat`     | `flat`     | `boolean`              |              | Makes the button flat.                           |
+| `inverted` | `inverted` | `boolean`              |              | Inverts the colors of the button.                |
+| `name`     | `name`     | `string`               | **required** | Name of the native form element.                 |
+| `noRipple` | `noRipple` | `boolean`              |              | Deactivates the ripple.                          |
+| `outlined` | `outlined` | `boolean`              |              | Makes the button outlined.                       |
+| `readonly` | `readonly` | `boolean`              |              | Makes the element readonly (disabled but tabbable) |
+| `required` | `required` | `boolean`              |              | Makes the element required in a form context.    |
+| `role`     | `role`     | `AriaRole`             |              | Role of the button.                              |
+| `type`     | `type`     | `"button" \| "submit"` |              | Type of the button.                              |
+| `value`    | `value`    | `string`               |              | Value of the form element.                       |
 
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#css-custom-properties)
 
 ## ➤ CSS Custom Properties
 
-| Property                    | Description                                      |
-|-----------------------------|--------------------------------------------------|
-| --button-bg                 | Default background.                              |
-| --button-bg-active          | Background on :active.                           |
-| --button-bg-active-flat     | Background on :active when flat attribute is present. |
-| --button-bg-disabled        | Background when disabled.                        |
-| --button-bg-hover           | Background on :hover.                            |
-| --button-border-outlined    | Border when outline attribute is present.        |
-| --button-border-radius      | Border radius.                                   |
-| --button-color              | Default color.                                   |
-| --button-color-active       | Color on :active.                                |
-| --button-color-disabled     | Color when disabled.                             |
-| --button-color-hover        | Color on :hover.                                 |
-| --button-fab-size           | Size of the button when fab attribute is present. |
-| --button-font-family        | Font family.                                     |
-| --button-font-size          | Font size.                                       |
-| --button-letter-spacing     | Letter spacing.                                  |
-| --button-padding            | Padding.                                         |
-| --button-shadow-color       | Default shadow color.                            |
-| --button-shadow-color-hover | Shadow color on hover.                           |
-| --button-transition         | Transition.                                      |
+| Property                      | Description                                      |
+|-------------------------------|--------------------------------------------------|
+| `--button-bg`                 | Default background.                              |
+| `--button-bg-active`          | Background on :active.                           |
+| `--button-bg-active-flat`     | Background on :active when flat attribute is present. |
+| `--button-bg-disabled`        | Background when disabled.                        |
+| `--button-bg-hover`           | Background on :hover.                            |
+| `--button-border-outlined`    | Border when outline attribute is present.        |
+| `--button-border-radius`      | Border radius.                                   |
+| `--button-color`              | Default color.                                   |
+| `--button-color-active`       | Color on :active.                                |
+| `--button-color-disabled`     | Color when disabled.                             |
+| `--button-color-hover`        | Color on :hover.                                 |
+| `--button-fab-size`           | Size of the button when fab attribute is present. |
+| `--button-font-family`        | Font family.                                     |
+| `--button-font-size`          | Font size.                                       |
+| `--button-letter-spacing`     | Letter spacing.                                  |
+| `--button-padding`            | Padding.                                         |
+| `--button-shadow-color`       | Default shadow color.                            |
+| `--button-shadow-color-hover` | Shadow color on hover.                           |
+| `--button-transition`         | Transition.                                      |
 
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#slots)

@@ -9,32 +9,32 @@ Fills a bar from 0% to 100%.
 
 ## ➤ Properties
 
-| Property    | Attribute   | Description                    | Type           | Default         |
-|-------------|-------------|--------------------------------|----------------|-----------------|
-| `buffer`    | `buffer`    | Buffer progress value.         | `number`       |                 |
-| `bufferMax` | `bufferMax` | Max buffer progress value.     | `number`       | 1               |
-| `bufferMin` | `bufferMin` | Min buffer progress value.     | `number`       |                 |
-| `max`       | `max`       | Max progress value.            | `number`       | 1               |
-| `min`       | `min`       | Min progress value.            | `number`       |                 |
-| `mode`      | `mode`      | Animation mode.                | `ProgressMode` | "indeterminate" |
-| `role`      | `role`      | Role of the progress behavior. | `AriaRole`     | "progressbar"   |
-| `value`     | `value`     | Progress value.                | `number`       |                 |
+| Property    | Attribute   | Type           | Description                    |
+|-------------|-------------|----------------|--------------------------------|
+| `buffer`    | `buffer`    | `number`       | Buffer progress value.         |
+| `bufferMax` | `bufferMax` | `number`       | Max buffer progress value.     |
+| `bufferMin` | `bufferMin` | `number`       | Min buffer progress value.     |
+| `max`       | `max`       | `number`       | Max progress value.            |
+| `min`       | `min`       | `number`       | Min progress value.            |
+| `mode`      | `mode`      | `ProgressMode` | Animation mode.                |
+| `role`      | `role`      | `AriaRole`     | Role of the progress behavior. |
+| `value`     | `value`     | `number`       | Progress value.                |
 
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#css-custom-properties)
 
 ## ➤ CSS Custom Properties
 
-| Property                                     | Description                                      |
-|----------------------------------------------|--------------------------------------------------|
-| --progress-bar-bg                            | Background.                                      |
-| --progress-bar-buffer-color                  | Color of the buffer.                             |
-| --progress-bar-color                         | Color.                                           |
-| --progress-bar-determinate-transition        | Transition of when determinate.                  |
-| --progress-bar-height                        | Height.                                          |
-| --progress-bar-indeterminate-duration        | Duration of the transition when indeterminate.   |
-| --progress-bar-indeterminate-short-delay     | Duration of the short bar transition when indeterminate. |
-| --progress-bar-indeterminate-timing-function | Timing function when indeterminate.              |
+| Property                                       | Description                                      |
+|------------------------------------------------|--------------------------------------------------|
+| `--progress-bar-bg`                            | Background.                                      |
+| `--progress-bar-buffer-color`                  | Color of the buffer.                             |
+| `--progress-bar-color`                         | Color.                                           |
+| `--progress-bar-determinate-transition`        | Transition of when determinate.                  |
+| `--progress-bar-height`                        | Height.                                          |
+| `--progress-bar-indeterminate-duration`        | Duration of the transition when indeterminate.   |
+| `--progress-bar-indeterminate-short-delay`     | Duration of the short bar transition when indeterminate. |
+| `--progress-bar-indeterminate-timing-function` | Timing function when indeterminate.              |
 
 
 

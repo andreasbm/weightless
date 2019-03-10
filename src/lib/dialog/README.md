@@ -9,79 +9,79 @@ Highly interruptive messages.
 
 ## ➤ Properties
 
-| Property           | Attribute          | Description                                      | Type              | Default    |
-|--------------------|--------------------|--------------------------------------------------|-------------------|------------|
-| `$backdrop`        | `$backdrop`        | Backdrop element.                                | `BackdropElement` | `required` |
-| `$dialog`          | `$dialog`          | Dialog element.                                  | `HTMLElement`     | `required` |
-| `$focusTrap`       | `$focusTrap`       | Focus trap element.                              | `FocusTrap`       | `required` |
-| `backdrop`         | `backdrop`         | Whether the backdrop is visible or not.          | `boolean`         |            |
-| `blockScrolling`   | `blockScrolling`   | Whether the overlay blocks the scrolling on the scroll container. | `boolean`         |            |
-| `disableFocusTrap` | `disableFocusTrap` | Whether the focus trap be disabled.              | `boolean`         |            |
-| `duration`         | `duration`         | The duration of the animations.                  | `number`          | 200        |
-| `fixed`            | `fixed`            | Whether the overlay is fixed or not.             | `boolean`         |            |
-| `open`             | `open`             | Whether the overlay is open or not.              | `boolean`         |            |
-| `persistent`       | `persistent`       | Whether the overlay is persistent or not. When the overlay is persistent, ESCAPE and backdrop clicks won't close it. | `boolean`         |            |
-| `role`             | `role`             | Role of the dialog.                              | `AriaRole`        | "dialog"   |
-| `scrollContainer`  | `scrollContainer`  | The container the overlay lives in.              | `EventTarget`     |            |
-| `scrollable`       | `scrollable`       | Makes the dialog scrollable.                     | `boolean`         |            |
-| `size`             | `size`             | Size of the dialog.                              | `DialogSize`      | `required` |
+| Property           | Attribute          | Type              | Default      | Description                                      |
+|--------------------|--------------------|-------------------|--------------|--------------------------------------------------|
+| `$backdrop`        | `$backdrop`        | `BackdropElement` | **required** | Backdrop element.                                |
+| `$dialog`          | `$dialog`          | `HTMLElement`     | **required** | Dialog element.                                  |
+| `$focusTrap`       | `$focusTrap`       | `FocusTrap`       | **required** | Focus trap element.                              |
+| `backdrop`         | `backdrop`         | `boolean`         |              | Whether the backdrop is visible or not.          |
+| `blockScrolling`   | `blockScrolling`   | `boolean`         |              | Whether the overlay blocks the scrolling on the scroll container. |
+| `disableFocusTrap` | `disableFocusTrap` | `boolean`         |              | Whether the focus trap be disabled.              |
+| `duration`         | `duration`         | `number`          |              | The duration of the animations.                  |
+| `fixed`            | `fixed`            | `boolean`         |              | Whether the overlay is fixed or not.             |
+| `open`             | `open`             | `boolean`         |              | Whether the overlay is open or not.              |
+| `persistent`       | `persistent`       | `boolean`         |              | Whether the overlay is persistent or not. When the overlay is persistent, ESCAPE and backdrop clicks won't close it. |
+| `role`             | `role`             | `AriaRole`        |              | Role of the dialog.                              |
+| `scrollContainer`  | `scrollContainer`  | `EventTarget`     |              | The container the overlay lives in.              |
+| `scrollable`       | `scrollable`       | `boolean`         |              | Makes the dialog scrollable.                     |
+| `size`             | `size`             | `DialogSize`      | **required** | Size of the dialog.                              |
 
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#events)
 
 ## ➤ Events
 
-| Event   | Description                                   |
-|---------|-----------------------------------------------|
-| didhide | Dispatches after the overlay has been hidden. |
-| didshow | Dispatches after the overlay has been shown.  |
+| Event     | Description                                   |
+|-----------|-----------------------------------------------|
+| `didhide` | Dispatches after the overlay has been hidden. |
+| `didshow` | Dispatches after the overlay has been shown.  |
 
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#css-custom-properties)
 
 ## ➤ CSS Custom Properties
 
-| Property                           | Description                                 |
-|------------------------------------|---------------------------------------------|
-| --dialog-bg                        | Background.                                 |
-| --dialog-border-radius             | Border radius.                              |
-| --dialog-color                     | Color.                                      |
-| --dialog-content-padding           | Padding of the content slot.                |
-| --dialog-elevation                 | Box shadow.                                 |
-| --dialog-footer-padding            | Padding of the footer slot.                 |
-| --dialog-header-padding            | Padding of the header slot.                 |
-| --dialog-header-padding-scrollable | Padding of the header slot when scrollable. |
-| --dialog-height                    | Default height.                             |
-| --dialog-height-auto               | Auto height.                                |
-| --dialog-height-fullscreen         | Fullscreen height                           |
-| --dialog-height-l                  | Large height                                |
-| --dialog-height-m                  | Medium height                               |
-| --dialog-height-s                  | Small height                                |
-| --dialog-max-height                | Max height.                                 |
-| --dialog-max-width                 | Max width.                                  |
-| --dialog-min-height                | Min height.                                 |
-| --dialog-min-width                 | Min width.                                  |
-| --dialog-scrollable-border         | Border when scrollable.                     |
-| --dialog-width                     | Default width.                              |
-| --dialog-width-auto                | Auto width.                                 |
-| --dialog-width-fullscreen          | Fullscreen width.                           |
-| --dialog-width-l                   | Large width.                                |
-| --dialog-width-m                   | Medium width.                               |
-| --dialog-width-s                   | Small width.                                |
-| --dialog-will-change               | Will change.                                |
-| --dialog-z-index                   | z-index.                                    |
+| Property                             | Description                                 |
+|--------------------------------------|---------------------------------------------|
+| `--dialog-bg`                        | Background.                                 |
+| `--dialog-border-radius`             | Border radius.                              |
+| `--dialog-color`                     | Color.                                      |
+| `--dialog-content-padding`           | Padding of the content slot.                |
+| `--dialog-elevation`                 | Box shadow.                                 |
+| `--dialog-footer-padding`            | Padding of the footer slot.                 |
+| `--dialog-header-padding`            | Padding of the header slot.                 |
+| `--dialog-header-padding-scrollable` | Padding of the header slot when scrollable. |
+| `--dialog-height`                    | Default height.                             |
+| `--dialog-height-auto`               | Auto height.                                |
+| `--dialog-height-fullscreen`         | Fullscreen height                           |
+| `--dialog-height-l`                  | Large height                                |
+| `--dialog-height-m`                  | Medium height                               |
+| `--dialog-height-s`                  | Small height                                |
+| `--dialog-max-height`                | Max height.                                 |
+| `--dialog-max-width`                 | Max width.                                  |
+| `--dialog-min-height`                | Min height.                                 |
+| `--dialog-min-width`                 | Min width.                                  |
+| `--dialog-scrollable-border`         | Border when scrollable.                     |
+| `--dialog-width`                     | Default width.                              |
+| `--dialog-width-auto`                | Auto width.                                 |
+| `--dialog-width-fullscreen`          | Fullscreen width.                           |
+| `--dialog-width-l`                   | Large width.                                |
+| `--dialog-width-m`                   | Medium width.                               |
+| `--dialog-width-s`                   | Small width.                                |
+| `--dialog-will-change`               | Will change.                                |
+| `--dialog-z-index`                   | z-index.                                    |
 
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#slots)
 
 ## ➤ Slots
 
-| Name    | Description      |
-|---------|------------------|
-|         | Default content. |
-| content | Body content.    |
-| footer  | Footer content.  |
-| header  | Header content.  |
+| Name      | Description      |
+|-----------|------------------|
+|           | Default content. |
+| `content` | Body content.    |
+| `footer`  | Footer content.  |
+| `header`  | Header content.  |
 
 
 

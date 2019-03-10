@@ -9,40 +9,40 @@ Provide access to destinations in your app.
 
 ## ➤ Properties
 
-| Property | Attribute | Description                           | Type       | Default      |
-|----------|-----------|---------------------------------------|------------|--------------|
-| `fixed`  | `fixed`   | Fixes the nav to the top of the page. | `boolean`  |              |
-| `role`   | `role`    | Role of the nav.                      | `AriaRole` | "navigation" |
-| `shadow` | `shadow`  | Gives the nav a shadow.               | `boolean`  |              |
+| Property | Attribute | Type       | Description                           |
+|----------|-----------|------------|---------------------------------------|
+| `fixed`  | `fixed`   | `boolean`  | Fixes the nav to the top of the page. |
+| `role`   | `role`    | `AriaRole` | Role of the nav.                      |
+| `shadow` | `shadow`  | `boolean`  | Gives the nav a shadow.               |
 
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#css-custom-properties)
 
 ## ➤ CSS Custom Properties
 
-| Property                | Description               |
-|-------------------------|---------------------------|
-| --nav-bg                | Background.               |
-| --nav-color             | Color.                    |
-| --nav-elevation         | Box shadow.               |
-| --nav-height            | Height.                   |
-| --nav-padding           | Padding.                  |
-| --nav-title-font-size   | Font size of the title.   |
-| --nav-title-font-weight | Font weight of the title. |
-| --nav-title-margin      | Margin of the title.      |
-| --nav-transition        | Transition.               |
-| --tolbar-z-index        | z-index.                  |
+| Property                  | Description               |
+|---------------------------|---------------------------|
+| `--nav-bg`                | Background.               |
+| `--nav-color`             | Color.                    |
+| `--nav-elevation`         | Box shadow.               |
+| `--nav-height`            | Height.                   |
+| `--nav-padding`           | Padding.                  |
+| `--nav-title-font-size`   | Font size of the title.   |
+| `--nav-title-font-weight` | Font weight of the title. |
+| `--nav-title-margin`      | Margin of the title.      |
+| `--nav-transition`        | Transition.               |
+| `--tolbar-z-index`        | z-index.                  |
 
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#slots)
 
 ## ➤ Slots
 
-| Name  | Description                      |
-|-------|----------------------------------|
-| left  | Content positioned to the left.  |
-| right | Content positioned to the right. |
-| title | Title.                           |
+| Name    | Description                      |
+|---------|----------------------------------|
+| `left`  | Content positioned to the left.  |
+| `right` | Content positioned to the right. |
+| `title` | Title.                           |
 
 
 

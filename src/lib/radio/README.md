@@ -9,39 +9,39 @@ Select one option from a set.
 
 ## ➤ Properties
 
-| Property   | Attribute  | Description                                      | Type       | Default    |
-|------------|------------|--------------------------------------------------|------------|------------|
-| `checked`  | `checked`  | Checks the checkbox.                             | `boolean`  |            |
-| `disabled` | `disabled` | Disables the element.                            | `boolean`  |            |
-| `name`     | `name`     | Name of the native form element.                 | `string`   | `required` |
-| `readonly` | `readonly` | Makes the element readonly (disabled but tabbable) | `boolean`  |            |
-| `required` | `required` | Makes the element required in a form context.    | `boolean`  |            |
-| `role`     | `role`     | Role of the radio behavior.                      | `AriaRole` | "radio"    |
-| `value`    | `value`    | Value of the form element.                       | `string`   |            |
+| Property   | Attribute  | Type       | Default      | Description                                      |
+|------------|------------|------------|--------------|--------------------------------------------------|
+| `checked`  | `checked`  | `boolean`  |              | Checks the checkbox.                             |
+| `disabled` | `disabled` | `boolean`  |              | Disables the element.                            |
+| `name`     | `name`     | `string`   | **required** | Name of the native form element.                 |
+| `readonly` | `readonly` | `boolean`  |              | Makes the element readonly (disabled but tabbable) |
+| `required` | `required` | `boolean`  |              | Makes the element required in a form context.    |
+| `role`     | `role`     | `AriaRole` |              | Role of the radio behavior.                      |
+| `value`    | `value`    | `string`   |              | Value of the form element.                       |
 
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#css-custom-properties)
 
 ## ➤ CSS Custom Properties
 
-| Property                       | Description                             |
-|--------------------------------|-----------------------------------------|
-| --radio-bg                     | Default background.                     |
-| --radio-bg-checked             | Background when checked.                |
-| --radio-bg-disabled            | Background when disabled.               |
-| --radio-bg-disabled-checked    | Background when disabled and checked.   |
-| --radio-border-config          | Border configuration (style and width). |
-| --radio-border-radius          | Border radius.                          |
-| --radio-color                  | Default color.                          |
-| --radio-color-checked          | Color when checked.                     |
-| --radio-color-disabled         | Color when disabled.                    |
-| --radio-color-disabled-checked | Color when disabled and checked.        |
-| --radio-dot-border-radius      | Border radius of the dot.               |
-| --radio-dot-size               | Width and height of the dot.            |
-| --radio-dot-transition         | Transition of the dot.                  |
-| --radio-ripple-transform       | Transform of the ripple.                |
-| --radio-size                   | Width and height.                       |
-| --radio-transition             | Transition.                             |
+| Property                         | Description                             |
+|----------------------------------|-----------------------------------------|
+| `--radio-bg`                     | Default background.                     |
+| `--radio-bg-checked`             | Background when checked.                |
+| `--radio-bg-disabled`            | Background when disabled.               |
+| `--radio-bg-disabled-checked`    | Background when disabled and checked.   |
+| `--radio-border-config`          | Border configuration (style and width). |
+| `--radio-border-radius`          | Border radius.                          |
+| `--radio-color`                  | Default color.                          |
+| `--radio-color-checked`          | Color when checked.                     |
+| `--radio-color-disabled`         | Color when disabled.                    |
+| `--radio-color-disabled-checked` | Color when disabled and checked.        |
+| `--radio-dot-border-radius`      | Border radius of the dot.               |
+| `--radio-dot-size`               | Width and height of the dot.            |
+| `--radio-dot-transition`         | Transition of the dot.                  |
+| `--radio-ripple-transform`       | Transform of the ripple.                |
+| `--radio-size`                   | Width and height.                       |
+| `--radio-transition`             | Transition.                             |
 
 
 

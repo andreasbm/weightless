@@ -9,19 +9,19 @@ Symbols for common actions and items.
 
 ## ➤ Properties
 
-| Property | Attribute | Description        | Type       | Default        |
-|----------|-----------|--------------------|------------|----------------|
-| `role`   | `role`    | Roles of the icon. | `AriaRole` | "presentation" |
+| Property | Attribute | Type       | Description        |
+|----------|-----------|------------|--------------------|
+| `role`   | `role`    | `AriaRole` | Roles of the icon. |
 
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#css-custom-properties)
 
 ## ➤ CSS Custom Properties
 
-| Property    | Description       |
-|-------------|-------------------|
-| --icon-font | Icon font family. |
-| --icon-size | Font size.        |
+| Property      | Description       |
+|---------------|-------------------|
+| `--icon-font` | Icon font family. |
+| `--icon-size` | Font size.        |
 
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#slots)

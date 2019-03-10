@@ -9,18 +9,18 @@ Dark layer to use behind overlayed elements.
 
 ## ➤ Properties
 
-| Property | Attribute | Description           | Type       | Default        |
-|----------|-----------|-----------------------|------------|----------------|
-| `role`   | `role`    | Role of the backdrop. | `AriaRole` | "presentation" |
+| Property | Attribute | Type       | Description           |
+|----------|-----------|------------|-----------------------|
+| `role`   | `role`    | `AriaRole` | Role of the backdrop. |
 
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#css-custom-properties)
 
 ## ➤ CSS Custom Properties
 
-| Property      | Description |
-|---------------|-------------|
-| --backdrop-bg | Background. |
+| Property        | Description |
+|-----------------|-------------|
+| `--backdrop-bg` | Background. |
 
 
 

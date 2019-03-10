@@ -9,12 +9,12 @@ Give popovers a contextual flair.
 
 ## ➤ CSS Custom Properties
 
-| Property                    | Description             |
-|-----------------------------|-------------------------|
-| --popover-card-arrow-fill   | Color of the arrow.     |
-| --popover-card-arrow-height | Height of the arrow.    |
-| --popover-card-arrow-width  | Width of the arrow.     |
-| --popover-card-elevation    | Box shadow of the card. |
+| Property                      | Description             |
+|-------------------------------|-------------------------|
+| `--popover-card-arrow-fill`   | Color of the arrow.     |
+| `--popover-card-arrow-height` | Height of the arrow.    |
+| `--popover-card-arrow-width`  | Width of the arrow.     |
+| `--popover-card-elevation`    | Box shadow of the card. |
 
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#slots)

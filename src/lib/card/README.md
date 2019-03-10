@@ -9,24 +9,24 @@ Group related content and action.
 
 ## ➤ Properties
 
-| Property    | Attribute   | Description               | Type      |
-|-------------|-------------|---------------------------|-----------|
-| `hoverable` | `hoverable` | Makes the card hoverable. | `boolean` |
+| Property    | Attribute   | Type      | Description               |
+|-------------|-------------|-----------|---------------------------|
+| `hoverable` | `hoverable` | `boolean` | Makes the card hoverable. |
 
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#css-custom-properties)
 
 ## ➤ CSS Custom Properties
 
-| Property               | Description           |
-|------------------------|-----------------------|
-| --card-bg              | Background.           |
-| --card-border-radius   | Border radius.        |
-| --card-color           | Color                 |
-| --card-elevation       | Default box shadow.   |
-| --card-elevation-hover | Box shadow on :hover. |
-| --card-padding         | Padding.              |
-| --card-transition      | Transition.           |
+| Property                 | Description           |
+|--------------------------|-----------------------|
+| `--card-bg`              | Background.           |
+| `--card-border-radius`   | Border radius.        |
+| `--card-color`           | Color                 |
+| `--card-elevation`       | Default box shadow.   |
+| `--card-elevation-hover` | Box shadow on :hover. |
+| `--card-padding`         | Padding.              |
+| `--card-transition`      | Transition.           |
 
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#slots)
