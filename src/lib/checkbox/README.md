@@ -1,7 +1,7 @@
 
-[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#checkbox-element)
+[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#wl-checkbox)
 
-# ➤ checkbox-element
+# ➤ wl-checkbox
 
 Turn an option on or off.
 
@@ -55,7 +55,7 @@ Turn an option on or off.
 Go [here](https://weightless.dev/elements/checkbox) to try the demo.
 
 <a href="https://weightless.dev/elements/checkbox" align="center">
-  <img src="https://raw.githubusercontent.com/andreasbm/elements/master/screenshots/checkbox-element.png?token=AF-iBe24iyQPNmcdPiK5oPZhd8a_acCTks5chEhjwA%3D%3D" width="700" />
+  <img src="https://raw.githubusercontent.com/andreasbm/elements/master/screenshots/wl-checkbox.png?token=AF-iBe24iyQPNmcdPiK5oPZhd8a_acCTks5chEhjwA%3D%3D" width="700" />
 </a>
 
 

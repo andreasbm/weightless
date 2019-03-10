@@ -2,7 +2,7 @@
 	"extend": "blueprint.json",
 	"input": "src/lib/select/blueprint.md",
 	"output": "src/lib/select/README.md",
-	"tag": "select-element",
+	"tag": "wl-select",
 	"demo": "https://weightless.dev/elements/select",
-	"img": "https://raw.githubusercontent.com/andreasbm/elements/master/screenshots/select-element.png?token=AF-iBTO_RaKyKWe0-e20FJ7G6-t3khpRks5chErVwA%3D%3D"
+	"img": "https://raw.githubusercontent.com/andreasbm/elements/master/screenshots/wl-select.png?token=AF-iBTO_RaKyKWe0-e20FJ7G6-t3khpRks5chErVwA%3D%3D"
 }

@@ -1,4 +1,4 @@
-{{ doc:src/lib/popover-card/popover-card-element.ts }}
+{{ doc:src/lib/popover-card/wl-popover-card.ts }}
 
 ## Usage
 

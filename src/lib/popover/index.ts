@@ -1,2 +1,2 @@
-export * from "./popover-element";
+export * from "./wl-popover";
 export * from "./open-popover";

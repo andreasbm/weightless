@@ -121,7 +121,7 @@ export abstract class CheckboxBehavior extends FormElementBehavior implements IC
 		return html`
 			<input
 				id="${this.formElementId}"
-				type="${this.formElementType}"
+				type="${<any>this.formElementType}"
 				?checked="${this.checked}"
 				?required="${this.required}"
 				?disabled="${this.disabled}"

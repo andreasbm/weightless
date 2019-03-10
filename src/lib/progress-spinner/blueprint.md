@@ -1,4 +1,4 @@
-{{ doc:src/lib/progress-spinner/progress-spinner-element.ts }}
+{{ doc:src/lib/progress-spinner/wl-progress-spinner.ts }}
 
 ## Usage
 

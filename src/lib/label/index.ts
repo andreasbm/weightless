@@ -1,1 +1,1 @@
-export * from "./label-element";
+export * from "./wl-label";

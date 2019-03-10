@@ -2,7 +2,7 @@
 	"extend": "blueprint.json",
 	"input": "src/lib/radio/blueprint.md",
 	"output": "src/lib/radio/README.md",
-	"tag": "radio-element",
+	"tag": "wl-radio",
 	"demo": "https://weightless.dev/elements/radio",
-	"img": "https://raw.githubusercontent.com/andreasbm/elements/master/screenshots/radio-element.png?token=AF-iBcoNrrO2pTIZCQ-9BR6Ih6wh0bq7ks5chEqcwA%3D%3D"
+	"img": "https://raw.githubusercontent.com/andreasbm/elements/master/screenshots/wl-radio.png?token=AF-iBcoNrrO2pTIZCQ-9BR6Ih6wh0bq7ks5chEqcwA%3D%3D"
 }

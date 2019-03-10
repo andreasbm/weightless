@@ -1,1 +1,1 @@
-export * from "./progress-bar-element";
+export * from "./wl-progress-bar";

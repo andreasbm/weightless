@@ -1,1 +1,1 @@
-export * from "./title-element";
+export * from "./wl-title";

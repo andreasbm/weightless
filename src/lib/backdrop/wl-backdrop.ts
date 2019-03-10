@@ -9,7 +9,7 @@ import styles from "./wl-backdrop.scss";
 /**
  * Backdrop properties.
  */
-export interface IBackdropElementProperties {
+export interface IBackdropProperties {
 }
 
 /**
@@ -17,7 +17,7 @@ export interface IBackdropElementProperties {
  * @cssprop --backdrop-bg - Background.
  */
 @customElement("wl-backdrop")
-export class WlBackdrop extends LitElement implements IBackdropElementProperties {
+export class WlBackdrop extends LitElement implements IBackdropProperties {
 	static styles = [cssResult(styles)];
 
 	/**

@@ -1,7 +1,7 @@
 
-[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#divider-element)
+[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#wl-divider)
 
-# ➤ divider-element
+# ➤ wl-divider
 
 Thin line that groups content in lists and layouts.
 
@@ -32,7 +32,7 @@ Thin line that groups content in lists and layouts.
 Go [here](https://weightless.dev/elements/divider) to try the demo.
 
 <a href="https://weightless.dev/elements/divider" align="center">
-  <img src="https://raw.githubusercontent.com/andreasbm/elements/master/screenshots/divider-element.png?token=AF-iBT7z17lNwSwyRFaeIaGSpsqbwB_1ks5chEl4wA%3D%3D" width="700" />
+  <img src="https://raw.githubusercontent.com/andreasbm/elements/master/screenshots/wl-divider.png?token=AF-iBT7z17lNwSwyRFaeIaGSpsqbwB_1ks5chEl4wA%3D%3D" width="700" />
 </a>
 
 

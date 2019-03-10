@@ -2,7 +2,7 @@
 	"extend": "blueprint.json",
 	"input": "src/lib/ripple/blueprint.md",
 	"output": "src/lib/ripple/README.md",
-	"tag": "ripple-element",
+	"tag": "wl-ripple",
 	"demo": "https://weightless.dev/elements/ripple",
-	"img": "https://raw.githubusercontent.com/andreasbm/elements/master/screenshots/ripple-element.png?token=AF-iBfW58puayCKEgAhQxjkFbGJsFLBeks5chEq4wA%3D%3D"
+	"img": "https://raw.githubusercontent.com/andreasbm/elements/master/screenshots/wl-ripple.png?token=AF-iBfW58puayCKEgAhQxjkFbGJsFLBeks5chEq4wA%3D%3D"
 }

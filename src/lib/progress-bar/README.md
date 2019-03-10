@@ -1,7 +1,7 @@
 
-[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#progress-bar-element)
+[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#wl-progress-bar)
 
-# ➤ progress-bar-element
+# ➤ wl-progress-bar
 
 Fills a bar from 0% to 100%.
 
@@ -45,7 +45,7 @@ Fills a bar from 0% to 100%.
 Go [here](https://weightless.dev/elements/progress-bar) to try the demo.
 
 <a href="https://weightless.dev/elements/progress-bar" align="center">
-  <img src="https://raw.githubusercontent.com/andreasbm/elements/master/screenshots/progress-bar-element.png?token=AF-iBfAIx-CJ8LWZEMLgTkOsTWpyCMEWks5chEprwA%3D%3D" width="700" />
+  <img src="https://raw.githubusercontent.com/andreasbm/elements/master/screenshots/wl-progress-bar.png?token=AF-iBfAIx-CJ8LWZEMLgTkOsTWpyCMEWks5chEprwA%3D%3D" width="700" />
 </a>
 
 

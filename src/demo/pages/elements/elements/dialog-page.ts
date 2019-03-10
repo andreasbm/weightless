@@ -1,13 +1,13 @@
 import { customElement, html, LitElement, property, query } from "lit-element";
-import "../../../../lib/button/button-element";
-import "../../../../lib/card/card-element";
-import { defaultDialogConfig, DialogElement, DialogSize, IDialogElementBaseProperties } from "../../../../lib/dialog/dialog-element";
-import "../../../../lib/dialog/dialog-element";
+import "../../../../lib/button/wl-button";
+import "../../../../lib/card/wl-card";
+import { defaultDialogConfig, WlDialog, DialogSize, IDialogBaseProperties } from "../../../../lib/dialog/wl-dialog";
+import "../../../../lib/dialog/wl-dialog";
 import { openDialog } from "../../../../lib/dialog/open-dialog";
-import { SelectElement } from "../../../../lib/select/select-element";
-import "../../../../lib/select/select-element";
-import "../../../../lib/textfield/textfield-element";
-import "../../../../lib/title/title-element";
+import { WlSelect } from "../../../../lib/select/wl-select";
+import "../../../../lib/select/wl-select";
+import "../../../../lib/textfield/wl-textfield";
+import "../../../../lib/title/wl-title";
 import { cssResult } from "../../../../lib/util/css";
 import "../../../elements/code-example/code-example-element";
 import "../../../elements/demo/demo-element";
@@ -15,7 +15,7 @@ import "../../../elements/highlight/highlight-element";
 import { getMainScrollContainer } from "../../../main-scroll-target";
 import { sharedStyles } from "../../../style/shared";
 
-async function openTemplateDialog (text: string, config: Partial<IDialogElementBaseProperties> = {}) {
+async function openTemplateDialog (text: string, config: Partial<IDialogBaseProperties> = {}) {
 	const ref = await openDialog({
 		fixed: true,
 		backdrop: true,
@@ -39,17 +39,17 @@ export default class DialogPage extends LitElement {
 			margin: 0 0 12px;
 		}
 		
-		select-element {
+		wl-select {
 			width: 100%;
 		}
 		
-		select-element:not(:last-child) {
+		wl-select:not(:last-child) {
 			margin: 0 12px 0 0;
 		}
 	`)];
 
-	@query("#size-select") $sizeSelect!: SelectElement;
-	@query("#duration-select") $durationSelect!: SelectElement;
+	@query("#size-select") $sizeSelect!: WlSelect;
+	@query("#duration-select") $durationSelect!: WlSelect;
 
 	@property({type: String}) size: DialogSize = defaultDialogConfig.size!;
 	@property({type: Number}) duration: number = defaultDialogConfig.duration!;
@@ -58,7 +58,7 @@ export default class DialogPage extends LitElement {
 	 * Opens the declarative dialog.
 	 */
 	private openDeclarativeDialog () {
-		const $dialog = this.shadowRoot!.querySelector<DialogElement<string>>("#dialog")!;
+		const $dialog = this.shadowRoot!.querySelector<WlDialog<string>>("#dialog")!;
 		const $submitButton = this.shadowRoot!.querySelector("#dialog-submit-button")!;
 		const $input = this.shadowRoot!.querySelector<HTMLInputElement>("#dialog-input")!;
 
@@ -87,58 +87,58 @@ export default class DialogPage extends LitElement {
 		return html`
 			<demo-element default>
 				<code-example-element>
-					<dialog-element open>
-						<title-element level="3" slot="header">This is a header</title-element>
+					<wl-dialog open>
+						<wl-title level="3" slot="header">This is a header</wl-title>
 						<div slot="content">
 							<span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</span>
 						</div>
 						<div slot="footer">
-							<button-element inverted flat>Cancel</button-element>
-							<button-element>Okay</button-element>
+							<wl-button inverted flat>Cancel</wl-button>
+							<wl-button>Okay</wl-button>
 						</div>
-					</dialog-element>
+					</wl-dialog>
 				</code-example-element>
 			</demo-element>
 			
-			<title-element level="3">Open dialog already in the DOM (declarative)</title-element>
+			<wl-title level="3">Open dialog already in the DOM (declarative)</wl-title>
 			<demo-element>
 				<code-example-element headline='this.shadowRoot.querySelector("#dialog").show().then(result => console.log(result));'>
-					<button-element id="open-dialog" @click="${() => this.openDeclarativeDialog()}">Open</button-element>
-					<dialog-element id="dialog" fixed backdrop blockScrolling .scrollContainer="${getMainScrollContainer()}">
+					<wl-button id="open-dialog" @click="${() => this.openDeclarativeDialog()}">Open</wl-button>
+					<wl-dialog id="dialog" fixed backdrop blockScrolling .scrollContainer="${getMainScrollContainer()}">
 						<h3 slot="header">Hello my friend</h3>
 						<div slot="content">
-							<textfield-element id="dialog-input" placeholder="Enter your name"></textfield-element>
+							<wl-textfield id="dialog-input" placeholder="Enter your name"></wl-textfield>
 						</div>
 						<div slot="footer">
-							<button-element id="dialog-submit-button">Submit</button-element>
+							<wl-button id="dialog-submit-button">Submit</wl-button>
 						</div>
-					</dialog-element>
+					</wl-dialog>
 				</code-example-element>
 			</demo-element>
 			
-			<title-element level="3">Open dialog from template (imperative)</title-element>
+			<wl-title level="3">Open dialog from template (imperative)</wl-title>
 			<demo-element>
 				<div id="selector">
-					<select-element outlined id="size-select" placeholder="Size" value="${this.size}" @change="${() => this.size = <DialogSize>this.$sizeSelect.value}">
+					<wl-select outlined id="size-select" placeholder="Size" value="${this.size}" @change="${() => this.size = <DialogSize>this.$sizeSelect.value}">
 						<option value="small">small</option>
 						<option value="medium">medium</option>
 						<option value="large">large</option>
 						<option value="auto">auto</option>
 						<option value="fullscreen">fullscreen</option>
-					</select-element>
-					<select-element outlined id="duration-select" placeholder="Duration" value="${this.duration}" @change="${() => this.duration = parseInt(this.$durationSelect.value)}">
+					</wl-select>
+					<wl-select outlined id="duration-select" placeholder="Duration" value="${this.duration}" @change="${() => this.duration = parseInt(this.$durationSelect.value)}">
 						<option value="0">0ms</option>
 						<option value="50">50ms</option>
 						<option value="100">100ms</option>
 						<option value="200">200ms</option>
 						<option value="500">500ms</option>
 						<option value="1000">1000ms</option>
-					</select-element>
+					</wl-select>
 				</div>
-				<button-element @click="${() => openTemplateDialog("This is a template!", {
+				<wl-button @click="${() => openTemplateDialog("This is a template!", {
 			size: this.size,
 			duration: this.duration
-		})}">Open</button-element>
+		})}">Open</wl-button>
 				<highlight-element language="javascript" text="${`
 					const ref = await openDialog({
 						fixed: true,

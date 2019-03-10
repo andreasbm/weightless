@@ -1,6 +1,6 @@
 import { customElement, html, LitElement } from "lit-element";
-import "../../../../lib/card/card-element";
-import "../../../../lib/title/title-element";
+import "../../../../lib/card/wl-card";
+import "../../../../lib/title/wl-title";
 import "../../../elements/code-example/code-example-element";
 import "../../../elements/demo/demo-element";
 import { sharedStyles } from "../../../style/shared";
@@ -14,14 +14,14 @@ export default class CardPage extends LitElement {
 		return html`
 			<demo-element default>
 				<code-example-element>
-					<card-element>Card</card-element>
+					<wl-card>Card</wl-card>
 				</code-example-element>
 			</demo-element>
 			
-			<title-element level="3">Hoverable</title-element>
+			<wl-title level="3">Hoverable</wl-title>
 			<demo-element>
 				<code-example-element>
-					<card-element hoverable>Card</card-element>
+					<wl-card hoverable>Card</wl-card>
 				</code-example-element>
 			</demo-element>
 		`;

@@ -1,7 +1,7 @@
 
-[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#popover-card-element)
+[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#wl-popover-card)
 
-# ➤ popover-card-element
+# ➤ wl-popover-card
 
 Give popovers a contextual flair.
 
@@ -34,7 +34,7 @@ Give popovers a contextual flair.
 Go [here](https://weightless.dev/elements/popover) to try the demo.
 
 <a href="https://weightless.dev/elements/popover" align="center">
-  <img src="https://raw.githubusercontent.com/andreasbm/elements/documentation/screenshots/popover-element.png?token=AF-iBQSqMzuMAQ5EiwnHa2DFSM_IS0ihks5cg7uDwA%3D%3D" width="700" />
+  <img src="https://raw.githubusercontent.com/andreasbm/elements/documentation/screenshots/wl-popover.png?token=AF-iBQSqMzuMAQ5EiwnHa2DFSM_IS0ihks5cg7uDwA%3D%3D" width="700" />
 </a>
 
 
@@ -42,7 +42,7 @@ Go [here](https://weightless.dev/elements/popover) to try the demo.
 
 ## ➤ ⚠️ Use the element within a popover context
 
-To figure out where the arrow should be pointing, the `popover-card-element` uses `:host-context`. Make sure the card is within a context where the attributes `transformOriginX="left | center | right"` and `transformOriginY="top | center | bottom"` are defined.
+To figure out where the arrow should be pointing, the `wl-popover-card` uses `:host-context`. Make sure the card is within a context where the attributes `transformOriginX="left | center | right"` and `transformOriginY="top | center | bottom"` are defined.
 
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#contributors)

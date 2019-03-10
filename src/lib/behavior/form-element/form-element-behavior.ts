@@ -15,7 +15,7 @@ export type FormElement =
 		| HTMLTextAreaElement) & {value: string};
 
 export interface IFormElementBehaviorProperties {
-	disabled: boolean;
+	disabled: Boolean;
 	value: string;
 	readonly: boolean;
 	required: boolean;

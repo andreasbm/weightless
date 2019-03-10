@@ -2,7 +2,7 @@
 	"extend": "blueprint.json",
 	"input": "src/lib/popover-card/blueprint.md",
 	"output": "src/lib/popover-card/README.md",
-	"tag": "popover-card-element",
+	"tag": "wl-popover-card",
 	"demo": "https://weightless.dev/elements/popover",
-	"img": "https://raw.githubusercontent.com/andreasbm/elements/documentation/screenshots/popover-element.png?token=AF-iBQSqMzuMAQ5EiwnHa2DFSM_IS0ihks5cg7uDwA%3D%3D"
+	"img": "https://raw.githubusercontent.com/andreasbm/elements/documentation/screenshots/wl-popover.png?token=AF-iBQSqMzuMAQ5EiwnHa2DFSM_IS0ihks5cg7uDwA%3D%3D"
 }

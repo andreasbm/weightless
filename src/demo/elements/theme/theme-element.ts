@@ -5,7 +5,7 @@ import { cssResult } from "../../../lib/util/css";
 import { setColor } from "../../../lib/util/theme";
 import { sharedStyles } from "../../style/shared";
 import styles from "./theme-element.scss";
-import "../../../lib/icon/icon-element";
+import "../../../lib/icon/wl-icon";
 import { contrastColor, hexToRGB, shadeColor } from "./theme-helpers";
 
 const themeClass = (themeName: string) => {
@@ -67,7 +67,7 @@ export class ThemeComponent extends LitElement {
 					 @keydown="${(e: KeyboardEvent) => e.code === ENTER ? this.setTheme(theme.name) : null}"
 					 style="background: ${theme.baseColor}"
 					 @click="${() => {this.setTheme(theme.name); this.dispatchUpdate()}}">
-					${theme.name === this.currentThemeName ? html`<icon-element>check</icon-element>` : ""}	 
+					${theme.name === this.currentThemeName ? html`<wl-icon>check</wl-icon>` : ""}	 
 				</div>
 			`)}
 			<input id="custom-color-picker" type="color" value="#57FFAC" @change="${(e: Event) => setThemeColor((<HTMLInputElement>e.target).value)}" />

@@ -1,6 +1,6 @@
 import { customElement, html, LitElement, PropertyValues, query } from "lit-element";
-import "../../../../lib/label/label-element";
-import "../../../../lib/title/title-element";
+import "../../../../lib/label/wl-label";
+import "../../../../lib/title/wl-title";
 import { cssResult } from "../../../../lib/util/css";
 import "../../../elements/code-example/code-example-element";
 import { DemoElement } from "../../../elements/demo/demo-element";
@@ -10,7 +10,7 @@ import { sharedStyles } from "../../../style/shared";
 export default class RipplePage extends LitElement {
 
 	static styles = [sharedStyles, cssResult(`
-		ripple-element {
+		wl-ripple {
 			width: 200px;
 			height: 200px;
 			background: white;
@@ -18,7 +18,7 @@ export default class RipplePage extends LitElement {
 			border: 1px solid lightgrey;
 		}
 		
-		ripple-element:focus {
+		wl-ripple:focus {
 			border-color: blue;
 		}
 	`)];
@@ -34,40 +34,40 @@ export default class RipplePage extends LitElement {
 		return html`
 			<demo-element default>
 				<code-example-element>
-					<ripple-element></ripple-element>
-					<ripple-element centered></ripple-element>
-					<ripple-element unbounded></ripple-element>
+					<wl-ripple></wl-ripple>
+					<wl-ripple centered></wl-ripple>
+					<wl-ripple unbounded></wl-ripple>
 				</code-example-element>
 			</demo-element>
 			
-			<title-element level="3">Change animation duration</title-element>
+			<wl-title level="3">Change animation duration</wl-title>
 			<demo-element>
 				<code-example-element>
-					<ripple-element initialDuration="300" releaseDuration="1000"></ripple-element>
-					<ripple-element releaseDuration="1000"></ripple-element>
-					<ripple-element autorelease></ripple-element>
+					<wl-ripple initialDuration="300" releaseDuration="1000"></wl-ripple>
+					<wl-ripple releaseDuration="1000"></wl-ripple>
+					<wl-ripple autorelease></wl-ripple>
 				</code-example-element>
 			</demo-element>
 			
-			<title-element level="3">Disabled</title-element>
+			<wl-title level="3">Disabled</wl-title>
 			<demo-element>
 				<code-example-element>
-					<ripple-element disabled></ripple-element>
+					<wl-ripple disabled></wl-ripple>
 				</code-example-element>
 			</demo-element>
 			
-			<title-element level="3">Focusable</title-element>
-			<label-element>You can't click on the ripple below. Try to hit the tab key and see what happens.</label-element>
+			<wl-title level="3">Focusable</wl-title>
+			<wl-label>You can't click on the ripple below. Try to hit the tab key and see what happens.</wl-label>
 			<demo-element>
 				<code-example-element>
-					<ripple-element tabindex="0" focusable style="pointer-events: none;"></ripple-element>
+					<wl-ripple tabindex="0" focusable style="pointer-events: none;"></wl-ripple>
 				</code-example-element>
 			</demo-element>
 			
-			<title-element level="3">Change target</title-element>
-			<label-element>To change the target for the touch events you need to set the .target property on the ripple. Try to click outside the ripple and see what happens.</label-element>
+			<wl-title level="3">Change target</wl-title>
+			<wl-label>To change the target for the touch events you need to set the .target property on the ripple. Try to click outside the ripple and see what happens.</wl-label>
 			<demo-element id="demo-element">
-				<ripple-element .target="${this.$demoElement}"></ripple-element>
+				<wl-ripple .target="${this.$demoElement}"></wl-ripple>
 			</demo-element>
 		`;
 	}

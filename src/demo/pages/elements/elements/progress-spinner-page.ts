@@ -1,6 +1,6 @@
 import { customElement, html, LitElement } from "lit-element";
-import "../../../../lib/progress-spinner/progress-spinner-element";
-import "../../../../lib/title/title-element";
+import "../../../../lib/progress-spinner/wl-progress-spinner";
+import "../../../../lib/title/wl-title";
 import "../../../elements/code-example/code-example-element";
 import "../../../elements/demo/demo-element";
 import { sharedStyles } from "../../../style/shared";
@@ -14,16 +14,16 @@ export default class ProgressSpinnerPage extends LitElement {
 		return html`
 			<demo-element default>
 				<code-example-element>
-					<progress-spinner-element></progress-spinner-element>
+					<wl-progress-spinner></wl-progress-spinner>
 				</code-example-element>
 			</demo-element>
 			
-			<title-element level="3">Determinate</title-element>
+			<wl-title level="3">Determinate</wl-title>
 			<demo-element>
 				<code-example-element>
-					<progress-spinner-element mode="determinate" value="0.4"></progress-spinner-element>
-					<progress-spinner-element mode="determinate" value="0.4" buffer="0.7"></progress-spinner-element>
-					<progress-spinner-element mode="determinate" value="0.8" buffer="1"></progress-spinner-element>
+					<wl-progress-spinner mode="determinate" value="0.4"></wl-progress-spinner>
+					<wl-progress-spinner mode="determinate" value="0.4" buffer="0.7"></wl-progress-spinner>
+					<wl-progress-spinner mode="determinate" value="0.8" buffer="1"></wl-progress-spinner>
 				</code-example-element>
 			</demo-element>
 		`;

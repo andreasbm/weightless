@@ -1,10 +1,10 @@
 import { customElement, html, LitElement, property } from "lit-element";
-import "../../../../lib/button/button-element";
-import "../../../../lib/card/card-element";
+import "../../../../lib/button/wl-button";
+import "../../../../lib/card/wl-card";
 import "../../../../lib/popover-card";
 import { openPopover } from "../../../../lib/popover/open-popover";
-import { defaultPopoverConfig, IPopoverElementBaseProperties, PopoverElement } from "../../../../lib/popover/popover-element";
-import "../../../../lib/title/title-element";
+import { defaultPopoverConfig, IPopoverBaseProperties, WlPopover } from "../../../../lib/popover/wl-popover";
+import "../../../../lib/title/wl-title";
 import { cssResult } from "../../../../lib/util/css";
 import { OriginX, OriginY } from "../../../../lib/util/position";
 import "../../../elements/code-example/code-example-element";
@@ -14,12 +14,12 @@ import { sharedStyles } from "../../../style/shared";
 
 async function openTemplatePopover (target: Element,
                                     text: string,
-                                    config: Partial<IPopoverElementBaseProperties> = {}) {
+                                    config: Partial<IPopoverBaseProperties> = {}) {
 	const ref = await openPopover({
 		fixed: true,
 		blockScrolling: true,
 		container: document.body,
-		template: html`<popover-card-element><p>${text}</p></popover-card-element>`,
+		template: html`<wl-popover-card><p>${text}</p></wl-popover-card>`,
 		scrollContainer: getMainScrollContainer(),
 		anchor: target,
 		...config
@@ -54,11 +54,11 @@ export default class PopoverPage extends LitElement {
 			margin: 0 0 12px;
 		}
 		
-		select-element {
+		wl-select {
 			width: 100%;
 		}
 		
-		select-element:not(:last-child) {
+		wl-select:not(:last-child) {
 			margin: 0 12px 0 0;
 		}
 		
@@ -98,7 +98,7 @@ export default class PopoverPage extends LitElement {
 	 * Opens the declarative popover.
 	 */
 	private async openDeclarativePopover () {
-		const $popover = this.shadowRoot!.querySelector<PopoverElement<string>>("#popover")!;
+		const $popover = this.shadowRoot!.querySelector<WlPopover<string>>("#popover")!;
 		const res = await $popover.show();
 		console.log("Result:", res);
 	}
@@ -107,70 +107,70 @@ export default class PopoverPage extends LitElement {
 		return html`
 			<demo-element default>
 				<code-example-element>
-					<popover-element open>
-						<popover-card-element>
+					<wl-popover open>
+						<wl-popover-card>
 							<p>This is a popover!</p>
-						</popover-card-element>
-					</popover-element>
+						</wl-popover-card>
+					</wl-popover>
 				</code-example-element>
 			</demo-element>
 			
-			<title-element level="3">Open popover already in the DOM (declarative)</title-element>
+			<wl-title level="3">Open popover already in the DOM (declarative)</wl-title>
 			<demo-element>
 				<code-example-element headline='this.shadowRoot.querySelector("#popover").show().then(result => console.log(result));'>
-					<button-element id="open-popover" @click="${() => this.openDeclarativePopover()}">Open popover 1</button-element>
-					<popover-element id="popover" anchor="#open-popover" .anchorOpenEvents="${["click"]}" fixed .scrollContainer="${getMainScrollContainer()}">
-						<card-element><textarea-element></textarea-element><p>Hello world!</p></card-element>
-					</popover-element>
+					<wl-button id="open-popover" @click="${() => this.openDeclarativePopover()}">Open popover 1</wl-button>
+					<wl-popover id="popover" anchor="#open-popover" .anchorOpenEvents="${["click"]}" fixed .scrollContainer="${getMainScrollContainer()}">
+						<wl-card><wl-textarea></wl-textarea><p>Hello world!</p></wl-card>
+					</wl-popover>
 				</code-example-element>
 			</demo-element>
 			
-			<title-element level="3">Auto open popovers anchored to an element</title-element>
+			<wl-title level="3">Auto open popovers anchored to an element</wl-title>
 			<demo-element>
-				<code-example-element headline='<popover-element anchor="#auto-open-button" .anchorOpenEvents="\${["mouseover"]}" fixed>...'>
-					<button-element id="auto-open-button">Hover me!</button-element>
-					<popover-element anchor="#auto-open-button" .anchorOpenEvents="${["mouseover"]}" .scrollContainer="${getMainScrollContainer()}" fixed disableFocusTrap anchorOriginX="center" anchorOriginY="center" transformOriginX="center">
-						<popover-card-element>I auto opened!</popover-card-element>
-					</popover-element>
+				<code-example-element headline='<wl-popover anchor="#auto-open-button" .anchorOpenEvents="\${["mouseover"]}" fixed>...'>
+					<wl-button id="auto-open-button">Hover me!</wl-button>
+					<wl-popover anchor="#auto-open-button" .anchorOpenEvents="${["mouseover"]}" .scrollContainer="${getMainScrollContainer()}" fixed disableFocusTrap anchorOriginX="center" anchorOriginY="center" transformOriginX="center">
+						<wl-popover-card>I auto opened!</wl-popover-card>
+					</wl-popover>
 				</code-example-element>
 			</demo-element>
 			
-			<title-element level="3">Open popover from template (imperative)</title-element>
+			<wl-title level="3">Open popover from template (imperative)</wl-title>
 			<demo-element>
 				<div id="selector">
-					<select-element outlined placeholder="Anchor Origin X" value="${this.anchorOriginX}" @change="${(e: Event) => this.anchorOriginX = (<OriginX>(<HTMLSelectElement>e.target).value)}">
+					<wl-select outlined placeholder="Anchor Origin X" value="${this.anchorOriginX}" @change="${(e: Event) => this.anchorOriginX = (<OriginX>(<HTMLSelectElement>e.target).value)}">
 						<option value="left">Left</option>
 						<option value="center">Center</option>
 						<option value="right">Right</option>
-					</select-element>
-					<select-element outlined placeholder="Anchor Origin Y" value="${this.anchorOriginY}" @change="${(e: Event) => this.anchorOriginY = (<OriginY>(<HTMLSelectElement>e.target).value)}">
+					</wl-select>
+					<wl-select outlined placeholder="Anchor Origin Y" value="${this.anchorOriginY}" @change="${(e: Event) => this.anchorOriginY = (<OriginY>(<HTMLSelectElement>e.target).value)}">
 						<option value="top">Top</option>
 						<option value="center">Center</option>
 						<option value="bottom">Bottom</option>
-					</select-element>
-					<select-element outlined placeholder="Transform Origin X" value="${this.transformOriginX}" @change="${(e: Event) => this.transformOriginX = (<OriginX>(<HTMLSelectElement>e.target).value)}">
+					</wl-select>
+					<wl-select outlined placeholder="Transform Origin X" value="${this.transformOriginX}" @change="${(e: Event) => this.transformOriginX = (<OriginX>(<HTMLSelectElement>e.target).value)}">
 						<option value="left">Left</option>
 						<option value="center">Center</option>
 						<option value="right">Right</option>
-					</select-element>
-					<select-element outlined placeholder="Transform Origin Y" value="${this.transformOriginY}" @change="${(e: Event) => this.transformOriginY = (<OriginY>(<HTMLSelectElement>e.target).value)}">
+					</wl-select>
+					<wl-select outlined placeholder="Transform Origin Y" value="${this.transformOriginY}" @change="${(e: Event) => this.transformOriginY = (<OriginY>(<HTMLSelectElement>e.target).value)}">
 						<option value="top">Top</option>
 						<option value="center">Center</option>
 						<option value="bottom">Bottom</option>
-					</select-element>
+					</wl-select>
 				</div>
 				<div class="anchor-container">
 					<div class="anchor-area" style="align-items: ${originToFlex(this.anchorOriginY)}; justify-content: ${originToFlex(this.anchorOriginX!)}">
 						<div class="anchor-dot"></div>
 					</div>
-					<button-element id="open-popover-2" @click="${() => openTemplatePopover(this.shadowRoot!.querySelector("#open-popover-2")!, "This is a template!", {
+					<wl-button id="open-popover-2" @click="${() => openTemplatePopover(this.shadowRoot!.querySelector("#open-popover-2")!, "This is a template!", {
 			transformOriginX: this.transformOriginX,
 			transformOriginY: this.transformOriginY,
 			anchorOriginX: this.anchorOriginX,
 			anchorOriginY: this.anchorOriginY
-		})}">Open</button-element>
+		})}">Open</wl-button>
 				</div>
-				<highlight-element language="html" text="${`<button-element id="open-popover-2">Open</button-element>`}"></highlight-element>
+				<highlight-element language="html" text="${`<wl-button id="open-popover-2">Open</wl-button>`}"></highlight-element>
 				<highlight-element language="javascript" text="${`
 					const ref = await openPopover({
 						fixed: true,
@@ -181,7 +181,7 @@ export default class PopoverPage extends LitElement {
 						anchorOriginX: "${this.anchorOriginX}",
 						anchorOriginY: "${this.anchorOriginY}",
 						anchor: this.shadowRoot.querySelector("#open-popover-2"),
-						template: html\`<popover-card-element><p>This is a template!</p></popover-card-element>\`
+						template: html\`<wl-popover-card><p>This is a template!</p></wl-popover-card>\`
 					});
 				`}"></highlight-element>
 		`;

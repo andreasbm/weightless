@@ -1,7 +1,7 @@
 
-[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#ripple-element)
+[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#wl-ripple)
 
-# ➤ ripple-element
+# ➤ wl-ripple
 
 Indicate touch actions.
 
@@ -43,7 +43,7 @@ Indicate touch actions.
 Go [here](https://weightless.dev/elements/ripple) to try the demo.
 
 <a href="https://weightless.dev/elements/ripple" align="center">
-  <img src="https://raw.githubusercontent.com/andreasbm/elements/master/screenshots/ripple-element.png?token=AF-iBfW58puayCKEgAhQxjkFbGJsFLBeks5chEq4wA%3D%3D" width="700" />
+  <img src="https://raw.githubusercontent.com/andreasbm/elements/master/screenshots/wl-ripple.png?token=AF-iBfW58puayCKEgAhQxjkFbGJsFLBeks5chEq4wA%3D%3D" width="700" />
 </a>
 
 

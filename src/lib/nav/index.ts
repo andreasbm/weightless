@@ -1,1 +1,1 @@
-export * from "./nav-element";
+export * from "./wl-nav";

@@ -1,6 +1,6 @@
 import { customElement, html, LitElement } from "lit-element";
-import "../../../../lib/card/card-element";
-import "../../../../lib/title/title-element";
+import "../../../../lib/card/wl-card";
+import "../../../../lib/title/wl-title";
 import { cssResult } from "../../../../lib/util/css";
 import "../../../elements/code-example/code-example-element";
 import "../../../elements/demo/demo-element";
@@ -10,7 +10,7 @@ import { sharedStyles } from "../../../style/shared";
 export default class TextareaPage extends LitElement {
 
 	static styles = [sharedStyles, cssResult(`
-		textarea-element:not(:last-child) {
+		wl-textarea:not(:last-child) {
 			margin: 0 0 12px;
 		}
 	`)];
@@ -19,36 +19,36 @@ export default class TextareaPage extends LitElement {
 		return html`
 			<demo-element default>
 				<code-example-element>
-					<textarea-element></textarea-element>
-					<textarea-element placeholder="Hello World"></textarea-element>
+					<wl-textarea></wl-textarea>
+					<wl-textarea placeholder="Hello World"></wl-textarea>
 				</code-example-element>
 			</demo-element>
 
-			<title-element level="3">Outlined</title-element>
+			<wl-title level="3">Outlined</wl-title>
 			<demo-element>
 				<code-example-element>
-					<textarea-element outlined></textarea-element>
-					<textarea-element outlined placeholder="Hello World"></textarea-element>
+					<wl-textarea outlined></wl-textarea>
+					<wl-textarea outlined placeholder="Hello World"></wl-textarea>
 				</code-example-element>
 			</demo-element>
 			
-			<title-element level="3">Filled</title-element>
+			<wl-title level="3">Filled</wl-title>
 			<demo-element>
 				<code-example-element>
-					<textarea-element filled></textarea-element>
-					<textarea-element filled placeholder="Hello World"></textarea-element>
+					<wl-textarea filled></wl-textarea>
+					<wl-textarea filled placeholder="Hello World"></wl-textarea>
 				</code-example-element>
 			</demo-element>
 			
-			<title-element level="3">Disabled</title-element>
+			<wl-title level="3">Disabled</wl-title>
 			<demo-element>
 				<code-example-element>
-					<textarea-element disabled value="I'm disabled"></textarea-element>
-					<textarea-element disabled outlined value="I'm disabled"></textarea-element>
-					<textarea-element disabled filled value="I'm disabled"></textarea-element>
-					<textarea-element disabled placeholder="Placeholder" value="I'm disabled"></textarea-element>
-					<textarea-element disabled outlined placeholder="Placeholder"></textarea-element>
-					<textarea-element disabled filled placeholder="Placeholder"></textarea-element>
+					<wl-textarea disabled value="I'm disabled"></wl-textarea>
+					<wl-textarea disabled outlined value="I'm disabled"></wl-textarea>
+					<wl-textarea disabled filled value="I'm disabled"></wl-textarea>
+					<wl-textarea disabled placeholder="Placeholder" value="I'm disabled"></wl-textarea>
+					<wl-textarea disabled outlined placeholder="Placeholder"></wl-textarea>
+					<wl-textarea disabled filled placeholder="Placeholder"></wl-textarea>
 				</code-example-element>
 			</demo-element>
 		`;

@@ -1,8 +1,8 @@
 import { ChangeStateEvent, GLOBAL_ROUTER_EVENTS_TARGET, GlobalRouterEventKind, IRoute, NavigationEndEvent, ROUTER_SLOT_TAG_NAME, RouterSlot, RouterSlotEventKind } from "@appnest/web-router";
 import { customElement, html, LitElement, property, PropertyValues, query } from "lit-element";
 import { repeat } from "lit-html/directives/repeat";
-import "../../../lib/button/button-element";
-import "../../../lib/icon/icon-element";
+import "../../../lib/button/wl-button";
+import "../../../lib/icon/wl-icon";
 import { cssResult } from "../../../lib/util/css";
 import { addListener } from "../../../lib/util/event";
 import "../../elements/footer/footer-element";
@@ -69,14 +69,14 @@ export default class ElementsPage extends LitElement {
 				${this.currentRoute != null && this.currentRoute.data != null ? html`
 					<header id="header">
 						<aside>
-							<title-element level="1">${this.currentRoute.data.title}</title-element>
-							<label-element>${this.currentRoute.data.desc}</label-element>
+							<wl-title level="1">${this.currentRoute.data.title}</wl-title>
+							<wl-label>${this.currentRoute.data.desc}</wl-label>
 						</aside>
 						<a tabindex="-1" href="${DOCS_URL(this.currentRoute.path)}" target="_blank" rel="noopener">
-							<button-element id="open-docs" inverted flat>
+							<wl-button id="open-docs" inverted flat>
 								<span>Documentation</span>
-								<icon-element>open_in_new</icon-element>
-							</button-element>
+								<wl-icon>open_in_new</wl-icon>
+							</wl-button>
 						</a>
 					</header>
 				` : ""}

@@ -1,7 +1,7 @@
 import { customElement, html, LitElement } from "lit-element";
-import "../../../../lib/checkbox/checkbox-element";
-import "../../../../lib/label/label-element";
-import "../../../../lib/title/title-element";
+import "../../../../lib/checkbox/wl-checkbox";
+import "../../../../lib/label/wl-label";
+import "../../../../lib/title/wl-title";
 import "../../../elements/code-example/code-example-element";
 import "../../../elements/demo/demo-element";
 import { sharedStyles } from "../../../style/shared";
@@ -15,35 +15,35 @@ export default class LabelPage extends LitElement {
 		return html`
 			<demo-element default>
 				<code-example-element>
-					<checkbox-element id="cb"></checkbox-element>
-					<label-element for="cb">This is a label</label-element>
+					<wl-checkbox id="cb"></wl-checkbox>
+					<wl-label for="cb">This is a label</wl-label>
 				</code-example-element>
 			</demo-element>
 			
-			<title-element level="3">Slotted form elements</title-element>
+			<wl-title level="3">Slotted form elements</wl-title>
 			<demo-element>
 				<code-example-element>
-					<label-element>
-						<checkbox-element></checkbox-element>
+					<wl-label>
+						<wl-checkbox></wl-checkbox>
 						This is a label
-					</label-element>
+					</wl-label>
 				</code-example-element>
 			</demo-element>
 			
-			<title-element level="3">Nowrap</title-element>
+			<wl-title level="3">Nowrap</wl-title>
 			<demo-element>
 				<code-example-element>
-					<checkbox-element id="cb2"></checkbox-element>
-					<label-element for="cb2" nowrap style="width: 180px; text-align: left">
+					<wl-checkbox id="cb2"></wl-checkbox>
+					<wl-label for="cb2" nowrap style="width: 180px; text-align: left">
 						This is a label with nowrap
-					</label-element>
+					</wl-label>
 				</code-example-element>
 			</demo-element>
 			
-			<title-element level="3">Required</title-element>
+			<wl-title level="3">Required</wl-title>
 			<demo-element>
 				<code-example-element>
-					<label-element required>This label is required</label-element>
+					<wl-label required>This label is required</wl-label>
 				</code-example-element>
 			</demo-element>
 		`;

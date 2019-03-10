@@ -2,6 +2,6 @@
 	"extend": "blueprint.json",
 	"input": "src/lib/nav/blueprint.md",
 	"output": "src/lib/nav/README.md",
-	"tag": "nav-element",
+	"tag": "wl-nav",
 	"demo": "https://weightless.dev/elements/nav"
 }
