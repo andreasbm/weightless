@@ -9,11 +9,11 @@ Provide access to destinations in your app.
 
 ## ➤ Properties
 
-| Property | Attribute | Type       | Description                           |
-|----------|-----------|------------|---------------------------------------|
-| `fixed`  | `fixed`   | `boolean`  | Fixes the nav to the top of the page. |
-| `role`   | `role`    | `AriaRole` | Role of the nav.                      |
-| `shadow` | `shadow`  | `boolean`  | Gives the nav a shadow.               |
+| Property | Attribute | Type       | Default      | Description                           |
+|----------|-----------|------------|--------------|---------------------------------------|
+| `fixed`  | `fixed`   | `boolean`  | false        | Fixes the nav to the top of the page. |
+| `role`   | `role`    | `AriaRole` | "navigation" | Role of the nav.                      |
+| `shadow` | `shadow`  | `boolean`  | false        | Gives the nav a shadow.               |
 
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#css-custom-properties)

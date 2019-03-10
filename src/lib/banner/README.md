@@ -9,9 +9,9 @@ Display a non-interruptive message and related optional actions.
 
 ## ➤ Properties
 
-| Property | Attribute | Type       | Description         |
-|----------|-----------|------------|---------------------|
-| `role`   | `role`    | `AriaRole` | Role of the banner. |
+| Property | Attribute | Type       | Default  | Description         |
+|----------|-----------|------------|----------|---------------------|
+| `role`   | `role`    | `AriaRole` | "banner" | Role of the banner. |
 
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#css-custom-properties)

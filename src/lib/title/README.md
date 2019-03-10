@@ -9,10 +9,10 @@ Indicate the start of a new section.
 
 ## ➤ Properties
 
-| Property | Attribute | Type         | Description         |
-|----------|-----------|--------------|---------------------|
-| `level`  | `level`   | `TitleLevel` | Level of the title. |
-| `role`   | `role`    | `AriaRole`   | Role of the title.  |
+| Property | Attribute | Type         | Default   | Description         |
+|----------|-----------|--------------|-----------|---------------------|
+| `level`  | `level`   | `TitleLevel` | 1         | Level of the title. |
+| `role`   | `role`    | `AriaRole`   | "heading" | Role of the title.  |
 
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#css-custom-properties)

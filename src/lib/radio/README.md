@@ -11,13 +11,13 @@ Select one option from a set.
 
 | Property   | Attribute  | Type       | Default      | Description                                      |
 |------------|------------|------------|--------------|--------------------------------------------------|
-| `checked`  | `checked`  | `boolean`  |              | Checks the checkbox.                             |
-| `disabled` | `disabled` | `boolean`  |              | Disables the element.                            |
+| `checked`  | `checked`  | `boolean`  | false        | Checks the checkbox.                             |
+| `disabled` | `disabled` | `boolean`  | false        | Disables the element.                            |
 | `name`     | `name`     | `string`   | **required** | Name of the native form element.                 |
-| `readonly` | `readonly` | `boolean`  |              | Makes the element readonly (disabled but tabbable) |
-| `required` | `required` | `boolean`  |              | Makes the element required in a form context.    |
-| `role`     | `role`     | `AriaRole` |              | Role of the radio behavior.                      |
-| `value`    | `value`    | `string`   |              | Value of the form element.                       |
+| `readonly` | `readonly` | `boolean`  | false        | Makes the element readonly (disabled but tabbable) |
+| `required` | `required` | `boolean`  | false        | Makes the element required in a form context.    |
+| `role`     | `role`     | `AriaRole` | "radio"      | Role of the radio behavior.                      |
+| `value`    | `value`    | `string`   | false        | Value of the form element.                       |
 
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#css-custom-properties)

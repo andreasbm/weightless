@@ -9,20 +9,20 @@ Indicate touch actions.
 
 ## ➤ Properties
 
-| Property          | Attribute         | Type          | Default      | Description                                    |
-|-------------------|-------------------|---------------|--------------|------------------------------------------------|
-| `autoRelease`     | `autoRelease`     | `boolean`     |              | Releases the ripple after it has been spawned. |
-| `centered`        | `centered`        | `boolean`     |              | Makes ripple appear from the center.           |
-| `disabled`        | `disabled`        | `boolean`     |              | Disables the ripple.                           |
-| `focusable`       | `focusable`       | `boolean`     |              | Allows focusin to spawn a ripple.              |
-| `initialDuration` | `initialDuration` | `number`      |              | Initial animation duration.                    |
-| `overlay`         | `overlay`         | `boolean`     |              | Overlays the ripple.                           |
-| `releaseDuration` | `releaseDuration` | `number`      |              | Fade out animation duration.                   |
-| `role`            | `role`            | `AriaRole`    |              | Role of the ripple.                            |
-| `target`          | `target`          | `EventTarget` |              | Target for the spawn ripple events.            |
-| `unbounded`       | `unbounded`       | `boolean`     |              | Makes the ripple visible outside the bounds.   |
-| `x`               |                   | `number`      | **required** |                                                |
-| `y`               |                   | `number`      | **required** |                                                |
+| Property          | Attribute         | Type          | Default        | Description                                    |
+|-------------------|-------------------|---------------|----------------|------------------------------------------------|
+| `autoRelease`     | `autoRelease`     | `boolean`     | false          | Releases the ripple after it has been spawned. |
+| `centered`        | `centered`        | `boolean`     | false          | Makes ripple appear from the center.           |
+| `disabled`        | `disabled`        | `boolean`     | false          | Disables the ripple.                           |
+| `focusable`       | `focusable`       | `boolean`     | false          | Allows focusin to spawn a ripple.              |
+| `initialDuration` | `initialDuration` | `number`      | 1000           | Initial animation duration.                    |
+| `overlay`         | `overlay`         | `boolean`     | false          | Overlays the ripple.                           |
+| `releaseDuration` | `releaseDuration` | `number`      | 500            | Fade out animation duration.                   |
+| `role`            | `role`            | `AriaRole`    | "presentation" | Role of the ripple.                            |
+| `target`          | `target`          | `EventTarget` |                | Target for the spawn ripple events.            |
+| `unbounded`       | `unbounded`       | `boolean`     | false          | Makes the ripple visible outside the bounds.   |
+| `x`               |                   | `number`      | false          |                                                |
+| `y`               |                   | `number`      | false          |                                                |
 
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#css-custom-properties)

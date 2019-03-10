@@ -11,27 +11,27 @@ Contextual anchored elements.
 
 | Property            | Attribute           | Type                | Default      | Description                                      |
 |---------------------|---------------------|---------------------|--------------|--------------------------------------------------|
-| `$backdrop`         | `$backdrop`         | `BackdropElement`   | **required** | Backdrop element.                                |
-| `$container`        | `$container`        | `HTMLElement`       | **required** | Container element.                               |
-| `$content`          | `$content`          | `FocusTrap`         | **required** | Content of the popover.                          |
+| `$backdrop`         |                     | `BackdropElement`   | **required** | Backdrop element.                                |
+| `$container`        |                     | `HTMLElement`       | **required** | Container element.                               |
+| `$content`          |                     | `FocusTrap`         | **required** | Content of the popover.                          |
 | `anchor`            | `anchor`            | `string \| Element` | **required** | Anchor element or query.                         |
 | `anchorCloseEvents` | `anchorCloseEvents` | `string[]`          | **required** | Events on the anchor that makes the popover close itself. |
 | `anchorOpenEvents`  | `anchorOpenEvents`  | `string[]`          | **required** | Events on the anchor that makes the popover open itself. |
-| `anchorOriginX`     | `anchorOriginX`     | `OriginX`           |              | X origin of the anchored point.                  |
-| `anchorOriginY`     | `anchorOriginY`     | `OriginY`           |              | Y origin of the anchored point.                  |
-| `backdrop`          | `backdrop`          | `boolean`           |              | Whether the backdrop is visible or not.          |
-| `blockScrolling`    | `blockScrolling`    | `boolean`           |              | Whether the overlay blocks the scrolling on the scroll container. |
-| `closeOnClick`      | `closeOnClick`      | `boolean`           |              | Makes the popover close when it is clicked upon. |
-| `disableFocusTrap`  | `disableFocusTrap`  | `boolean`           |              | Whether the focus trap be disabled.              |
-| `duration`          | `duration`          | `number`            |              | The duration of the animations.                  |
-| `fixed`             | `fixed`             | `boolean`           |              | Whether the overlay is fixed or not.             |
-| `noFallback`        | `noFallback`        | `boolean`           |              | Whether a fallback strategy for the positioning should be used when there are no room for the popover. |
-| `open`              | `open`              | `boolean`           |              | Whether the overlay is open or not.              |
-| `persistent`        | `persistent`        | `boolean`           |              | Whether the overlay is persistent or not. When the overlay is persistent, ESCAPE and backdrop clicks won't close it. |
-| `role`              | `role`              | `AriaRole`          |              | Role of the popover.                             |
+| `anchorOriginX`     | `anchorOriginX`     | `OriginX`           | "left"       | X origin of the anchored point.                  |
+| `anchorOriginY`     | `anchorOriginY`     | `OriginY`           | "top"        | Y origin of the anchored point.                  |
+| `backdrop`          | `backdrop`          | `boolean`           | false        | Whether the backdrop is visible or not.          |
+| `blockScrolling`    | `blockScrolling`    | `boolean`           | false        | Whether the overlay blocks the scrolling on the scroll container. |
+| `closeOnClick`      | `closeOnClick`      | `boolean`           | false        | Makes the popover close when it is clicked upon. |
+| `disableFocusTrap`  | `disableFocusTrap`  | `boolean`           | false        | Whether the focus trap be disabled.              |
+| `duration`          | `duration`          | `number`            | 200          | The duration of the animations.                  |
+| `fixed`             | `fixed`             | `boolean`           | false        | Whether the overlay is fixed or not.             |
+| `noFallback`        | `noFallback`        | `boolean`           | false        | Whether a fallback strategy for the positioning should be used when there are no room for the popover. |
+| `open`              | `open`              | `boolean`           | false        | Whether the overlay is open or not.              |
+| `persistent`        | `persistent`        | `boolean`           | false        | Whether the overlay is persistent or not. When the overlay is persistent, ESCAPE and backdrop clicks won't close it. |
+| `role`              | `role`              | `AriaRole`          | "menu"       | Role of the popover.                             |
 | `scrollContainer`   | `scrollContainer`   | `EventTarget`       |              | The container the overlay lives in.              |
-| `transformOriginX`  | `transformOriginX`  | `OriginX`           |              | X origin of the transform.                       |
-| `transformOriginY`  | `transformOriginY`  | `OriginY`           |              | Y origin of the transform.                       |
+| `transformOriginX`  | `transformOriginX`  | `OriginX`           | "left"       | X origin of the transform.                       |
+| `transformOriginY`  | `transformOriginY`  | `OriginY`           | "top"        | Y origin of the transform.                       |
 
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#events)

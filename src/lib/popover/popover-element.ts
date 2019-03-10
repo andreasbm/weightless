@@ -121,19 +121,16 @@ export class PopoverElement<R = unknown> extends OverlayBehavior<R, IPopoverElem
 
 	/**
 	 * Content of the popover.
-	 * @attr
 	 */
 	@query("#content") $content: FocusTrap;
 
 	/**
 	 * Container element.
-	 * @attr
 	 */
 	@query("#container") $container: HTMLElement;
 
 	/**
 	 * Backdrop element.
-	 * @attr
 	 */
 	@query("#backdrop") $backdrop: BackdropElement;
 

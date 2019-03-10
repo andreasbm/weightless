@@ -9,9 +9,9 @@ Thin line that groups content in lists and layouts.
 
 ## ➤ Properties
 
-| Property | Attribute | Type       | Description           |
-|----------|-----------|------------|-----------------------|
-| `role`   | `role`    | `AriaRole` | Role of the backdrop. |
+| Property | Attribute | Type       | Default     | Description           |
+|----------|-----------|------------|-------------|-----------------------|
+| `role`   | `role`    | `AriaRole` | "separator" | Role of the backdrop. |
 
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#css-custom-properties)

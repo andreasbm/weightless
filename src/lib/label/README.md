@@ -12,8 +12,8 @@ Make form elements more accessible.
 | Property   | Attribute  | Type      | Default      | Description                                      |
 |------------|------------|-----------|--------------|--------------------------------------------------|
 | `for`      | `for`      | `string`  | **required** | Query of the form element click events are re-fired upon. |
-| `nowrap`   | `nowrap`   | `boolean` |              | Caps the label element with ellipsis if overflowing. |
-| `required` | `required` | `boolean` |              | Styles the label as required.                    |
+| `nowrap`   | `nowrap`   | `boolean` | false        | Caps the label element with ellipsis if overflowing. |
+| `required` | `required` | `boolean` | false        | Styles the label as required.                    |
 
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#css-custom-properties)
