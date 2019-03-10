@@ -2,7 +2,7 @@ import { FocusTrap } from "@appnest/focus-trap";
 import "@appnest/focus-trap";
 import { customElement, html, property, query, TemplateResult } from "lit-element";
 import "../backdrop";
-import { BackdropElement } from "../backdrop/backdrop-element";
+import { WlBackdrop } from "../backdrop/wl-backdrop";
 import { IOverlayBehaviorBaseProperties, IOverlayBehaviorProperties, OverlayBehavior } from "../behavior/overlay/overlay-behavior";
 import { AriaRole } from "../util/aria";
 import { cssResult } from "../util/css";
@@ -124,7 +124,7 @@ export class DialogElement<R = unknown> extends OverlayBehavior<R, Partial<IDial
 	 * Backdrop element.
 	 * @attr
 	 */
-	@query("#backdrop") $backdrop: BackdropElement;
+	@query("#backdrop") $backdrop: WlBackdrop;
 
 	/**
 	 * Animates the dialog in.
@@ -193,7 +193,7 @@ export class DialogElement<R = unknown> extends OverlayBehavior<R, Partial<IDial
 
 	render (): TemplateResult {
 		return html`
-			<backdrop-element id="backdrop" @click="${this.clickAway}"></backdrop-element>
+			<wl-backdrop id="backdrop" @click="${this.clickAway}"></wl-backdrop>
 			<focus-trap id="dialog" ?inactive="${!this.open || this.disableFocusTrap}">
 				<slot name="header"></slot>
 				<slot name="content"></slot>

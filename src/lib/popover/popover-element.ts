@@ -1,7 +1,7 @@
 import { FocusTrap } from "@appnest/focus-trap";
 import { customElement, html, property, query, TemplateResult } from "lit-element";
 import "../backdrop";
-import { BackdropElement } from "../backdrop/backdrop-element";
+import { WlBackdrop } from "../backdrop/wl-backdrop";
 import { IOverlayBehaviorBaseProperties, IOverlayBehaviorProperties, OverlayBehavior } from "../behavior/overlay/overlay-behavior";
 import { AriaRole } from "../util/aria";
 import { cssResult } from "../util/css";
@@ -132,7 +132,7 @@ export class PopoverElement<R = unknown> extends OverlayBehavior<R, IPopoverElem
 	/**
 	 * Backdrop element.
 	 */
-	@query("#backdrop") $backdrop: BackdropElement;
+	@query("#backdrop") $backdrop: WlBackdrop;
 
 	/**
 	 * Listeners that reacts when the user clicks outside the popover.
@@ -460,7 +460,7 @@ export class PopoverElement<R = unknown> extends OverlayBehavior<R, IPopoverElem
 	 */
 	protected render (): TemplateResult {
 		return html`
-			<backdrop-element id="backdrop" @click="${this.clickAway}"></backdrop-element>
+			<wl-backdrop id="backdrop" @click="${this.clickAway}"></wl-backdrop>
 			<div id="container" aria-expanded="${this.open}">
 				<focus-trap id="content" ?inactive="${!this.open || this.disableFocusTrap}">
 					${this.renderContent()}

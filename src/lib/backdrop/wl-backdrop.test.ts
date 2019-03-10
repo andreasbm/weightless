@@ -1,20 +1,20 @@
 import { createContainer, removeContainer, waitForElement } from "../../test/testing-helpers";
-import { BackdropElement } from "./backdrop-element";
+import { WlBackdrop } from "./wl-backdrop";
 import "../backdrop";
 
-describe("backdrop-element", () => {
+describe("wl-backdrop", () => {
 	const {expect} = chai;
-	let $backdrop: BackdropElement;
+	let $backdrop: WlBackdrop;
 	let $container: HTMLElement;
 
 	before(() => {
 		$container = createContainer();
 	});
 	beforeEach(async () => {
-		$container.innerHTML = `<backdrop-element></backdrop-element>`;
+		$container.innerHTML = `<wl-backdrop></wl-backdrop>`;
 
-		await waitForElement("backdrop-element");
-		$backdrop = $container.querySelector<BackdropElement>("backdrop-element")!;
+		await waitForElement("wl-backdrop");
+		$backdrop = $container.querySelector<WlBackdrop>("wl-backdrop")!;
 	});
 	after(() => removeContainer($container));
 

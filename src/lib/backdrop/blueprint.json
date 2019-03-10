@@ -2,6 +2,6 @@
 	"extend": "blueprint.json",
 	"input": "src/lib/backdrop/blueprint.md",
 	"output": "src/lib/backdrop/README.md",
-	"tag": "backdrop-element",
+	"tag": "wl-backdrop",
 	"demo": "https://weightless.dev/elements/dialog"
 }

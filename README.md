@@ -53,7 +53,7 @@ npm i @weightless/all
 ## ➤ Elements
 | Name | Tag | Description | Documentation | Demo |
 | ------- | ------- | ------- | ------- | ------- |
-| Backdrop | `backdrop-element` | Dark layer to use behind overlayed elements. | [Documentation](/src/lib/backdrop) | [Demo](https://weightless.dev/elements/dialog) |
+| Backdrop | `wl-backdrop` | Dark layer to use behind overlayed elements. | [Documentation](/src/lib/backdrop) | [Demo](https://weightless.dev/elements/dialog) |
 | Banner | `banner-element` | Display a non-interruptive message and related optional actions. | [Documentation](/src/lib/banner) | [Demo](https://weightless.dev/elements/banner) |
 | Button | `button-element` | Allow users to take actions, and make choices, with a single tap. | [Documentation](/src/lib/button) | [Demo](https://weightless.dev/elements/button) |
 | Card | `card-element` | Group related content and action. | [Documentation](/src/lib/card) | [Demo](https://weightless.dev/elements/card) |

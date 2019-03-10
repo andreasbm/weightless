@@ -11,7 +11,7 @@ Highly interruptive messages.
 
 | Property           | Attribute          | Type              | Default      | Description                                      |
 |--------------------|--------------------|-------------------|--------------|--------------------------------------------------|
-| `$backdrop`        | `$backdrop`        | `BackdropElement` | **required** | Backdrop element.                                |
+| `$backdrop`        | `$backdrop`        | `WlBackdrop` | **required** | Backdrop element.                                |
 | `$dialog`          | `$dialog`          | `HTMLElement`     | **required** | Dialog element.                                  |
 | `$focusTrap`       | `$focusTrap`       | `FocusTrap`       | **required** | Focus trap element.                              |
 | `backdrop`         | `backdrop`         | `boolean`         | false        | Whether the backdrop is visible or not.          |

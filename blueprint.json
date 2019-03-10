@@ -33,7 +33,7 @@
 		],
 		[
 			"Backdrop",
-			"`backdrop-element`",
+			"`wl-backdrop`",
 			"Dark layer to use behind overlayed elements.",
 			"[Documentation](/src/lib/backdrop)",
 			"[Demo](https://weightless.dev/elements/dialog)"

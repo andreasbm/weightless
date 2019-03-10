@@ -4,7 +4,7 @@ import { TemplateResult } from "lit-html";
 import { AriaRole } from "../util/aria";
 import { cssResult } from "../util/css";
 
-import styles from "./backdrop-element.scss";
+import styles from "./wl-backdrop.scss";
 
 /**
  * Backdrop properties.
@@ -16,8 +16,8 @@ export interface IBackdropElementProperties {
  * Dark layer to use behind overlayed elements.
  * @cssprop --backdrop-bg - Background.
  */
-@customElement("backdrop-element")
-export class BackdropElement extends LitElement implements IBackdropElementProperties {
+@customElement("wl-backdrop")
+export class WlBackdrop extends LitElement implements IBackdropElementProperties {
 	static styles = [cssResult(styles)];
 
 	/**
@@ -36,6 +36,6 @@ export class BackdropElement extends LitElement implements IBackdropElementPrope
 
 declare global {
 	interface HTMLElementTagNameMap {
-		"backdrop-element": BackdropElement;
+		"wl-backdrop": WlBackdrop;
 	}
 }
