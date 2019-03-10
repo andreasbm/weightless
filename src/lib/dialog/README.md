@@ -1,13 +1,10 @@
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#dialog-element)
 
-# ➤ dialog-element
+## ➤ dialog-element
 
 Highly interruptive messages.
-
-[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#properties)
-
-## ➤ Properties
+### Properties
 
 | Property           | Attribute          | Description                                      | Type              | Default                          |
 |--------------------|--------------------|--------------------------------------------------|-------------------|----------------------------------|
@@ -26,10 +23,7 @@ Highly interruptive messages.
 | `scrollable`       | `scrollable`       | Makes the dialog scrollable.                     | `boolean`         | false                            |
 | `size`             | `size`             | Size of the dialog.                              | `DialogSize`      | `required`                       |
 
-
-[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#slots)
-
-## ➤ Slots
+### Slots
 
 | Slot    | Description      |
 |---------|------------------|
@@ -38,20 +32,14 @@ Highly interruptive messages.
 | footer  | Footer content.  |
 | header  | Header content.  |
 
-
-[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#events)
-
-## ➤ Events
+### Events
 
 | Event   | Description                                   |
 |---------|-----------------------------------------------|
 | didhide | Dispatches after the overlay has been hidden. |
 | didshow | Dispatches after the overlay has been shown.  |
 
-
-[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#css-custom-properties)
-
-## ➤ CSS Custom Properties
+### CSS Custom Properties
 
 | Property                           | Description                                 |
 |------------------------------------|---------------------------------------------|

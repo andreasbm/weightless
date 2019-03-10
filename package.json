@@ -73,7 +73,7 @@
 		"docs": "npm run readme && npm run readme:backdrop && npm run readme:button && npm run readme:banner && npm run readme:card && npm run readme:divider && npm run readme:icon && npm run readme:label && npm run readme:nav && npm run readme:checkbox && npm run readme:dialog && npm run readme:popover && npm run readme:popover-card && npm run readme:progress-bar && npm run readme:progress-spinner && npm run readme:radio && npm run readme:ripple && npm run readme:select && npm run readme:textarea && npm run readme:textfield && npm run readme:title && npm run readme:tooltip"
 	},
 	"devDependencies": {
-		"@appnest/readme": "^1.1.5",
+		"@appnest/readme": "^1.1.6",
 		"@appnest/web-config": "0.3.29",
 		"@appnest/web-router": "^1.2.1",
 		"@types/puppeteer": "^1.12.2",

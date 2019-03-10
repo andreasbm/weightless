@@ -1,22 +1,16 @@
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#banner-element)
 
-# ➤ banner-element
+## ➤ banner-element
 
 Display a non-interruptive message and related optional actions.
-
-[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#properties)
-
-## ➤ Properties
+### Properties
 
 | Property | Attribute | Description         | Type       | Default  |
 |----------|-----------|---------------------|------------|----------|
 | `role`   | `role`    | Role of the banner. | `AriaRole` | "banner" |
 
-
-[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#slots)
-
-## ➤ Slots
+### Slots
 
 | Slot   | Description                                      |
 |--------|--------------------------------------------------|
@@ -24,10 +18,7 @@ Display a non-interruptive message and related optional actions.
 | icon   | Icon content.                                    |
 | text   | Text content.                                    |
 
-
-[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#css-custom-properties)
-
-## ➤ CSS Custom Properties
+### CSS Custom Properties
 
 | Property                 | Description                  |
 |--------------------------|------------------------------|

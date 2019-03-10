@@ -1,13 +1,10 @@
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#radio-element)
 
-# ➤ radio-element
+## ➤ radio-element
 
 Select one option from a set.
-
-[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#properties)
-
-## ➤ Properties
+### Properties
 
 | Property   | Attribute  | Description                                      | Type       | Default    |
 |------------|------------|--------------------------------------------------|------------|------------|
@@ -19,10 +16,7 @@ Select one option from a set.
 | `role`     | `role`     | Role of the radio behavior.                      | `AriaRole` | "radio"    |
 | `value`    | `value`    | Value of the form element.                       | `string`   |            |
 
-
-[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#css-custom-properties)
-
-## ➤ CSS Custom Properties
+### CSS Custom Properties
 
 | Property                       | Description                             |
 |--------------------------------|-----------------------------------------|

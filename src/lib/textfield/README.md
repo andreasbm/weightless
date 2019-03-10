@@ -1,13 +1,10 @@
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#textfield-element)
 
-# ➤ textfield-element
+## ➤ textfield-element
 
 Singleline text fields.
-
-[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#properties)
-
-## ➤ Properties
+### Properties
 
 | Property       | Attribute      | Description                                      | Type           | Default    |
 |----------------|----------------|--------------------------------------------------|----------------|------------|
@@ -26,29 +23,20 @@ Singleline text fields.
 | `type`         | `type`         | Type of the input.                               | `InputType`    | "text"     |
 | `value`        | `value`        | Value of the form element.                       | `string`       |            |
 
-
-[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#slots)
-
-## ➤ Slots
+### Slots
 
 | Slot   | Description               |
 |--------|---------------------------|
 | after  | Content after the input.  |
 | before | Content before the input. |
 
-
-[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#events)
-
-## ➤ Events
+### Events
 
 | Event  | Description                                      |
 |--------|--------------------------------------------------|
 | submit | Dispatched when the enter key is hit while holding down ctrl or the meta-key. |
 
-
-[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#css-custom-properties)
-
-## ➤ CSS Custom Properties
+### CSS Custom Properties
 
 | Property                            | Description                                   |
 |-------------------------------------|-----------------------------------------------|

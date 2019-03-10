@@ -1,13 +1,10 @@
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#nav-element)
 
-# ➤ nav-element
+## ➤ nav-element
 
 Provide access to destinations in your app.
-
-[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#properties)
-
-## ➤ Properties
+### Properties
 
 | Property | Attribute | Description                           | Type       | Default      |
 |----------|-----------|---------------------------------------|------------|--------------|
@@ -15,10 +12,7 @@ Provide access to destinations in your app.
 | `role`   | `role`    | Role of the nav.                      | `AriaRole` | "navigation" |
 | `shadow` | `shadow`  | Gives the nav a shadow.               | `boolean`  | false        |
 
-
-[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#slots)
-
-## ➤ Slots
+### Slots
 
 | Slot  | Description                      |
 |-------|----------------------------------|
@@ -26,10 +20,7 @@ Provide access to destinations in your app.
 | right | Content positioned to the right. |
 | title | Title.                           |
 
-
-[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#css-custom-properties)
-
-## ➤ CSS Custom Properties
+### CSS Custom Properties
 
 | Property                | Description               |
 |-------------------------|---------------------------|

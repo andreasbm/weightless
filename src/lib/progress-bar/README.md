@@ -1,13 +1,10 @@
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#progress-bar-element)
 
-# ➤ progress-bar-element
+## ➤ progress-bar-element
 
 Fills a bar from 0% to 100%.
-
-[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#properties)
-
-## ➤ Properties
+### Properties
 
 | Property    | Attribute   | Description                    | Type           | Default                    |
 |-------------|-------------|--------------------------------|----------------|----------------------------|
@@ -20,10 +17,7 @@ Fills a bar from 0% to 100%.
 | `role`      | `role`      | Role of the progress behavior. | `AriaRole`     | "progressbar"              |
 | `value`     | `value`     | Progress value.                | `number`       | 0                          |
 
-
-[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#css-custom-properties)
-
-## ➤ CSS Custom Properties
+### CSS Custom Properties
 
 | Property                                     | Description                                      |
 |----------------------------------------------|--------------------------------------------------|

@@ -16,6 +16,13 @@
 		"src": "https://raw.githubusercontent.com/andreasbm/elements/master/assets/brand/logo-text-dark.png?token=AF-iBdlG6k8f6xzqhH4Olmo4eCu6LGLWks5chPVBwA%3D%3D",
 		"width": 400
 	},
+	"documentationConfig": {
+		"output": "md",
+		"debug": false,
+		"markdown": {
+			"titleLevel": 1
+		}
+	},
 	"elements": [
 		[
 			"Name",

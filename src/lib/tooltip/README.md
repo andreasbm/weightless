@@ -1,13 +1,10 @@
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#tooltip-element)
 
-# ➤ tooltip-element
+## ➤ tooltip-element
 
 Informative context related text.
-
-[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#properties)
-
-## ➤ Properties
+### Properties
 
 | Property            | Attribute           | Description                                      | Type               | Default                          |
 |---------------------|---------------------|--------------------------------------------------|--------------------|----------------------------------|
@@ -33,29 +30,20 @@ Informative context related text.
 | `transformOriginX`  | `transformOriginX`  | X origin of the transform.                       | `OriginX`          | OriginX.LEFT                     |
 | `transformOriginY`  | `transformOriginY`  | Y origin of the transform.                       | `OriginY`          | OriginY.TOP                      |
 
-
-[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#slots)
-
-## ➤ Slots
+### Slots
 
 | Description      |
 |------------------|
 | Default content. |
 
-
-[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#events)
-
-## ➤ Events
+### Events
 
 | Event   | Description                                   |
 |---------|-----------------------------------------------|
 | didhide | Dispatches after the overlay has been hidden. |
 | didshow | Dispatches after the overlay has been shown.  |
 
-
-[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#css-custom-properties)
-
-## ➤ CSS Custom Properties
+### CSS Custom Properties
 
 | Property          | Description |
 |-------------------|-------------|

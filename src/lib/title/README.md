@@ -1,32 +1,23 @@
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#title-element)
 
-# ➤ title-element
+## ➤ title-element
 
 Indicate the start of a new section.
-
-[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#properties)
-
-## ➤ Properties
+### Properties
 
 | Property | Attribute | Description         | Type         | Default   |
 |----------|-----------|---------------------|--------------|-----------|
 | `level`  | `level`   | Level of the title. | `TitleLevel` | 1         |
 | `role`   | `role`    | Role of the title.  | `AriaRole`   | "heading" |
 
-
-[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#slots)
-
-## ➤ Slots
+### Slots
 
 | Description      |
 |------------------|
 | Default content. |
 
-
-[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#css-custom-properties)
-
-## ➤ CSS Custom Properties
+### CSS Custom Properties
 
 | Property                  | Description                   |
 |---------------------------|-------------------------------|

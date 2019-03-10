@@ -1,31 +1,22 @@
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#icon-element)
 
-# ➤ icon-element
+## ➤ icon-element
 
 Symbols for common actions and items.
-
-[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#properties)
-
-## ➤ Properties
+### Properties
 
 | Property | Attribute | Description        | Type       | Default |
 |----------|-----------|--------------------|------------|---------|
 | `role`   | `role`    | Roles of the icon. | `AriaRole` | "img"   |
 
-
-[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#slots)
-
-## ➤ Slots
+### Slots
 
 | Description       |
 |-------------------|
 | Name of the icon. |
 
-
-[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#css-custom-properties)
-
-## ➤ CSS Custom Properties
+### CSS Custom Properties
 
 | Property    | Description       |
 |-------------|-------------------|

@@ -1,13 +1,10 @@
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#select-element)
 
-# ➤ select-element
+## ➤ select-element
 
 Select one or more values from a set of options.
-
-[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#properties)
-
-## ➤ Properties
+### Properties
 
 | Property       | Attribute      | Description                                      | Type           | Default    |
 |----------------|----------------|--------------------------------------------------|----------------|------------|
@@ -22,10 +19,7 @@ Select one or more values from a set of options.
 | `role`         | `role`         | Role of the select.                              | `AriaRole`     | "select"   |
 | `value`        | `value`        | Value of the form element.                       | `string`       |            |
 
-
-[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#slots)
-
-## ➤ Slots
+### Slots
 
 | Slot   | Description                |
 |--------|----------------------------|
@@ -33,19 +27,13 @@ Select one or more values from a set of options.
 | after  | Content after the input.   |
 | before | Content before the input.  |
 
-
-[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#events)
-
-## ➤ Events
+### Events
 
 | Event  | Description                                      |
 |--------|--------------------------------------------------|
 | submit | Dispatched when the enter key is hit while holding down ctrl or the meta-key. |
 
-
-[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#css-custom-properties)
-
-## ➤ CSS Custom Properties
+### CSS Custom Properties
 
 | Property                            | Description                                   |
 |-------------------------------------|-----------------------------------------------|

@@ -1,13 +1,10 @@
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#ripple-element)
 
-# ➤ ripple-element
+## ➤ ripple-element
 
 Indicate touch actions.
-
-[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#properties)
-
-## ➤ Properties
+### Properties
 
 | Property          | Attribute         | Description                                    | Type          | Default        |
 |-------------------|-------------------|------------------------------------------------|---------------|----------------|
@@ -24,10 +21,7 @@ Indicate touch actions.
 | `x`               |                   |                                                | `number`      | `required`     |
 | `y`               |                   |                                                | `number`      | `required`     |
 
-
-[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#css-custom-properties)
-
-## ➤ CSS Custom Properties
+### CSS Custom Properties
 
 | Property         | Description |
 |------------------|-------------|

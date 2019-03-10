@@ -1,13 +1,10 @@
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#label-element)
 
-# ➤ label-element
+## ➤ label-element
 
 Make form elements more accessible.
-
-[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#properties)
-
-## ➤ Properties
+### Properties
 
 | Property   | Attribute  | Description                                      | Type      | Default    |
 |------------|------------|--------------------------------------------------|-----------|------------|
@@ -15,19 +12,13 @@ Make form elements more accessible.
 | `nowrap`   | `nowrap`   | Caps the label element with ellipsis if overflowing. | `boolean` | false      |
 | `required` | `required` | Styles the label as required.                    | `boolean` | false      |
 
-
-[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#slots)
-
-## ➤ Slots
+### Slots
 
 | Description                                      |
 |--------------------------------------------------|
 | Default content. If the first element is a form element, clicks on the entire label will be re-fired upon that element. |
 
-
-[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#css-custom-properties)
-
-## ➤ CSS Custom Properties
+### CSS Custom Properties
 
 | Property               | Description                                      |
 |------------------------|--------------------------------------------------|

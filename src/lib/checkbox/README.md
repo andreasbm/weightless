@@ -1,13 +1,10 @@
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#checkbox-element)
 
-# ➤ checkbox-element
+## ➤ checkbox-element
 
 Turn an option on or off.
-
-[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#properties)
-
-## ➤ Properties
+### Properties
 
 | Property   | Attribute  | Description                                      | Type       | Default    |
 |------------|------------|--------------------------------------------------|------------|------------|
@@ -19,10 +16,7 @@ Turn an option on or off.
 | `role`     | `role`     | Role of the checkbox.                            | `AriaRole` | "checkbox" |
 | `value`    | `value`    | Value of the form element.                       | `string`   |            |
 
-
-[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#css-custom-properties)
-
-## ➤ CSS Custom Properties
+### CSS Custom Properties
 
 | Property                            | Description                                  |
 |-------------------------------------|----------------------------------------------|
