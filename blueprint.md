@@ -48,4 +48,4 @@ The footprint of each element must be as small as possible. For example importin
 If you are interested in learning more you can check out [Custom Element Best Practices](https://developers.google.com/web/fundamentals/web-components/best-practices) and [Inclusive Components](https://inclusive-components.design/#components).
 
 {{ template:contributors }}
-{{ template:license }}"
+{{ template:license }}

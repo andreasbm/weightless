@@ -1,45 +1,45 @@
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#dialog-element)
 
-## ➤ dialog-element
+# ➤ dialog-element
 
 Highly interruptive messages.
-### Properties
 
-| Property           | Attribute          | Description                                      | Type              | Default                          |
-|--------------------|--------------------|--------------------------------------------------|-------------------|----------------------------------|
-| `$backdrop`        | `$backdrop`        | Backdrop element.                                | `BackdropElement` | `required`                       |
-| `$dialog`          | `$dialog`          | Dialog element.                                  | `HTMLElement`     | `required`                       |
-| `$focusTrap`       | `$focusTrap`       | Focus trap element.                              | `FocusTrap`       | `required`                       |
-| `backdrop`         | `backdrop`         | Whether the backdrop is visible or not.          | `boolean`         | false                            |
-| `blockScrolling`   | `blockScrolling`   | Whether the overlay blocks the scrolling on the scroll container. | `boolean`         | false                            |
-| `disableFocusTrap` | `disableFocusTrap` | Whether the focus trap be disabled.              | `boolean`         | false                            |
-| `duration`         | `duration`         | The duration of the animations.                  | `number`          | 200                              |
-| `fixed`            | `fixed`            | Whether the overlay is fixed or not.             | `boolean`         | false                            |
-| `open`             | `open`             | Whether the overlay is open or not.              | `boolean`         | false                            |
-| `persistent`       | `persistent`       | Whether the overlay is persistent or not. When the overlay is persistent, ESCAPE and backdrop clicks won't close it. | `boolean`         | false                            |
-| `role`             | `role`             | Role of the dialog.                              | `AriaRole`        | "dialog"                         |
-| `scrollContainer`  | `scrollContainer`  | The container the overlay lives in.              | `EventTarget`     | DEFAULT_OVERLAY_SCROLL_CONTAINER |
-| `scrollable`       | `scrollable`       | Makes the dialog scrollable.                     | `boolean`         | false                            |
-| `size`             | `size`             | Size of the dialog.                              | `DialogSize`      | `required`                       |
+[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#properties)
 
-### Slots
+## ➤ Properties
 
-| Slot    | Description      |
-|---------|------------------|
-|         | Default content. |
-| content | Body content.    |
-| footer  | Footer content.  |
-| header  | Header content.  |
+| Property           | Attribute          | Description                                      | Type              | Default    |
+|--------------------|--------------------|--------------------------------------------------|-------------------|------------|
+| `$backdrop`        | `$backdrop`        | Backdrop element.                                | `BackdropElement` | `required` |
+| `$dialog`          | `$dialog`          | Dialog element.                                  | `HTMLElement`     | `required` |
+| `$focusTrap`       | `$focusTrap`       | Focus trap element.                              | `FocusTrap`       | `required` |
+| `backdrop`         | `backdrop`         | Whether the backdrop is visible or not.          | `boolean`         |            |
+| `blockScrolling`   | `blockScrolling`   | Whether the overlay blocks the scrolling on the scroll container. | `boolean`         |            |
+| `disableFocusTrap` | `disableFocusTrap` | Whether the focus trap be disabled.              | `boolean`         |            |
+| `duration`         | `duration`         | The duration of the animations.                  | `number`          | 200        |
+| `fixed`            | `fixed`            | Whether the overlay is fixed or not.             | `boolean`         |            |
+| `open`             | `open`             | Whether the overlay is open or not.              | `boolean`         |            |
+| `persistent`       | `persistent`       | Whether the overlay is persistent or not. When the overlay is persistent, ESCAPE and backdrop clicks won't close it. | `boolean`         |            |
+| `role`             | `role`             | Role of the dialog.                              | `AriaRole`        | "dialog"   |
+| `scrollContainer`  | `scrollContainer`  | The container the overlay lives in.              | `EventTarget`     |            |
+| `scrollable`       | `scrollable`       | Makes the dialog scrollable.                     | `boolean`         |            |
+| `size`             | `size`             | Size of the dialog.                              | `DialogSize`      | `required` |
 
-### Events
+
+[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#events)
+
+## ➤ Events
 
 | Event   | Description                                   |
 |---------|-----------------------------------------------|
 | didhide | Dispatches after the overlay has been hidden. |
 | didshow | Dispatches after the overlay has been shown.  |
 
-### CSS Custom Properties
+
+[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#css-custom-properties)
+
+## ➤ CSS Custom Properties
 
 | Property                           | Description                                 |
 |------------------------------------|---------------------------------------------|
@@ -70,6 +70,18 @@ Highly interruptive messages.
 | --dialog-width-s                   | Small width.                                |
 | --dialog-will-change               | Will change.                                |
 | --dialog-z-index                   | z-index.                                    |
+
+
+[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#slots)
+
+## ➤ Slots
+
+| Slot    | Description      |
+|---------|------------------|
+|         | Default content. |
+| content | Body content.    |
+| footer  | Footer content.  |
+| header  | Header content.  |
 
 
 

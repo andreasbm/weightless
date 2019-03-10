@@ -1,4 +1,5 @@
 {
+	"extend": "blueprint.json",
 	"input": "src/lib/tooltip/blueprint.md",
 	"output": "src/lib/tooltip/README.md",
 	"tag": "tooltip-element",

@@ -1,4 +1,5 @@
 {
+	"extend": "blueprint.json",
 	"input": "src/lib/icon/blueprint.md",
 	"output": "src/lib/icon/README.md",
 	"tag": "icon-element",

@@ -1,4 +1,5 @@
 {
+	"extend": "blueprint.json",
 	"input": "src/lib/nav/blueprint.md",
 	"output": "src/lib/nav/README.md",
 	"tag": "nav-element",

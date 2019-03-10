@@ -1,4 +1,5 @@
 {
+	"extend": "blueprint.json",
 	"input": "src/lib/radio/blueprint.md",
 	"output": "src/lib/radio/README.md",
 	"tag": "radio-element",

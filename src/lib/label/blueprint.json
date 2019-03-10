@@ -1,4 +1,5 @@
 {
+	"extend": "blueprint.json",
 	"input": "src/lib/label/blueprint.md",
 	"output": "src/lib/label/README.md",
 	"tag": "label-element",

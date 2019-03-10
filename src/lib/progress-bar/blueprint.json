@@ -1,4 +1,5 @@
 {
+	"extend": "blueprint.json",
 	"input": "src/lib/progress-bar/blueprint.md",
 	"output": "src/lib/progress-bar/README.md",
 	"tag": "progress-bar-element",

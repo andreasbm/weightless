@@ -1,4 +1,5 @@
 {
+	"extend": "blueprint.json",
 	"input": "src/lib/textarea/blueprint.md",
 	"output": "src/lib/textarea/README.md",
 	"tag": "textarea-element",

@@ -1,4 +1,5 @@
 {
+	"extend": "blueprint.json",
 	"input": "src/lib/title/blueprint.md",
 	"output": "src/lib/title/README.md",
 	"tag": "title-element",

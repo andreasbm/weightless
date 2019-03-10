@@ -126,4 +126,4 @@ If you are interested in learning more you can check out [Custom Element Best Pr
 
 ## ➤ License
 	
-Licensed under [MIT](https://opensource.org/licenses/MIT)."
+Licensed under [MIT](https://opensource.org/licenses/MIT).

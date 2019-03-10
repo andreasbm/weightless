@@ -1,4 +1,5 @@
 {
+	"extend": "blueprint.json",
 	"input": "src/lib/dialog/blueprint.md",
 	"output": "src/lib/dialog/README.md",
 	"tag": "dialog-element",

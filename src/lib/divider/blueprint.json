@@ -1,4 +1,5 @@
 {
+	"extend": "blueprint.json",
 	"input": "src/lib/divider/blueprint.md",
 	"output": "src/lib/divider/README.md",
 	"tag": "divider-element",

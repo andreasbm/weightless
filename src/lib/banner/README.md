@@ -1,24 +1,22 @@
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#banner-element)
 
-## ➤ banner-element
+# ➤ banner-element
 
 Display a non-interruptive message and related optional actions.
-### Properties
+
+[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#properties)
+
+## ➤ Properties
 
 | Property | Attribute | Description         | Type       | Default  |
 |----------|-----------|---------------------|------------|----------|
 | `role`   | `role`    | Role of the banner. | `AriaRole` | "banner" |
 
-### Slots
 
-| Slot   | Description                                      |
-|--------|--------------------------------------------------|
-| action | Action content (you can have multiple slots named action). |
-| icon   | Icon content.                                    |
-| text   | Text content.                                    |
+[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#css-custom-properties)
 
-### CSS Custom Properties
+## ➤ CSS Custom Properties
 
 | Property                 | Description                  |
 |--------------------------|------------------------------|
@@ -28,6 +26,17 @@ Display a non-interruptive message and related optional actions.
 | --banner-icon-color      | Color of the icon.           |
 | --banner-icon-margin     | Margin of the icon slot.     |
 | --banner-padding         | Padding.                     |
+
+
+[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#slots)
+
+## ➤ Slots
+
+| Slot   | Description                                      |
+|--------|--------------------------------------------------|
+| action | Action content (you can have multiple slots named action). |
+| icon   | Icon content.                                    |
+| text   | Text content.                                    |
 
 
 

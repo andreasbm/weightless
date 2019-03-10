@@ -1,4 +1,5 @@
 {
+	"extend": "blueprint.json",
 	"input": "src/lib/banner/blueprint.md",
 	"output": "src/lib/banner/README.md",
 	"tag": "banner-element",

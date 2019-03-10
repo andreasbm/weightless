@@ -1,27 +1,33 @@
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#ripple-element)
 
-## ➤ ripple-element
+# ➤ ripple-element
 
 Indicate touch actions.
-### Properties
+
+[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#properties)
+
+## ➤ Properties
 
 | Property          | Attribute         | Description                                    | Type          | Default        |
 |-------------------|-------------------|------------------------------------------------|---------------|----------------|
-| `autoRelease`     | `autoRelease`     | Releases the ripple after it has been spawned. | `boolean`     | false          |
-| `centered`        | `centered`        | Makes ripple appear from the center.           | `boolean`     | false          |
-| `disabled`        | `disabled`        | Disables the ripple.                           | `boolean`     | false          |
-| `focusable`       | `focusable`       | Allows focusin to spawn a ripple.              | `boolean`     | false          |
+| `autoRelease`     | `autoRelease`     | Releases the ripple after it has been spawned. | `boolean`     |                |
+| `centered`        | `centered`        | Makes ripple appear from the center.           | `boolean`     |                |
+| `disabled`        | `disabled`        | Disables the ripple.                           | `boolean`     |                |
+| `focusable`       | `focusable`       | Allows focusin to spawn a ripple.              | `boolean`     |                |
 | `initialDuration` | `initialDuration` | Initial animation duration.                    | `number`      | 1000           |
-| `overlay`         | `overlay`         | Overlays the ripple.                           | `boolean`     | false          |
+| `overlay`         | `overlay`         | Overlays the ripple.                           | `boolean`     |                |
 | `releaseDuration` | `releaseDuration` | Fade out animation duration.                   | `number`      | 500            |
 | `role`            | `role`            | Role of the ripple.                            | `AriaRole`    | "presentation" |
-| `target`          | `target`          | Target for the spawn ripple events.            | `EventTarget` | this           |
-| `unbounded`       | `unbounded`       | Makes the ripple visible outside the bounds.   | `boolean`     | false          |
+| `target`          | `target`          | Target for the spawn ripple events.            | `EventTarget` |                |
+| `unbounded`       | `unbounded`       | Makes the ripple visible outside the bounds.   | `boolean`     |                |
 | `x`               |                   |                                                | `number`      | `required`     |
 | `y`               |                   |                                                | `number`      | `required`     |
 
-### CSS Custom Properties
+
+[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#css-custom-properties)
+
+## ➤ CSS Custom Properties
 
 | Property         | Description |
 |------------------|-------------|

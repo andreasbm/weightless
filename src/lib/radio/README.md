@@ -1,22 +1,28 @@
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#radio-element)
 
-## ➤ radio-element
+# ➤ radio-element
 
 Select one option from a set.
-### Properties
+
+[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#properties)
+
+## ➤ Properties
 
 | Property   | Attribute  | Description                                      | Type       | Default    |
 |------------|------------|--------------------------------------------------|------------|------------|
-| `checked`  | `checked`  | Checks the checkbox.                             | `boolean`  | false      |
-| `disabled` | `disabled` | Disables the element.                            | `boolean`  | false      |
+| `checked`  | `checked`  | Checks the checkbox.                             | `boolean`  |            |
+| `disabled` | `disabled` | Disables the element.                            | `boolean`  |            |
 | `name`     | `name`     | Name of the native form element.                 | `string`   | `required` |
-| `readonly` | `readonly` | Makes the element readonly (disabled but tabbable) | `boolean`  | false      |
-| `required` | `required` | Makes the element required in a form context.    | `boolean`  | false      |
+| `readonly` | `readonly` | Makes the element readonly (disabled but tabbable) | `boolean`  |            |
+| `required` | `required` | Makes the element required in a form context.    | `boolean`  |            |
 | `role`     | `role`     | Role of the radio behavior.                      | `AriaRole` | "radio"    |
 | `value`    | `value`    | Value of the form element.                       | `string`   |            |
 
-### CSS Custom Properties
+
+[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#css-custom-properties)
+
+## ➤ CSS Custom Properties
 
 | Property                       | Description                             |
 |--------------------------------|-----------------------------------------|

@@ -1,42 +1,44 @@
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#textfield-element)
 
-## ➤ textfield-element
+# ➤ textfield-element
 
 Singleline text fields.
-### Properties
+
+[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#properties)
+
+## ➤ Properties
 
 | Property       | Attribute      | Description                                      | Type           | Default    |
 |----------------|----------------|--------------------------------------------------|----------------|------------|
 | `autocomplete` | `autocomplete` | Whether autocomplete is on or off.               | `"on" | "off"` | `required` |
-| `disabled`     | `disabled`     | Disables the element.                            | `boolean`      | false      |
-| `filled`       | `filled`       | Fills the input with a solid color.              | `boolean`      | false      |
+| `disabled`     | `disabled`     | Disables the element.                            | `boolean`      |            |
+| `filled`       | `filled`       | Fills the input with a solid color.              | `boolean`      |            |
 | `maxLength`    | `maxLength`    | Max value length.                                | `number`       | `required` |
 | `minLength`    | `minLength`    | Min value length.                                | `number`       | `required` |
 | `name`         | `name`         | Name of the native form element.                 | `string`       | `required` |
-| `outlined`     | `outlined`     | Makes the input outlined.                        | `boolean`      | false      |
+| `outlined`     | `outlined`     | Makes the input outlined.                        | `boolean`      |            |
 | `pattern`      | `pattern`      | Value pattern.                                   | `string`       | `required` |
 | `placeholder`  | `placeholder`  | Placeholder text.                                | `string`       | `required` |
-| `readonly`     | `readonly`     | Makes the element readonly (disabled but tabbable) | `boolean`      | false      |
-| `required`     | `required`     | Makes the element required in a form context.    | `boolean`      | false      |
+| `readonly`     | `readonly`     | Makes the element readonly (disabled but tabbable) | `boolean`      |            |
+| `required`     | `required`     | Makes the element required in a form context.    | `boolean`      |            |
 | `role`         | `role`         | Role of the input.                               | `AriaRole`     | "textbox"  |
 | `type`         | `type`         | Type of the input.                               | `InputType`    | "text"     |
 | `value`        | `value`        | Value of the form element.                       | `string`       |            |
 
-### Slots
 
-| Slot   | Description               |
-|--------|---------------------------|
-| after  | Content after the input.  |
-| before | Content before the input. |
+[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#events)
 
-### Events
+## ➤ Events
 
 | Event  | Description                                      |
 |--------|--------------------------------------------------|
 | submit | Dispatched when the enter key is hit while holding down ctrl or the meta-key. |
 
-### CSS Custom Properties
+
+[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#css-custom-properties)
+
+## ➤ CSS Custom Properties
 
 | Property                            | Description                                   |
 |-------------------------------------|-----------------------------------------------|
@@ -65,6 +67,16 @@ Singleline text fields.
 | --input-state-color-inactive        | State color when inactive.                    |
 | --input-state-color-invalid         | State color when invalid.                     |
 | --input-transition                  | Transition.                                   |
+
+
+[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#slots)
+
+## ➤ Slots
+
+| Slot   | Description               |
+|--------|---------------------------|
+| after  | Content after the input.  |
+| before | Content before the input. |
 
 
 

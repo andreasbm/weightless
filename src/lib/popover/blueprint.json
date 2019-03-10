@@ -1,4 +1,5 @@
 {
+	"extend": "blueprint.json",
 	"input": "src/lib/popover/blueprint.md",
 	"output": "src/lib/popover/README.md",
 	"tag": "popover-element",

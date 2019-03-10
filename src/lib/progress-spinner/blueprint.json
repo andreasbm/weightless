@@ -1,4 +1,5 @@
 {
+	"extend": "blueprint.json",
 	"input": "src/lib/progress-spinner/blueprint.md",
 	"output": "src/lib/progress-spinner/README.md",
 	"tag": "progress-spinner-element",

@@ -1,4 +1,5 @@
 {
+	"extend": "blueprint.json",
 	"input": "src/lib/select/blueprint.md",
 	"output": "src/lib/select/README.md",
 	"tag": "select-element",

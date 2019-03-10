@@ -1,4 +1,5 @@
 {
+	"extend": "blueprint.json",
 	"input": "src/lib/textfield/blueprint.md",
 	"output": "src/lib/textfield/README.md",
 	"tag": "textfield-element",

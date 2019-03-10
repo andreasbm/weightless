@@ -1,4 +1,5 @@
 {
+	"extend": "blueprint.json",
 	"input": "src/lib/ripple/blueprint.md",
 	"output": "src/lib/ripple/README.md",
 	"tag": "ripple-element",
