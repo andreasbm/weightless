@@ -1,6 +1,6 @@
 import { createContainer, removeContainer, waitForElement } from "../../test/testing-helpers";
-import { WlBackdrop } from "./wl-backdrop";
 import "../backdrop";
+import { WlBackdrop } from "./wl-backdrop";
 
 describe("wl-backdrop", () => {
 	const {expect} = chai;

@@ -1,11 +1,11 @@
 import { assignedNodesMap, createContainer, removeContainer, waitForElements } from "../../test/testing-helpers";
-import { PopoverCardElement } from "./wl-popover-card";
+import { WlPopoverCard } from "./wl-popover-card";
 import "../popover-card";
 import "../popover";
 
 describe("wl-popover-card", () => {
 	const {expect} = chai;
-	let $popoverCard: PopoverCardElement;
+	let $popoverCard: WlPopoverCard;
 	let $container: HTMLElement;
 
 	before(() => {
@@ -20,7 +20,7 @@ describe("wl-popover-card", () => {
 			</wl-popover>`;
 
 		await waitForElements(["wl-popover", "wl-popover-card"]);
-		$popoverCard = $container.querySelector<PopoverCardElement>("wl-popover-card")!;
+		$popoverCard = $container.querySelector<WlPopoverCard>("wl-popover-card")!;
 	});
 	after(() => removeContainer($container));
 

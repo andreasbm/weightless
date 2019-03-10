@@ -74,7 +74,7 @@
 	},
 	"devDependencies": {
 		"@appnest/readme": "^1.1.13",
-		"@appnest/web-config": "0.3.30",
+		"@appnest/web-config": "0.3.32",
 		"@appnest/web-router": "^1.2.3",
 		"@types/puppeteer": "^1.12.2",
 		"code-prettify": "^0.1.0",

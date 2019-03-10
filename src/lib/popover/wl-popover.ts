@@ -7,7 +7,7 @@ import { AriaRole } from "../util/aria";
 import { cssResult } from "../util/css";
 import { queryParentRoots, renderAttributes } from "../util/dom";
 import { addClickAwayListener, addListener, EventListenerSubscription, removeListeners } from "../util/event";
-import { computeAnchorPosition, computeFallbackStrategy, IAnchorPosition, IPositionStrategy, OriginX, OriginY, computeTransformOrigin, areStrategiesEqual } from "../util/position";
+import { areStrategiesEqual, computeAnchorPosition, computeFallbackStrategy, computeTransformOrigin, IAnchorPosition, IPositionStrategy, OriginX, OriginY } from "../util/position";
 import { getOpacity, getScale } from "../util/style";
 import styles from "./wl-popover.scss";
 
@@ -410,7 +410,7 @@ export class WlPopover<R = unknown> extends OverlayBehavior<R, IPopoverConfig> i
 			Object.assign(this.$container.style, {
 				"top": `${position.top}px`,
 				"left": `${position.left}px`,
-				"transform": `translate(${transform.x}, ${transform.y})`,
+				"transform": `translate(${transform.x}, ${transform.y})`
 			});
 
 			// Render the actual strategy. This is used for the arrow in the wl-popover-card.
@@ -419,7 +419,7 @@ export class WlPopover<R = unknown> extends OverlayBehavior<R, IPopoverConfig> i
 				"anchorOriginX": strategy.anchorOriginX,
 				"anchorOriginY": strategy.anchorOriginY,
 				"transformOriginX": strategy.transformOriginX,
-				"transformOriginY": strategy.transformOriginY,
+				"transformOriginY": strategy.transformOriginY
 			});
 		});
 	}
