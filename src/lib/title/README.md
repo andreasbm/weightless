@@ -36,7 +36,7 @@ Indicate the start of a new section.
 
 ## ➤ Slots
 
-| Slot | Description      |
+| Name | Description      |
 |------|------------------|
 |      | Default content. |
 

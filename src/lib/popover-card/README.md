@@ -21,7 +21,7 @@ Give popovers a contextual flair.
 
 ## ➤ Slots
 
-| Slot | Description      |
+| Name | Description      |
 |------|------------------|
 |      | Default content. |
 

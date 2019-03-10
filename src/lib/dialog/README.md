@@ -76,7 +76,7 @@ Highly interruptive messages.
 
 ## ➤ Slots
 
-| Slot    | Description      |
+| Name    | Description      |
 |---------|------------------|
 |         | Default content. |
 | content | Body content.    |

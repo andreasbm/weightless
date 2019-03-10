@@ -9,24 +9,24 @@ Multiline text fields.
 
 ## ➤ Properties
 
-| Property       | Attribute      | Description                                      | Type           | Default    |
-|----------------|----------------|--------------------------------------------------|----------------|------------|
-| `autocomplete` | `autocomplete` | Whether autocomplete is on or off.               | `"on" | "off"` | `required` |
-| `cols`         | `cols`         | Amount of columns.                               | `number`       | `required` |
-| `disabled`     | `disabled`     | Disables the element.                            | `boolean`      |            |
-| `filled`       | `filled`       | Fills the input with a solid color.              | `boolean`      |            |
-| `maxLength`    | `maxLength`    | Max value length.                                | `number`       | `required` |
-| `minLength`    | `minLength`    | Min value length.                                | `number`       | `required` |
-| `name`         | `name`         | Name of the native form element.                 | `string`       | `required` |
-| `outlined`     | `outlined`     | Makes the input outlined.                        | `boolean`      |            |
-| `pattern`      | `pattern`      | Value pattern.                                   | `string`       | `required` |
-| `placeholder`  | `placeholder`  | Placeholder text.                                | `string`       | `required` |
-| `readonly`     | `readonly`     | Makes the element readonly (disabled but tabbable) | `boolean`      |            |
-| `required`     | `required`     | Makes the element required in a form context.    | `boolean`      |            |
-| `role`         | `role`         | Role of the input.                               | `AriaRole`     | "textbox"  |
-| `rows`         | `rows`         | Amount of rows.                                  | `number`       | `required` |
-| `type`         | `type`         | Type of the input.                               | `InputType`    | "text"     |
-| `value`        | `value`        | Value of the form element.                       | `string`       |            |
+| Property       | Attribute      | Description                                      | Type            | Default    |
+|----------------|----------------|--------------------------------------------------|-----------------|------------|
+| `autocomplete` | `autocomplete` | Whether autocomplete is on or off.               | `"on" \| "off"` | `required` |
+| `cols`         | `cols`         | Amount of columns.                               | `number`        | `required` |
+| `disabled`     | `disabled`     | Disables the element.                            | `boolean`       |            |
+| `filled`       | `filled`       | Fills the input with a solid color.              | `boolean`       |            |
+| `maxLength`    | `maxLength`    | Max value length.                                | `number`        | `required` |
+| `minLength`    | `minLength`    | Min value length.                                | `number`        | `required` |
+| `name`         | `name`         | Name of the native form element.                 | `string`        | `required` |
+| `outlined`     | `outlined`     | Makes the input outlined.                        | `boolean`       |            |
+| `pattern`      | `pattern`      | Value pattern.                                   | `string`        | `required` |
+| `placeholder`  | `placeholder`  | Placeholder text.                                | `string`        | `required` |
+| `readonly`     | `readonly`     | Makes the element readonly (disabled but tabbable) | `boolean`       |            |
+| `required`     | `required`     | Makes the element required in a form context.    | `boolean`       |            |
+| `role`         | `role`         | Role of the input.                               | `AriaRole`      | "textbox"  |
+| `rows`         | `rows`         | Amount of rows.                                  | `number`        | `required` |
+| `type`         | `type`         | Type of the input.                               | `InputType`     | "text"     |
+| `value`        | `value`        | Value of the form element.                       | `string`        |            |
 
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#events)
@@ -75,7 +75,7 @@ Multiline text fields.
 
 ## ➤ Slots
 
-| Slot   | Description               |
+| Name   | Description               |
 |--------|---------------------------|
 | after  | Content after the input.  |
 | before | Content before the input. |

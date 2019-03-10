@@ -9,18 +9,18 @@ Select one or more values from a set of options.
 
 ## ➤ Properties
 
-| Property       | Attribute      | Description                                      | Type           | Default    |
-|----------------|----------------|--------------------------------------------------|----------------|------------|
-| `autocomplete` | `autocomplete` | Whether autocomplete is on or off.               | `"on" | "off"` | `required` |
-| `disabled`     | `disabled`     | Disables the element.                            | `boolean`      |            |
-| `filled`       | `filled`       | Fills the input with a solid color.              | `boolean`      |            |
-| `name`         | `name`         | Name of the native form element.                 | `string`       | `required` |
-| `outlined`     | `outlined`     | Makes the input outlined.                        | `boolean`      |            |
-| `placeholder`  | `placeholder`  | Placeholder text.                                | `string`       | `required` |
-| `readonly`     | `readonly`     | Makes the element readonly (disabled but tabbable) | `boolean`      |            |
-| `required`     | `required`     | Makes the element required in a form context.    | `boolean`      |            |
-| `role`         | `role`         | Role of the select.                              | `AriaRole`     | "select"   |
-| `value`        | `value`        | Value of the form element.                       | `string`       |            |
+| Property       | Attribute      | Description                                      | Type            | Default    |
+|----------------|----------------|--------------------------------------------------|-----------------|------------|
+| `autocomplete` | `autocomplete` | Whether autocomplete is on or off.               | `"on" \| "off"` | `required` |
+| `disabled`     | `disabled`     | Disables the element.                            | `boolean`       |            |
+| `filled`       | `filled`       | Fills the input with a solid color.              | `boolean`       |            |
+| `name`         | `name`         | Name of the native form element.                 | `string`        | `required` |
+| `outlined`     | `outlined`     | Makes the input outlined.                        | `boolean`       |            |
+| `placeholder`  | `placeholder`  | Placeholder text.                                | `string`        | `required` |
+| `readonly`     | `readonly`     | Makes the element readonly (disabled but tabbable) | `boolean`       |            |
+| `required`     | `required`     | Makes the element required in a form context.    | `boolean`       |            |
+| `role`         | `role`         | Role of the select.                              | `AriaRole`      | "select"   |
+| `value`        | `value`        | Value of the form element.                       | `string`        |            |
 
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#events)
@@ -70,7 +70,7 @@ Select one or more values from a set of options.
 
 ## ➤ Slots
 
-| Slot   | Description                |
+| Name   | Description                |
 |--------|----------------------------|
 |        | <option> elements go here. |
 | after  | Content after the input.   |

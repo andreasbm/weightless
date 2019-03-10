@@ -38,7 +38,7 @@ Provide access to destinations in your app.
 
 ## ➤ Slots
 
-| Slot  | Description                      |
+| Name  | Description                      |
 |-------|----------------------------------|
 | left  | Content positioned to the left.  |
 | right | Content positioned to the right. |

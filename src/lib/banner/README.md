@@ -32,7 +32,7 @@ Display a non-interruptive message and related optional actions.
 
 ## ➤ Slots
 
-| Slot   | Description                                      |
+| Name   | Description                                      |
 |--------|--------------------------------------------------|
 | action | Action content (you can have multiple slots named action). |
 | icon   | Icon content.                                    |

@@ -9,9 +9,9 @@ Symbols for common actions and items.
 
 ## ➤ Properties
 
-| Property | Attribute | Description        | Type       | Default |
-|----------|-----------|--------------------|------------|---------|
-| `role`   | `role`    | Roles of the icon. | `AriaRole` | "img"   |
+| Property | Attribute | Description        | Type       | Default        |
+|----------|-----------|--------------------|------------|----------------|
+| `role`   | `role`    | Roles of the icon. | `AriaRole` | "presentation" |
 
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#css-custom-properties)
@@ -28,7 +28,7 @@ Symbols for common actions and items.
 
 ## ➤ Slots
 
-| Slot | Description       |
+| Name | Description       |
 |------|-------------------|
 |      | Name of the icon. |
 

@@ -30,7 +30,7 @@ Make form elements more accessible.
 
 ## ➤ Slots
 
-| Slot | Description                                      |
+| Name | Description                                      |
 |------|--------------------------------------------------|
 |      | Default content. If the first element is a form element, clicks on the entire label will be re-fired upon that element. |
 

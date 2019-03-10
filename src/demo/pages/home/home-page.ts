@@ -63,7 +63,7 @@ export default class HomePage extends LitElement {
 				<div class="cta-area">
 					<router-link path="get-started"><button-element>Get Started</button-element></router-link>
 				</div>
-				<button-element class="arrow-down" fab inverted flat @click="${this.scrollToBullets}">
+				<button-element aria-label="Scroll down" class="arrow-down" fab inverted flat @click="${this.scrollToBullets}">
 					<icon-element alt="Down">keyboard_arrow_down</icon-element>
 				</button-element>
 				<a class="version-area" href="${NPM_URL}" rel="noopener" target="_blank">

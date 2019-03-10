@@ -33,7 +33,7 @@ Group related content and action.
 
 ## ➤ Slots
 
-| Slot | Description      |
+| Name | Description      |
 |------|------------------|
 |      | Default content. |
 
