@@ -11,7 +11,7 @@ Contextual anchored elements.
 
 | Property            | Attribute           | Type                | Default      | Description                                      |
 |---------------------|---------------------|---------------------|--------------|--------------------------------------------------|
-| `$backdrop`         |                     | `WlBackdrop`   | **required** | Backdrop element.                                |
+| `$backdrop`         |                     | `WlBackdrop`        | **required** | Backdrop element.                                |
 | `$container`        |                     | `HTMLElement`       | **required** | Container element.                               |
 | `$content`          |                     | `FocusTrap`         | **required** | Content of the popover.                          |
 | `anchor`            | `anchor`            | `string \| Element` | **required** | Anchor element or query.                         |
