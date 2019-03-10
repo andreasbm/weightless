@@ -69,8 +69,8 @@ export class ThemeComponent extends NavElement {
 		});
 	}
 
-	private togglePopover () {
-		window.dispatchEvent(new CustomEvent("togglePopover"));
+	private toggleMenu () {
+		window.dispatchEvent(new CustomEvent("toggleMenu"));
 	}
 
 	private openThemeSelector () {
@@ -97,7 +97,7 @@ export class ThemeComponent extends NavElement {
 	protected render () {
 		return html`
 			<aside id="left-container">
-				${path() !== "/" ? html`<button-element id="popover-button" fab inverted flat @click="${() => this.togglePopover()}">
+				${path().startsWith("/elements") ? html`<button-element id="menu-button" fab inverted flat @click="${() => this.toggleMenu()}">
 					<icon-element alt="menu">menu</icon-element>
 				</button-element>` : ""}
 				<router-link id="logo-wrapper" path="/" @click="${() => this.rotateLogo()}">
@@ -114,8 +114,8 @@ export class ThemeComponent extends NavElement {
 			</aside>
 			<aside id="right-container">
 				<div id="navigation">
-					<router-link class="link" path="/get-started">Get Started</router-link>
-					<router-link class="link" path="/elements">Elements</router-link>
+					<router-link tabindex="0" class="link" path="/get-started">Get Started</router-link>
+					<router-link tabindex="0" class="link" path="/elements">Elements</router-link>
 				</div>
 				<button-element id="dark-mode" @click="${() => this.toggleDarkMode()}" fab inverted flat outlined>
 					${this.darkMode ? html`<icon-element alt="Darkmode off">flash_off</icon-element>` : html`<icon-element alt="Darkmode on">flash_on</icon-element>`}

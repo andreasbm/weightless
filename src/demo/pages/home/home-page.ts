@@ -73,7 +73,7 @@ export default class HomePage extends LitElement {
 				</a>
 			</container-element>
 			<container-element id="bullets-container">
-				<title-element class="title" level="2">Your app, your way</title-element>
+				<title-element class="title" level="2">Why Weightless?</title-element>
 				<div id="bullets">
 					${repeat(this.bullets, bullet => html`
 						<div class="bullet">

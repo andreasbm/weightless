@@ -151,7 +151,6 @@ export class ButtonElement extends FormElementBehavior implements IButtonElement
 		// Re-fire the event on the inner form element to interact with the form if there is one
 		if (e.target == this && !e.defaultPrevented) {
 			this.$formElement.dispatchEvent(new MouseEvent("click", {relatedTarget: this, composed: true}));
-			e.stopPropagation();
 		}
 	}
 

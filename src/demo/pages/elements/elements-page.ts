@@ -1,4 +1,4 @@
-import { GLOBAL_ROUTER_EVENTS_TARGET, GlobalRouterEventKind, IRoute, NavigationEndEvent, ROUTER_SLOT_TAG_NAME, RouterSlot } from "@appnest/web-router";
+import { ChangeStateEvent, GLOBAL_ROUTER_EVENTS_TARGET, GlobalRouterEventKind, IRoute, NavigationEndEvent, ROUTER_SLOT_TAG_NAME, RouterSlot, RouterSlotEventKind } from "@appnest/web-router";
 import { customElement, html, LitElement, property, PropertyValues, query } from "lit-element";
 import { repeat } from "lit-html/directives/repeat";
 import "../../../lib/button/button-element";
@@ -20,25 +20,36 @@ export default class ElementsPage extends LitElement {
 	private currentRoute?: IRoute<IRouteData>;
 
 	@query("#router") $routerContainer: HTMLDivElement;
+	@query("#router-slot") $routerSlot: RouterSlot<IRouteData>;
 	@property({type: Boolean, reflect: true, attribute: "popover-visible"}) isPopoverVisible = false;
 
 	firstUpdated (props: PropertyValues) {
 		super.firstUpdated(props);
 
-		const $slot = this.shadowRoot!.querySelector<RouterSlot>(ROUTER_SLOT_TAG_NAME)!;
-		$slot.add(COMPONENTS_ROUTES);
+		this.$routerSlot.add(COMPONENTS_ROUTES);
 
-		GLOBAL_ROUTER_EVENTS_TARGET.addEventListener(GlobalRouterEventKind.NavigationEnd, (e: NavigationEndEvent<IRouteData>) => {
-			this.currentRoute = e.detail.match.route;
+		this.$routerSlot.addEventListener(RouterSlotEventKind.ChangeState, (e: ChangeStateEvent) => {
+			this.currentRoute = this.$routerSlot.match!.route;
 			getMainScrollContainer().scrollTo({top: 0, left: 0});
 			this.requestUpdate().then();
+
+			// Register that the parent has finished routing
+			if (!this.hasAttribute("routed")) {
+				this.setAttribute("routed", "");
+			}
 		});
 
-		window.addEventListener("togglePopover", () => {
+		// GLOBAL_ROUTER_EVENTS_TARGET.addEventListener(GlobalRouterEventKind.NavigationEnd, (e: NavigationEndEvent<IRouteData>) => {
+		// 	this.currentRoute = e.detail.match.route;
+		// 	getMainScrollContainer().scrollTo({top: 0, left: 0});
+		// 	this.requestUpdate().then();
+		// });
+
+		window.addEventListener("toggleMenu", () => {
 			this.isPopoverVisible = !this.isPopoverVisible;
 			if (this.isPopoverVisible) {
 				addListener(this, "click", () => {
-					window.dispatchEvent(new CustomEvent("togglePopover"));
+					window.dispatchEvent(new CustomEvent("toggleMenu"));
 				}, {once: true});
 			}
 		});
@@ -61,7 +72,7 @@ export default class ElementsPage extends LitElement {
 							<title-element level="1">${this.currentRoute.data.title}</title-element>
 							<label-element>${this.currentRoute.data.desc}</label-element>
 						</aside>
-						<a href="${DOCS_URL(this.currentRoute.path)}" target="_blank" rel="noopener">
+						<a tabindex="-1" href="${DOCS_URL(this.currentRoute.path)}" target="_blank" rel="noopener">
 							<button-element id="open-docs" inverted flat>
 								<span>Documentation</span>
 								<icon-element>open_in_new</icon-element>
@@ -69,7 +80,7 @@ export default class ElementsPage extends LitElement {
 						</a>
 					</header>
 				` : ""}
-				<router-slot></router-slot>
+				<router-slot id="router-slot"></router-slot>
 				<footer-element id="footer"></footer-element>
 			</div>
 		`;

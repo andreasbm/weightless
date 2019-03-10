@@ -36,13 +36,13 @@ $navbar-octo-size: var(--navbar-octo-size, var(--nav-height));
 	}
 }
 
-#popover-button {
+#menu-button {
 	@include color-variables("primary", $palette-grey);
 	display: none;
 }
 
 @media #{$screen-s-and-down} {
-	#popover-button {
+	#menu-button {
 		display: inline-flex;
 	}
 }

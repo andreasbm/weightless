@@ -88,5 +88,14 @@ $elements-page-menu-width: #{size(250)};
 
 #footer {
 	border-radius: $border-radius-m;
+	display: none;
 }
+
+:host([routed]) {
+	#footer {
+		display: flex;
+	}
+}
+
+
 
