@@ -9,29 +9,15 @@ $elements-page-menu-width: #{size(250)};
 
 #menu {
 	width: $elements-page-menu-width;
+	background: $background;
+	padding: $spacing-s;
 	overflow-y: auto;
 	flex-shrink: 0;
 	border-right: #{size(1)} solid #{color("shade", $light-hue)};
-	background: #{$background};
 	position: fixed;
 	left: 0;
 	top: var(--nav-height);
 	height: calc(100vh - var(--nav-height));
-}
-
-.menu-item {
-	padding: #{$spacing-m};
-	cursor: pointer;
-	display: flex;
-	align-items: center;
-
-	.img {
-		margin: 0 #{$spacing-m} 0 0;
-	}
-
-	&[active] {
-		background: #{color("shade", 200)};
-	}
 }
 
 #header {

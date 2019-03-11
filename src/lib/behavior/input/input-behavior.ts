@@ -6,10 +6,16 @@ import { addListener } from "../../util/event";
 import { FormElementBehavior, IFormElementBehaviorProperties } from "../form-element/form-element-behavior";
 import styles from "./input-behavior.scss";
 
+/**
+ * Events the input can dispatch.
+ */
 export enum InputBehaviorEvent {
 	SUBMIT = "submit"
 }
 
+/**
+ * Properties of the input.
+ */
 export interface IInputBehaviorProperties extends IFormElementBehaviorProperties{
 	autocomplete: "on" | "off";
 	outlined: boolean;

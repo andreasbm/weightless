@@ -1,6 +1,7 @@
 import { customElement, html, LitElement } from "lit-element";
 import { cssResult } from "../../../lib/util/css";
-import { GITHUB_URL } from "../../constants";
+import { openCodepen } from "../../codepen";
+import { GITHUB_URL, UNPGK_URL } from "../../constants";
 import { sharedStyles } from "../../style/shared";
 import "../../elements/container/container-element";
 import "../../../lib/title/wl-title";
@@ -17,6 +18,14 @@ export default class GetStartedPage extends LitElement {
 
 	static styles = [sharedStyles, cssResult(styles)];
 
+	private openPlayground (e: Event) {
+		e.preventDefault();
+		openCodepen({
+			html: `<wl-button>Button</wl-button>`,
+			js_external: `${UNPGK_URL}`
+		});
+	}
+
 	protected render () {
 		return html`
 			<container-element id="main-container">
@@ -31,7 +40,7 @@ export default class GetStartedPage extends LitElement {
 				<highlight-element text="npm i weightless"></highlight-element>
 				
 				<wl-divider></wl-divider>
-				<wl-title level="3">Consumation</wl-title>
+				<wl-title level="3">Consumption</wl-title>
 				<p>To consume the web components you must first import the elements you wish to use. If you for example want to use the <code>wl-button</code> you must import from path <code>"weightless/button"</code>. Then you can use the element in your html like this.</p>
 				
 				<code-example-element>
@@ -40,7 +49,12 @@ export default class GetStartedPage extends LitElement {
 		
 				<wl-divider></wl-divider>
 				<wl-title level="3">Learn more</wl-title>
-				<p>If you want learn more you can either go to the <router-link path="/elements/button"><a href="" rel="noopener" @click="${(e: Event) => e.preventDefault()}">elements overview</a></router-link> or <a href="${GITHUB_URL}" target="_blank">Github repository</a>.</p>
+				<p>If you want learn more you can:</p>
+				<ul>
+					<li>Go to the <router-link path="/elements/button"><a href="" rel="noopener" @click="${(e: Event) => e.preventDefault()}">elements overview</a></router-link>.</li>
+					<li>Check out the <a href="${GITHUB_URL}" target="_blank">Github repository</a>.</li>
+					<li>Try out the library in the <a href="#" @click="${this.openPlayground}">playground</a>.</li>
+				</ul>
 
 			</container-element>
 			<footer-element></footer-element>

@@ -43,7 +43,7 @@ export default class RipplePage extends LitElement {
 			<wl-title level="3">Change animation duration</wl-title>
 			<demo-element>
 				<code-example-element>
-					<wl-ripple initialDuration="300" releaseDuration="1000"></wl-ripple>
+					<wl-ripple initialDuration="200" releaseDuration="1000"></wl-ripple>
 					<wl-ripple releaseDuration="1000"></wl-ripple>
 					<wl-ripple autorelease></wl-ripple>
 				</code-example-element>
