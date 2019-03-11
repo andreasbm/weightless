@@ -46,10 +46,8 @@ const defaultConfig = {
 		// https://github.com/wessberg/rollup-plugin-ts
 		ts({
 			transpiler: "typescript",
-			// If your tsconfig is already called 'tsconfig.json', this option can be left out
 			tsconfig: "tsconfig.build.json",
 			exclude: ["node_modules/**/*.*"],
-			// If there is no .browserslistrc within your project, and if your package.json doesn't include a Browserslist property, this option can be left out
 			browserslist: false
 		}),
 

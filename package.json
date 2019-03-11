@@ -37,7 +37,7 @@
 		"s:prod": "rollup -c --watch --environment NODE_ENV:prod",
 		"s": "npm run s:dev",
 		"start": "npm run s",
-		"b:lib": "rollup -c rollup-build.config.js",
+		"b:lib": "rollup -c rollup-build.config.js && node post-build.js",
 		"git:add:commit:push": "git add . && git commit --no-edit --amend --no-verify && git push",
 		"bump:patch": "npm version patch && npm run git:add:commit:push",
 		"bump:minor": "npm version minor && npm run git:add:commit:push",
@@ -79,14 +79,17 @@
 		"@types/puppeteer": "^1.12.2",
 		"code-prettify": "^0.1.0",
 		"fs-extra": "^7.0.1",
+		"glob": "^7.1.3",
 		"karma-iframes": "^1.2.2",
 		"puppeteer": "^1.13.0",
+		"replace-ext": "^1.0.0",
 		"ts-node": "^8.0.3"
 	},
 	"dependencies": {
 		"@appnest/focus-trap": "0.0.26",
 		"lit-element": "^2.0.1",
-		"lit-html": "^1.0.0"
+		"lit-html": "^1.0.0",
+		"tslib": "^1.9.3"
 	},
 	"contributors": [
 		{
