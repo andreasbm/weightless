@@ -62,6 +62,7 @@ npm i weightless
 | Divider | `wl-divider` | Thin line that groups content in lists and layouts. | [Documentation](/src/lib/divider) | [Demo](https://weightless.dev/elements/divider) |
 | Icon | `wl-icon` | Symbols for common actions and items. | [Documentation](/src/lib/icon) | [Demo](https://weightless.dev/elements/icon) |
 | Label | `wl-label` | Make form elements more accessible. | [Documentation](/src/lib/label) | [Demo](https://weightless.dev/elements/label) |
+| List Item | `wl-list-item` | Display an item in a list. | [Documentation](/src/lib/list-item) | [Demo](https://weightless.dev/elements/list-item) |
 | Nav | `wl-nav` | Provide access to destinations in your app. | [Documentation](/src/lib/nav) | [Demo](https://weightless.dev/elements/nav) |
 | Popover | `wl-popover` | Contextual anchored elements | [Documentation](/src/lib/popover) | [Demo](https://weightless.dev/elements/popover) |
 | Popover Card | `wl-popover-card` | Give popovers a contextual flair. | [Documentation](/src/lib/popover-card) | [Demo](https://weightless.dev/elements/popover) |

@@ -1,43 +1,4 @@
 
-[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#wl-banner)
-
-# ➤ wl-banner
-
-Display a non-interruptive message and related optional actions.
-
-[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#properties)
-
-## ➤ Properties
-
-| Property | Attribute | Type       | Default  | Description         |
-|----------|-----------|------------|----------|---------------------|
-| `role`   | `role`    | `AriaRole` | "banner" | Role of the banner. |
-
-
-[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#css-custom-properties)
-
-## ➤ CSS Custom Properties
-
-| Property                   | Description                  |
-|----------------------------|------------------------------|
-| `--banner-bg`              | Background.                  |
-| `--banner-color`           | Color.                       |
-| `--banner-content-padding` | Padding of the content slot. |
-| `--banner-icon-color`      | Color of the icon.           |
-| `--banner-icon-margin`     | Margin of the icon slot.     |
-| `--banner-padding`         | Padding.                     |
-
-
-[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#slots)
-
-## ➤ Slots
-
-| Name     | Description                                      |
-|----------|--------------------------------------------------|
-| `action` | Action content (you can have multiple slots named action). |
-| `icon`   | Icon content.                                    |
-| `text`   | Text content.                                    |
-
 
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#usage)

@@ -15,7 +15,7 @@ Indicate touch actions.
 | `centered`        | `centered`        | `boolean`     | false          | Makes ripple appear from the center.           |
 | `disabled`        | `disabled`        | `boolean`     | false          | Disables the ripple.                           |
 | `focusable`       | `focusable`       | `boolean`     | false          | Allows focusin to spawn a ripple.              |
-| `initialDuration` | `initialDuration` | `number`      | 800            | Initial animation duration.                    |
+| `initialDuration` | `initialDuration` | `number`      | 300            | Initial animation duration.                    |
 | `overlay`         | `overlay`         | `boolean`     | false          | Overlays the ripple.                           |
 | `releaseDuration` | `releaseDuration` | `number`      | 500            | Fade out animation duration.                   |
 | `role`            | `role`            | `AriaRole`    | "presentation" | Role of the ripple.                            |
