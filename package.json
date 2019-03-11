@@ -1,6 +1,6 @@
 {
-	"name": "@appnest/weightless",
-	"version": "0.0.19",
+	"name": "weightless",
+	"version": "0.0.0",
 	"license": "MIT",
 	"module": "index.js",
 	"main": "index.js",
