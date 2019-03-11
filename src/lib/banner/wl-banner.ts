@@ -1,5 +1,4 @@
-import { customElement, html, LitElement, property } from "lit-element";
-import { TemplateResult } from "lit-html";
+import { customElement, html, LitElement, property, TemplateResult } from "lit-element";
 import "../divider";
 import { sharedStyles } from "../style/shared";
 import { AriaRole } from "../util/aria";

@@ -1,6 +1,5 @@
-import { html, LitElement, property } from "lit-element";
+import { html, LitElement, property, TemplateResult } from "lit-element";
 import { customElement } from "lit-element";
-import { TemplateResult } from "lit-html";
 import { sharedStyles } from "../style/shared";
 import { cssResult } from "../util/css";
 

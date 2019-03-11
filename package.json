@@ -3,6 +3,7 @@
 	"version": "0.0.19",
 	"license": "MIT",
 	"module": "index.js",
+	"main": "index.js",
 	"author": "Appnest",
 	"description": "High-quality Web Components with a small footprint",
 	"bugs": {
@@ -26,7 +27,6 @@
 		"component",
 		"element"
 	],
-	"main": "index.js",
 	"types": "index.d.ts",
 	"scripts": {
 		"ncu": "ncu -u -a && npm update && npm install",
@@ -37,7 +37,7 @@
 		"s:prod": "rollup -c --watch --environment NODE_ENV:prod",
 		"s": "npm run s:dev",
 		"start": "npm run s",
-		"b:lib": "node pre-build.js && tsc -p tsconfig.build.json",
+		"b:lib": "rollup -c rollup-build.config.js",
 		"git:add:commit:push": "git add . && git commit --no-edit --amend --no-verify && git push",
 		"bump:patch": "npm version patch && npm run git:add:commit:push",
 		"bump:minor": "npm version minor && npm run git:add:commit:push",

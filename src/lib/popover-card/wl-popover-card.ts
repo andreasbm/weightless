@@ -1,8 +1,7 @@
-import { customElement, html, LitElement } from "lit-element";
-import { TemplateResult } from "lit-html";
+import { customElement, html, LitElement, TemplateResult } from "lit-element";
+import "../card/wl-card";
 import { sharedStyles } from "../style/shared";
 import { cssResult } from "../util/css";
-import "../card/wl-card";
 
 import styles from "./wl-popover-card.scss";
 

@@ -1,5 +1,4 @@
-import { html, property } from "lit-element";
-import { TemplateResult } from "lit-html";
+import { html, property, TemplateResult } from "lit-element";
 import { ifDefined } from "lit-html/directives/if-defined";
 import { AriaRole, updateTabindex } from "../../util/aria";
 import { SPACE } from "../../util/constant/keycode";

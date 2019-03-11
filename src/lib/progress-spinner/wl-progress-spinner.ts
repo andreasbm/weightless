@@ -1,5 +1,4 @@
-import { customElement, html, svg } from "lit-element";
-import { TemplateResult } from "lit-html";
+import { customElement, html, svg, TemplateResult } from "lit-element";
 import { IProgressBehaviorProperties, ProgressBehavior, ProgressMode } from "../behavior/progress/progress-behavior";
 import { cssResult } from "../util/css";
 

@@ -1,5 +1,4 @@
-import { customElement, html } from "lit-element";
-import { TemplateResult } from "lit-html";
+import { customElement, html, TemplateResult } from "lit-element";
 import { IPopoverProperties, WlPopover } from "../popover/wl-popover";
 import { cssResult } from "../util/css";
 

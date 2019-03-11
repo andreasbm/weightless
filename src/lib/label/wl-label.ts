@@ -1,5 +1,4 @@
-import { customElement, LitElement, property, html, PropertyValues } from "lit-element";
-import { TemplateResult } from "lit-html";
+import { customElement, LitElement, property, html, PropertyValues, TemplateResult } from "lit-element";
 import { sharedStyles } from "../style/shared";
 import { cssResult } from "../util/css";
 import { addListener, EventListenerSubscription, removeListeners } from "../util/event";

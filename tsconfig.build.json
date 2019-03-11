@@ -1,10 +1,11 @@
 {
 	"extends": "./node_modules/@appnest/web-config/tsconfig.json",
 	"compilerOptions": {
-		"outDir": "dist",
+		"module": "esnext",
+		"emitDecoratorMetadata": true,
 		"declaration": true,
-		"target": "es2017",
-		"importHelpers": true,
+		"target": "esnext",
+		"importHelpers": false,
 		"lib": [
 			"es2015.promise",
 			"dom",
@@ -15,8 +16,5 @@
 			"es2015.proxy",
 			"esnext"
 		]
-	},
-	"include": [
-		"src/lib/**/*"
-	]
+	}
 }
