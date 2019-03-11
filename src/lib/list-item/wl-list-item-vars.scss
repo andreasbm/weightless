@@ -1,0 +1,27 @@
+@import "../style/base";
+
+$list-item-border-radius: var(--list-item-border-radius, #{$border-radius-m});
+$list-item-transition: var(--list-item-transition, background #{$transition-duration-medium} #{$transition-ease}, color #{$transition-duration-medium} #{$transition-ease});
+$list-item-padding: var(--list-item-padding, #{$spacing-m} #{$spacing-l});
+
+$list-item-before-align-self: var(--list-item-left-align-self, center);
+$list-item-before-margin: var(--list-item-left-margin, 0 #{$spacing-l} 0 0);
+
+$list-item-after-align-self: var(--list-item-left-align-self, center);
+$list-item-after-margin: var(--list-item-left-margin, 0 0 0 #{$spacing-l});
+
+$list-item-color: var(--list-item-color, currentColor);
+$list-item-bg: var(--list-item-bg, transparent);
+
+$list-item-color-active: var(--list-item-color, #{color("primary")});
+$list-item-bg-active: var(--list-item-bg, #{color("primary", 500, 0.1)});
+
+$list-item-color-focus-active: var(--list-item-color-focus-active, #{color("primary", 600)});
+$list-item-bg-focus: var(--list-item-bg-focus, #{color("shade", 200)});
+
+$list-item-color-hover: var(--list-item-color-hover, currentColor);
+$list-item-bg-hover: var(--list-item-bg-hover, #{color("shade", 200)});
+
+$list-item-color-disabled: var(--list-item-color-disabled, #{color("shade", 400)});
+$list-item-bg-disabled: var(--list-item-bg-disabled, transparent);
+$list-item-opacity-disabled: var(--list-item-opacity-disabled, 0.6);

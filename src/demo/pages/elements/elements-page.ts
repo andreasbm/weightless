@@ -1,12 +1,13 @@
-import { ChangeStateEvent, GLOBAL_ROUTER_EVENTS_TARGET, GlobalRouterEventKind, IRoute, NavigationEndEvent, ROUTER_SLOT_TAG_NAME, RouterSlot, RouterSlotEventKind } from "@appnest/web-router";
+import { ChangeStateEvent, IRoute, isPathActive, path, RouterSlot, RouterSlotEventKind } from "@appnest/web-router";
 import { customElement, html, LitElement, property, PropertyValues, query } from "lit-element";
 import { repeat } from "lit-html/directives/repeat";
 import "../../../lib/button/wl-button";
 import "../../../lib/icon/wl-icon";
+import "../../../lib/list-item/wl-list-item";
 import { cssResult } from "../../../lib/util/css";
 import { addListener } from "../../../lib/util/event";
-import "../../elements/footer/footer-element";
 import { DOCS_URL } from "../../constants";
+import "../../elements/footer/footer-element";
 import { getMainScrollContainer } from "../../main-scroll-target";
 import { sharedStyles } from "../../style/shared";
 
@@ -60,8 +61,10 @@ export default class ElementsPage extends LitElement {
 			<div id="menu">
 				${repeat(COMPONENTS_ROUTES.filter(route => route.path !== "**"), route => html`
 					<router-link class="menu-item" path="${route.path}">
-						${route.data != null ? html`<img class="img" src="${route.data.img}" alt="Icon" />` : ""}
-						<span>${route.data != null ? route.data.title : route.path}</span><br/>
+						<wl-list-item clickable ?active="${path({start: true, end: false}).endsWith(route.path)}">
+							${route.data != null ? html`<img slot="before" class="img" src="${route.data.img}" alt="Icon" />` : ""}
+							<span>${route.data != null ? route.data.title : route.path}</span>
+						</wl-list-item>
 					</router-link>
 				`)}
 			</div>

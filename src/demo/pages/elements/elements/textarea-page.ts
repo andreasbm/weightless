@@ -1,6 +1,7 @@
 import { customElement, html, LitElement } from "lit-element";
 import "../../../../lib/card/wl-card";
 import "../../../../lib/title/wl-title";
+import "../../../../lib/textarea/wl-textarea";
 import { cssResult } from "../../../../lib/util/css";
 import "../../../elements/code-example/code-example-element";
 import "../../../elements/demo/demo-element";

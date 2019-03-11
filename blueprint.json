@@ -95,6 +95,13 @@
 			"[Demo](https://weightless.dev/elements/label)"
 		],
 		[
+			"List Item",
+			"`wl-list-item`",
+			"Display an item in a list.",
+			"[Documentation](/src/lib/list-item)",
+			"[Demo](https://weightless.dev/elements/list-item)"
+		],
+		[
 			"Nav",
 			"`wl-nav`",
 			"Provide access to destinations in your app.",
