@@ -2,6 +2,7 @@ export const GITHUB_URL = `https://github.com/andreasbm/weightless`;
 export const NPM_URL = `https://www.npmjs.com/package/@weightless/all`;
 export const TWITTER_URL = `https://twitter.com/andreasmehlsen`;
 export const DOCS_URL = (element: string) => `https://github.com/andreasbm/weightless/tree/master/src/lib/${element}`;
+export const UNPGK_URL = `https://unpkg.com/weightless/umd/weightless.min.js`;
 export interface IBullet {
 	title: string;
 	text: string;

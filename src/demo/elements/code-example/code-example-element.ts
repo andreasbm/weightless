@@ -1,13 +1,14 @@
+import styles from "code-example-element.scss";
 import { customElement, html, LitElement, property, query } from "lit-element";
+import { ifDefined } from "lit-html/directives/if-defined";
+import "../../../lib/button";
+import "../../../lib/icon";
+import { cssResult } from "../../../lib/util/css";
+import { openCodepen } from "../../codepen";
+import { UNPGK_URL } from "../../constants";
 import { copyToClipboard } from "../../copy-to-clipboard";
 import { HighlightElement } from "../highlight/highlight-element";
 import "../highlight/highlight-element";
-import "../../../lib/button";
-import "../../../lib/icon";
-import { ifDefined } from "lit-html/directives/if-defined";
-import { cssResult } from "../../../lib/util/css";
-import { openCodepen } from "../../codepen";
-import styles from "code-example-element.scss";
 
 /**
  * Highlights the initial HTML in the slot.
@@ -40,7 +41,8 @@ export class CodeExampleElement extends LitElement {
 
 	openCodepen () {
 		openCodepen({
-			html: this.$highlighter.cleanedText
+			html: this.$highlighter.cleanedText,
+			js_external: `${UNPGK_URL}`
 		});
 	}
 
