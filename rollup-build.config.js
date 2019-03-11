@@ -1,4 +1,4 @@
-import {importStyles} from "@appnest/web-config";
+import {importStyles, minifyLitHTML} from "@appnest/web-config";
 import ts from '@wessberg/rollup-plugin-ts';
 import autoprefixer from 'autoprefixer';
 import {generate} from 'escodegen';
@@ -7,6 +7,7 @@ import {minify} from 'html-minifier';
 import {createServer} from 'livereload';
 import cssnano from 'cssnano';
 import path from 'path';
+import { terser } from 'rollup-plugin-terser';
 import precss from 'precss';
 import cleaner from 'rollup-plugin-cleaner';
 import commonjs from 'rollup-plugin-commonjs';
@@ -17,55 +18,45 @@ import pkg from "./package.json";
 const folders = {
 	src: path.resolve(__dirname, "src/lib"),
 	dist: path.resolve(__dirname, "dist"),
+	dist_umd: path.resolve(__dirname, "dist/umd"),
 };
 
 const files = {
 	src_index: path.join(folders.src, "index.ts"),
-	dist_index: path.join(folders.dist, "index.js")
+	dist_umd_weightless: path.join(folders.dist_umd, "weightless.min.js")
+
 };
 
-const defaultConfig = {
-	plugins: [
-		progress(),
-		cleaner({
-			targets: [
-				folders.dist
-			]
-		}),
-		resolve(),
-		importStyles({
-			plugins: [
-				precss(),
-				autoprefixer(),
-				cssnano({preset: ["default", {
+const plugins = ({tsConfig} = {}) => [
+	progress(),
+	cleaner({
+		targets: [
+			folders.dist
+		]
+	}),
+	resolve(),
+	importStyles({
+		plugins: [
+			precss(),
+			autoprefixer(),
+			cssnano({preset: ["default", {
 					calc: false
 				}]})
-			]
-		}),
-		// Teaches Rollup how to transpile Typescript
-		// https://github.com/wessberg/rollup-plugin-ts
-		ts({
-			transpiler: "typescript",
-			tsconfig: "tsconfig.build.json",
-			exclude: ["node_modules/**/*.*"],
-			browserslist: false
-		}),
+		]
+	}),
+	// Teaches Rollup how to transpile Typescript
+	// https://github.com/wessberg/rollup-plugin-ts
+	ts(tsConfig || {}),
 
-		// At the moment, the majority of packages on NPM are exposed as CommonJS modules
-		commonjs({
-			include: "**/node_modules/**",
-		})
-	],
-	external: [
-		...Object.keys(pkg.dependencies),
-		...Object.keys(pkg.devDependencies),
-		"@appnest/focus-trap/debounce",
-		"lit-html/directives/if-defined",
-		"tslib"
-	],
-	treeshake: false,
-	preserveModules: true
-};
+	// At the moment, the majority of packages on NPM are exposed as CommonJS modules
+	commonjs({
+		include: "**/node_modules/**",
+	}),
+
+	minifyLitHTML({
+		verbose: false
+	})
+];
 
 const configs = [
 	{
@@ -79,8 +70,40 @@ const configs = [
 				dir: folders.dist
 			}
 		],
-		...defaultConfig
+		treeshake: false,
+		preserveModules: true,
+		plugins: plugins({
+			tsConfig: {
+				transpiler: "typescript",
+				tsconfig: "tsconfig.build.json",
+				exclude: ["node_modules/**/*.*"],
+				browserslist: false,
+			}
+		}),
+		external: [
+			...Object.keys(pkg.dependencies),
+			...Object.keys(pkg.devDependencies),
+			"@appnest/focus-trap/debounce",
+			"lit-html/directives/if-defined",
+			"tslib"
+		]
 	},
+	{
+		input: files.src_index,
+		output: [
+			{
+				format: "umd",
+				name: "weightless",
+				file: files.dist_umd_weightless
+			}
+		],
+		treeshake: true,
+		plugins: [
+			...plugins(),
+			terser()
+		],
+		context: "window"
+	}
 ];
 
 export default configs;
