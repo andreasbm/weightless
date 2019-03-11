@@ -1,18 +1,18 @@
 import {importStyles, minifyLitHTML} from "@appnest/web-config";
 import ts from '@wessberg/rollup-plugin-ts';
 import autoprefixer from 'autoprefixer';
+import cssnano from 'cssnano';
 import {generate} from 'escodegen';
 import {parse} from 'esprima';
 import {minify} from 'html-minifier';
 import {createServer} from 'livereload';
-import cssnano from 'cssnano';
 import path from 'path';
-import { terser } from 'rollup-plugin-terser';
 import precss from 'precss';
 import cleaner from 'rollup-plugin-cleaner';
 import commonjs from 'rollup-plugin-commonjs';
 import resolve from 'rollup-plugin-node-resolve';
 import progress from 'rollup-plugin-progress';
+import {terser} from 'rollup-plugin-terser';
 import pkg from "./package.json";
 
 const folders = {
@@ -29,19 +29,16 @@ const files = {
 
 const plugins = ({tsConfig} = {}) => [
 	progress(),
-	cleaner({
-		targets: [
-			folders.dist
-		]
-	}),
 	resolve(),
 	importStyles({
 		plugins: [
 			precss(),
 			autoprefixer(),
-			cssnano({preset: ["default", {
+			cssnano({
+				preset: ["default", {
 					calc: false
-				}]})
+				}]
+			})
 		]
 	}),
 	// Teaches Rollup how to transpile Typescript
@@ -72,14 +69,21 @@ const configs = [
 		],
 		treeshake: false,
 		preserveModules: true,
-		plugins: plugins({
-			tsConfig: {
-				transpiler: "typescript",
-				tsconfig: "tsconfig.build.json",
-				exclude: ["node_modules/**/*.*"],
-				browserslist: false,
-			}
-		}),
+		plugins: [
+			cleaner({
+				targets: [
+					folders.dist
+				]
+			}),
+			...plugins({
+				tsConfig: {
+					transpiler: "typescript",
+					tsconfig: "tsconfig.build.json",
+					exclude: ["node_modules/**/*.*"],
+					browserslist: false,
+				}
+			})
+		],
 		external: [
 			...Object.keys(pkg.dependencies),
 			...Object.keys(pkg.devDependencies),
