@@ -2,7 +2,7 @@
 	"text": "Web Components built to be used. They are lightweight, have a simple API and are easy to extend and compose.",
 	"demo": "https://weightless.dev/elements",
 	"ids": {
-		"npm": "@weightless/all",
+		"npm": "weightless",
 		"github": "andreasbm/weightless"
 	},
 	"bullets": [

@@ -70,6 +70,9 @@ const defaultConfig = {
 const configs = [
 	{
 		input: files.src_index,
+		// input: {
+		// 	banner: "src/banner/index.ts"
+		// },
 		output: [
 			{
 				format: "esm",

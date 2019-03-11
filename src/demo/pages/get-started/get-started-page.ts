@@ -28,11 +28,11 @@ export default class GetStartedPage extends LitElement {
 				<wl-divider></wl-divider>
 				<wl-title level="3">Installation</wl-title>
 				<p>To install Weightless you can run the following command to install all of the components.</p>
-				<highlight-element text="npm i @weightless/all"></highlight-element>
+				<highlight-element text="npm i weightless"></highlight-element>
 				
 				<wl-divider></wl-divider>
 				<wl-title level="3">Consumation</wl-title>
-				<p>To consume the web components you must first import the elements you wish to use. If you for example want to use the <code>wl-button</code> you must import from path <code>"@weightless/all/button"</code>. Then you can use the element in your html like this.</p>
+				<p>To consume the web components you must first import the elements you wish to use. If you for example want to use the <code>wl-button</code> you must import from path <code>"weightless/button"</code>. Then you can use the element in your html like this.</p>
 				
 				<code-example-element>
 					<wl-button>Button</wl-button>

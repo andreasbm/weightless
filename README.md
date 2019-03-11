@@ -2,8 +2,8 @@
   <img src="https://raw.githubusercontent.com/andreasbm/elements/master/assets/brand/logo-text-dark.png?token=AF-iBdlG6k8f6xzqhH4Olmo4eCu6LGLWks5chPVBwA%3D%3D" alt="Logo" width="400" height="auto" />
 </p>
 <p align="center">
-		<a href="https://npmcharts.com/compare/@weightless/all?minimal=true"><img alt="Downloads per month" src="https://img.shields.io/npm/dm/@weightless/all.svg" height="20"/></a>
-<a href="https://www.npmjs.com/package/@weightless/all"><img alt="NPM Version" src="https://img.shields.io/npm/v/@weightless/all.svg" height="20"/></a>
+		<a href="https://npmcharts.com/compare/weightless?minimal=true"><img alt="Downloads per month" src="https://img.shields.io/npm/dm/weightless.svg" height="20"/></a>
+<a href="https://www.npmjs.com/package/weightless"><img alt="NPM Version" src="https://img.shields.io/npm/v/weightless.svg" height="20"/></a>
 <a href="https://david-dm.org/andreasbm/weightless"><img alt="Dependencies" src="https://img.shields.io/david/andreasbm/weightless.svg" height="20"/></a>
 <a href="https://github.com/andreasbm/weightless/graphs/contributors"><img alt="Contributors" src="https://img.shields.io/github/contributors/andreasbm/weightless.svg" height="20"/></a>
 	</p>
@@ -44,7 +44,7 @@ Go [here](https://weightless.dev/elements) to try the demo.
 ## ➤ Installation
 
 ```javascript
-npm i @weightless/all
+npm i weightless
 ```
 
 
