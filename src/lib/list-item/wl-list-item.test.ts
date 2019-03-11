@@ -26,9 +26,9 @@ describe("wl-list-item", () => {
 	it("should render the slots", async () => {
 		const assignedNodes = assignedNodesMap($listItem.shadowRoot!);
 
-		expect(assignedNodes["left"].length).to.be.above(0);
+		expect(assignedNodes["before"].length).to.be.above(0);
 		expect(assignedNodes[""].length).to.be.above(0);
-		expect(assignedNodes["right"].length).to.be.above(0);
+		expect(assignedNodes["after"].length).to.be.above(0);
 	});
 
 	it("should have a list item role", () => {
