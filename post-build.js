@@ -10,9 +10,10 @@ const outLib = "dist";
  * @returns {Promise<void>}
  */
 async function postBuild () {
+	rewrite(outLib);
 	copyFile("./package.json", `./${outLib}/package.json`);
 	copyFile("./README.md", `./${outLib}/README.md`);
-	rewrite(outLib);
+	copyFile("./src/lib/style", `./${outLib}/src/lib/style`);
 }
 
 /**

@@ -44,7 +44,7 @@ export default class ThemePage extends LitElement {
 			<p>There are lots of different css variables you can change. Here are some examples.</p>
 			<demo-element>
 				<wl-select placeholder="Serif Font" filled @change="${(e: Event) => setProperty("--font-family-serif", (<HTMLSelectElement>e.target).value)}">
-					<option disabled value="" selected>Select a font</option>
+					<option value="Roboto Slab" selected>Roboto Slab</option>
 					<option value="courier new">Courier New</option>
 					<option value="times">Times</option>
 					<option value="cursive">Cursive</option>
@@ -54,7 +54,7 @@ export default class ThemePage extends LitElement {
 				</wl-select>
 				<br/>
 				<wl-select placeholder="Sans Serif Font" filled @change="${(e: Event) => setProperty("--font-family-sans-serif", (<HTMLSelectElement>e.target).value)}">
-					<option disabled value="" selected>Select a font</option>
+					<option value="Roboto Condensed" selected>Roboto Condensed</option>
 					<option value="helvetica">Helvetica</option>
 					<option value="verdana">Verdana</option>
 					<option value="sans-serif">Sans-serif</option>
