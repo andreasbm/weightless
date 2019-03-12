@@ -5,7 +5,7 @@ import "../../../lib/button";
 import "../../../lib/icon";
 import { cssResult } from "../../../lib/util/css";
 import { openCodepen } from "../../codepen";
-import { UNPGK_URL } from "../../constants";
+import { GOOGLE_FONT_URL, MATERIAL_ICONS_URL, UNPGK_URL } from "../../constants";
 import { copyToClipboard } from "../../copy-to-clipboard";
 import { HighlightElement } from "../highlight/highlight-element";
 import "../highlight/highlight-element";
@@ -42,7 +42,8 @@ export class CodeExampleElement extends LitElement {
 	openCodepen () {
 		openCodepen({
 			html: this.$highlighter.cleanedText,
-			js_external: `${UNPGK_URL}`
+			js_external: `${UNPGK_URL}`,
+			css_external: `${MATERIAL_ICONS_URL};${GOOGLE_FONT_URL}`
 		});
 	}
 

@@ -3,6 +3,8 @@ export const NPM_URL = `https://www.npmjs.com/package/@weightless/all`;
 export const TWITTER_URL = `https://twitter.com/andreasmehlsen`;
 export const DOCS_URL = (element: string) => `https://github.com/andreasbm/weightless/tree/master/src/lib/${element}`;
 export const UNPGK_URL = `https://unpkg.com/weightless/umd/weightless.min.js`;
+export const GOOGLE_FONT_URL = `https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400,700|Roboto+Slab:300,400,700`;
+export const MATERIAL_ICONS_URL = `https://fonts.googleapis.com/icon?family=Material+Icons`;
 export interface IBullet {
 	title: string;
 	text: string;
