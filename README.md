@@ -28,6 +28,7 @@
 * [➤ Demo](#-demo)
 * [➤ Installation](#-installation)
 * [➤ Elements](#-elements)
+* [➤ Roadmap](#-roadmap)
 * [➤ Contributors](#-contributors)
 * [➤ License](#-license)
 
@@ -75,6 +76,13 @@ npm i weightless
 | Textfield | `wl-textfield` | Singleline text fields. | [Documentation](/src/lib/textfield) | [Demo](https://weightless.dev/elements/textfield) |
 | Title | `wl-title` | Indicate the start of a new section. | [Documentation](/src/lib/title) | [Demo](https://weightless.dev/elements/title) |
 | Tooltip | `wl-tooltip` | Informative context related text. | [Documentation](/src/lib/tooltip) | [Demo](https://weightless.dev/elements/tooltip) |
+
+
+[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#roadmap)
+
+## ➤ Roadmap
+
+There's lots of exciting things on the roadmap. Until v1.0.0 you can expect the API to be fairly stable but refactoring might still happen and break the backwards compatibility. You are very welcome to use the library, create pull requests or add issues.
 
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#contributors)
