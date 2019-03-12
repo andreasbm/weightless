@@ -87,7 +87,7 @@
 	--_input-state-color: #{$input-state-color-active};
 }
 
-:host([dirty]), :host(:focus-within), :host([type="color"]), :host([type="date"]), :host([type="file"]) {
+:host([dirty]), :host(:focus-within), :host([type="color"]), :host([type="date"]), :host([type="file"]), :host([type="range"]) {
 	#placeholder {
 		font-size: #{$input-placeholder-font-size};
 		top: #{$input-padding-top-bottom};
@@ -140,6 +140,19 @@
 
 	&::-webkit-color-swatch {
 		border: none;
+	}
+}
+
+::slotted(input[type="range"]) {
+	width: 100%;
+	background: transparent;
+
+	&::-webkit-slider-runnable-track {
+		background: orange;
+	}
+
+	&::-webkit-slider-thumb {
+		background: red;
 	}
 }
 

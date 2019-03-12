@@ -8,6 +8,7 @@ export interface IRouteData {
 	title: string;
 	desc: string;
 	img: string;
+	docs?: string;
 }
 
 export const COMPONENTS_ROUTES: IRoute<IRouteData>[] = [
@@ -166,6 +167,16 @@ export const COMPONENTS_ROUTES: IRoute<IRouteData>[] = [
 		}
 	},
 	{
+		path: "theme",
+		component: () => import("./elements/theme-page"),
+		data: {
+			title: "Theme",
+			desc: "Customize every element to fit your brand",
+			img: iconPath("theme"),
+			docs: "style"
+		}
+	},
+	{
 		path: "title",
 		component: () => import("./elements/title-page"),
 		data: {
@@ -181,15 +192,6 @@ export const COMPONENTS_ROUTES: IRoute<IRouteData>[] = [
 			title: "Tooltip",
 			desc: "Informative context related text",
 			img: iconPath("tooltip")
-		}
-	},
-	{
-		path: "theme",
-		component: () => import("./elements/theme-page"),
-		data: {
-			title: "Theme",
-			desc: "Swap out the colors",
-			img: iconPath("theme")
 		}
 	},
 	{

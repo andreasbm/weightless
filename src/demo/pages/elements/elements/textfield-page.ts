@@ -1,5 +1,6 @@
 import { customElement, html, LitElement } from "lit-element";
 import "../../../../lib/title/wl-title";
+import "../../../../lib/textfield/wl-textfield";
 import { cssResult } from "../../../../lib/util/css";
 import "../../../elements/code-example/code-example-element";
 import "../../../elements/demo/demo-element";
@@ -80,6 +81,7 @@ export default class TextfieldPage extends LitElement {
 					<wl-textfield placeholder="Search" type="search"></wl-textfield>
 					<wl-textfield placeholder="Tel" type="tel"></wl-textfield>
 					<wl-textfield placeholder="File" type="file"></wl-textfield>
+					<wl-textfield placeholder="Range" type="range"></wl-textfield>
 				</code-example-element>
 			</demo-element>
 

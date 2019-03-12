@@ -75,7 +75,7 @@ export default class ElementsPage extends LitElement {
 							<wl-title level="1">${this.currentRoute.data.title}</wl-title>
 							<wl-label>${this.currentRoute.data.desc}</wl-label>
 						</aside>
-						<a tabindex="-1" href="${DOCS_URL(this.currentRoute.path)}" target="_blank" rel="noopener">
+						<a tabindex="-1" href="${DOCS_URL(this.currentRoute.data.docs || this.currentRoute.path)}" target="_blank" rel="noopener">
 							<wl-button id="open-docs" inverted flat>
 								<span>Documentation</span>
 								<wl-icon>open_in_new</wl-icon>

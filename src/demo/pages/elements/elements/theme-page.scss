@@ -6,6 +6,10 @@ $color-size: #{size(150)};
 	margin: #{$spacing-m} 0;
 }
 
+#theme-selector {
+	width: 100%;
+}
+
 #palette {
 	display: grid;
 	grid-template-columns: repeat(auto-fill, minmax(#{$color-size}, 1fr));

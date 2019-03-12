@@ -100,15 +100,21 @@ export function isHidden ($elem: HTMLElement, style?: CSSStyleDeclaration) {
 }
 
 /**
- * Sets a property on an element.
- * @param $tname
+ * Sets a css property on an element.
  * @param name
  * @param value
  * @param $target
  */
-export function setProperty (name: string,
-                             value: string,
-                             {$target = document.documentElement}: Partial<{$target: HTMLElement}> = {}) {
+export function setProperty (name: string, value: string, $target: HTMLElement = document.documentElement) {
 	$target.style.setProperty(name, value);
+}
+
+/**
+ * Removes a css property on an element.
+ * @param name
+ * @param $target
+ */
+export function removeProperty (name: string, $target: HTMLElement = document.documentElement) {
+	$target.style.removeProperty(name);
 }
 

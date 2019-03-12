@@ -2,7 +2,7 @@ import { customElement, html, LitElement } from "lit-element";
 import { repeat } from "lit-html/directives/repeat";
 import { ENTER } from "../../../lib/util/constant/keycode";
 import { cssResult } from "../../../lib/util/css";
-import { setColor } from "../../../lib/util/theme";
+import { removeColor, setColor } from "../../../lib/util/theme";
 import { sharedStyles } from "../../style/shared";
 import styles from "./theme-element.scss";
 import "../../../lib/icon/wl-icon";
@@ -13,7 +13,6 @@ const themeClass = (themeName: string) => {
 };
 
 const setThemeColor = (hex: string) => {
-	console.log(hex);
 	const rgb = hexToRGB(hex);
 	const contrastRgb = contrastColor(rgb);
 
@@ -24,7 +23,15 @@ const setThemeColor = (hex: string) => {
 	setColor("primary", 400, contrastRgb, {isContrast: true});
 	setColor("primary", 500, contrastRgb, {isContrast: true});
 	setColor("primary", 600, contrastRgb, {isContrast: true});
+};
 
+const removeCustomTheme = () => {
+	removeColor("primary", 400);
+	removeColor("primary", 500);
+	removeColor("primary", 600);
+	removeColor("primary", 400, {isContrast: true});
+	removeColor("primary", 500, {isContrast: true});
+	removeColor("primary", 600, {isContrast: true});
 };
 
 interface ITheme {
@@ -49,6 +56,7 @@ export class ThemeComponent extends LitElement {
 	}
 
 	setTheme (themeName: string) {
+		removeCustomTheme();
 		document.documentElement!.classList.remove(themeClass(this.currentThemeName));
 		document.documentElement!.classList.add(themeClass(themeName));
 		this.currentThemeName = themeName;
@@ -70,7 +78,7 @@ export class ThemeComponent extends LitElement {
 					${theme.name === this.currentThemeName ? html`<wl-icon>check</wl-icon>` : ""}	 
 				</div>
 			`)}
-			<input id="custom-color-picker" type="color" value="#57FFAC" @change="${(e: Event) => setThemeColor((<HTMLInputElement>e.target).value)}" />
+			<input id="custom-color-picker" type="color" value="#57FFAC" @change="${(e: Event) => {this.currentThemeName = ""; setThemeColor((<HTMLInputElement>e.target).value); this.requestUpdate().then()}}" />
 		`;
 	}
 }
