@@ -41,7 +41,7 @@ Symbols for common actions and items.
 Go [here](https://weightless.dev/elements/icon) to try the demo.
 
 <a href="https://weightless.dev/elements/icon" align="center">
-  <img src="https://raw.githubusercontent.com/andreasbm/elements/master/screenshots/wl-icon.png?token=AF-iBccPgS4Ki6G_fVHVhuvjSCR-236wks5chEm4wA%3D%3D" width="700" />
+  <img src="https://raw.githubusercontent.com/andreasbm/elements/master/screenshots/wl-icon.png" width="700" />
 </a>
 
 

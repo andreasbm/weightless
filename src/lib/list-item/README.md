@@ -67,7 +67,7 @@ Display an item in a list.
 Go [here](https://weightless.dev/elements/list-item) to try the demo.
 
 <a href="https://weightless.dev/elements/list-item" align="center">
-  <img src="https://raw.githubusercontent.com/andreasbm/elements/master/screenshots/wl-list-item.png?token=AF-iBbNvw_OKWWkTFf2wuzBu9bJLwio1ks5chEfywA%3D%3D" width="700" />
+  <img src="https://raw.githubusercontent.com/andreasbm/elements/master/screenshots/wl-list-item.png" width="700" />
 </a>
 
 

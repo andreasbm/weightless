@@ -1,14 +1,13 @@
 import { customElement, html, LitElement } from "lit-element";
 import { cssResult } from "../../../lib/util/css";
 import { openCodepen } from "../../codepen";
-import { GITHUB_URL, UNPGK_URL } from "../../constants";
+import { GITHUB_URL, GOOGLE_FONT_URL, MATERIAL_ICONS_URL, UNPGK_URL } from "../../constants";
 import { sharedStyles } from "../../style/shared";
 import "../../elements/container/container-element";
 import "../../../lib/title/wl-title";
 import "../../elements/highlight/highlight-element";
 import "../../elements/footer/footer-element";
 import "../../elements/code-example/code-example-element";
-
 
 import styles from "./get-started-page.scss";
 import "../../../lib/divider";
@@ -22,7 +21,8 @@ export default class GetStartedPage extends LitElement {
 		e.preventDefault();
 		openCodepen({
 			html: `<wl-button>Button</wl-button>`,
-			js_external: `${UNPGK_URL}`
+			js_external: `${UNPGK_URL}`,
+			css_external: `${MATERIAL_ICONS_URL};${GOOGLE_FONT_URL}`
 		});
 	}
 
@@ -36,14 +36,17 @@ export default class GetStartedPage extends LitElement {
 				
 				<wl-divider></wl-divider>
 				<wl-title level="3">Installation</wl-title>
-				<p>To install Weightless you can run the following command to install all of the components.</p>
+				<p>To install Weightless you can run the following command</p>
 				<highlight-element text="npm i weightless"></highlight-element>
 				
 				<wl-divider></wl-divider>
 				<wl-title level="3">Consumption</wl-title>
-				<p>To consume the web components you must first import the elements you wish to use. If you for example want to use the <code>wl-button</code> you must import from path <code>"weightless/button"</code>. Then you can use the element in your html like this.</p>
+				<p>To consume the web components you must first import the elements you wish to use. If you for example want to use the <code>wl-button</code> you must import from path <code>"weightless/button"</code> like this.</p>
+				<highlight-element lang="js" text='import "weightless/button"'></highlight-element>
 				
-				<code-example-element>
+				<p>Then you can use the element in your html like this.</p>
+				
+				<code-example-element lang="js">
 					<wl-button>Button</wl-button>
 				</code-example-element>
 		

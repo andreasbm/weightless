@@ -80,7 +80,7 @@ const start = async () => {
 
 		await $elem.asElement()!.screenshot({
 			...options,
-			path: path.resolve(__dirname, `${elem}-element.${options.type}`)
+			path: path.resolve(__dirname, `wl-${elem}.${options.type}`)
 		});
 	}
 

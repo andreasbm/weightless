@@ -87,7 +87,7 @@ Singleline text fields.
 Go [here](https://weightless.dev/elements/textfield) to try the demo.
 
 <a href="https://weightless.dev/elements/textfield" align="center">
-  <img src="https://raw.githubusercontent.com/andreasbm/elements/master/screenshots/wl-textfield.png?token=AF-iBfo3dTDYCa2E9l6FKRjQ5A6KLAGcks5chEsCwA%3D%3D" width="700" />
+  <img src="https://raw.githubusercontent.com/andreasbm/elements/master/screenshots/wl-textfield.png" width="700" />
 </a>
 
 

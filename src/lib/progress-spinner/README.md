@@ -45,7 +45,7 @@ Fills a circle from 0% to 100%.
 Go [here](https://weightless.dev/elements/progress-spinner) to try the demo.
 
 <a href="https://weightless.dev/elements/progress-spinner" align="center">
-  <img src="https://raw.githubusercontent.com/andreasbm/elements/master/screenshots/wl-progress-spinner.png?token=AF-iBWI_tLK5VwvHN8ek2kaMbSWtaobnks5chEqCwA%3D%3D" width="700" />
+  <img src="https://raw.githubusercontent.com/andreasbm/elements/master/screenshots/wl-progress-spinner.png" width="700" />
 </a>
 
 

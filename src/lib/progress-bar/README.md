@@ -45,7 +45,7 @@ Fills a bar from 0% to 100%.
 Go [here](https://weightless.dev/elements/progress-bar) to try the demo.
 
 <a href="https://weightless.dev/elements/progress-bar" align="center">
-  <img src="https://raw.githubusercontent.com/andreasbm/elements/master/screenshots/wl-progress-bar.png?token=AF-iBfAIx-CJ8LWZEMLgTkOsTWpyCMEWks5chEprwA%3D%3D" width="700" />
+  <img src="https://raw.githubusercontent.com/andreasbm/elements/master/screenshots/wl-progress-bar.png" width="700" />
 </a>
 
 

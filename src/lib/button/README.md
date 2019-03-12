@@ -69,7 +69,7 @@ Allow users to take actions, and make choices, with a single tap.
 Go [here](https://weightless.dev/elements/button) to try the demo.
 
 <a href="https://weightless.dev/elements/button" align="center">
-  <img src="https://raw.githubusercontent.com/andreasbm/elements/master/screenshots/wl-button.png?token=AF-iBV1pZn7D_ITJDLgD6NVlQjtvXupXks5cgq0VwA%3D%3D" width="700" />
+  <img src="https://raw.githubusercontent.com/andreasbm/elements/master/screenshots/wl-button.png" width="700" />
 </a>
 
 

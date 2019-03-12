@@ -92,7 +92,7 @@ Highly interruptive messages.
 Go [here](https://weightless.dev/elements/dialog) to try the demo.
 
 <a href="https://weightless.dev/elements/dialog" align="center">
-  <img src="https://raw.githubusercontent.com/andreasbm/elements/master/screenshots/wl-dialog.png?token=AF-iBdDsRo4rR9ss5Ix_SW9kpZMXCfILks5chEh-wA%3D%3D" width="700" />
+  <img src="https://raw.githubusercontent.com/andreasbm/elements/master/screenshots/wl-dialog.png" width="700" />
 </a>
 
 

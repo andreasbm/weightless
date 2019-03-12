@@ -3,6 +3,6 @@
 	"input": "src/lib/button/blueprint.md",
 	"output": "src/lib/button/README.md",
 	"tag": "wl-button",
-	"img": "https://raw.githubusercontent.com/andreasbm/elements/master/screenshots/wl-button.png?token=AF-iBV1pZn7D_ITJDLgD6NVlQjtvXupXks5cgq0VwA%3D%3D",
+	"img": "https://raw.githubusercontent.com/andreasbm/elements/master/screenshots/wl-button.png",
 	"demo": "https://weightless.dev/elements/button"
 }

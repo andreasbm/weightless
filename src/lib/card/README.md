@@ -46,7 +46,7 @@ Group related content and action.
 Go [here](https://weightless.dev/elements/card) to try the demo.
 
 <a href="https://weightless.dev/elements/card" align="center">
-  <img src="https://raw.githubusercontent.com/andreasbm/elements/master/screenshots/wl-card.png?token=AF-iBRxtZw427RRZkAkbgF5eNXYE3TP3ks5chEg_wA%3D%3D" width="700" />
+  <img src="https://raw.githubusercontent.com/andreasbm/elements/master/screenshots/wl-card.png" width="700" />
 </a>
 
 

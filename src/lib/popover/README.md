@@ -70,7 +70,7 @@ Contextual anchored elements.
 Go [here](https://weightless.dev/elements/popover) to try the demo.
 
 <a href="https://weightless.dev/elements/popover" align="center">
-  <img src="https://raw.githubusercontent.com/andreasbm/elements/documentation/screenshots/wl-popover.png?token=AF-iBQSqMzuMAQ5EiwnHa2DFSM_IS0ihks5cg7uDwA%3D%3D" width="700" />
+  <img src="https://raw.githubusercontent.com/andreasbm/elements/documentation/screenshots/wl-popover.png" width="700" />
 </a>
 
 

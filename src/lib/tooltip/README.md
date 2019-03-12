@@ -73,7 +73,7 @@ Informative context related text.
 Go [here](https://weightless.dev/elements/tooltip) to try the demo.
 
 <a href="https://weightless.dev/elements/tooltip" align="center">
-  <img src="https://raw.githubusercontent.com/andreasbm/elements/master/screenshots/wl-tooltip.png?token=AF-iBYKqW5Hm2x5ac_PMHEQ6wGDqACyVks5chEsqwA%3D%3D" width="700" />
+  <img src="https://raw.githubusercontent.com/andreasbm/elements/master/screenshots/wl-tooltip.png" width="700" />
 </a>
 
 

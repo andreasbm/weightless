@@ -52,7 +52,7 @@ Select one option from a set.
 Go [here](https://weightless.dev/elements/radio) to try the demo.
 
 <a href="https://weightless.dev/elements/radio" align="center">
-  <img src="https://raw.githubusercontent.com/andreasbm/elements/master/screenshots/wl-radio.png?token=AF-iBcoNrrO2pTIZCQ-9BR6Ih6wh0bq7ks5chEqcwA%3D%3D" width="700" />
+  <img src="https://raw.githubusercontent.com/andreasbm/elements/master/screenshots/wl-radio.png" width="700" />
 </a>
 
 

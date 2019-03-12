@@ -49,7 +49,7 @@ Indicate the start of a new section.
 Go [here](https://weightless.dev/elements/title) to try the demo.
 
 <a href="https://weightless.dev/elements/title" align="center">
-  <img src="https://raw.githubusercontent.com/andreasbm/elements/master/screenshots/wl-title.png?token=AF-iBdhHfU2b4hLu53mNAJaVMKMrvQbtks5chEsZwA%3D%3D" width="700" />
+  <img src="https://raw.githubusercontent.com/andreasbm/elements/master/screenshots/wl-title.png" width="700" />
 </a>
 
 
