@@ -59,7 +59,7 @@ export default class HomePage extends LitElement {
 		return html`
 			<container-element id="main-container" centered>
 				<wl-title class="title">Weightless</wl-title>
-				<span class="text">High quality Web Components with a small footprint.</span>
+				<span class="text">High quality web components with a small footprint.</span>
 				<div class="cta-area">
 					<router-link path="get-started"><wl-button>Get Started</wl-button></router-link>
 				</div>
