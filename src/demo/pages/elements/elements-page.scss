@@ -20,6 +20,14 @@ $elements-page-menu-width: #{size(250)};
 	height: calc(100vh - var(--nav-height));
 }
 
+:host-context(.darkmode) {
+	.menu-item {
+		.img {
+			filter: invert(1);
+		}
+	}
+}
+
 #header {
 	display: flex;
 	justify-content: space-between;

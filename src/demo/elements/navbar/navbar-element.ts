@@ -86,6 +86,14 @@ export class ThemeComponent extends WlNav {
 		setProperty("--foreground", foreground);
 		setProperty("--background", background);
 		setPalette("shade", shade);
+
+		// Add darkmode to class to respond to the change other where
+		const classList = document.documentElement.classList;
+		if (this.darkMode) {
+			classList.add("darkmode");
+		} else {
+			classList.remove("darkmode");
+		}
 	}
 
 	private rotateLogo () {
