@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://raw.githubusercontent.com/andreasbm/elements/master/assets/brand/logo-text-dark.png?token=AF-iBdlG6k8f6xzqhH4Olmo4eCu6LGLWks5chPVBwA%3D%3D" alt="Logo" width="400" height="auto" />
+  <img src="https://raw.githubusercontent.com/andreasbm/elements/master/assets/brand/logo-text-dark.png" alt="Logo" width="400" height="auto" />
 </p>
 <p align="center">
 		<a href="https://npmcharts.com/compare/weightless?minimal=true"><img alt="Downloads per month" src="https://img.shields.io/npm/dm/weightless.svg" height="20"/></a>
