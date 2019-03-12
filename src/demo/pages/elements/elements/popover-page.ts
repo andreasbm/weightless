@@ -1,6 +1,7 @@
 import { customElement, html, LitElement, property } from "lit-element";
 import "../../../../lib/button/wl-button";
 import "../../../../lib/card/wl-card";
+import "../../../../lib/select/wl-select";
 import "../../../../lib/popover-card";
 import { openPopover } from "../../../../lib/popover/open-popover";
 import { defaultPopoverConfig, IPopoverBaseProperties, WlPopover } from "../../../../lib/popover/wl-popover";

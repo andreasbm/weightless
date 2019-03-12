@@ -54,7 +54,7 @@ export function stopEvent (e: Event) {
  * @param listener
  */
 export function addClickAwayListener ($area: EventTarget, listener: ((e?: Event) => void)): EventListenerSubscription {
-	return addListener(window, "click", (e: Event) => {
+	return addListener(window, ["mousedown", "pointerdown"], (e: Event) => {
 		if (!("composedPath" in e)) return;
 
 		// Check if the container is in the event path

@@ -3,7 +3,7 @@ import { ScreenshotOptions } from "puppeteer";
 const path = require("path");
 const puppeteer = require("puppeteer");
 
-const ORIGIN = `https://pwa-test-10072.firebaseapp.com`;
+const ORIGIN = `https://weightless.dev`;
 const VIEWPORT = {width: 1000, height: 1000, deviceScaleFactor: 2};
 const SCREENSHOT_OPTIONS: ScreenshotOptions = {omitBackground: true, type: "png"};
 
@@ -16,6 +16,7 @@ const ELEMENTS = [
 	"divider",
 	"icon",
 	"label",
+	"list-item",
 	"popover",
 	"progress-bar",
 	"progress-spinner",
@@ -33,7 +34,7 @@ const ELEMENTS = [
  * @param elem
  */
 function getDemoUrl (elem: string): string {
-	return `${ORIGIN}/demo/${elem}`;
+	return `${ORIGIN}/elements/${elem}`;
 }
 
 /**
