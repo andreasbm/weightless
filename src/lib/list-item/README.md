@@ -1,53 +1,14 @@
 
-[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#wl-banner)
-
-# ➤ wl-banner
-
-Display a non-interruptive message and related optional actions.
-
-[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#properties)
-
-## ➤ Properties
-
-| Property | Attribute | Type       | Default  | Description         |
-|----------|-----------|------------|----------|---------------------|
-| `role`   | `role`    | `AriaRole` | "banner" | Role of the banner. |
-
-
-[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#css-custom-properties)
-
-## ➤ CSS Custom Properties
-
-| Property                   | Description                  |
-|----------------------------|------------------------------|
-| `--banner-bg`              | Background.                  |
-| `--banner-color`           | Color.                       |
-| `--banner-content-padding` | Padding of the content slot. |
-| `--banner-icon-color`      | Color of the icon.           |
-| `--banner-icon-margin`     | Margin of the icon slot.     |
-| `--banner-padding`         | Padding.                     |
-
-
-[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#slots)
-
-## ➤ Slots
-
-| Name     | Description                                      |
-|----------|--------------------------------------------------|
-| `action` | Action content (you can have multiple slots named action). |
-| `icon`   | Icon content.                                    |
-| `text`   | Text content.                                    |
-
 
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#usage)
 
 ## ➤ Usage
 
-Go [here](https://weightless.dev/elements/banner) to try the demo.
+Go [here](https://weightless.dev/elements/list-item) to try the demo.
 
-<a href="https://weightless.dev/elements/banner" align="center">
-  <img src="https://raw.githubusercontent.com/andreasbm/elements/master/screenshots/wl-banner.png?token=AF-iBbNvw_OKWWkTFf2wuzBu9bJLwio1ks5chEfywA%3D%3D" width="700" />
+<a href="https://weightless.dev/elements/list-item" align="center">
+  <img src="https://raw.githubusercontent.com/andreasbm/elements/master/screenshots/wl-list-item.png?token=AF-iBbNvw_OKWWkTFf2wuzBu9bJLwio1ks5chEfywA%3D%3D" width="700" />
 </a>
 
 

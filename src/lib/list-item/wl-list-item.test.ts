@@ -13,9 +13,9 @@ describe("wl-list-item", () => {
 	beforeEach(async () => {
 		$container.innerHTML = `
 			<wl-list-item>
-				<div slot="left">Hello</div>
+				<div slot="before">Hello</div>
 				<div>Lorem ipsum</div>
-				<div slot="right">World</div>
+				<div slot="after">World</div>
 			</wl-list-item>`;
 
 		await waitForElement("wl-list-item");
