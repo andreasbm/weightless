@@ -61,7 +61,7 @@ export default class ElementsPage extends LitElement {
 			<div id="menu">
 				${repeat(COMPONENTS_ROUTES.filter(route => route.path !== "**"), route => html`
 					<router-link class="menu-item" path="${route.path}">
-						<wl-list-item clickable ?active="${path({start: true, end: false}).endsWith(route.path)}">
+						<wl-list-item clickable ?active="${path({endSlash: false}).endsWith(route.path)}">
 							${route.data != null ? html`<img slot="before" class="img" src="${route.data.img}" alt="Icon" />` : ""}
 							<span>${route.data != null ? route.data.title : route.path}</span>
 						</wl-list-item>
