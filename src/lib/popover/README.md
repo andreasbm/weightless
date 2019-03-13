@@ -14,9 +14,9 @@ Contextual anchored elements.
 | `$backdrop`         |                     | `WlBackdrop`        | **required** | Backdrop element.                                |
 | `$container`        |                     | `HTMLElement`       | **required** | Container element.                               |
 | `$content`          |                     | `FocusTrap`         | **required** | Content of the popover.                          |
-| `anchor`            | `anchor`            | `string \| Element` | **required** | Anchor element or query.                         |
-| `anchorCloseEvents` | `anchorCloseEvents` | `string[]`          | **required** | Events on the anchor that makes the popover close itself. |
-| `anchorOpenEvents`  | `anchorOpenEvents`  | `string[]`          | **required** | Events on the anchor that makes the popover open itself. |
+| `anchor`            | `anchor`            | `string \| Element` |              | Anchor element or query.                         |
+| `anchorCloseEvents` | `anchorCloseEvents` | `string[]`          |              | Events on the anchor that makes the popover close itself. |
+| `anchorOpenEvents`  | `anchorOpenEvents`  | `string[]`          |              | Events on the anchor that makes the popover open itself. |
 | `anchorOriginX`     | `anchorOriginX`     | `OriginX`           | "left"       | X origin of the anchored point.                  |
 | `anchorOriginY`     | `anchorOriginY`     | `OriginY`           | "top"        | Y origin of the anchored point.                  |
 | `backdrop`          | `backdrop`          | `boolean`           | false        | Whether the backdrop is visible or not.          |

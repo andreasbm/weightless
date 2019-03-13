@@ -24,7 +24,7 @@ Highly interruptive messages.
 | `role`             | `role`             | `AriaRole`    | "dialog"     | Role of the dialog.                              |
 | `scrollContainer`  | `scrollContainer`  | `EventTarget` |              | The container the overlay lives in.              |
 | `scrollable`       | `scrollable`       | `boolean`     | false        | Makes the dialog scrollable.                     |
-| `size`             | `size`             | `DialogSize`  | **required** | Size of the dialog.                              |
+| `size`             | `size`             | `DialogSize`  |              | Size of the dialog.                              |
 
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#events)

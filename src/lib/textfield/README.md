@@ -14,12 +14,12 @@ Singleline text fields.
 | `autocomplete` | `autocomplete` | `"on" \| "off"` | **required** | Whether autocomplete is on or off.               |
 | `disabled`     | `disabled`     | `boolean`       | false        | Disables the element.                            |
 | `filled`       | `filled`       | `boolean`       | false        | Fills the input with a solid color.              |
-| `maxLength`    | `maxLength`    | `number`        | **required** | Max value length.                                |
-| `minLength`    | `minLength`    | `number`        | **required** | Min value length.                                |
-| `name`         | `name`         | `string`        | **required** | Name of the native form element.                 |
+| `maxLength`    | `maxLength`    | `number`        |              | Max value length.                                |
+| `minLength`    | `minLength`    | `number`        |              | Min value length.                                |
+| `name`         | `name`         | `string`        |              | Name of the native form element.                 |
 | `outlined`     | `outlined`     | `boolean`       | false        | Makes the input outlined.                        |
-| `pattern`      | `pattern`      | `string`        | **required** | Value pattern.                                   |
-| `placeholder`  | `placeholder`  | `string`        | **required** | Placeholder text.                                |
+| `pattern`      | `pattern`      | `string`        |              | Value pattern.                                   |
+| `placeholder`  | `placeholder`  | `string`        |              | Placeholder text.                                |
 | `readonly`     | `readonly`     | `boolean`       | false        | Makes the element readonly (disabled but tabbable) |
 | `required`     | `required`     | `boolean`       | false        | Makes the element required in a form context.    |
 | `role`         | `role`         | `AriaRole`      | "textbox"    | Role of the input.                               |

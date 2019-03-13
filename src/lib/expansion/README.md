@@ -20,7 +20,7 @@ Provide an expandable details-summary view.
 | `disabled`          | `disabled`      | `boolean`     | false         | Disables the element.                            |
 | `duration`          | `duration`      | `number`      | 180           | The duration of the animations.                  |
 | `icon`              | `icon`          | `string`      | "expand_more" | Icon name.                                       |
-| `name`              | `name`          | `string`      | **required**  | Name of the native form element.                 |
+| `name`              | `name`          | `string`      |               | Name of the native form element.                 |
 | `noRipple`          | `noRipple`      | `boolean`     | false         | Deactivates the ripple.                          |
 | `readonly`          | `readonly`      | `boolean`     | false         | Makes the element readonly (disabled but tabbable) |
 | `required`          | `required`      | `boolean`     | false         | Makes the element required in a form context.    |

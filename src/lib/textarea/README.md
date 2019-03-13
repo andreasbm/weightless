@@ -12,19 +12,19 @@ Multiline text fields.
 | Property       | Attribute      | Type            | Default      | Description                                      |
 |----------------|----------------|-----------------|--------------|--------------------------------------------------|
 | `autocomplete` | `autocomplete` | `"on" \| "off"` | **required** | Whether autocomplete is on or off.               |
-| `cols`         | `cols`         | `number`        | **required** | Amount of columns.                               |
+| `cols`         | `cols`         | `number`        |              | Amount of columns.                               |
 | `disabled`     | `disabled`     | `boolean`       | false        | Disables the element.                            |
 | `filled`       | `filled`       | `boolean`       | false        | Fills the input with a solid color.              |
-| `maxLength`    | `maxLength`    | `number`        | **required** | Max value length.                                |
-| `minLength`    | `minLength`    | `number`        | **required** | Min value length.                                |
-| `name`         | `name`         | `string`        | **required** | Name of the native form element.                 |
+| `maxLength`    | `maxLength`    | `number`        |              | Max value length.                                |
+| `minLength`    | `minLength`    | `number`        |              | Min value length.                                |
+| `name`         | `name`         | `string`        |              | Name of the native form element.                 |
 | `outlined`     | `outlined`     | `boolean`       | false        | Makes the input outlined.                        |
-| `pattern`      | `pattern`      | `string`        | **required** | Value pattern.                                   |
-| `placeholder`  | `placeholder`  | `string`        | **required** | Placeholder text.                                |
+| `pattern`      | `pattern`      | `string`        |              | Value pattern.                                   |
+| `placeholder`  | `placeholder`  | `string`        |              | Placeholder text.                                |
 | `readonly`     | `readonly`     | `boolean`       | false        | Makes the element readonly (disabled but tabbable) |
 | `required`     | `required`     | `boolean`       | false        | Makes the element required in a form context.    |
 | `role`         | `role`         | `AriaRole`      | "textbox"    | Role of the input.                               |
-| `rows`         | `rows`         | `number`        | **required** | Amount of rows.                                  |
+| `rows`         | `rows`         | `number`        |              | Amount of rows.                                  |
 | `type`         | `type`         | `InputType`     | "text"       | Type of the input.                               |
 | `value`        | `value`        | `string`        | false        | Value of the form element.                       |
 

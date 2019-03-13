@@ -1,4 +1,4 @@
-{{ doc:src/lib/banner/wl-list-item.ts }}
+{{ doc:src/lib/banner/wl-banner.ts }}
 
 ## Usage
 

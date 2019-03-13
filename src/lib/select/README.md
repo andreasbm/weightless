@@ -14,9 +14,9 @@ Select one or more values from a set of options.
 | `autocomplete` | `autocomplete` | `"on" \| "off"` | **required** | Whether autocomplete is on or off.               |
 | `disabled`     | `disabled`     | `boolean`       | false        | Disables the element.                            |
 | `filled`       | `filled`       | `boolean`       | false        | Fills the input with a solid color.              |
-| `name`         | `name`         | `string`        | **required** | Name of the native form element.                 |
+| `name`         | `name`         | `string`        |              | Name of the native form element.                 |
 | `outlined`     | `outlined`     | `boolean`       | false        | Makes the input outlined.                        |
-| `placeholder`  | `placeholder`  | `string`        | **required** | Placeholder text.                                |
+| `placeholder`  | `placeholder`  | `string`        |              | Placeholder text.                                |
 | `readonly`     | `readonly`     | `boolean`       | false        | Makes the element readonly (disabled but tabbable) |
 | `required`     | `required`     | `boolean`       | false        | Makes the element required in a form context.    |
 | `role`         | `role`         | `AriaRole`      | "select"     | Role of the select.                              |

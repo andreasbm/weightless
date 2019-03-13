@@ -9,17 +9,17 @@ Display an item in a list.
 
 ## ➤ Properties
 
-| Property    | Attribute   | Type                   | Default      | Description                                      |
-|-------------|-------------|------------------------|--------------|--------------------------------------------------|
-| `clickable` | `clickable` | `boolean`              | false        | Makes the element clickable.                     |
-| `disabled`  | `disabled`  | `boolean`              | false        | Disables the element.                            |
-| `name`      | `name`      | `string`               | **required** | Name of the native form element.                 |
-| `noRipple`  | `noRipple`  | `boolean`              | false        | Deactivates the ripple.                          |
-| `readonly`  | `readonly`  | `boolean`              | false        | Makes the element readonly (disabled but tabbable) |
-| `required`  | `required`  | `boolean`              | false        | Makes the element required in a form context.    |
-| `role`      | `role`      | `AriaRole`             | "listitem"   | Role of the list item.                           |
-| `type`      | `type`      | `"button" \| "submit"` | "submit"     | Type of the button.                              |
-| `value`     | `value`     | `string`               | false        | Value of the form element.                       |
+| Property    | Attribute   | Type                   | Default    | Description                                      |
+|-------------|-------------|------------------------|------------|--------------------------------------------------|
+| `clickable` | `clickable` | `boolean`              | false      | Makes the element clickable.                     |
+| `disabled`  | `disabled`  | `boolean`              | false      | Disables the element.                            |
+| `name`      | `name`      | `string`               |            | Name of the native form element.                 |
+| `noRipple`  | `noRipple`  | `boolean`              | false      | Deactivates the ripple.                          |
+| `readonly`  | `readonly`  | `boolean`              | false      | Makes the element readonly (disabled but tabbable) |
+| `required`  | `required`  | `boolean`              | false      | Makes the element required in a form context.    |
+| `role`      | `role`      | `AriaRole`             | "listitem" | Role of the list item.                           |
+| `type`      | `type`      | `"button" \| "submit"` | "submit"   | Type of the button.                              |
+| `value`     | `value`     | `string`               | false      | Value of the form element.                       |
 
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#css-custom-properties)
