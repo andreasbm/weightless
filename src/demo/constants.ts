@@ -1,6 +1,7 @@
 export const GITHUB_URL = `https://github.com/andreasbm/weightless`;
 export const NPM_URL = `https://www.npmjs.com/package/weightless`;
 export const TWITTER_URL = `https://twitter.com/andreasmehlsen`;
+export const PACKAGE_JSON_URL = `https://unpkg.com/weightless/package.json`;
 export const DOCS_URL = (element: string) => `https://github.com/andreasbm/weightless/tree/master/src/lib/${element}`;
 export const UNPGK_URL = `https://unpkg.com/weightless/umd/weightless.min.js`;
 export const GOOGLE_FONT_URL = `https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400,700|Roboto+Slab:300,400,700`;

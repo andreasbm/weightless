@@ -1,23 +1,31 @@
 import "@appnest/web-router";
-import { customElement, html, LitElement, PropertyValues, query } from "lit-element";
+import { customElement, html, LitElement, property, PropertyValues, query } from "lit-element";
 import { repeat } from "lit-html/directives/repeat";
 import "../../../lib/button/wl-button";
 import "../../../lib/icon/wl-icon";
 import "../../../lib/title/wl-title";
 import { cssResult } from "../../../lib/util/css";
-import { BROWSER_SUPPORT, BULLETS, GITHUB_URL, NPM_URL } from "../../constants";
+import { BROWSER_SUPPORT, BULLETS, GITHUB_URL, NPM_URL, PACKAGE_JSON_URL } from "../../constants";
 import "../../elements/container/container-element";
 import "../../elements/footer/footer-element";
 import { sharedStyles } from "../../style/shared";
-import pkg from "../../../../package.json";
 
 import styles from "./home-page.scss";
 
+/**
+ * Invokes a callback when the browser is idle.
+ * Fallback to setTimeout.
+ * @param cb
+ */
+export function whenIdle (cb: (() => void)) {
+	"requestIdleCallback" in window ? (<any>window).requestIdleCallback(cb) : setTimeout(cb)
+}
 
 @customElement("home-page")
 export default class HomePage extends LitElement {
 	static styles = [sharedStyles, cssResult(styles)];
 
+	@property({type: String}) version?: string;
 	@query("#bullets-container") $bulletsContainer: HTMLElement;
 	@query("#octocat-container") $octocatContainer: HTMLElement;
 
@@ -41,6 +49,7 @@ export default class HomePage extends LitElement {
 		}, options);
 
 		this.io.observe(this.$octocatContainer);
+		whenIdle(() => this.loadVersion());
 	}
 
 	disconnectedCallback () {
@@ -48,6 +57,19 @@ export default class HomePage extends LitElement {
 		this.io.disconnect();
 	}
 
+	/**
+	 * Loads the newest version number from npm.
+	 */
+	private async loadVersion () {
+		const pkg = await fetch(PACKAGE_JSON_URL).then(res => {
+			if (!res.ok) throw new Error(res.statusText);
+			return res.json();
+		});
+
+		if (pkg != null) {
+			this.version = pkg.version;
+		}
+	}
 
 	/**
 	 * Scrolls to the bullets container.
@@ -70,7 +92,7 @@ export default class HomePage extends LitElement {
 				<a class="version-area" href="${NPM_URL}" rel="noopener" target="_blank">
 					<span>Latest version</span>
 					<img class="npm" src="/assets/npm-logo.svg" alt="NPM" />
-					<span>weightless - <b>v${pkg.version}</b></span>
+					<span>weightless${this.version != null ? html` - <b>v${this.version}</b>` : ""}</span>
 				</a>
 			</container-element>
 			<container-element id="bullets-container">
