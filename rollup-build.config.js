@@ -98,13 +98,18 @@ const configs = [
 			{
 				format: "umd",
 				name: "weightless",
-				file: files.dist_umd_weightless
+				file: files.dist_umd_weightless,
+				banner: `/** weightless v${pkg.version} **/`
 			}
 		],
 		treeshake: true,
 		plugins: [
 			...plugins(),
-			terser()
+			terser({
+				output: {
+					comments: /.*weightless v.*/
+				}
+			})
 		],
 		context: "window"
 	}
