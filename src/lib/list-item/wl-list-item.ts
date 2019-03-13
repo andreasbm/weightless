@@ -1,10 +1,9 @@
-import { customElement, html, property, PropertyValues, query, TemplateResult } from "lit-element";
+import { customElement, html, property, query, TemplateResult } from "lit-element";
 import { ButtonBehavior } from "../behavior/button/button-behavior";
 import "../ripple";
 import { WlRipple } from "../ripple/wl-ripple";
-import { AriaRole, updateTabindex } from "../util/aria";
+import { AriaRole } from "../util/aria";
 import { cssResult } from "../util/css";
-import { renderAttributes } from "../util/dom";
 
 import styles from "./wl-list-item.scss";
 

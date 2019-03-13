@@ -1,7 +1,7 @@
 import { html, property, TemplateResult } from "lit-element";
 import { ifDefined } from "lit-html/directives/if-defined";
 import { AriaRole, updateTabindex } from "../../util/aria";
-import { SPACE } from "../../util/constant/keycode";
+import { ENTER, SPACE } from "../../util/constant/keycode";
 import { cssResult } from "../../util/css";
 import { renderAttributes } from "../../util/dom";
 import { addListener, stopEvent } from "../../util/event";
@@ -13,7 +13,8 @@ import styles from "./checkbox-behavior.scss";
  * Properties of the checkbox behavior.
  */
 export interface ICheckboxBehaviorProperties extends IFormElementBehaviorProperties {
-	checked: boolean
+	checked: boolean;
+	ariaChecked: string;
 }
 
 /**
@@ -29,6 +30,12 @@ export abstract class CheckboxBehavior extends FormElementBehavior implements IC
 	@property({type: Boolean, reflect: true}) checked: boolean = false;
 
 	/**
+	 * Aria checked attribute.
+	 * @attr - aria-checked
+	 */
+	@property({type: String, reflect: true, attribute: "aria-checked"}) ariaChecked: string = this.checked.toString();
+
+	/**
 	 * Role of the checkbox.
 	 * @attr
 	 */
@@ -40,6 +47,13 @@ export abstract class CheckboxBehavior extends FormElementBehavior implements IC
 	protected formElementType: string = "checkbox";
 
 	/**
+	 * Event target for the listeners and click simulation.
+	 */
+	protected get eventTarget (): HTMLElement {
+		return this;
+	}
+
+	/**
 	 * Hooks up the element.
 	 * @param props
 	 */
@@ -48,11 +62,16 @@ export abstract class CheckboxBehavior extends FormElementBehavior implements IC
 
 		this.onClick = this.onClick.bind(this);
 		this.onKeyDown = this.onKeyDown.bind(this);
+		this.attachListeners();
+	}
 
-		this.listeners.push(
-			addListener(this, "click", this.onClick),
-			addListener(this, "keydown", this.onKeyDown)
-		);
+	protected update (props: Map<keyof ICheckboxBehaviorProperties, unknown>) {
+		super.update(props);
+
+		// When checked we need to show the aria checked attribute
+		if (props.has("checked")) {
+			this.ariaChecked = this.checked.toString();
+		}
 	}
 
 	/**
@@ -62,15 +81,18 @@ export abstract class CheckboxBehavior extends FormElementBehavior implements IC
 	protected updated (props: Map<keyof ICheckboxBehaviorProperties, unknown>) {
 		super.updated(props);
 
-		// When checked we need to show the aria checked attribute
-		if (props.has("checked")) {
-			renderAttributes(this, {
-				"aria-checked": this.checked.toString()
-			});
-		}
-
 		// When disabled, the element is not tabbable.
 		this.updateTabindex(props);
+	}
+
+	/**
+	 * Attaches the keydown and click listeners.
+	 */
+	protected attachListeners () {
+		this.listeners.push(
+			addListener(this.eventTarget, "click", this.onClick),
+			addListener(this.eventTarget, "keydown", this.onKeyDown)
+		);
 	}
 
 	/**
@@ -107,8 +129,8 @@ export abstract class CheckboxBehavior extends FormElementBehavior implements IC
 	 * @param e
 	 */
 	protected onKeyDown (e: KeyboardEvent) {
-		if (e.code === SPACE) {
-			this.click();
+		if (e.code === SPACE || e.code === ENTER) {
+			this.eventTarget.click();
 			stopEvent(e);
 		}
 	}
@@ -127,6 +149,8 @@ export abstract class CheckboxBehavior extends FormElementBehavior implements IC
 				?readonly="${this.readonly}"
 				.value="${ifDefined(this.value)}"
 				name="${ifDefined(this.name)}"
+				style="display: none"
+				aria-hidden="true"
 				tabindex="-1"
 			/>
 		`;

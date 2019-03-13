@@ -1,0 +1,8 @@
+{
+	"extend": "blueprint.json",
+	"input": "src/lib/expansion/blueprint.md",
+	"output": "src/lib/expansion/README.md",
+	"tag": "wl-expansion",
+	"demo": "https://weightless.dev/elements/expansion",
+	"img": "https://raw.githubusercontent.com/andreasbm/elements/master/screenshots/wl-expansion.png"
+}

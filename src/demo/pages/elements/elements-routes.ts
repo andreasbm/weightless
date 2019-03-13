@@ -67,6 +67,15 @@ export const COMPONENTS_ROUTES: IRoute<IRouteData>[] = [
 		}
 	},
 	{
+		path: "expansion",
+		component: () => import("./elements/expansion-page"),
+		data: {
+			title: "Expansion",
+			desc: "Provide an expandable details-summary view",
+			img: iconPath("expansion")
+		}
+	},
+	{
 		path: "icon",
 		component: () => import("./elements/icon-page"),
 		data: {

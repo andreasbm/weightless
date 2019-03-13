@@ -1,5 +1,5 @@
 /**
- * Updates the tabindex and prioritizes tab index set by the page author.
+ * Updates the tabindex and respects tab index set by the page author.
  * @param $elem
  * @param disabled
  */

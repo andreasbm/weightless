@@ -82,9 +82,11 @@ export class ThemeComponent extends WlNav {
 		const foreground = this.darkMode ? `white` : `black`;
 		const background = this.darkMode ? `black` : `white`;
 		const shade = this.darkMode ? greyReversedPalette : greyPalette;
+		const shadow = this.darkMode ? `rgba(255, 255, 255, 0.6)` : `rgba(0, 0, 0, 0.2)`;
 
 		setProperty("--foreground", foreground);
 		setProperty("--background", background);
+		setProperty("--shadow", shadow);
 		setPalette("shade", shade);
 
 		// Add darkmode to class to respond to the change other where

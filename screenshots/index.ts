@@ -14,6 +14,7 @@ const ELEMENTS = [
 	"checkbox",
 	"dialog",
 	"divider",
+	"expansion",
 	"icon",
 	"label",
 	"list-item",

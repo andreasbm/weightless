@@ -7,6 +7,10 @@ $elements-page-menu-width: #{size(250)};
 	display: block;
 }
 
+a {
+	text-decoration: none;
+}
+
 #menu {
 	width: $elements-page-menu-width;
 	background: $background;

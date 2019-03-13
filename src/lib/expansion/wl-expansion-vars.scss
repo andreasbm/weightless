@@ -1,0 +1,21 @@
+@import "../style/base";
+
+$expansion-bg: var(--expansion-bg, #{$background});
+$expansion-color: var(--expansion-color, #{$foreground});
+
+$expansion-transition: var(--expansion-transition, margin #{$transition-duration-medium} #{$transition-timing-function-standard-curve}, box-shadow #{$transition-duration-medium} #{$transition-timing-function-standard-curve});
+$expansion-elevation: var(--expansion-elevation, #{elevation(1, #{$shadow})});
+$expansion-elevation-open: var(--expansion-elevation-hover, #{elevation(4, #{$shadow})});
+$expansion-margin-open: var(--expansion-margin-open, #{$spacing-l} 0);
+
+$expansion-header-bg-hover: var(--expansion-header-bg-hover, #{color("shade", 200)});
+$expansion-header-description-color: var(--expansion-header-description-color, #{color("shade", 500)});
+$expansion-header-padding: var(--expansion-header-padding, 0 #{$spacing-l});
+$expansion-header-title-margin: var(--expansion-header-title-padding, 0 #{$spacing-l} 0 0);
+$expansion-header-height: var(--expansion-header-height, #{size(46)});
+$expansion-header-height-open: var(--expansion-header-height-open, #{size(56)});
+$expansion-header-transition: var(--expansion-header-transition, height #{$transition-duration-medium} #{$transition-timing-function-standard-curve}, background #{$transition-duration-fast} #{$transition-timing-function-standard-curve});
+
+$expansion-content-padding: var(--expansion-content-padding, 0 #{$spacing-l} #{$spacing-l});
+
+$expansion-icon-transition: var(--expansion-icon-transition, transform #{$transition-duration-medium} #{$transition-timing-function-standard-curve});
