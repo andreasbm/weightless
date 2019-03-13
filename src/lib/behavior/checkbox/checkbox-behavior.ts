@@ -1,9 +1,8 @@
 import { html, property, TemplateResult } from "lit-element";
 import { ifDefined } from "lit-html/directives/if-defined";
-import { AriaRole, updateTabindex } from "../../util/aria";
+import { AriaRole } from "../../util/aria";
 import { ENTER, SPACE } from "../../util/constant/keycode";
 import { cssResult } from "../../util/css";
-import { renderAttributes } from "../../util/dom";
 import { addListener, stopEvent } from "../../util/event";
 import { FormElementBehavior, IFormElementBehaviorProperties } from "../form-element";
 
@@ -65,24 +64,17 @@ export abstract class CheckboxBehavior extends FormElementBehavior implements IC
 		this.attachListeners();
 	}
 
-	protected update (props: Map<keyof ICheckboxBehaviorProperties, unknown>) {
-		super.update(props);
+	/**
+	 * Reacts to properties when they change.
+	 * @param props
+	 */
+	protected updated (props: Map<keyof ICheckboxBehaviorProperties, unknown>) {
+		super.updated(props as Map<keyof IFormElementBehaviorProperties, unknown>);
 
 		// When checked we need to show the aria checked attribute
 		if (props.has("checked")) {
 			this.ariaChecked = this.checked.toString();
 		}
-	}
-
-	/**
-	 * Updates aria attributes when the properties updates.
-	 * @param props
-	 */
-	protected updated (props: Map<keyof ICheckboxBehaviorProperties, unknown>) {
-		super.updated(props);
-
-		// When disabled, the element is not tabbable.
-		this.updateTabindex(props);
 	}
 
 	/**
@@ -93,15 +85,6 @@ export abstract class CheckboxBehavior extends FormElementBehavior implements IC
 			addListener(this.eventTarget, "click", this.onClick),
 			addListener(this.eventTarget, "keydown", this.onKeyDown)
 		);
-	}
-
-	/**
-	 * Updates the tabindex.
-	 */
-	protected updateTabindex (props: Map<keyof ICheckboxBehaviorProperties, unknown>) {
-		if (props.has("disabled")) {
-			updateTabindex(this, this.disabled);
-		}
 	}
 
 	/**

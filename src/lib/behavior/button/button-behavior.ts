@@ -1,10 +1,8 @@
-import { html, property, PropertyValues, TemplateResult } from "lit-element";
+import { html, property, TemplateResult } from "lit-element";
 import { ifDefined } from "lit-html/directives/if-defined";
 import { WlRipple } from "../../ripple/wl-ripple";
-import { updateTabindex } from "../../util/aria";
 import { ENTER, SPACE } from "../../util/constant/keycode";
 import { cssResult } from "../../util/css";
-import { renderAttributes } from "../../util/dom";
 import { addListener, stopEvent } from "../../util/event";
 import { FormElementBehavior, IFormElementBehaviorProperties } from "../form-element";
 
@@ -82,20 +80,6 @@ export abstract class ButtonBehavior extends FormElementBehavior implements IBut
 		// Re-fire the event on the inner form element to interact with the form if there is one
 		if (e.target == this && !e.defaultPrevented) {
 			this.$formElement.dispatchEvent(new MouseEvent("click", {relatedTarget: this, composed: true}));
-		}
-	}
-
-	/**
-	 * Responds to property changes.
-	 * @param props
-	 */
-	protected updated (props: PropertyValues) {
-		super.updated(props);
-
-		// Update the tab index and aria-disabled based on the disabled property.
-		if (props.has("disabled")) {
-			updateTabindex(this, this.disabled);
-			renderAttributes(this, {"aria-disabled": `${this.disabled}`});
 		}
 	}
 

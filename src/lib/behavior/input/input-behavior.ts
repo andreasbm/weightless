@@ -116,7 +116,7 @@ export abstract class InputBehavior extends FormElementBehavior implements IInpu
 	 * @param props
 	 */
 	protected updated (props: Map<keyof IInputBehaviorProperties, unknown>) {
-		super.updated(props);
+		super.updated(props as Map<keyof IFormElementBehaviorProperties, unknown>);
 		this.refreshAttributes();
 	}
 

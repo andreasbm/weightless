@@ -46,7 +46,7 @@ export default class GetStartedPage extends LitElement {
 				
 				<p>Then you can use the element in your html like this.</p>
 				
-				<code-example-element lang="js">
+				<code-example-element lang="js" style="position: relative;">
 					<wl-button>Button</wl-button>
 				</code-example-element>
 		

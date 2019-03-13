@@ -1,4 +1,4 @@
-import { assignedNodesMap, createContainer, removeContainer, waitForElement } from "../../test/testing-helpers";
+import { createContainer, removeContainer, waitForElement } from "../../test/testing-helpers";
 import "../checkbox";
 import { WlCheckbox } from "./wl-checkbox";
 
@@ -28,10 +28,18 @@ describe("wl-checkbox", () => {
 		expect($checkbox.getAttribute("aria-checked")).to.equal("false");
 	});
 
-	it("should reflect aria-checked when checked", async () => {
+	it("should reflect aria-checked when checked", (done) => {
 		$checkbox.checked = true;
-		await $checkbox.updateComplete;
-		expect($checkbox.getAttribute("aria-checked")).to.equal("true");
+		$checkbox.updateComplete.then(() => {
+
+			// For some reason we have to wait a bit for the aria-checked attribute to be updated
+			// Very weird.
+			setTimeout(() => {
+				expect($checkbox.getAttribute("aria-checked")).to.equal("true");
+				done();
+			}, 100);
+		});
+
 	});
 
 	it("should be removed from the tab order when disabled", async () => {

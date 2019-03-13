@@ -1,10 +1,11 @@
+import styles from "form-element-behavior.scss";
 import { LitElement, property } from "lit-element";
 import { sharedStyles } from "../../style/shared";
+import { updateTabindex } from "../../util/aria";
 import { cssResult } from "../../util/css";
-import { addListener, EventListenerSubscription, removeListeners } from "../../util/event";
 import { renderAttributes } from "../../util/dom";
+import { addListener, EventListenerSubscription, removeListeners } from "../../util/event";
 import { uniqueID } from "../../util/unique";
-import styles from "form-element-behavior.scss";
 
 export type FormElement =
 	(HTMLInputElement
@@ -15,7 +16,7 @@ export type FormElement =
 		| HTMLTextAreaElement) & {value: string};
 
 export interface IFormElementBehaviorProperties {
-	disabled: Boolean;
+	disabled: boolean;
 	value: string;
 	readonly: boolean;
 	required: boolean;
@@ -178,6 +179,33 @@ export abstract class FormElementBehavior extends LitElement implements IFormEle
 			addListener(this.$formElement, "input", this.onInput, {passive: true}),
 			addListener(this.$formElement, "focusout", this.onBlur, {passive: true})
 		);
+	}
+
+	/**
+	 * Responds to property changes.
+	 * @param props
+	 */
+	protected updated (props: Map<keyof IFormElementBehaviorProperties, unknown>) {
+		super.updated(props);
+
+		// When disabled we need to show the aria disabled attribute
+		if (props.has("disabled")) {
+			renderAttributes(this, {
+				"aria-disabled": this.disabled.toString()
+			});
+		}
+
+		// Update the tab index
+		this.updateTabindex(props);
+	}
+
+	/**
+	 * Updates the tabindex.
+	 */
+	protected updateTabindex (props: Map<keyof IFormElementBehaviorProperties, unknown>) {
+		if (props.has("disabled")) {
+			updateTabindex(this, this.disabled);
+		}
 	}
 
 	/**
