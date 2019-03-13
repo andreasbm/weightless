@@ -61,6 +61,7 @@ npm i weightless
 | Checkbox | `wl-checkbox` | Turn an option on or off. | [Documentation](/src/lib/checkbox) | [Demo](https://weightless.dev/elements/checkbox) |
 | Dialog | `wl-dialog` | Highly interruptive messages. | [Documentation](/src/lib/dialog) | [Demo](https://weightless.dev/elements/dialog) |
 | Divider | `wl-divider` | Thin line that groups content in lists and layouts. | [Documentation](/src/lib/divider) | [Demo](https://weightless.dev/elements/divider) |
+| Expansion | `wl-expansion` | Provide an expandable details-summary view. | [Documentation](/src/lib/expansion) | [Demo](https://weightless.dev/elements/expansion) |
 | Icon | `wl-icon` | Symbols for common actions and items. | [Documentation](/src/lib/icon) | [Demo](https://weightless.dev/elements/icon) |
 | Label | `wl-label` | Make form elements more accessible. | [Documentation](/src/lib/label) | [Demo](https://weightless.dev/elements/label) |
 | List Item | `wl-list-item` | Display an item in a list. | [Documentation](/src/lib/list-item) | [Demo](https://weightless.dev/elements/list-item) |

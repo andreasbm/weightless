@@ -81,6 +81,13 @@
 			"[Demo](https://weightless.dev/elements/divider)"
 		],
 		[
+			"Expansion",
+			"`wl-expansion`",
+			"Provide an expandable details-summary view.",
+			"[Documentation](/src/lib/expansion)",
+			"[Demo](https://weightless.dev/elements/expansion)"
+		],
+		[
 			"Icon",
 			"`wl-icon`",
 			"Symbols for common actions and items.",
