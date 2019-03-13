@@ -112,19 +112,19 @@ export class WlDialog<R = unknown> extends OverlayBehavior<R, Partial<IDialogPro
 	 * Focus trap element.
 	 * @attr
 	 */
-	@query("#dialog") $focusTrap: FocusTrap;
+	@query("#dialog") protected $focusTrap: FocusTrap;
 
 	/**
 	 * Dialog element.
 	 * @attr
 	 */
-	@query("#dialog") $dialog: HTMLElement;
+	@query("#dialog") protected $dialog: HTMLElement;
 
 	/**
 	 * Backdrop element.
 	 * @attr
 	 */
-	@query("#backdrop") $backdrop: WlBackdrop;
+	@query("#backdrop") protected $backdrop: WlBackdrop;
 
 	/**
 	 * Animates the dialog in.

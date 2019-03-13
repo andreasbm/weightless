@@ -23,7 +23,7 @@ export default class RipplePage extends LitElement {
 		}
 	`)];
 
-	@query("#demo-element") $demoElement!: DemoElement;
+	@query("#demo-element") protected $demoElement!: DemoElement;
 
 	firstUpdated (props: PropertyValues) {
 		super.firstUpdated(props);

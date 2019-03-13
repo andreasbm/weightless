@@ -20,8 +20,8 @@ export default class ElementsPage extends LitElement {
 	static styles = [sharedStyles, cssResult(styles)];
 	private currentRoute?: IRoute<IRouteData>;
 
-	@query("#router") $routerContainer: HTMLDivElement;
-	@query("#router-slot") $routerSlot: RouterSlot<IRouteData>;
+	@query("#router") protected $routerContainer: HTMLDivElement;
+	@query("#router-slot") protected $routerSlot: RouterSlot<IRouteData>;
 	@property({type: Boolean, reflect: true, attribute: "popover-visible"}) isPopoverVisible = false;
 
 	firstUpdated (props: PropertyValues) {

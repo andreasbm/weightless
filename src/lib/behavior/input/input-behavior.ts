@@ -17,16 +17,16 @@ export enum InputBehaviorEvent {
  * Properties of the input.
  */
 export interface IInputBehaviorProperties extends IFormElementBehaviorProperties{
-	autocomplete: "on" | "off";
 	outlined: boolean;
 	role: AriaRole;
 	filled: boolean;
+	autocomplete?: "on" | "off";
 	placeholder?: string;
 }
 
 /**
  * Provides input behavior that interacts with forms.
- * @event submit - Dispatched when the enter key is hit while holding down ctrl or the meta-key.
+ * @event submit - Dispatched when the enter key is hit while pressing ctrl or the meta-key.
  * @slot before - Content before the input.
  * @slot after - Content after the input.
  * @cssprop --input-state-color-inactive - State color when inactive.
@@ -62,7 +62,7 @@ export abstract class InputBehavior extends FormElementBehavior implements IInpu
 	 * Whether autocomplete is on or off.
 	 * @attr
 	 */
-	@property({type: String, reflect: true}) autocomplete: "on" | "off";
+	@property({type: String, reflect: true}) autocomplete?: "on" | "off";
 
 	/**
 	 * Makes the input outlined.

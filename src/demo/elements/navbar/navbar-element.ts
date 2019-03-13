@@ -58,8 +58,8 @@ export class ThemeComponent extends WlNav {
 	static styles = [...WlNav.styles, sharedStyles, cssResult(styles)];
 
 	@property({type: Boolean, reflect: true}) darkMode = false;
-	@query("#theme-popover") $themePopover!: WlPopover;
-	@query("#logo") $logo: HTMLImageElement;
+	@query("#theme-popover") protected $themePopover!: WlPopover;
+	@query("#logo") protected $logo: HTMLImageElement;
 
 	firstUpdated (props: PropertyValues) {
 		super.firstUpdated(props);

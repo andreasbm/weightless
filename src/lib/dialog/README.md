@@ -9,22 +9,19 @@ Highly interruptive messages.
 
 ## ➤ Properties
 
-| Property           | Attribute          | Type          | Default      | Description                                      |
-|--------------------|--------------------|---------------|--------------|--------------------------------------------------|
-| `$backdrop`        | `$backdrop`        | `WlBackdrop`  | **required** | Backdrop element.                                |
-| `$dialog`          | `$dialog`          | `HTMLElement` | **required** | Dialog element.                                  |
-| `$focusTrap`       | `$focusTrap`       | `FocusTrap`   | **required** | Focus trap element.                              |
-| `backdrop`         | `backdrop`         | `boolean`     | false        | Whether the backdrop is visible or not.          |
-| `blockScrolling`   | `blockScrolling`   | `boolean`     | false        | Whether the overlay blocks the scrolling on the scroll container. |
-| `disableFocusTrap` | `disableFocusTrap` | `boolean`     | false        | Whether the focus trap be disabled.              |
-| `duration`         | `duration`         | `number`      | 200          | The duration of the animations.                  |
-| `fixed`            | `fixed`            | `boolean`     | false        | Whether the overlay is fixed or not.             |
-| `open`             | `open`             | `boolean`     | false        | Whether the overlay is open or not.              |
-| `persistent`       | `persistent`       | `boolean`     | false        | Whether the overlay is persistent or not. When the overlay is persistent, ESCAPE and backdrop clicks won't close it. |
-| `role`             | `role`             | `AriaRole`    | "dialog"     | Role of the dialog.                              |
-| `scrollContainer`  | `scrollContainer`  | `EventTarget` |              | The container the overlay lives in.              |
-| `scrollable`       | `scrollable`       | `boolean`     | false        | Makes the dialog scrollable.                     |
-| `size`             | `size`             | `DialogSize`  |              | Size of the dialog.                              |
+| Property           | Attribute          | Type          | Default  | Description                                      |
+|--------------------|--------------------|---------------|----------|--------------------------------------------------|
+| `backdrop`         | `backdrop`         | `boolean`     |          | Whether the backdrop is visible or not.          |
+| `blockScrolling`   | `blockScrolling`   | `boolean`     |          | Whether the overlay blocks the scrolling on the scroll container. |
+| `disableFocusTrap` | `disableFocusTrap` | `boolean`     |          | Whether the focus trap be disabled.              |
+| `duration`         | `duration`         | `number`      | 200      | The duration of the animations.                  |
+| `fixed`            | `fixed`            | `boolean`     |          | Whether the overlay is fixed or not.             |
+| `open`             | `open`             | `boolean`     |          | Whether the overlay is open or not.              |
+| `persistent`       | `persistent`       | `boolean`     |          | Whether the overlay is persistent or not. When the overlay is persistent, ESCAPE and backdrop clicks won't close it. |
+| `role`             | `role`             | `AriaRole`    | "dialog" | Role of the dialog.                              |
+| `scrollContainer`  | `scrollContainer`  | `EventTarget` |          | The container the overlay lives in.              |
+| `scrollable`       | `scrollable`       | `boolean`     |          | Makes the dialog scrollable.                     |
+| `size`             | `size`             | `DialogSize`  |          | Size of the dialog.                              |
 
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#events)

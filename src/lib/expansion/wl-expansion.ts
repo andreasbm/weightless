@@ -85,22 +85,22 @@ export class WlExpansion extends RadioBehavior implements IExpansionProperties {
 	/**
 	 * Reference to the header element.
 	 */
-	@query("#header") $header!: HTMLElement;
+	@query("#header") protected $header!: HTMLElement;
 
 	/**
 	 * Reference to the content element.
 	 */
-	@query("#content") $content!: HTMLElement;
+	@query("#content") protected $content!: HTMLElement;
 
 	/**
 	 * Reference to the content container element.
 	 */
-	@query("#content-container") $contentContainer!: HTMLElement;
+	@query("#content-container") protected $contentContainer!: HTMLElement;
 
 	/**
 	 * Reference to the ripple element.
 	 */
-	@query("#content-container") $ripple!: WlRipple;
+	@query("#content-container") protected $ripple!: WlRipple;
 
 	/**
 	 * Change the event target to the header.

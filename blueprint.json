@@ -1,9 +1,10 @@
 {
-	"text": "Web Components built to be used. They are lightweight, have a simple API and are easy to extend and compose.",
+	"text": "Thank you so much for showing interest in this project! If you want to help us feed our Octocat you should definitely become a <a href='https://github.com/andreasbm/weightless/stargazers' target='_blank'>stargazer</a>. These web components are built to be used. They are lightweight, have a simple API and are easy to extend and compose.",
 	"demo": "https://weightless.dev/elements",
 	"ids": {
 		"npm": "weightless",
-		"github": "andreasbm/weightless"
+		"github": "andreasbm/weightless",
+		"webcomponents": "weightless"
 	},
 	"bullets": [
 		"**High-quality:** Centered around the best practices.",

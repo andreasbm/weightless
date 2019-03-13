@@ -122,17 +122,17 @@ export class WlPopover<R = unknown> extends OverlayBehavior<R, IPopoverConfig> i
 	/**
 	 * Content of the popover.
 	 */
-	@query("#content") $content: FocusTrap;
+	@query("#content") protected $content: FocusTrap;
 
 	/**
 	 * Container element.
 	 */
-	@query("#container") $container: HTMLElement;
+	@query("#container") protected $container: HTMLElement;
 
 	/**
 	 * Backdrop element.
 	 */
-	@query("#backdrop") $backdrop: WlBackdrop;
+	@query("#backdrop") protected $backdrop: WlBackdrop;
 
 	/**
 	 * Listeners that reacts when the user clicks outside the popover.

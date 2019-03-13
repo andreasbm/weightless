@@ -6,11 +6,12 @@
 <a href="https://www.npmjs.com/package/weightless"><img alt="NPM Version" src="https://img.shields.io/npm/v/weightless.svg" height="20"/></a>
 <a href="https://david-dm.org/andreasbm/weightless"><img alt="Dependencies" src="https://img.shields.io/david/andreasbm/weightless.svg" height="20"/></a>
 <a href="https://github.com/andreasbm/weightless/graphs/contributors"><img alt="Contributors" src="https://img.shields.io/github/contributors/andreasbm/weightless.svg" height="20"/></a>
+<a href="https://www.webcomponents.org/element/weightless"><img alt="Published on webcomponents.org" src="https://img.shields.io/badge/webcomponents.org-published-blue.svg" height="20"/></a>
 	</p>
 
 <p align="center">
   <b>High-quality Web Components with a small footprint</b></br>
-  <sub>Web Components built to be used. They are lightweight, have a simple API and are easy to extend and compose. Go here to see a demo <a href="https://weightless.dev/elements">https://weightless.dev/elements</a>.<sub>
+  <sub>Thank you so much for showing interest in this project! If you want to help us feed our Octocat you should definitely become a <a href='https://github.com/andreasbm/weightless/stargazers' target='_blank'>stargazer</a>. These web components are built to be used. They are lightweight, have a simple API and are easy to extend and compose. Go here to see a demo <a href="https://weightless.dev/elements">https://weightless.dev/elements</a>.<sub>
 </p>
 
 <br />
@@ -29,6 +30,7 @@
 * [➤ Installation](#-installation)
 * [➤ Elements](#-elements)
 * [➤ Roadmap](#-roadmap)
+* [➤ Contributing guide](#-contributing-guide)
 * [➤ Contributors](#-contributors)
 * [➤ License](#-license)
 
@@ -52,6 +54,7 @@ npm i weightless
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#elements)
 
 ## ➤ Elements
+
 | Name | Tag | Description | Documentation | Demo |
 | ------- | ------- | ------- | ------- | ------- |
 | Backdrop | `wl-backdrop` | Dark layer to use behind overlayed elements. | [Documentation](/src/lib/backdrop) | [Demo](https://weightless.dev/elements/dialog) |
@@ -84,6 +87,25 @@ npm i weightless
 ## ➤ Roadmap
 
 There's lots of exciting things on the roadmap. Until v1.0.0 you can expect the API to be fairly stable but refactoring might still happen and break the backwards compatibility. You are very welcome to use the library, create pull requests or add issues.
+
+
+
+[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#contributing-guide)
+
+## ➤ Contributing guide
+
+You are more than welcome to contribute to this repository! Below are some instructions on how to setup the project for development.
+
+1. Clone this repository by running `git clone https://github.com/andreasbm/weightless.git`.
+2. Run `npm i` to install all dependencies.
+3. Spin up the development server with `npm run s`. The browser should automatically be opened at the correct url.
+5. Run tests with `npm run test`.
+6. Compile the documentation by running `npm run docs`.
+
+The elements are written in [Typescript](https://www.typescriptlang.org/) and the stylesheets are written in [SASS](https://sass-lang.com/). All of the web components uses [lit-element](https://lit-element.polymer-project.org/).
+
+If you want to know more about how you can help you should definitely check out the [CONTRIBUTING.md](/CONTRIBUTING.md) file. All contributors will be added to the contributors section below.
+
 
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#contributors)
