@@ -9,6 +9,7 @@ import { BROWSER_SUPPORT, BULLETS, GITHUB_URL, NPM_URL } from "../../constants";
 import "../../elements/container/container-element";
 import "../../elements/footer/footer-element";
 import { sharedStyles } from "../../style/shared";
+import pkg from "../../../../package.json";
 
 import styles from "./home-page.scss";
 
@@ -69,7 +70,7 @@ export default class HomePage extends LitElement {
 				<a class="version-area" href="${NPM_URL}" rel="noopener" target="_blank">
 					<span>Latest version</span>
 					<img class="npm" src="/assets/npm-logo.svg" alt="NPM" />
-					<span>@weightless/all - <b>v1.0.3</b></span>
+					<span>weightless - <b>v${pkg.version}</b></span>
 				</a>
 			</container-element>
 			<container-element id="bullets-container">
