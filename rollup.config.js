@@ -107,7 +107,6 @@ export default {
 					globDirectory: folders.dist,
 					swDest: files.dist_service_worker,
 					globPatterns: [ `**/*.{js,png,html,css}`],
-					navigateFallback: "/index.html",
 					importScripts: [`sw-extension.js`]
 				}
 			})
