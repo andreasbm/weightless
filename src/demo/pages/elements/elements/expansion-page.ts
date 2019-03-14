@@ -26,19 +26,19 @@ export default class ExpansionPage extends LitElement {
 			<demo-element>
 				<code-example-element>
 				
-					<wl-expansion name="group" space>
+					<wl-expansion name="group">
 						<span slot="title">Expansion 1</span>
 						<span slot="description">Description</span>
 						<p>Here's some content</p>
 					</wl-expansion>
 					
-					<wl-expansion name="group" space>
+					<wl-expansion name="group">
 						<span slot="title">Expansion 2</span>
 						<span slot="description">Description</span>
 						<p>Here's some content</p>
 					</wl-expansion>
 					
-					<wl-expansion name="group" space>
+					<wl-expansion name="group">
 						<span slot="title">Expansion 3</span>
 						<span slot="description">Description</span>
 						<p>Here's some content</p>

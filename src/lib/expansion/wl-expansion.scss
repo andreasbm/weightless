@@ -27,6 +27,7 @@
 
 :host([open]) {
 	box-shadow: $expansion-elevation-open;
+	margin: $expansion-margin-open;
 
 	#header {
 		height: $expansion-header-height-open;
@@ -35,10 +36,6 @@
 	#icon {
 		transform: rotate(180deg);
 	}
-}
-
-:host([open][space]) {
-	margin: $expansion-margin-open;
 }
 
 #header {

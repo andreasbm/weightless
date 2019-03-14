@@ -5,7 +5,6 @@
 	height: #{$progress-bar-height};
 	background: #{$progress-bar-bg};
 
-	width: 100%;
 	contain: strict;
 	position: relative;
 	display: block;
@@ -30,11 +29,17 @@
 			bottom: 0;
 		}
 
+		&:before, &:after {
+			animation-duration: #{$progress-bar-indeterminate-duration};
+			animation-timing-function: #{$progress-bar-indeterminate-timing-function};
+			animation-iteration-count: infinite;
+		}
+
 		&:before {
-			animation: indeterminate #{$progress-bar-indeterminate-duration} #{$progress-bar-indeterminate-timing-function} infinite;
+			animation-name: indeterminate;
 		}
 		&:after {
-			animation: indeterminate-short #{$progress-bar-indeterminate-duration} #{$progress-bar-indeterminate-timing-function} infinite;
+			animation-name: indeterminate-short;
 			animation-delay: #{$progress-bar-indeterminate-short-delay};
 		}
 	}

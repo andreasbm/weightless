@@ -15,7 +15,6 @@ import styles from "./wl-expansion.scss";
  */
 export interface IExpansionProperties extends IRadioBehaviorProperties {
 	duration: number;
-	space: boolean;
 	noRipple: boolean;
 	icon?: string;
 }
@@ -56,12 +55,6 @@ export class WlExpansion extends RadioBehavior implements IExpansionProperties {
 	 * @attr - open
 	 */
 	@property({type: Boolean, reflect: true, attribute: "open"}) checked: boolean = false;
-
-	/**
-	 * Adds space beneath the expansion.
-	 * @attr
-	 */
-	@property({type: Boolean, reflect: true}) space: boolean = false;
 
 	/**
 	 * Deactivates the ripple.

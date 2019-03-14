@@ -78,7 +78,7 @@
 		"@appnest/readme": "^1.1.19",
 		"@appnest/web-config": "0.3.35",
 		"@appnest/web-router": "^1.2.6",
-		"@types/puppeteer": "^1.12.2",
+		"@types/puppeteer": "^1.12.3",
 		"code-prettify": "^0.1.0",
 		"fs-extra": "^7.0.1",
 		"glob": "^7.1.3",
