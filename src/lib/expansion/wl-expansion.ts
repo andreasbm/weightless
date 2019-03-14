@@ -172,7 +172,6 @@ export class WlExpansion extends RadioBehavior implements IExpansionProperties {
 				]
 			}, {
 				easing: CUBIC_BEZIER,
-				fill: "both",
 				duration
 			}).onfinish = () => {
 				this.$contentContainer.style.height = this.checked ? `auto` : `0px`;

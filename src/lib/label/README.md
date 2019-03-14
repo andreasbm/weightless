@@ -9,11 +9,11 @@ Make form elements more accessible.
 
 ## ➤ Properties
 
-| Property   | Attribute  | Type      | Description                                      |
-|------------|------------|-----------|--------------------------------------------------|
-| `for`      | `for`      | `string`  | Query of the form element click events are re-fired upon. |
-| `nowrap`   | `nowrap`   | `boolean` | Caps the label element with ellipsis if overflowing. |
-| `required` | `required` | `boolean` | Styles the label as required.                    |
+| Property   | Attribute  | Type      | Default | Description                                      |
+|------------|------------|-----------|---------|--------------------------------------------------|
+| `for`      | `for`      | `string`  |         | Query of the form element click events are re-fired upon. |
+| `nowrap`   | `nowrap`   | `boolean` | false   | Caps the label element with ellipsis if overflowing. |
+| `required` | `required` | `boolean` | false   | Styles the label as required.                    |
 
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#css-custom-properties)

@@ -11,15 +11,15 @@ Display an item in a list.
 
 | Property    | Attribute   | Type                   | Default    | Description                                      |
 |-------------|-------------|------------------------|------------|--------------------------------------------------|
-| `clickable` | `clickable` | `boolean`              |            | Makes the element clickable.                     |
-| `disabled`  | `disabled`  | `boolean`              |            | Disables the element.                            |
+| `clickable` | `clickable` | `boolean`              | false      | Makes the element clickable.                     |
+| `disabled`  | `disabled`  | `boolean`              | false      | Disables the element.                            |
 | `name`      | `name`      | `string`               |            | Name of the native form element.                 |
-| `noRipple`  | `noRipple`  | `boolean`              |            | Deactivates the ripple.                          |
-| `readonly`  | `readonly`  | `boolean`              |            | Makes the element readonly (disabled but tabbable) |
-| `required`  | `required`  | `boolean`              |            | Makes the element required in a form context.    |
+| `noRipple`  | `noRipple`  | `boolean`              | false      | Deactivates the ripple.                          |
+| `readonly`  | `readonly`  | `boolean`              | false      | Makes the element readonly (disabled but tabbable) |
+| `required`  | `required`  | `boolean`              | false      | Makes the element required in a form context.    |
 | `role`      | `role`      | `AriaRole`             | "listitem" | Role of the list item.                           |
 | `type`      | `type`      | `"button" \| "submit"` | "submit"   | Type of the button.                              |
-| `value`     | `value`     | `string`               |            | Value of the form element.                       |
+| `value`     | `value`     | `string`               | ""         | Value of the form element.                       |
 
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#css-custom-properties)
