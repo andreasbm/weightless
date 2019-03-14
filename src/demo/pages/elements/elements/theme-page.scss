@@ -43,19 +43,6 @@ $color-size: #{size(150)};
 		color: #{color-contrast("primary", 600)};
 	}
 
-	&.secondary-400 {
-		background: #{color("secondary", 400)};
-		color: #{color-contrast("secondary", 400)};
-	}
-	&.secondary-500 {
-		background: #{color("secondary", 500)};
-		color: #{color-contrast("secondary", 500)};
-	}
-	&.secondary-600 {
-		background: #{color("secondary", 600)};
-		color: #{color-contrast("secondary", 600)};
-	}
-
 	&.error-400 {
 		background: #{color("error", 400)};
 		color: #{color-contrast("error", 400)};

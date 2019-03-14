@@ -21,6 +21,11 @@ export interface IExpansionProperties extends IRadioBehaviorProperties {
 }
 
 /**
+ * Duration of the expansion in and out animation.
+ */
+const EXPANSION_ANIMATION_DURATION = 250;
+
+/**
  * Provide an expandable details-summary view.
  * @slot title - Title to the left on the header.
  * @slot description - Description to the left on the header.
@@ -68,7 +73,7 @@ export class WlExpansion extends RadioBehavior implements IExpansionProperties {
 	 * The duration of the animations.
 	 * @attr
 	 */
-	@property({type: Number}) duration: number = 180;
+	@property({type: Number}) duration: number = EXPANSION_ANIMATION_DURATION;
 
 	/**
 	 * Aria expanded attribute.
@@ -116,6 +121,9 @@ export class WlExpansion extends RadioBehavior implements IExpansionProperties {
 	protected firstUpdated (props: Map<keyof IExpansionProperties, unknown>) {
 		super.firstUpdated(<Map<keyof ICheckboxBehaviorProperties, unknown>>props);
 		this.$ripple.target = this.eventTarget;
+
+		// The initial in or out animation will be instant
+		this.animateContent(0).then();
 	}
 
 	/**
@@ -125,9 +133,10 @@ export class WlExpansion extends RadioBehavior implements IExpansionProperties {
 	protected updated (props: Map<keyof IExpansionProperties, any>) {
 		super.updated(props as Map<keyof ICheckboxBehaviorProperties, unknown>);
 
-		// The initial in or out animation will be instant
-		const duration = props.get("checked") == null ? 0 : this.duration;
-		this.animateContent(duration).then();
+		// Either animate the content in or out when the checked property changes
+		if (props.get("checked") != null) {
+			this.animateContent(this.duration).then();
+		}
 	}
 
 	/**

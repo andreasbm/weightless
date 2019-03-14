@@ -44,7 +44,7 @@
 }
 
 .atv {
-	color: var(--atv-color, #{color("secondary", 400)});
+	color: var(--atv-color, #{'rgb(var(--secondary-400, 255, 205, 125))'});
 }
 
 .dec {

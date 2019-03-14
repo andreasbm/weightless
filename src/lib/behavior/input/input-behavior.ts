@@ -2,6 +2,7 @@ import { html, property, TemplateResult } from "lit-element";
 import { AriaRole } from "../../util/aria";
 import { ENTER } from "../../util/constant/keycode";
 import { cssResult } from "../../util/css";
+import { renderAttributes } from "../../util/dom";
 import { addListener } from "../../util/event";
 import { FormElementBehavior, IFormElementBehaviorProperties } from "../form-element/form-element-behavior";
 import styles from "./input-behavior.scss";
@@ -89,10 +90,38 @@ export abstract class InputBehavior extends FormElementBehavior implements IInpu
 	@property({type: String, reflect: true}) placeholder?: string;
 
 	/**
+	 * Value of the form element.
+	 * @attr
+	 * @param value
+	 */
+	@property({type: String}) set value (value: string) {
+		this.setValue(value);
+	}
+
+	get value () {
+		return this.getFormItemValue();
+	}
+
+	/**
 	 * Returns the main slot element.
 	 */
 	get $slot (): HTMLSlotElement {
 		return this.shadowRoot!.querySelector<HTMLSlotElement>("#slot")!;
+	}
+
+	/**
+	 * Returns whether the component is pristine or has been touched.
+	 */
+	private _pristine = true;
+	get pristine () {
+		return this._pristine;
+	}
+
+	/**
+	 * Returns whether the nativeInput is dirty or not.
+	 */
+	get dirty (): boolean {
+		return (this.value != null && this.value !== "");
 	}
 
 	/**
@@ -102,9 +131,13 @@ export abstract class InputBehavior extends FormElementBehavior implements IInpu
 	protected firstUpdated (props: Map<keyof IInputBehaviorProperties, unknown>) {
 		super.firstUpdated(<Map<keyof IFormElementBehaviorProperties, unknown>>props);
 		this.onKeyDown = this.onKeyDown.bind(this);
+		this.onInput = this.onInput.bind(this);
+		this.onBlur = this.onBlur.bind(this);
 
 		this.listeners.push(
-			addListener(this.$formElement, "keydown", this.onKeyDown, {passive: true})
+			addListener(this.$formElement, "keydown", this.onKeyDown, {passive: true}),
+			addListener(this.$formElement, "input", this.onInput, {passive: true}),
+			addListener(this.$formElement, "focusout", this.onBlur, {passive: true})
 		);
 
 		// Set the initial value after the native form element has been created.
@@ -121,10 +154,60 @@ export abstract class InputBehavior extends FormElementBehavior implements IInpu
 	}
 
 	/**
+	 * Creates a root that delegates the focus.
+	 */
+	protected createRenderRoot () {
+		return this.attachShadow({mode: "open", delegatesFocus: true});
+	}
+
+	/**
 	 * Focuses the form element.
 	 */
 	focus () {
 		this.$formElement.focus();
+	}
+
+	/**
+	 * Sets the value of the form element.
+	 * @param value
+	 */
+	protected setValue (value: string) {
+		if (this.$formElement != null) {
+			this.$formElement.value = value;
+			this.refreshAttributes();
+
+		} else {
+			// Store the initial value so the correct value can be set when the $formElement is added to the DOM.
+			this.initialValue = value;
+		}
+	}
+
+
+	/**
+	 * Handles the input event.
+	 * @param e
+	 */
+	protected onInput (e: Event) {
+		this.refreshAttributes();
+	}
+
+	/**
+	 * Handles the on blur event.
+	 */
+	protected onBlur () {
+		this._pristine = false;
+		this.refreshAttributes();
+	}
+
+	/**
+	 * Refreshes the attributes.
+	 */
+	protected refreshAttributes () {
+		renderAttributes(this, {
+			dirty: this.dirty,
+			invalid: !this.valid && !this.pristine,
+			pristine: this.pristine
+		});
 	}
 
 	/**

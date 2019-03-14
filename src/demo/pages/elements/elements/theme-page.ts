@@ -12,7 +12,7 @@ import { sharedStyles } from "../../../style/shared";
 
 import styles from "./theme-page.scss";
 
-const requiredColors = ["primary", "secondary", "error", "shade"];
+const requiredColors = ["primary", "error", "shade"];
 const requiredDefaultHues = [400, 500, 600];
 const requiredShadeHues = [200, 300, 400, 500, 600, 700];
 

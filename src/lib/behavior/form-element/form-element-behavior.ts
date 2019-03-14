@@ -58,13 +58,7 @@ export abstract class FormElementBehavior extends LitElement implements IFormEle
 	 * @attr
 	 * @param value
 	 */
-	@property({type: String}) set value (value: string) {
-		this.setValue(value);
-	}
-
-	get value () {
-		return this.getValue();
-	}
+	@property({type: String}) value: string = "";
 
 	/**
 	 * Initial value is only set if the form element doesn't exist which will be the case
@@ -92,21 +86,6 @@ export abstract class FormElementBehavior extends LitElement implements IFormEle
 	 */
 	get validationMessage (): string {
 		return this.$formElement.validationMessage;
-	}
-
-	/**
-	 * Returns whether the component is pristine or has been touched.
-	 */
-	private _pristine = true;
-	get pristine () {
-		return this._pristine;
-	}
-
-	/**
-	 * Returns whether the nativeInput is dirty or not.
-	 */
-	get dirty (): boolean {
-		return (this.value != null && this.value !== "");
 	}
 
 	/**
@@ -168,17 +147,9 @@ export abstract class FormElementBehavior extends LitElement implements IFormEle
 	protected firstUpdated (props: Map<keyof IFormElementBehaviorProperties, unknown>) {
 		super.firstUpdated(props);
 
-		this.onInput = this.onInput.bind(this);
-		this.onBlur = this.onBlur.bind(this);
-
 		// Move the form element to the light DOM
 		this.$formElement = this.queryFormElement();
 		this.appendChild(this.$formElement);
-
-		this.listeners.push(
-			addListener(this.$formElement, "input", this.onInput, {passive: true}),
-			addListener(this.$formElement, "focusout", this.onBlur, {passive: true})
-		);
 	}
 
 	/**
@@ -209,51 +180,10 @@ export abstract class FormElementBehavior extends LitElement implements IFormEle
 	}
 
 	/**
-	 * Sets the value of the form element.
-	 * @param value
-	 */
-	protected setValue (value: string) {
-		if (this.$formElement != null) {
-			this.$formElement.value = value;
-			this.refreshAttributes();
-		} else {
-			// Store the initial value so the correct value can be set when the $formElement is added to the DOM.
-			this.initialValue = value;
-		}
-	}
-
-	/**
 	 * Returns the value of the form element.
 	 */
-	protected getValue (): string {
+	protected getFormItemValue (): string {
 		return this.$formElement != null ? this.$formElement.value : this.initialValue || "";
-	}
-
-	/**
-	 * Handles the input event.
-	 * @param e
-	 */
-	protected onInput (e: Event) {
-		this.refreshAttributes();
-	}
-
-	/**
-	 * Handles the on blur event.
-	 */
-	protected onBlur () {
-		this._pristine = false;
-		this.refreshAttributes();
-	}
-
-	/**
-	 * Refreshes the attributes.
-	 */
-	protected refreshAttributes () {
-		renderAttributes(this, {
-			dirty: this.dirty,
-			invalid: !this.valid && !this.pristine,
-			pristine: this.pristine
-		});
 	}
 
 	/**

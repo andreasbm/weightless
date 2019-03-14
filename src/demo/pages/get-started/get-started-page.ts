@@ -40,7 +40,7 @@ export default class GetStartedPage extends LitElement {
 				<highlight-element text="npm i weightless"></highlight-element>
 				
 				<wl-divider></wl-divider>
-				<wl-title level="3">Consumption</wl-title>
+				<wl-title level="3">Usage</wl-title>
 				<p>To consume the web components you must first import the elements you wish to use. If you for example want to use the <code>wl-button</code> you must import from path <code>"weightless/button"</code> like this.</p>
 				<highlight-element lang="js" text='import "weightless/button"'></highlight-element>
 				
