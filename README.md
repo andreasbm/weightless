@@ -55,31 +55,33 @@ npm i weightless
 
 ## ➤ Elements
 
-| Name | Tag | Description | Documentation | Demo |
-| ------- | ------- | ------- | ------- | ------- |
-| Backdrop | `wl-backdrop` | Dark layer to use behind overlayed elements. | [Documentation](/src/lib/backdrop) | [Demo](https://weightless.dev/elements/dialog) |
-| Banner | `wl-banner` | Display a non-interruptive message and related optional actions. | [Documentation](/src/lib/banner) | [Demo](https://weightless.dev/elements/banner) |
-| Button | `wl-button` | Allow users to take actions, and make choices, with a single tap. | [Documentation](/src/lib/button) | [Demo](https://weightless.dev/elements/button) |
-| Card | `wl-card` | Group related content and action. | [Documentation](/src/lib/card) | [Demo](https://weightless.dev/elements/card) |
-| Checkbox | `wl-checkbox` | Turn an option on or off. | [Documentation](/src/lib/checkbox) | [Demo](https://weightless.dev/elements/checkbox) |
-| Dialog | `wl-dialog` | Highly interruptive messages. | [Documentation](/src/lib/dialog) | [Demo](https://weightless.dev/elements/dialog) |
-| Divider | `wl-divider` | Thin line that groups content in lists and layouts. | [Documentation](/src/lib/divider) | [Demo](https://weightless.dev/elements/divider) |
-| Expansion | `wl-expansion` | Provide an expandable details-summary view. | [Documentation](/src/lib/expansion) | [Demo](https://weightless.dev/elements/expansion) |
-| Icon | `wl-icon` | Symbols for common actions and items. | [Documentation](/src/lib/icon) | [Demo](https://weightless.dev/elements/icon) |
-| Label | `wl-label` | Make form elements more accessible. | [Documentation](/src/lib/label) | [Demo](https://weightless.dev/elements/label) |
-| List Item | `wl-list-item` | Display an item in a list. | [Documentation](/src/lib/list-item) | [Demo](https://weightless.dev/elements/list-item) |
-| Nav | `wl-nav` | Provide access to destinations in your app. | [Documentation](/src/lib/nav) | [Demo](https://weightless.dev/elements/nav) |
-| Popover | `wl-popover` | Contextual anchored elements | [Documentation](/src/lib/popover) | [Demo](https://weightless.dev/elements/popover) |
-| Popover Card | `wl-popover-card` | Give popovers a contextual flair. | [Documentation](/src/lib/popover-card) | [Demo](https://weightless.dev/elements/popover) |
-| Progress Bar | `wl-progress-bar` | Fills a bar from 0% to 100%. | [Documentation](/src/lib/progress-bar) | [Demo](https://weightless.dev/elements/progress-bar) |
-| Progress Spinner | `wl-progress-spinner` | Fills a circle from 0% to 100%. | [Documentation](/src/lib/progress-spinner) | [Demo](https://weightless.dev/elements/progress-spinner) |
-| Radio | `wl-radio` | Select one option from a set. | [Documentation](/src/lib/radio) | [Demo](https://weightless.dev/elements/radio) |
-| Ripple | `wl-ripple` | Indicate touch actions. | [Documentation](/src/lib/ripple) | [Demo](https://weightless.dev/elements/ripple) |
-| Select | `wl-select` | Select one or more values from a set of options. | [Documentation](/src/lib/select) | [Demo](https://weightless.dev/elements/select) |
-| Textarea | `wl-textarea` | Multiline text fields. | [Documentation](/src/lib/textarea) | [Demo](https://weightless.dev/elements/textarea) |
-| Textfield | `wl-textfield` | Singleline text fields. | [Documentation](/src/lib/textfield) | [Demo](https://weightless.dev/elements/textfield) |
-| Title | `wl-title` | Indicate the start of a new section. | [Documentation](/src/lib/title) | [Demo](https://weightless.dev/elements/title) |
-| Tooltip | `wl-tooltip` | Informative context related text. | [Documentation](/src/lib/tooltip) | [Demo](https://weightless.dev/elements/tooltip) |
+
+| Name             | Tag                   | Description                                      | Documentation                              | Demo                                             |
+|------------------|-----------------------|--------------------------------------------------|--------------------------------------------|--------------------------------------------------|
+| Backdrop         | `wl-backdrop`         | Dark layer to use behind overlayed elements.     | [Documentation](/src/lib/backdrop)         | [Demo](https://weightless.dev/elements/dialog)   |
+| Banner           | `wl-banner`           | Display a non-interruptive message and related optional actions. | [Documentation](/src/lib/banner)           | [Demo](https://weightless.dev/elements/banner)   |
+| Button           | `wl-button`           | Allow users to take actions, and make choices, with a single tap. | [Documentation](/src/lib/button)           | [Demo](https://weightless.dev/elements/button)   |
+| Card             | `wl-card`             | Group related content and action.                | [Documentation](/src/lib/card)             | [Demo](https://weightless.dev/elements/card)     |
+| Checkbox         | `wl-checkbox`         | Turn an option on or off.                        | [Documentation](/src/lib/checkbox)         | [Demo](https://weightless.dev/elements/checkbox) |
+| Dialog           | `wl-dialog`           | Highly interruptive messages.                    | [Documentation](/src/lib/dialog)           | [Demo](https://weightless.dev/elements/dialog)   |
+| Divider          | `wl-divider`          | Thin line that groups content in lists and layouts. | [Documentation](/src/lib/divider)          | [Demo](https://weightless.dev/elements/divider)  |
+| Expansion        | `wl-expansion`        | Provide an expandable details-summary view.      | [Documentation](/src/lib/expansion)        | [Demo](https://weightless.dev/elements/expansion) |
+| Icon             | `wl-icon`             | Symbols for common actions and items.            | [Documentation](/src/lib/icon)             | [Demo](https://weightless.dev/elements/icon)     |
+| Label            | `wl-label`            | Make form elements more accessible.              | [Documentation](/src/lib/label)            | [Demo](https://weightless.dev/elements/label)    |
+| List Item        | `wl-list-item`        | Display an item in a list.                       | [Documentation](/src/lib/list-item)        | [Demo](https://weightless.dev/elements/list-item) |
+| Nav              | `wl-nav`              | Provide access to destinations in your app.      | [Documentation](/src/lib/nav)              | [Demo](https://weightless.dev/elements/nav)      |
+| Popover          | `wl-popover`          | Contextual anchored elements                     | [Documentation](/src/lib/popover)          | [Demo](https://weightless.dev/elements/popover)  |
+| Popover Card     | `wl-popover-card`     | Give popovers a contextual flair.                | [Documentation](/src/lib/popover-card)     | [Demo](https://weightless.dev/elements/popover)  |
+| Progress Bar     | `wl-progress-bar`     | Fills a bar from 0% to 100%.                     | [Documentation](/src/lib/progress-bar)     | [Demo](https://weightless.dev/elements/progress-bar) |
+| Progress Spinner | `wl-progress-spinner` | Fills a circle from 0% to 100%.                  | [Documentation](/src/lib/progress-spinner) | [Demo](https://weightless.dev/elements/progress-spinner) |
+| Radio            | `wl-radio`            | Select one option from a set.                    | [Documentation](/src/lib/radio)            | [Demo](https://weightless.dev/elements/radio)    |
+| Ripple           | `wl-ripple`           | Indicate touch actions.                          | [Documentation](/src/lib/ripple)           | [Demo](https://weightless.dev/elements/ripple)   |
+| Select           | `wl-select`           | Select one or more values from a set of options. | [Documentation](/src/lib/select)           | [Demo](https://weightless.dev/elements/select)   |
+| Textarea         | `wl-textarea`         | Multiline text fields.                           | [Documentation](/src/lib/textarea)         | [Demo](https://weightless.dev/elements/textarea) |
+| Textfield        | `wl-textfield`        | Singleline text fields.                          | [Documentation](/src/lib/textfield)        | [Demo](https://weightless.dev/elements/textfield) |
+| Title            | `wl-title`            | Indicate the start of a new section.             | [Documentation](/src/lib/title)            | [Demo](https://weightless.dev/elements/title)    |
+| Tooltip          | `wl-tooltip`          | Informative context related text.                | [Documentation](/src/lib/tooltip)          | [Demo](https://weightless.dev/elements/tooltip)  |
+
 
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#roadmap)
@@ -112,9 +114,11 @@ If you want to know more about how you can help you should definitely check out 
 
 ## ➤ Contributors
 	
-|[<img alt="Andreas Mehlsen" src="https://avatars1.githubusercontent.com/u/6267397?s=460&v=4" width="100">](https://twitter.com/andreasmehlsen) | [<img alt="You?" src="https://joeschmoe.io/api/v1/random" width="100">](https://github.com/andreasbm/weightless/blob/master/CONTRIBUTING.md)|
-|:---: | :---:|
-|[Andreas Mehlsen](https://twitter.com/andreasmehlsen) | [You?](https://github.com/andreasbm/weightless/blob/master/CONTRIBUTING.md)|
+
+| [<img alt="Andreas Mehlsen" src="https://avatars1.githubusercontent.com/u/6267397?s=460&v=4" width="100">](https://twitter.com/andreasmehlsen) | [<img alt="You?" src="https://joeschmoe.io/api/v1/random" width="100">](https://github.com/andreasbm/weightless/blob/master/CONTRIBUTING.md) |
+|:--------------------------------------------------:|:--------------------------------------------------:|
+| [Andreas Mehlsen](https://twitter.com/andreasmehlsen) | [You?](https://github.com/andreasbm/weightless/blob/master/CONTRIBUTING.md) |
+
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#license)
 

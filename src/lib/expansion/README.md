@@ -21,7 +21,6 @@ Provide an expandable details-summary view.
 | `readonly`    | `readonly`      | `boolean`  | false         | Makes the element readonly (disabled but tabbable) |
 | `required`    | `required`      | `boolean`  | false         | Makes the element required in a form context.    |
 | `role`        | `role`          | `AriaRole` | "radio"       | Role of the radio behavior.                      |
-| `space`       | `space`         | `boolean`  | false         | Adds space beneath the expansion.                |
 | `value`       | `value`         | `string`   | ""            | Value of the form element.                       |
 
 
@@ -76,9 +75,11 @@ Go [here](https://weightless.dev/elements/expansion) to try the demo.
 
 ## ➤ Contributors
 	
-|[<img alt="Andreas Mehlsen" src="https://avatars1.githubusercontent.com/u/6267397?s=460&v=4" width="100">](https://twitter.com/andreasmehlsen) | [<img alt="You?" src="https://joeschmoe.io/api/v1/random" width="100">](https://github.com/andreasbm/weightless/blob/master/CONTRIBUTING.md)|
-|:---: | :---:|
-|[Andreas Mehlsen](https://twitter.com/andreasmehlsen) | [You?](https://github.com/andreasbm/weightless/blob/master/CONTRIBUTING.md)|
+
+| [<img alt="Andreas Mehlsen" src="https://avatars1.githubusercontent.com/u/6267397?s=460&v=4" width="100">](https://twitter.com/andreasmehlsen) | [<img alt="You?" src="https://joeschmoe.io/api/v1/random" width="100">](https://github.com/andreasbm/weightless/blob/master/CONTRIBUTING.md) |
+|:--------------------------------------------------:|:--------------------------------------------------:|
+| [Andreas Mehlsen](https://twitter.com/andreasmehlsen) | [You?](https://github.com/andreasbm/weightless/blob/master/CONTRIBUTING.md) |
+
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#license)
 
