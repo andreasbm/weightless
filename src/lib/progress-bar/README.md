@@ -5,6 +5,7 @@
 
 Fills a bar from 0% to 100%.
 
+
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#properties)
 
 ## ➤ Properties

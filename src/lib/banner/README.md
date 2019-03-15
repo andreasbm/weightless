@@ -5,6 +5,7 @@
 
 Display a non-interruptive message and related optional actions.
 
+
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#properties)
 
 ## ➤ Properties

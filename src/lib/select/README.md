@@ -5,6 +5,7 @@
 
 Select one or more values from a set of options.
 
+
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#properties)
 
 ## ➤ Properties
@@ -19,7 +20,7 @@ Select one or more values from a set of options.
 | `placeholder`  | `placeholder`  | `string`        |          | Placeholder text.                                |
 | `readonly`     | `readonly`     | `boolean`       | false    | Makes the element readonly (disabled but tabbable) |
 | `required`     | `required`     | `boolean`       | false    | Makes the element required in a form context.    |
-| `role`         | `role`         | `AriaRole`      | "select" | Role of the select.                              |
+| `role`         |                | `AriaRole`      | "select" | Role of the select.                              |
 | `value`        | `value`        | `string`        |          | Value of the form element.                       |
 
 

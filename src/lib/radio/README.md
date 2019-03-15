@@ -5,20 +5,21 @@
 
 Select one option from a set.
 
+
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#properties)
 
 ## ➤ Properties
 
-| Property      | Attribute      | Type       | Default | Description                                      |
-|---------------|----------------|------------|---------|--------------------------------------------------|
-| `ariaChecked` | `aria-checked` | `string`   |         | Aria checked attribute.                          |
-| `checked`     | `checked`      | `boolean`  | false   | Checks the checkbox.                             |
-| `disabled`    | `disabled`     | `boolean`  | false   | Disables the element.                            |
-| `name`        | `name`         | `string`   |         | Name of the native form element.                 |
-| `readonly`    | `readonly`     | `boolean`  | false   | Makes the element readonly (disabled but tabbable) |
-| `required`    | `required`     | `boolean`  | false   | Makes the element required in a form context.    |
-| `role`        | `role`         | `AriaRole` | "radio" | Role of the radio behavior.                      |
-| `value`       | `value`        | `string`   | ""      | Value of the form element.                       |
+| Property      | Attribute     | Type       | Default | Description                                      |
+|---------------|---------------|------------|---------|--------------------------------------------------|
+| `ariaChecked` | `ariaChecked` | `string`   |         | Aria checked attribute.                          |
+| `checked`     | `checked`     | `boolean`  | false   | Checks the checkbox.                             |
+| `disabled`    | `disabled`    | `boolean`  | false   | Disables the element.                            |
+| `name`        | `name`        | `string`   |         | Name of the native form element.                 |
+| `readonly`    | `readonly`    | `boolean`  | false   | Makes the element readonly (disabled but tabbable) |
+| `required`    | `required`    | `boolean`  | false   | Makes the element required in a form context.    |
+| `role`        | `role`        | `AriaRole` | "radio" | Role of the radio behavior.                      |
+| `value`       | `value`       | `string`   | ""      | Value of the form element.                       |
 
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#css-custom-properties)

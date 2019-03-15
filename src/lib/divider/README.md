@@ -5,6 +5,7 @@
 
 Thin line that groups content in lists and layouts.
 
+
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#properties)
 
 ## ➤ Properties
