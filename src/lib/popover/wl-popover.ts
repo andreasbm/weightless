@@ -105,7 +105,7 @@ export class WlPopover<R = unknown> extends OverlayBehavior<R, IPopoverConfig> i
 	 * Anchor element or query.
 	 * @attr
 	 */
-	@property({type: String}) anchor?: Element | string;
+	@property({type: Object}) anchor?: Element | string;
 
 	/**
 	 * Events on the anchor that makes the popover open itself.
