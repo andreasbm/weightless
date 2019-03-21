@@ -10,24 +10,26 @@ Multiline text fields.
 
 ## ➤ Properties
 
-| Property       | Attribute      | Type            | Default   | Description                                      |
-|----------------|----------------|-----------------|-----------|--------------------------------------------------|
-| `autocomplete` | `autocomplete` | `"on" \| "off"` |           | Whether autocomplete is on or off.               |
-| `cols`         | `cols`         | `number`        |           | Amount of columns.                               |
-| `disabled`     | `disabled`     | `boolean`       | false     | Disables the element.                            |
-| `filled`       | `filled`       | `boolean`       | false     | Fills the input with a solid color.              |
-| `maxLength`    | `maxLength`    | `number`        |           | Max value length.                                |
-| `minLength`    | `minLength`    | `number`        |           | Min value length.                                |
-| `name`         | `name`         | `string`        |           | Name of the native form element.                 |
-| `outlined`     | `outlined`     | `boolean`       | false     | Makes the input outlined.                        |
-| `pattern`      | `pattern`      | `string`        |           | Value pattern.                                   |
-| `label`  | `label`  | `string`        |           | Label text.                                |
-| `readonly`     | `readonly`     | `boolean`       | false     | Makes the element readonly (disabled but tabbable) |
-| `required`     | `required`     | `boolean`       | false     | Makes the element required in a form context.    |
-| `role`         | `role`         | `AriaRole`      | "textbox" | Role of the input.                               |
-| `rows`         | `rows`         | `number`        |           | Amount of rows.                                  |
-| `type`         | `type`         | `InputType`     | "text"    | Type of the input.                               |
-| `value`        | `value`        | `string`        |           | Value of the form element.                       |
+| Property       | Attribute      | Type            | Default      | Description                                      |
+|----------------|----------------|-----------------|--------------|--------------------------------------------------|
+| `$formElement` |                | `FormElement`   | **required** | Native form element.                             |
+| `autocomplete` | `autocomplete` | `"on" \| "off"` |              | Whether autocomplete is on or off.               |
+| `cols`         | `cols`         | `number`        |              | Amount of columns.                               |
+| `disabled`     | `disabled`     | `boolean`       | false        | Disables the element.                            |
+| `filled`       | `filled`       | `boolean`       | false        | Fills the input with a solid color.              |
+| `label`        | `label`        | `string`        |              | Label text.                                      |
+| `list`         | `list`         | `string`        |              | Datalist id.                                     |
+| `maxLength`    | `maxLength`    | `number`        |              | Max value length.                                |
+| `minLength`    | `minLength`    | `number`        |              | Min value length.                                |
+| `name`         | `name`         | `string`        |              | Name of the native form element.                 |
+| `outlined`     | `outlined`     | `boolean`       | false        | Makes the input outlined.                        |
+| `pattern`      | `pattern`      | `string`        |              | Value pattern.                                   |
+| `readonly`     | `readonly`     | `boolean`       | false        | Makes the element readonly (disabled but tabbable) |
+| `required`     | `required`     | `boolean`       | false        | Makes the element required in a form context.    |
+| `role`         | `role`         | `AriaRole`      | "textbox"    | Role of the input.                               |
+| `rows`         | `rows`         | `number`        |              | Amount of rows.                                  |
+| `type`         | `type`         | `InputType`     | "text"       | Type of the input.                               |
+| `value`        | `value`        | `string`        |              | Value of the form element.                       |
 
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#events)
@@ -56,14 +58,14 @@ Multiline text fields.
 | `--input-color-disabled`              | Color when disabled.                          |
 | `--input-font-family`                 | Font family.                                  |
 | `--input-font-size`                   | Font size.                                    |
+| `--input-label-color`                 | Color of the label.                           |
+| `--input-label-color-disabled`        | Color of the label when disabled.             |
+| `--input-label-font-size`             | Font size of the label.                       |
+| `--input-label-space`                 | Space between label and input content.        |
+| `--input-label-transition`            | Transition of the label.                      |
 | `--input-padding-left-right`          | Padding for the left and right.               |
 | `--input-padding-left-right-outlined` | Padding for the left and right when outlined. |
 | `--input-padding-top-bottom`          | Padding for the top and bottom.               |
-| `--input-label-color`           | Color of the label.                     |
-| `--input-label-color-disabled`  | Color of the label when disabled.       |
-| `--input-label-font-size`       | Font size of the label.                 |
-| `--input-label-space`           | Space between label and input content.  |
-| `--input-label-transition`      | Transition of the label.                |
 | `--input-state-color-active`          | State color when active.                      |
 | `--input-state-color-disabled`        | State color when disabled.                    |
 | `--input-state-color-hover`           | State color on :hover.                        |

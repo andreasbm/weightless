@@ -10,16 +10,17 @@ Turn an option on or off.
 
 ## ➤ Properties
 
-| Property      | Attribute     | Type       | Default    | Description                                      |
-|---------------|---------------|------------|------------|--------------------------------------------------|
-| `ariaChecked` | `ariaChecked` | `string`   |            | Aria checked attribute.                          |
-| `checked`     | `checked`     | `boolean`  | false      | Checks the checkbox.                             |
-| `disabled`    | `disabled`    | `boolean`  | false      | Disables the element.                            |
-| `name`        | `name`        | `string`   |            | Name of the native form element.                 |
-| `readonly`    | `readonly`    | `boolean`  | false      | Makes the element readonly (disabled but tabbable) |
-| `required`    | `required`    | `boolean`  | false      | Makes the element required in a form context.    |
-| `role`        | `role`        | `AriaRole` | "checkbox" | Role of the checkbox.                            |
-| `value`       | `value`       | `string`   | ""         | Value of the form element.                       |
+| Property       | Attribute     | Type          | Default      | Description                                      |
+|----------------|---------------|---------------|--------------|--------------------------------------------------|
+| `$formElement` |               | `FormElement` | **required** | Native form element.                             |
+| `ariaChecked`  | `ariaChecked` | `string`      |              | Aria checked attribute.                          |
+| `checked`      | `checked`     | `boolean`     | false        | Checks the checkbox.                             |
+| `disabled`     | `disabled`    | `boolean`     | false        | Disables the element.                            |
+| `name`         | `name`        | `string`      |              | Name of the native form element.                 |
+| `readonly`     | `readonly`    | `boolean`     | false        | Makes the element readonly (disabled but tabbable) |
+| `required`     | `required`    | `boolean`     | false        | Makes the element required in a form context.    |
+| `role`         | `role`        | `AriaRole`    | "checkbox"   | Role of the checkbox.                            |
+| `value`        | `value`       | `string`      | ""           | Value of the form element.                       |
 
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#css-custom-properties)

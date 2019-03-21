@@ -10,18 +10,19 @@ Select one or more values from a set of options.
 
 ## ➤ Properties
 
-| Property       | Attribute      | Type            | Default  | Description                                      |
-|----------------|----------------|-----------------|----------|--------------------------------------------------|
-| `autocomplete` | `autocomplete` | `"on" \| "off"` |          | Whether autocomplete is on or off.               |
-| `disabled`     | `disabled`     | `boolean`       | false    | Disables the element.                            |
-| `filled`       | `filled`       | `boolean`       | false    | Fills the input with a solid color.              |
-| `name`         | `name`         | `string`        |          | Name of the native form element.                 |
-| `outlined`     | `outlined`     | `boolean`       | false    | Makes the input outlined.                        |
-| `label`  | `label`  | `string`        |          | Label text.                                |
-| `readonly`     | `readonly`     | `boolean`       | false    | Makes the element readonly (disabled but tabbable) |
-| `required`     | `required`     | `boolean`       | false    | Makes the element required in a form context.    |
-| `role`         |                | `AriaRole`      | "select" | Role of the select.                              |
-| `value`        | `value`        | `string`        |          | Value of the form element.                       |
+| Property       | Attribute      | Type            | Default      | Description                                      |
+|----------------|----------------|-----------------|--------------|--------------------------------------------------|
+| `$formElement` |                | `FormElement`   | **required** | Native form element.                             |
+| `autocomplete` | `autocomplete` | `"on" \| "off"` |              | Whether autocomplete is on or off.               |
+| `disabled`     | `disabled`     | `boolean`       | false        | Disables the element.                            |
+| `filled`       | `filled`       | `boolean`       | false        | Fills the input with a solid color.              |
+| `label`        | `label`        | `string`        |              | Label text.                                      |
+| `name`         | `name`         | `string`        |              | Name of the native form element.                 |
+| `outlined`     | `outlined`     | `boolean`       | false        | Makes the input outlined.                        |
+| `readonly`     | `readonly`     | `boolean`       | false        | Makes the element readonly (disabled but tabbable) |
+| `required`     | `required`     | `boolean`       | false        | Makes the element required in a form context.    |
+| `role`         |                | `AriaRole`      | "select"     | Role of the select.                              |
+| `value`        | `value`        | `string`        |              | Value of the form element.                       |
 
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#events)
@@ -50,14 +51,14 @@ Select one or more values from a set of options.
 | `--input-color-disabled`              | Color when disabled.                          |
 | `--input-font-family`                 | Font family.                                  |
 | `--input-font-size`                   | Font size.                                    |
+| `--input-label-color`                 | Color of the label.                           |
+| `--input-label-color-disabled`        | Color of the label when disabled.             |
+| `--input-label-font-size`             | Font size of the label.                       |
+| `--input-label-space`                 | Space between label and input content.        |
+| `--input-label-transition`            | Transition of the label.                      |
 | `--input-padding-left-right`          | Padding for the left and right.               |
 | `--input-padding-left-right-outlined` | Padding for the left and right when outlined. |
 | `--input-padding-top-bottom`          | Padding for the top and bottom.               |
-| `--input-label-color`           | Color of the label.                     |
-| `--input-label-color-disabled`  | Color of the label when disabled.       |
-| `--input-label-font-size`       | Font size of the label.                 |
-| `--input-label-space`           | Space between label and input content.  |
-| `--input-label-transition`      | Transition of the label.                |
 | `--input-state-color-active`          | State color when active.                      |
 | `--input-state-color-disabled`        | State color when disabled.                    |
 | `--input-state-color-hover`           | State color on :hover.                        |
