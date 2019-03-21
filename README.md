@@ -50,7 +50,7 @@ Go [here](https://weightless.dev/elements) to try the demo.
 $ npm i weightless
 ```
 
-If you want to super quickly get started you can use the CLI.
+If you want to get started super quickly you can use the CLI.
 
 ```javascript
 $ npm init web-config my-project --lit
