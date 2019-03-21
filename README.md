@@ -47,7 +47,19 @@ Go [here](https://weightless.dev/elements) to try the demo.
 ## ➤ Installation
 
 ```javascript
-npm i weightless
+$ npm i weightless
+```
+
+If you want to super quickly get started you can use the CLI.
+
+```javascript
+$ npm init web-config my-project --lit
+```
+
+If you prefer to use the `umd` bundle you can import `https://unpkg.com/weightless/umd/weightless.min.js`.
+
+```javascript
+<script src="https://unpkg.com/weightless/umd/weightless.min.js"></script>
 ```
 
 

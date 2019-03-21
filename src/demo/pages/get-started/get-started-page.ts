@@ -57,6 +57,7 @@ export default class GetStartedPage extends LitElement {
 					<li>Go to the <router-link path="/elements/button"><a href="" rel="noopener" @click="${(e: Event) => e.preventDefault()}">elements overview</a></router-link>.</li>
 					<li>Check out the <a href="${GITHUB_URL}" target="_blank">Github repository</a>.</li>
 					<li>Try out the library in the <a href="#" @click="${this.openPlayground}">playground</a>.</li>
+					<li>Run <code>npm init web-config new my-project --lit</code> to quickly setup a project with weightless.</li>
 				</ul>
 
 			</container-element>
