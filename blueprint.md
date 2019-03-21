@@ -10,19 +10,19 @@ Go [here]({{ demo }}) to try the demo.
 
 ## Installation
 
-```javascript
+```
 $ npm i {{ ids.npm }}
 ```
 
 If you want to get started super quickly you can use the CLI.
 
-```javascript
+```
 $ npm init web-config my-project --lit
 ```
 
 If you prefer to use the `umd` bundle you can import `https://unpkg.com/weightless/umd/weightless.min.js`.
 
-```javascript
+```html
 <script src="https://unpkg.com/weightless/umd/weightless.min.js"></script>
 ```
 
