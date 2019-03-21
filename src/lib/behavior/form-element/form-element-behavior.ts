@@ -79,7 +79,7 @@ export abstract class FormElementBehavior extends LitElement implements IFormEle
 	/**
 	 * Native form element.
 	 */
-	$formElement!: FormElement;
+	protected $formElement!: FormElement;
 
 	/**
 	 * Message for the current validation.
