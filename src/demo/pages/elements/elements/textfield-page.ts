@@ -20,7 +20,7 @@ export default class TextfieldPage extends LitElement {
 			<demo-element default>
 				<code-example-element>
 					<wl-textfield></wl-textfield>
-					<wl-textfield placeholder="Placeholder"></wl-textfield>
+					<wl-textfield label="Label"></wl-textfield>
 				</code-example-element>
 			</demo-element>
 			
@@ -28,7 +28,7 @@ export default class TextfieldPage extends LitElement {
 			<demo-element>
 				<code-example-element>
 					<wl-textfield outlined></wl-textfield>
-					<wl-textfield outlined placeholder="Placeholder"></wl-textfield>
+					<wl-textfield outlined label="Label"></wl-textfield>
 				</code-example-element>
 			</demo-element>
 			
@@ -36,25 +36,37 @@ export default class TextfieldPage extends LitElement {
 			<demo-element>
 				<code-example-element>
 					<wl-textfield filled></wl-textfield>
-					<wl-textfield filled placeholder="Placeholder"></wl-textfield>
+					<wl-textfield filled label="Label"></wl-textfield>
 				</code-example-element>
 			</demo-element>
 			
 			<wl-title level="3">Before & after slots</wl-title>
 			<demo-element>
 				<code-example-element>
-					<wl-textfield placeholder="Placeholder">
+					<wl-textfield label="Label">
 						<wl-icon slot="before">email</wl-icon>
 						<wl-icon slot="after">alternate_email</wl-icon>
 					</wl-textfield>
-					<wl-textfield placeholder="Placeholder" outlined>
+					<wl-textfield label="Label" outlined>
 						<wl-icon slot="before">email</wl-icon>
 						<wl-icon slot="after">alternate_email</wl-icon>
 					</wl-textfield>
-					<wl-textfield placeholder="Placeholder" filled>
+					<wl-textfield label="Label" filled>
 						<wl-icon slot="before">email</wl-icon>
 						<wl-icon slot="after">alternate_email</wl-icon>
 					</wl-textfield>
+				</code-example-element>
+			</demo-element>
+			
+			<wl-title level="3">Datalist</wl-title>
+			<demo-element>
+				<code-example-element>
+					<wl-textfield outlined label="Datalist" list="datalist"></wl-textfield>
+					<datalist id="datalist">
+					  <option value="Option 1"></option>
+					  <option value="Option 2"></option>
+					  <option value="Option 3"></option>
+					</datalist>
 				</code-example-element>
 			</demo-element>
 			
@@ -64,24 +76,24 @@ export default class TextfieldPage extends LitElement {
 					<wl-textfield disabled value="I'm disabled"></wl-textfield>
 					<wl-textfield disabled outlined value="I'm disabled"></wl-textfield>
 					<wl-textfield disabled filled value="I'm disabled"></wl-textfield>
-					<wl-textfield disabled placeholder="Placeholder" value="I'm disabled"></wl-textfield>
-					<wl-textfield disabled outlined placeholder="Placeholder"></wl-textfield>
-					<wl-textfield disabled filled placeholder="Placeholder"></wl-textfield>
+					<wl-textfield disabled label="Label" value="I'm disabled"></wl-textfield>
+					<wl-textfield disabled outlined label="Label"></wl-textfield>
+					<wl-textfield disabled filled label="Label"></wl-textfield>
 				</code-example-element>
 			</demo-element>
 
 			<wl-title level="3">Types</wl-title>
 			<demo-element>
 				<code-example-element>
-					<wl-textfield placeholder="Password" type="password"></wl-textfield>
-					<wl-textfield placeholder="Email" type="email"></wl-textfield>
-					<wl-textfield placeholder="Number" type="number"></wl-textfield>
-					<wl-textfield placeholder="Color" type="color"></wl-textfield>
-					<wl-textfield placeholder="Date" type="date"></wl-textfield>
-					<wl-textfield placeholder="Search" type="search"></wl-textfield>
-					<wl-textfield placeholder="Tel" type="tel"></wl-textfield>
-					<wl-textfield placeholder="File" type="file"></wl-textfield>
-					<wl-textfield placeholder="Range" type="range"></wl-textfield>
+					<wl-textfield label="Password" type="password"></wl-textfield>
+					<wl-textfield label="Email" type="email"></wl-textfield>
+					<wl-textfield label="Number" type="number"></wl-textfield>
+					<wl-textfield label="Color" type="color"></wl-textfield>
+					<wl-textfield label="Date" type="date"></wl-textfield>
+					<wl-textfield label="Search" type="search"></wl-textfield>
+					<wl-textfield label="Tel" type="tel"></wl-textfield>
+					<wl-textfield label="File" type="file"></wl-textfield>
+					<wl-textfield label="Range" type="range"></wl-textfield>
 				</code-example-element>
 			</demo-element>
 

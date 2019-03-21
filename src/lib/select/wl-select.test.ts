@@ -12,7 +12,7 @@ describe("wl-select", () => {
 	});
 	beforeEach(async () => {
 		$container.innerHTML = `
-			<wl-select placeholder="Select something">
+			<wl-select label="Select something">
 				<option value="" disabled selected>Select something</option>
 				<option value="1">Option 1</option>
 				<option value="2">Option 2</option>

@@ -27,9 +27,9 @@ $input-border-radius-outlined: var(--input-border-radius-outlined, #{$border-rad
 
 $input-font-family: var(--input-font-family, #{$font-family-serif});
 
-$input-placeholder-color: var(--input-placeholder-color, #{color("shade", $dark-hue)});
-$input-placeholder-color-disabled: var(--input-placeholder-color-disabled, #{color("shade", $light-hue)});
-$input-placeholder-font-size: var(--input-placeholder-font-size, #{$font-size-s});
-$input-placeholder-transition: var(--input-placeholder-transition, top #{$transition-duration-fast} #{$transition-linear}, font-size #{$transition-duration-fast} #{$transition-linear}, transform #{$transition-duration-fast} #{$transition-linear});
-$input-placeholder-space: var(--input-placeholder-space, #{size(14)});
+$input-label-color: var(--input-label-color, #{color("shade", $dark-hue)});
+$input-label-color-disabled: var(--input-label-color-disabled, #{color("shade", $light-hue)});
+$input-label-font-size: var(--input-label-font-size, #{$font-size-s});
+$input-label-transition: var(--input-label-transition, top #{$transition-duration-fast} #{$transition-linear}, font-size #{$transition-duration-fast} #{$transition-linear}, transform #{$transition-duration-fast} #{$transition-linear});
+$input-label-space: var(--input-label-space, #{size(14)});
 

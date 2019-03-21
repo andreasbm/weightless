@@ -72,14 +72,14 @@ export abstract class FormElementBehavior extends LitElement implements IFormEle
 	protected formElementId = uniqueID();
 
 	/**
-	 * Native form element.
-	 */
-	protected $formElement!: FormElement;
-
-	/**
 	 * Active listeners on the element.
 	 */
 	protected listeners: EventListenerSubscription[] = [];
+
+	/**
+	 * Native form element.
+	 */
+	$formElement!: FormElement;
 
 	/**
 	 * Message for the current validation.

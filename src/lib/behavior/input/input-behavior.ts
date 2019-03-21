@@ -22,7 +22,7 @@ export interface IInputBehaviorProperties extends IFormElementBehaviorProperties
 	role: AriaRole;
 	filled: boolean;
 	autocomplete?: "on" | "off";
-	placeholder?: string;
+	label?: string;
 }
 
 /**
@@ -50,11 +50,11 @@ export interface IInputBehaviorProperties extends IFormElementBehaviorProperties
  * @cssprop --input-border-radius-filled - Border radius when filled.
  * @cssprop --input-border-radius-outlined - Border radius when outlined.
  * @cssprop --input-font-family - Font family.
- * @cssprop --input-placeholder-color - Color of the placeholder.
- * @cssprop --input-placeholder-color-disabled - Color of the placeholder when disabled.
- * @cssprop --input-placeholder-font-size - Font size of the placeholder.
- * @cssprop --input-placeholder-transition - Transition of the placeholder.
- * @cssprop --input-placeholder-space - Space between placeholder and input content.
+ * @cssprop --input-label-color - Color of the label.
+ * @cssprop --input-label-color-disabled - Color of the label when disabled.
+ * @cssprop --input-label-font-size - Font size of the label.
+ * @cssprop --input-label-transition - Transition of the label.
+ * @cssprop --input-label-space - Space between label and input content.
  */
 export abstract class InputBehavior extends FormElementBehavior implements IInputBehaviorProperties {
 	static styles = [...FormElementBehavior.styles, cssResult(styles)];
@@ -84,10 +84,10 @@ export abstract class InputBehavior extends FormElementBehavior implements IInpu
 	@property({type: String, reflect: true}) role: AriaRole = "textbox";
 
 	/**
-	 * Placeholder text.
+	 * Label text.
 	 * @attr
 	 */
-	@property({type: String, reflect: true}) placeholder?: string;
+	@property({type: String, reflect: true}) label?: string;
 
 	/**
 	 * Value of the form element.
@@ -237,7 +237,7 @@ export abstract class InputBehavior extends FormElementBehavior implements IInpu
 			<div id="container">
 				<slot id="before" name="before"></slot>
 				<div id="wrapper">
-					<div id="placeholder">${this.placeholder}</div>
+					<div id="label">${this.label}</div>
 					<slot id="slot"></slot>
 					${this.renderFormElement()}
 				</div>

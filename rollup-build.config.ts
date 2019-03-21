@@ -1,14 +1,9 @@
-import {importStyles, minifyLitHTML} from "@appnest/web-config";
+import {clean, importStyles, minifyLitHTML} from "@appnest/web-config";
 import ts from '@wessberg/rollup-plugin-ts';
 import autoprefixer from 'autoprefixer';
 import cssnano from 'cssnano';
-import {generate} from 'escodegen';
-import {parse} from 'esprima';
-import {minify} from 'html-minifier';
-import {createServer} from 'livereload';
 import path from 'path';
 import precss from 'precss';
-import cleaner from 'rollup-plugin-cleaner';
 import commonjs from 'rollup-plugin-commonjs';
 import resolve from 'rollup-plugin-node-resolve';
 import progress from 'rollup-plugin-progress';
@@ -24,7 +19,6 @@ const folders = {
 const files = {
 	src_index: path.join(folders.src, "index.ts"),
 	dist_umd_weightless: path.join(folders.dist_umd, "weightless.min.js")
-
 };
 
 const plugins = ({tsConfig} = {}) => [
@@ -70,7 +64,7 @@ const configs = [
 		treeshake: false,
 		preserveModules: true,
 		plugins: [
-			cleaner({
+			clean({
 				targets: [
 					folders.dist
 				]

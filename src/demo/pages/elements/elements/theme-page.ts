@@ -43,7 +43,7 @@ export default class ThemePage extends LitElement {
 			<wl-title level="3">CSS variables</wl-title>
 			<p>There are lots of different css variables you can change. Here are some examples.</p>
 			<demo-element>
-				<wl-select placeholder="Serif Font" filled @change="${(e: Event) => setProperty("--font-family-serif", (<HTMLSelectElement>e.target).value)}">
+				<wl-select label="Serif Font" filled @change="${(e: Event) => setProperty("--font-family-serif", (<HTMLSelectElement>e.target).value)}">
 					<option value="Roboto Slab" selected>Roboto Slab</option>
 					<option value="courier new">Courier New</option>
 					<option value="times">Times</option>
@@ -53,7 +53,7 @@ export default class ThemePage extends LitElement {
 					<option value="palatino">Palatino</option>
 				</wl-select>
 				<br/>
-				<wl-select placeholder="Sans Serif Font" filled @change="${(e: Event) => setProperty("--font-family-sans-serif", (<HTMLSelectElement>e.target).value)}">
+				<wl-select label="Sans Serif Font" filled @change="${(e: Event) => setProperty("--font-family-sans-serif", (<HTMLSelectElement>e.target).value)}">
 					<option value="Roboto Condensed" selected>Roboto Condensed</option>
 					<option value="helvetica">Helvetica</option>
 					<option value="verdana">Verdana</option>
@@ -63,7 +63,7 @@ export default class ThemePage extends LitElement {
 					<option value="Comic Sans MS">Comic Sans MS</option>
 				</wl-select>
 				<br/>
-				<wl-select placeholder="Size" filled @change="${(e: Event) => setProperty("--size-multiplier", (<HTMLSelectElement>e.target).value)}">
+				<wl-select label="Size" filled @change="${(e: Event) => setProperty("--size-multiplier", (<HTMLSelectElement>e.target).value)}">
 					<option value="0.8px">0.8x</option>
 					<option value="1px" selected>1x</option>
 					<option value="1.2px">1.2x</option>

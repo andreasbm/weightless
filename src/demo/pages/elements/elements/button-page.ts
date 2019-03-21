@@ -45,7 +45,7 @@ export default class ButtonPage extends LitElement {
 			<demo-element>
 				<code-example-element>
 					<form style="display: inline-flex; align-items: center; margin: auto;">
-						<wl-textfield placeholder="Required" required minlength="10" autocomplete="off"></wl-textfield>
+						<wl-textfield label="Required" required minlength="10" autocomplete="off"></wl-textfield>
 						<wl-button>Button</wl-button>
 					</form>
 				</code-example-element>

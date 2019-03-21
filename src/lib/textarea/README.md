@@ -21,7 +21,7 @@ Multiline text fields.
 | `name`         | `name`         | `string`        |           | Name of the native form element.                 |
 | `outlined`     | `outlined`     | `boolean`       | false     | Makes the input outlined.                        |
 | `pattern`      | `pattern`      | `string`        |           | Value pattern.                                   |
-| `placeholder`  | `placeholder`  | `string`        |           | Placeholder text.                                |
+| `label`  | `label`  | `string`        |           | Label text.                                |
 | `readonly`     | `readonly`     | `boolean`       | false     | Makes the element readonly (disabled but tabbable) |
 | `required`     | `required`     | `boolean`       | false     | Makes the element required in a form context.    |
 | `role`         | `role`         | `AriaRole`      | "textbox" | Role of the input.                               |
@@ -59,11 +59,11 @@ Multiline text fields.
 | `--input-padding-left-right`          | Padding for the left and right.               |
 | `--input-padding-left-right-outlined` | Padding for the left and right when outlined. |
 | `--input-padding-top-bottom`          | Padding for the top and bottom.               |
-| `--input-placeholder-color`           | Color of the placeholder.                     |
-| `--input-placeholder-color-disabled`  | Color of the placeholder when disabled.       |
-| `--input-placeholder-font-size`       | Font size of the placeholder.                 |
-| `--input-placeholder-space`           | Space between placeholder and input content.  |
-| `--input-placeholder-transition`      | Transition of the placeholder.                |
+| `--input-label-color`           | Color of the label.                     |
+| `--input-label-color-disabled`  | Color of the label when disabled.       |
+| `--input-label-font-size`       | Font size of the label.                 |
+| `--input-label-space`           | Space between label and input content.  |
+| `--input-label-transition`      | Transition of the label.                |
 | `--input-state-color-active`          | State color when active.                      |
 | `--input-state-color-disabled`        | State color when disabled.                    |
 | `--input-state-color-hover`           | State color on :hover.                        |

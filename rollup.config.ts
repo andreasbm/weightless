@@ -43,7 +43,7 @@ export default {
 	],
 	plugins: [
 		...defaultPlugins({
-			cleanerConfig: {
+			cleanConfig: {
 				targets: [
 					folders.dist
 				]
@@ -85,14 +85,6 @@ export default {
 					verbose: false,
 					// Exclude all files since we need the original formatting for the demo code blocks
 					exclude: /.*/
-				},
-				visualizerConfig: {
-					filename: join(folders.dist, "stats.html")
-				},
-				licenseConfig: {
-					thirdParty: {
-						output: join(folders.dist, "licenses.txt")
-					}
 				}
 			}),
 			copy({

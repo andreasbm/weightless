@@ -7,7 +7,7 @@
 	--_input-bg: #{$input-bg};
 	--_input-border-radius: 0;
 	--_input-color: #{$input-color};
-	--_input-placeholder-color: #{$input-placeholder-color};
+	--_input-label-color: #{$input-label-color};
 
 	transform: translateZ(0);
 	display: block;
@@ -17,7 +17,7 @@
 :host([disabled]) {
 	pointer-events: none;
 	--_input-state-color: #{$input-state-color-disabled};
-	--_input-placeholder-color: #{$input-placeholder-color-disabled};
+	--_input-label-color: #{$input-label-color-disabled};
 	--_input-color: #{$input-color-disabled};
 }
 
@@ -40,10 +40,10 @@
 	flex-grow: 1;
 }
 
-#placeholder {
+#label {
 	left: var(--_input-padding-left-right);
-	color: var(--_input-placeholder-color);
-	transition: #{$input-placeholder-transition};
+	color: var(--_input-label-color);
+	transition: #{$input-label-transition};
 	font-family: #{$input-font-family};
 
 	top: 50%;
@@ -88,8 +88,8 @@
 }
 
 :host([dirty]), :host(:focus-within), :host([type="color"]), :host([type="date"]), :host([type="file"]), :host([type="range"]) {
-	#placeholder {
-		font-size: #{$input-placeholder-font-size};
+	#label {
+		font-size: #{$input-label-font-size};
 		top: #{$input-padding-top-bottom};
 		transform: translateY(0);
 	}
@@ -120,9 +120,9 @@
 	}
 }
 
-:host([placeholder]) {
+:host([label]) {
 	::slotted(input), ::slotted(textarea), ::slotted(select) {
-		padding-top: calc(#{$input-placeholder-space} + #{$input-padding-top-bottom});
+		padding-top: calc(#{$input-label-space} + #{$input-padding-top-bottom});
 	}
 }
 

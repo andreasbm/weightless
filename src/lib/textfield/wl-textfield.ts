@@ -13,6 +13,7 @@ export interface ITextfieldProperties extends IInputBehaviorProperties {
 	maxLength?: number;
 	minLength?: number;
 	type: InputType;
+	list?: string;
 }
 
 /**
@@ -47,6 +48,12 @@ export class WlTextfield extends InputBehavior implements ITextfieldProperties {
 	@property({type: Number, reflect: true}) maxLength?: number;
 
 	/**
+	 * Datalist id.
+	 * @attr
+	 */
+	@property({type: String}) list?: string;
+
+	/**
 	 * Renders the form element
 	 */
 	protected renderFormElement (): TemplateResult {
@@ -59,6 +66,7 @@ export class WlTextfield extends InputBehavior implements ITextfieldProperties {
 				?readonly="${this.readonly}"
 				type="${ifDefined(this.type)}"
 				name="${ifDefined(this.name)}"
+				list="${ifDefined(this.list)}"
 				pattern="${ifDefined(this.pattern)}"
 				autocomplete="${ifDefined(this.autocomplete)}"
 				minlength="${ifDefined(this.minLength)}"

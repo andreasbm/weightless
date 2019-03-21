@@ -107,7 +107,7 @@ export default class DialogPage extends LitElement {
 					<wl-dialog id="dialog" fixed backdrop blockScrolling .scrollContainer="${getMainScrollContainer()}">
 						<h3 slot="header">Hello my friend</h3>
 						<div slot="content">
-							<wl-textfield id="dialog-input" placeholder="Enter your name"></wl-textfield>
+							<wl-textfield id="dialog-input" label="Enter your name"></wl-textfield>
 						</div>
 						<div slot="footer">
 							<wl-button id="dialog-submit-button">Submit</wl-button>
@@ -119,14 +119,14 @@ export default class DialogPage extends LitElement {
 			<wl-title level="3">Open dialog from template (imperative)</wl-title>
 			<demo-element>
 				<div id="selector">
-					<wl-select outlined id="size-select" placeholder="Size" value="${this.size}" @change="${() => this.size = <DialogSize>this.$sizeSelect.value}">
+					<wl-select outlined id="size-select" label="Size" value="${this.size}" @change="${() => this.size = <DialogSize>this.$sizeSelect.value}">
 						<option value="small">small</option>
 						<option value="medium">medium</option>
 						<option value="large">large</option>
 						<option value="auto">auto</option>
 						<option value="fullscreen">fullscreen</option>
 					</wl-select>
-					<wl-select outlined id="duration-select" placeholder="Duration" value="${this.duration}" @change="${() => this.duration = parseInt(this.$durationSelect.value)}">
+					<wl-select outlined id="duration-select" label="Duration" value="${this.duration}" @change="${() => this.duration = parseInt(this.$durationSelect.value)}">
 						<option value="0">0ms</option>
 						<option value="50">50ms</option>
 						<option value="100">100ms</option>

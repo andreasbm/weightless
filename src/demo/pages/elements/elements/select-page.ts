@@ -19,7 +19,7 @@ export default class SelectPage extends LitElement {
 		return html`
 			<demo-element default>
 				<code-example-element>
-					<wl-select placeholder="Select something">
+					<wl-select label="Select something">
 						<option value="" disabled selected>Select something</option>
 						<option value="1">Option 1</option>
 						<option value="2">Option 2</option>
@@ -32,7 +32,7 @@ export default class SelectPage extends LitElement {
 			<wl-title level="3">Outlined</wl-title>
 			<demo-element>
 				<code-example-element>
-					<wl-select outlined placeholder="Select something">
+					<wl-select outlined label="Select something">
 						<option value="" disabled selected>Select something</option>
 						<option value="1">Option 1</option>
 						<option value="2">Option 2</option>
@@ -45,7 +45,7 @@ export default class SelectPage extends LitElement {
 			<wl-title level="3">Filled</wl-title>
 			<demo-element>
 				<code-example-element>
-					<wl-select filled placeholder="Select something">
+					<wl-select filled label="Select something">
 						<option value="" disabled selected>Select something</option>
 						<option value="1">Option 1</option>
 						<option value="2">Option 2</option>

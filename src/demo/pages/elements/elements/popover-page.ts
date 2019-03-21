@@ -139,22 +139,22 @@ export default class PopoverPage extends LitElement {
 			<wl-title level="3">Open popover from template (imperative)</wl-title>
 			<demo-element>
 				<div id="selector">
-					<wl-select outlined placeholder="Anchor Origin X" value="${this.anchorOriginX}" @change="${(e: Event) => this.anchorOriginX = (<OriginX>(<HTMLSelectElement>e.target).value)}">
+					<wl-select outlined label="Anchor Origin X" value="${this.anchorOriginX}" @change="${(e: Event) => this.anchorOriginX = (<OriginX>(<HTMLSelectElement>e.target).value)}">
 						<option value="left">Left</option>
 						<option value="center">Center</option>
 						<option value="right">Right</option>
 					</wl-select>
-					<wl-select outlined placeholder="Anchor Origin Y" value="${this.anchorOriginY}" @change="${(e: Event) => this.anchorOriginY = (<OriginY>(<HTMLSelectElement>e.target).value)}">
+					<wl-select outlined label="Anchor Origin Y" value="${this.anchorOriginY}" @change="${(e: Event) => this.anchorOriginY = (<OriginY>(<HTMLSelectElement>e.target).value)}">
 						<option value="top">Top</option>
 						<option value="center">Center</option>
 						<option value="bottom">Bottom</option>
 					</wl-select>
-					<wl-select outlined placeholder="Transform Origin X" value="${this.transformOriginX}" @change="${(e: Event) => this.transformOriginX = (<OriginX>(<HTMLSelectElement>e.target).value)}">
+					<wl-select outlined label="Transform Origin X" value="${this.transformOriginX}" @change="${(e: Event) => this.transformOriginX = (<OriginX>(<HTMLSelectElement>e.target).value)}">
 						<option value="left">Left</option>
 						<option value="center">Center</option>
 						<option value="right">Right</option>
 					</wl-select>
-					<wl-select outlined placeholder="Transform Origin Y" value="${this.transformOriginY}" @change="${(e: Event) => this.transformOriginY = (<OriginY>(<HTMLSelectElement>e.target).value)}">
+					<wl-select outlined label="Transform Origin Y" value="${this.transformOriginY}" @change="${(e: Event) => this.transformOriginY = (<OriginY>(<HTMLSelectElement>e.target).value)}">
 						<option value="top">Top</option>
 						<option value="center">Center</option>
 						<option value="bottom">Bottom</option>

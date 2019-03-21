@@ -19,6 +19,7 @@ describe("wl-backdrop", () => {
 	after(() => removeContainer($container));
 
 	it("should have a presentation role", () => {
+		expect($backdrop).to.exist
 		expect($backdrop.getAttribute("role")).to.equal("presentation");
 	});
 });
