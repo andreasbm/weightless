@@ -17,10 +17,10 @@ $ npm i {{ ids.npm }}
 If you want to get started super quickly you can use the CLI.
 
 ```
-$ npm init web-config my-project --lit
+$ npm init web-config new my-project --lit
 ```
 
-If you prefer to use the `umd` bundle you can import `https://unpkg.com/weightless/umd/weightless.min.js`.
+If you prefer to use the `umd` bundle you can import `https://unpkg.com/weightless/umd/weightless.min.js`. Keep in mind that this imports all elements, so it is recommended that you only use it for test purposes.
 
 ```html
 <script src="https://unpkg.com/weightless/umd/weightless.min.js"></script>
