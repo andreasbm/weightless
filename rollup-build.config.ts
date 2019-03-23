@@ -52,9 +52,6 @@ const plugins = ({tsConfig} = {}) => [
 const configs = [
 	{
 		input: files.src_index,
-		// input: {
-		// 	banner: "src/banner/index.ts"
-		// },
 		output: [
 			{
 				format: "esm",
@@ -81,7 +78,7 @@ const configs = [
 		external: [
 			...Object.keys(pkg.dependencies),
 			...Object.keys(pkg.devDependencies),
-			"@appnest/focus-trap/debounce",
+			"@a11y/focus-trap/debounce",
 			"lit-html/directives/if-defined",
 			"tslib"
 		]

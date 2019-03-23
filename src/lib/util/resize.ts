@@ -1,4 +1,4 @@
-import { debounce } from "@appnest/focus-trap/debounce";
+import { debounce } from "@a11y/focus-trap/debounce";
 
 export type IResizeSubscriber = (() => void);
 

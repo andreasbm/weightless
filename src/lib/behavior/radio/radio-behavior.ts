@@ -13,7 +13,7 @@ export interface IRadioBehaviorProperties extends ICheckboxBehaviorProperties {
 }
 
 /**
- * Provides radio behavior.
+ * Radio behavior.
  */
 export abstract class RadioBehavior extends CheckboxBehavior implements IRadioBehaviorProperties {
 	static styles = [...CheckboxBehavior.styles, cssResult(styles)];

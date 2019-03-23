@@ -1,5 +1,5 @@
-import { FocusTrap } from "@appnest/focus-trap";
-import "@appnest/focus-trap";
+import { FocusTrap } from "@a11y/focus-trap";
+import "@a11y/focus-trap";
 import { customElement, html, property, query, TemplateResult } from "lit-element";
 import "../backdrop";
 import { WlBackdrop } from "../backdrop/wl-backdrop";

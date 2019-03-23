@@ -1,5 +1,6 @@
-import { GLOBAL_ROUTER_EVENTS_TARGET, GlobalRouterEventKind, path, ROUTER_SLOT_TAG_NAME, RouterSlot } from "@appnest/web-router";
+import "@a11y/skip-navigation";
 import "@appnest/web-router";
+import { GLOBAL_ROUTER_EVENTS_TARGET, GlobalRouterEventKind, path, ROUTER_SLOT_TAG_NAME, RouterSlot } from "@appnest/web-router";
 import { WlNav } from "../lib/nav/wl-nav";
 import "./elements/navbar/navbar-element";
 import { getMainScrollContainer, setMainScrollContainer } from "./main-scroll-target";
@@ -8,6 +9,7 @@ import "./main.scss";
 const $navbar = document.querySelector<WlNav>("#navbar")!;
 
 let currentPath = path();
+
 
 function updateShadow () {
 	let shadow = true;

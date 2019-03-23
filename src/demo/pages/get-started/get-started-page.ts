@@ -1,16 +1,17 @@
+import "@a11y/skip-navigation";
 import { customElement, html, LitElement } from "lit-element";
+import "../../../lib/divider";
+import "../../../lib/title/wl-title";
 import { cssResult } from "../../../lib/util/css";
 import { openCodepen } from "../../codepen";
 import { GITHUB_URL, GOOGLE_FONT_URL, MATERIAL_ICONS_URL, UNPGK_URL } from "../../constants";
-import { sharedStyles } from "../../style/shared";
-import "../../elements/container/container-element";
-import "../../../lib/title/wl-title";
-import "../../elements/highlight/highlight-element";
-import "../../elements/footer/footer-element";
 import "../../elements/code-example/code-example-element";
+import "../../elements/container/container-element";
+import "../../elements/footer/footer-element";
+import "../../elements/highlight/highlight-element";
+import { sharedStyles } from "../../style/shared";
 
 import styles from "./get-started-page.scss";
-import "../../../lib/divider";
 
 @customElement("get-started-page")
 export default class GetStartedPage extends LitElement {
@@ -28,11 +29,12 @@ export default class GetStartedPage extends LitElement {
 
 	protected render () {
 		return html`
+			<skip-anchor></skip-anchor>
 			<container-element id="main-container">
 				<wl-title class="title">Get Started</wl-title>
 				<p>Welcome to Weightless! Weightless provides a set of high quality web components with a small footprint.</p>
 				
-				<p>This guide will show you have to get started in a manner of minutes. Before you begin you should make sure that your development environment includes Node.js and a <a href="https://docs.npmjs.com/about-npm/index.html" target="_blank">NPM package manager</a>.</p>
+				<p>This guide will show you have to get started in a manner of minutes. Before you begin you should make sure that your development environment includes Node.js and a <a id="npm-link" href="https://docs.npmjs.com/about-npm/index.html" target="_blank">NPM package manager</a>.</p>
 				
 				<wl-divider></wl-divider>
 				<wl-title level="3">Installation</wl-title>

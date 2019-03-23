@@ -1,7 +1,8 @@
 import { customElement, html, property, TemplateResult } from "lit-element";
 import { ifDefined } from "lit-html/directives/if-defined";
 import { IFormElementBehaviorProperties } from "../behavior/form-element";
-import { ITextfieldProperties, WlTextfield } from "../textfield/wl-textfield";
+import { ITextfieldBehaviorProperties, TextfieldBehavior } from "../behavior/textfield/textfield-behavior";
+import { WlTextfield } from "../textfield/wl-textfield";
 import { cssResult } from "../util/css";
 import { isHidden } from "../util/dom";
 import styles from "./wl-textarea.scss";
@@ -9,7 +10,7 @@ import styles from "./wl-textarea.scss";
 /**
  * Properties of the textarea.
  */
-export interface ITextareaProperties extends ITextfieldProperties {
+export interface ITextareaProperties extends ITextfieldBehaviorProperties {
 	rows?: number;
 	cols?: number;
 }
@@ -18,7 +19,7 @@ export interface ITextareaProperties extends ITextfieldProperties {
  * Multiline text fields.
  */
 @customElement("wl-textarea")
-export class WlTextarea extends WlTextfield implements ITextareaProperties {
+export class WlTextarea extends TextfieldBehavior implements ITextareaProperties {
 	static styles = [...WlTextfield.styles, cssResult(styles)];
 
 	/**

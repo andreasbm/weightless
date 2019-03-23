@@ -21,7 +21,7 @@ export interface INavProperties {
  * @slot title - Title.
  * @cssprop --nav-bg - Background.
  * @cssprop --nav-color - Color.
- * @cssprop --tolbar-z-index - z-index.
+ * @cssprop --nav-z-index - z-index.
  * @cssprop --nav-padding - Padding.
  * @cssprop --nav-height - Height.
  * @cssprop --nav-elevation - Box shadow.

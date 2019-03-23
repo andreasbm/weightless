@@ -1,18 +1,13 @@
-import { customElement, html, property, TemplateResult} from "lit-element";
+import { customElement, html, property, TemplateResult } from "lit-element";
 import { ifDefined } from "lit-html/directives/if-defined";
-import { IInputBehaviorProperties, InputBehavior } from "../behavior/input/input-behavior";
+import { ITextfieldBehaviorProperties, TextfieldBehavior } from "../behavior/textfield/textfield-behavior";
 import { cssResult } from "../util/css";
-import { InputType } from "./input-type";
 import styles from "./wl-textfield.scss";
 
 /**
  * Properties of the textfield.
  */
-export interface ITextfieldProperties extends IInputBehaviorProperties {
-	pattern?: string;
-	maxLength?: number;
-	minLength?: number;
-	type: InputType;
+export interface ITextfieldProperties extends ITextfieldBehaviorProperties {
 	list?: string;
 }
 
@@ -20,32 +15,8 @@ export interface ITextfieldProperties extends IInputBehaviorProperties {
  * Singleline text fields.
  */
 @customElement("wl-textfield")
-export class WlTextfield extends InputBehavior implements ITextfieldProperties {
-	static styles = [...InputBehavior.styles, cssResult(styles)];
-
-	/**
-	 * Type of the input.
-	 * @attr
-	 */
-	@property({type: String, reflect: true}) type: InputType = "text";
-
-	/**
-	 * Value pattern.
-	 * @attr
-	 */
-	@property({type: String, reflect: true}) pattern?: string;
-
-	/**
-	 * Min value length.
-	 * @attr
-	 */
-	@property({type: Number, reflect: true}) minLength?: number;
-
-	/**
-	 * Max value length.
-	 * @attr
-	 */
-	@property({type: Number, reflect: true}) maxLength?: number;
+export class WlTextfield extends TextfieldBehavior implements ITextfieldProperties {
+	static styles = [...TextfieldBehavior.styles, cssResult(styles)];
 
 	/**
 	 * Datalist id.

@@ -124,8 +124,8 @@ export class ThemeComponent extends WlNav {
 			</aside>
 			<aside id="right-container">
 				<div id="navigation">
-					<router-link tabindex="0" class="link" path="/get-started">Get Started</router-link>
-					<router-link tabindex="0" class="link" path="/elements">Elements</router-link>
+					<router-link class="link" path="/get-started">Get Started</router-link>
+					<router-link class="link" path="/elements">Elements</router-link>
 				</div>
 				<wl-button aria-label="Toggle darkmode" id="dark-mode" @click="${() => this.toggleDarkMode()}" fab inverted flat outlined>
 					${this.darkMode ? html`<wl-icon>flash_off</wl-icon>` : html`<wl-icon>flash_on</wl-icon>`}

@@ -32,7 +32,7 @@ Provide access to destinations in your app.
 | `--nav-title-font-weight` | Font weight of the title. |
 | `--nav-title-margin`      | Margin of the title.      |
 | `--nav-transition`        | Transition.               |
-| `--tolbar-z-index`        | z-index.                  |
+| `--nav-z-index`           | z-index.                  |
 
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#slots)

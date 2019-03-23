@@ -8,6 +8,7 @@ import { cssResult } from "../../../lib/util/css";
 import { BROWSER_SUPPORT, BULLETS, GITHUB_URL, NPM_URL, PACKAGE_JSON_URL } from "../../constants";
 import "../../elements/container/container-element";
 import "../../elements/footer/footer-element";
+import "@a11y/skip-navigation";
 import { sharedStyles } from "../../style/shared";
 
 import styles from "./home-page.scss";
@@ -84,7 +85,10 @@ export default class HomePage extends LitElement {
 				<wl-title class="title">Weightless</wl-title>
 				<span class="text">High quality web components with a small footprint.</span>
 				<div class="cta-area">
-					<router-link path="get-started"><wl-button>Get Started</wl-button></router-link>
+					<router-link path="get-started" delegateFocus>
+						<skip-anchor></skip-anchor>
+						<wl-button id="get-started">Get Started</wl-button>
+					</router-link>
 				</div>
 				<wl-button aria-label="Scroll down" class="arrow-down" fab inverted flat @click="${this.scrollToBullets}">
 					<wl-icon alt="Down">keyboard_arrow_down</wl-icon>

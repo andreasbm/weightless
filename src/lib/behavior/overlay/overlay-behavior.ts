@@ -1,5 +1,5 @@
-import { FocusTrap } from "@appnest/focus-trap";
-import "@appnest/focus-trap";
+import { FocusTrap } from "@a11y/focus-trap";
+import "@a11y/focus-trap";
 import { LitElement, property } from "lit-element";
 import { sharedStyles } from "../../style/shared";
 import { pauseAnimations } from "../../util/animation";
