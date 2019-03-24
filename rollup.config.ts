@@ -48,8 +48,8 @@ export default [
 					template: files.src_index,
 					scriptType: "text/javascript",
 					target: files.dist_index,
-					include: /main(-.*)?\.js$/,
 					transformScript: (({filename}) => `<script>System.import("./${filename}");</script>`),
+					include: /main(-.*)?\.js$/,
 					polyfillConfig: {
 						features: ["systemjs", "web-components"]
 					}
