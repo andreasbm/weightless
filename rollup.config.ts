@@ -28,7 +28,7 @@ export default [
 		},
 		output: [
 			defaultOutputConfig({
-				format: "esm",
+				format: "system",
 				dir: folders.dist
 			})
 		],
@@ -46,9 +46,10 @@ export default [
 				},
 				htmlTemplateConfig: {
 					template: files.src_index,
-					scriptType: "module",
+					scriptType: "text/javascript",
 					target: files.dist_index,
 					include: /main(-.*)?\.js$/,
+					transformScript: (({filename}) => `<script>System.import("./${filename}");</script>`),
 					polyfillConfig: {
 						features: ["systemjs", "web-components"]
 					}

@@ -5,6 +5,7 @@ import { WlNav } from "../lib/nav/wl-nav";
 import "./elements/navbar/navbar-element";
 import { getMainScrollContainer, setMainScrollContainer } from "./main-scroll-target";
 import "./main.scss";
+console.log("TEST");
 
 const $navbar = document.querySelector<WlNav>("#navbar")!;
 
@@ -27,6 +28,7 @@ GLOBAL_ROUTER_EVENTS_TARGET.addEventListener(GlobalRouterEventKind.ChangeState, 
 	updateShadow();
 	getMainScrollContainer().scrollTo({top: 0, left: 0});
 });
+
 
 customElements.whenDefined(ROUTER_SLOT_TAG_NAME).then(() => {
 	const $slot = document.querySelector<RouterSlot>(ROUTER_SLOT_TAG_NAME)!;
