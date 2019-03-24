@@ -99,7 +99,11 @@ export default [
 						globDirectory: folders.dist,
 						swDest: files.dist_service_worker,
 						globPatterns: [`**/*.{js,png,html,css}`],
-						importScripts: [`sw-extension.js`]
+						importScripts: [`sw-extension.js`],
+						runtimeCaching: [{
+							urlPattern: /.*/,
+							handler: "NetworkFirst"
+						}]
 					}
 				})
 			] : [])
