@@ -22,4 +22,4 @@ $checkbox-checkmark-path-width: var(--checkbox-checkmark-path-width, #{size(3)})
 $checkbox-checkmark-path-dasharray: var(--checkbox-checkmark-path-dasharray, 30);
 $checkbox-checkmark-path-delay: var(--checkbox-checkmark-path-delay, 50ms);
 
-$checkbox-ripple-transform: var(--checkbox-ripple-transform, translate(-50%, -50%) scale(2));
+$checkbox-ripple-transform: var(--checkbox-ripple-transform, translate(-50%, -50%) scale(1.8));

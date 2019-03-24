@@ -41,6 +41,19 @@
 }
 
 /**
+	Remove the unit of a length
+	@param {Number} $number - Number to remove unit from
+	@return {Number} - Unitless number
+ */
+@function strip-unit($number) {
+	@if type-of($number) == 'number' and not unitless($number) {
+		@return $number / ($number * 0 + 1);
+	}
+
+	@return $number;
+}
+
+/**
 	Returns the value associated with a key from the map. Throws an error if the key is not found in the map.
 	@param {Map} $map
 	@param {String} $key

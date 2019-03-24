@@ -21,10 +21,10 @@ export default class IconPage extends LitElement {
 			<wl-title level="3">Different sizes</wl-title>
 			<demo-element>
 				<code-example-element>
-					<wl-icon style="--size-multiplier: 1.5px">account_box</wl-icon>
-					<wl-icon style="--size-multiplier: 2px">delete</wl-icon>
-					<wl-icon style="--size-multiplier: 2.5px">done</wl-icon>
-					<wl-icon style="--size-multiplier: 3px">print</wl-icon>
+					<wl-icon style="font-size: 16px;">account_box</wl-icon>
+					<wl-icon style="font-size: 20px;">delete</wl-icon>
+					<wl-icon style="font-size: 30px;">done</wl-icon>
+					<wl-icon style="font-size: 40px;">print</wl-icon>
 				</code-example-element>
 			</demo-element>
 		`;

@@ -5,7 +5,6 @@ import { WlNav } from "../lib/nav/wl-nav";
 import "./elements/navbar/navbar-element";
 import { getMainScrollContainer, setMainScrollContainer } from "./main-scroll-target";
 import "./main.scss";
-console.log("TEST");
 
 const $navbar = document.querySelector<WlNav>("#navbar")!;
 

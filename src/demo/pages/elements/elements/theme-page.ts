@@ -63,10 +63,10 @@ export default class ThemePage extends LitElement {
 					<option value="Comic Sans MS">Comic Sans MS</option>
 				</wl-select>
 				<br/>
-				<wl-select label="Size" filled @change="${(e: Event) => setProperty("--size-multiplier", (<HTMLSelectElement>e.target).value)}">
-					<option value="0.8px">0.8x</option>
-					<option value="1px" selected>1x</option>
-					<option value="1.2px">1.2x</option>
+				<wl-select label="Size" filled @change="${(e: Event) => document.documentElement.style.fontSize = `${16 * parseFloat((<HTMLSelectElement>e.target).value)}px`}">
+					<option value="0.8">0.8x</option>
+					<option value="1" selected>1x</option>
+					<option value="1.2">1.2x</option>
 				</wl-select>
 			</demo-element>
 		`;

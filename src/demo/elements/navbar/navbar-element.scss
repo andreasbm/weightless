@@ -11,6 +11,7 @@ $navbar-octo-size: var(--navbar-octo-size, var(--nav-height));
 	display: flex;
 	align-items: center;
 	cursor: pointer;
+	outline: none;
 
 	#logo {
 		margin: 0 8px 0 0;

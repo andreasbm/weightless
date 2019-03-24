@@ -53,7 +53,7 @@ export const RIPPLE_ANIMATION_CONFIG: KeyframeAnimationOptions = {
 /**
  * Initial animation duration.
  */
-export const RIPPLE_INITIAL_DURATION = 300;
+export const RIPPLE_INITIAL_DURATION = 350;
 
 
 /**
