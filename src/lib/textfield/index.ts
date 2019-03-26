@@ -1,1 +1,1 @@
-export * from "./wl-textfield";
+export * from "./textfield";

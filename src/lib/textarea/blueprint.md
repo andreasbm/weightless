@@ -1,4 +1,4 @@
-{{ doc:src/lib/textarea/wl-textarea.ts }}
+{{ doc:src/lib/textarea/textarea.ts }}
 
 ## Usage
 

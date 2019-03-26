@@ -25,10 +25,10 @@
 	background: var(--_input-bg);
 	color: var(--_input-color);
 	border-radius: var(--_input-border-radius);
-	font-size: #{$input-font-size};
-	font-family: #{$input-font-family};
+	font-size: $input-font-size;
+	font-family: $input-font-family;
 	border-bottom: #{$input-border-width} solid var(--_input-state-color);
-	transition: #{$input-transition};
+	transition: $input-transition;
 	position: relative;
 	display: flex;
 	align-items: center;
@@ -43,8 +43,8 @@
 #label {
 	left: var(--_input-padding-left-right);
 	color: var(--_input-label-color);
-	transition: #{$input-label-transition};
-	font-family: #{$input-font-family};
+	transition: $input-label-transition;
+	font-family: $input-font-family;
 
 	top: 50%;
 	transform: translateY(-50%);
@@ -89,8 +89,8 @@
 
 :host([dirty]), :host(:focus-within), :host([type="color"]), :host([type="date"]), :host([type="file"]), :host([type="range"]) {
 	#label {
-		font-size: #{$input-label-font-size};
-		top: #{$input-padding-top-bottom};
+		font-size: $input-label-font-size;
+		top: $input-padding-top-bottom;
 		transform: translateY(0);
 	}
 }
@@ -98,8 +98,8 @@
 ::slotted(input), ::slotted(textarea), ::slotted(select) {
 	caret-color: var(--_input-color-state);
 	padding: #{$input-padding-top-bottom} var(--_input-padding-left-right);
-	font-family: #{$input-font-family};
-	font-size: #{$input-font-size};
+	font-family: $input-font-family;
+	font-size: $input-font-size;
 
 	@include reset();
 
@@ -157,26 +157,26 @@
 }
 
 ::slotted([slot="before"]), ::slotted([slot="after"]) {
-	color: #{$input-before-after-color};
+	color: $input-before-after-color;
 }
 
 // When there are no padding on the input we add margin on the slots
 :host(:not([outlined]):not([filled])) {
 	::slotted([slot="before"]) {
-		margin-right: #{$input-padding-left-right-outlined};
+		margin-right: $input-padding-left-right-outlined;
 	}
 
 	::slotted([slot="after"]) {
-		margin-left: #{$input-padding-left-right-outlined};
+		margin-left: $input-padding-left-right-outlined;
 	}
 }
 
 :host([outlined]), :host([filled]) {
 	::slotted([slot="before"]) {
-		margin-left: #{$input-padding-left-right-outlined};
+		margin-left: $input-padding-left-right-outlined;
 	}
 
 	::slotted([slot="after"]) {
-		margin-right: #{$input-padding-left-right-outlined};
+		margin-right: $input-padding-left-right-outlined;
 	}
 }

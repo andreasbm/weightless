@@ -1,11 +1,11 @@
 import { customElement, html, LitElement, property } from "lit-element";
-import "../../../../lib/button/wl-button";
-import "../../../../lib/card/wl-card";
-import "../../../../lib/select/wl-select";
+import "../../../../lib/button/button";
+import "../../../../lib/card/card";
+import "../../../../lib/select/select";
 import "../../../../lib/popover-card";
 import { showPopover } from "../../../../lib/popover/show-popover";
-import { defaultPopoverConfig, IPopoverBaseProperties, WlPopover } from "../../../../lib/popover/wl-popover";
-import "../../../../lib/title/wl-title";
+import { defaultPopoverConfig, IPopoverBaseProperties, Popover } from "../../../../lib/popover/popover";
+import "../../../../lib/title/title";
 import { cssResult } from "../../../../lib/util/css";
 import { OriginX, OriginY } from "../../../../lib/util/position";
 import "../../../elements/code-example/code-example-element";
@@ -99,7 +99,7 @@ export default class PopoverPage extends LitElement {
 	 * Opens the declarative popover.
 	 */
 	private async openDeclarativePopover () {
-		const $popover = this.shadowRoot!.querySelector<WlPopover<string>>("#popover")!;
+		const $popover = this.shadowRoot!.querySelector<Popover<string>>("#popover")!;
 		const res = await $popover.show();
 		console.log("Result:", res);
 	}

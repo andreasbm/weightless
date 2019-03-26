@@ -1,0 +1,10 @@
+@import "../style/base";
+@import "divider-vars";
+
+:host {
+  background: $divider-color;
+  height: $divider-height;
+
+  display: block;
+  width: 100%;
+}

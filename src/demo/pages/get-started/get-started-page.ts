@@ -1,7 +1,7 @@
 import "@a11y/skip-navigation";
 import { customElement, html, LitElement } from "lit-element";
 import "../../../lib/divider";
-import "../../../lib/title/wl-title";
+import "../../../lib/title/title";
 import { cssResult } from "../../../lib/util/css";
 import { openCodepen } from "../../codepen";
 import { GITHUB_URL, GOOGLE_FONT_URL, MATERIAL_ICONS_URL, UNPGK_URL } from "../../constants";

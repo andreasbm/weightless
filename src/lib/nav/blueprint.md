@@ -1,4 +1,4 @@
-{{ doc:src/lib/nav/wl-nav.ts }}
+{{ doc:src/lib/nav/nav.ts }}
 
 ## Usage
 

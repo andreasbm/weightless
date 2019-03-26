@@ -1,1 +1,1 @@
-export * from "./wl-popover-card";
+export * from "./popover-card";

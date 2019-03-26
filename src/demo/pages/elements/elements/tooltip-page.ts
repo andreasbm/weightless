@@ -1,6 +1,6 @@
 import { customElement, html, LitElement } from "lit-element";
-import "../../../../lib/title/wl-title";
-import "../../../../lib/tooltip/wl-tooltip";
+import "../../../../lib/title/title";
+import "../../../../lib/tooltip/tooltip";
 import "../../../elements/code-example/code-example-element";
 import "../../../elements/demo/demo-element";
 import { getMainScrollContainer } from "../../../main-scroll-target";

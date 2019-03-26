@@ -1,4 +1,4 @@
-{{ doc:src/lib/select/wl-select.ts }}
+{{ doc:src/lib/select/select.ts }}
 
 ## Usage
 

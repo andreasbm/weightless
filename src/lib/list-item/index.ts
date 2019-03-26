@@ -1,1 +1,1 @@
-export * from "./wl-list-item";
+export * from "./list-item";

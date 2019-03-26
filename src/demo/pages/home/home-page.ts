@@ -1,9 +1,9 @@
 import "@appnest/web-router";
 import { customElement, html, LitElement, property, PropertyValues, query } from "lit-element";
 import { repeat } from "lit-html/directives/repeat";
-import "../../../lib/button/wl-button";
-import "../../../lib/icon/wl-icon";
-import "../../../lib/title/wl-title";
+import "../../../lib/button/button";
+import "../../../lib/icon/icon";
+import "../../../lib/title/title";
 import { cssResult } from "../../../lib/util/css";
 import { BROWSER_SUPPORT, BULLETS, GITHUB_URL, NPM_URL, PACKAGE_JSON_URL } from "../../constants";
 import "../../elements/container/container-element";

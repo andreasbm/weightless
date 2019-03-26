@@ -1,4 +1,4 @@
-{{ doc:src/lib/textfield/wl-textfield.ts }}
+{{ doc:src/lib/textfield/textfield.ts }}
 
 ## Usage
 

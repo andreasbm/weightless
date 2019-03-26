@@ -1,11 +1,11 @@
 import { customElement, html, LitElement } from "lit-element";
-import "../../../../lib/button/wl-button";
-import "../../../../lib/icon/wl-icon";
+import "../../../../lib/button/button";
+import "../../../../lib/icon/icon";
 import { queueSnackbar } from "../../../../lib/snackbar/queue-snackbar";
-import "../../../../lib/snackbar/wl-snackbar";
+import "../../../../lib/snackbar/snackbar";
 import { showSnackbar } from "../../../../lib/snackbar/show-snackbar";
-import { defaultSnackbarConfig, ISnackbarBaseProperties, WlSnackbar } from "../../../../lib/snackbar/wl-snackbar";
-import "../../../../lib/title/wl-title";
+import { defaultSnackbarConfig, ISnackbarBaseProperties, Snackbar } from "../../../../lib/snackbar/snackbar";
+import "../../../../lib/title/title";
 import "../../../elements/code-example/code-example-element";
 import "../../../elements/demo/demo-element";
 import { sharedStyles } from "../../../style/shared";
@@ -17,7 +17,8 @@ function getRandomText (): string {
 		"Your password was updated on your other device. Please sign in again.",
 		"We can't find your saved recipes until you sign in.",
 		"We can't complete the search while you are offline.",
-		"Something wen't wrong while saving your image. Try again later."
+		"Something wen't wrong while saving your image. Try again later.",
+		"Do you want to enable push notifications?"
 	];
 
 	return texts[Math.floor(Math.random() * (texts.length - 1))];
@@ -46,7 +47,7 @@ export default class SnackbarPage extends LitElement {
 	 * Shows the declarative snackbar.
 	 */
 	private showDeclarativeSnackbar () {
-		const $snackbar = this.shadowRoot!.querySelector<WlSnackbar<string>>("#snackbar")!;
+		const $snackbar = this.shadowRoot!.querySelector<Snackbar<string>>("#snackbar")!;
 		console.log($snackbar);
 		$snackbar.show().then();
 	}

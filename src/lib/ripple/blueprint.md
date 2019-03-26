@@ -1,4 +1,4 @@
-{{ doc:src/lib/ripple/wl-ripple.ts }}
+{{ doc:src/lib/ripple/ripple.ts }}
 
 ## Usage
 

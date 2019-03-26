@@ -1,1 +1,1 @@
-export * from "./wl-expansion";
+export * from "./expansion";

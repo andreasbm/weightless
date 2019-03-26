@@ -1,4 +1,4 @@
-{{ doc:src/lib/banner/wl-banner.ts }}
+{{ doc:src/lib/banner/banner.ts }}
 
 ## Usage
 

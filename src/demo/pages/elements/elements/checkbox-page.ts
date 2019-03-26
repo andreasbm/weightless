@@ -1,8 +1,8 @@
 import { customElement, html, LitElement } from "lit-element";
-import "../../../../lib/checkbox/wl-checkbox";
+import "../../../../lib/checkbox/checkbox";
 import "../../../elements/code-example/code-example-element";
 import "../../../elements/demo/demo-element";
-import "../../../../lib/title/wl-title";
+import "../../../../lib/title/title";
 import { sharedStyles } from "../../../style/shared";
 
 @customElement("checkbox-page")

@@ -1,1 +1,1 @@
-export * from "./wl-snackbar";
+export * from "./snackbar";

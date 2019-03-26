@@ -1,1 +1,1 @@
-export * from "./wl-progress-spinner";
+export * from "./progress-spinner";

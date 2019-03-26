@@ -1,4 +1,4 @@
-{{ doc:src/lib/expansion/wl-expansion.ts }}
+{{ doc:src/lib/expansion/expansion.ts }}
 
 ## Usage
 

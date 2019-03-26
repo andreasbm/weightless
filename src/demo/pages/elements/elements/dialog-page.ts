@@ -1,13 +1,13 @@
 import { customElement, html, LitElement, property, query } from "lit-element";
-import "../../../../lib/button/wl-button";
-import "../../../../lib/card/wl-card";
-import { defaultDialogConfig, WlDialog, DialogSize, IDialogBaseProperties } from "../../../../lib/dialog/wl-dialog";
-import "../../../../lib/dialog/wl-dialog";
+import "../../../../lib/button/button";
+import "../../../../lib/card/card";
+import { defaultDialogConfig, Dialog, DialogSize, IDialogBaseProperties } from "../../../../lib/dialog/dialog";
+import "../../../../lib/dialog/dialog";
 import { showDialog } from "../../../../lib/dialog/show-dialog";
-import { WlSelect } from "../../../../lib/select/wl-select";
-import "../../../../lib/select/wl-select";
-import "../../../../lib/textfield/wl-textfield";
-import "../../../../lib/title/wl-title";
+import { Select } from "../../../../lib/select/select";
+import "../../../../lib/select/select";
+import "../../../../lib/textfield/textfield";
+import "../../../../lib/title/title";
 import { cssResult } from "../../../../lib/util/css";
 import "../../../elements/code-example/code-example-element";
 import "../../../elements/demo/demo-element";
@@ -48,8 +48,8 @@ export default class DialogPage extends LitElement {
 		}
 	`)];
 
-	@query("#size-select") $sizeSelect!: WlSelect;
-	@query("#duration-select") $durationSelect!: WlSelect;
+	@query("#size-select") $sizeSelect!: Select;
+	@query("#duration-select") $durationSelect!: Select;
 
 	@property({type: String}) size: DialogSize = defaultDialogConfig.size!;
 	@property({type: Number}) duration: number = defaultDialogConfig.duration!;
@@ -58,7 +58,7 @@ export default class DialogPage extends LitElement {
 	 * Opens the declarative dialog.
 	 */
 	private openDeclarativeDialog () {
-		const $dialog = this.shadowRoot!.querySelector<WlDialog<string>>("#dialog")!;
+		const $dialog = this.shadowRoot!.querySelector<Dialog<string>>("#dialog")!;
 		const $submitButton = this.shadowRoot!.querySelector("#dialog-submit-button")!;
 		const $input = this.shadowRoot!.querySelector<HTMLInputElement>("#dialog-input")!;
 

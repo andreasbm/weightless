@@ -1,4 +1,4 @@
-{{ doc:src/lib/icon/wl-icon.ts }}
+{{ doc:src/lib/icon/icon.ts }}
 
 ## Usage
 
