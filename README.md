@@ -89,6 +89,7 @@ If you prefer to use the `umd` bundle you can import `https://unpkg.com/weightle
 | Radio            | `wl-radio`            | Select one option from a set.                    | [Documentation](/src/lib/radio)            | [Demo](https://weightless.dev/elements/radio)    |
 | Ripple           | `wl-ripple`           | Indicate touch actions.                          | [Documentation](/src/lib/ripple)           | [Demo](https://weightless.dev/elements/ripple)   |
 | Select           | `wl-select`           | Select one or more values from a set of options. | [Documentation](/src/lib/select)           | [Demo](https://weightless.dev/elements/select)   |
+| Snackbar         | `wl-snackbar`         | Provide brief messages at the bottom of the screen. | [Documentation](/src/lib/snackbar)         | [Demo](https://weightless.dev/elements/snackbar) |
 | Textarea         | `wl-textarea`         | Multiline text fields.                           | [Documentation](/src/lib/textarea)         | [Demo](https://weightless.dev/elements/textarea) |
 | Textfield        | `wl-textfield`        | Singleline text fields.                          | [Documentation](/src/lib/textfield)        | [Demo](https://weightless.dev/elements/textfield) |
 | Title            | `wl-title`            | Indicate the start of a new section.             | [Documentation](/src/lib/title)            | [Demo](https://weightless.dev/elements/title)    |

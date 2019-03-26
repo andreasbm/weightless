@@ -63,6 +63,6 @@
 	}
 }
 
-$foreground: var(--foreground, black);
-$background: var(--background, white);
+$foreground: var(--foreground, rgb(13, 13, 13));
+$background: var(--background, rgb(255, 255, 255));
 $shadow: var(--shadow, rgba(0, 0, 0, 0.2));

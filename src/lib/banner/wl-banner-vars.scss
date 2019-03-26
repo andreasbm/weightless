@@ -5,5 +5,5 @@ $banner-icon-color: var(--banner-icon-color, #{color("primary")});
 $banner-padding: var(--banner-padding, #{$spacing-s});
 $banner-color: var(--banner-color, #{$foreground});
 $banner-bg: var(--banner-bg, #{$background});
-$banner-content-padding: var(--banner-content-padding, #{$spacing-s});
+$banner-content-padding: var(--banner-content-padding, #{$spacing-s} #{$spacing-m});
 

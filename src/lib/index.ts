@@ -23,3 +23,4 @@ export * from "./popover-card"
 export * from "./tooltip";
 export * from "./list-item";
 export * from "./expansion";
+export * from "./snackbar";

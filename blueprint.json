@@ -166,6 +166,13 @@
 			"[Demo](https://weightless.dev/elements/select)"
 		],
 		[
+			"Snackbar",
+			"`wl-snackbar`",
+			"Provide brief messages at the bottom of the screen.",
+			"[Documentation](/src/lib/snackbar)",
+			"[Demo](https://weightless.dev/elements/snackbar)"
+		],
+		[
 			"Textarea",
 			"`wl-textarea`",
 			"Multiline text fields.",

@@ -1,0 +1,11 @@
+@import "../style/base";
+
+$snackbar-icon-margin: var(--snackbar-icon-margin, 0 #{$spacing-m} 0 0);
+$snackbar-border-radius: var(--snackbar-border-radius, #{$border-radius-m});
+$snackbar-icon-color: var(--snackbar-icon-color, #{color("primary")});
+$snackbar-elevation: var(--snackbar-elevation, #{elevation(1, #{$shadow})});
+$snackbar-padding: var(--snackbar-padding, #{$spacing-s});
+$snackbar-color: var(--snackbar-color, #{$background});
+$snackbar-bg: var(--snackbar-bg, #{$foreground});
+$snackbar-content-padding: var(--snackbar-content-padding, #{$spacing-s} #{$spacing-m});
+
