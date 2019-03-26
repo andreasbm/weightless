@@ -1,1 +1,1 @@
-export * from "./wl-progress-bar";
+export * from "./progress-bar";

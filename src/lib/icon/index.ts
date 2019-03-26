@@ -1,1 +1,1 @@
-export * from "./wl-icon";
+export * from "./icon";

@@ -1,9 +1,9 @@
 import { customElement, html, LitElement } from "lit-element";
 import { sharedStyles } from "../../../style/shared";
-import "../../../../lib/button/wl-button";
-import "../../../../lib/textfield/wl-textfield";
-import "../../../../lib/icon/wl-icon";
-import "../../../../lib/title/wl-title";
+import "../../../../lib/button/button";
+import "../../../../lib/textfield/textfield";
+import "../../../../lib/icon/icon";
+import "../../../../lib/title/title";
 import "../../../elements/code-example/code-example-element";
 import "../../../elements/demo/demo-element";
 

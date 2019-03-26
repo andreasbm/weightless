@@ -1,6 +1,6 @@
 import { customElement, html, LitElement } from "lit-element";
-import "../../../../lib/progress-bar/wl-progress-bar";
-import "../../../../lib/title/wl-title";
+import "../../../../lib/progress-bar/progress-bar";
+import "../../../../lib/title/title";
 import { cssResult } from "../../../../lib/util/css";
 import "../../../elements/code-example/code-example-element";
 import "../../../elements/demo/demo-element";

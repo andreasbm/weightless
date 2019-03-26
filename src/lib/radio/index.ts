@@ -1,1 +1,1 @@
-export * from "./wl-radio";
+export * from "./radio";

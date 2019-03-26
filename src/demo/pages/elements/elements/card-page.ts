@@ -1,6 +1,6 @@
 import { customElement, html, LitElement } from "lit-element";
-import "../../../../lib/card/wl-card";
-import "../../../../lib/title/wl-title";
+import "../../../../lib/card/card";
+import "../../../../lib/title/title";
 import "../../../elements/code-example/code-example-element";
 import "../../../elements/demo/demo-element";
 import { sharedStyles } from "../../../style/shared";

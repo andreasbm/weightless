@@ -1,4 +1,4 @@
-{{ doc:src/lib/snackbar/wl-snackbar.ts }}
+{{ doc:src/lib/snackbar/snackbar.ts }}
 
 ## Usage
 

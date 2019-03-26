@@ -1,4 +1,4 @@
-{{ doc:src/lib/backdrop/wl-backdrop.ts }}
+{{ doc:src/lib/backdrop/backdrop.ts }}
 
 ## Usage
 

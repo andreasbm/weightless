@@ -1,1 +1,1 @@
-export * from "./wl-banner";
+export * from "./banner";

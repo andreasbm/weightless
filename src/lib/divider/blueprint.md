@@ -1,4 +1,4 @@
-{{ doc:src/lib/divider/wl-divider.ts }}
+{{ doc:src/lib/divider/divider.ts }}
 
 ## Usage
 

@@ -1,6 +1,6 @@
 import { customElement, html, LitElement, PropertyValues, query } from "lit-element";
-import "../../../../lib/label/wl-label";
-import "../../../../lib/title/wl-title";
+import "../../../../lib/label/label";
+import "../../../../lib/title/title";
 import { cssResult } from "../../../../lib/util/css";
 import "../../../elements/code-example/code-example-element";
 import { DemoElement } from "../../../elements/demo/demo-element";

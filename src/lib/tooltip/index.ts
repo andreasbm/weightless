@@ -1,1 +1,1 @@
-export * from "./wl-tooltip";
+export * from "./tooltip";

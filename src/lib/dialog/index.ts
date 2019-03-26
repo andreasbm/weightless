@@ -1,1 +1,1 @@
-export * from "./wl-dialog";
+export * from "./dialog";

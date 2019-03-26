@@ -1,4 +1,4 @@
-{{ doc:src/lib/card/wl-card.ts }}
+{{ doc:src/lib/card/card.ts }}
 
 ## Usage
 

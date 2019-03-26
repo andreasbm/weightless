@@ -1,12 +1,12 @@
 import { IQueueConfig, IQueuedOverlay, queueOverlay } from "../behavior/overlay/queue-overlay";
 import { IOpenOverlayConfig } from "../behavior/overlay/show-overlay";
 import { showSnackbar } from "./show-snackbar";
-import { ISnackbarBaseProperties, WlSnackbar } from "./wl-snackbar";
+import { ISnackbarBaseProperties, Snackbar } from "./snackbar";
 
 /**
  * Snackbar queue.
  */
-const queue: IQueuedOverlay<any, IOpenOverlayConfig & Partial<ISnackbarBaseProperties>, WlSnackbar>[] = [];
+const queue: IQueuedOverlay<any, IOpenOverlayConfig & Partial<ISnackbarBaseProperties>, Snackbar>[] = [];
 
 /**
  * Queues a snackbar.

@@ -1,4 +1,4 @@
-{{ doc:src/lib/button/wl-button.ts }}
+{{ doc:src/lib/button/button.ts }}
 
 ## Usage
 

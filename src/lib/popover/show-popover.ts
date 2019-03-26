@@ -1,6 +1,6 @@
 import { IOpenOverlayConfig, showOverlay } from "../behavior/overlay/show-overlay";
-import { IPopoverBaseProperties, WlPopover } from "./wl-popover";
+import { IPopoverBaseProperties, Popover } from "./popover";
 
 export function showPopover<R> (config: IOpenOverlayConfig & Partial<IPopoverBaseProperties>) {
-	return showOverlay(config, () => new WlPopover<R>());
+	return showOverlay(config, () => new Popover<R>());
 }

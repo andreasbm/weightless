@@ -1,6 +1,6 @@
 import { html, property, TemplateResult } from "lit-element";
 import { ifDefined } from "lit-html/directives/if-defined";
-import { WlRipple } from "../../ripple/wl-ripple";
+import { Ripple } from "../../ripple/ripple";
 import { ENTER, SPACE } from "../../util/constant/keycode";
 import { cssResult } from "../../util/css";
 import { addListener, stopEvent } from "../../util/event";
@@ -30,7 +30,7 @@ export abstract class ButtonBehavior extends FormElementBehavior implements IBut
 	/**
 	 * Ripple element.
 	 */
-	protected get $ripple (): WlRipple | null {
+	protected get $ripple (): Ripple | null {
 		return null;
 	}
 

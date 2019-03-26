@@ -1,0 +1,131 @@
+@import "../style/base";
+@import "progress-spinner-vars";
+
+:host {
+	width: $progress-spinner-size;
+	height: $progress-spinner-size;
+
+	contain: strict;
+	position: relative;
+	display: inline-block;
+}
+
+svg {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	transform: rotate(-90deg);
+	top: 0;
+	left: 0;
+	transform-origin: center center;
+	overflow: visible;
+}
+
+#progress, #buffer {
+	stroke-width: $progress-spinner-stroke-width;
+	stroke-dasharray: 285px;
+	transition-property: stroke;
+	transform-origin: center;
+}
+
+#buffer {
+	stroke: $progress-spinner-buffer-color;
+}
+
+#progress {
+	stroke: $progress-spinner-color;
+}
+
+:host([mode="indeterminate"]) {
+	svg {
+		animation: rotate #{$progress-spinner-indeterminate-container-duration} linear infinite;
+	}
+
+	#progress {
+		animation-duration: $progress-spinner-indeterminate-progress-duration;
+		animation-timing-function: $progress-spinner-indeterminate-timing-function;
+		animation-iteration-count: infinite;
+		animation-name: indeterminate;
+	}
+
+}
+
+:host([mode="determinate"]) #progress, #buffer {
+	transition: $progress-spinner-determinate-progress-transition;
+}
+
+@keyframes rotate {
+	0% {
+		transform: rotate(0);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
+@keyframes indeterminate {
+	0% {
+		stroke-dashoffset: 268px;
+		transform: rotate(0);
+	}
+	12.5% {
+		stroke-dashoffset: 56px;
+		transform: rotate(0);
+	}
+	12.5001% {
+		stroke-dashoffset: 56px;
+		transform: rotateX(180deg) rotate(72.5deg);
+	}
+	25% {
+		stroke-dashoffset: 268px;
+		transform: rotateX(180deg) rotate(72.5deg);
+	}
+	25.0001% {
+		stroke-dashoffset: 268px;
+		transform: rotate(270deg);
+	}
+	37.5% {
+		stroke-dashoffset: 56px;
+		transform: rotate(270deg);
+	}
+	37.5001% {
+		stroke-dashoffset: 56px;
+		transform: rotateX(180deg) rotate(161.5deg);
+	}
+	50% {
+		stroke-dashoffset: 268px;
+		transform: rotateX(180deg) rotate(161.5deg);
+	}
+	50.0001% {
+		stroke-dashoffset: 268px;
+		transform: rotate(180deg);
+	}
+	62.5% {
+		stroke-dashoffset: 56px;
+		transform: rotate(180deg);
+	}
+	62.5001% {
+		stroke-dashoffset: 56px;
+		transform: rotateX(180deg) rotate(251.5deg);
+	}
+	75% {
+		stroke-dashoffset: 268px;
+		transform: rotateX(180deg) rotate(251.5deg);
+	}
+	75.0001% {
+		stroke-dashoffset: 268px;
+		transform: rotate(90deg);
+	}
+	87.5% {
+		stroke-dashoffset: 56px;
+		transform: rotate(90deg);
+	}
+	87.5001% {
+		stroke-dashoffset: 56px;
+		transform: rotateX(180deg) rotate(341.5deg);
+	}
+	100% {
+		stroke-dashoffset: 268px;
+		transform: rotateX(180deg) rotate(341.5deg);
+	}
+}

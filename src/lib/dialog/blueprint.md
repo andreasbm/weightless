@@ -1,4 +1,4 @@
-{{ doc:src/lib/dialog/wl-dialog.ts }}
+{{ doc:src/lib/dialog/dialog.ts }}
 
 ## Usage
 

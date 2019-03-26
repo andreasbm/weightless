@@ -1,1 +1,1 @@
-export * from "./wl-textarea";
+export * from "./textarea";

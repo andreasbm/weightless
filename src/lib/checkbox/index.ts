@@ -1,1 +1,1 @@
-export * from "./wl-checkbox";
+export * from "./checkbox";

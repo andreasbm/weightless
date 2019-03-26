@@ -1,8 +1,8 @@
 import { customElement, html, LitElement } from "lit-element";
 import { cssResult } from "../../../../lib/util/css";
 import { sharedStyles } from "../../../style/shared";
-import "../../../../lib/title/wl-title";
-import "../../../../lib/select/wl-select";
+import "../../../../lib/title/title";
+import "../../../../lib/select/select";
 import "../../../elements/code-example/code-example-element";
 import "../../../elements/demo/demo-element";
 

@@ -1,1 +1,1 @@
-export * from "./wl-button";
+export * from "./button";

@@ -1,4 +1,4 @@
-{{ doc:src/lib/radio/wl-radio.ts }}
+{{ doc:src/lib/radio/radio.ts }}
 
 ## Usage
 

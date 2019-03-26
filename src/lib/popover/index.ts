@@ -1,2 +1,2 @@
-export * from "./wl-popover";
+export * from "./popover";
 export * from "./show-popover";

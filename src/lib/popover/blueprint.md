@@ -1,4 +1,4 @@
-{{ doc:src/lib/popover/wl-popover.ts }}
+{{ doc:src/lib/popover/popover.ts }}
 
 ## Usage
 

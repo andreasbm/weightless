@@ -5,10 +5,10 @@ import "../../../lib/button";
 import "../../../lib/card";
 import "../../../lib/icon";
 import "../../../lib/nav";
-import { WlNav } from "../../../lib/nav/wl-nav";
-import { WlPopover } from "../../../lib/popover";
+import { Nav } from "../../../lib/nav/nav";
+import { Popover } from "../../../lib/popover";
 import "../../../lib/popover";
-import "../../../lib/popover-card/wl-popover-card";
+import "../../../lib/popover-card/popover-card";
 import { cssResult } from "../../../lib/util/css";
 import { setProperty } from "../../../lib/util/dom";
 import { Palette, setPalette } from "../../../lib/util/theme";
@@ -53,12 +53,12 @@ const greyReversedPalette: Palette = {
 };
 
 @customElement("navbar-element")
-export class ThemeComponent extends WlNav {
+export class ThemeComponent extends Nav {
 
-	static styles = [...WlNav.styles, sharedStyles, cssResult(styles)];
+	static styles = [...Nav.styles, sharedStyles, cssResult(styles)];
 
 	@property({type: Boolean, reflect: true}) darkMode = false;
-	@query("#theme-popover") protected $themePopover!: WlPopover;
+	@query("#theme-popover") protected $themePopover!: Popover;
 	@query("#logo") protected $logo: HTMLImageElement;
 
 	firstUpdated (props: PropertyValues) {

@@ -1,4 +1,4 @@
-{{ doc:src/lib/tooltip/wl-tooltip.ts }}
+{{ doc:src/lib/tooltip/tooltip.ts }}
 
 ## Usage
 

@@ -1,6 +1,6 @@
 import { customElement, html, LitElement } from "lit-element";
-import "../../../../lib/title/wl-title";
-import "../../../../lib/textfield/wl-textfield";
+import "../../../../lib/title/title";
+import "../../../../lib/textfield/textfield";
 import { cssResult } from "../../../../lib/util/css";
 import "../../../elements/code-example/code-example-element";
 import "../../../elements/demo/demo-element";

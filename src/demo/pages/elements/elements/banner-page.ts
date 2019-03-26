@@ -1,10 +1,10 @@
 import { customElement, html, LitElement } from "lit-element";
 import "../../../elements/code-example/code-example-element";
 import "../../../elements/demo/demo-element";
-import "../../../../lib/banner/wl-banner";
-import "../../../../lib/button/wl-button";
-import "../../../../lib/icon/wl-icon";
-import "../../../../lib/title/wl-title";
+import "../../../../lib/banner/banner";
+import "../../../../lib/button/button";
+import "../../../../lib/icon/icon";
+import "../../../../lib/title/title";
 import { sharedStyles } from "../../../style/shared";
 
 @customElement("banner-page")

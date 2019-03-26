@@ -1,8 +1,8 @@
 import { customElement, html, LitElement } from "lit-element";
 import { repeat } from "lit-html/directives/repeat";
-import "../../../../lib/label/wl-label";
-import "../../../../lib/title/wl-title";
-import "../../../../lib/select/wl-select";
+import "../../../../lib/label/label";
+import "../../../../lib/title/title";
+import "../../../../lib/select/select";
 import { cssResult } from "../../../../lib/util/css";
 import "../../../elements/code-example/code-example-element";
 import "../../../elements/demo/demo-element";

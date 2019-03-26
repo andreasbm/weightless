@@ -1,4 +1,4 @@
-{{ doc:src/lib/progress-bar/wl-progress-bar.ts }}
+{{ doc:src/lib/progress-bar/progress-bar.ts }}
 
 ## Usage
 

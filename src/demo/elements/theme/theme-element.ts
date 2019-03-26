@@ -5,7 +5,7 @@ import { cssResult } from "../../../lib/util/css";
 import { removeColor, setColor } from "../../../lib/util/theme";
 import { sharedStyles } from "../../style/shared";
 import styles from "./theme-element.scss";
-import "../../../lib/icon/wl-icon";
+import "../../../lib/icon/icon";
 import { contrastColor, hexToRGB, shadeColor } from "./theme-helpers";
 
 const themeClass = (themeName: string) => {

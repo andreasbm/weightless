@@ -1,1 +1,1 @@
-export * from "./wl-backdrop";
+export * from "./backdrop";

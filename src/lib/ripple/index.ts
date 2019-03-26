@@ -1,1 +1,1 @@
-export * from "./wl-ripple";
+export * from "./ripple";

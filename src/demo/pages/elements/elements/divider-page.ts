@@ -1,7 +1,7 @@
 import { customElement, html, LitElement } from "lit-element";
 import { sharedStyles } from "../../../style/shared";
-import "../../../../lib/divider/wl-divider";
-import "../../../../lib/title/wl-title";
+import "../../../../lib/divider/divider";
+import "../../../../lib/title/title";
 import "../../../elements/code-example/code-example-element";
 import "../../../elements/demo/demo-element";
 

@@ -1,4 +1,4 @@
-{{ doc:src/lib/label/wl-label.ts }}
+{{ doc:src/lib/label/label.ts }}
 
 ## Usage
 
