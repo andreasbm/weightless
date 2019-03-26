@@ -1,0 +1,8 @@
+{
+	"extend": "blueprint.json",
+	"input": "src/lib/snackbar/blueprint.md",
+	"output": "src/lib/snackbar/README.md",
+	"tag": "wl-snackbar",
+	"demo": "https://weightless.dev/elements/snackbar",
+	"img": "https://raw.githubusercontent.com/andreasbm/elements/master/screenshots/wl-snackbar.png"
+}

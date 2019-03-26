@@ -8,14 +8,18 @@ export interface IOpenOverlayConfig {
 	template: DocumentFragment | HTMLTemplateElement | TemplateResult;
 }
 
+export interface IShowOverlayResult<R, C extends IOpenOverlayConfig & Partial<IOverlayBehaviorBaseProperties>, O extends OverlayBehavior<R, C>> {
+	overlay: O;
+	result: Promise<R | null>;
+}
+
 /**
  * Opens an overlay with a template, attaching the overlay to a container.
  * @param config
  * @param create
  */
-export async function openOverlay<R, C extends IOpenOverlayConfig & Partial<IOverlayBehaviorBaseProperties>, O extends OverlayBehavior<R, C>> (
-	config: C,
-	create: (() => O)): Promise<{overlay: O, result: Promise<R | null>}> {
+export async function showOverlay<R, C extends IOpenOverlayConfig & Partial<IOverlayBehaviorBaseProperties>, O extends OverlayBehavior<R, C>> (
+	config: C, create: (() => O)): Promise<IShowOverlayResult<R, C, O>> {
 	const {template, container} = config;
 
 	// Create the overlay and attach the template to it

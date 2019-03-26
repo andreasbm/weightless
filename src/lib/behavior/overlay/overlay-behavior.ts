@@ -1,6 +1,7 @@
 import { FocusTrap } from "@a11y/focus-trap";
 import "@a11y/focus-trap";
 import { LitElement, property } from "lit-element";
+import styles from "overlay-behavior.scss";
 import { sharedStyles } from "../../style/shared";
 import { pauseAnimations } from "../../util/animation";
 import { CUBIC_BEZIER } from "../../util/constant/animation";
@@ -10,7 +11,6 @@ import { renderAttributes, traverseActiveElements } from "../../util/dom";
 import { addListener, EventListenerSubscription, removeListeners, stopEvent } from "../../util/event";
 import { onSizeChanged } from "../../util/resize";
 import { uniqueID } from "../../util/unique";
-import styles from "overlay-behavior.scss";
 
 /**
  * Events the overlay behavior can dispatch.
@@ -123,7 +123,7 @@ export abstract class OverlayBehavior<R, C extends Partial<IOverlayBehaviorBaseP
 	 * Active in animation.
 	 */
 	protected activeInAnimations: Animation[] = [];
-	
+
 	/**
 	 * Active out animations.
 	 */

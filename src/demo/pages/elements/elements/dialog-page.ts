@@ -3,7 +3,7 @@ import "../../../../lib/button/wl-button";
 import "../../../../lib/card/wl-card";
 import { defaultDialogConfig, WlDialog, DialogSize, IDialogBaseProperties } from "../../../../lib/dialog/wl-dialog";
 import "../../../../lib/dialog/wl-dialog";
-import { openDialog } from "../../../../lib/dialog/open-dialog";
+import { showDialog } from "../../../../lib/dialog/show-dialog";
 import { WlSelect } from "../../../../lib/select/wl-select";
 import "../../../../lib/select/wl-select";
 import "../../../../lib/textfield/wl-textfield";
@@ -16,7 +16,7 @@ import { getMainScrollContainer } from "../../../main-scroll-target";
 import { sharedStyles } from "../../../style/shared";
 
 async function openTemplateDialog (text: string, config: Partial<IDialogBaseProperties> = {}) {
-	const ref = await openDialog({
+	const ref = await showDialog({
 		fixed: true,
 		backdrop: true,
 		blockScrolling: true,

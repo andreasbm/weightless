@@ -47,8 +47,8 @@ export const defaultDialogConfig: IDialogConfig = {
 	size: DialogSize.MEDIUM,
 	blockScrolling: true,
 	backdrop: true,
-	duration: 200,
 	persistent: false,
+	duration: 200,
 	fixed: true
 };
 
@@ -109,22 +109,21 @@ export class WlDialog<R = unknown> extends OverlayBehavior<R, Partial<IDialogPro
 	@property({type: String, reflect: true}) role: AriaRole = "dialog";
 
 	/**
-	 * Focus trap element.
-	 * @attr
-	 */
-	@query("#dialog") protected $focusTrap: FocusTrap;
-
-	/**
 	 * Dialog element.
-	 * @attr
 	 */
-	@query("#dialog") protected $dialog: HTMLElement;
+	@query("#dialog") protected $dialog: FocusTrap;
 
 	/**
 	 * Backdrop element.
-	 * @attr
 	 */
 	@query("#backdrop") protected $backdrop: WlBackdrop;
+
+	/**
+	 * Focus trap element.
+	 */
+	protected get $focusTrap (): FocusTrap {
+		return this.$dialog;
+	}
 
 	/**
 	 * Animates the dialog in.

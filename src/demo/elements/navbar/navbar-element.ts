@@ -79,8 +79,8 @@ export class ThemeComponent extends WlNav {
 
 	private toggleDarkMode () {
 		this.darkMode = !this.darkMode;
-		const foreground = this.darkMode ? `white` : `black`;
-		const background = this.darkMode ? `black` : `white`;
+		const foreground = this.darkMode ? `white` : `rgb(13, 13, 13)`;
+		const background = this.darkMode ? `rgb(13, 13, 13)` : `white`;
 		const shade = this.darkMode ? greyReversedPalette : greyPalette;
 		const shadow = this.darkMode ? `rgba(255, 255, 255, 0.6)` : `rgba(0, 0, 0, 0.2)`;
 

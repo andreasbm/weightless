@@ -158,6 +158,15 @@ export const COMPONENTS_ROUTES: IRoute<IRouteData>[] = [
 		}
 	},
 	{
+		path: "snackbar",
+		component: () => import("./elements/snackbar-page"),
+		data: {
+			title: "Snackbar",
+			desc: "Provide brief messages at the bottom of the screen.",
+			img: iconPath("snackbar")
+		}
+	},
+	{
 		path: "textarea",
 		component: () => import("./elements/textarea-page"),
 		data: {

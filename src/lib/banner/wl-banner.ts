@@ -10,6 +10,7 @@ import styles from "./wl-banner.scss";
  * Properties of the banner.
  */
 export interface IBannerProperties {
+	role: AriaRole;
 }
 
 /**
@@ -26,7 +27,7 @@ export interface IBannerProperties {
  */
 @customElement("wl-banner")
 export class WlBanner extends LitElement implements IBannerProperties {
-	static styles = [cssResult(styles), sharedStyles];
+	static styles = [sharedStyles, cssResult(styles)];
 
 	/**
 	 * Role of the banner.

@@ -24,17 +24,6 @@
 	display: block;
 }
 
-:host([backdrop]) {
-	#backdrop {
-		display: block;
-	}
-}
-
-#backdrop {
-	display: none;
-	pointer-events: all;
-}
-
 #content {
 	z-index: 1;
 	pointer-events: all;

@@ -3,7 +3,7 @@ import "../../../../lib/button/wl-button";
 import "../../../../lib/card/wl-card";
 import "../../../../lib/select/wl-select";
 import "../../../../lib/popover-card";
-import { openPopover } from "../../../../lib/popover/open-popover";
+import { showPopover } from "../../../../lib/popover/show-popover";
 import { defaultPopoverConfig, IPopoverBaseProperties, WlPopover } from "../../../../lib/popover/wl-popover";
 import "../../../../lib/title/wl-title";
 import { cssResult } from "../../../../lib/util/css";
@@ -16,7 +16,7 @@ import { sharedStyles } from "../../../style/shared";
 async function openTemplatePopover (target: Element,
                                     text: string,
                                     config: Partial<IPopoverBaseProperties> = {}) {
-	const ref = await openPopover({
+	const ref = await showPopover({
 		fixed: true,
 		blockScrolling: true,
 		container: document.body,

@@ -1,0 +1,55 @@
+@import "../style/base";
+@import "wl-snackbar-vars";
+
+:host {
+	display: none;
+	pointer-events: none;
+	outline: none;
+}
+
+:host([open]) {
+	display: block;
+}
+
+:host([fixed]) {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	top: 0;
+	right: 0;
+	padding: 12px;
+	z-index: 12345678;
+}
+
+:host([fixed][open]) {
+	display: flex;
+	align-items: flex-end;
+}
+
+#snackbar {
+	padding: $snackbar-padding;
+	color: $snackbar-color;
+	background: $snackbar-bg;
+	border-radius: $snackbar-border-radius;
+	box-shadow: $snackbar-elevation;
+	flex-wrap: wrap;
+	justify-content: flex-end;
+	text-align: left;
+	position: relative;
+	pointer-events: all;
+}
+
+#snackbar, #content, #actions {
+	display: flex;
+	align-items: center;
+}
+
+::slotted([slot="icon"]) {
+	margin: $snackbar-icon-margin;
+	color: $snackbar-icon-color;
+}
+
+#content {
+	padding: $snackbar-content-padding;
+	flex-grow: 1;
+}
