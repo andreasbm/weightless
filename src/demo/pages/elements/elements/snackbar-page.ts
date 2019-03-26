@@ -93,7 +93,7 @@ export default class SnackbarPage extends LitElement {
 			text: getRandomText(),
 			buttonText: "Okay",
 			queue: true
-		})}">Open</wl-button>
+		})}">Add to queue</wl-button>
 				</code-example-element>
 			</demo-element>
 			

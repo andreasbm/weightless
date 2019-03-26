@@ -8,22 +8,18 @@
 }
 
 :host([open]) {
-	display: block;
+	display: flex;
+	align-items: flex-end;
 }
 
 :host([fixed]) {
+	padding: $snackbar-fixed-padding;
+	z-index: $snackbar-z-index;
 	position: fixed;
 	left: 0;
 	bottom: 0;
 	top: 0;
 	right: 0;
-	padding: 12px;
-	z-index: 12345678;
-}
-
-:host([fixed][open]) {
-	display: flex;
-	align-items: flex-end;
 }
 
 #snackbar {

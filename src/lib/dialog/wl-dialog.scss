@@ -2,8 +2,8 @@
 @import "wl-dialog-vars";
 
 :host {
-	--_dialog-width: #{$dialog-width};
-	--_dialog-height: #{$dialog-height};
+	--_dialog-width: $dialog-width;
+	--_dialog-height: $dialog-height;
 
 	text-align: left;
 	display: none;
@@ -18,12 +18,12 @@
 	}
 
 	::slotted([slot="header"]) {
-		padding: #{$dialog-header-padding-scrollable};
-		border-bottom: #{$dialog-scrollable-border};
+		padding: $dialog-header-padding-scrollable;
+		border-bottom: $dialog-scrollable-border;
 	}
 
 	::slotted([slot="footer"]) {
-		border-top: #{$dialog-scrollable-border};
+		border-top: $dialog-scrollable-border;
 	}
 
 	::slotted([slot="content"]) {
@@ -43,11 +43,11 @@
 	width: var(--_dialog-width);
 	height: var(--_dialog-height);
 
-	box-shadow: #{$dialog-elevation};
-	border-radius: #{$dialog-border-radius};
-	background: #{$dialog-bg};
-	color: #{$dialog-color};
-	will-change: #{$dialog-will-change};
+	box-shadow: $dialog-elevation;
+	border-radius: $dialog-border-radius;
+	background: $dialog-bg;
+	color: $dialog-color;
+	will-change: $dialog-will-change;
 	transform: translateZ(0);
 
 	padding: 0;
@@ -65,13 +65,13 @@
 
 ::slotted([slot="header"]) {
 	--h-margin: 0;
-	padding: #{$dialog-header-padding};
+	padding: $dialog-header-padding;
 	margin: 0;
 	flex-shrink: 0;
 }
 
 ::slotted([slot="footer"]) {
-	padding: #{$dialog-footer-padding};
+	padding: $dialog-footer-padding;
 	display: flex;
 	align-items: center;
 	justify-content: flex-end;
@@ -79,12 +79,12 @@
 }
 
 ::slotted([slot="content"]) {
-	padding: #{$dialog-content-padding};
+	padding: $dialog-content-padding;
 	flex-grow: 1;
 }
 
 :host([fixed]) {
-	z-index: #{$dialog-z-index};
+	z-index: $dialog-z-index;
 	position: fixed;
 	top: 0;
 	left: 0;
@@ -92,36 +92,36 @@
 	height: 100%;
 
 	#dialog {
-		min-width: #{$dialog-min-width};
-		min-height: #{$dialog-min-height};
-		max-width: #{$dialog-max-width};
-		max-height: #{$dialog-max-height};
+		min-width: $dialog-min-width;
+		min-height: $dialog-min-height;
+		max-width: $dialog-max-width;
+		max-height: $dialog-max-height;
 	}
 }
 
 :host([size="small"][fixed]) {
-	--_dialog-width: #{$dialog-width-s};
-	--_dialog-height: #{$dialog-height-s};
+	--_dialog-width: $dialog-width-s;
+	--_dialog-height: $dialog-height-s;
 }
 
 :host([size="medium"][fixed]) {
-	--_dialog-width: #{$dialog-width-m};
-	--_dialog-height: #{$dialog-height-m};
+	--_dialog-width: $dialog-width-m;
+	--_dialog-height: $dialog-height-m;
 }
 
 :host([size="large"][fixed]) {
-	--_dialog-width: #{$dialog-width-l};
-	--_dialog-height: #{$dialog-height-l};
+	--_dialog-width: $dialog-width-l;
+	--_dialog-height: $dialog-height-l;
 }
 
 :host([size="auto"][fixed]) {
-	--_dialog-width: #{$dialog-width-auto};
-	--_dialog-height: #{$dialog-height-auto};
+	--_dialog-width: $dialog-width-auto;
+	--_dialog-height: $dialog-height-auto;
 }
 
 :host([size="fullscreen"][fixed]) {
-	--_dialog-width: #{$dialog-width-fullscreen};
-	--_dialog-height: #{$dialog-height-fullscreen};
+	--_dialog-width: $dialog-width-fullscreen;
+	--_dialog-height: $dialog-height-fullscreen;
 
 	#dialog {
 		border-radius: 0;

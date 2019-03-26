@@ -1,5 +1,6 @@
 @import "../style/base";
 
+$snackbar-fixed-padding: var(--snackbar-fixed-padding, #{$spacing-m});
 $snackbar-icon-margin: var(--snackbar-icon-margin, 0 #{$spacing-m} 0 0);
 $snackbar-border-radius: var(--snackbar-border-radius, #{$border-radius-m});
 $snackbar-icon-color: var(--snackbar-icon-color, #{color("primary")});

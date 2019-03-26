@@ -2,12 +2,12 @@
 @import "wl-nav-vars";
 
 :host {
-	color: #{$nav-color};
-	transition: #{$nav-transition};
-	height: #{$nav-height};
-	padding: #{$nav-padding};
-	background: #{$nav-bg};
-	z-index: #{$nav-z-index};
+	color: $nav-color;
+	transition: $nav-transition;
+	height: $nav-height;
+	padding: $nav-padding;
+	background: $nav-bg;
+	z-index: $nav-z-index;
 
 	display: flex;
 	justify-content: space-between;
@@ -23,7 +23,7 @@
 }
 
 :host([shadow]) {
-	box-shadow: #{$nav-elevation};
+	box-shadow: $nav-elevation;
 }
 
 #left-container, #right-container, ::slotted([slot="left"]), ::slotted([slot="right"]), ::slotted([slot="title"]) {
@@ -41,7 +41,7 @@
 }
 
 ::slotted([slot="title"]) {
-	margin: #{$nav-title-margin};
-	font-size: #{$nav-title-font-size};
-	font-weight: #{$nav-title-font-weight};
+	margin: $nav-title-margin;
+	font-size: $nav-title-font-size;
+	font-weight: $nav-title-font-weight;
 }

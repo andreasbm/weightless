@@ -4,7 +4,6 @@ $dialog-elevation: var(--dialog-elevation, #{elevation(4, #{$shadow})});
 $dialog-bg: var(--dialog-bg, #{$background});
 $dialog-color: var(--dialog-color, #{$foreground});
 $dialog-border-radius: var(--dialog-border-radius, #{$border-radius-m});
-$dialog-z-index: var(--dialog-z-index, 1234567);
 $dialog-will-change: var(--dialog-will-change, transform, opacity);
 
 $dialog-width: var(--dialog-width, auto);

@@ -1,0 +1,9 @@
+/* Bottom layer */
+$nav-z-index: var(--nav-z-index, 123456);
+
+/* Middle layer */
+$dialog-z-index: var(--dialog-z-index, 1234567);
+
+/* Top layer */
+$snackbar-z-index: var(--snackbar-z-index, 12345678);
+$popover-z-index: var(--popover-z-index, 12345678);
