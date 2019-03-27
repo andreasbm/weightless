@@ -18,6 +18,7 @@ const ELEMENTS = [
 	"icon",
 	"label",
 	"list-item",
+	"nav",
 	"popover",
 	"progress-bar",
 	"progress-spinner",

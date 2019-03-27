@@ -178,14 +178,14 @@ export class Expansion extends RadioBehavior implements IExpansionProperties {
 	protected render (): TemplateResult {
 		return html`
 			<header id="header" tabindex="0"  aria-labelledby="title">
-				<aside id="title">
+				<div id="title">
 					<slot name="title"></slot>
 					<slot name="description"></slot>
-				</aside>
-				<aside id="indicator">
+				</div>
+				<div id="indicator">
 					<slot name="indicator"></slot>
 					${this.icon != null ? html`<wl-icon id="icon">${this.icon}</wl-icon>` : ""}
-				</aside>
+				</div>
 				<wl-ripple id="ripple" overlay ?disabled="${this.disabled || this.noRipple}"></wl-ripple>
 			</header>
 			<div id="content-container" aria-hidden="${this.checked}">

@@ -102,7 +102,15 @@ export const COMPONENTS_ROUTES: IRoute<IRouteData>[] = [
 			img: iconPath("list")
 		}
 	},
-	// Nav here
+	{
+		path: "nav",
+		component: () => import("./elements/nav-page"),
+		data: {
+			title: "Navigation Bar",
+			desc: "Provide access to destinations in your app.",
+			img: iconPath("toolbar")
+		}
+	},
 	{
 		path: "popover",
 		component: () => import("./elements/popover-page"),
