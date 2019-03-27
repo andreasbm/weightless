@@ -175,6 +175,15 @@ export const COMPONENTS_ROUTES: IRoute<IRouteData>[] = [
 		}
 	},
 	{
+		path: "switch",
+		component: () => import("./elements/switch-page"),
+		data: {
+			title: "Switch",
+			desc: "Turn an option on or off.",
+			img: iconPath("switch")
+		}
+	},
+	{
 		path: "textarea",
 		component: () => import("./elements/textarea-page"),
 		data: {

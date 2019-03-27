@@ -22,8 +22,8 @@
 :host([mode="indeterminate"]) {
 	#progress {
 		/*
-			Due to a Safari issue we had to compromise and add elements to the DOM that we could animate.
-		 	Preferably we would just animate the ::before and ::after pseudo selectors.
+			Due to a Safari issue we had to compromise and add elements to the DOM that we could animate
+			instead of just animating the ::before and ::after parts.
 		 */
 		#before, #after {
 			background-color: inherit;

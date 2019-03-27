@@ -1,12 +1,12 @@
 import { customElement, html, LitElement } from "lit-element";
-import "../../../../lib/checkbox/checkbox";
+import "../../../../lib/switch/switch";
 import "../../../elements/code-example/code-example-element";
 import "../../../elements/demo/demo-element";
 import "../../../../lib/title/title";
 import { sharedStyles } from "../../../style/shared";
 
-@customElement("checkbox-page")
-export default class CheckboxPage extends LitElement {
+@customElement("switch-page")
+export default class SwitchPage extends LitElement {
 
 	static styles = [sharedStyles];
 
@@ -14,20 +14,16 @@ export default class CheckboxPage extends LitElement {
 		return html`
 			<demo-element default>
 				<code-example-element>
-					<wl-checkbox></wl-checkbox>
-					<wl-checkbox checked></wl-checkbox>
-					<wl-checkbox indeterminate></wl-checkbox>
-					<wl-checkbox checked indeterminate></wl-checkbox>
+					<wl-switch></wl-switch>
+					<wl-switch checked></wl-switch>
 				</code-example-element>
 			</demo-element>
 			
 			<wl-title level="3">Disabled</wl-title>
 			<demo-element>
 				<code-example-element>
-					<wl-checkbox disabled></wl-checkbox>
-					<wl-checkbox disabled checked></wl-checkbox>
-					<wl-checkbox disabled indeterminate></wl-checkbox>
-					<wl-checkbox disabled checked indeterminate></wl-checkbox>
+					<wl-switch disabled></wl-switch>
+					<wl-switch checked disabled></wl-switch>
 				</code-example-element>
 			</demo-element>
 		`;

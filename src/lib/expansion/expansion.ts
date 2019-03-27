@@ -1,6 +1,6 @@
 import { customElement, html, property, query, TemplateResult } from "lit-element";
 import { ifDefined } from "lit-html/directives/if-defined";
-import { ICheckboxBehaviorProperties } from "../behavior/checkbox/checkbox-behavior";
+import { ISwitchBehaviorProperties } from "../behavior/switch/switch-behavior";
 import { IRadioBehaviorProperties, RadioBehavior } from "../behavior/radio/radio-behavior";
 import { Ripple } from "../ripple/ripple";
 import { CUBIC_BEZIER } from "../util/constant/animation";
@@ -112,7 +112,7 @@ export class Expansion extends RadioBehavior implements IExpansionProperties {
 	 * @param props
 	 */
 	protected firstUpdated (props: Map<keyof IExpansionProperties, unknown>) {
-		super.firstUpdated(<Map<keyof ICheckboxBehaviorProperties, unknown>>props);
+		super.firstUpdated(<Map<keyof ISwitchBehaviorProperties, unknown>>props);
 		this.$ripple.target = this.eventTarget;
 
 		// The initial in or out animation will be instant
@@ -124,7 +124,7 @@ export class Expansion extends RadioBehavior implements IExpansionProperties {
 	 * @param props
 	 */
 	protected updated (props: Map<keyof IExpansionProperties, any>) {
-		super.updated(props as Map<keyof ICheckboxBehaviorProperties, unknown>);
+		super.updated(props as Map<keyof ISwitchBehaviorProperties, unknown>);
 
 		// Either animate the content in or out when the checked property changes
 		if (props.get("checked") != null) {

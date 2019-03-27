@@ -26,6 +26,7 @@ const ELEMENTS = [
 	"ripple",
 	"select",
 	"snackbar",
+	"switch",
 	"textarea",
 	"textfield",
 	"title",

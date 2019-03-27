@@ -1,5 +1,5 @@
 @import "../style/base";
-@import "checkbox-vars";
+@import "switch-vars";
 
 :host {
 	--_checkbox-bg: #{$checkbox-bg};
@@ -25,19 +25,11 @@
 	cursor: pointer;
 }
 
-:host([checked]), :host([indeterminate]) {
+:host([checked]) {
 	--_checkbox-bg: #{$checkbox-bg-checked};
 	--_checkbox-color: #{$checkbox-color-checked};
-}
 
-:host([checked]:not([indeterminate])) {
-	#checkmark-path {
-		stroke-dashoffset: 0;
-	}
-}
-
-:host([indeterminate]) {
-	#indeterminate-path {
+	#path {
 		stroke-dashoffset: 0;
 	}
 }
@@ -45,7 +37,7 @@
 :host(:hover), :host(:focus) {
 	will-change: border, background-color;
 
-	#checkmark-path {
+	#path {
 		will-change: stroke-dashoffset;
 	}
 }
@@ -56,7 +48,7 @@
 	pointer-events: none;
 }
 
-:host([disabled][checked]), :host([disabled][indeterminate]) {
+:host([disabled][checked]) {
 	--_checkbox-bg: #{$checkbox-bg-disabled-checked};
 	--_checkbox-color: #{$checkbox-color-disabled-checked};
 }
@@ -66,15 +58,12 @@
 	height: $checkbox-checkmark-size;
 }
 
-#checkmark-path, #indeterminate-path {
+#path {
 	stroke-width: $checkbox-checkmark-path-width;
-	stroke: $checkbox-checkmark-stroke-color;
 	stroke-dasharray: $checkbox-checkmark-path-dasharray;
 	stroke-dashoffset: $checkbox-checkmark-path-dasharray;
 	transition: $checkbox-checkmark-transition;
-}
-
-#checkmark-path {
+	stroke: $checkbox-checkmark-stroke-color;
 	transition-delay: $checkbox-checkmark-path-delay;
 }
 

@@ -16,7 +16,7 @@ export interface IButtonBehaviorProperties extends IFormElementBehaviorPropertie
 }
 
 /**
- * Provides checkbox behavior.
+ * Provides button behavior.
  */
 export abstract class ButtonBehavior extends FormElementBehavior implements IButtonBehaviorProperties {
 	static styles = [...FormElementBehavior.styles, cssResult(styles)];

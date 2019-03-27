@@ -173,6 +173,13 @@
 			"[Demo](https://weightless.dev/elements/snackbar)"
 		],
 		[
+			"Switch",
+			"`wl-switch`",
+			"Turn an option on or off.",
+			"[Documentation](/src/lib/switch)",
+			"[Demo](https://weightless.dev/elements/switch)"
+		],
+		[
 			"Textarea",
 			"`wl-textarea`",
 			"Multiline text fields.",

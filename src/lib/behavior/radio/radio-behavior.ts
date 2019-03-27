@@ -5,18 +5,18 @@ import { ARROW_DOWN, ARROW_LEFT, ARROW_RIGHT, ARROW_UP } from "../../util/consta
 import { cssResult } from "../../util/css";
 import { queryParentRoots } from "../../util/dom";
 import { stopEvent } from "../../util/event";
-import { CheckboxBehavior, ICheckboxBehaviorProperties } from "../checkbox/checkbox-behavior";
+import { SwitchBehavior, ISwitchBehaviorProperties } from "../switch/switch-behavior";
 
 import styles from "./radio-behavior.scss";
 
-export interface IRadioBehaviorProperties extends ICheckboxBehaviorProperties {
+export interface IRadioBehaviorProperties extends ISwitchBehaviorProperties {
 }
 
 /**
  * Radio behavior.
  */
-export abstract class RadioBehavior extends CheckboxBehavior implements IRadioBehaviorProperties {
-	static styles = [...CheckboxBehavior.styles, cssResult(styles)];
+export abstract class RadioBehavior extends SwitchBehavior implements IRadioBehaviorProperties {
+	static styles = [...SwitchBehavior.styles, cssResult(styles)];
 
 	/**
 	 * Role of the radio behavior.
@@ -39,7 +39,7 @@ export abstract class RadioBehavior extends CheckboxBehavior implements IRadioBe
 	/**
 	 * Updates the tabindex.
 	 */
-	protected updateTabindex (props: Map<keyof ICheckboxBehaviorProperties, unknown>) {
+	protected updateTabindex (props: Map<keyof ISwitchBehaviorProperties, unknown>) {
 
 		// Remove from tab order if disabled or if not checked and the group is checked.
 		if (props.has("disabled") || props.has("checked")) {

@@ -1,3 +1,4 @@
+export * from "./switch";
 export * from "./checkbox";
 export * from "./form-element";
 export * from "./input";

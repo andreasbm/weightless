@@ -1,0 +1,8 @@
+{
+	"extend": "blueprint.json",
+	"input": "src/lib/switch/blueprint.md",
+	"output": "src/lib/switch/README.md",
+	"tag": "wl-switch",
+	"demo": "https://weightless.dev/elements/switch",
+	"img": "https://raw.githubusercontent.com/andreasbm/elements/master/screenshots/wl-switch.png"
+}
