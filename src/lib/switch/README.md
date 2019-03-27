@@ -1,7 +1,7 @@
 
-[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#wl-checkbox)
+[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#wl-switch)
 
-# ➤ wl-checkbox
+# ➤ wl-switch
 
 Turn an option on or off.
 
@@ -13,40 +13,13 @@ Turn an option on or off.
 | Property      | Attribute     | Type       | Default    | Description                                      |
 |---------------|---------------|------------|------------|--------------------------------------------------|
 | `ariaChecked` | `ariaChecked` | `string`   |            | Aria checked attribute.                          |
-| `checked`     | `checked`     | `boolean`  | false      | Checks the checkbox.                             |
+| `checked`     | `checked`     | `boolean`  | false      | Checks the switch.                               |
 | `disabled`    | `disabled`    | `boolean`  | false      | Disables the element.                            |
 | `name`        | `name`        | `string`   |            | Name of the native form element.                 |
 | `readonly`    | `readonly`    | `boolean`  | false      | Makes the element readonly (disabled but tabbable) |
 | `required`    | `required`    | `boolean`  | false      | Makes the element required in a form context.    |
-| `role`        | `role`        | `AriaRole` | "checkbox" | Role of the checkbox.                            |
+| `role`        | `role`        | `AriaRole` | "checkbox" | Role of the switch.                              |
 | `value`       | `value`       | `string`   | ""         | Value of the form element.                       |
-
-
-[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#css-custom-properties)
-
-## ➤ CSS Custom Properties
-
-| Property                              | Description                                  |
-|---------------------------------------|----------------------------------------------|
-| `--checkbox-bg`                       | Default background.                          |
-| `--checkbox-bg-checked`               | Background when checked.                     |
-| `--checkbox-bg-disabled`              | Background when disabled.                    |
-| `--checkbox-bg-disabled-checked`      | Background when disabled and checked         |
-| `--checkbox-border-config`            | Border configuration (width and style)       |
-| `--checkbox-border-radius`            | Border radius.                               |
-| `--checkbox-checkmark-path-dasharray` | Dasharray of the checkmark.                  |
-| `--checkbox-checkmark-path-delay`     | Transition delay of the checkmark animation. |
-| `--checkbox-checkmark-path-width`     | Width of the checkmark.                      |
-| `--checkbox-checkmark-size`           | Width and height of the checkmark.           |
-| `--checkbox-checkmark-stroke-color`   | Color of the checkmark.                      |
-| `--checkbox-checkmark-transition`     | Transition of the checkmark.                 |
-| `--checkbox-color`                    | Default color.                               |
-| `--checkbox-color-checked`            | Color when checked.                          |
-| `--checkbox-color-disabled`           | Color when disabled.                         |
-| `--checkbox-color-disabled-checked`   | Color when disabled and checked.             |
-| `--checkbox-ripple-transform`         | Transform of the ripple.                     |
-| `--checkbox-size`                     | Width and height.                            |
-| `--checkbox-transition`               | Transition.                                  |
 
 
 
@@ -54,10 +27,10 @@ Turn an option on or off.
 
 ## ➤ Usage
 
-Go [here](https://weightless.dev/elements/checkbox) to try the demo.
+Go [here](https://weightless.dev/elements/switch) to try the demo.
 
-<a href="https://weightless.dev/elements/checkbox" align="center">
-  <img src="https://raw.githubusercontent.com/andreasbm/elements/master/screenshots/wl-checkbox.png" width="700" />
+<a href="https://weightless.dev/elements/switch" align="center">
+  <img src="https://raw.githubusercontent.com/andreasbm/elements/master/screenshots/wl-switch.png" width="700" />
 </a>
 
 

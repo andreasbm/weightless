@@ -17,6 +17,6 @@ $switch-color-disabled-checked: var(--switch-color-disabled-checked, #{color("pr
 
 $switch-knob-size: var(--switch-knob-size, #{size(20)});
 $switch-knob-border-radius: var(--switch-knob-border-radius, 100%);
-$switch-knob-transition: var(--switch-knob-transition, transform #{$transition-duration-fast} #{$transition-deceleration-curve});
+$switch-knob-transition: var(--switch-knob-transition, background #{$transition-duration-fast} #{$transition-deceleration-curve}, transform #{$transition-duration-fast} #{$transition-deceleration-curve});
 $switch-knob-elevation: var(--switch-knob-elevation, #{elevation(2, #{$shadow})});
 $switch-ripple-transform: var(--switch-ripple-transform, translate(-50%, -50%) scale(1.8));

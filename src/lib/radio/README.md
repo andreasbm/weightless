@@ -13,7 +13,7 @@ Select one option from a set.
 | Property      | Attribute     | Type       | Default | Description                                      |
 |---------------|---------------|------------|---------|--------------------------------------------------|
 | `ariaChecked` | `ariaChecked` | `string`   |         | Aria checked attribute.                          |
-| `checked`     | `checked`     | `boolean`  | false   | Checks the checkbox.                             |
+| `checked`     | `checked`     | `boolean`  | false   | Checks the switch.                               |
 | `disabled`    | `disabled`    | `boolean`  | false   | Disables the element.                            |
 | `name`        | `name`        | `string`   |         | Name of the native form element.                 |
 | `readonly`    | `readonly`    | `boolean`  | false   | Makes the element readonly (disabled but tabbable) |

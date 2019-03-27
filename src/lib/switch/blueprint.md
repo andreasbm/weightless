@@ -1,4 +1,4 @@
-{{ doc:src/lib/checkbox/switch.ts }}
+{{ doc:src/lib/switch/switch.ts }}
 
 ## Usage
 
