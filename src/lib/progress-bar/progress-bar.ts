@@ -33,7 +33,10 @@ export class ProgressBar extends ProgressBehavior implements IProgressBarPropert
 			${this.bufferPerc > 0 ? html`
 				<div id="buffer" style="transform: scaleX(${this.bufferPerc})"></div>`
 			: ""}
-			<div id="progress" style="${this.mode === ProgressMode.DETERMINATE ? `transform: scaleX(${this.progressPerc})` : ""}"></div>
+			<div id="progress" style="${this.mode === ProgressMode.DETERMINATE ? `transform: scaleX(${this.progressPerc})` : ""}">
+				<div id="before"></div>
+				<div id="after"></div>
+			</div>
 		`;
 	}
 }

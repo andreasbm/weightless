@@ -21,25 +21,28 @@
 
 :host([mode="indeterminate"]) {
 	#progress {
-		&:before, &:after {
-			content: "";
-			position: absolute;
+		/*
+			Due to a Safari issue we had to compromise and add elements to the DOM that we could animate.
+		 	Preferably we would just animate the ::before and ::after pseudo selectors.
+		 */
+		#before, #after {
 			background-color: inherit;
-			top: 0;
+			position: absolute;
+			height: 100%;
 			left: 0;
+			top: 0;
 			bottom: 0;
-		}
 
-		&:before, &:after {
 			animation-duration: $progress-bar-indeterminate-duration;
 			animation-timing-function: $progress-bar-indeterminate-timing-function;
 			animation-iteration-count: infinite;
 		}
 
-		&:before {
+		#before {
 			animation-name: indeterminate;
 		}
-		&:after {
+
+		#after {
 			animation-name: indeterminate-short;
 			animation-delay: $progress-bar-indeterminate-short-delay;
 		}
@@ -52,6 +55,7 @@
 	transform-origin: top left;
 	position: absolute;
 	top: 0;
+	left: 0;
 	height: 100%;
 	width: 100%;
 }
