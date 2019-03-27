@@ -10,16 +10,16 @@ Turn an option on or off.
 
 ## ➤ Properties
 
-| Property      | Attribute     | Type       | Default    | Description                                      |
-|---------------|---------------|------------|------------|--------------------------------------------------|
-| `ariaChecked` | `ariaChecked` | `string`   |            | Aria checked attribute.                          |
-| `checked`     | `checked`     | `boolean`  | false      | Checks the switch.                               |
-| `disabled`    | `disabled`    | `boolean`  | false      | Disables the element.                            |
-| `name`        | `name`        | `string`   |            | Name of the native form element.                 |
-| `readonly`    | `readonly`    | `boolean`  | false      | Makes the element readonly (disabled but tabbable) |
-| `required`    | `required`    | `boolean`  | false      | Makes the element required in a form context.    |
-| `role`        | `role`        | `AriaRole` | "checkbox" | Role of the switch.                              |
-| `value`       | `value`       | `string`   | ""         | Value of the form element.                       |
+| Property      | Attribute      | Type       | Default    | Description                                      |
+|---------------|----------------|------------|------------|--------------------------------------------------|
+| `ariaChecked` | `aria-checked` | `string`   |            | Aria checked attribute.                          |
+| `checked`     | `checked`      | `boolean`  | false      | Checks the switch.                               |
+| `disabled`    | `disabled`     | `boolean`  | false      | Disables the element.                            |
+| `name`        | `name`         | `string`   |            | Name of the native form element.                 |
+| `readonly`    | `readonly`     | `boolean`  | false      | Makes the element readonly (disabled but tabbable) |
+| `required`    | `required`     | `boolean`  | false      | Makes the element required in a form context.    |
+| `role`        | `role`         | `AriaRole` | "checkbox" | Role of the switch.                              |
+| `value`       | `value`        | `string`   | ""         | Value of the form element.                       |
 
 
 

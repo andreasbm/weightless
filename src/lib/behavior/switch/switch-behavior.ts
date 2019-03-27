@@ -30,7 +30,7 @@ export abstract class SwitchBehavior extends FormElementBehavior implements ISwi
 
 	/**
 	 * Aria checked attribute.
-	 * @attr - aria-checked
+	 * @attr aria-checked
 	 */
 	@property({type: String, reflect: true, attribute: "aria-checked"}) ariaChecked: string = this.checked.toString();
 
