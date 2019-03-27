@@ -23,10 +23,9 @@ export class Switch extends SwitchBehavior implements ISwitchProperties {
 	 */
 	protected render (): TemplateResult {
 		return html`
-			<svg id="checkmark" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" preserveAspectRatio="none" viewBox="0 0 24 24">
-                <path id="path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59"></path>
-            </svg>
-			<wl-ripple id="ripple" .target="${this}" focusable overlay unbounded centered initialDuration="200"></wl-ripple>
+            <div id="knob">
+				<wl-ripple id="ripple" .target="${this}" focusable overlay unbounded centered initialDuration="200"></wl-ripple>
+			</div>
 			${this.renderFormElement()}
 		`;
 	}

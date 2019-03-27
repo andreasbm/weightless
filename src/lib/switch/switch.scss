@@ -2,21 +2,19 @@
 @import "switch-vars";
 
 :host {
-	--_checkbox-bg: #{$checkbox-bg};
-	--_checkbox-color: #{$checkbox-color};
+	--_switch-bg: #{$switch-bg};
+	--_switch-color: #{$switch-color};
 
-	background: var(--_checkbox-bg);
-	color: var(--_checkbox-color);
-	width: $checkbox-size;
-	height: $checkbox-size;
-	border: $checkbox-border-config currentColor;
-	border-radius: $checkbox-border-radius;
-	transition: $checkbox-transition;
+	background: var(--_switch-bg);
+	color: var(--_switch-color);
+	width: $switch-width;
+	height: $switch-height;
+	border-radius: $switch-border-radius;
+	transition: $switch-transition;
 
-	position: relative;
 	display: inline-flex;
 	align-items: center;
-	justify-content: center;
+	position: relative;
 	outline: none;
 	user-select: none;
 }
@@ -26,47 +24,46 @@
 }
 
 :host([checked]) {
-	--_checkbox-bg: #{$checkbox-bg-checked};
-	--_checkbox-color: #{$checkbox-color-checked};
+	--_switch-bg: #{$switch-bg-checked};
+	--_switch-color: #{$switch-color-checked};
 
-	#path {
-		stroke-dashoffset: 0;
+	#knob {
+		transform: translateX(calc(#{$switch-width} - 100%));
+	}
+}
+
+/* Switch the color of the ripple to be the background color */
+:host(:not([checked])) {
+	#ripple {
+		color: var(--_switch-bg);
 	}
 }
 
 :host(:hover), :host(:focus) {
-	will-change: border, background-color;
-
-	#path {
-		will-change: stroke-dashoffset;
-	}
+	will-change: background-color;
 }
 
 :host([disabled]) {
-	--_checkbox-bg: #{$checkbox-bg-disabled};
-	--_checkbox-color: #{$checkbox-color-disabled};
+	--_switch-bg: #{$switch-bg-disabled};
+	--_switch-color: #{$switch-color-disabled};
 	pointer-events: none;
 }
 
 :host([disabled][checked]) {
-	--_checkbox-bg: #{$checkbox-bg-disabled-checked};
-	--_checkbox-color: #{$checkbox-color-disabled-checked};
+	--_switch-bg: #{$switch-bg-disabled-checked};
+	--_switch-color: #{$switch-color-disabled-checked};
 }
 
-#checkmark {
-	width: $checkbox-checkmark-size;
-	height: $checkbox-checkmark-size;
-}
-
-#path {
-	stroke-width: $checkbox-checkmark-path-width;
-	stroke-dasharray: $checkbox-checkmark-path-dasharray;
-	stroke-dashoffset: $checkbox-checkmark-path-dasharray;
-	transition: $checkbox-checkmark-transition;
-	stroke: $checkbox-checkmark-stroke-color;
-	transition-delay: $checkbox-checkmark-path-delay;
+#knob {
+	width: $switch-knob-size;
+	height: $switch-knob-size;
+	border-radius: $switch-knob-border-radius;
+	box-shadow: $switch-knob-elevation;
+	transition: $switch-knob-transition;
+	background: currentColor;
+	position: absolute;
 }
 
 #ripple {
-	transform: $checkbox-ripple-transform;
+	transform: $switch-ripple-transform;
 }
