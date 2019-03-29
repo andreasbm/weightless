@@ -25,6 +25,11 @@ export interface IFormElementBehaviorProperties {
 
 /**
  * Provides form element behavior that interacts with forms.
+ * The classes that extends the FormElementBehavior function must implement a
+ * render function that adds a native form element with the ID of .formElementId to the shadow root.
+ * This form element will be added to the light DOM so it can interact with the parent form.
+ * An example of where this is absolutely amazing is when buttons need to trigger auto error notifications
+ * in input elements.
  */
 export abstract class FormElementBehavior extends LitElement implements IFormElementBehaviorProperties {
 	static styles = [sharedStyles, cssResult(styles)];

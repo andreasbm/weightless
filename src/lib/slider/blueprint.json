@@ -1,0 +1,8 @@
+{
+	"extend": "blueprint.json",
+	"input": "src/lib/slider/blueprint.md",
+	"output": "src/lib/slider/README.md",
+	"tag": "wl-slider",
+	"demo": "https://weightless.dev/elements/slider",
+	"img": "https://raw.githubusercontent.com/andreasbm/elements/master/screenshots/wl-slider.png"
+}

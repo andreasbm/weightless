@@ -48,9 +48,9 @@
 
 	.arrow-down {
 		//--size-multiplier: 1.5px;
-		font-size: 24px;
+		font-size: #{size(25)};
 		position: absolute;
-		bottom: #{size(50)};
+		bottom: #{size(80)};
 		left: 50%;
 		transform: translate(-50%, 0);
 	}

@@ -1,0 +1,20 @@
+@import "../style/base";
+
+$slider-track-bg: var(--slider-bg, #{color("primary", $default-hue, 0.3)});
+$slider-track-bg-buffer: var(--slider-bg-buffer, #{color("primary", $default-hue, 0.6)});
+$slider-track-bg-active: var(--slider-bg-active, #{color("primary")});
+$slider-track-bg-disabled: var(--slider-bg-disabled, #{color("shade", $default-hue, 0.3)});
+$slider-track-bg-buffer-disabled: var(--slider-bg-buffer-disabled, #{color("shade", $default-hue, 0.6)});
+$slider-track-bg-active-disabled: var(--slider-bg-active-disabled, #{color("shade")});
+
+$slider-thumb-focus-ring-bg: var(--slider-thumb-focus-ring-bg, #{color("primary", $default-hue, 0.1)});
+$slider-thumb-bg: var(--slider-thumb-bg, #{color("primary")});
+$slider-thumb-bg-disabled: var(--slider-thumb-bg-disabled, #{color("shade")});
+$slider-thumb-focus-ring-size: var(--slider-thumb-focus-ring-size, #{size(12)});
+$slider-thumb-size: var(--slider-thumb-size, #{size(12)});
+$slider-thumb-transition: var(--slider-thumb-transition, transform #{$transition-duration-fast} #{$transition-deceleration-curve}, box-shadow #{$transition-duration-fast} #{$transition-deceleration-curve});
+$slider-thumb-transform-focus: var(--slider-thumb-transform-focus, #{scale(1.2)});
+$slider-thumb-border-radius: var(--slider-thumb-border-radius, 100%);
+
+$slider-track-height: var(--slider-track-height, #{size(5)});
+

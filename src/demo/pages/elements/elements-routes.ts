@@ -166,6 +166,15 @@ export const COMPONENTS_ROUTES: IRoute<IRouteData>[] = [
 		}
 	},
 	{
+		path: "slider",
+		component: () => import("./elements/slider-page"),
+		data: {
+			title: "Slider",
+			desc: "Make selections from a range of values.",
+			img: iconPath("slider")
+		}
+	},
+	{
 		path: "snackbar",
 		component: () => import("./elements/snackbar-page"),
 		data: {

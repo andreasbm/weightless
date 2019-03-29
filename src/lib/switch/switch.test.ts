@@ -1,5 +1,5 @@
 import { createContainer, removeContainer, waitForElement } from "../../test/testing-helpers";
-import "../checkbox";
+import "./switch";
 import { Switch } from "./switch";
 
 describe("wl-checkbox", () => {

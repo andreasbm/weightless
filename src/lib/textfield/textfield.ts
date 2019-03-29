@@ -35,6 +35,7 @@ export class Textfield extends TextfieldBehavior implements ITextfieldProperties
 				?required="${this.required}"
 				?disabled="${this.disabled}"
 				?readonly="${this.readonly}"
+				aria-label="${ifDefined(this.label)}"
 				type="${ifDefined(this.type)}"
 				name="${ifDefined(this.name)}"
 				list="${ifDefined(this.list)}"

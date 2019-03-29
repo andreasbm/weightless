@@ -1,4 +1,4 @@
 @import "../style/base";
 
 $icon-font: var(--icon-font, "Material Icons");
-$icon-size: var(--icon-size, #{size(24)});
+$icon-size: var(--icon-size, #{size(24, "em")});

@@ -95,7 +95,8 @@
 	}
 }
 
-::slotted(input), ::slotted(textarea), ::slotted(select) {
+
+::slotted(input), ::slotted(textarea), ::slotted(select), #slot-wrapper {
 	caret-color: var(--_input-color-state);
 	padding: #{$input-padding-top-bottom} var(--_input-padding-left-right);
 	font-family: $input-font-family;
@@ -113,15 +114,10 @@
 	margin: 0;
 	background: transparent;
 	width: 100%;
-
-	// Remove ugly autofill
-	&:-webkit-autofill {
-		-webkit-outlined-shadow: 0 0 0px 9999px white inset !important;
-	}
 }
 
 :host([label]) {
-	::slotted(input), ::slotted(textarea), ::slotted(select) {
+	::slotted(input), ::slotted(textarea), ::slotted(select), #slot-wrapper {
 		padding-top: calc(#{$input-label-space} + #{$input-padding-top-bottom});
 	}
 }
@@ -133,27 +129,6 @@
 ::slotted(input[type="color"]) {
 	height: #{size(60)};
 	cursor: pointer;
-
-	&::-webkit-color-swatch-wrapper {
-		padding: 0;
-	}
-
-	&::-webkit-color-swatch {
-		border: none;
-	}
-}
-
-::slotted(input[type="range"]) {
-	width: 100%;
-	background: transparent;
-
-	&::-webkit-slider-runnable-track {
-		background: orange;
-	}
-
-	&::-webkit-slider-thumb {
-		background: red;
-	}
 }
 
 ::slotted([slot="before"]), ::slotted([slot="after"]) {

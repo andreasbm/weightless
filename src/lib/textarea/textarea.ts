@@ -100,6 +100,7 @@ export class Textarea extends TextfieldBehavior implements ITextareaProperties {
 				?required="${this.required}"
 				?disabled="${this.disabled}"
 				?readonly="${this.readonly}"
+				aria-label="${ifDefined(this.label)}"
 				name="${ifDefined(this.name)}"
 				pattern="${ifDefined(this.pattern)}"
 				autocomplete="${ifDefined(this.autocomplete)}"

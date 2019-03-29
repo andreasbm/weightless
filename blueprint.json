@@ -166,6 +166,13 @@
 			"[Demo](https://weightless.dev/elements/select)"
 		],
 		[
+			"Slider",
+			"`wl-slider`",
+			"Make selections from a range of values.",
+			"[Documentation](/src/lib/slider)",
+			"[Demo](https://weightless.dev/elements/slider)"
+		],
+		[
 			"Snackbar",
 			"`wl-snackbar`",
 			"Provide brief messages at the bottom of the screen.",

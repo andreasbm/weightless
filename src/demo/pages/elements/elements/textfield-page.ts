@@ -93,7 +93,6 @@ export default class TextfieldPage extends LitElement {
 					<wl-textfield label="Search" type="search"></wl-textfield>
 					<wl-textfield label="Tel" type="tel"></wl-textfield>
 					<wl-textfield label="File" type="file"></wl-textfield>
-					<wl-textfield label="Range" type="range"></wl-textfield>
 				</code-example-element>
 			</demo-element>
 

@@ -92,7 +92,7 @@ If you prefer to use the `umd` bundle you can import `https://unpkg.com/weightle
 | Snackbar         | `wl-snackbar`         | Provide brief messages at the bottom of the screen. | [Documentation](/src/lib/snackbar)         | [Demo](https://weightless.dev/elements/snackbar) |
 | Switch           | `wl-switch`           | Turn an option on or off.                        | [Documentation](/src/lib/switch)           | [Demo](https://weightless.dev/elements/switch)   |
 | Textarea         | `wl-textarea`         | Multiline text fields.                           | [Documentation](/src/lib/textarea)         | [Demo](https://weightless.dev/elements/textarea) |
-| Textfield        | `wl-textfield`        | Singleline text fields.                          | [Documentation](/src/lib/textfield)        | [Demo](https://weightless.dev/elements/textfield) |
+| Slider        | `wl-textfield`        | Singleline text fields.                          | [Documentation](/src/lib/textfield)        | [Demo](https://weightless.dev/elements/textfield) |
 | Title            | `wl-title`            | Indicate the start of a new section.             | [Documentation](/src/lib/title)            | [Demo](https://weightless.dev/elements/title)    |
 | Tooltip          | `wl-tooltip`          | Informative context related text.                | [Documentation](/src/lib/tooltip)          | [Demo](https://weightless.dev/elements/tooltip)  |
 

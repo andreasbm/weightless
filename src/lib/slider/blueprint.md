@@ -1,4 +1,4 @@
-{{ doc:src/lib/textfield/slider.ts }}
+{{ doc:src/lib/slider/slider.ts }}
 
 ## Usage
 

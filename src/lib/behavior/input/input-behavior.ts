@@ -103,6 +103,19 @@ export abstract class InputBehavior extends FormElementBehavior implements IInpu
 	}
 
 	/**
+	 * Value of the slider.
+	 * @attr
+	 * @param value
+	 */
+	@property({type: Number}) set valueAsNumber (value: number) {
+		this.setValue(value.toString());
+	}
+
+	get valueAsNumber () {
+		return parseFloat(this.getFormItemValue());
+	}
+
+	/**
 	 * Returns the main slot element.
 	 */
 	get $slot (): HTMLSlotElement {
@@ -141,7 +154,9 @@ export abstract class InputBehavior extends FormElementBehavior implements IInpu
 		);
 
 		// Set the initial value after the native form element has been created.
-		this.value = this.getAttribute("value") || "";
+		if (this.initialValue != null || this.hasAttribute("value")) {
+			this.value = this.initialValue || this.getAttribute("value") || "";
+		}
 	}
 
 	/**
@@ -181,7 +196,6 @@ export abstract class InputBehavior extends FormElementBehavior implements IInpu
 			this.initialValue = value;
 		}
 	}
-
 
 	/**
 	 * Handles the input event.
