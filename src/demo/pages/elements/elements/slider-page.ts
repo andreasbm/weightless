@@ -1,5 +1,6 @@
 import { customElement, html, LitElement } from "lit-element";
 import "../../../../lib/slider/slider";
+import "../../../../lib/icon/icon";
 import "../../../../lib/title/title";
 import "../../../elements/code-example/code-example-element";
 import "../../../elements/demo/demo-element";
@@ -21,6 +22,16 @@ export default class SliderPage extends LitElement {
 				<code-example-element>
 					<wl-slider></wl-slider>
 					<wl-slider value="20" bufferValue="80" step="10" thumbLabel></wl-slider>
+				</code-example-element>
+			</demo-element>
+			
+			<wl-title level="3">Before & after slots</wl-title>
+			<demo-element>
+				<code-example-element>
+					<wl-slider thumblabel>
+						<wl-icon slot="before">volume_down</wl-icon>
+						<wl-icon slot="after">volume_up</wl-icon>
+					</wl-slider>
 				</code-example-element>
 			</demo-element>
 			

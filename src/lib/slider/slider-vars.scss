@@ -6,6 +6,7 @@ $slider-track-bg-active: var(--slider-bg-active, #{color("primary")});
 $slider-track-bg-disabled: var(--slider-bg-disabled, #{color("shade", $default-hue, 0.3)});
 $slider-track-bg-buffer-disabled: var(--slider-bg-buffer-disabled, #{color("shade", $default-hue, 0.6)});
 $slider-track-bg-active-disabled: var(--slider-bg-active-disabled, #{color("shade")});
+$slider-track-height: var(--slider-track-height, #{size(5)});
 
 $slider-thumb-focus-ring-bg: var(--slider-thumb-focus-ring-bg, #{color("primary", $default-hue, 0.1)});
 $slider-thumb-bg: var(--slider-thumb-bg, #{color("primary")});
@@ -16,13 +17,10 @@ $slider-thumb-transition: var(--slider-thumb-transition, transform #{$transition
 $slider-thumb-transform-focus: var(--slider-thumb-transform-focus, #{scale(1.2)});
 $slider-thumb-border-radius: var(--slider-thumb-border-radius, 100%);
 
-$slider-track-height: var(--slider-track-height, #{size(5)});
-
 $slider-thumb-label-size: var(--slider-thumb-label-size, #{size(30)});
 $slider-thumb-label-border-radius: var(--slider-thumb-label-border-radius, 100%);
 $slider-thumb-label-bg: var(--slider-thumb-label-bg, #{color("primary")});
 $slider-thumb-label-transition: var(--slider-thumb-label-transition, opacity #{$transition-duration-fast} #{$transition-deceleration-curve},transform #{$transition-duration-fast} #{$transition-deceleration-curve});
-$slider-thumb-transform-focus: var(--slider-thumb-transform-focus, #{scale(1.2)});
 $slider-thumb-label-font-size: var(--slider-thumb-label-font-size, #{$font-size-s});
 $slider-thumb-label-color: var(--slider-thumb-label-color, #{color-contrast("primary")});
 
