@@ -44,7 +44,56 @@
 	position: relative;
 }
 
-#slider::-webkit-slider-thumb {
+#thumb-label {
+	--_thumb-label-transform-y: #{size(10)};
+	/*
+		To understand the bellow computation we first need to understand what had to be dealt with.
+		The percentage of var(--_perc) is a percentage of much of the slider is filled.
+		If we simply use that percentage as the left offset we will discover that when var(--_perc) is 100%
+		the thumb label will be at slightly slightly wrong offset because left: 100% will make the thumb label appear
+		outside it's relative box. The solution is to subtract #{$slider-thumb-size} * var(--_perc))) which will subtract
+		the whole width of the thumb when 100% and none when 0%.
+	 */
+	left: calc((var(--_perc) * 100%) - (#{$slider-thumb-size} * var(--_perc)));
+	transform: translate(calc(-50% + (#{$slider-thumb-size} / 2)), var(--_thumb-label-transform-y));
+	width: $slider-thumb-label-size;
+	height: $slider-thumb-label-size;
+	border-radius: $slider-thumb-label-border-radius;
+	color: $slider-thumb-label-color;
+	background: $slider-thumb-label-bg;
+	font-size: $slider-thumb-label-font-size;
+	transition: $slider-thumb-label-transition;
+	opacity: 0;
+	bottom: 100%;
+	position: absolute;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	pointer-events: none;
+	text-overflow: ellipsis;
+
+	/* Add droplet shape */
+	&:before {
+		content: "";
+		background: $slider-thumb-label-bg;
+		border-radius: 0 50% 50% 50%;
+		position: absolute;
+		transform: rotate(225deg); /* 90 * 2.5 = 225*/
+		width: 100%;
+		left: 0;
+		top: 0;
+		height: 100%;
+		z-index: -1;
+	}
+}
+
+#slider:focus + #thumb-label {
+	/* Animate the thumb label in */
+	--_thumb-label-transform-y: 0;
+	opacity: 1;
+}
+
+@mixin slider-thumb-styles () {
 	background: var(--_slider-thumb-bg);
 	width: $slider-thumb-size;
 	height: $slider-thumb-size;
@@ -57,22 +106,14 @@
 	cursor: grab;
 }
 
-#slider:focus::-webkit-slider-thumb {
+@mixin slider-thumb-focus-styles () {
 	transform: $slider-thumb-transform-focus;
 	box-shadow: 0 0 0 $slider-thumb-focus-ring-size $slider-thumb-focus-ring-bg;
 }
 
-#thumb-label {
-	left: calc(var(--_perc) * 100% + (#{$slider-thumb-size} / 2));
+/* We had to split the styles into two declarations for some reason */
+#slider::-webkit-slider-thumb {@include slider-thumb-styles();}
+#slider::-moz-range-thumb {@include slider-thumb-styles();}
 
-	width: 30px;
-	height: 30px;
-	border-radius: 100%;
-	position: absolute;
-	background: orange;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	bottom: 100%;
-	transform: translateX(-50%);
-}
+#slider:focus::-webkit-slider-thumb {@include slider-thumb-focus-styles()};
+#slider:focus::-moz-range-thumb {@include slider-thumb-focus-styles()};

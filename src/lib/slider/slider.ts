@@ -13,6 +13,7 @@ export interface ISliderProperties extends IInputBehaviorProperties {
 
 /**
  * Make selections from a range of values.
+ * @slot thumb-label - Optional slot for the thumb label.
  */
 @customElement("wl-slider")
 export class Slider extends InputBehavior implements ISliderProperties {
@@ -161,8 +162,8 @@ export class Slider extends InputBehavior implements ISliderProperties {
 				<div id="wrapper">
 					<div id="label">${this.label}</div>
 					<div id="slot-wrapper">
-						${this.thumbLabel ? html`<div id="thumb-label">${this.value}</div>` : undefined}
 						${this.renderFormElement("slider", undefined, this.sliderValueChanged)}
+						${this.thumbLabel ? html`<div id="thumb-label"><slot name="thumb-label">${this.value}</slot></div>` : undefined}
 						<slot id="slot"></slot>
 					</div>
 					${this.renderFormElement(this.formElementId, `display: none`)}
