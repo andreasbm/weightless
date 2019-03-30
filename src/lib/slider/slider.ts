@@ -98,7 +98,7 @@ export class Slider extends InputBehavior implements ISliderProperties {
 	/**
 	 * Slider element.
 	 */
-	@query("#slider") $slider!: HTMLInputElement;
+	@query("#slider") protected $slider!: HTMLInputElement;
 
 	/**
 	 * Value in percentage.

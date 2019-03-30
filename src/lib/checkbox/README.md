@@ -12,7 +12,7 @@ Turn an option on or off.
 
 | Property        | Attribute       | Type       | Default    | Description                                      |
 |-----------------|-----------------|------------|------------|--------------------------------------------------|
-| `ariaChecked`   | `ariaChecked`   | `string`   |            | Aria checked attribute.                          |
+| `ariaChecked`   | `aria-checked`  | `string`   |            | Aria checked attribute.                          |
 | `checked`       | `checked`       | `boolean`  | false      | Checks the switch.                               |
 | `disabled`      | `disabled`      | `boolean`  | false      | Disables the element.                            |
 | `indeterminate` | `indeterminate` | `boolean`  | false      | Indeterminate checkbox state.                    |
