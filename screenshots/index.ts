@@ -25,6 +25,7 @@ const ELEMENTS = [
 	"radio",
 	"ripple",
 	"select",
+	"slider",
 	"snackbar",
 	"switch",
 	"textarea",
