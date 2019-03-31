@@ -74,21 +74,21 @@
 		"docs": "npm run readme && npm run readme:backdrop && npm run readme:button && npm run readme:banner && npm run readme:card && npm run readme:divider && npm run readme:icon && npm run readme:label && npm run readme:nav && npm run readme:checkbox && npm run readme:dialog && npm run readme:popover && npm run readme:popover-card && npm run readme:progress-bar && npm run readme:progress-spinner && npm run readme:radio && npm run readme:ripple && npm run readme:select && npm run readme:textarea && npm run readme:textfield && npm run readme:title && npm run readme:tooltip && npm run readme:list-item && npm run readme:expansion && npm run readme:snackbar && npm run readme:switch && npm run readme:slider"
 	},
 	"devDependencies": {
-		"@a11y/skip-navigation": "0.0.6",
+		"@a11y/skip-navigation": "0.0.7",
 		"@appnest/readme": "^1.2.3",
-		"@appnest/web-config": "0.4.11",
-		"@appnest/web-router": "^1.2.12",
+		"@appnest/web-config": "0.4.12",
+		"@appnest/web-router": "^1.2.15",
 		"@types/puppeteer": "^1.12.3",
 		"code-prettify": "^0.1.0",
 		"fs-extra": "^7.0.1",
 		"glob": "^7.1.3",
-		"puppeteer": "^1.13.0",
+		"puppeteer": "^1.14.0",
 		"replace-ext": "^1.0.0",
 		"ts-node": "^8.0.3",
 		"tslib": "^1.9.3"
 	},
 	"dependencies": {
-		"@a11y/focus-trap": "1.0.1",
+		"@a11y/focus-trap": "1.0.2",
 		"lit-element": "^2.1.0",
 		"lit-html": "^1.0.0"
 	},

@@ -42,6 +42,8 @@ export interface IInputBehaviorProperties extends IFormElementBehaviorProperties
  * @cssprop --input-bg-filled - Background when filled.
  * @cssprop --input-bg-filled-hover - Background on :hover.
  * @cssprop --input-border-width - Width of the border.
+ * @cssprop --input-border-style - Style of the border.
+ * @cssprop --input-border-style-disabled - Style of the border when disabled.
  * @cssprop --input-before-after-color - Color of the before and after slots.
  * @cssprop --input-font-size - Font size.
  * @cssprop --input-padding-left-right - Padding for the left and right.

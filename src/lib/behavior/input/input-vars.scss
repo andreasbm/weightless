@@ -13,7 +13,9 @@ $input-bg: var(--input-bg, transparent);
 $input-bg-filled: var(--input-bg, #{color("shade", 200)});
 $input-bg-filled-hover: var(--input-bg-filled-hover, #{color("shade", 200, 0.5)});
 
-$input-border-width: #{size(1)};
+$input-border-width: var(--input-border-width, #{size(1)});
+$input-border-style: var(--input-border-style, solid);
+$input-border-style-disabled: var(--input-border-style-disabled, dashed);
 $input-before-after-color: var(--input-before-after-color, #{color("shade", $default-hue)});
 
 $input-font-size: var(--input-font-size, #{$font-size-m});

@@ -8,6 +8,7 @@
 	--_input-border-radius: 0;
 	--_input-color: #{$input-color};
 	--_input-label-color: #{$input-label-color};
+	--_input-border-style: #{$input-border-style};
 
 	transform: translateZ(0);
 	display: block;
@@ -19,6 +20,7 @@
 	--_input-state-color: #{$input-state-color-disabled};
 	--_input-label-color: #{$input-label-color-disabled};
 	--_input-color: #{$input-color-disabled};
+	--_input-border-style: #{$input-border-style-disabled};
 }
 
 #container {
@@ -27,7 +29,7 @@
 	border-radius: var(--_input-border-radius);
 	font-size: $input-font-size;
 	font-family: $input-font-family;
-	border-bottom: #{$input-border-width} solid var(--_input-state-color);
+	border-bottom: #{$input-border-width} var(--_input-border-style) var(--_input-state-color);
 	transition: $input-transition;
 	position: relative;
 	display: flex;
@@ -79,7 +81,7 @@
 	--_input-border-radius: #{$input-border-radius-outlined};
 
 	#container {
-		border: #{$input-border-width} solid var(--_input-state-color);
+		border: #{$input-border-width} var(--_input-border-style) var(--_input-state-color);
 	}
 }
 
