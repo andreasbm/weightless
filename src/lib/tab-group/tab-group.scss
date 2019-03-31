@@ -1,0 +1,53 @@
+@import "../style/base";
+@import "tab-group-vars";
+
+:host {
+  --_tab-color: #{$tab-group-color};
+  --_tab-bg: #{$tab-group-bg};
+
+  color: var(--_tab-color);
+  background: var(--_tab-bg);
+
+  display: flex;
+  justify-content: flex-start;
+  align-items: stretch;
+  position: relative;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+
+  // Snap the scrolling
+  scroll-snap-type: mandatory;
+  scroll-snap-points-y: repeat(100vw);
+  scroll-snap-type: x mandatory;
+}
+
+:host::-webkit-scrollbar {
+  display: none;
+}
+
+:host([align="center"]) {
+  justify-content: center;
+}
+
+:host([align="right"]) {
+  justify-content: flex-end;
+}
+
+:host([align="stretch"]) {
+  justify-content: stretch;
+
+  ::slotted(*) {
+    width: 100%;
+    flex-shrink: initial;
+  }
+}
+
+:host([inverted]) {
+  color: var(--_tab-bg);
+  background: var(--_tab-color);
+}
+
+::slotted(*) {
+  flex-shrink: 0;
+}

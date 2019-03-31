@@ -30,9 +30,7 @@ export abstract class ButtonBehavior extends FormElementBehavior implements IBut
 	/**
 	 * Ripple element.
 	 */
-	protected get $ripple (): Ripple | null {
-		return null;
-	}
+	protected abstract get $ripple (): Ripple | null;
 
 	/**
 	 * Hooks up the component.

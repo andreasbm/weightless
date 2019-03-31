@@ -111,10 +111,18 @@ export abstract class RadioBehavior extends SwitchBehavior implements IRadioBeha
 		// Focus on the new radio if necessary
 		if (newIndex != null && group.length > 0) {
 			const newCheckedRadio = group[newIndex];
-			newCheckedRadio.checked = true;
-			newCheckedRadio.focus();
+			this.rowToElement(newCheckedRadio);
 			stopEvent(e);
 		}
+	}
+
+	/**
+	 * Checks and focuses a grouped element.
+	 * @param elem
+	 */
+	protected rowToElement (elem: RadioBehavior) {
+		elem.checked = true;
+		elem.focus();
 	}
 }
 

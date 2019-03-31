@@ -28,10 +28,6 @@
 	cursor: pointer;
 }
 
-:host([focus]) {
-	background: orange;
-}
-
 :host(:focus) {
 	--_list-item-bg: #{$list-item-bg-focus};
 }
@@ -52,7 +48,7 @@
 	pointer-events: none;
 }
 
-:host([active]), :host([focus]) {
+:host([active]), :host(:focus) {
 	--_list-item-color: #{$list-item-color-active};
 	--_list-item-bg: #{$list-item-bg-active};
 }

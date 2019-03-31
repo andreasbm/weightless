@@ -28,6 +28,7 @@ const ELEMENTS = [
 	"slider",
 	"snackbar",
 	"switch",
+	"tabs",
 	"textarea",
 	"textfield",
 	"title",

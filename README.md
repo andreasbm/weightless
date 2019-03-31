@@ -76,7 +76,7 @@ If you prefer to use the `umd` bundle you can import `https://unpkg.com/weightle
 | Card             | `wl-card`             | Group related content and action.                | [Documentation](/src/lib/card)             | [Demo](https://weightless.dev/elements/card)     |
 | Checkbox         | `wl-checkbox`         | Turn an option on or off.                        | [Documentation](/src/lib/checkbox)         | [Demo](https://weightless.dev/elements/checkbox) |
 | Dialog           | `wl-dialog`           | Highly interruptive messages.                    | [Documentation](/src/lib/dialog)           | [Demo](https://weightless.dev/elements/dialog)   |
-| Divider          | `wl-divider`          | Thin line that groups content in lists and layouts. | [Documentation](/src/lib/divider)          | [Demo](https://weightless.dev/elements/divider)  |
+| Tab          | `wl-divider`          | Thin line that groups content in lists and layouts. | [Documentation](/src/lib/divider)          | [Demo](https://weightless.dev/elements/divider)  |
 | Expansion        | `wl-expansion`        | Provide an expandable details-summary view.      | [Documentation](/src/lib/expansion)        | [Demo](https://weightless.dev/elements/expansion) |
 | Icon             | `wl-icon`             | Symbols for common actions and items.            | [Documentation](/src/lib/icon)             | [Demo](https://weightless.dev/elements/icon)     |
 | Label            | `wl-label`            | Make form elements more accessible.              | [Documentation](/src/lib/label)            | [Demo](https://weightless.dev/elements/label)    |

@@ -1,0 +1,5 @@
+@import "../style/base";
+
+$tab-group-color: var(--tab-color, #{color("primary")});
+$tab-group-bg: var(--tab-bg, #{$background});
+

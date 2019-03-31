@@ -1,0 +1,16 @@
+@import "../style/base";
+
+$tab-padding: var(--tab-padding, #{$spacing-m} #{$spacing-xl});
+$tab-transition: var(--tab-transition, background #{$transition-duration-medium} #{$transition-deceleration-curve}, color #{$transition-duration-medium} #{$transition-deceleration-curve});
+
+$tab-color: var(--tab-color, #{color("shade")});
+$tab-bg: var(--tab-bg, #{$background});
+
+$tab-color-focus: var(--tab-color-focus, #{color("shade")});
+$tab-bg-focus: var(--tab-bg-focus, #{color("primary", $default-hue, 0.1)});
+
+$tab-color-checked: var(--tab-color-focus, #{color("primary")});
+$tab-bg-checked: var(--tab-bg-focus, #{color("primary", $default-hue, 0.1)});
+
+$tab-color-disabled: var(--tab-color-disabled, #{color("shade")});
+$tab-bg-disabled: var(--tab-bg-disabled, #{color("shade", 200)});

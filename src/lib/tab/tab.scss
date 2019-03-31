@@ -1,0 +1,45 @@
+@import "../style/base";
+@import "tab-vars";
+
+:host {
+  --_tab-color: #{$tab-color};
+  --_tab-bg: #{$tab-bg};
+
+  color: var(--_tab-color);
+  background: var(--_tab-bg);
+
+  padding: $tab-padding;
+  transition: $tab-transition;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  outline: none;
+  user-select: none;
+}
+
+:host(:not([disabled])) {
+  cursor: pointer;
+}
+
+:host(:focus) {
+  --_tab-color: #{$tab-color-focus};
+  --_tab-bg: #{$tab-bg-focus};
+}
+
+:host([checked]) {
+  --_tab-color: #{$tab-color-checked};
+  --_tab-bg: #{$tab-bg-checked};
+}
+
+:host([disabled]) {
+  --_tab-color: #{$tab-color-disabled};
+  --_tab-bg: #{$tab-bg-disabled};
+}
+
+:host-context([inverted]), :host([inverted]) {
+  color: var(--_tab-bg);
+  background: var(--_tab-color);
+}
+
