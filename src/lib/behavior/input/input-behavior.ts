@@ -234,7 +234,7 @@ export abstract class InputBehavior extends FormElementBehavior implements IInpu
 		switch (e.code) {
 			case ENTER:
 				if (e.ctrlKey || e.metaKey) {
-					this.dispatchEvent(new CustomEvent(InputBehaviorEvent.SUBMIT, {composed: true}));
+					this.dispatchEvent(new CustomEvent(InputBehaviorEvent.SUBMIT, {composed: true, bubbles: true}));
 				}
 				break;
 		}

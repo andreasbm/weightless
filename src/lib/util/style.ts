@@ -4,6 +4,8 @@
  * @returns {WebKitCSSMatrix}
  * @param computedStyle
  */
+import { StyleInfo } from "lit-html/directives/style-map";
+
 export function getWebkitMatrix (computedStyle: CSSStyleDeclaration) {
 	return new WebKitCSSMatrix(<string | number[]>computedStyle.webkitTransform);
 }
@@ -63,4 +65,19 @@ export function getOpacity (computedStyle: CSSStyleDeclaration): number {
 	const opacityString = computedStyle.getPropertyValue("opacity");
 	return isNaN(+opacityString) ? 0 : Number(opacityString);
 }
+
+/**
+ * Styles that can be used to hide the form element.
+ */
+export const HIDDEN_STYLE_MAP: StyleInfo = {
+	position: "absolute",
+	top: "0",
+	left: "0",
+	opacity: "0",
+	margin: "0",
+	padding: "0",
+	width: "100%",
+	height: "100%",
+	cursor: "inherit"
+};
 

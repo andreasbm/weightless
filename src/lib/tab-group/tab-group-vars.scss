@@ -1,5 +1,8 @@
 @import "../style/base";
 
-$tab-group-color: var(--tab-color, #{color("primary")});
-$tab-group-bg: var(--tab-bg, #{$background});
+$tab-group-color: var(--tab-group-color, #{color("primary")});
+$tab-group-bg: var(--tab-group-bg, #{$background});
+$tab-group-border: var(--tab-group-border, #{size(2)} solid #{color("shade", 200)});
+$tab-group-indicator-height: var(--tab-group-indicator-height, #{size(2)});
+$tab-group-indicator-transition: var(--tab-group-indicator-transition, left #{$transition-duration-medium} #{$transition-deceleration-curve});
 

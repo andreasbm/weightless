@@ -1,5 +1,6 @@
 import styles from "form-element-behavior.scss";
 import { LitElement, property } from "lit-element";
+import { StyleInfo } from "lit-html/src/directives/style-map";
 import { sharedStyles } from "../../style/shared";
 import { updateTabindex } from "../../util/aria";
 import { cssResult } from "../../util/css";
@@ -144,6 +145,7 @@ export abstract class FormElementBehavior extends LitElement implements IFormEle
 	setCustomValidity (error: string) {
 		return this.$formElement.setCustomValidity(error);
 	}
+
 
 	/**
 	 * When the form element first updates we add the form element to the light DOM.

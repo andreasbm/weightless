@@ -52,12 +52,19 @@ export default class TabsPage extends LitElement {
 						<wl-tab>Cats</wl-tab>
 						<wl-tab>Birds</wl-tab>
 						<wl-tab>Bees</wl-tab>
-						<wl-tab>Tree</wl-tab>
-						<wl-tab>Tiger</wl-tab>
-						<wl-tab>Lion</wl-tab>
-						<wl-tab>Elephant</wl-tab>
-						<wl-tab>Beetle</wl-tab>
-						<wl-tab>Spider</wl-tab>
+						<wl-tab>Trees</wl-tab>
+						<wl-tab>Tigers</wl-tab>
+						<wl-tab>Lions</wl-tab>
+						<wl-tab>Elephants</wl-tab>
+						<wl-tab>Beetles</wl-tab>
+						<wl-tab>Spiders</wl-tab>
+						<wl-tab>Butterfly</wl-tab>
+						<wl-tab>Pigs</wl-tab>
+						<wl-tab>Swans</wl-tab>
+						<wl-tab>Rhinos</wl-tab>
+						<wl-tab>Monkeys</wl-tab>
+						<wl-tab>Alligators</wl-tab>
+						<wl-tab>Hams</wl-tab>
 					</wl-tab-group>
 				</code-example-element>
 			</demo-element>

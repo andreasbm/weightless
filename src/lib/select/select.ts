@@ -49,7 +49,7 @@ export class Select extends InputBehavior implements ISelectProperties {
 	private updateOptions () {
 		if (this.$formElement == null) return;
 		const $select = <HTMLSelectElement>this.$formElement;
-		const nodes = <Element[]>this.$slot.assignedNodes().filter(node => node.nodeName !== `#text`);
+		const nodes = <Element[]>this.$slot.assignedNodes().filter(node => node.nodeType === 1);
 
 		// Grab the options from the slot and clone them. This prevents the nodes being removed
 		// from the slot when adding it to the set of options in the select.

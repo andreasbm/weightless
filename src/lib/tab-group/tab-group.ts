@@ -9,6 +9,9 @@ import styles from "./tab-group.scss";
  * Properties of the tab.
  */
 export interface ITabGroupProperties {
+	align: TabGroupAlignment;
+	inverted: boolean;
+	role: AriaRole;
 }
 
 export type TabGroupAlignment = "left" | "center" | "right" | "stretch";
@@ -38,11 +41,41 @@ export class TabGroup extends LitElement implements ITabGroupProperties {
 	 */
 	@property({type: String, reflect: true}) role: AriaRole = "tablist";
 
+	/**
+	 * Returns the main slot element.
+	 */
+	get $slot (): HTMLSlotElement {
+		return this.shadowRoot!.querySelector<HTMLSlotElement>("slot")!;
+	}
+
 	connectedCallback () {
 		super.connectedCallback();
 		this.addEventListener("change", e => {
-			console.log(e);
+			this.updateIndicator();
 		});
+	}
+
+	protected updateIndicator () {
+		const nodes = Array.from(this.$slot.assignedNodes()
+		                             .filter(node => node.nodeType === 1)) as any as HTMLElement[];
+
+		let selectedNode: HTMLElement | null = null;
+		for (const node of nodes) {
+			if (node.hasAttribute("checked")) {
+				selectedNode = node;
+				break;
+			}
+		}
+
+		const selectedIndex = selectedNode == null ? -1 : nodes.indexOf(selectedNode);
+		const selectedNodeWidth = selectedNode == null ? 0 : selectedNode.offsetWidth;
+		const indicatorOffset = nodes
+			.filter(node => nodes.indexOf(node) < selectedIndex)
+			.map(node => node.offsetWidth)
+			.reduce((acc: number, width: number) => acc + width, 0);
+
+		this.style.setProperty("--_indicator-offset", `${indicatorOffset}px`);
+		this.style.setProperty("--_indicator-width", `${selectedNodeWidth}px`);
 	}
 
 	/**
@@ -50,9 +83,10 @@ export class TabGroup extends LitElement implements ITabGroupProperties {
 	 */
 	protected render (): TemplateResult {
 		return html`
-			<input name="hey" type="radio" @change="${() => alert('asd1')}" />
-			<input name="hey" type="radio" @change="${() => alert('asd2')}" />
-			<slot></slot>
+			<div id="tabs">
+				<slot @slotchange="${this.updateIndicator}"></slot>
+				<div id="indicator"></div>
+			</div>
 		`;
 	}
 }

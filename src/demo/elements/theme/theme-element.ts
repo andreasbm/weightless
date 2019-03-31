@@ -64,7 +64,7 @@ export class ThemeComponent extends LitElement {
 	}
 
 	protected dispatchUpdate () {
-		this.dispatchEvent(new CustomEvent("update"));
+		this.dispatchEvent(new CustomEvent("update", {composed: true, bubbles: true}));
 	}
 
 	protected render () {

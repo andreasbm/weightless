@@ -1,5 +1,6 @@
 import { html, property, TemplateResult } from "lit-element";
 import { ifDefined } from "lit-html/directives/if-defined";
+import { styleMap } from "lit-html/directives/style-map";
 import { Ripple } from "../../ripple/ripple";
 import { ENTER, SPACE } from "../../util/constant/keycode";
 import { cssResult } from "../../util/css";
@@ -52,6 +53,7 @@ export abstract class ButtonBehavior extends FormElementBehavior implements IBut
 	 * @param e
 	 */
 	protected onKeyDown (e: KeyboardEvent) {
+
 		if (e.code === ENTER || e.code === SPACE) {
 			this.click();
 			stopEvent(e);
@@ -87,8 +89,8 @@ export abstract class ButtonBehavior extends FormElementBehavior implements IBut
 	protected renderFormElement (): TemplateResult {
 		return html`
 			<button
+				style="display: none;"
 				id="${this.formElementId}"
-				style="display: none"
 				aria-hidden="true"
 				tabindex="-1"
 				type="${this.type}"

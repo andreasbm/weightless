@@ -1,5 +1,5 @@
 import { customElement, html, property, TemplateResult } from "lit-element";
-import { RadioBehavior } from "../behavior/radio/radio-behavior";
+import { IRadioBehaviorProperties, RadioBehavior } from "../behavior/radio/radio-behavior";
 import "../button";
 import { sharedStyles } from "../style/shared";
 import { AriaRole } from "../util/aria";
@@ -11,24 +11,14 @@ import styles from "./tab.scss";
 /**
  * Properties of the tab.
  */
-export interface ITabProperties {
-}
-
-
-function applyMixins (derivedCtor: any, baseCtors: any[]) {
-	baseCtors.forEach(baseCtor => {
-		Object.getOwnPropertyNames(baseCtor.prototype).forEach(name => {
-			if (name !== "constructor") {
-				derivedCtor.prototype[name] = baseCtor.prototype[name];
-			}
-		});
-	});
+export interface ITabProperties extends IRadioBehaviorProperties {
+	role: AriaRole;
+	inverted: boolean;
 }
 
 /**
  * Organize navigation between groups of content.
  */
-// @ts-ignore
 @customElement("wl-tab")
 export class Tab extends RadioBehavior implements ITabProperties {
 	static styles = [cssResult(styles), sharedStyles];

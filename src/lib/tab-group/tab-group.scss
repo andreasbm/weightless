@@ -8,9 +8,10 @@
   color: var(--_tab-color);
   background: var(--_tab-bg);
 
+  border-bottom: $tab-group-border;
+
   display: flex;
   justify-content: flex-start;
-  align-items: stretch;
   position: relative;
   overflow-x: auto;
   scroll-behavior: smooth;
@@ -20,6 +21,12 @@
   scroll-snap-type: mandatory;
   scroll-snap-points-y: repeat(100vw);
   scroll-snap-type: x mandatory;
+}
+
+#tabs {
+  position: relative;
+  display: flex;
+  align-items: stretch;
 }
 
 :host::-webkit-scrollbar {
@@ -46,8 +53,23 @@
 :host([inverted]) {
   color: var(--_tab-bg);
   background: var(--_tab-color);
+
+  #indicator {
+    background: Var(--_tab-bg);
+  }
 }
 
-::slotted(*) {
+#tabs ::slotted(*) {
   flex-shrink: 0;
+  scroll-snap-align: start;
+}
+
+#indicator {
+  width: var(--_indicator-width);
+  left: var(--_indicator-offset);
+  background: var(--_tab-color);
+  height: $tab-group-indicator-height;
+  transition: $tab-group-indicator-transition;
+  position: absolute;
+  bottom: 0;
 }

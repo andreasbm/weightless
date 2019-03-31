@@ -5,7 +5,7 @@ import { ARROW_DOWN, ARROW_LEFT, ARROW_RIGHT, ARROW_UP } from "../../util/consta
 import { cssResult } from "../../util/css";
 import { queryParentRoots } from "../../util/dom";
 import { stopEvent } from "../../util/event";
-import { SwitchBehavior, ISwitchBehaviorProperties } from "../switch/switch-behavior";
+import { ISwitchBehaviorProperties, SwitchBehavior } from "../switch/switch-behavior";
 
 import styles from "./radio-behavior.scss";
 
@@ -34,6 +34,7 @@ export abstract class RadioBehavior extends SwitchBehavior implements IRadioBeha
 	 */
 	protected toggle () {
 		this.checked = true;
+		this.dispatchChangeEvent();
 	}
 
 	/**
@@ -121,7 +122,7 @@ export abstract class RadioBehavior extends SwitchBehavior implements IRadioBeha
 	 * @param elem
 	 */
 	protected rowToElement (elem: RadioBehavior) {
-		elem.checked = true;
+		elem.click();
 		elem.focus();
 	}
 }
