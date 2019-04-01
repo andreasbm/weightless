@@ -1,8 +1,14 @@
 @import "../style/base";
 
 $tab-padding: var(--tab-padding, #{$spacing-m} #{$spacing-xl});
+$tab-before-margin: var(--tab-before-margin, #{0 $spacing-m 0 0});
+
+$tab-padding-vertical: var(--tab-padding-vertical, #{$spacing-xl} #{$spacing-m});
+$tab-before-margin-vertical: var(--tab-before-margin-vertical, #{0 0 $spacing-s});
+
 $tab-transition: var(--tab-transition, background #{$transition-duration-medium} #{$transition-deceleration-curve}, color #{$transition-duration-medium} #{$transition-deceleration-curve});
 $tab-opacity-disabled: var(--tab-opacity-disabled, 0.6);
+
 
 /* Default style */
 $tab-color: var(--tab-color, #{color("shade")});

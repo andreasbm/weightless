@@ -55,3 +55,16 @@
   --tab-color-disabled: #{$tab-color-disabled-filled};
   --tab-bg-disabled: #{$tab-bg-disabled-filled};
 }
+
+::slotted([slot="before"]) {
+  margin: $tab-before-margin;
+}
+
+:host([vertical]) {
+  flex-direction: column;
+
+  ::slotted([slot="before"]) {
+    margin: $tab-before-margin-vertical;
+  }
+}
+

@@ -2,13 +2,10 @@ import { customElement, html, LitElement } from "lit-element";
 import { sharedStyles } from "../../../style/shared";
 import "../../../../lib/title/title";
 import "../../../../lib/tab/tab";
+import "../../../../lib/icon/icon";
 import "../../../../lib/tab-group/tab-group";
 import "../../../elements/code-example/code-example-element";
 import "../../../elements/demo/demo-element";
-
-class Test {
-
-}
 
 @customElement("tabs-page")
 export default class TabsPage extends LitElement {
@@ -47,9 +44,35 @@ export default class TabsPage extends LitElement {
 			<wl-title>Vertical</wl-title>
 			<demo-element>
 				<code-example-element>
-					<wl-tab-group vertical align="start">
+					<wl-tab-group vertical>
 						<wl-tab>Dogs</wl-tab>
 						<wl-tab>Cats</wl-tab>
+					</wl-tab-group>
+				</code-example-element>
+			</demo-element>
+			
+			<wl-title>Before slot</wl-title>
+			<demo-element>
+				<code-example-element>
+					<wl-tab-group>
+						<wl-tab vertical>
+							<wl-icon slot="before">supervised_user_circle</wl-icon>
+							<span>Dogs</span>
+						</wl-tab>
+						<wl-tab vertical>
+							<wl-icon slot="before">verified_user</wl-icon>
+							<span>Cats</span>
+						</wl-tab>
+					</wl-tab-group>
+					<wl-tab-group vertical style="width: 100px;">
+						<wl-tab>
+							<wl-icon slot="before">supervised_user_circle</wl-icon>
+							<span>Dogs</span>
+						</wl-tab>
+						<wl-tab>
+							<wl-icon slot="before">verified_user</wl-icon>
+							<span>Cats</span>
+						</wl-tab>
 					</wl-tab-group>
 				</code-example-element>
 			</demo-element>

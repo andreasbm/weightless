@@ -12,12 +12,17 @@ import styles from "./tab.scss";
  */
 export interface ITabProperties extends IRadioBehaviorProperties {
 	role: AriaRole;
+	vertical: boolean;
 }
 
 /**
  * Organize navigation between groups of content.
  * @slot - Default content.
+ * @slot before - Default content.
  * @cssprop --tab-padding - Padding.
+ * @cssprop --tab-before-margin - Margin of the before slot.
+ * @cssprop --tab-padding-vertical - Padding when vertical.
+ * @cssprop --tab-before-margin-vertical - Margin of the before slot when vertical.
  * @cssprop --tab-transition - Transition.
  * @cssprop --tab-opacity-disabled - Opacity when disabled.
  * @cssprop --tab-color - Color.
@@ -50,6 +55,12 @@ export class Tab extends RadioBehavior implements ITabProperties {
 	@property({type: String, reflect: true}) role: AriaRole = "tab";
 
 	/**
+	 * Vertical tab style.
+	 * @attr
+	 */
+	@property({type: Boolean, reflect: true}) vertical: boolean = false;
+
+	/**
 	 * Query the group.
 	 */
 	protected queryGroup (): RadioBehavior[] {
@@ -69,6 +80,7 @@ export class Tab extends RadioBehavior implements ITabProperties {
 	 */
 	protected render (): TemplateResult {
 		return html`
+			<slot name="before"></slot>
 			<slot></slot>
 			<wl-ripple id="ripple" overlay .target="${this}" ?disabled="${this.disabled}"></wl-ripple>
 		    ${this.renderFormElement()}
