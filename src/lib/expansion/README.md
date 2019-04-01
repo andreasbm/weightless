@@ -25,6 +25,15 @@ Provide an expandable details-summary view.
 | `value`       | `value`       | `string`   | ""            | Value of the form element.                       |
 
 
+[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#events)
+
+## ➤ Events
+
+| Event    | Description                                      |
+|----------|--------------------------------------------------|
+| `change` | Dispatched when the checked property changes due to a user interaction. |
+
+
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#css-custom-properties)
 
 ## ➤ CSS Custom Properties

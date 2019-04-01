@@ -76,7 +76,7 @@ If you prefer to use the `umd` bundle you can import `https://unpkg.com/weightle
 | Card             | `wl-card`             | Group related content and action.                | [Documentation](/src/lib/card)             | [Demo](https://weightless.dev/elements/card)     |
 | Checkbox         | `wl-checkbox`         | Turn an option on or off.                        | [Documentation](/src/lib/checkbox)         | [Demo](https://weightless.dev/elements/checkbox) |
 | Dialog           | `wl-dialog`           | Highly interruptive messages.                    | [Documentation](/src/lib/dialog)           | [Demo](https://weightless.dev/elements/dialog)   |
-| Tab          | `wl-divider`          | Thin line that groups content in lists and layouts. | [Documentation](/src/lib/divider)          | [Demo](https://weightless.dev/elements/divider)  |
+| Divider          | `wl-divider`          | Thin line that groups content in lists and layouts. | [Documentation](/src/lib/divider)          | [Demo](https://weightless.dev/elements/divider)  |
 | Expansion        | `wl-expansion`        | Provide an expandable details-summary view.      | [Documentation](/src/lib/expansion)        | [Demo](https://weightless.dev/elements/expansion) |
 | Icon             | `wl-icon`             | Symbols for common actions and items.            | [Documentation](/src/lib/icon)             | [Demo](https://weightless.dev/elements/icon)     |
 | Label            | `wl-label`            | Make form elements more accessible.              | [Documentation](/src/lib/label)            | [Demo](https://weightless.dev/elements/label)    |
@@ -92,6 +92,8 @@ If you prefer to use the `umd` bundle you can import `https://unpkg.com/weightle
 | Slider           | `wl-slider`           | Make selections from a range of values.          | [Documentation](/src/lib/slider)           | [Demo](https://weightless.dev/elements/slider)   |
 | Snackbar         | `wl-snackbar`         | Provide brief messages at the bottom of the screen. | [Documentation](/src/lib/snackbar)         | [Demo](https://weightless.dev/elements/snackbar) |
 | Switch           | `wl-switch`           | Turn an option on or off.                        | [Documentation](/src/lib/switch)           | [Demo](https://weightless.dev/elements/switch)   |
+| Tab              | `wl-tab`              | Organize navigation between groups of content.   | [Documentation](/src/lib/tab)              | [Demo](https://weightless.dev/elements/tabs)     |
+| Tab Group        | `wl-tab-group`        | Organize navigation between groups of content.   | [Documentation](/src/lib/tab-group)        | [Demo](https://weightless.dev/elements/tabs)     |
 | Textarea         | `wl-textarea`         | Multiline text fields.                           | [Documentation](/src/lib/textarea)         | [Demo](https://weightless.dev/elements/textarea) |
 | Textfield        | `wl-textfield`        | Singleline text fields.                          | [Documentation](/src/lib/textfield)        | [Demo](https://weightless.dev/elements/textfield) |
 | Title            | `wl-title`            | Indicate the start of a new section.             | [Documentation](/src/lib/title)            | [Demo](https://weightless.dev/elements/title)    |

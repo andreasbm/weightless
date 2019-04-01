@@ -10,19 +10,20 @@ Thin line that groups content in lists and layouts.
 
 ## ➤ Properties
 
-| Property | Attribute | Type       | Default     | Description           |
-|----------|-----------|------------|-------------|-----------------------|
-| `role`   | `role`    | `AriaRole` | "separator" | Role of the backdrop. |
+| Property   | Attribute  | Type       | Default     | Description                 |
+|------------|------------|------------|-------------|-----------------------------|
+| `role`     | `role`     | `AriaRole` | "separator" | Role of the backdrop.       |
+| `vertical` | `vertical` | `boolean`  | false       | Makes the divider vertical. |
 
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#css-custom-properties)
 
 ## ➤ CSS Custom Properties
 
-| Property           | Description |
-|--------------------|-------------|
-| `--divider-color`  | Color.      |
-| `--divider-height` | Height.     |
+| Property          | Description      |
+|-------------------|------------------|
+| `--divider-color` | Color.           |
+| `--divider-size`  | Width or height. |
 
 
 

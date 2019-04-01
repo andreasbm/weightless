@@ -17,29 +17,27 @@ export interface ITabProperties extends IRadioBehaviorProperties {
 /**
  * Organize navigation between groups of content.
  * @slot - Default content.
- * @cssprop --tab-padding - 
- * @cssprop --tab-transition - 
- * @cssprop --tab-opacity-disabled - 
- * @cssprop --tab-color -
- * @cssprop --tab-bg - 
- * @cssprop --tab-color-active -
- * @cssprop --tab-bg-active - 
- * @cssprop --tab-color-focus-active -
- * @cssprop --tab-bg-focus - 
- * @cssprop --tab-color-hover -
- * @cssprop --tab-bg-hover - 
- * @cssprop --tab-color-disabled -
- * @cssprop --tab-bg-disabled - 
- * @cssprop --tab-color-filled -
- * @cssprop --tab-bg-filled - 
- * @cssprop --tab-color-active-filled -
- * @cssprop --tab-bg-active-filled - 
- * @cssprop --tab-color-focus-active-filled -
- * @cssprop --tab-bg-focus-filled - 
- * @cssprop --tab-color-hover-filled -
- * @cssprop --tab-bg-hover-filled - 
- * @cssprop --tab-color-disabled-filled -
- * @cssprop --tab-bg-disabled-filled -
+ * @cssprop --tab-padding - Padding.
+ * @cssprop --tab-transition - Transition.
+ * @cssprop --tab-opacity-disabled - Opacity when disabled.
+ * @cssprop --tab-color - Color.
+ * @cssprop --tab-bg - Background.
+ * @cssprop --tab-color-active - Color when checked.
+ * @cssprop --tab-bg-active - Background when checked.
+ * @cssprop --tab-color-hover - Color when hover.
+ * @cssprop --tab-bg-hover - Background when hover.
+ * @cssprop --tab-bg-hover-active - Background when hover and checked.
+ * @cssprop --tab-color-disabled - Color when disabled.
+ * @cssprop --tab-bg-disabled - Background when disabled.
+ * @cssprop --tab-color-filled - Color when filled.
+ * @cssprop --tab-bg-filled - Background when filled.
+ * @cssprop --tab-color-active-filled - Color when checked and filled.
+ * @cssprop --tab-bg-active-filled - Background when checked and filled.
+ * @cssprop --tab-color-hover-filled - Color when hover and filled.
+ * @cssprop --tab-bg-hover-filled - Background when hover and filled.
+ * @cssprop --tab-bg-hover-active-filled - Background when hover and checked and filled.
+ * @cssprop --tab-color-disabled-filled - Color when disabled and filled.
+ * @cssprop --tab-bg-disabled-filled - Background when disabled and filled.
  */
 @customElement("wl-tab")
 export class Tab extends RadioBehavior implements ITabProperties {

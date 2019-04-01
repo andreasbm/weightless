@@ -32,10 +32,9 @@ export interface IListItemProperties {
  * @cssprop --list-item-bg - Default background.
  * @cssprop --list-item-color-active - Color when active.
  * @cssprop --list-item-bg-active - Background when active.
- * @cssprop --list-item-color-focus-active - Color when focused and active.
- * @cssprop --list-item-bg-focus - Background when focused.
  * @cssprop --list-item-color-hover - Color on hover.
  * @cssprop --list-item-bg-hover - Background on hover.
+ * @cssprop --list-item-bg-hover-active - Background when hover and active.
  * @cssprop --list-item-color-disabled - Color when disabled.
  * @cssprop --list-item-bg-disabled - Background when disabled.
  * @cssprop --list-item-opacity-disabled - Opacity when disabled.

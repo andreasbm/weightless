@@ -46,6 +46,8 @@ Select one or more values from a set of options.
 | `--input-bg-filled-hover`             | Background on :hover.                         |
 | `--input-border-radius-filled`        | Border radius when filled.                    |
 | `--input-border-radius-outlined`      | Border radius when outlined.                  |
+| `--input-border-style`                | Style of the border.                          |
+| `--input-border-style-disabled`       | Style of the border when disabled.            |
 | `--input-border-width`                | Width of the border.                          |
 | `--input-color`                       | Default color.                                |
 | `--input-color-disabled`              | Color when disabled.                          |

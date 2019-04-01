@@ -23,17 +23,13 @@
   cursor: pointer;
 }
 
-:host(:focus) {
-  --_tab-bg: #{$tab-bg-focus};
-}
-
-:host(:hover) {
+:host(:hover), :host(:focus) {
   --_tab-color: #{$tab-color-hover};
   --_tab-bg: #{$tab-bg-hover};
 }
 
-:host([checked]:focus) {
-  --_tab-color: #{$tab-color-focus-active};
+:host([checked]:focus), :host([checked]:hover) {
+  --_tab-bg: #{$tab-bg-hover-active};
 }
 
 :host([disabled]) {
@@ -43,7 +39,7 @@
   pointer-events: none;
 }
 
-:host([checked]), :host(:focus) {
+:host([checked]) {
   --_tab-color: #{$tab-color-active};
   --_tab-bg: #{$tab-bg-active};
 }
@@ -53,10 +49,9 @@
   --tab-bg: #{$tab-bg-filled};
   --tab-color-active: #{$tab-color-active-filled};
   --tab-bg-active: #{$tab-bg-active-filled};
-  --tab-color-focus-active: #{$tab-color-focus-active-filled};
-  --tab-bg-focus: #{$tab-bg-focus-filled};
   --tab-color-hover: #{$tab-color-hover-filled};
   --tab-bg-hover: #{$tab-bg-hover-filled};
+  --tab-bg-hover-active: #{$tab-bg-hover-active-filled};
   --tab-color-disabled: #{$tab-color-disabled-filled};
   --tab-bg-disabled: #{$tab-bg-disabled-filled};
 }

@@ -1,9 +1,9 @@
 
-[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#wl-radio)
+[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#wl-tab)
 
-# ➤ wl-radio
+# ➤ wl-tab
 
-Select one option from a set.
+Organize navigation between groups of content.
 
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#properties)
@@ -18,7 +18,7 @@ Select one option from a set.
 | `name`        | `name`         | `string`   |         | Name of the native form element.                 |
 | `readonly`    | `readonly`     | `boolean`  | false   | Makes the element readonly (disabled but tabbable) |
 | `required`    | `required`     | `boolean`  | false   | Makes the element required in a form context.    |
-| `role`        | `role`         | `AriaRole` | "radio" | Role of the radio behavior.                      |
+| `role`        | `role`         | `AriaRole` | "tab"   | Role of the tab.                                 |
 | `value`       | `value`        | `string`   | ""      | Value of the form element.                       |
 
 
@@ -35,24 +35,38 @@ Select one option from a set.
 
 ## ➤ CSS Custom Properties
 
-| Property                         | Description                             |
-|----------------------------------|-----------------------------------------|
-| `--radio-bg`                     | Default background.                     |
-| `--radio-bg-checked`             | Background when checked.                |
-| `--radio-bg-disabled`            | Background when disabled.               |
-| `--radio-bg-disabled-checked`    | Background when disabled and checked.   |
-| `--radio-border-config`          | Border configuration (style and width). |
-| `--radio-border-radius`          | Border radius.                          |
-| `--radio-color`                  | Default color.                          |
-| `--radio-color-checked`          | Color when checked.                     |
-| `--radio-color-disabled`         | Color when disabled.                    |
-| `--radio-color-disabled-checked` | Color when disabled and checked.        |
-| `--radio-dot-border-radius`      | Border radius of the dot.               |
-| `--radio-dot-size`               | Width and height of the dot.            |
-| `--radio-dot-transition`         | Transition of the dot.                  |
-| `--radio-ripple-transform`       | Transform of the ripple.                |
-| `--radio-size`                   | Width and height.                       |
-| `--radio-transition`             | Transition.                             |
+| Property                       | Description                                   |
+|--------------------------------|-----------------------------------------------|
+| `--tab-bg`                     | Background.                                   |
+| `--tab-bg-active`              | Background when checked.                      |
+| `--tab-bg-active-filled`       | Background when checked and filled.           |
+| `--tab-bg-disabled`            | Background when disabled.                     |
+| `--tab-bg-disabled-filled`     | Background when disabled and filled.          |
+| `--tab-bg-filled`              | Background when filled.                       |
+| `--tab-bg-hover`               | Background when hover.                        |
+| `--tab-bg-hover-active`        | Background when hover and checked.            |
+| `--tab-bg-hover-active-filled` | Background when hover and checked and filled. |
+| `--tab-bg-hover-filled`        | Background when hover and filled.             |
+| `--tab-color`                  | Color.                                        |
+| `--tab-color-active`           | Color when checked.                           |
+| `--tab-color-active-filled`    | Color when checked and filled.                |
+| `--tab-color-disabled`         | Color when disabled.                          |
+| `--tab-color-disabled-filled`  | Color when disabled and filled.               |
+| `--tab-color-filled`           | Color when filled.                            |
+| `--tab-color-hover`            | Color when hover.                             |
+| `--tab-color-hover-filled`     | Color when hover and filled.                  |
+| `--tab-opacity-disabled`       | Opacity when disabled.                        |
+| `--tab-padding`                | Padding.                                      |
+| `--tab-transition`             | Transition.                                   |
+
+
+[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#slots)
+
+## ➤ Slots
+
+| Name | Description      |
+|------|------------------|
+|      | Default content. |
 
 
 
@@ -60,10 +74,10 @@ Select one option from a set.
 
 ## ➤ Usage
 
-Go [here](https://weightless.dev/elements/radio) to try the demo.
+Go [here](https://weightless.dev/elements/tabs) to try the demo.
 
-<a href="https://weightless.dev/elements/radio" align="center">
-  <img src="https://raw.githubusercontent.com/andreasbm/elements/master/screenshots/wl-radio.png" width="700" />
+<a href="https://weightless.dev/elements/tabs" align="center">
+  <img src="https://raw.githubusercontent.com/andreasbm/elements/master/screenshots/wl-tabs.png" width="700" />
 </a>
 
 
