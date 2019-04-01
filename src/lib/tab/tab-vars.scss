@@ -2,15 +2,36 @@
 
 $tab-padding: var(--tab-padding, #{$spacing-m} #{$spacing-xl});
 $tab-transition: var(--tab-transition, background #{$transition-duration-medium} #{$transition-deceleration-curve}, color #{$transition-duration-medium} #{$transition-deceleration-curve});
+$tab-opacity-disabled: var(--tab-opacity-disabled, 0.6);
 
+/* Default style */
 $tab-color: var(--tab-color, #{color("shade")});
 $tab-bg: var(--tab-bg, #{$background});
 
-$tab-color-focus: var(--tab-color-focus, #{color("shade")});
-$tab-bg-focus: var(--tab-bg-focus, #{color("primary", $default-hue, 0.1)});
+$tab-color-active: var(--tab-color-active, #{color("primary")});
+$tab-bg-active: var(--tab-bg-active, #{color("primary", $default-hue, 0.1)});
 
-$tab-color-checked: var(--tab-color-focus, #{color("primary")});
-$tab-bg-checked: var(--tab-bg-focus, #{color("primary", $default-hue, 0.1)});
+$tab-color-focus-active: var(--tab-color-focus-active, #{color("primary", $dark-hue)});
+$tab-bg-focus: var(--tab-bg-focus, #{color("shade", 200)});
 
-$tab-color-disabled: var(--tab-color-disabled, #{color("shade")});
-$tab-bg-disabled: var(--tab-bg-disabled, #{color("shade", 200)});
+$tab-color-hover: var(--tab-color-hover, #{color("shade")});
+$tab-bg-hover: var(--tab-bg-hover, #{color("shade", 200)});
+
+$tab-color-disabled: var(--tab-color-disabled, #{color("shade", $light-hue)});
+$tab-bg-disabled: var(--tab-bg-disabled, #{$background});
+
+/* Filled style */
+$tab-color-filled: var(--tab-color-filled, #{color-contrast("primary", $default-hue, 0.6)});
+$tab-bg-filled: var(--tab-bg-filled, #{color("primary")});
+
+$tab-color-active-filled: var(--tab-color-filled, #{color-contrast("primary", $light-hue, 0.8)});
+$tab-bg-active-filled: var(--tab-bg-filled, #{color("primary", $light-hue)});
+
+$tab-color-focus-active-filled: var(--tab-color-focus-active-filled, #{color-contrast("primary", $default-hue)});
+$tab-bg-focus-filled: var(--tab-bg-focus-filled, #{color("primary", $default-hue)});
+
+$tab-color-hover-filled: var(--tab-color-hover-filled, #{color-contrast("primary", $light-hue)});
+$tab-bg-hover-filled: var(--tab-bg-hover-filled, #{color("primary", $light-hue)});
+
+$tab-color-disabled-filled: var(--tab-color-disabled-filled, #{color-contrast("primary", $default-hue, 0.4)});
+$tab-bg-disabled-filled: var(--tab-bg-disabled-filled, #{color("primary", $light-hue)});

@@ -2,17 +2,44 @@
 @import "tab-group-vars";
 
 :host {
-  --_tab-color: #{$tab-group-color};
-  --_tab-bg: #{$tab-group-bg};
+  --_tab-group-color: #{$tab-group-color};
+  --_tab-group-bg: #{$tab-group-bg};
+  --_tab-group-align: flex-start;
 
-  color: var(--_tab-color);
-  background: var(--_tab-bg);
+  color: var(--_tab-group-color);
+  background: var(--_tab-group-bg);
+  
+  position: relative;
+  display: block;
+}
 
-  border-bottom: $tab-group-border;
+:host([align="center"]) {
+  --_tab-group-align: center;
+}
+
+:host([align="end"]) {
+  --_tab-group-align: flex-end;
+}
+
+:host([align="stretch"]) {
+  --_tab-group-align: stretch;
+
+  ::slotted(*) {
+    width: 100%;
+    flex-shrink: initial;
+  }
+}
+
+:host([filled]) {
+  --_tab-group-bg: #{$tab-group-filled-bg};
+  --_tab-group-color: #{$tab-group-filled-color};
+}
+
+#tabs-container {
+  justify-content: var(--_tab-group-align);
 
   display: flex;
-  justify-content: flex-start;
-  position: relative;
+  align-items: stretch;
   overflow-x: auto;
   scroll-behavior: smooth;
   scrollbar-width: none;
@@ -21,55 +48,65 @@
   scroll-snap-type: mandatory;
   scroll-snap-points-y: repeat(100vw);
   scroll-snap-type: x mandatory;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  ::slotted(*) {
+    flex-shrink: 0;
+    scroll-snap-align: start;
+  }
 }
 
 #tabs {
   position: relative;
   display: flex;
   align-items: stretch;
-}
-
-:host::-webkit-scrollbar {
-  display: none;
-}
-
-:host([align="center"]) {
-  justify-content: center;
-}
-
-:host([align="right"]) {
-  justify-content: flex-end;
-}
-
-:host([align="stretch"]) {
   justify-content: stretch;
-
-  ::slotted(*) {
-    width: 100%;
-    flex-shrink: initial;
-  }
 }
 
-:host([inverted]) {
-  color: var(--_tab-bg);
-  background: var(--_tab-color);
-
-  #indicator {
-    background: Var(--_tab-bg);
-  }
-}
-
-#tabs ::slotted(*) {
-  flex-shrink: 0;
-  scroll-snap-align: start;
+#indicator, #divider {
+  position: absolute;
+  bottom: 0;
 }
 
 #indicator {
-  width: var(--_indicator-width);
+  width: var(--_indicator-size);
   left: var(--_indicator-offset);
-  background: var(--_tab-color);
-  height: $tab-group-indicator-height;
+  transform: scaleX(#{$tab-group-indicator-scale});
+  background: $tab-group-indicator-bg;
+  height: $tab-group-indicator-size;
   transition: $tab-group-indicator-transition;
-  position: absolute;
-  bottom: 0;
+  z-index: 1;
+}
+
+#divider {
+  left: 0;
+}
+
+:host([vertical]) {
+  #tabs-container {
+    justify-content: var(--_tab-group-align);
+    align-items: stretch;
+    flex-direction: column;
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+
+  #tabs {
+    flex-direction: column;
+  }
+
+  #indicator {
+    top: var(--_indicator-offset);
+    height: var(--_indicator-size);
+    transform: scaleY(#{$tab-group-indicator-scale});
+    width: $tab-group-indicator-size;
+    left: 0;
+  }
+
+  #divider {
+    top: 0;
+  }
 }

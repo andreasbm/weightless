@@ -29,15 +29,25 @@ export default class TabsPage extends LitElement {
 			<wl-title>Align</wl-title>
 			<demo-element>
 				<code-example-element>
+					<wl-tab-group align="start">
+						<wl-tab>Dogs</wl-tab>
+						<wl-tab>Cats</wl-tab>
+					</wl-tab-group>
 					<wl-tab-group align="center">
 						<wl-tab>Dogs</wl-tab>
 						<wl-tab>Cats</wl-tab>
 					</wl-tab-group>
-					<wl-tab-group align="right">
+					<wl-tab-group align="end">
 						<wl-tab>Dogs</wl-tab>
 						<wl-tab>Cats</wl-tab>
 					</wl-tab-group>
-					<wl-tab-group align="stretch">
+				</code-example-element>
+			</demo-element>
+			
+			<wl-title>Vertical</wl-title>
+			<demo-element>
+				<code-example-element>
+					<wl-tab-group vertical align="start">
 						<wl-tab>Dogs</wl-tab>
 						<wl-tab>Cats</wl-tab>
 					</wl-tab-group>
@@ -69,10 +79,10 @@ export default class TabsPage extends LitElement {
 				</code-example-element>
 			</demo-element>
 			
-			<wl-title>Inverted</wl-title>
+			<wl-title>Filled</wl-title>
 			<demo-element>
 				<code-example-element>
-					<wl-tab-group inverted>
+					<wl-tab-group filled>
 						<wl-tab>Dogs</wl-tab>
 						<wl-tab>Cats</wl-tab>
 					</wl-tab-group>
@@ -86,7 +96,7 @@ export default class TabsPage extends LitElement {
 						<wl-tab>Dogs</wl-tab>
 						<wl-tab disabled>Cats</wl-tab>
 					</wl-tab-group>
-					<wl-tab-group inverted>
+					<wl-tab-group filled>
 						<wl-tab>Dogs</wl-tab>
 						<wl-tab disabled>Cats</wl-tab>
 					</wl-tab-group>

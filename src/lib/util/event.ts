@@ -50,16 +50,16 @@ export function stopEvent (e: Event) {
 
 /**
  * Invokes the callback when the user clicks outside the target.
- * @param $area
+ * @param $areas
  * @param listener
  */
-export function addClickAwayListener ($area: EventTarget, listener: ((e?: Event) => void)): EventListenerSubscription {
+export function addClickAwayListener ($areas: EventTarget[], listener: ((e?: Event) => void)): EventListenerSubscription {
 	return addListener(window, ["mousedown", "pointerdown"], (e: Event) => {
 		if (!("composedPath" in e)) return;
 
 		// Check if the container is in the event path
 		const paths: EventTarget[] = (<any>e).composedPath();
-		if (!paths.includes($area)) {
+		if ($areas.find($area => paths.includes($area)) == null) {
 			listener();
 		}
 	}, {passive: true});

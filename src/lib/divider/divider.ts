@@ -9,12 +9,13 @@ import styles from "./divider.scss";
  * Properties of the divider.
  */
 export interface IDividerProperties {
+	vertical: boolean;
 }
 
 /**
  * Thin line that groups content in lists and layouts.
  * @cssprop --divider-color - Color.
- * @cssprop --divider-height - Height.
+ * @cssprop --divider-size - Width or height.
  */
 @customElement("wl-divider")
 export class Divider extends LitElement implements IDividerProperties {
@@ -25,6 +26,12 @@ export class Divider extends LitElement implements IDividerProperties {
 	 * @attr
 	 */
 	@property({type: String, reflect: true}) role: AriaRole = "separator";
+
+	/**
+	 * Makes the divider vertical.
+	 * @attr
+	 */
+	@property({type: Boolean, reflect: true}) vertical: boolean = false;
 
 	/**
 	 * Returns the template of the element.

@@ -19,27 +19,44 @@
   user-select: none;
 }
 
-:host(:not([disabled])) {
+:host(:not([disabled]):not([checked])) {
   cursor: pointer;
 }
 
 :host(:focus) {
-  --_tab-color: #{$tab-color-focus};
   --_tab-bg: #{$tab-bg-focus};
 }
 
-:host([checked]) {
-  --_tab-color: #{$tab-color-checked};
-  --_tab-bg: #{$tab-bg-checked};
+:host(:hover) {
+  --_tab-color: #{$tab-color-hover};
+  --_tab-bg: #{$tab-bg-hover};
+}
+
+:host([checked]:focus) {
+  --_tab-color: #{$tab-color-focus-active};
 }
 
 :host([disabled]) {
   --_tab-color: #{$tab-color-disabled};
   --_tab-bg: #{$tab-bg-disabled};
+  opacity: $tab-opacity-disabled;
+  pointer-events: none;
 }
 
-:host-context([inverted]), :host([inverted]) {
-  color: var(--_tab-bg);
-  background: var(--_tab-color);
+:host([checked]), :host(:focus) {
+  --_tab-color: #{$tab-color-active};
+  --_tab-bg: #{$tab-bg-active};
 }
 
+:host-context([filled]), :host[filled] {
+  --tab-color: #{$tab-color-filled};
+  --tab-bg: #{$tab-bg-filled};
+  --tab-color-active: #{$tab-color-active-filled};
+  --tab-bg-active: #{$tab-bg-active-filled};
+  --tab-color-focus-active: #{$tab-color-focus-active-filled};
+  --tab-bg-focus: #{$tab-bg-focus-filled};
+  --tab-color-hover: #{$tab-color-hover-filled};
+  --tab-bg-hover: #{$tab-bg-hover-filled};
+  --tab-color-disabled: #{$tab-color-disabled-filled};
+  --tab-bg-disabled: #{$tab-bg-disabled-filled};
+}

@@ -10,6 +10,7 @@
 
 #content {
 	transform: translate(calc(#{$popover-card-arrow-width} * var(--_content-translate-x-multiplier, 0)), calc(#{$popover-card-arrow-width} * var(--_content-translate-y-multiplier, 0)));
+	overflow: hidden;
 }
 
 #arrow {
