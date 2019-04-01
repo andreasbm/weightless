@@ -187,6 +187,20 @@
 			"[Demo](https://weightless.dev/elements/switch)"
 		],
 		[
+			"Tab",
+			"`wl-tab`",
+			"Organize navigation between groups of content.",
+			"[Documentation](/src/lib/tab)",
+			"[Demo](https://weightless.dev/elements/tabs)"
+		],
+		[
+			"Tab Group",
+			"`wl-tab-group`",
+			"Organize navigation between groups of content.",
+			"[Documentation](/src/lib/tab-group)",
+			"[Demo](https://weightless.dev/elements/tabs)"
+		],
+		[
 			"Textarea",
 			"`wl-textarea`",
 			"Multiline text fields.",

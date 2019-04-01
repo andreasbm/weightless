@@ -48,6 +48,7 @@ export class Checkbox extends CheckboxBehavior implements ICheckboxProperties {
                 <line id="indeterminate-path" fill="none" x1="0" y1="12.5" x2="24" y2="12.5" />
             </svg>
 			<wl-ripple id="ripple" .target="${this}" focusable overlay unbounded centered initialDuration="200"></wl-ripple>
+			<slot></slot>
 			${this.renderFormElement()}
 		`;
 	}

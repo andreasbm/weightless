@@ -27,26 +27,25 @@ Display an item in a list.
 
 ## ➤ CSS Custom Properties
 
-| Property                         | Description                    |
-|----------------------------------|--------------------------------|
-| `--list-item-after-align-self`   | Align self of the after slot.  |
-| `--list-item-after-margin`       | Margin of the after slot.      |
-| `--list-item-before-align-self`  | Align self of the before slot. |
-| `--list-item-before-margin`      | Margin of the before slot.     |
-| `--list-item-bg`                 | Default background.            |
-| `--list-item-bg-active`          | Background when active.        |
-| `--list-item-bg-disabled`        | Background when disabled.      |
-| `--list-item-bg-focus`           | Background when focused.       |
-| `--list-item-bg-hover`           | Background on hover.           |
-| `--list-item-border-radius`      | Border radius.                 |
-| `--list-item-color`              | Default color.                 |
-| `--list-item-color-active`       | Color when active.             |
-| `--list-item-color-disabled`     | Color when disabled.           |
-| `--list-item-color-focus-active` | Color when focused and active. |
-| `--list-item-color-hover`        | Color on hover.                |
-| `--list-item-opacity-disabled`   | Opacity when disabled.         |
-| `--list-item-padding`            | Padding.                       |
-| `--list-item-transition`         | Transition.                    |
+| Property                        | Description                       |
+|---------------------------------|-----------------------------------|
+| `--list-item-after-align-self`  | Align self of the after slot.     |
+| `--list-item-after-margin`      | Margin of the after slot.         |
+| `--list-item-before-align-self` | Align self of the before slot.    |
+| `--list-item-before-margin`     | Margin of the before slot.        |
+| `--list-item-bg`                | Default background.               |
+| `--list-item-bg-active`         | Background when active.           |
+| `--list-item-bg-disabled`       | Background when disabled.         |
+| `--list-item-bg-hover`          | Background on hover.              |
+| `--list-item-bg-hover-active`   | Background when hover and active. |
+| `--list-item-border-radius`     | Border radius.                    |
+| `--list-item-color`             | Default color.                    |
+| `--list-item-color-active`      | Color when active.                |
+| `--list-item-color-disabled`    | Color when disabled.              |
+| `--list-item-color-hover`       | Color on hover.                   |
+| `--list-item-opacity-disabled`  | Opacity when disabled.            |
+| `--list-item-padding`           | Padding.                          |
+| `--list-item-transition`        | Transition.                       |
 
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#slots)

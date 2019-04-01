@@ -1,10 +1,13 @@
-import { customElement, html, LitElement, property } from "lit-element";
+import { customElement, html, LitElement, property, TemplateResult } from "lit-element";
 import "../../../../lib/button/button";
 import "../../../../lib/card/card";
-import "../../../../lib/select/select";
+import "../../../../lib/list-item/list-item";
 import "../../../../lib/popover-card";
-import { showPopover } from "../../../../lib/popover/show-popover";
-import { defaultPopoverConfig, IPopoverBaseProperties, Popover } from "../../../../lib/popover/popover";
+import { IOpenOverlayConfig } from "../../../../lib/behavior/overlay/show-overlay";
+import { defaultPopoverConfig, IPopoverBaseProperties, IPopoverConfig, Popover } from "../../../../lib/popover/popover";
+import { showPopover, showPopoverAtPosition } from "../../../../lib/popover/show-popover";
+import "../../../../lib/select/select";
+import "../../../../lib/textarea/textarea";
 import "../../../../lib/title/title";
 import { cssResult } from "../../../../lib/util/css";
 import { OriginX, OriginY } from "../../../../lib/util/position";
@@ -29,7 +32,7 @@ async function openTemplatePopover (target: Element,
 	console.log(await ref.result);
 }
 
-function originToFlex (origin: OriginY |OriginX): string {
+function originToFlex (origin: OriginY | OriginX): string {
 	switch (origin) {
 		case OriginY.TOP:
 		case OriginX.LEFT:
@@ -43,6 +46,20 @@ function originToFlex (origin: OriginY |OriginX): string {
 	}
 
 	throw new Error("Wrong input");
+}
+
+function showContextMenu (e: MouseEvent, template: TemplateResult, config: Partial<IPopoverConfig> = {}) {
+	e.preventDefault();
+	return showPopoverAtPosition({
+		fixed: true,
+		container: document.documentElement,
+		template,
+		position: {
+			left: e.clientX,
+			top: e.clientY
+		},
+		...config
+	});
 }
 
 @customElement("popover-page")
@@ -88,6 +105,12 @@ export default class PopoverPage extends LitElement {
 			background: green;
 		}
 		
+		#toucharea {
+			width: 100%;
+			height: 300px;
+			background: lightgrey;
+		}
+		
 	`)];
 
 	@property({type: String}) transformOriginX = defaultPopoverConfig.transformOriginX!;
@@ -102,6 +125,36 @@ export default class PopoverPage extends LitElement {
 		const $popover = this.shadowRoot!.querySelector<Popover<string>>("#popover")!;
 		const res = await $popover.show();
 		console.log("Result:", res);
+	}
+
+	private async showContextMenu (e: MouseEvent) {
+		e.preventDefault();
+
+		let overlay: Popover;
+		async function showSubContextMenu (e: MouseEvent) {
+			overlay.persistent = true;
+			const res = await showContextMenu(e, html`
+				<wl-popover-card style="--list-item-border-radius: 0">
+					<wl-list-item clickable>Cats</wl-list-item>	
+					<wl-list-item clickable>Dogs</wl-list-item>	
+				</wl-popover-card>
+			`, {
+				closeOnClick: true
+			});
+
+			await res.result;
+			overlay.persistent = false;
+		}
+
+		const res = await showContextMenu(e, html`
+			<wl-popover-card style="--list-item-border-radius: 0">
+				<wl-list-item clickable @click="${() => overlay.hide("Edit")}">Edit</wl-list-item>	
+				<wl-list-item clickable @click="${() => overlay.hide("Save")}">Save</wl-list-item>	
+				<wl-list-item clickable @click="${(e: MouseEvent) => showSubContextMenu(e)}">More..</wl-list-item>	
+			</wl-popover-card>
+		`);
+
+		overlay = res.overlay;
 	}
 
 	protected render () {
@@ -185,6 +238,14 @@ export default class PopoverPage extends LitElement {
 						template: html\`<wl-popover-card><p>This is a template!</p></wl-popover-card>\`
 					});
 				`}"></highlight-element>
+				
+			<wl-title level="3">Nested popovers</wl-title>
+			<demo-element>
+				<code-example-element>
+					<div id="toucharea" @contextmenu="${this.showContextMenu}"></div>
+				</code-example-element>
+			</demo-element>
+			
 		`;
 	}
 }

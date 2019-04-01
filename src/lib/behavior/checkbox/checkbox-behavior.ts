@@ -33,6 +33,7 @@ export abstract class CheckboxBehavior extends SwitchBehavior implements ICheckb
 		}
 
 		this.checked = !this.checked;
+		this.dispatchChangeEvent();
 	}
 
 	/**

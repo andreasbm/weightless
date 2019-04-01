@@ -9,6 +9,13 @@ import { FormElementBehavior, IFormElementBehaviorProperties } from "../form-ele
 import styles from "./switch-behavior.scss";
 
 /**
+ * Events the switch can dispatch.
+ */
+export enum SwitchBehaviorEvent {
+	CHANGE = "change"
+}
+
+/**
  * Properties of the switch behavior.
  */
 export interface ISwitchBehaviorProperties extends IFormElementBehaviorProperties {
@@ -18,6 +25,7 @@ export interface ISwitchBehaviorProperties extends IFormElementBehaviorPropertie
 
 /**
  * Provides switch behavior.
+ * @event change - Dispatched when the checked property changes due to a user interaction.
  */
 export abstract class SwitchBehavior extends FormElementBehavior implements ISwitchBehaviorProperties {
 	static styles = [...FormElementBehavior.styles, cssResult(styles)];
@@ -43,7 +51,7 @@ export abstract class SwitchBehavior extends FormElementBehavior implements ISwi
 	/**
 	 * Type of the form element.
 	 */
-	protected formElementType: string = "switch";
+	protected formElementType: string = "checkbox";
 
 	/**
 	 * Event target for the listeners and click simulation.
@@ -112,6 +120,18 @@ export abstract class SwitchBehavior extends FormElementBehavior implements ISwi
 	 */
 	protected toggle () {
 		this.checked = !this.checked;
+		this.dispatchChangeEvent();
+	}
+
+	/**
+	 * Dispatch that the switch was toggled.
+	 */
+	protected dispatchChangeEvent () {
+
+		// Defer the dispatching of the event until the UI on the grouped elements have updated.
+		requestAnimationFrame(() => {
+			this.dispatchEvent(new CustomEvent(SwitchBehaviorEvent.CHANGE, {composed: true, bubbles: true}))
+		});
 	}
 
 	/**
@@ -131,6 +151,7 @@ export abstract class SwitchBehavior extends FormElementBehavior implements ISwi
 	protected renderFormElement (): TemplateResult {
 		return html`
 			<input
+				style="display: none;"
 				id="${this.formElementId}"
 				type="${<any>this.formElementType}"
 				?checked="${this.checked}"
@@ -139,7 +160,6 @@ export abstract class SwitchBehavior extends FormElementBehavior implements ISwi
 				?readonly="${this.readonly}"
 				.value="${ifDefined(this.value)}"
 				name="${ifDefined(this.name)}"
-				style="display: none"
 				aria-hidden="true"
 				tabindex="-1"
 			/>

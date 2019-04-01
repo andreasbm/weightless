@@ -3,8 +3,13 @@
 
 :host {
   background: $divider-color;
-  height: $divider-height;
+  height: $divider-size;
 
   display: block;
   width: 100%;
+}
+
+:host([vertical]) {
+  width: $divider-size;
+  height: 100%;
 }

@@ -1,0 +1,13 @@
+@import "../style/base";
+
+$tab-group-color: var(--tab-group-color, #{color("primary")});
+$tab-group-bg: var(--tab-group-bg, #{$background});
+
+$tab-group-filled-color: var(--tab-group-color, #{$background});
+$tab-group-filled-bg: var(--tab-group-bg, #{color("primary")});
+
+$tab-group-indicator-size: var(--tab-group-indicator-size, #{size(2)});
+$tab-group-indicator-scale: var(--tab-group-indicator-scale, 1);
+$tab-group-indicator-bg: var(--tab-group-indicator-bg, currentColor);
+$tab-group-indicator-transition: var(--tab-group-indicator-transition, left #{$transition-duration-medium} #{$transition-deceleration-curve}, top #{$transition-duration-medium} #{$transition-deceleration-curve}, width #{$transition-duration-medium} #{$transition-deceleration-curve});
+

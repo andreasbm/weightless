@@ -193,6 +193,15 @@ export const COMPONENTS_ROUTES: IRoute<IRouteData>[] = [
 		}
 	},
 	{
+		path: "tabs",
+		component: () => import("./elements/tabs-page"),
+		data: {
+			title: "Tabs",
+			desc: "Organize navigation between groups of content.",
+			img: iconPath("tabs")
+		}
+	},
+	{
 		path: "textarea",
 		component: () => import("./elements/textarea-page"),
 		data: {

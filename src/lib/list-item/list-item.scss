@@ -28,21 +28,13 @@
 	cursor: pointer;
 }
 
-:host([focus]) {
-	background: orange;
-}
-
-:host(:focus) {
-	--_list-item-bg: #{$list-item-bg-focus};
-}
-
-:host(:hover) {
+:host(:hover), :host(:focus) {
 	--_list-item-color: #{$list-item-color-hover};
 	--_list-item-bg: #{$list-item-bg-hover};
 }
 
-:host([active]:focus) {
-	--_list-item-color: #{$list-item-color-focus-active};
+:host([active]:focus), :host([active]:hover) {
+	--_list-item-bg: #{$list-item-bg-hover-active};
 }
 
 :host([disabled]) {
@@ -52,7 +44,7 @@
 	pointer-events: none;
 }
 
-:host([active]), :host([focus]) {
+:host([active]) {
 	--_list-item-color: #{$list-item-color-active};
 	--_list-item-bg: #{$list-item-bg-active};
 }

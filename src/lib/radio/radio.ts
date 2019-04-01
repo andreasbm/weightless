@@ -42,6 +42,7 @@ export class Radio extends RadioBehavior implements IRadioProperties {
 		return html`
             <div id="dot"></div>
 			<wl-ripple id="ripple" .target="${this}" focusable overlay unbounded centered initialDuration="200"></wl-ripple>
+			<slot></slot>
 			${this.renderFormElement()}
 		`;
 	}

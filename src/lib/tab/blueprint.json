@@ -1,0 +1,8 @@
+{
+	"extend": "blueprint.json",
+	"input": "src/lib/tab/blueprint.md",
+	"output": "src/lib/tab/README.md",
+	"tag": "wl-tab",
+	"demo": "https://weightless.dev/elements/tabs",
+	"img": "https://raw.githubusercontent.com/andreasbm/elements/master/screenshots/wl-tabs.png"
+}

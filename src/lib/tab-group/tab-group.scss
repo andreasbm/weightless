@@ -1,0 +1,112 @@
+@import "../style/base";
+@import "tab-group-vars";
+
+:host {
+  --_tab-group-color: #{$tab-group-color};
+  --_tab-group-bg: #{$tab-group-bg};
+  --_tab-group-align: flex-start;
+
+  color: var(--_tab-group-color);
+  background: var(--_tab-group-bg);
+  
+  position: relative;
+  display: block;
+}
+
+:host([align="center"]) {
+  --_tab-group-align: center;
+}
+
+:host([align="end"]) {
+  --_tab-group-align: flex-end;
+}
+
+:host([align="stretch"]) {
+  --_tab-group-align: stretch;
+
+  ::slotted(*) {
+    width: 100%;
+    flex-shrink: initial;
+  }
+}
+
+:host([filled]) {
+  --_tab-group-bg: #{$tab-group-filled-bg};
+  --_tab-group-color: #{$tab-group-filled-color};
+}
+
+#tabs-container {
+  justify-content: var(--_tab-group-align);
+
+  display: flex;
+  align-items: stretch;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+
+  // Snap the scrolling
+  scroll-snap-type: mandatory;
+  scroll-snap-points-y: repeat(100vw);
+  scroll-snap-type: x mandatory;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  ::slotted(*) {
+    flex-shrink: 0;
+    scroll-snap-align: start;
+  }
+}
+
+#tabs {
+  position: relative;
+  display: flex;
+  align-items: stretch;
+  justify-content: stretch;
+}
+
+#indicator, #divider {
+  position: absolute;
+  bottom: 0;
+}
+
+#indicator {
+  width: var(--_indicator-size);
+  left: var(--_indicator-offset);
+  transform: scaleX(#{$tab-group-indicator-scale});
+  background: $tab-group-indicator-bg;
+  height: $tab-group-indicator-size;
+  transition: $tab-group-indicator-transition;
+  z-index: 1;
+}
+
+#divider {
+  left: 0;
+}
+
+:host([vertical]) {
+  #tabs-container {
+    justify-content: var(--_tab-group-align);
+    align-items: stretch;
+    flex-direction: column;
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+
+  #tabs {
+    flex-direction: column;
+  }
+
+  #indicator {
+    top: var(--_indicator-offset);
+    height: var(--_indicator-size);
+    transform: scaleY(#{$tab-group-indicator-scale});
+    width: $tab-group-indicator-size;
+    left: 0;
+  }
+
+  #divider {
+    top: 0;
+  }
+}

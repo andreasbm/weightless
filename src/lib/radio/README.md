@@ -22,6 +22,15 @@ Select one option from a set.
 | `value`       | `value`        | `string`   | ""      | Value of the form element.                       |
 
 
+[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#events)
+
+## ➤ Events
+
+| Event    | Description                                      |
+|----------|--------------------------------------------------|
+| `change` | Dispatched when the checked property changes due to a user interaction. |
+
+
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#css-custom-properties)
 
 ## ➤ CSS Custom Properties

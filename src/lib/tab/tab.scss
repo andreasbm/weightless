@@ -1,0 +1,57 @@
+@import "../style/base";
+@import "tab-vars";
+
+:host {
+  --_tab-color: #{$tab-color};
+  --_tab-bg: #{$tab-bg};
+
+  color: var(--_tab-color);
+  background: var(--_tab-bg);
+
+  padding: $tab-padding;
+  transition: $tab-transition;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  outline: none;
+  user-select: none;
+}
+
+:host(:not([disabled]):not([checked])) {
+  cursor: pointer;
+}
+
+:host(:hover), :host(:focus) {
+  --_tab-color: #{$tab-color-hover};
+  --_tab-bg: #{$tab-bg-hover};
+}
+
+:host([checked]:focus), :host([checked]:hover) {
+  --_tab-bg: #{$tab-bg-hover-active};
+}
+
+:host([disabled]) {
+  --_tab-color: #{$tab-color-disabled};
+  --_tab-bg: #{$tab-bg-disabled};
+  opacity: $tab-opacity-disabled;
+  pointer-events: none;
+}
+
+:host([checked]) {
+  --_tab-color: #{$tab-color-active};
+  --_tab-bg: #{$tab-bg-active};
+}
+
+:host-context([filled]), :host[filled] {
+  --tab-color: #{$tab-color-filled};
+  --tab-bg: #{$tab-bg-filled};
+  --tab-color-active: #{$tab-color-active-filled};
+  --tab-bg-active: #{$tab-bg-active-filled};
+  --tab-color-hover: #{$tab-color-hover-filled};
+  --tab-bg-hover: #{$tab-bg-hover-filled};
+  --tab-bg-hover-active: #{$tab-bg-hover-active-filled};
+  --tab-color-disabled: #{$tab-color-disabled-filled};
+  --tab-bg-disabled: #{$tab-bg-disabled-filled};
+}

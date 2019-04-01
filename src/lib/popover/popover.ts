@@ -282,7 +282,7 @@ export class Popover<R = unknown> extends OverlayBehavior<R, IPopoverConfig> imp
 	 */
 	protected attachClickAwayListeners () {
 		this.clickAwayListeners.push(
-			addClickAwayListener(this.$container, this.clickAway),
+			addClickAwayListener([this.$container], this.clickAway),
 			addListener(this.$container, "click", this.onContainerClick)
 		);
 	}

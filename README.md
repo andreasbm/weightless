@@ -92,6 +92,8 @@ If you prefer to use the `umd` bundle you can import `https://unpkg.com/weightle
 | Slider           | `wl-slider`           | Make selections from a range of values.          | [Documentation](/src/lib/slider)           | [Demo](https://weightless.dev/elements/slider)   |
 | Snackbar         | `wl-snackbar`         | Provide brief messages at the bottom of the screen. | [Documentation](/src/lib/snackbar)         | [Demo](https://weightless.dev/elements/snackbar) |
 | Switch           | `wl-switch`           | Turn an option on or off.                        | [Documentation](/src/lib/switch)           | [Demo](https://weightless.dev/elements/switch)   |
+| Tab              | `wl-tab`              | Organize navigation between groups of content.   | [Documentation](/src/lib/tab)              | [Demo](https://weightless.dev/elements/tabs)     |
+| Tab Group        | `wl-tab-group`        | Organize navigation between groups of content.   | [Documentation](/src/lib/tab-group)        | [Demo](https://weightless.dev/elements/tabs)     |
 | Textarea         | `wl-textarea`         | Multiline text fields.                           | [Documentation](/src/lib/textarea)         | [Demo](https://weightless.dev/elements/textarea) |
 | Textfield        | `wl-textfield`        | Singleline text fields.                          | [Documentation](/src/lib/textfield)        | [Demo](https://weightless.dev/elements/textfield) |
 | Title            | `wl-title`            | Indicate the start of a new section.             | [Documentation](/src/lib/title)            | [Demo](https://weightless.dev/elements/title)    |
