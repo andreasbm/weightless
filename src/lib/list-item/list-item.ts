@@ -95,7 +95,6 @@ export class ListItem extends ButtonBehavior implements IListItemProperties, IRo
 	 */
 	protected onKeyDown (e: KeyboardEvent) {
 		super.onKeyDown(e);
-		console.log(this.queryGroup());
 		row(this, e);
 	}
 
