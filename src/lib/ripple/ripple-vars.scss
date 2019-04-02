@@ -1,4 +1,7 @@
 @import "../style/base";
 
+/* Color */
 $ripple-color: var(--ripple-color, currentcolor);
+
+/* Opacity */
 $ripple-opacity: var(--ripple-opacity, 0.15);

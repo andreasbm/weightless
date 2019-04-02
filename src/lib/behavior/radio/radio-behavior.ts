@@ -1,10 +1,8 @@
 import { property } from "lit-element";
 import { AriaRole, updateTabindex } from "../../util/aria";
-import { ARROW_DOWN, ARROW_LEFT, ARROW_RIGHT, ARROW_UP } from "../../util/constant/keycode";
-
 import { cssResult } from "../../util/css";
 import { queryParentRoots } from "../../util/dom";
-import { stopEvent } from "../../util/event";
+import { IRowing, row } from "../../util/rowing";
 import { ISwitchBehaviorProperties, SwitchBehavior } from "../switch/switch-behavior";
 
 import styles from "./radio-behavior.scss";
@@ -15,7 +13,7 @@ export interface IRadioBehaviorProperties extends ISwitchBehaviorProperties {
 /**
  * Radio behavior.
  */
-export abstract class RadioBehavior extends SwitchBehavior implements IRadioBehaviorProperties {
+export abstract class RadioBehavior extends SwitchBehavior implements IRadioBehaviorProperties, IRowing<RadioBehavior> {
 	static styles = [...SwitchBehavior.styles, cssResult(styles)];
 
 	/**
@@ -28,6 +26,26 @@ export abstract class RadioBehavior extends SwitchBehavior implements IRadioBeha
 	 * Form element type.
 	 */
 	protected formElementType = "radio";
+
+	/**
+	 * Query the group.
+	 */
+	queryGroup (): RadioBehavior[] {
+		if (this.name != null) {
+			return queryParentRoots<RadioBehavior>(this, `${this.nodeName.toLowerCase()}[name=${this.name}]:not([disabled])`);
+		}
+
+		return [];
+	}
+
+	/**
+	 * Checks and focuses a grouped element.
+	 * @param elem
+	 */
+	rowToElement (elem: RadioBehavior) {
+		elem.click();
+		elem.focus();
+	}
 
 	/**
 	 * Checks and unchecks the component.
@@ -53,16 +71,6 @@ export abstract class RadioBehavior extends SwitchBehavior implements IRadioBeha
 		}
 	}
 
-	/**
-	 * Query the group.
-	 */
-	protected queryGroup (): RadioBehavior[] {
-		if (this.name != null) {
-			return queryParentRoots<RadioBehavior>(this, `${this.nodeName.toLowerCase()}[name=${this.name}]:not([disabled])`);
-		}
-
-		return [];
-	}
 
 	/**
 	 * Returns whether at least one radio from the group is checked.
@@ -91,39 +99,7 @@ export abstract class RadioBehavior extends SwitchBehavior implements IRadioBeha
 	 */
 	protected onKeyDown (e: KeyboardEvent) {
 		super.onKeyDown(e);
-		const group = this.queryGroup();
-		const currentIndex = group.indexOf(this);
-		let newIndex: number | null = null;
-
-		switch (e.code) {
-			// Next
-			case ARROW_RIGHT:
-			case ARROW_DOWN:
-				newIndex = currentIndex + 1 > group.length - 1 ? 0 : currentIndex + 1;
-				break;
-
-			// Previous
-			case ARROW_LEFT:
-			case ARROW_UP:
-				newIndex = currentIndex - 1 < 0 ? group.length - 1 : currentIndex - 1;
-				break;
-		}
-
-		// Focus on the new radio if necessary
-		if (newIndex != null && group.length > 0) {
-			const newCheckedRadio = group[newIndex];
-			this.rowToElement(newCheckedRadio);
-			stopEvent(e);
-		}
-	}
-
-	/**
-	 * Checks and focuses a grouped element.
-	 * @param elem
-	 */
-	protected rowToElement (elem: RadioBehavior) {
-		elem.click();
-		elem.focus();
+		row(this, e);
 	}
 }
 

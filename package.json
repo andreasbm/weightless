@@ -78,8 +78,8 @@
 	"devDependencies": {
 		"@a11y/skip-navigation": "0.0.7",
 		"@appnest/readme": "^1.2.3",
-		"@appnest/web-config": "0.4.12",
-		"@appnest/web-router": "^1.2.15",
+		"@appnest/web-config": "0.4.14",
+		"@appnest/web-router": "^1.2.18",
 		"@types/puppeteer": "^1.12.3",
 		"code-prettify": "^0.1.0",
 		"fs-extra": "^7.0.1",

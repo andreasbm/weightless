@@ -1,22 +1,49 @@
 @import "../style/base";
 
+/* Width and height */
 $radio-size: var(--radio-size, #{size(20)});
-$radio-bg: var(--radio-bg, transparent);
-$radio-bg-checked: var(--radio-bg-checked, transparent);
-$radio-bg-disabled: var(--radio-bg-disabled, transparent);
-$radio-bg-disabled-checked: var(--radio-bg-disabled-checked, transparent);
 
+/* Default color */
 $radio-color: var(--radio-color, #{color("shade", $default-hue)});
+
+/* Default background */
+$radio-bg: var(--radio-bg, transparent);
+
+/* Color when checked */
 $radio-color-checked: var(--radio-color-checked, #{color("primary", $default-hue)});
+
+/* Background when checked */
+$radio-bg-checked: var(--radio-bg-checked, transparent);
+
+/* Color when disabled */
 $radio-color-disabled: var(--radio-color-disabled, #{color("shade", $light-hue)});
+
+/* Background when disabled and checked*/
+$radio-bg-disabled: var(--radio-bg-disabled, transparent);
+
+/* Color when disabled and checked */
 $radio-color-disabled-checked: var(--radio-color-disabled-checked, #{color("shade", $default-hue)});
 
+/* Background when disabled and checked */
+$radio-bg-disabled-checked: var(--radio-bg-disabled-checked, transparent);
+
+/* Border configuration (width and style) */
 $radio-border-config: var(--radio-border-config, #{size(2)} solid);
+
+/* Border radius */
 $radio-border-radius: var(--radio-border-radius, 100%);
+
+/* Transition */
 $radio-transition: var(--radio-transition, background #{$transition-duration-fast} #{$transition-deceleration-curve}, border-color #{$transition-duration-fast} #{$transition-deceleration-curve});
 
+/* Size of the dot */
 $radio-dot-size: var(--radio-dot-size, #{size(10)});
+
+/* Border radius of the dot */
 $radio-dot-border-radius: var(--radio-dot-border-radius, 100%);
+
+/* Transition of the dot */
 $radio-dot-transition: var(--radio-dot-transition, transform #{$transition-duration-medium} #{$transition-deceleration-curve});
 
+/* Transform of the ripple */
 $radio-ripple-transform: var(--radio-ripple-transform, translate(-50%, -50%) scale(1.8));

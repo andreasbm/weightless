@@ -1,13 +1,25 @@
 @import "../style/base";
 
+/* Height */
 $progress-bar-height: var(--progress-bar-height, #{size(4)});
 
+/* Background */
 $progress-bar-bg: var(--progress-bar-bg, #{color("shade", 300)});
+
+/* Color */
 $progress-bar-color: var(--progress-bar-color, #{color("primary", 500)});
+
+/* Color of the buffer */
 $progress-bar-buffer-color: var(--progress-bar-buffer-color, #{color("primary", 500, 0.5)});
 
+/* Transition when determinate */
 $progress-bar-determinate-transition: var(--progress-bar-determinate-transition, transform #{$transition-linear});
 
+/* Duration of the indeterminate animation */
 $progress-bar-indeterminate-duration: var(--progress-bar-indeterminate-duration, 2.1s);
+
+/* Delay of the short bar of indeterminate animation */
 $progress-bar-indeterminate-short-delay: var(--progress-bar-indeterminate-short-delay, 1.15s);
+
+/* Timing function of the indeterminate animation */
 $progress-bar-indeterminate-timing-function: var(--progress-bar-indeterminate-timing-function, #{$transition-standard-curve});

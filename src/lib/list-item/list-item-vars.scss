@@ -1,25 +1,55 @@
 @import "../style/base";
 
+/* Border radius */
 $list-item-border-radius: var(--list-item-border-radius, #{$border-radius-m});
+
+/* Transition */
 $list-item-transition: var(--list-item-transition, background #{$transition-duration-medium} #{$transition-ease}, color #{$transition-duration-medium} #{$transition-ease});
+
+/* Padding */
 $list-item-padding: var(--list-item-padding, #{$spacing-m} #{$spacing-l});
 
+/* Alignment of the before slot  */
 $list-item-before-align-self: var(--list-item-left-align-self, center);
+
+/* Margin of the before slot  */
 $list-item-before-margin: var(--list-item-left-margin, 0 #{$spacing-l} 0 0);
 
+/* Alignment of the after slot  */
 $list-item-after-align-self: var(--list-item-left-align-self, center);
+
+/* Margin of the after slot  */
 $list-item-after-margin: var(--list-item-left-margin, 0 0 0 #{$spacing-l});
 
-$list-item-color: var(--list-item-color, currentColor);
-$list-item-bg: var(--list-item-bg, transparent);
+/* Default color  */
+$list-item-color: var(--list-item-color, #{$foreground});
 
+/* Default background  */
+$list-item-bg: var(--list-item-bg, #{$background});
+
+/* Color when active */
 $list-item-color-active: var(--list-item-color, #{color("primary")});
+
+/* Background when active */
 $list-item-bg-active: var(--list-item-bg, #{color("primary", $default-hue, 0.1)});
 
-$list-item-color-hover: var(--list-item-color-hover, currentColor);
-$list-item-bg-hover: var(--list-item-bg-hover, #{color("shade", 200)});
-$list-item-bg-hover-active: var(--list-item-bg-hover-active, #{color("primary", $default-hue, 0.15)});
+/* Color when hover */
+$list-item-color-hover: var(--list-item-color-hover, #{$foreground});
 
+/* Background when hover */
+$list-item-bg-hover: var(--list-item-bg-hover, #{color("shade", 200)});
+
+/* Color when active and hover */
+$list-item-color-active-hover: var(--list-item-color-active-hover, #{color("primary")});
+
+/* Background when active and hover */
+$list-item-bg-active-hover: var(--list-item-bg-active-hover, #{color("primary", $default-hue, 0.15)});
+
+/* Color when disabled */
 $list-item-color-disabled: var(--list-item-color-disabled, #{color("shade", $light-hue)});
-$list-item-bg-disabled: var(--list-item-bg-disabled, transparent);
+
+/* Background when disabled */
+$list-item-bg-disabled: var(--list-item-bg-disabled, #{$background});
+
+/* Opacity when disabled */
 $list-item-opacity-disabled: var(--list-item-opacity-disabled, 0.6);

@@ -1,9 +1,20 @@
 @import "../style/base";
 
+/* Margin of the icon slot */
 $banner-icon-margin: var(--banner-icon-margin, 0 #{$spacing-m} 0 0);
-$banner-icon-color: var(--banner-icon-color, #{color("primary")});
+
+/* Padding */
 $banner-padding: var(--banner-padding, #{$spacing-s});
-$banner-color: var(--banner-color, #{$foreground});
-$banner-bg: var(--banner-bg, #{$background});
+
+/* Padding of the content slot */
 $banner-content-padding: var(--banner-content-padding, #{$spacing-s} #{$spacing-m});
+
+/* Color of the icon */
+$banner-icon-color: var(--banner-icon-color, #{color("primary")});
+
+/* Color */
+$banner-color: var(--banner-color, #{$foreground});
+
+/* Background */
+$banner-bg: var(--banner-bg, #{$background});
 

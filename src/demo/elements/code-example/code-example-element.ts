@@ -3,12 +3,14 @@ import { customElement, html, LitElement, property, query } from "lit-element";
 import { ifDefined } from "lit-html/directives/if-defined";
 import "../../../lib/button";
 import "../../../lib/icon";
+import { queueSnackbar } from "../../../lib/snackbar/queue-snackbar";
 import { cssResult } from "../../../lib/util/css";
 import { openCodepen } from "../../codepen";
 import { GOOGLE_FONT_URL, MATERIAL_ICONS_URL, UNPGK_URL } from "../../constants";
 import { copyToClipboard } from "../../copy-to-clipboard";
 import { HighlightElement } from "../highlight/highlight-element";
 import "../highlight/highlight-element";
+import "../../../lib/snackbar";
 
 /**
  * Highlights the initial HTML in the slot.
@@ -49,6 +51,13 @@ export class CodeExampleElement extends LitElement {
 
 	copyToClipboard () {
 		copyToClipboard(this.$highlighter.cleanedText);
+		queueSnackbar({
+			fixed: true,
+			container: document.body,
+			template: html`<span>The code was copied to your clipboard</span>`,
+			hideDelay: 2000,
+			backdrop: true
+		}).then();
 	}
 
 	/**

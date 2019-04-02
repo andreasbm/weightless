@@ -5,16 +5,16 @@
 	--_buffer-perc: 0;
 	--_perc: 0;
 
-	--_slider-track-bg: #{$slider-track-bg};
-	--_slider-track-bg-buffer: #{$slider-track-bg-buffer};
-	--_slider-track-bg-active: #{$slider-track-bg-active};
+	--_slider-track-bg: #{$slider-bg};
+	--_slider-track-bg-buffer: #{$slider-bg-buffer};
+	--_slider-track-bg-active: #{$slider-bg-active};
 	--_slider-thumb-bg: #{$slider-thumb-bg};
 }
 
 :host([disabled]) {
-	--_slider-track-bg: #{$slider-track-bg-disabled};
-	--_slider-track-bg-buffer: #{$slider-track-bg-buffer-disabled};
-	--_slider-track-bg-active: #{$slider-track-bg-active-disabled};
+	--_slider-track-bg: #{$slider-bg-disabled};
+	--_slider-track-bg-buffer: #{$slider-bg-buffer-disabled};
+	--_slider-track-bg-active: #{$slider-bg-active-disabled};
 	--_slider-thumb-bg: #{$slider-thumb-bg-disabled};
 }
 
@@ -24,7 +24,7 @@
 }
 
 #slider {
-	height: $slider-track-height;
+	height: $slider-height;
 	background: linear-gradient(to right,
 			var(--_slider-track-bg-active) 0%, var(--_slider-track-bg-active) calc(var(--_perc) * 100%),
 			var(--_slider-track-bg-buffer) calc(var(--_perc) * 100%), var(--_slider-track-bg-buffer) calc(var(--_buffer-perc) * 100%),
@@ -40,7 +40,7 @@
 	border-radius: 0;
 
 	/* Move the slider a bit up to center it */
-	top: calc((#{$slider-track-height} * -1) / 2);
+	top: calc((#{$slider-height} * -1) / 2);
 	position: relative;
 }
 

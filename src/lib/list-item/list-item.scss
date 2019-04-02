@@ -34,7 +34,8 @@
 }
 
 :host([active]:focus), :host([active]:hover) {
-	--_list-item-bg: #{$list-item-bg-hover-active};
+	--_list-item-color: #{$list-item-color-active-hover};
+	--_list-item-bg: #{$list-item-bg-active-hover};
 }
 
 :host([disabled]) {

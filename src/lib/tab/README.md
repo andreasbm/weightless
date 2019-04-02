@@ -20,6 +20,7 @@ Organize navigation between groups of content.
 | `required`    | `required`     | `boolean`  | false   | Makes the element required in a form context.    |
 | `role`        | `role`         | `AriaRole` | "tab"   | Role of the tab.                                 |
 | `value`       | `value`        | `string`   | ""      | Value of the form element.                       |
+| `vertical`    | `vertical`     | `boolean`  | false   | Vertical tab style.                              |
 
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#events)
@@ -37,6 +38,8 @@ Organize navigation between groups of content.
 
 | Property                       | Description                                   |
 |--------------------------------|-----------------------------------------------|
+| `--tab-before-margin`          | Margin of the before slot.                    |
+| `--tab-before-margin-vertical` | Margin of the before slot when vertical.      |
 | `--tab-bg`                     | Background.                                   |
 | `--tab-bg-active`              | Background when checked.                      |
 | `--tab-bg-active-filled`       | Background when checked and filled.           |
@@ -57,6 +60,7 @@ Organize navigation between groups of content.
 | `--tab-color-hover-filled`     | Color when hover and filled.                  |
 | `--tab-opacity-disabled`       | Opacity when disabled.                        |
 | `--tab-padding`                | Padding.                                      |
+| `--tab-padding-vertical`       | Padding when vertical.                        |
 | `--tab-transition`             | Transition.                                   |
 
 
@@ -64,9 +68,10 @@ Organize navigation between groups of content.
 
 ## ➤ Slots
 
-| Name | Description      |
-|------|------------------|
-|      | Default content. |
+| Name     | Description      |
+|----------|------------------|
+|          | Default content. |
+| `before` | Default content. |
 
 
 

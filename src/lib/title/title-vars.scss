@@ -1,11 +1,28 @@
 @import "../style/base";
 
+/* Margin */
 $title-margin: var(--title-margin, #{$spacing-s} 0);
+
+/* Font family */
 $title-font-family: var(--title-font-family, #{$font-family-sans-serif});
+
+/* Font weight */
 $title-font-weight: var(--title-font-weight, #{$font-weight-bold});
+
+/* Font size of heading level 1 */
 $title-font-size-level-1: var(--title-font-size-level-1, #{$font-size-xl});
+
+/* Font size of heading level 2 */
 $title-font-size-level-2: var(--title-font-size-level-2, #{$font-size-l});
+
+/* Font size of heading level 3 */
 $title-font-size-level-3: var(--title-font-size-level-3, #{$font-size-xm});
+
+/* Font size of heading level 4 */
 $title-font-size-level-4: var(--title-font-size-level-4, #{$font-size-m});
+
+/* Font size of heading level 5 */
 $title-font-size-level-5: var(--title-font-size-level-5, #{$font-size-s});
+
+/* Font size of heading level 6 */
 $title-font-size-level-6: var(--title-font-size-level-6, #{$font-size-xs});

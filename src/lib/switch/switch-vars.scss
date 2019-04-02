@@ -1,22 +1,52 @@
 @import "../style/base";
 
+/* Width */
 $switch-width: var(--switch-width, #{size(34)});
+
+/* Height */
 $switch-height: var(--switch-height, #{size(14)});
+
+/* Border radius */
 $switch-border-radius: var(--switch-border-radius, $border-radius-l);
+
+/* Transition */
 $switch-transition: var(--switch-transition, background #{$transition-duration-fast} #{$transition-deceleration-curve});
 
-$switch-bg: var(--switch-bg, #{color("shade", $light-hue)});
-$switch-bg-checked: var(--switch-bg-checked, #{color("primary", $light-hue, 0.4)});
-$switch-bg-disabled: var(--switch-bg-disabled, #{color("shade", 200)});
-$switch-bg-disabled-checked: var(--switch-bg-disabled-checked, #{color("primary", $light-hue, 0.1)});
-
+/* Default color*/
 $switch-color: var(--switch-color, #{$background});
+
+/* Default background */
+$switch-bg: var(--switch-bg, #{color("shade", $light-hue)});
+
+/* Color when checked */
 $switch-color-checked: var(--switch-color-checked, #{color("primary", $default-hue)});
+
+/* Background when checked */
+$switch-bg-checked: var(--switch-bg-checked, #{color("primary", $light-hue, 0.4)});
+
+/* Color when disabled */
 $switch-color-disabled: var(--switch-color-disabled, #{color("shade", 300)});
+
+/* Background when disabled */
+$switch-bg-disabled: var(--switch-bg-disabled, #{color("shade", 200)});
+
+/* Color when disabled and checked */
 $switch-color-disabled-checked: var(--switch-color-disabled-checked, #{color("primary", $light-hue, 0.4)});
 
+/* Background when disabled and checked */
+$switch-bg-disabled-checked: var(--switch-bg-disabled-checked, #{color("primary", $light-hue, 0.1)});
+
+/* Width and height of the knob */
 $switch-knob-size: var(--switch-knob-size, #{size(20)});
+
+/* Border radius of the knob */
 $switch-knob-border-radius: var(--switch-knob-border-radius, 100%);
+
+/* Transition of the knob */
 $switch-knob-transition: var(--switch-knob-transition, background #{$transition-duration-fast} #{$transition-deceleration-curve}, transform #{$transition-duration-fast} #{$transition-deceleration-curve});
+
+/* Box shadow of the knob */
 $switch-knob-elevation: var(--switch-knob-elevation, #{elevation(2, #{$shadow})});
+
+/* Transform of the ripple */
 $switch-ripple-transform: var(--switch-ripple-transform, translate(-50%, -50%) scale(1.8));

@@ -1,12 +1,28 @@
 @import "../style/base";
 
+/* Padding of the container when fixed */
 $snackbar-fixed-padding: var(--snackbar-fixed-padding, #{$spacing-m});
+
+/* Margin of the icon slot */
 $snackbar-icon-margin: var(--snackbar-icon-margin, 0 #{$spacing-m} 0 0);
+
+/* Border radius*/
 $snackbar-border-radius: var(--snackbar-border-radius, #{$border-radius-m});
-$snackbar-icon-color: var(--snackbar-icon-color, #{color("primary")});
-$snackbar-elevation: var(--snackbar-elevation, #{elevation(1, #{$shadow})});
+
+/* Padding */
 $snackbar-padding: var(--snackbar-padding, #{$spacing-s});
-$snackbar-color: var(--snackbar-color, #{$background});
-$snackbar-bg: var(--snackbar-bg, #{$foreground});
+
+/* Padding of the content slot */
 $snackbar-content-padding: var(--snackbar-content-padding, #{$spacing-s} #{$spacing-m});
 
+/* Color of the icon slot */
+$snackbar-icon-color: var(--snackbar-icon-color, #{color("primary")});
+
+/* Box shadow */
+$snackbar-elevation: var(--snackbar-elevation, #{elevation(1, #{$shadow})});
+
+/* Color */
+$snackbar-color: var(--snackbar-color, #{$background});
+
+/* Background */
+$snackbar-bg: var(--snackbar-bg, #{$foreground});

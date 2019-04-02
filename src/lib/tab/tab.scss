@@ -29,7 +29,8 @@
 }
 
 :host([checked]:focus), :host([checked]:hover) {
-  --_tab-bg: #{$tab-bg-hover-active};
+  --_tab-bg: #{$tab-bg-active-hover};
+  --_tab-color: #{$tab-color-active-hover};
 }
 
 :host([disabled]) {
@@ -51,7 +52,8 @@
   --tab-bg-active: #{$tab-bg-active-filled};
   --tab-color-hover: #{$tab-color-hover-filled};
   --tab-bg-hover: #{$tab-bg-hover-filled};
-  --tab-bg-hover-active: #{$tab-bg-hover-active-filled};
+  --tab-color-active-hover: #{$tab-color-active-hover-filled};
+  --tab-bg-active-hover: #{$tab-bg-active-hover-filled};
   --tab-color-disabled: #{$tab-color-disabled-filled};
   --tab-bg-disabled: #{$tab-bg-disabled-filled};
 }

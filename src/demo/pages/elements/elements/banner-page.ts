@@ -18,9 +18,9 @@ export default class BannerPage extends LitElement {
 				<code-example-element>
 					<wl-banner>
 						<wl-icon slot="icon">account_box</wl-icon>
-						<span slot="text">Your password was updated on your other device. Please sign in again.</span>
 						<wl-button slot="action" flat inverted>Continue as guest</wl-button>
 						<wl-button slot="action" flat inverted>Sign in</wl-button>
+						<span>Your password was updated on your other device. Please sign in again.</span>
 					</wl-banner>
 				</code-example-element>
 			</demo-element>

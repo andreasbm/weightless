@@ -21,13 +21,13 @@ export interface ISliderProperties extends IInputBehaviorProperties {
 /**
  * Make selections from a range of values.
  * @slot thumb-label - Optional slot for the thumb label.
- * @cssprop --slider-track-bg - Background of the slider track.
- * @cssprop --slider-track-bg-buffer - Background color of the buffer track.
- * @cssprop --slider-track-bg-active - Background color of the active part of the slider track.
- * @cssprop --slider-track-bg-disabled - Background color of the slider track when disabled.
- * @cssprop --slider-track-bg-buffer-disabled - Background color of the buffer track when disabled.
- * @cssprop --slider-track-bg-active-disabled - Background color of the active part of the slider track when disabled.
- * @cssprop --slider-track-height - Height of the slider track.
+ * @cssprop --slider-bg - Background of the slider track.
+ * @cssprop --slider-bg-buffer - Background color of the buffer track.
+ * @cssprop --slider-bg-active - Background color of the active part of the slider track.
+ * @cssprop --slider-bg-disabled - Background color of the slider track when disabled.
+ * @cssprop --slider-bg-buffer-disabled - Background color of the buffer track when disabled.
+ * @cssprop --slider-bg-active-disabled - Background color of the active part of the slider track when disabled.
+ * @cssprop --slider-height - Height of the slider track.
  * @cssprop --slider-thumb-focus-ring-bg - Background of the thumb focus ring.
  * @cssprop --slider-thumb-bg - Background of the thumb.
  * @cssprop --slider-thumb-bg-disabled - Background of the thumb when disabled.

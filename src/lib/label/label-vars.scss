@@ -1,4 +1,7 @@
 @import "../style/base";
 
+/* Color */
 $label-color: var(--label-color, #{color("shade", $dark-hue)});
-$label-color-required: var(--label-color-required, #{color("error", $default-hue)});
+
+/* */
+$label-required-color: var(--label-required-color, #{color("error", $default-hue)});

@@ -63,7 +63,7 @@ export class Tab extends RadioBehavior implements ITabProperties {
 	/**
 	 * Query the group.
 	 */
-	protected queryGroup (): RadioBehavior[] {
+	queryGroup (): RadioBehavior[] {
 		return Array.from(this.parentElement!.querySelectorAll(`${this.nodeName.toLowerCase()}:not([disabled])`));
 	}
 
@@ -71,7 +71,7 @@ export class Tab extends RadioBehavior implements ITabProperties {
 	 * Focuses a grouped element.
 	 * @param elem
 	 */
-	protected rowToElement (elem: RadioBehavior) {
+	rowToElement (elem: RadioBehavior) {
 		elem.focus();
 	}
 

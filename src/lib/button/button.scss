@@ -37,12 +37,6 @@
 	z-index: 0;
 }
 
-:host(:hover) {
-	--_button-color: #{$button-color-hover};
-	--_button-bg: #{$button-bg-hover};
-	--_button-shadow-color: #{$button-shadow-color-hover};
-}
-
 :host([fab]) {
 	width: $button-fab-size;
 	height: $button-fab-size;
@@ -63,21 +57,19 @@
 	border: $button-border-outlined;
 }
 
-:host(:not([disabled]):active), :host(:not(:hover):not([disabled]):focus-within) {
+:host(:hover), :host(:focus) {
+	--_button-color: #{$button-color-hover};
+	--_button-bg: #{$button-bg-hover};
+	--_button-shadow-color: #{$button-shadow-color-hover};
+}
+
+:host(:active) {
 	--_button-color: #{$button-color-active};
 	--_button-bg: #{$button-bg-active};
+	box-shadow: elevation(3, var(--_button-shadow-color));
 }
 
-:host(:not([flat]):not([disabled]):active), :host(:not([flat]):not(:hover):not([disabled]):focus-within) {
-	box-shadow: elevation(2, var(--_button-shadow-color));
-}
-
-:host([flat]) {
-	box-shadow: none;
-	background: none;
-}
-
-:host([flat]:focus-within) {
+:host([flat]:focus) {
 	background: $button-bg-active-flat;
 }
 
@@ -89,6 +81,12 @@
 	pointer-events: none;
 }
 
+:host([flat]) {
+	box-shadow: none;
+	background: none;
+}
+
 #ripple {
 	z-index: -1;
 }
+

@@ -29,8 +29,8 @@ async function showTemplateSnackbar ({text, buttonText, queue}: {text: string, b
 	const ref = await (queue ? queueSnackbar : showSnackbar)({
 		container: document.body,
 		template: html`
-			<span slot="text">${text}</span>
 			<wl-button slot="action" flat inverted @click="${() => ref.overlay.hide()}">${buttonText}</wl-button>
+			<span>${text}</span>
 		`,
 		...config
 	});
@@ -58,8 +58,8 @@ export default class SnackbarPage extends LitElement {
 				<code-example-element>
 					<wl-snackbar open>
 						<wl-icon slot="icon">photo</wl-icon>
-						<span slot="text">Can't send photo. Retry in 5 seconds.</span>
 						<wl-button slot="action" flat inverted>Retry</wl-button>
+						<span>Can't send photo. Retry in 5 seconds.</span>
 					</wl-snackbar>
 				</code-example-element>
 			</demo-element>
@@ -70,8 +70,8 @@ export default class SnackbarPage extends LitElement {
 					<wl-button id="open-snackbar" @click="${() => this.showDeclarativeSnackbar()}">Open</wl-button>
 					<wl-snackbar id="snackbar" fixed backdrop>
 						<wl-icon slot="icon">photo</wl-icon>
-						<span slot="text">Can't send photo. Retry in 5 seconds.</span>
 						<wl-button slot="action" flat inverted>Retry</wl-button>
+						<span>Can't send photo. Retry in 5 seconds.</span>
 					</wl-snackbar>
 				</code-example-element>
 			</demo-element>

@@ -4,6 +4,7 @@ import "../ripple";
 import { Ripple } from "../ripple/ripple";
 import { AriaRole } from "../util/aria";
 import { cssResult } from "../util/css";
+import { IRowing, row } from "../util/rowing";
 
 import styles from "./list-item.scss";
 
@@ -40,7 +41,7 @@ export interface IListItemProperties {
  * @cssprop --list-item-opacity-disabled - Opacity when disabled.
  */
 @customElement("wl-list-item")
-export class ListItem extends ButtonBehavior implements IListItemProperties {
+export class ListItem extends ButtonBehavior implements IListItemProperties, IRowing<ListItem> {
 	static styles = [...ButtonBehavior.styles, cssResult(styles)];
 
 	/**
@@ -71,6 +72,32 @@ export class ListItem extends ButtonBehavior implements IListItemProperties {
 	 * Ripple element.
 	 */
 	@query("#ripple") protected $ripple!: Ripple;
+
+	/**
+	 * Query the group.
+	 */
+	queryGroup (): ListItem[] {
+		return Array.from(this.parentElement!.querySelectorAll(`${this.nodeName.toLowerCase()}:not([disabled])`));
+	}
+
+	/**
+	 * Focuses a grouped element.
+	 * @param elem
+	 */
+	rowToElement (elem: ListItem) {
+		elem.focus();
+	}
+
+	/**
+	 * Handles the key up event.
+	 * Adds support for rowing tabindex.
+	 * @param e
+	 */
+	protected onKeyDown (e: KeyboardEvent) {
+		super.onKeyDown(e);
+		console.log(this.queryGroup());
+		row(this, e);
+	}
 
 	/**
 	 * Returns the template of the element.

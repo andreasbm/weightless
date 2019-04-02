@@ -1,13 +1,26 @@
 @import "../style/base";
 
+/* Default color */
 $tab-group-color: var(--tab-group-color, #{color("primary")});
+
+/* Default background */
 $tab-group-bg: var(--tab-group-bg, #{$background});
 
+/* Color when filled */
 $tab-group-filled-color: var(--tab-group-color, #{$background});
+
+/* Background when filled */
 $tab-group-filled-bg: var(--tab-group-bg, #{color("primary")});
 
+/* Size of the indicator */
 $tab-group-indicator-size: var(--tab-group-indicator-size, #{size(2)});
+
+/* Scale of the indicator */
 $tab-group-indicator-scale: var(--tab-group-indicator-scale, 1);
+
+/* Background of the indicator */
 $tab-group-indicator-bg: var(--tab-group-indicator-bg, currentColor);
+
+/* Transition of the indicator */
 $tab-group-indicator-transition: var(--tab-group-indicator-transition, left #{$transition-duration-medium} #{$transition-deceleration-curve}, top #{$transition-duration-medium} #{$transition-deceleration-curve}, width #{$transition-duration-medium} #{$transition-deceleration-curve});
 

@@ -32,25 +32,25 @@ Allow users to take actions, and make choices, with a single tap.
 
 | Property                      | Description                                      |
 |-------------------------------|--------------------------------------------------|
-| `--button-bg`                 | Default background.                              |
-| `--button-bg-active`          | Background on :active.                           |
-| `--button-bg-active-flat`     | Background on :active when flat attribute is present. |
-| `--button-bg-disabled`        | Background when disabled.                        |
-| `--button-bg-hover`           | Background on :hover.                            |
-| `--button-border-outlined`    | Border when outline attribute is present.        |
-| `--button-border-radius`      | Border radius.                                   |
-| `--button-color`              | Default color.                                   |
-| `--button-color-active`       | Color on :active.                                |
-| `--button-color-disabled`     | Color when disabled.                             |
-| `--button-color-hover`        | Color on :hover.                                 |
+| `--button-bg`                 | Default background                               |
+| `--button-bg-active`          | Background when :active                          |
+| `--button-bg-active-flat`     | Background when :active and flat attribute is present. |
+| `--button-bg-disabled`        | Background when disabled                         |
+| `--button-bg-hover`           | Background when :hover or :focus                 |
+| `--button-border-outlined`    | Border when outlined attribute is present        |
+| `--button-border-radius`      | Border radius                                    |
+| `--button-color`              | Default color                                    |
+| `--button-color-active`       | Button color when :active                        |
+| `--button-color-disabled`     | Color when disabled                              |
+| `--button-color-hover`        | Color when :hover or :focus                      |
 | `--button-fab-size`           | Size of the button when fab attribute is present. |
-| `--button-font-family`        | Font family.                                     |
-| `--button-font-size`          | Font size.                                       |
-| `--button-letter-spacing`     | Letter spacing.                                  |
-| `--button-padding`            | Padding.                                         |
-| `--button-shadow-color`       | Default shadow color.                            |
-| `--button-shadow-color-hover` | Shadow color on hover.                           |
-| `--button-transition`         | Transition.                                      |
+| `--button-font-family`        | Font family                                      |
+| `--button-font-size`          | Font size                                        |
+| `--button-letter-spacing`     | Letter spacing                                   |
+| `--button-padding`            | Padding                                          |
+| `--button-shadow-color`       | Default shadow color                             |
+| `--button-shadow-color-hover` | Shadow color when :hover or :focus               |
+| `--button-transition`         | Transition                                       |
 
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#slots)

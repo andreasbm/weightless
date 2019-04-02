@@ -1,14 +1,30 @@
 @import "../style/base";
 
+/* Background */
 $nav-bg: var(--nav-bg, #{$background});
+
+/* Color */
 $nav-color: var(--nav-color, #{$foreground});
+
+/* Padding */
 $nav-padding: var(--nav-padding, 0 #{$spacing-l});
+
+/* Height */
 $nav-height: var(--nav-height, #{size(70)});
+
+/* Box shadow */
 $nav-elevation: var(--nav-elevation, #{elevation(4)});
+
+/* Transition */
 $nav-transition: var(--nav-transition, background #{$transition-duration-fast} #{$transition-deceleration-curve},
 		transform #{$transition-duration-medium} #{$transition-deceleration-curve},
 		box-shadow #{$transition-duration-medium} #{$transition-deceleration-curve});
 
+/* Font size of the title slot */
 $nav-title-font-size: var(--nav-title-font-size, #{$font-size-xm});
+
+/* Font weight of the title slot */
 $nav-title-font-weight: var(--nav-title-font-weight, #{$font-weight-strong});
+
+/* Margin of the title slot */
 $nav-title-margin: var(--nav-title-margin, 0 0 0 #{$spacing-xl});

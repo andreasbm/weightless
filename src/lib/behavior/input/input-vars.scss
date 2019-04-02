@@ -1,37 +1,83 @@
 @import "../../style/base";
 
+/* Inactive state color */
 $input-state-color-inactive: var(--input-state-color-inactive, #{color("shade", $light-hue)});
-$input-state-color-active: var(--input-state-color-active, #{color("primary")});
-$input-state-color-hover: var(--input-state-border-color-hover, #{color("shade", $dark-hue)});
-$input-state-color-invalid: var(--input-state-color-invalid, #{color("error")});
-$input-state-color-disabled: var(--input-state-color-disabled, #{color("shade", 300)});
-$input-color: var(--input-color, #{$foreground});
-$input-color-disabled: var(--input-color-disabled, #{color("shade", $light-hue)});
-$input-transition: var(--input-transition, border-color #{$transition-duration-medium} #{$transition-ease}, background #{$transition-duration-medium} #{$transition-ease});
 
+/* Active state color */
+$input-state-color-active: var(--input-state-color-active, #{color("primary")});
+
+/* Hover state color */
+$input-state-color-hover: var(--input-state-border-color-hover, #{color("shade", $dark-hue)});
+
+/* Invalid state color */
+$input-state-color-invalid: var(--input-state-color-invalid, #{color("error")});
+
+/* Disabled state color */
+$input-state-color-disabled: var(--input-state-color-disabled, #{color("shade", 300)});
+
+/* Default color */
+$input-color: var(--input-color, #{$foreground});
+
+/* Default background */
 $input-bg: var(--input-bg, transparent);
+
+/* Color when disabled */
+$input-color-disabled: var(--input-color-disabled, #{color("shade", $light-hue)});
+
+/* Background when filled */
 $input-bg-filled: var(--input-bg, #{color("shade", 200)});
+
+/* Background when filled and hover */
 $input-bg-filled-hover: var(--input-bg-filled-hover, #{color("shade", 200, 0.5)});
 
+/* Transition */
+$input-transition: var(--input-transition, border-color #{$transition-duration-medium} #{$transition-ease}, background #{$transition-duration-medium} #{$transition-ease});
+
+/* Border width */
 $input-border-width: var(--input-border-width, #{size(1)});
+
+/* Border style */
 $input-border-style: var(--input-border-style, solid);
+
+/* Border style when disabled */
 $input-border-style-disabled: var(--input-border-style-disabled, dashed);
+
+/* Color of the before and after slots */
 $input-before-after-color: var(--input-before-after-color, #{color("shade", $default-hue)});
 
+/* Font size */
 $input-font-size: var(--input-font-size, #{$font-size-m});
 
+/* Left and right padding */
 $input-padding-left-right: var(--input-padding-left-right, 0);
+
+/* Top and bottom padding */
 $input-padding-top-bottom: var(--input-padding-top-bottom, #{size(8)});
 
+/* Left and right padding when outlined */
 $input-padding-left-right-outlined: var(--input-padding-left-right-outlined, #{$spacing-m});
+
+/* Border radius when filled */
 $input-border-radius-filled: var(--input-border-radius-outlined, #{$border-radius-m} #{$border-radius-m} 0 0);
+
+/* Border radius when outlined */
 $input-border-radius-outlined: var(--input-border-radius-outlined, #{$border-radius-m});
 
+/* Font family */
 $input-font-family: var(--input-font-family, #{$font-family-serif});
 
+/* Color of the label */
 $input-label-color: var(--input-label-color, #{color("shade", $dark-hue)});
+
+/* Color of the label when disabled */
 $input-label-color-disabled: var(--input-label-color-disabled, #{color("shade", $light-hue)});
+
+/* Font size of the label */
 $input-label-font-size: var(--input-label-font-size, #{$font-size-s});
+
+/* Transition of the label */
 $input-label-transition: var(--input-label-transition, top #{$transition-duration-fast} #{$transition-linear}, font-size #{$transition-duration-fast} #{$transition-linear}, transform #{$transition-duration-fast} #{$transition-linear});
+
+/* Space between label and input */
 $input-label-space: var(--input-label-space, #{size(14)});
 

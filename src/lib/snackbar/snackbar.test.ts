@@ -16,9 +16,9 @@ describe("wl-snackbar", () => {
 		$container.innerHTML = `
 			<wl-snackbar>
 			  <wl-icon slot="icon">account_box</wl-icon>
-			  <span slot="text">Your password was updated on your other device. Please sign in again.</span>
 			  <wl-button slot="action" flat inverted>Continue as guest</wl-button>
 			  <wl-button slot="action" flat inverted>Sign in</wl-button>
+			  <span>Your password was updated on your other device. Please sign in again.</span>
 			</wl-snackbar>`;
 
 		await waitForElement("wl-snackbar");

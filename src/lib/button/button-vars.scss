@@ -1,30 +1,61 @@
 @import "../style/base";
 
+// /\* (.+) \*/\n\$([^:]+): .*$\n?
+// * @cssprop --$2 - $1
+
+/* Letter spacing */
 $button-letter-spacing: var(--button-letter-spacing, #{size(2)});
+
+/* Transition */
+$button-transition: var(--button-transition, box-shadow #{$transition-duration-slow} #{$transition-ease}, background #{$transition-duration-medium} #{$transition-ease}, color #{$transition-duration-medium} #{$transition-ease});
+
+/* Padding */
+$button-padding: var(--button-padding, #{$spacing-m} #{$spacing-l});
+
+/* Font size */
+$button-font-size: var(--button-font-size, #{$font-size-m});
+
+/* Border radius */
+$button-border-radius: var(--button-border-radius, #{$border-radius-m});
+
+/* Font family */
+$button-font-family: var(--button-font-family, #{$font-family-sans-serif});
+
+/* Size of the button when fab attribute is present. */
 $button-fab-size: var(--button-fab-size, #{size(40)});
 
+/* Default color */
 $button-color: var(--button-color, #{color-contrast("primary")});
+
+/* Default background */
 $button-bg: var(--button-bg, #{color("primary")});
+
+/* Default shadow color */
 $button-shadow-color: var(--button-shadow-color, #{color("primary", $default-hue, 0.2)});
 
+/* Color when :hover or :focus */
 $button-color-hover: var(--button-color-hover, #{color-contrast("primary", $light-hue)});
+
+/* Background when :hover or :focus */
 $button-bg-hover: var(--button-bg-hover, #{color("primary", $light-hue)});
+
+/* Shadow color when :hover or :focus */
 $button-shadow-color-hover: var(--button-shadow-color-hover, #{color("primary", $default-hue, 0.5)});
 
-$button-color-active: var(--button-color-active, #{color-contrast("primary", $dark-hue)});
-$button-bg-active: var(--button-bg-active, #{color("primary", $dark-hue)});
-$button-bg-active-flat: var(--button-bg-active-flat, #{color("primary", $default-hue, 0.05)});
+/* Button color when :active */
+$button-color-active: var(--button-color-active, #{color-contrast("primary", $default-hue)});
 
+/* Background when :active */
+$button-bg-active: var(--button-bg-active, #{color("primary", $default-hue)});
+
+/* Background when :active and flat attribute is present. */
+$button-bg-active-flat: var(--button-bg-active-flat, #{color("primary", $default-hue, 0.08)});
+
+/* Color when disabled */
 $button-color-disabled: var(--button-color-disabled, #{color-contrast("shade", $light-hue)});
+
+/* Background when disabled */
 $button-bg-disabled: var(--button-bg-disabled, #{color("shade", $light-hue)});
 
+/* Border when outlined attribute is present */
 $button-border-outlined: var(--button-border-outlined, #{size(2)} solid currentColor);
-
-$button-transition: var(--button-transition, box-shadow #{$transition-duration-slow} #{$transition-ease},
-background #{$transition-duration-medium} #{$transition-ease},
-color #{$transition-duration-medium} #{$transition-ease});
-
-$button-padding: var(--button-padding, #{$spacing-m} #{$spacing-l});
-$button-font-size: var(--button-font-size, #{$font-size-m});
-$button-border-radius: var(--button-border-radius, #{$border-radius-m});
-$button-font-family: var(--button-font-family, #{$font-family-sans-serif});

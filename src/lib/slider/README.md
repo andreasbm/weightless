@@ -74,6 +74,13 @@ Make selections from a range of values.
 | `--input-state-color-inactive`        | State color when inactive.                       |
 | `--input-state-color-invalid`         | State color when invalid.                        |
 | `--input-transition`                  | Transition.                                      |
+| `--slider-bg`                         | Background of the slider track.                  |
+| `--slider-bg-active`                  | Background color of the active part of the slider track. |
+| `--slider-bg-active-disabled`         | Background color of the active part of the slider track when disabled. |
+| `--slider-bg-buffer`                  | Background color of the buffer track.            |
+| `--slider-bg-buffer-disabled`         | Background color of the buffer track when disabled. |
+| `--slider-bg-disabled`                | Background color of the slider track when disabled. |
+| `--slider-height`                     | Height of the slider track.                      |
 | `--slider-thumb-bg`                   | Background of the thumb.                         |
 | `--slider-thumb-bg-disabled`          | Background of the thumb when disabled.           |
 | `--slider-thumb-border-radius`        | Border radius of the thumb.                      |
@@ -88,13 +95,6 @@ Make selections from a range of values.
 | `--slider-thumb-size`                 | Size of the thumb.                               |
 | `--slider-thumb-transform-focus`      | Transform of the thumb when focused.             |
 | `--slider-thumb-transition`           | Transition of the thumb.                         |
-| `--slider-track-bg`                   | Background of the slider track.                  |
-| `--slider-track-bg-active`            | Background color of the active part of the slider track. |
-| `--slider-track-bg-active-disabled`   | Background color of the active part of the slider track when disabled. |
-| `--slider-track-bg-buffer`            | Background color of the buffer track.            |
-| `--slider-track-bg-buffer-disabled`   | Background color of the buffer track when disabled. |
-| `--slider-track-bg-disabled`          | Background color of the slider track when disabled. |
-| `--slider-track-height`               | Height of the slider track.                      |
 
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#slots)

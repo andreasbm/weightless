@@ -238,12 +238,12 @@ export default class PopoverPage extends LitElement {
 						template: html\`<wl-popover-card><p>This is a template!</p></wl-popover-card>\`
 					});
 				`}"></highlight-element>
-				
+			</demo-element>
+							
 			<wl-title level="3">Nested popovers</wl-title>
 			<demo-element>
-				<code-example-element>
-					<div id="toucharea" @contextmenu="${this.showContextMenu}"></div>
-				</code-example-element>
+				<p>Right-click on the grey area below.</p>
+				<div id="toucharea" @contextmenu="${this.showContextMenu}"></div>
 			</demo-element>
 			
 		`;

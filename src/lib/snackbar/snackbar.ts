@@ -171,7 +171,7 @@ export class Snackbar<R = unknown> extends OverlayBehavior<R, Partial<ISnackbarP
 			<focus-trap id="snackbar">
 				<div id="content">
 					<slot name="icon"></slot>
-					<slot name="text"></slot>
+					<slot></slot>
 				</div>
 				<div id="actions">
 					<slot name="action"></slot>

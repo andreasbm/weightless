@@ -1,21 +1,46 @@
 @import "../style/base";
 
-$expansion-bg: var(--expansion-bg, #{$background});
-$expansion-color: var(--expansion-color, #{$foreground});
-
+/* Transition */
 $expansion-transition: var(--expansion-transition, margin #{$transition-duration-slow} #{$transition-timing-function-standard-curve}, box-shadow #{$transition-duration-slow} #{$transition-timing-function-standard-curve});
+
+/* Box shadow */
 $expansion-elevation: var(--expansion-elevation, #{elevation(1, #{$shadow})});
+
+/* Box shadow when open */
 $expansion-elevation-open: var(--expansion-elevation-hover, #{elevation(4, #{$shadow})});
+
+/* Margin when open */
 $expansion-margin-open: var(--expansion-margin-open, #{$spacing-l} 0);
 
+/* Default background */
+$expansion-bg: var(--expansion-bg, #{$background});
+
+/* Default color */
+$expansion-color: var(--expansion-color, #{$foreground});
+
+/* Background of the header when :hover */
 $expansion-header-bg-hover: var(--expansion-header-bg-hover, #{color("shade", 200)});
+
+/* Color of the description slot in the header */
 $expansion-header-description-color: var(--expansion-header-description-color, #{color("shade", 500)});
+
+/* Padding of the header */
 $expansion-header-padding: var(--expansion-header-padding, 0 #{$spacing-l});
+
+/* Margin of the title slot in the header */
 $expansion-header-title-margin: var(--expansion-header-title-padding, 0 #{$spacing-l} 0 0);
+
+/* Height of the header */
 $expansion-header-height: var(--expansion-header-height, #{size(46)});
+
+/* Height of the header when open */
 $expansion-header-height-open: var(--expansion-header-height-open, #{size(56)});
+
+/* Transition of the header */
 $expansion-header-transition: var(--expansion-header-transition, height #{$transition-duration-slow} #{$transition-timing-function-standard-curve}, background #{$transition-duration-slow} #{$transition-timing-function-standard-curve});
 
+/* Padding of the content */
 $expansion-content-padding: var(--expansion-content-padding, 0 #{$spacing-l} #{$spacing-l});
 
+/* Transition of the icon */
 $expansion-icon-transition: var(--expansion-icon-transition, transform #{$transition-duration-slow} #{$transition-timing-function-standard-curve});

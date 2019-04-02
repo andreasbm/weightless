@@ -1,42 +1,79 @@
 @import "../style/base";
 
+/* Box shadow */
 $dialog-elevation: var(--dialog-elevation, #{elevation(4, #{$shadow})});
+
+/* Background */
 $dialog-bg: var(--dialog-bg, #{$background});
+
+/* Color */
 $dialog-color: var(--dialog-color, #{$foreground});
+
+/* Border radius */
 $dialog-border-radius: var(--dialog-border-radius, #{$border-radius-m});
+
+/* Will change */
 $dialog-will-change: var(--dialog-will-change, transform, opacity);
 
+/* Default width */
 $dialog-width: var(--dialog-width, auto);
+
+/* Default height */
 $dialog-height: var(--dialog-height, auto);
 
+/* Small width */
 $dialog-width-s: var(--dialog-width-s, 40%);
+
+/* Small height */
 $dialog-height-s: var(--dialog-height-s, 40%);
 
+/* Medium width */
 $dialog-width-m: var(--dialog-width-m, 50%);
+
+/* Medium height */
 $dialog-height-m: var(--dialog-height-m, 50%);
 
+/* Large width */
 $dialog-width-l: var(--dialog-width-l, 60%);
+
+/* Large height */
 $dialog-height-l: var(--dialog-height-l, 60%);
 
+/* Fullscreen width */
 $dialog-width-fullscreen: var(--dialog-width-fullscreen, 100%);
+
+/* Fullscreen height */
 $dialog-height-fullscreen: var(--dialog-height-fullscreen, 100%);
 
+/* Minimum width */
 $dialog-min-width: var(--dialog-min-width, 260px);
+
+/* Minimum height  */
 $dialog-min-height: var(--dialog-min-height, auto);
+
+/* Maximum width */
 $dialog-max-width: var(--dialog-max-width, 100vw);
+
+/* Maximum height */
 $dialog-max-height: var(--dialog-max-height, 100vh);
 
+/* Width when auto */
 $dialog-width-auto: var(--dialog-width-auto, auto);
+
+/* Height when auto */
 $dialog-height-auto: var(--dialog-height-auto, auto);
 
+/* Border when scrollable */
 $dialog-scrollable-border: var(--dialog-scrollable-border, #{size(1)} solid #{color("shade", $light-hue)});
 
-/* Header */
+/* Padding of the header slot */
 $dialog-header-padding: var(--dialog-header-padding, #{$spacing-l} #{$spacing-l} 0);
+
+/* Padding of the header slot when scrollable */
 $dialog-header-padding-scrollable: var(--dialog-header-padding-scrollable, #{$spacing-l});
 
-/* Content */
+/* Padding of the content slot  */
 $dialog-content-padding: var(--dialog-content-padding, #{$spacing-l});
 
-/* Footer */
+/* Padding of the footer slot */
 $dialog-footer-padding: var(--dialog-footer-padding, #{$spacing-m});
