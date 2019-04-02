@@ -39,6 +39,18 @@ export const defaultSnackbarConfig: ISnackbarConfig = {
 
 /**
  * Provide brief messages at the bottom of the screen.
+ * @slot icon - Icon content.
+ * @slot action - Action content (you can have multiple slots named action).
+ * @slot - Default content.
+ * @cssprop --snackbar-fixed-padding - Padding of the container when fixed
+ * @cssprop --snackbar-icon-margin - Margin of the icon slot
+ * @cssprop --snackbar-border-radius - Border radius
+ * @cssprop --snackbar-padding - Padding
+ * @cssprop --snackbar-content-padding - Padding of the content slot
+ * @cssprop --snackbar-icon-color - Color of the icon slot
+ * @cssprop --snackbar-elevation - Box shadow
+ * @cssprop --snackbar-color - Color
+ * @cssprop --snackbar-bg - Background
  */
 @customElement("wl-snackbar")
 export class Snackbar<R = unknown> extends OverlayBehavior<R, Partial<ISnackbarProperties>> implements ISnackbarProperties {

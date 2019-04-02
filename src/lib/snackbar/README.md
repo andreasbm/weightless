@@ -34,6 +34,34 @@ Provide brief messages at the bottom of the screen.
 | `didshow` | Dispatches after the overlay has been shown.  |
 
 
+[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#css-custom-properties)
+
+## ➤ CSS Custom Properties
+
+| Property                     | Description                         |
+|------------------------------|-------------------------------------|
+| `--snackbar-bg`              | Background                          |
+| `--snackbar-border-radius`   | Border radius                       |
+| `--snackbar-color`           | Color                               |
+| `--snackbar-content-padding` | Padding of the content slot         |
+| `--snackbar-elevation`       | Box shadow                          |
+| `--snackbar-fixed-padding`   | Padding of the container when fixed |
+| `--snackbar-icon-color`      | Color of the icon slot              |
+| `--snackbar-icon-margin`     | Margin of the icon slot             |
+| `--snackbar-padding`         | Padding                             |
+
+
+[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#slots)
+
+## ➤ Slots
+
+| Name     | Description                                      |
+|----------|--------------------------------------------------|
+|          | Default content.                                 |
+| `action` | Action content (you can have multiple slots named action). |
+| `icon`   | Icon content.                                    |
+
+
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#usage)
 

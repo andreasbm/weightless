@@ -30,8 +30,8 @@ describe("wl-snackbar", () => {
 		const assignedNodes = assignedNodesMap($snackbar.shadowRoot!);
 
 		expect(assignedNodes["icon"].length).to.be.above(0);
-		expect(assignedNodes["text"].length).to.be.above(0);
 		expect(assignedNodes["action"].length).to.be.above(0);
+		expect(assignedNodes[""].length).to.be.above(0);
 	});
 
 	it("should have a banner role", () => {

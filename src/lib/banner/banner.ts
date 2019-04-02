@@ -16,8 +16,8 @@ export interface IBannerProperties {
 /**
  * Display a non-interruptive message and related optional actions.
  * @slot icon - Icon content.
- * @slot text - Text content.
  * @slot action - Action content (you can have multiple slots named action).
+ * @slot - Default content.
  * @cssprop --banner-icon-margin - Margin of the icon slot.
  * @cssprop --banner-icon-color - Color of the icon.
  * @cssprop --banner-padding - Padding.
@@ -42,7 +42,7 @@ export class Banner extends LitElement implements IBannerProperties {
 		return html`
 			<div id="content">
 				<slot name="icon"></slot>
-				<slot name="text"></slot>
+				<slot></slot>
 			</div>
 			<div id="actions">
 				<slot name="action"></slot>

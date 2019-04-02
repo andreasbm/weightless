@@ -35,9 +35,9 @@ Display a non-interruptive message and related optional actions.
 
 | Name     | Description                                      |
 |----------|--------------------------------------------------|
+|          | Default content.                                 |
 | `action` | Action content (you can have multiple slots named action). |
 | `icon`   | Icon content.                                    |
-| `text`   | Text content.                                    |
 
 
 

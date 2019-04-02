@@ -30,8 +30,8 @@ describe("wl-banner", () => {
 		const assignedNodes = assignedNodesMap($banner.shadowRoot!);
 
 		expect(assignedNodes["icon"].length).to.be.above(0);
-		expect(assignedNodes["text"].length).to.be.above(0);
 		expect(assignedNodes["action"].length).to.be.above(0);
+		expect(assignedNodes[""].length).to.be.above(0);
 	});
 
 	/**
