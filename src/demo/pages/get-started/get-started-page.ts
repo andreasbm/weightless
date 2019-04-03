@@ -3,8 +3,7 @@ import { customElement, html, LitElement } from "lit-element";
 import "../../../lib/divider";
 import "../../../lib/title/title";
 import { cssResult } from "../../../lib/util/css";
-import { openCodepen } from "../../codepen";
-import { GITHUB_URL, GOOGLE_FONT_URL, MATERIAL_ICONS_URL, UNPGK_URL } from "../../constants";
+import { ALL_ELEMENTS_DEMO_URL, GITHUB_URL } from "../../constants";
 import "../../elements/code-example/code-example-element";
 import "../../elements/container/container-element";
 import "../../elements/footer/footer-element";
@@ -17,15 +16,6 @@ import styles from "./get-started-page.scss";
 export default class GetStartedPage extends LitElement {
 
 	static styles = [sharedStyles, cssResult(styles)];
-
-	private openPlayground (e: Event) {
-		e.preventDefault();
-		openCodepen({
-			html: `<wl-button>Button</wl-button>`,
-			js_external: `${UNPGK_URL}`,
-			css_external: `${MATERIAL_ICONS_URL};${GOOGLE_FONT_URL}`
-		});
-	}
 
 	protected render () {
 		return html`
@@ -58,7 +48,7 @@ export default class GetStartedPage extends LitElement {
 				<ul>
 					<li>Go to the <router-link path="/elements/button"><a href="" rel="noopener" @click="${(e: Event) => e.preventDefault()}">elements overview</a></router-link>.</li>
 					<li>Check out the <a href="${GITHUB_URL}" target="_blank">Github repository</a>.</li>
-					<li>Try out the library in the <a href="#" @click="${this.openPlayground}">playground</a>.</li>
+					<li>Try out the library in the <a href="${ALL_ELEMENTS_DEMO_URL}" target="_blank">playground</a>.</li>
 					<li>Run <code>npm init web-config new my-project --lit</code> to quickly setup a project with weightless.</li>
 				</ul>
 

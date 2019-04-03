@@ -24,4 +24,7 @@ export * from "./tooltip";
 export * from "./list-item";
 export * from "./expansion";
 export * from "./snackbar";
+export * from "./switch";
 export * from "./slider";
+export * from "./tab";
+export * from "./tab-group";

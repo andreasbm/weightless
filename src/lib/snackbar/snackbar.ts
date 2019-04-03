@@ -180,7 +180,7 @@ export class Snackbar<R = unknown> extends OverlayBehavior<R, Partial<ISnackbarP
 	protected render (): TemplateResult {
 		return html`
 			<wl-backdrop id="backdrop" @click="${this.clickAway}"></wl-backdrop>
-			<focus-trap id="snackbar">
+			<focus-trap id="snackbar" ?inactive="${!this.open || this.disableFocusTrap}">
 				<div id="content">
 					<slot name="icon"></slot>
 					<slot></slot>
