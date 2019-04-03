@@ -13,11 +13,10 @@ a {
 
 #menu {
 	width: $elements-page-menu-width;
-	background: $background;
+	background: color("shade", 200, 0.5);
 	padding: $spacing-s;
 	overflow-y: auto;
 	flex-shrink: 0;
-	border-right: #{size(1)} solid #{color("shade", $light-hue)};
 	position: fixed;
 	left: 0;
 	top: var(--nav-height);
