@@ -37,32 +37,6 @@
 	align-items: center;
 	justify-content: center;
 }
-
-#dialog {
-
-	width: var(--_dialog-width);
-	height: var(--_dialog-height);
-
-	box-shadow: $dialog-elevation;
-	border-radius: $dialog-border-radius;
-	background: $dialog-bg;
-	color: $dialog-color;
-	will-change: $dialog-will-change;
-	transform: translateZ(0);
-
-	padding: 0;
-	margin: 0;
-	outline: none;
-	display: flex;
-	flex-direction: column;
-	align-items: stretch;
-	border: none;
-	overflow-y: auto;
-
-	position: relative;
-	z-index: 1;
-}
-
 ::slotted([slot="header"]) {
 	--h-margin: 0;
 	padding: $dialog-header-padding;
@@ -85,6 +59,7 @@
 
 :host([fixed]) {
 	z-index: $dialog-z-index;
+	will-change: transform, opacity;
 	position: fixed;
 	top: 0;
 	left: 0;
@@ -128,4 +103,26 @@
 	}
 }
 
+#dialog {
+
+	width: var(--_dialog-width);
+	height: var(--_dialog-height);
+
+	box-shadow: $dialog-elevation;
+	border-radius: $dialog-border-radius;
+	background: $dialog-bg;
+	color: $dialog-color;
+
+	padding: 0;
+	margin: 0;
+	outline: none;
+	display: flex;
+	flex-direction: column;
+	align-items: stretch;
+	border: none;
+	overflow-y: auto;
+
+	position: relative;
+	z-index: 1;
+}
 

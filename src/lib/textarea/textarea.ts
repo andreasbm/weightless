@@ -17,6 +17,8 @@ export interface ITextareaProperties extends ITextfieldBehaviorProperties {
 
 /**
  * Multiline text fields.
+ * --textarea-resize - Resizing strategy of the textarea.
+ * --textarea-height - Height of the textarea.
  */
 @customElement("wl-textarea")
 export class Textarea extends TextfieldBehavior implements ITextareaProperties {
@@ -83,11 +85,14 @@ export class Textarea extends TextfieldBehavior implements ITextareaProperties {
 	}
 
 	/**
-	 * Sets the height of the form element.
+	 * Sets the height of the form element while respecting a potential user set CSS property.
 	 * @param height
 	 */
 	protected setHeight (height?: number) {
-		this.$formElement.style.minHeight = this.$formElement.style.height = height == null ? null : `${height}px`;
+		this.$formElement.style.setProperty(
+			`--_textarea-height`,
+			`var(--textarea-height${height == null ? `` : `,${height}px`})`
+		);
 	}
 
 	/**

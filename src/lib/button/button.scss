@@ -61,6 +61,7 @@
 	--_button-color: #{$button-color-hover};
 	--_button-bg: #{$button-bg-hover};
 	--_button-shadow-color: #{$button-shadow-color-hover};
+	will-change: background, color, box-shadow;
 }
 
 :host(:active) {

@@ -20,8 +20,12 @@
 }
 
 :host(:not([open]):not([disabled]):hover), :host(:not([open]):focus) {
+	will-change: height, margin, box-shadow;
+	transform: translateZ(0);
+
 	#header {
 		background: $expansion-header-bg-hover;
+		will-change: background;
 	}
 }
 

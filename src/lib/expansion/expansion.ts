@@ -177,7 +177,7 @@ export class Expansion extends RadioBehavior implements IExpansionProperties {
 	 */
 	protected render (): TemplateResult {
 		return html`
-			<header id="header" tabindex="0"  aria-labelledby="title">
+			<header id="header" tabindex="0" aria-labelledby="title">
 				<div id="title">
 					<slot name="title"></slot>
 					<slot name="description"></slot>

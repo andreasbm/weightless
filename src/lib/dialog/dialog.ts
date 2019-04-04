@@ -63,7 +63,6 @@ export const defaultDialogConfig: IDialogConfig = {
  * @cssprop --dialog-color - Color.
  * @cssprop --dialog-border-radius - Border radius.
  * @cssprop --dialog-z-index - z-index.
- * @cssprop --dialog-will-change - Will change.
  * @cssprop --dialog-width - Default width.
  * @cssprop --dialog-height - Default height.
  * @cssprop --dialog-width-s - Small width.

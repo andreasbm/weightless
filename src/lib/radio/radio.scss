@@ -35,7 +35,11 @@
 }
 
 :host(:hover), :host(:focus) {
-	will-change: border, background-color;
+	will-change: border, background;
+
+	#dot {
+		will-change: transform, background;
+	}
 }
 
 :host([disabled]) {

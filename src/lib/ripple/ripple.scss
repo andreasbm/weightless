@@ -28,6 +28,7 @@
 	opacity: $ripple-opacity;
 	border-radius: 100%;
 	pointer-events: none;
+	will-change: opacity, transform;
 }
 
 

@@ -12,9 +12,6 @@ $dialog-color: var(--dialog-color, #{$foreground});
 /* Border radius */
 $dialog-border-radius: var(--dialog-border-radius, #{$border-radius-m});
 
-/* Will change */
-$dialog-will-change: var(--dialog-will-change, transform, opacity);
-
 /* Default width */
 $dialog-width: var(--dialog-width, auto);
 

@@ -3,5 +3,11 @@
 @import "textarea-vars";
 
 ::slotted(textarea) {
-	resize: none;
+	height: var(--_textarea-height, #{$textarea-height});
+	min-height: var(--_textarea-height, #{$textarea-height});
+	resize: $textarea-resize;
+}
+
+:host(:hover) ::slotted(textarea), :host(:focus) ::slotted(textarea) {
+	will-change: height;
 }

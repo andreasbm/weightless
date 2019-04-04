@@ -43,7 +43,7 @@
 }
 
 :host(:hover), :host(:focus) {
-	will-change: border, background-color;
+	will-change: border, background;
 
 	#checkmark-path {
 		will-change: stroke-dashoffset;

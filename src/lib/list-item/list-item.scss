@@ -31,6 +31,7 @@
 :host(:hover), :host(:focus) {
 	--_list-item-color: #{$list-item-color-hover};
 	--_list-item-bg: #{$list-item-bg-hover};
+	will-change: background, color;
 }
 
 :host([active]:focus), :host([active]:hover) {

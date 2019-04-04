@@ -26,6 +26,7 @@
 :host(:hover), :host(:focus) {
   --_tab-color: #{$tab-color-hover};
   --_tab-bg: #{$tab-bg-hover};
+  will-change: background, color;
 }
 
 :host([checked]:focus), :host([checked]:hover) {
