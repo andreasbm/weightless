@@ -2,67 +2,61 @@
 @import "palette";
 
 /**
- * Returns a color from a palette.
+ * Returns a HSL string with fallback.
  */
-@function _get-color($name, $hue: $default-hue, $palette-map: $palette-map) {
-	@return get-entry(get-entry($palette-map, $name), $hue);
-}
+@function construct-hsl ($hsl-var-name, $hue-var-name, $hsl, $alpha: null) {
+	$h: nth($hsl, 1);
+	$s: nth($hsl, 2);
+	$l: nth($hsl, 3);
 
-/**
- * Returns a contrast color to a color from a palette.
- */
-@function _get-color-contrast($name, $hue: $default-hue, $palette-map: $palette-map) {
-	$contrast: get-entry(get-entry($palette-map, $name), "contrast");
-
-	// If the match is NOT a match we can simply return the match because it is then a color.
-	@if (type-of($contrast) != map) {
-		@return $contrast;
+	@if ($alpha and $alpha != 1) {
+		@return #{'hsla(var(--#{$hsl-var-name}, var(--#{$hue-var-name}, #{$h}), #{$s}, #{$l}), #{$alpha})'};
 
 	} @else {
-		@return get-entry($contrast, $hue);
+		@return #{'hsl(var(--#{$hsl-var-name}, var(--#{$hue-var-name}, #{$h}), #{$s}, #{$l}))'};
 	}
 }
 
 /**
- * Returns a dynamic color which is bound to a CSS variable.
+ * Returns a color variable with fallback.
  */
-@function _get-dynamic-color($name, $hue: $default-hue, $palette-map: $palette-map) {
-	@return #{'var(--#{$name}-#{$hue}, #{_get-color($name, $hue, $palette-map)})'};
+@function hsl-fallback ($palette, $name, $hue: 500, $alpha: null) {
+	@return construct-hsl(
+			$hsl-var-name: #{$name}-#{$hue},
+			$hue-var-name: #{$name}-hue,
+			$hsl: get-entry($palette, $hue),
+			$alpha: $alpha
+	);
 }
 
 /**
- * Returns a dynamic color contrast which is bound to a CSS variable.
+ * Returns a color contrast variable with fallback.
  */
-@function _get-dynamic-color-contrast($name, $hue: $default-hue, $palette-map: $palette-map) {
-	@return #{'var(--#{$name}-#{$hue}-contrast, #{_get-color-contrast($name, $hue, $palette-map)})'};
+@function hsl-contrast-fallback ($palette, $name, $hue: 500, $alpha: null) {
+	@return construct-hsl(
+			$hsl-var-name: #{$name}-#{$hue}-contrast,
+			$hue-var-name: #{$name}-hue-contrast,
+			$hsl: get-mapped-entry($palette, "contrast", $hue),
+			$alpha: $alpha
+	);
 }
 
 /**
  * Returns a color variable.
  */
 @function color ($name, $hue: $default-hue, $alpha: null, $palette-map: $palette-map) {
-	$dynamic-color: _get-dynamic-color($name, $hue, $palette-map);
-	@if ($alpha and $alpha >= 0 and $alpha < 1) {
-		@return #{'rgba(#{$dynamic-color}, #{$alpha})'};
-
-	} @else {
-		@return #{'rgb(#{$dynamic-color})'};
-	}
+	$palette: get-entry($palette-map, $name);
+	@return hsl-fallback($palette, $name, $hue, $alpha);
 }
 
 /**
  * Returns a color contrast variable.
  */
 @function color-contrast ($name, $hue: $default-hue, $alpha: null, $palette-map: $palette-map) {
-	$dynamic-color-contrast: _get-dynamic-color-contrast($name, $hue, $palette-map);
-	@if ($alpha and $alpha >= 0 and $alpha < 1) {
-		@return #{'rgba(#{$dynamic-color-contrast}, #{$alpha})'};
-
-	} @else {
-		@return #{'rgb(#{$dynamic-color-contrast})'};
-	}
+	$palette: get-entry($palette-map, $name);
+	@return hsl-contrast-fallback($palette, $name, $hue, $alpha);
 }
 
-$foreground: var(--foreground, rgb(13, 13, 13));
-$background: var(--background, rgb(255, 255, 255));
-$shadow: var(--shadow, rgba(0, 0, 0, 0.2));
+$foreground: var(--foreground, hsl(0, 0%, 5%));
+$background: var(--background, hsl(0, 100%, 100%));
+$shadow: var(--shadow, hsla(0, 0%, 0%, 0.2));

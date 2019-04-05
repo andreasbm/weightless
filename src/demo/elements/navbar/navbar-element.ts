@@ -19,36 +19,36 @@ import "../theme/theme-element";
 import styles from "./navbar-element.scss";
 
 const greyPalette: Palette = {
-	200: "230, 230, 230",
-	300: "191, 191, 191",
-	400: "153, 153, 153",
-	500: "155, 155, 155",
-	600: "77, 77, 77",
-	700: "38, 38, 38",
+	200: [200, 4, 90],
+	300: [200, 4, 75],
+	400: [200, 4, 60],
+	500: [200, 4, 61],
+	600: [200, 4, 30],
+	700: [200, 4, 15],
 	"contrast": {
-		200: "0, 0, 0",
-		300: "0, 0, 0",
-		400: "255, 255, 255",
-		500: "255, 255, 255",
-		600: "255, 255, 255",
-		700: "255, 255, 255"
+		200: [0, 0, 0],
+		300: [0, 0, 0],
+		400: [360, 100, 100],
+		500: [360, 100, 100],
+		600: [360, 100, 100],
+		700: [360, 100, 100]
 	}
 };
 
 const greyReversedPalette: Palette = {
-	700: "230, 230, 230",
-	600: "191, 191, 191",
-	500: "153, 153, 153",
-	400: "155, 155, 155",
-	300: "77, 77, 77",
-	200: "38, 38, 38",
+	700: [200, 4, 90],
+	600: [200, 4, 75],
+	500: [200, 4, 60],
+	400: [200, 4, 61],
+	300: [200, 4, 30],
+	200: [200, 4, 15],
 	"contrast": {
-		700: "0, 0, 0",
-		600: "0, 0, 0",
-		500: "255, 255, 255",
-		400: "255, 255, 255",
-		300: "255, 255, 255",
-		200: "255, 255, 255"
+		700: [0, 0, 0],
+		600: [0, 0, 0],
+		500: [360, 100, 100],
+		400: [360, 100, 100],
+		300: [360, 100, 100],
+		200: [360, 100, 100]
 	}
 };
 
@@ -79,10 +79,10 @@ export class ThemeComponent extends Nav {
 
 	private toggleDarkMode () {
 		this.darkMode = !this.darkMode;
-		const foreground = this.darkMode ? `white` : `rgb(13, 13, 13)`;
-		const background = this.darkMode ? `rgb(13, 13, 13)` : `white`;
+		const foreground = this.darkMode ? `hsl(0, 100%, 100%)` : `hsl(0, 0%, 5%)`;
+		const background = this.darkMode ? `hsl(0, 0%, 5%)` : `hsl(0, 100%, 100%)`;
 		const shade = this.darkMode ? greyReversedPalette : greyPalette;
-		const shadow = this.darkMode ? `rgba(255, 255, 255, 0.6)` : `rgba(0, 0, 0, 0.2)`;
+		const shadow = this.darkMode ? `hsla(360, 100%, 100%, 0.6)` : `hsla(0, 0%, 0%, 0.2)`;
 
 		setProperty("--foreground", foreground);
 		setProperty("--background", background);

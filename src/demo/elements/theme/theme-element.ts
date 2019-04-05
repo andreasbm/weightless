@@ -1,12 +1,12 @@
 import { customElement, html, LitElement } from "lit-element";
 import { repeat } from "lit-html/directives/repeat";
+import "../../../lib/icon/icon";
 import { ENTER } from "../../../lib/util/constant/keycode";
 import { cssResult } from "../../../lib/util/css";
-import { removeColor, setColor } from "../../../lib/util/theme";
+import { colorKey, colorValue, removeColor, setColor } from "../../../lib/util/theme";
 import { sharedStyles } from "../../style/shared";
 import styles from "./theme-element.scss";
-import "../../../lib/icon/icon";
-import { contrastColor, hexToRGB, shadeColor } from "./theme-helpers";
+import { contrastColor, hexToRGB, rgbToHSL, shadeColor } from "./theme-helpers";
 
 const themeClass = (themeName: string) => {
 	return `theme-${themeName}`;
@@ -16,22 +16,21 @@ const setThemeColor = (hex: string) => {
 	const rgb = hexToRGB(hex);
 	const contrastRgb = contrastColor(rgb);
 
-	setColor("primary", 400, shadeColor(rgb, 5));
-	setColor("primary", 500, rgb);
-	setColor("primary", 600, shadeColor(rgb, -5));
-
-	setColor("primary", 400, contrastRgb, {isContrast: true});
-	setColor("primary", 500, contrastRgb, {isContrast: true});
-	setColor("primary", 600, contrastRgb, {isContrast: true});
+	setColor("primary", "400", rgbToHSL(shadeColor(rgb, -10)));
+	setColor("primary", "500", rgbToHSL(rgb));
+	setColor("primary", "600", rgbToHSL(shadeColor(rgb, 10)));
+	setColor("primary", "400", rgbToHSL(contrastRgb), {isContrast: true});
+	setColor("primary", "500", rgbToHSL(contrastRgb), {isContrast: true});
+	setColor("primary", "600", rgbToHSL(contrastRgb), {isContrast: true});
 };
 
 const removeCustomTheme = () => {
-	removeColor("primary", 400);
-	removeColor("primary", 500);
-	removeColor("primary", 600);
-	removeColor("primary", 400, {isContrast: true});
-	removeColor("primary", 500, {isContrast: true});
-	removeColor("primary", 600, {isContrast: true});
+	removeColor("primary", "400");
+	removeColor("primary", "500");
+	removeColor("primary", "600");
+	removeColor("primary", "400", {isContrast: true});
+	removeColor("primary", "500", {isContrast: true});
+	removeColor("primary", "600", {isContrast: true});
 };
 
 interface ITheme {
@@ -74,11 +73,18 @@ export class ThemeComponent extends LitElement {
 					 tabIndex="0"
 					 @keydown="${(e: KeyboardEvent) => e.code === ENTER ? this.setTheme(theme.name) : null}"
 					 style="background: ${theme.baseColor}"
-					 @click="${() => {this.setTheme(theme.name); this.dispatchUpdate()}}">
+					 @click="${() => {
+			this.setTheme(theme.name);
+			this.dispatchUpdate();
+		}}">
 					${theme.name === this.currentThemeName ? html`<wl-icon>check</wl-icon>` : ""}	 
 				</div>
 			`)}
-			<input id="custom-color-picker" type="color" value="#57FFAC" @change="${(e: Event) => {this.currentThemeName = ""; setThemeColor((<HTMLInputElement>e.target).value); this.requestUpdate().then()}}" />
+			<input id="custom-color-picker" type="color" value="#57FFAC" @change="${(e: Event) => {
+			this.currentThemeName = "";
+			setThemeColor((<HTMLInputElement>e.target).value);
+			this.requestUpdate().then();
+		}}" />
 		`;
 	}
 }

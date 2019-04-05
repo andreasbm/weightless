@@ -18,7 +18,7 @@ $navbar-octo-size: var(--navbar-octo-size, var(--nav-height));
 		height: #{size(35)};
 		width: #{size(35)};
 		transform-origin: center center;
-		fill: #{'rgb(var(--primary-500, 132, 165, 255))'};
+		fill: #{'hsl(var(--primary-500, 224, 47%, 38%))'};
 	}
 
 	#text {

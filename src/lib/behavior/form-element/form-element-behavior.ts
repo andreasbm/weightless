@@ -1,6 +1,5 @@
 import styles from "form-element-behavior.scss";
 import { LitElement, property } from "lit-element";
-import { StyleInfo } from "lit-html/src/directives/style-map";
 import { sharedStyles } from "../../style/shared";
 import { updateTabindex } from "../../util/aria";
 import { cssResult } from "../../util/css";

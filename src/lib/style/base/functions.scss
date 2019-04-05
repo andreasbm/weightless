@@ -69,6 +69,23 @@
   @return $value;
 }
 
+/**
+	Returns the value associated with a key from the map.
+	If traverses the maps until a value that is not a map is found.
+	@param {Map} $map
+	@param {String} $key
+	@return {Any}
+ */
+@function get-mapped-entry ($map, $key, $optionalKey) {
+	$value: get-entry($map, $key);
+	@if (type-of($value) != map) {
+		@return $value;
+
+	} @else {
+		@return get-entry($value, $optionalKey);
+	}
+}
+
 @function to-string($value) {
 	@return inspect($value);
 }

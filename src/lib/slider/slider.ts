@@ -21,6 +21,7 @@ export interface ISliderProperties extends IInputBehaviorProperties {
 /**
  * Make selections from a range of values.
  * @slot thumb-label - Optional slot for the thumb label.
+ * @event change - Dispatched every time the value changes.
  * @cssprop --slider-bg - Background of the slider track.
  * @cssprop --slider-bg-buffer - Background color of the buffer track.
  * @cssprop --slider-bg-active - Background color of the active part of the slider track.
@@ -154,10 +155,13 @@ export class Slider extends InputBehavior implements ISliderProperties {
 	protected sliderValueChanged () {
 		this.value = this.$slider.value;
 		this.requestUpdate().then();
+		this.dispatchEvent(new CustomEvent("change", {detail: this.value}));
 	}
 
 	/**
-	 * Renders the form element
+	 * Renders the form element.
+	 * The reason we need to create two different range sliders is because the pseudo selectors of
+	 * a range input cannot be styled using the ::slotted(..) selector.
 	 */
 	protected renderFormElement (id?: string, style?: string, onInput?: ((e: Event) => void)): TemplateResult {
 		return html`

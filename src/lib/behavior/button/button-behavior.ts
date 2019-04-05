@@ -1,6 +1,5 @@
 import { html, property, TemplateResult } from "lit-element";
 import { ifDefined } from "lit-html/directives/if-defined";
-import { styleMap } from "lit-html/directives/style-map";
 import { Ripple } from "../../ripple/ripple";
 import { ENTER, SPACE } from "../../util/constant/keycode";
 import { cssResult } from "../../util/css";

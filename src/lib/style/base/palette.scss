@@ -1,128 +1,157 @@
+@import "functions";
+
+/*
+###### USAGE ####
+Index 0: hue
+Index 1: saturation
+Index 2: lightning
+
+$test-palette: (
+		400: (224, 42%, 52%),
+		500: (224, 47%, 38%),
+		600: (224, 49%, 30%),
+		contrast: (0, 100%, 100%)
+);
+
+Contrast can be a map if you want to specify a contrast color for each hue.
+
+$test-palette: (
+		400: (224, 42%, 52%),
+		500: (224, 47%, 38%),
+		600: (224, 49%, 30%),
+		contrast: (
+			400: (0, 0%, 0%),
+			500: (0, 100%, 100%),
+			600: (0, 100%, 100%)
+		)
+);
+ */
+
 $light-hue: 400;
 $default-hue: 500;
 $dark-hue: 600;
 
-$black-rgb: "0, 0, 0";
-$white-rgb: "255, 255, 255";
+$black-hsl: (0, 0%, 0%);
+$white-hsl: (0, 100%, 100%);
 
 $palette-black: (
-		400: $black-rgb,
-		500: $black-rgb,
-		600: $black-rgb,
-		"contrast": $white-rgb
+		400: $black-hsl,
+		500: $black-hsl,
+		600: $black-hsl,
+		"contrast": $white-hsl
 );
 
 $palette-white: (
-		400: $white-rgb,
-		500: $white-rgb,
-		600: $white-rgb,
-		"contrast": $white-rgb
+		400: $white-hsl,
+		500: $white-hsl,
+		600: $white-hsl,
+		"contrast": $white-hsl
 );
 
 $palette-black-dirty: (
-		400: "28, 18, 18",
-		500: "23, 23, 23",
-		600: "10, 10, 10",
-		"contrast": $white-rgb
+		400: (0, 22%, 9%),
+		500: (0, 0%, 9%),
+		600: (0, 0%, 4%),
+		"contrast": $white-hsl
 );
 
 $palette-white-dirty: (
-		400: "245, 246, 252",
-		500: "246, 247, 251",
-		600: "193, 200, 227",
-		"contrast": $white-rgb
+		400: (231, 54%, 97%),
+		500: (228, 38%, 97%),
+		600: (228, 38%, 82%),
+		"contrast": $white-hsl
 );
 
 $palette-grey: (
-		200: "242, 243, 251",
-		300: "227, 230, 237",
-		400: "199, 203, 208",
-		500: "170, 177, 186",
-		600: "119, 130, 146",
-		700: "79, 82, 95",
+		200: (233, 53%, 97%),
+		300: (222, 22%, 91%),
+		400: (213, 9%, 80%),
+		500: (214, 10%, 70%),
+		600: (216, 11%, 52%),
+		700: (229, 9%, 34%),
 		"contrast": (
-				200: $black-rgb,
-				300: $black-rgb,
-				400: $white-rgb,
-				500: $white-rgb,
-				600: $white-rgb,
-				700: $white-rgb
+				200: $black-hsl,
+				300: $black-hsl,
+				400: $white-hsl,
+				500: $white-hsl,
+				600: $white-hsl,
+				700: $white-hsl
 		)
 );
 
 $palette-cobalt: (
-		400: "86, 93, 250",
-		500: "19, 47, 242",
-		600: "0, 37, 204",
-		"contrast": $white-rgb
+		400: (237, 94%, 66%),
+		500: (232, 90%, 51%),
+		600: (229, 100%, 40%),
+		"contrast": $white-hsl
 );
 
 $palette-red: (
-		400: "243, 94, 132",
-		500: "233, 30, 99",
-		600: "204, 0, 89",
-		"contrast": $white-rgb
+		400: (345, 86%, 66%),
+		500: (340, 82%, 52%),
+		600: (334, 100%, 40%),
+		"contrast": $white-hsl
 );
 
 $palette-orange: (
-		400: "255, 207, 99",
-		500: "255, 167, 38",
-		600: "204, 120, 4",
-		"contrast": $white-rgb
+		400: (42, 100%, 69%),
+		500: (36, 100%, 57%),
+		600: (35, 96%, 41%),
+		"contrast": $white-hsl
 );
 
 $palette-royal-blue: (
-		400: "80, 108, 183",
-		500: "52, 77, 144",
-		600: "39, 59, 113",
-		"contrast": $white-rgb
+		400: (224, 42%, 52%),
+		500: (224, 47%, 38%),
+		600: (224, 49%, 30%),
+		"contrast": $white-hsl
 );
 
 $palette-tasty-pineapple: (
-		400: "255, 205, 125",
-		500: "255, 183, 69",
-		600: "179, 129, 45",
-		"contrast": $white-rgb
+		400: (37, 100%, 75%),
+		500: (37, 100%, 64%),
+		600: (38, 60%, 44%),
+		"contrast": $white-hsl
 );
 
 $palette-blood-orange: (
-		400: "240, 122, 105",
-		500: "231, 53, 44",
-		600: "165, 34, 28",
-		"contrast": $white-rgb
+		400: (8, 82%, 68%),
+		500: (3, 80%, 54%),
+		600: (3, 71%, 38%),
+		"contrast": $white-hsl
 );
 
 $palette-dark-asphalt: (
-		200: "230, 230, 230",
-		300: "191, 191, 191",
-		400: "153, 153, 153",
-		500: "155, 155, 155",
-		600: "77, 77, 77",
-		700: "38, 38, 38",
+		200: (200, 4%, 90%),
+		300: (200, 4%, 75%),
+		400: (200, 4%, 60%),
+		500: (200, 4%, 61%),
+		600: (200, 4%, 30%),
+		700: (200, 4%, 15%),
 		"contrast": (
-				200: $black-rgb,
-				300: $black-rgb,
-				400: $white-rgb,
-				500: $white-rgb,
-				600: $white-rgb,
-				700: $white-rgb
+				200: $black-hsl,
+				300: $black-hsl,
+				400: $white-hsl,
+				500: $white-hsl,
+				600: $white-hsl,
+				700: $white-hsl
 		)
 );
 
 $palette-dark-asphalt-inverted: (
-		200: "38, 38, 38",
-		300: "77, 77, 77",
-		400: "155, 155, 155",
-		500: "153, 153, 153",
-		600: "191, 191, 191",
-		700: "230, 230, 230",
+		200: get-entry($palette-dark-asphalt, 700),
+		300: get-entry($palette-dark-asphalt, 600),
+		400: get-entry($palette-dark-asphalt, 500),
+		500: get-entry($palette-dark-asphalt, 400),
+		600: get-entry($palette-dark-asphalt, 300),
+		700: get-entry($palette-dark-asphalt, 200),
 		"contrast": (
-				200: $white-rgb,
-				300: $white-rgb,
-				400: $white-rgb,
-				500: $white-rgb,
-				600: $black-rgb,
-				700: $black-rgb
+				200: $white-hsl,
+				300: $white-hsl,
+				400: $white-hsl,
+				500: $white-hsl,
+				600: $black-hsl,
+				700: $black-hsl
 		)
 );
 
