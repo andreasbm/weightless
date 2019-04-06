@@ -1,6 +1,6 @@
 {
 	"name": "weightless",
-	"version": "0.0.21",
+	"version": "0.0.22",
 	"license": "MIT",
 	"module": "index.js",
 	"main": "index.js",
