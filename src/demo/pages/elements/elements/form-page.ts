@@ -65,12 +65,10 @@ export default class FormPage extends LitElement {
 		const $input = e.target as HTMLInputElement;
 		$input.setCustomValidity(``);
 		$input.checkValidity();
-		console.log("RESET", e);
 	}
 
 	private validate (e: Event) {
 		const $input = e.target as HTMLInputElement;
-		console.log("OMG!!", e);
 		switch ($input.name) {
 			case "age":
 				console.log($input.validity);

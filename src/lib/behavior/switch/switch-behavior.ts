@@ -97,8 +97,8 @@ export abstract class SwitchBehavior extends FormElementBehavior implements ISwi
 	 */
 	protected attachListeners () {
 		this.listeners.push(
-			addListener(this.eventTarget, "click", this.onClick),
-			addListener(this.eventTarget, "keydown", this.onKeyDown)
+			addListener(this.eventTarget, "click", this.onClick.bind(this)),
+			addListener(this.eventTarget, "keydown", this.onKeyDown.bind(this))
 		);
 	}
 

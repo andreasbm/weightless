@@ -232,7 +232,7 @@ export class Ripple extends LitElement implements IRippleProperties {
 		// Only if the target is present or if the ripple is NOT focusable we attach the release listeners.
 		if (this.target != null && !this.focusable) {
 			this.rippleAnimationListeners.push(
-				addListener(window, "mouseup", this.releaseRipple, {passive: true})
+				addListener(window, "mouseup", this.releaseRipple.bind(this), {passive: true})
 			);
 		}
 
