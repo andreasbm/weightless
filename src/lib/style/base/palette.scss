@@ -122,36 +122,44 @@ $palette-blood-orange: (
 );
 
 $palette-dark-asphalt: (
+		100: (100, 4%, 95%),
 		200: (200, 4%, 90%),
 		300: (200, 4%, 75%),
 		400: (200, 4%, 60%),
-		500: (200, 4%, 61%),
+		500: (200, 4%, 50%),
 		600: (200, 4%, 30%),
 		700: (200, 4%, 15%),
+		800: (200, 4%, 10%),
 		"contrast": (
+				100: $black-hsl,
 				200: $black-hsl,
 				300: $black-hsl,
 				400: $white-hsl,
 				500: $white-hsl,
 				600: $white-hsl,
-				700: $white-hsl
+				700: $white-hsl,
+				800: $white-hsl
 		)
 );
 
 $palette-dark-asphalt-inverted: (
+		100: get-entry($palette-dark-asphalt, 800),
 		200: get-entry($palette-dark-asphalt, 700),
 		300: get-entry($palette-dark-asphalt, 600),
 		400: get-entry($palette-dark-asphalt, 500),
 		500: get-entry($palette-dark-asphalt, 400),
 		600: get-entry($palette-dark-asphalt, 300),
 		700: get-entry($palette-dark-asphalt, 200),
+		800: get-entry($palette-dark-asphalt, 100),
 		"contrast": (
-				200: $white-hsl,
-				300: $white-hsl,
-				400: $white-hsl,
-				500: $white-hsl,
-				600: $black-hsl,
-				700: $black-hsl
+				100: get-mapped-entry($palette-dark-asphalt, "contrast", 800),
+				200: get-mapped-entry($palette-dark-asphalt, "contrast", 700),
+				300: get-mapped-entry($palette-dark-asphalt, "contrast", 600),
+				400: get-mapped-entry($palette-dark-asphalt, "contrast", 500),
+				500: get-mapped-entry($palette-dark-asphalt, "contrast", 400),
+				600: get-mapped-entry($palette-dark-asphalt, "contrast", 300),
+				700: get-mapped-entry($palette-dark-asphalt, "contrast", 200),
+				800: get-mapped-entry($palette-dark-asphalt, "contrast", 100)
 		)
 );
 

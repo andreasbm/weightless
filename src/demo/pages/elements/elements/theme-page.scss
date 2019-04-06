@@ -56,6 +56,10 @@ $color-size: #{size(150)};
 		color: #{color-contrast("error", 600)};
 	}
 
+	&.shade-100 {
+		background: #{color("shade", 100)};
+		color: #{color-contrast("shade", 100)};
+	}
 	&.shade-200 {
 		background: #{color("shade", 200)};
 		color: #{color-contrast("shade", 200)};
@@ -79,5 +83,9 @@ $color-size: #{size(150)};
 	&.shade-700 {
 		background: #{color("shade", 700)};
 		color: #{color-contrast("shade", 700)};
+	}
+	&.shade-800 {
+		background: #{color("shade", 800)};
+		color: #{color-contrast("shade", 800)};
 	}
 }

@@ -15,7 +15,7 @@ import styles from "./theme-page.scss";
 
 const requiredColors = ["primary", "error", "shade"];
 const requiredDefaultHues = [400, 500, 600];
-const requiredShadeHues = [200, 300, 400, 500, 600, 700];
+const requiredShadeHues = [100, 200, 300, 400, 500, 600, 700, 800];
 
 @customElement("theme-page")
 export default class ThemePage extends LitElement {

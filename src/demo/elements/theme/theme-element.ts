@@ -25,6 +25,7 @@ const setThemeColor = (hex: string) => {
 };
 
 const removeCustomTheme = () => {
+	removeColor("primary", "hue");
 	removeColor("primary", "400");
 	removeColor("primary", "500");
 	removeColor("primary", "600");
