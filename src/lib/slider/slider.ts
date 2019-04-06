@@ -21,7 +21,6 @@ export interface ISliderProperties extends IInputBehaviorProperties {
 /**
  * Make selections from a range of values.
  * @slot thumb-label - Optional slot for the thumb label.
- * @event change - Dispatched every time the value changes.
  * @cssprop --slider-bg - Background of the slider track.
  * @cssprop --slider-bg-buffer - Background color of the buffer track.
  * @cssprop --slider-bg-active - Background color of the active part of the slider track.
@@ -34,6 +33,7 @@ export interface ISliderProperties extends IInputBehaviorProperties {
  * @cssprop --slider-thumb-bg-disabled - Background of the thumb when disabled.
  * @cssprop --slider-thumb-focus-ring-size - Size of the thumb focus ring.
  * @cssprop --slider-thumb-size - Size of the thumb.
+ * @cssprop --slider-thumb-space - Space between slider track and thumb label.
  * @cssprop --slider-thumb-transition - Transition of the thumb.
  * @cssprop --slider-thumb-transform-focus - Transform of the thumb when focused.
  * @cssprop --slider-thumb-border-radius - Border radius of the thumb.
@@ -155,7 +155,6 @@ export class Slider extends InputBehavior implements ISliderProperties {
 	protected sliderValueChanged () {
 		this.value = this.$slider.value;
 		this.requestUpdate().then();
-		this.dispatchEvent(new CustomEvent("change", {detail: this.value}));
 	}
 
 	/**
@@ -196,7 +195,7 @@ export class Slider extends InputBehavior implements ISliderProperties {
 					<div id="label">${this.label}</div>
 					<div id="slot-wrapper">
 						${this.renderFormElement("slider", undefined, this.sliderValueChanged)}
-						${this.thumbLabel ? html`<div id="thumb-label"><slot name="thumb-label">${this.value}</slot></div>` : undefined}
+						${this.thumbLabel ? html`<div id="thumb-container"><div id="thumb-label"><slot name="thumb-label">${this.value}</slot></div></div>` : undefined}
 						<slot id="slot"></slot>
 					</div>
 					${this.renderFormElement(this.formElementId, `display: none`)}

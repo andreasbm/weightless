@@ -39,9 +39,14 @@
 	margin: 0;
 	border-radius: 0;
 
-	/* Move the slider a bit up to center it */
+	// Move the slider a bit up to center it in the wrapper.
 	top: calc((#{$slider-height} * -1) / 2);
 	position: relative;
+}
+
+#thumb-container {
+	position: relative;
+	width: 100%;
 }
 
 #thumb-label {
@@ -64,7 +69,6 @@
 	font-size: $slider-thumb-label-font-size;
 	transition: $slider-thumb-label-transition;
 	opacity: 0;
-	bottom: 100%;
 	position: absolute;
 	display: flex;
 	align-items: center;
@@ -72,7 +76,10 @@
 	pointer-events: none;
 	text-overflow: ellipsis;
 
-	/* Add droplet shape */
+	// Move the label above the thumb dot.
+	bottom: calc(100% + #{$slider-thumb-size} + #{$slider-height} + #{$slider-thumb-space});
+
+	// Add droplet shape.
 	&:before {
 		content: "";
 		background: $slider-thumb-label-bg;
@@ -87,8 +94,8 @@
 	}
 }
 
-#slider:focus + #thumb-label {
-	/* Animate the thumb label in */
+#slider:focus + #thumb-container > #thumb-label {
+	// Animate the thumb label in
 	--_thumb-label-transform-y: 0;
 	opacity: 1;
 }
@@ -104,6 +111,10 @@
 	appearance: none;
 	border: none;
 	cursor: grab;
+
+	// Required to center the thumb on the track
+	position: relative;
+	top: -1px;
 }
 
 @mixin slider-thumb-focus-styles () {

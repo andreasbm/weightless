@@ -36,6 +36,9 @@ $slider-thumb-focus-ring-size: var(--slider-thumb-focus-ring-size, #{size(12)});
 /* Size of the thumb */
 $slider-thumb-size: var(--slider-thumb-size, #{size(12)});
 
+/* Space between slider track and thumb label */
+$slider-thumb-space: var(--slider-thumb-space, #{$spacing-m});
+
 /* Transition of the thumb */
 $slider-thumb-transition: var(--slider-thumb-transition, transform #{$transition-duration-fast} #{$transition-deceleration-curve}, box-shadow #{$transition-duration-fast} #{$transition-deceleration-curve});
 

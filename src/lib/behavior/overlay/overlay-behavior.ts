@@ -166,31 +166,21 @@ export abstract class OverlayBehavior<R, C extends Partial<IOverlayBehaviorBaseP
 	};
 
 	/**
-	 * Hooks up the component.
-	 */
-	connectedCallback () {
-		super.connectedCallback();
-
-		// Bind the relevant functions to the instance of the class
-		this.onKeyDown = this.onKeyDown.bind(this);
-		this.didShow = this.didShow.bind(this);
-		this.didHide = this.didHide.bind(this);
-		this.updatePosition = this.updatePosition.bind(this);
-		this.clickAway = this.clickAway.bind(this);
-	}
-
-	/**
 	 * Focuses on the first element of the overlay.
 	 */
 	trapFocus () {
 		if (this.$focusTrap != null) {
-
-			// Store the current active element so we can restore the focus on that element when the overlay is closed.
-			this.activeElementBeforeOpen = <HTMLElement | undefined>traverseActiveElements();
-
-			// Trap the focus on the first element of the overlay.
+			this.storeCurrentActiveElement();
 			this.$focusTrap.focusFirstElement();
 		}
+	}
+
+	/**
+	 * Store the current active element so we can restore
+	 * the focus on that element when the overlay is closed.
+	 */
+	storeCurrentActiveElement () {
+		this.activeElementBeforeOpen = <HTMLElement | undefined>traverseActiveElements();
 	}
 
 	/**
@@ -345,10 +335,10 @@ export abstract class OverlayBehavior<R, C extends Partial<IOverlayBehaviorBaseP
 
 		// Listen for events on when to update the position of the overlay
 		this.listeners.push(
-			addListener(this.scrollContainer, "scroll", this.updatePosition, {passive: true}),
+			addListener(this.scrollContainer, "scroll", this.updatePosition.bind(this), {passive: true}),
 
 			// Either attach a resize observer or fallback to listening to window resizes
-			"ResizeObserver" in window ? onSizeChanged(this, this.updatePosition, {debounceMs: 100}) : addListener(window, "resize", this.updatePosition, {passive: true})
+			"ResizeObserver" in window ? onSizeChanged(this, this.updatePosition.bind(this), {debounceMs: 100}) : addListener(window, "resize", this.updatePosition.bind(this), {passive: true})
 		);
 
 		this.pauseAnimations();
@@ -391,7 +381,7 @@ export abstract class OverlayBehavior<R, C extends Partial<IOverlayBehaviorBaseP
 	protected didShow () {
 		this.activeInAnimations.length = 0;
 		this.listeners.push(
-			addListener(this, "keydown", this.onKeyDown)
+			addListener(this, "keydown", this.onKeyDown.bind(this))
 		);
 
 		// Focus the first element if element should be trap

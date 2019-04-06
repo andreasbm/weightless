@@ -3,8 +3,9 @@
 @import "textarea-vars";
 
 ::slotted(textarea) {
-	height: var(--_textarea-height, #{$textarea-height});
-	min-height: var(--_textarea-height, #{$textarea-height});
+	height: var(--textarea-height, var(--_textarea-height));
+	min-height: var(--textarea-min-height, var(--textarea-height, var(--_textarea-height)));
+	max-height: $textarea-max-height;
 	resize: $textarea-resize;
 }
 

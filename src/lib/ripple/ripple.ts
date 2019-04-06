@@ -146,11 +146,6 @@ export class Ripple extends LitElement implements IRippleProperties {
 	 */
 	connectedCallback () {
 		super.connectedCallback();
-
-		this.spawnRipple = this.spawnRipple.bind(this);
-		this.releaseRipple = this.releaseRipple.bind(this);
-		this.onFocusIn = this.onFocusIn.bind(this);
-		this.onFocusOut = this.onFocusOut.bind(this);
 		this.addListeners();
 	}
 
@@ -182,9 +177,9 @@ export class Ripple extends LitElement implements IRippleProperties {
 	protected addListeners () {
 		if (this.target == null) return;
 		this.listeners.push(
-			addListener(this.target, "mousedown", this.spawnRipple, {passive: true}),
-			addListener(this.target, "focusin", this.onFocusIn, {passive: true}),
-			addListener(this.target, "focusout", this.onFocusOut, {passive: true})
+			addListener(this.target, "mousedown", this.spawnRipple.bind(this), {passive: true}),
+			addListener(this.target, "focusin", this.onFocusIn.bind(this), {passive: true}),
+			addListener(this.target, "focusout", this.onFocusOut.bind(this), {passive: true})
 		);
 	}
 

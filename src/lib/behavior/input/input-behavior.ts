@@ -11,7 +11,8 @@ import styles from "./input-behavior.scss";
  * Events the input can dispatch.
  */
 export enum InputBehaviorEvent {
-	SUBMIT = "submit"
+	SUBMIT = "submit",
+	INVALID = "invalid"
 }
 
 /**
@@ -28,6 +29,8 @@ export interface IInputBehaviorProperties extends IFormElementBehaviorProperties
 /**
  * Provides input behavior that interacts with forms.
  * @event submit - Dispatched when the enter key is hit while pressing ctrl or the meta-key.
+ * @event invalid - Dispatched when the input becomes invalid.
+ * @event input - Dispatches from the native input event each time the input changes.
  * @slot before - Content before the input.
  * @slot after - Content after the input.
  * @cssprop --input-state-color-inactive - State color when inactive.
@@ -145,14 +148,12 @@ export abstract class InputBehavior extends FormElementBehavior implements IInpu
 	 */
 	protected firstUpdated (props: Map<keyof IInputBehaviorProperties, unknown>) {
 		super.firstUpdated(<Map<keyof IFormElementBehaviorProperties, unknown>>props);
-		this.onKeyDown = this.onKeyDown.bind(this);
-		this.onInput = this.onInput.bind(this);
-		this.onBlur = this.onBlur.bind(this);
 
 		this.listeners.push(
-			addListener(this.$formElement, "keydown", this.onKeyDown, {passive: true}),
-			addListener(this.$formElement, "input", this.onInput, {passive: true}),
-			addListener(this.$formElement, "focusout", this.onBlur, {passive: true})
+			addListener(this.$formElement, "keydown", this.onKeyDown.bind(this), {passive: true}),
+			addListener(this.$formElement, "input", this.onInput.bind(this), {passive: true}),
+			addListener(this.$formElement, "focusout", this.onBlur.bind(this), {passive: true}),
+			addListener(this.$formElement, "invalid", this.onInvalid.bind(this), {passive: true})
 		);
 
 		// Set the initial value after the native form element has been created.
@@ -208,6 +209,15 @@ export abstract class InputBehavior extends FormElementBehavior implements IInpu
 	}
 
 	/**
+	 * Dispatches an invalid event.
+	 * We have to "redispatch" it because the native one doesn't bubble.
+	 * @param e
+	 */
+	protected onInvalid (e: Event) {
+		this.dispatchInputEvent(InputBehaviorEvent.INVALID);
+	}
+
+	/**
 	 * Handles the on blur event.
 	 */
 	protected onBlur () {
@@ -234,10 +244,18 @@ export abstract class InputBehavior extends FormElementBehavior implements IInpu
 		switch (e.code) {
 			case ENTER:
 				if (e.ctrlKey || e.metaKey) {
-					this.dispatchEvent(new CustomEvent(InputBehaviorEvent.SUBMIT, {composed: true, bubbles: true}));
+					this.dispatchInputEvent(InputBehaviorEvent.SUBMIT);
 				}
 				break;
 		}
+	}
+
+	/**
+	 * Dispatches an input behavior event.
+	 * @param e
+	 */
+	protected dispatchInputEvent (e: InputBehaviorEvent) {
+		this.dispatchEvent(new CustomEvent(e, {composed: true}));
 	}
 
 	/**

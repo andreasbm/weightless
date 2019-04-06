@@ -38,12 +38,9 @@ export abstract class ButtonBehavior extends FormElementBehavior implements IBut
 	connectedCallback () {
 		super.connectedCallback();
 
-		this.onClick = this.onClick.bind(this);
-		this.onKeyDown = this.onKeyDown.bind(this);
-
 		this.listeners.push(
-			addListener(this, "click", this.onClick),
-			addListener(this, "keydown", this.onKeyDown)
+			addListener(this, "click", this.onClick.bind(this)),
+			addListener(this, "keydown", this.onKeyDown.bind(this))
 		);
 	}
 

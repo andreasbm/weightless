@@ -8,6 +8,6 @@ $elevation-map: (
 	4: "0px 8px 16px 0"
 );
 
-@function elevation($z-index, $color: #{color("shade", 700, 0.2)}) {
+@function elevation($z-index, $color: $shadow) {
 	@return #{"var(--elevation-#{$z-index}, #{get-entry($elevation-map, $z-index)} #{$color})"};
 }

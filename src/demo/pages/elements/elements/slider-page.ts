@@ -38,7 +38,7 @@ export default class SliderPage extends LitElement {
 			<wl-title level="3">Outlined</wl-title>
 			<demo-element>
 				<code-example-element>
-					<wl-slider outlined></wl-slider>
+					<wl-slider outlined thumblabel></wl-slider>
 					<wl-slider outlined label="Label"></wl-slider>
 				</code-example-element>
 			</demo-element>

@@ -33,9 +33,8 @@ export class Select extends InputBehavior implements ISelectProperties {
 	 */
 	firstUpdated (props: Map<keyof ISelectProperties, unknown>) {
 		super.firstUpdated(<Map<keyof IInputBehaviorProperties, unknown>>props);
-		this.updateOptions = this.updateOptions.bind(this);
 		this.listeners.push(
-			addListener(this.$slot, "slotchange", this.updateOptions, {passive: true})
+			addListener(this.$slot, "slotchange", this.updateOptions.bind(this), {passive: true})
 		);
 
 		this.updateOptions();

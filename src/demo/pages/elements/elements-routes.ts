@@ -71,8 +71,17 @@ export const COMPONENTS_ROUTES: IRoute<IRouteData>[] = [
 		component: () => import("./elements/expansion-page"),
 		data: {
 			title: "Expansion",
-			desc: "Provide an expandable details-summary view",
+			desc: "Provide an expandable details-summary view.",
 			img: iconPath("expansion")
+		}
+	},
+	{
+		path: "form",
+		component: () => import("./elements/form-page"),
+		data: {
+			title: "Form",
+			desc: "Interact with the native <form> element to validate the inputs.",
+			img: iconPath("form")
 		}
 	},
 	{

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.3 (57544) - http://www.bohemiancoding.com/sketch -->
+    <title>form</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="form" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <path d="M2,2 L22,2 L22,9 L2,9 L2,2 Z M4,4 L4,7 L20,7 L20,4 L4,4 Z" id="Combined-Shape" fill="#000000"></path>
+        <path d="M2,10 L22,10 L22,17 L2,17 L2,10 Z M4,12 L4,15 L20,15 L20,12 L4,12 Z" id="Combined-Shape" fill="#000000"></path>
+        <rect id="Rectangle-2" fill="#000000" fill-rule="nonzero" x="2" y="18" width="11" height="4"></rect>
+    </g>
+</svg>

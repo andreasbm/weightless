@@ -1,7 +1,6 @@
 import { property } from "lit-element";
 import { cssResult } from "../../util/css";
 import { IInputBehaviorProperties, InputBehavior } from "../input/input-behavior";
-import { InputType } from "./input-type";
 import styles from "./textfield-behavior.scss";
 
 /**
@@ -9,9 +8,8 @@ import styles from "./textfield-behavior.scss";
  */
 export interface ITextfieldBehaviorProperties extends IInputBehaviorProperties {
 	pattern?: string;
-	maxLength?: number;
 	minLength?: number;
-	type: InputType;
+	maxLength?: number;
 	list?: string;
 }
 
@@ -22,26 +20,21 @@ export abstract class TextfieldBehavior extends InputBehavior implements ITextfi
 	static styles = [...InputBehavior.styles, cssResult(styles)];
 
 	/**
-	 * Type of the input.
-	 * @attr
-	 */
-	@property({type: String, reflect: true}) type: InputType = "text";
-
-	/**
 	 * Value pattern.
 	 * @attr
 	 */
-	@property({type: String, reflect: true}) pattern?: string;
+	@property({type: String}) pattern?: string;
 
 	/**
 	 * Min value length.
 	 * @attr
 	 */
-	@property({type: Number, reflect: true}) minLength?: number;
+	@property({type: Number}) minLength?: number;
 
 	/**
 	 * Max value length.
 	 * @attr
 	 */
-	@property({type: Number, reflect: true}) maxLength?: number;
+	@property({type: Number}) maxLength?: number;
+
 }

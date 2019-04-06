@@ -122,14 +122,15 @@ $palette-blood-orange: (
 );
 
 $palette-dark-asphalt: (
-		100: (100, 4%, 95%),
-		200: (200, 4%, 90%),
-		300: (200, 4%, 75%),
-		400: (200, 4%, 60%),
-		500: (200, 4%, 50%),
-		600: (200, 4%, 30%),
-		700: (200, 4%, 15%),
-		800: (200, 4%, 10%),
+		100: (100, 4%, 95%), // +10
+		200: (200, 4%, 85%), // +10
+		300: (200, 4%, 75%), // +10
+		400: (200, 4%, 65%), // +10
+		500: (200, 4%, 55%), // +20
+		600: (200, 4%, 35%), // +10
+		700: (200, 4%, 25%), // +10
+		800: (200, 4%, 15%), // +10
+		900: (200, 4%, 5%),
 		"contrast": (
 				100: $black-hsl,
 				200: $black-hsl,
@@ -138,7 +139,8 @@ $palette-dark-asphalt: (
 				500: $white-hsl,
 				600: $white-hsl,
 				700: $white-hsl,
-				800: $white-hsl
+				800: $white-hsl,
+				900: $white-hsl
 		)
 );
 
@@ -152,14 +154,15 @@ $palette-dark-asphalt-inverted: (
 		700: get-entry($palette-dark-asphalt, 200),
 		800: get-entry($palette-dark-asphalt, 100),
 		"contrast": (
-				100: get-mapped-entry($palette-dark-asphalt, "contrast", 800),
-				200: get-mapped-entry($palette-dark-asphalt, "contrast", 700),
-				300: get-mapped-entry($palette-dark-asphalt, "contrast", 600),
-				400: get-mapped-entry($palette-dark-asphalt, "contrast", 500),
-				500: get-mapped-entry($palette-dark-asphalt, "contrast", 400),
-				600: get-mapped-entry($palette-dark-asphalt, "contrast", 300),
-				700: get-mapped-entry($palette-dark-asphalt, "contrast", 200),
-				800: get-mapped-entry($palette-dark-asphalt, "contrast", 100)
+				100: get-mapped-entry($palette-dark-asphalt, "contrast", 900),
+				200: get-mapped-entry($palette-dark-asphalt, "contrast", 800),
+				300: get-mapped-entry($palette-dark-asphalt, "contrast", 700),
+				400: get-mapped-entry($palette-dark-asphalt, "contrast", 600),
+				500: get-mapped-entry($palette-dark-asphalt, "contrast", 500),
+				600: get-mapped-entry($palette-dark-asphalt, "contrast", 400),
+				700: get-mapped-entry($palette-dark-asphalt, "contrast", 300),
+				800: get-mapped-entry($palette-dark-asphalt, "contrast", 200),
+				900: get-mapped-entry($palette-dark-asphalt, "contrast", 100)
 		)
 );
 

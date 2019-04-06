@@ -23,7 +23,10 @@ export default class ThemePage extends LitElement {
 	static styles = [sharedStyles, cssResult(styles)];
 
 	private updateHue (name: string, e: CustomEvent) {
-		setProperty(`--${name}-hue`, e.detail);
+		const hue = (e.target as HTMLInputElement).value;
+		requestAnimationFrame(() => {
+			setProperty(`--${name}-hue`, hue);
+		});
 	}
 
 	protected render () {
@@ -31,7 +34,7 @@ export default class ThemePage extends LitElement {
 			<br/>
 			<wl-title level="3">Colors</wl-title>
 			<p>It is super simple to customize the elements with a few lines of code. You can change almost everything by defining CSS variables. Let's say you want to change the primary color, then you could define <code>--primary-hue: 224;</code> in a one-liner or be more specific with <code>--primary-400: 224, 42%, 52%; --primary-500: 224, 47%, 38%; --primary-600: 224, 49%, 30%;</code>. All colors are specified in HSL (hue, saturation, lightness). You can read more about it <a href="https://chromatichq.com/blog/understanding-and-using-hsl-your-css" target="_blank">here</a>. Play with the slider below to change the hue. Hue is a degree on the color wheel from 0 to 360. 0 is red, 120 is green, 240 is blue.</p>
-			<wl-slider min="0" max="360" value="224" thumbLabel @change="${(e: CustomEvent) => this.updateHue("primary", e)}"></wl-slider>
+			<wl-slider min="0" max="360" value="224" thumbLabel @input="${(e: CustomEvent) => this.updateHue("primary", e)}"></wl-slider>
 			
 			<div id="colors">
 				${repeat(requiredColors, color => html`

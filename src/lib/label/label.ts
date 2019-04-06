@@ -55,10 +55,9 @@ export class Label extends LitElement implements ILabelProperties {
 	 */
 	firstUpdated (props: PropertyValues) {
 		super.firstUpdated(props);
-		this.refireClick = this.refireClick.bind(this);
 
 		this.listeners.push(
-			addListener(this, "click", this.refireClick)
+			addListener(this, "click", this.refireClick.bind(this))
 		);
 
 		this.updateAria();
@@ -78,7 +77,7 @@ export class Label extends LitElement implements ILabelProperties {
 	getTargetElement (): Element | null {
 
 		// Only continue of a target was specified
-		if (this.for == null || this.for.length === 0) {
+		if (this.for == null) {
 			const $elements = getSlottedElements(this.shadowRoot!);
 			return $elements.length > 0 ? $elements[0] : null;
 		}

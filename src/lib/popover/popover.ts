@@ -163,17 +163,6 @@ export class Popover<R = unknown> extends OverlayBehavior<R, IPopoverConfig> imp
 	}
 
 	/**
-	 * Hooks up the element.
-	 */
-	connectedCallback () {
-		super.connectedCallback();
-		this.updatePosition = this.updatePosition.bind(this);
-		this.onKeyDown = this.onKeyDown.bind(this);
-		this.show = this.show.bind(this);
-		this.onContainerClick = this.onContainerClick.bind(this);
-	}
-
-	/**
 	 * Tears down the component.
 	 */
 	disconnectedCallback () {
@@ -282,8 +271,8 @@ export class Popover<R = unknown> extends OverlayBehavior<R, IPopoverConfig> imp
 	 */
 	protected attachClickAwayListeners () {
 		this.clickAwayListeners.push(
-			addClickAwayListener([this.$container], this.clickAway),
-			addListener(this.$container, "click", this.onContainerClick)
+			addClickAwayListener([this.$container], this.clickAway.bind(this)),
+			addListener(this.$container, "click", this.onContainerClick.bind(this))
 		);
 	}
 
