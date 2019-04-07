@@ -2,7 +2,7 @@ import { html, property, TemplateResult } from "lit-element";
 import { AriaRole } from "../../util/aria";
 import { ENTER } from "../../util/constant/keycode";
 import { cssResult } from "../../util/css";
-import { renderAttributes, traverseActiveElements } from "../../util/dom";
+import { renderAttributes } from "../../util/dom";
 import { addListener } from "../../util/event";
 import { FormElement, FormElementBehavior, IFormElementBehaviorProperties } from "../form-element/form-element-behavior";
 import styles from "./input-behavior.scss";

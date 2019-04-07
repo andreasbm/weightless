@@ -4,7 +4,7 @@ import { sharedStyles } from "../../style/shared";
 import { updateTabindex } from "../../util/aria";
 import { cssResult } from "../../util/css";
 import { renderAttributes } from "../../util/dom";
-import { addListener, EventListenerSubscription, removeListeners } from "../../util/event";
+import { EventListenerSubscription, removeListeners } from "../../util/event";
 import { uniqueID } from "../../util/unique";
 
 export type FormElement =
