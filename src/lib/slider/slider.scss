@@ -94,13 +94,15 @@
 	}
 }
 
-#slider:focus + #thumb-container > #thumb-label {
-	// Animate the thumb label in
-	--_thumb-label-transform-y: 0;
-	opacity: 1;
+:host:focus, #slider:focus + #thumb-container {
+	#thumb-label {
+		// Animate the thumb label in
+		--_thumb-label-transform-y: 0;
+		opacity: 1;
+	}
 }
 
-@mixin slider-thumb-styles () {
+@mixin slider-thumb-styles() {
 	background: var(--_slider-thumb-bg);
 	width: $slider-thumb-size;
 	height: $slider-thumb-size;
@@ -117,14 +119,27 @@
 	top: -1px;
 }
 
-@mixin slider-thumb-focus-styles () {
+@mixin slider-thumb-focus-styles() {
 	transform: $slider-thumb-transform-focus;
 	box-shadow: 0 0 0 $slider-thumb-focus-ring-size $slider-thumb-focus-ring-bg;
 }
 
 /* We had to split the styles into two declarations for some reason */
-#slider::-webkit-slider-thumb {@include slider-thumb-styles();}
-#slider::-moz-range-thumb {@include slider-thumb-styles();}
+#slider::-webkit-slider-thumb {
+	@include slider-thumb-styles();
+}
 
-#slider:focus::-webkit-slider-thumb {@include slider-thumb-focus-styles()};
-#slider:focus::-moz-range-thumb {@include slider-thumb-focus-styles()};
+#slider::-moz-range-thumb {
+	@include slider-thumb-styles();
+}
+
+#slider:focus::-webkit-slider-thumb {
+	@include slider-thumb-focus-styles()
+}
+
+;
+#slider:focus::-moz-range-thumb {
+	@include slider-thumb-focus-styles()
+}
+
+;

@@ -2,9 +2,9 @@ import { html, property, TemplateResult } from "lit-element";
 import { AriaRole } from "../../util/aria";
 import { ENTER } from "../../util/constant/keycode";
 import { cssResult } from "../../util/css";
-import { renderAttributes } from "../../util/dom";
+import { renderAttributes, traverseActiveElements } from "../../util/dom";
 import { addListener } from "../../util/event";
-import { FormElementBehavior, IFormElementBehaviorProperties } from "../form-element/form-element-behavior";
+import { FormElement, FormElementBehavior, IFormElementBehaviorProperties } from "../form-element/form-element-behavior";
 import styles from "./input-behavior.scss";
 
 /**
@@ -18,7 +18,7 @@ export enum InputBehaviorEvent {
 /**
  * Properties of the input.
  */
-export interface IInputBehaviorProperties extends IFormElementBehaviorProperties{
+export interface IInputBehaviorProperties extends IFormElementBehaviorProperties {
 	outlined: boolean;
 	role: AriaRole;
 	filled: boolean;
@@ -128,6 +128,14 @@ export abstract class InputBehavior extends FormElementBehavior implements IInpu
 	}
 
 	/**
+	 * The element that the user interacts with.
+	 * This will most likely be the form element.
+	 */
+	protected get $interactiveElement (): FormElement {
+		return this.$formElement;
+	}
+
+	/**
 	 * Returns whether the component is pristine or has been touched.
 	 */
 	private _pristine = true;
@@ -173,6 +181,9 @@ export abstract class InputBehavior extends FormElementBehavior implements IInpu
 
 	/**
 	 * Creates a root that delegates the focus.
+	 * As of now the delegating of focus only works in Chrome.
+	 * We will have to come up with another solution for other browsers since they
+	 * currently have to tab twice to reach the interactive element.
 	 */
 	protected createRenderRoot () {
 		return this.attachShadow({mode: "open", delegatesFocus: true});
@@ -182,7 +193,7 @@ export abstract class InputBehavior extends FormElementBehavior implements IInpu
 	 * Focuses the form element.
 	 */
 	focus () {
-		this.$formElement.focus();
+		this.$interactiveElement.focus();
 	}
 
 	/**

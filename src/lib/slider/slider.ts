@@ -1,5 +1,6 @@
 import { customElement, html, property, query, TemplateResult } from "lit-element";
 import { ifDefined } from "lit-html/directives/if-defined";
+import { FormElement } from "../behavior/form-element/form-element-behavior";
 import { IInputBehaviorProperties, InputBehavior } from "../behavior/input/input-behavior";
 import { AriaRole } from "../util/aria";
 import { cssResult } from "../util/css";
@@ -102,6 +103,13 @@ export class Slider extends InputBehavior implements ISliderProperties {
 	@query("#slider") protected $slider!: HTMLInputElement;
 
 	/**
+	 * The element that the user interacts with.
+	 */
+	protected get $interactiveElement (): FormElement {
+		return this.$slider;
+	}
+
+	/**
 	 * Value in percentage.
 	 */
 	get perc () {
@@ -162,7 +170,10 @@ export class Slider extends InputBehavior implements ISliderProperties {
 	 * The reason we need to create two different range sliders is because the pseudo selectors of
 	 * a range input cannot be styled using the ::slotted(..) selector.
 	 */
-	protected renderFormElement (id?: string, style?: string, onInput?: ((e: Event) => void)): TemplateResult {
+	protected renderFormElement (id?: string,
+	                             style?: string,
+	                             onInput?: ((e: Event) => void),
+	                             tabIndex?: string): TemplateResult {
 		return html`
 			<input
 				type="range"
@@ -179,7 +190,7 @@ export class Slider extends InputBehavior implements ISliderProperties {
 				max="${ifDefined(this.max)}"
 				step="${ifDefined(this.step)}"
 				@input="${ifDefined(onInput)}"
-				tabindex="${this.disabled ? "-1" : "0"}"
+				tabindex="${tabIndex || this.disabled ? "-1" : "0"}"
 			/>
 		`;
 	}
@@ -198,7 +209,7 @@ export class Slider extends InputBehavior implements ISliderProperties {
 						${this.thumbLabel ? html`<div id="thumb-container"><div id="thumb-label"><slot name="thumb-label">${this.value}</slot></div></div>` : undefined}
 						<slot id="slot"></slot>
 					</div>
-					${this.renderFormElement(this.formElementId, `display: none`)}
+					${this.renderFormElement(this.formElementId, `display: none`, undefined, "-1")}
 				</div>
 				<slot id="after" name="after"></slot>
 			</div>

@@ -4,7 +4,7 @@ import { sharedStyles } from "../../style/shared";
 import { updateTabindex } from "../../util/aria";
 import { cssResult } from "../../util/css";
 import { renderAttributes } from "../../util/dom";
-import { EventListenerSubscription, removeListeners } from "../../util/event";
+import { addListener, EventListenerSubscription, removeListeners } from "../../util/event";
 import { uniqueID } from "../../util/unique";
 
 export type FormElement =
@@ -123,14 +123,6 @@ export abstract class FormElementBehavior extends LitElement implements IFormEle
 	}
 
 	/**
-	 * Tears down the component.
-	 */
-	disconnectedCallback () {
-		super.disconnectedCallback();
-		removeListeners(this.listeners);
-	}
-
-	/**
 	 * Checks the validity of the form element.
 	 */
 	checkValidity (): boolean {
@@ -145,7 +137,6 @@ export abstract class FormElementBehavior extends LitElement implements IFormEle
 		return this.$formElement.setCustomValidity(error);
 	}
 
-
 	/**
 	 * When the form element first updates we add the form element to the light DOM.
 	 * @param props
@@ -153,9 +144,17 @@ export abstract class FormElementBehavior extends LitElement implements IFormEle
 	protected firstUpdated (props: Map<keyof IFormElementBehaviorProperties, unknown>) {
 		super.firstUpdated(props);
 
-		// Move the form element to the light DOM
+		// Move the form element to the light DOM so it can interact with the forms.
 		this.$formElement = this.queryFormElement();
 		this.appendChild(this.$formElement);
+	}
+
+	/**
+	 * Tears down the component.
+	 */
+	disconnectedCallback () {
+		super.disconnectedCallback();
+		removeListeners(this.listeners);
 	}
 
 	/**
