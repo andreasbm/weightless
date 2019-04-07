@@ -1,11 +1,13 @@
 @import "functions";
 @import "theme";
+@import "size";
 
 $elevation-map: (
-	1: "0px 1px 3px 0px",
-	2: "0px 2px 4px 0",
-	3: "0px 5px 10px 0",
-	4: "0px 8px 16px 0"
+	1: "0px #{size(5)} #{size(10)} #{size(-2)}",
+	2: "0px #{size(6)} #{size(12)} #{size(-2)}",
+	3: "0px #{size(7)} #{size(14)} #{size(-2)}",
+	4: "0px #{size(8)} #{size(16)} #{size(-2)}",
+	5: "0px #{size(9)} #{size(18)} #{size(-2)}",
 );
 
 @function elevation($z-index, $color: $shadow) {

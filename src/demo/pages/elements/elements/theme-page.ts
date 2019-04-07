@@ -16,6 +16,7 @@ import styles from "./theme-page.scss";
 const requiredColors = ["primary", "error", "shade"];
 const requiredDefaultHues = [400, 500, 600];
 const requiredShadeHues = [100, 200, 300, 400, 500, 600, 700, 800];
+const elevationIndicies = [1,2,3,4,5];
 
 @customElement("theme-page")
 export default class ThemePage extends LitElement {
@@ -80,6 +81,15 @@ export default class ThemePage extends LitElement {
 					<option value="1.2">1.2x</option>
 				</wl-select>
 			</demo-element>
+			
+			<wl-title level="3">SCSS functions</wl-title>
+			<p>Weightless comes with a lot of convenient SCSS functions. If you use SCSS in your build pipeline you are recommended to use them.</p>
+			<wl-title level="4">Shadows</wl-title>
+			<div id="elevations">
+				${repeat(elevationIndicies, i => html`
+					<div class="elevation"></div>
+				`)}
+			</div>
 		`;
 	}
 }

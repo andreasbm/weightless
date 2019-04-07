@@ -121,6 +121,7 @@
 	align-items: stretch;
 	border: none;
 	overflow-y: auto;
+	overscroll-behavior: contain;
 
 	position: relative;
 	z-index: 1;

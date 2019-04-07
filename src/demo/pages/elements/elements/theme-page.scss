@@ -89,3 +89,31 @@ $color-size: #{size(150)};
 		color: #{color-contrast("shade", 800)};
 	}
 }
+
+#elevations {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(size(200), 1fr));
+	grid-gap: size(30);
+	margin: 0 0 $spacing-l;
+}
+
+.elevation {
+	height: size(200);
+	background: $background;
+
+	&:nth-child(1) {
+		box-shadow: elevation(1);
+	}
+	&:nth-child(2) {
+		box-shadow: elevation(2);
+	}
+	&:nth-child(3) {
+		box-shadow: elevation(3);
+	}
+	&:nth-child(4) {
+		box-shadow: elevation(4);
+	}
+	&:nth-child(5) {
+		box-shadow: elevation(5);
+	}
+}

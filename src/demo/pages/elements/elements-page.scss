@@ -21,6 +21,7 @@ a {
 	left: 0;
 	top: var(--nav-height);
 	height: calc(100vh - var(--nav-height));
+	overscroll-behavior: contain;
 }
 
 :host-context(.darkmode) {
