@@ -10,10 +10,13 @@ const outLib = "dist";
  * @returns {Promise<void>}
  */
 async function postBuild () {
-	rewrite(outLib);
+	await rewrite(outLib);
 	copyFile("./package.json", `./${outLib}/package.json`);
 	copyFile("./README.md", `./${outLib}/README.md`);
-	copyFile("./src/lib/style", `./${outLib}/src/lib/style`);
+
+	// Copy the SASS files
+	copyFile("./src/lib/style/base", `./${outLib}/style/base`);
+	copyFile("./src/lib/style/base.scss", `./${outLib}/style/base.scss`);
 }
 
 /**
@@ -48,25 +51,29 @@ function isSCSS (path) {
  * @param path
  */
 function rewrite (path) {
-	glob(`${path}/**/*.{ts,scss}`, {}, function (err, files) {
+	return new Promise(res => {
+		glob(`${path}/**/*.{ts,scss}`, {}, (err, files) => {
 
-		// Check if an error occurred.
-		if (err) {
-			throw err;
-		}
-
-		// Rewrite each file
-		for (const file of files) {
-
-			// Don't rewrite declaration files
-			if (isDeclaration(file)) {
-				continue;
+			// Check if an error occurred.
+			if (err) {
+				throw err;
 			}
 
-			rewriteFile(file);
-			replaceExt(file, ".js");
-		}
-	})
+			// Rewrite each file
+			for (const file of files) {
+
+				// Don't rewrite declaration files
+				if (isDeclaration(file)) {
+					continue;
+				}
+
+				rewriteFile(file);
+				replaceExt(file, ".js");
+			}
+
+			res();
+		});
+	});
 }
 
 /**
