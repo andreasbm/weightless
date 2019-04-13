@@ -1,4 +1,4 @@
-import { customElement, html, property, TemplateResult } from "lit-element";
+import { customElement, html, TemplateResult } from "lit-element";
 import { ifDefined } from "lit-html/directives/if-defined";
 import { IFormElementBehaviorProperties } from "../behavior/form-element";
 import { ITextfieldBehaviorProperties, TextfieldBehavior } from "../behavior/textfield/textfield-behavior";
@@ -11,8 +11,6 @@ import styles from "./textarea.scss";
  * Properties of the textarea.
  */
 export interface ITextareaProperties extends ITextfieldBehaviorProperties {
-	rows?: number;
-	cols?: number;
 }
 
 /**
@@ -25,18 +23,6 @@ export interface ITextareaProperties extends ITextfieldBehaviorProperties {
 @customElement("wl-textarea")
 export class Textarea extends TextfieldBehavior implements ITextareaProperties {
 	static styles = [...Textfield.styles, cssResult(styles)];
-
-	/**
-	 * Amount of rows.
-	 * @attr
-	 */
-	@property({type: Number, reflect: true}) rows?: number;
-
-	/**
-	 * Amount of columns.
-	 * @attr
-	 */
-	@property({type: Number, reflect: true}) cols?: number;
 
 	/**
 	 * Hooks up the element.
@@ -70,7 +56,7 @@ export class Textarea extends TextfieldBehavior implements ITextareaProperties {
 	refreshHeight () {
 
 		// Only refresh the height of the rows and cols are not defined
-		if (this.rows != null || this.cols != null || isHidden(this)) {
+		if (isHidden(this)) {
 			return;
 		}
 
@@ -95,7 +81,10 @@ export class Textarea extends TextfieldBehavior implements ITextareaProperties {
 	}
 
 	/**
-	 * Returns the form element
+	 * Returns the form element.
+	 * Initially the textarea will have rows set to 1.
+	 * This is to initially have the textarea starting with having the height of 1 row.
+	 * This is a good solution to avoid the textarea having the wrong height if initially being hidden.
 	 */
 	protected renderFormElement (): TemplateResult {
 		return html`
@@ -110,8 +99,7 @@ export class Textarea extends TextfieldBehavior implements ITextareaProperties {
 				autocomplete="${ifDefined(this.autocomplete)}"
 				minlength="${ifDefined(this.minLength)}"
 				maxlength="${ifDefined(this.maxLength)}"
-				rows="${ifDefined(this.rows)}"
-				cols="${ifDefined(this.cols)}"
+				rows="1" 
 				tabindex="${this.disabled ? "-1" : "0"}"
 			></textarea>
 		`;

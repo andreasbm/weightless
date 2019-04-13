@@ -13,7 +13,6 @@ Multiline text fields.
 | Property        | Attribute       | Type            | Default   | Description                                      |
 |-----------------|-----------------|-----------------|-----------|--------------------------------------------------|
 | `autocomplete`  | `autocomplete`  | `"on" \| "off"` |           | Whether autocomplete is on or off.               |
-| `cols`          | `cols`          | `number`        |           | Amount of columns.                               |
 | `disabled`      | `disabled`      | `boolean`       | false     | Disables the element.                            |
 | `filled`        | `filled`        | `boolean`       | false     | Fills the input with a solid color.              |
 | `label`         | `label`         | `string`        |           | Label text.                                      |
@@ -25,7 +24,6 @@ Multiline text fields.
 | `readonly`      | `readonly`      | `boolean`       | false     | Makes the element readonly (disabled but tabbable) |
 | `required`      | `required`      | `boolean`       | false     | Makes the element required in a form context.    |
 | `role`          | `role`          | `AriaRole`      | "textbox" | Role of the input.                               |
-| `rows`          | `rows`          | `number`        |           | Amount of rows.                                  |
 | `value`         | `value`         | `string`        |           | Value of the form element.                       |
 | `valueAsNumber` | `valueAsNumber` | `number`        |           | Value of the slider.                             |
 
