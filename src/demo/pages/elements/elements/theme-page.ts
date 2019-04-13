@@ -94,10 +94,11 @@ export default class ThemePage extends LitElement {
 			
 			<wl-title level="3">SCSS functions</wl-title>
 			<p>Weightless comes with a lot of convenient SCSS functions. If you use SCSS in your build pipeline you are recommended to use them.</p>
-			<wl-title level="4">Shadows</wl-title>
+			<wl-title level="4">Elevation</wl-title>
+			<p>Use the <code>elevation($z-index, $color)</code> to get box shadow elevation.</p>
 			<div id="elevations">
 				${repeat(elevationIndicies, i => html`
-					<div class="elevation"></div>
+					<div class="elevation"><code>elevation(${i + 1})</code></div>
 				`)}
 			</div>
 		`;

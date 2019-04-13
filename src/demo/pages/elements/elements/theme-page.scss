@@ -100,6 +100,9 @@ $color-size: #{size(150)};
 .elevation {
 	height: size(200);
 	background: $background;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 
 	&:nth-child(1) {
 		box-shadow: elevation(1);
