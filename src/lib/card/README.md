@@ -19,15 +19,15 @@ Group related content and action.
 
 ## ➤ CSS Custom Properties
 
-| Property                 | Description           |
-|--------------------------|-----------------------|
-| `--card-bg`              | Background.           |
-| `--card-border-radius`   | Border radius.        |
-| `--card-color`           | Color                 |
-| `--card-elevation`       | Default box shadow.   |
-| `--card-elevation-hover` | Box shadow on :hover. |
-| `--card-padding`         | Padding.              |
-| `--card-transition`      | Transition.           |
+| Property                 | Description            |
+|--------------------------|------------------------|
+| `--card-bg`              | Background             |
+| `--card-border-radius`   | Border radius          |
+| `--card-color`           | Color                  |
+| `--card-elevation`       | Default box shadow     |
+| `--card-elevation-hover` | Box shadow when :hover |
+| `--card-padding`         | Padding                |
+| `--card-transition`      | Transition             |
 
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#slots)

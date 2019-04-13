@@ -49,9 +49,9 @@ Informative context related text.
 | Property            | Description |
 |---------------------|-------------|
 | `--popover-z-index` | z-index.    |
-| `--tooltip-bg`      | Background. |
-| `--tooltip-color`   | Color.      |
-| `--tooltip-padding` | Padding.    |
+| `--tooltip-bg`      | Background  |
+| `--tooltip-color`   | Color       |
+| `--tooltip-padding` | Padding     |
 
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#slots)

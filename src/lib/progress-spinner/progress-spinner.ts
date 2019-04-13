@@ -17,14 +17,14 @@ const DASH_ARRAY = 285;
 
 /**
  * Fills a circle from 0% to 100%.
- * @cssprop --progress-spinner-size - Width and height.
- * @cssprop --progress-spinner-color - Color.
- * @cssprop --progress-spinner-buffer-color - Color of the buffer.
- * @cssprop --progress-spinner-stroke-width - Width of the spinner stroke.
- * @cssprop --progress-spinner-indeterminate-container-duration - Spinner container animation duration when indeterminate.
- * @cssprop --progress-spinner-indeterminate-progress-duration - Spinner animation duration when indeterminate.
- * @cssprop --progress-spinner-indeterminate-timing-function - Spinner animation timing function when indeterminate.
- * @cssprop --progress-spinner-determinate-progress-transition - Transition when determinate.
+ * @cssprop --progress-spinner-size - Width and height
+ * @cssprop --progress-spinner-color - Color
+ * @cssprop --progress-spinner-buffer-color - Color of the buffer
+ * @cssprop --progress-spinner-stroke-width - Width of the spinner stroke
+ * @cssprop --progress-spinner-determinate-progress-transition - Transition of the spinner when determinate
+ * @cssprop --progress-spinner-indeterminate-container-duration - Duration of the indeterminate animation for the container
+ * @cssprop --progress-spinner-indeterminate-progress-duration - Duration of the indeterminate animation for the spinner
+ * @cssprop --progress-spinner-indeterminate-timing-function - Timing function of the indeterminate animation
  */
 @customElement("wl-progress-spinner")
 export class ProgressSpinner extends ProgressBehavior implements IProgressSpinnerProperties {

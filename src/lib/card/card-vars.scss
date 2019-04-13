@@ -1,22 +1,3 @@
 @import "../style/base";
 
-/* Transition */
-$card-transition: var(--card-transition, box-shadow #{$transition-duration-fast} #{$transition-ease});
 
-/* Border radius */
-$card-border-radius: var(--card-border-radius, #{$border-radius-m});
-
-/* Padding */
-$card-padding: var(--card-padding, 0);
-
-/* Default box shadow */
-$card-elevation: var(--card-elevation, #{elevation(1)});
-
-/* Box shadow when :hover */
-$card-elevation-hover: var(--card-elevation-hover, #{elevation(4, #{$shadow})});
-
-/* Color */
-$card-color: var(--card-color, #{$foreground});
-
-/* Background */
-$card-bg: var(--card-bg, #{$background});

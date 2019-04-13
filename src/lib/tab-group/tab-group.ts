@@ -22,14 +22,14 @@ export type TabGroupAlignment = "start" | "center" | "end" | "stretch";
 /**
  * Organize navigation between groups of content.
  * @slot - Default content. Add wl-tab elements here.
- * @cssprop --tab-group-color -
- * @cssprop --tab-group-bg - 
- * @cssprop --tab-group-filled-color -
- * @cssprop --tab-group-filled-bg - 
- * @cssprop --tab-group-indicator-size -
- * @cssprop --tab-group-indicator-scale - 
- * @cssprop --tab-group-indicator-bg - 
- * @cssprop --tab-group-indicator-transition - 
+ * @cssprop --tab-group-color - Default color
+ * @cssprop --tab-group-bg - Default background
+ * @cssprop --tab-group-filled-color - Color when filled
+ * @cssprop --tab-group-filled-bg - Background when filled
+ * @cssprop --tab-group-indicator-size - Size of the indicator
+ * @cssprop --tab-group-indicator-scale - Scale of the indicator
+ * @cssprop --tab-group-indicator-bg - Background of the indicator
+ * @cssprop --tab-group-indicator-transition - Transition of the indicator
  */
 @customElement("wl-tab-group")
 export class TabGroup extends LitElement implements ITabGroupProperties {

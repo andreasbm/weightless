@@ -39,35 +39,33 @@ Highly interruptive messages.
 
 ## ➤ CSS Custom Properties
 
-| Property                             | Description                                 |
-|--------------------------------------|---------------------------------------------|
-| `--dialog-bg`                        | Background.                                 |
-| `--dialog-border-radius`             | Border radius.                              |
-| `--dialog-color`                     | Color.                                      |
-| `--dialog-content-padding`           | Padding of the content slot.                |
-| `--dialog-elevation`                 | Box shadow.                                 |
-| `--dialog-footer-padding`            | Padding of the footer slot.                 |
-| `--dialog-header-padding`            | Padding of the header slot.                 |
-| `--dialog-header-padding-scrollable` | Padding of the header slot when scrollable. |
-| `--dialog-height`                    | Default height.                             |
-| `--dialog-height-auto`               | Auto height.                                |
-| `--dialog-height-fullscreen`         | Fullscreen height                           |
-| `--dialog-height-l`                  | Large height                                |
-| `--dialog-height-m`                  | Medium height                               |
-| `--dialog-height-s`                  | Small height                                |
-| `--dialog-max-height`                | Max height.                                 |
-| `--dialog-max-width`                 | Max width.                                  |
-| `--dialog-min-height`                | Min height.                                 |
-| `--dialog-min-width`                 | Min width.                                  |
-| `--dialog-scrollable-border`         | Border when scrollable.                     |
-| `--dialog-width`                     | Default width.                              |
-| `--dialog-width-auto`                | Auto width.                                 |
-| `--dialog-width-fullscreen`          | Fullscreen width.                           |
-| `--dialog-width-l`                   | Large width.                                |
-| `--dialog-width-m`                   | Medium width.                               |
-| `--dialog-width-s`                   | Small width.                                |
-| `--dialog-will-change`               | Will change.                                |
-| `--dialog-z-index`                   | z-index.                                    |
+| Property                             | Description                                |
+|--------------------------------------|--------------------------------------------|
+| `--dialog-bg`                        | Background                                 |
+| `--dialog-border-radius`             | Border radius                              |
+| `--dialog-color`                     | Color                                      |
+| `--dialog-content-padding`           | Padding of the content slot                |
+| `--dialog-elevation`                 | Box shadow                                 |
+| `--dialog-footer-padding`            | Padding of the footer slot                 |
+| `--dialog-header-padding`            | Padding of the header slot                 |
+| `--dialog-header-padding-scrollable` | Padding of the header slot when scrollable |
+| `--dialog-height`                    | Default height                             |
+| `--dialog-height-auto`               | Height when auto                           |
+| `--dialog-height-fullscreen`         | Fullscreen height                          |
+| `--dialog-height-l`                  | Large height                               |
+| `--dialog-height-m`                  | Medium height                              |
+| `--dialog-height-s`                  | Small height                               |
+| `--dialog-max-height`                | Maximum height                             |
+| `--dialog-max-width`                 | Maximum width                              |
+| `--dialog-min-height`                | Minimum height                             |
+| `--dialog-min-width`                 | Minimum width                              |
+| `--dialog-scrollable-border`         | Border when scrollable                     |
+| `--dialog-width`                     | Default width                              |
+| `--dialog-width-auto`                | Width when auto                            |
+| `--dialog-width-fullscreen`          | Fullscreen width                           |
+| `--dialog-width-l`                   | Large width                                |
+| `--dialog-width-m`                   | Medium width                               |
+| `--dialog-width-s`                   | Small width                                |
 
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#slots)

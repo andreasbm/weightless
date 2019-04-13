@@ -19,8 +19,8 @@ export interface ILabelProperties {
 /**
  * Make form elements more accessible.
  * @slot - Default content. If the first element is a form element, clicks on the entire label will be re-fired upon that element.
- * @cssprop --label-color - Color.
- * @cssprop --label-color-required - Color of the asterisk (*) when required attributed is present.
+ * @cssprop --label-color - Color
+ * @cssprop --label-required-color - Color of the required astrix
  */
 @customElement("wl-label")
 export class Label extends LitElement implements ILabelProperties {

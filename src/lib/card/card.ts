@@ -15,13 +15,20 @@ export interface ICardProperties {
 /**
  * Group related content and action.
  * @slot - Default content.
- * @cssprop --card-transition - Transition.
+ * @cssprop --card-transition - Transition
+ * @cssprop --card-border-radius - Border radius
+ * @cssprop --card-padding - Padding
+ * @cssprop --card-elevation - Default box shadow
+ * @cssprop --card-elevation-hover - Box shadow when :hover
  * @cssprop --card-color - Color
- * @cssprop --card-border-radius - Border radius.
- * @cssprop --card-bg - Background.
- * @cssprop --card-padding - Padding.
- * @cssprop --card-elevation - Default box shadow.
- * @cssprop --card-elevation-hover - Box shadow on :hover.
+ * @cssprop --card-bg - Background
+ * @cssprop --card-transition - Transition
+ * @cssprop --card-border-radius - Border radius
+ * @cssprop --card-padding - Padding
+ * @cssprop --card-elevation - Default box shadow
+ * @cssprop --card-elevation-hover - Box shadow when :hover
+ * @cssprop --card-color - Color
+ * @cssprop --card-bg - Background
  */
 @customElement("wl-card")
 export class Card extends LitElement implements ICardProperties {

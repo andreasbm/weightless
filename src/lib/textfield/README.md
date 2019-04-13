@@ -17,7 +17,9 @@ Singleline text fields.
 | `filled`        | `filled`        | `boolean`       | false     | Fills the input with a solid color.              |
 | `label`         | `label`         | `string`        |           | Label text.                                      |
 | `list`          | `list`          | `string`        |           | Datalist id.                                     |
+| `max`           | `max`           | `number`        |           | Max number value.                                |
 | `maxLength`     | `maxLength`     | `number`        |           | Max value length.                                |
+| `min`           | `min`           | `number`        |           | Min number value.                                |
 | `minLength`     | `minLength`     | `number`        |           | Min value length.                                |
 | `name`          | `name`          | `string`        |           | Name of the native form element.                 |
 | `outlined`      | `outlined`      | `boolean`       | false     | Makes the input outlined.                        |
@@ -25,7 +27,7 @@ Singleline text fields.
 | `readonly`      | `readonly`      | `boolean`       | false     | Makes the element readonly (disabled but tabbable) |
 | `required`      | `required`      | `boolean`       | false     | Makes the element required in a form context.    |
 | `role`          | `role`          | `AriaRole`      | "textbox" | Role of the input.                               |
-| `type`          | `type`          | `InputType`     | "text"    | Type of the input.                               |
+| `type`          | `type`          | `TextfieldType` | "text"    | Type of the input.                               |
 | `value`         | `value`         | `string`        |           | Value of the form element.                       |
 | `valueAsNumber` | `valueAsNumber` | `number`        |           | Value of the slider.                             |
 
@@ -34,44 +36,46 @@ Singleline text fields.
 
 ## ➤ Events
 
-| Event    | Description                                      |
-|----------|--------------------------------------------------|
-| `submit` | Dispatched when the enter key is hit while pressing ctrl or the meta-key. |
+| Event     | Description                                      |
+|-----------|--------------------------------------------------|
+| `input`   | Dispatches from the native input event each time the input changes. |
+| `invalid` | Dispatched when the input becomes invalid.       |
+| `submit`  | Dispatched when the enter key is hit while pressing ctrl or the meta-key. |
 
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#css-custom-properties)
 
 ## ➤ CSS Custom Properties
 
-| Property                              | Description                                   |
-|---------------------------------------|-----------------------------------------------|
-| `--input-before-after-color`          | Color of the before and after slots.          |
-| `--input-bg`                          | Default background.                           |
-| `--input-bg-filled`                   | Background when filled.                       |
-| `--input-bg-filled-hover`             | Background on :hover.                         |
-| `--input-border-radius-filled`        | Border radius when filled.                    |
-| `--input-border-radius-outlined`      | Border radius when outlined.                  |
-| `--input-border-style`                | Style of the border.                          |
-| `--input-border-style-disabled`       | Style of the border when disabled.            |
-| `--input-border-width`                | Width of the border.                          |
-| `--input-color`                       | Default color.                                |
-| `--input-color-disabled`              | Color when disabled.                          |
-| `--input-font-family`                 | Font family.                                  |
-| `--input-font-size`                   | Font size.                                    |
-| `--input-label-color`                 | Color of the label.                           |
-| `--input-label-color-disabled`        | Color of the label when disabled.             |
-| `--input-label-font-size`             | Font size of the label.                       |
-| `--input-label-space`                 | Space between label and input content.        |
-| `--input-label-transition`            | Transition of the label.                      |
-| `--input-padding-left-right`          | Padding for the left and right.               |
-| `--input-padding-left-right-outlined` | Padding for the left and right when outlined. |
-| `--input-padding-top-bottom`          | Padding for the top and bottom.               |
-| `--input-state-color-active`          | State color when active.                      |
-| `--input-state-color-disabled`        | State color when disabled.                    |
-| `--input-state-color-hover`           | State color on :hover.                        |
-| `--input-state-color-inactive`        | State color when inactive.                    |
-| `--input-state-color-invalid`         | State color when invalid.                     |
-| `--input-transition`                  | Transition.                                   |
+| Property                              | Description                          |
+|---------------------------------------|--------------------------------------|
+| `--input-before-after-color`          | Color of the before and after slots  |
+| `--input-bg`                          | Default background                   |
+| `--input-bg-filled`                   | Background when filled               |
+| `--input-bg-filled-hover`             | Background when filled and hover     |
+| `--input-border-radius-filled`        | Border radius when filled            |
+| `--input-border-radius-outlined`      | Border radius when outlined          |
+| `--input-border-style`                | Border style                         |
+| `--input-border-style-disabled`       | Border style when disabled           |
+| `--input-border-width`                | Border width                         |
+| `--input-color`                       | Default color                        |
+| `--input-color-disabled`              | Color when disabled                  |
+| `--input-font-family`                 | Font family                          |
+| `--input-font-size`                   | Font size                            |
+| `--input-label-color`                 | Color of the label                   |
+| `--input-label-color-disabled`        | Color of the label when disabled     |
+| `--input-label-font-size`             | Font size of the label               |
+| `--input-label-space`                 | Space between label and input        |
+| `--input-label-transition`            | Transition of the label              |
+| `--input-padding-left-right`          | Left and right padding               |
+| `--input-padding-left-right-outlined` | Left and right padding when outlined |
+| `--input-padding-top-bottom`          | Top and bottom padding               |
+| `--input-state-color-active`          | Active state color                   |
+| `--input-state-color-disabled`        | Disabled state color                 |
+| `--input-state-color-hover`           | Hover state color                    |
+| `--input-state-color-inactive`        | Inactive state color                 |
+| `--input-state-color-invalid`         | Invalid state color                  |
+| `--input-transition`                  | Transition                           |
 
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#slots)

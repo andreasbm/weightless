@@ -22,15 +22,15 @@ export interface ITitleProperties {
 /**
  * Indicate the start of a new section.
  * @slot - Default content.
- * @cssprop --title-margin - Margin.
- * @cssprop --title-font-family - Font family.
- * @cssprop --title-font-weight - Font weight.
- * @cssprop --title-font-size-level-1 - Font size of level 1 heading.
- * @cssprop --title-font-size-level-2 - Font size of level 2 heading.
- * @cssprop --title-font-size-level-3 - Font size of level 3 heading.
- * @cssprop --title-font-size-level-4 - Font size of level 4 heading.
- * @cssprop --title-font-size-level-5 - Font size of level 5 heading.
- * @cssprop --title-font-size-level-6 - Font size of level 6 heading.
+ * @cssprop --title-margin - Margin
+ * @cssprop --title-font-family - Font family
+ * @cssprop --title-font-weight - Font weight
+ * @cssprop --title-font-size-level-1 - Font size of heading level 1
+ * @cssprop --title-font-size-level-2 - Font size of heading level 2
+ * @cssprop --title-font-size-level-3 - Font size of heading level 3
+ * @cssprop --title-font-size-level-4 - Font size of heading level 4
+ * @cssprop --title-font-size-level-5 - Font size of heading level 5
+ * @cssprop --title-font-size-level-6 - Font size of heading level 6
  */
 @customElement("wl-title")
 export class Title extends LitElement implements ITitleProperties {

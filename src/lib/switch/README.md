@@ -31,6 +31,31 @@ Turn an option on or off.
 | `change` | Dispatched when the checked property changes due to a user interaction. |
 
 
+[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#css-custom-properties)
+
+## ➤ CSS Custom Properties
+
+| Property                          | Description                          |
+|-----------------------------------|--------------------------------------|
+| `--switch-bg`                     | Default background                   |
+| `--switch-bg-checked`             | Background when checked              |
+| `--switch-bg-disabled`            | Background when disabled             |
+| `--switch-bg-disabled-checked`    | Background when disabled and checked |
+| `--switch-border-radius`          | Border radius                        |
+| `--switch-color`                  | Default color                        |
+| `--switch-color-checked`          | Color when checked                   |
+| `--switch-color-disabled`         | Color when disabled                  |
+| `--switch-color-disabled-checked` | Color when disabled and checked      |
+| `--switch-height`                 | Height                               |
+| `--switch-knob-border-radius`     | Border radius of the knob            |
+| `--switch-knob-elevation`         | Box shadow of the knob               |
+| `--switch-knob-size`              | Width and height of the knob         |
+| `--switch-knob-transition`        | Transition of the knob               |
+| `--switch-ripple-transform`       | Transform of the ripple              |
+| `--switch-transition`             | Transition                           |
+| `--switch-width`                  | Width                                |
+
+
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#usage)
 

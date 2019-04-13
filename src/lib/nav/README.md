@@ -21,18 +21,17 @@ Provide access to destinations in your app.
 
 ## ➤ CSS Custom Properties
 
-| Property                  | Description               |
-|---------------------------|---------------------------|
-| `--nav-bg`                | Background.               |
-| `--nav-color`             | Color.                    |
-| `--nav-elevation`         | Box shadow.               |
-| `--nav-height`            | Height.                   |
-| `--nav-padding`           | Padding.                  |
-| `--nav-title-font-size`   | Font size of the title.   |
-| `--nav-title-font-weight` | Font weight of the title. |
-| `--nav-title-margin`      | Margin of the title.      |
-| `--nav-transition`        | Transition.               |
-| `--nav-z-index`           | z-index.                  |
+| Property                  | Description                   |
+|---------------------------|-------------------------------|
+| `--nav-bg`                | Background                    |
+| `--nav-color`             | Color                         |
+| `--nav-elevation`         | Box shadow                    |
+| `--nav-height`            | Height                        |
+| `--nav-padding`           | Padding                       |
+| `--nav-title-font-size`   | Font size of the title slot   |
+| `--nav-title-font-weight` | Font weight of the title slot |
+| `--nav-title-margin`      | Margin of the title slot      |
+| `--nav-transition`        | Transition                    |
 
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#slots)

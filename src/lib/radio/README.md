@@ -35,24 +35,24 @@ Select one option from a set.
 
 ## ➤ CSS Custom Properties
 
-| Property                         | Description                             |
-|----------------------------------|-----------------------------------------|
-| `--radio-bg`                     | Default background.                     |
-| `--radio-bg-checked`             | Background when checked.                |
-| `--radio-bg-disabled`            | Background when disabled.               |
-| `--radio-bg-disabled-checked`    | Background when disabled and checked.   |
-| `--radio-border-config`          | Border configuration (style and width). |
-| `--radio-border-radius`          | Border radius.                          |
-| `--radio-color`                  | Default color.                          |
-| `--radio-color-checked`          | Color when checked.                     |
-| `--radio-color-disabled`         | Color when disabled.                    |
-| `--radio-color-disabled-checked` | Color when disabled and checked.        |
-| `--radio-dot-border-radius`      | Border radius of the dot.               |
-| `--radio-dot-size`               | Width and height of the dot.            |
-| `--radio-dot-transition`         | Transition of the dot.                  |
-| `--radio-ripple-transform`       | Transform of the ripple.                |
-| `--radio-size`                   | Width and height.                       |
-| `--radio-transition`             | Transition.                             |
+| Property                         | Description                            |
+|----------------------------------|----------------------------------------|
+| `--radio-bg`                     | Default background                     |
+| `--radio-bg-checked`             | Background when checked                |
+| `--radio-bg-disabled`            | Background when disabled and checked   |
+| `--radio-bg-disabled-checked`    | Background when disabled and checked   |
+| `--radio-border-config`          | Border configuration (width and style) |
+| `--radio-border-radius`          | Border radius                          |
+| `--radio-color`                  | Default color                          |
+| `--radio-color-checked`          | Color when checked                     |
+| `--radio-color-disabled`         | Color when disabled                    |
+| `--radio-color-disabled-checked` | Color when disabled and checked        |
+| `--radio-dot-border-radius`      | Border radius of the dot               |
+| `--radio-dot-size`               | Size of the dot                        |
+| `--radio-dot-transition`         | Transition of the dot                  |
+| `--radio-ripple-transform`       | Transform of the ripple                |
+| `--radio-size`                   | Width and height                       |
+| `--radio-transition`             | Transition                             |
 
 
 

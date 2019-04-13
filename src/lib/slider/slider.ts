@@ -22,28 +22,28 @@ export interface ISliderProperties extends IInputBehaviorProperties {
 /**
  * Make selections from a range of values.
  * @slot thumb-label - Optional slot for the thumb label.
- * @cssprop --slider-bg - Background of the slider track.
- * @cssprop --slider-bg-buffer - Background color of the buffer track.
- * @cssprop --slider-bg-active - Background color of the active part of the slider track.
- * @cssprop --slider-bg-disabled - Background color of the slider track when disabled.
- * @cssprop --slider-bg-buffer-disabled - Background color of the buffer track when disabled.
- * @cssprop --slider-bg-active-disabled - Background color of the active part of the slider track when disabled.
- * @cssprop --slider-height - Height of the slider track.
- * @cssprop --slider-thumb-focus-ring-bg - Background of the thumb focus ring.
- * @cssprop --slider-thumb-bg - Background of the thumb.
- * @cssprop --slider-thumb-bg-disabled - Background of the thumb when disabled.
- * @cssprop --slider-thumb-focus-ring-size - Size of the thumb focus ring.
- * @cssprop --slider-thumb-size - Size of the thumb.
- * @cssprop --slider-thumb-space - Space between slider track and thumb label.
- * @cssprop --slider-thumb-transition - Transition of the thumb.
- * @cssprop --slider-thumb-transform-focus - Transform of the thumb when focused.
- * @cssprop --slider-thumb-border-radius - Border radius of the thumb.
- * @cssprop --slider-thumb-label-size - Size of the thumb label.
- * @cssprop --slider-thumb-label-border-radius - Border radius of the thumb label.
- * @cssprop --slider-thumb-label-bg - Background of the thumb label.
- * @cssprop --slider-thumb-label-transition - Transition of the thumb label.
- * @cssprop --slider-thumb-label-font-size - Font size of the thumb label.
- * @cssprop --slider-thumb-label-color - Color of the thumb label.
+ * @cssprop --slider-height - Height
+ * @cssprop --slider-bg - Background
+ * @cssprop --slider-bg-buffer - Background of the buffer part
+ * @cssprop --slider-bg-active - Background of the active part
+ * @cssprop --slider-bg-disabled - Background when disabled
+ * @cssprop --slider-bg-buffer-disabled - Background of the buffer part when disabled
+ * @cssprop --slider-bg-active-disabled - Background of the active part when disabled
+ * @cssprop --slider-thumb-focus-ring-bg - Background of the thumb focus ring
+ * @cssprop --slider-thumb-bg - Background of the thumb
+ * @cssprop --slider-thumb-bg-disabled - Background of the thumb when disabled
+ * @cssprop --slider-thumb-focus-ring-size - Size of the thumb focus ring when focused
+ * @cssprop --slider-thumb-size - Size of the thumb
+ * @cssprop --slider-thumb-space - Space between slider track and thumb label
+ * @cssprop --slider-thumb-transition - Transition of the thumb
+ * @cssprop --slider-thumb-transform-focus - Transform of the thumb when focused
+ * @cssprop --slider-thumb-border-radius - Border radius of the thumb
+ * @cssprop --slider-thumb-label-size - Size of the thumb label
+ * @cssprop --slider-thumb-label-border-radius - Border radius of the thumb label
+ * @cssprop --slider-thumb-label-bg - Background of the thumb label
+ * @cssprop --slider-thumb-label-transition - Transition of the thumb label
+ * @cssprop --slider-thumb-label-font-size - Font size of the thumb label
+ * @cssprop --slider-thumb-label-color - Color of the thumb label
  */
 @customElement("wl-slider")
 export class Slider extends InputBehavior implements ISliderProperties {

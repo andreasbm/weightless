@@ -18,12 +18,12 @@ export interface IBannerProperties {
  * @slot icon - Icon content.
  * @slot action - Action content (you can have multiple slots named action).
  * @slot - Default content.
- * @cssprop --banner-icon-margin - Margin of the icon slot.
- * @cssprop --banner-icon-color - Color of the icon.
- * @cssprop --banner-padding - Padding.
- * @cssprop --banner-color - Color.
- * @cssprop --banner-bg - Background.
- * @cssprop --banner-content-padding - Padding of the content slot.
+ * @cssprop --banner-icon-margin - Margin of the icon slot
+ * @cssprop --banner-padding - Padding
+ * @cssprop --banner-content-padding - Padding of the content slot
+ * @cssprop --banner-icon-color - Color of the icon
+ * @cssprop --banner-color - Color
+ * @cssprop --banner-bg - Background
  */
 @customElement("wl-banner")
 export class Banner extends LitElement implements IBannerProperties {

@@ -33,33 +33,33 @@ export interface IInputBehaviorProperties extends IFormElementBehaviorProperties
  * @event input - Dispatches from the native input event each time the input changes.
  * @slot before - Content before the input.
  * @slot after - Content after the input.
- * @cssprop --input-state-color-inactive - State color when inactive.
- * @cssprop --input-state-color-active - State color when active.
- * @cssprop --input-state-color-hover - State color on :hover.
- * @cssprop --input-state-color-invalid - State color when invalid.
- * @cssprop --input-state-color-disabled - State color when disabled.
- * @cssprop --input-color - Default color.
- * @cssprop --input-color-disabled - Color when disabled.
- * @cssprop --input-transition - Transition.
- * @cssprop --input-bg - Default background.
- * @cssprop --input-bg-filled - Background when filled.
- * @cssprop --input-bg-filled-hover - Background on :hover.
- * @cssprop --input-border-width - Width of the border.
- * @cssprop --input-border-style - Style of the border.
- * @cssprop --input-border-style-disabled - Style of the border when disabled.
- * @cssprop --input-before-after-color - Color of the before and after slots.
- * @cssprop --input-font-size - Font size.
- * @cssprop --input-padding-left-right - Padding for the left and right.
- * @cssprop --input-padding-top-bottom - Padding for the top and bottom.
- * @cssprop --input-padding-left-right-outlined - Padding for the left and right when outlined.
- * @cssprop --input-border-radius-filled - Border radius when filled.
- * @cssprop --input-border-radius-outlined - Border radius when outlined.
- * @cssprop --input-font-family - Font family.
- * @cssprop --input-label-color - Color of the label.
- * @cssprop --input-label-color-disabled - Color of the label when disabled.
- * @cssprop --input-label-font-size - Font size of the label.
- * @cssprop --input-label-transition - Transition of the label.
- * @cssprop --input-label-space - Space between label and input content.
+ * @cssprop --input-state-color-inactive - Inactive state color
+ * @cssprop --input-state-color-active - Active state color
+ * @cssprop --input-state-color-hover - Hover state color
+ * @cssprop --input-state-color-invalid - Invalid state color
+ * @cssprop --input-state-color-disabled - Disabled state color
+ * @cssprop --input-color - Default color
+ * @cssprop --input-bg - Default background
+ * @cssprop --input-color-disabled - Color when disabled
+ * @cssprop --input-bg-filled - Background when filled
+ * @cssprop --input-bg-filled-hover - Background when filled and hover
+ * @cssprop --input-transition - Transition
+ * @cssprop --input-border-width - Border width
+ * @cssprop --input-border-style - Border style
+ * @cssprop --input-border-style-disabled - Border style when disabled
+ * @cssprop --input-before-after-color - Color of the before and after slots
+ * @cssprop --input-font-size - Font size
+ * @cssprop --input-padding-left-right - Left and right padding
+ * @cssprop --input-padding-top-bottom - Top and bottom padding
+ * @cssprop --input-padding-left-right-outlined - Left and right padding when outlined
+ * @cssprop --input-border-radius-filled - Border radius when filled
+ * @cssprop --input-border-radius-outlined - Border radius when outlined
+ * @cssprop --input-font-family - Font family
+ * @cssprop --input-label-color - Color of the label
+ * @cssprop --input-label-color-disabled - Color of the label when disabled
+ * @cssprop --input-label-font-size - Font size of the label
+ * @cssprop --input-label-transition - Transition of the label
+ * @cssprop --input-label-space - Space between label and input
  */
 export abstract class InputBehavior extends FormElementBehavior implements IInputBehaviorProperties {
 	static styles = [...FormElementBehavior.styles, cssResult(styles)];

@@ -58,32 +58,31 @@ export const defaultDialogConfig: IDialogConfig = {
  * @slot content - Body content.
  * @slot footer - Footer content.
  * @slot - Default content.
- * @cssprop --dialog-elevation - Box shadow.
- * @cssprop --dialog-bg - Background.
- * @cssprop --dialog-color - Color.
- * @cssprop --dialog-border-radius - Border radius.
- * @cssprop --dialog-z-index - z-index.
- * @cssprop --dialog-width - Default width.
- * @cssprop --dialog-height - Default height.
- * @cssprop --dialog-width-s - Small width.
+ * @cssprop --dialog-elevation - Box shadow
+ * @cssprop --dialog-bg - Background
+ * @cssprop --dialog-color - Color
+ * @cssprop --dialog-border-radius - Border radius
+ * @cssprop --dialog-width - Default width
+ * @cssprop --dialog-height - Default height
+ * @cssprop --dialog-width-s - Small width
  * @cssprop --dialog-height-s - Small height
- * @cssprop --dialog-width-m - Medium width.
+ * @cssprop --dialog-width-m - Medium width
  * @cssprop --dialog-height-m - Medium height
- * @cssprop --dialog-width-l - Large width.
+ * @cssprop --dialog-width-l - Large width
  * @cssprop --dialog-height-l - Large height
- * @cssprop --dialog-width-fullscreen - Fullscreen width.
+ * @cssprop --dialog-width-fullscreen - Fullscreen width
  * @cssprop --dialog-height-fullscreen - Fullscreen height
- * @cssprop --dialog-width-auto - Auto width.
- * @cssprop --dialog-height-auto - Auto height.
- * @cssprop --dialog-min-width - Min width.
- * @cssprop --dialog-min-height - Min height.
- * @cssprop --dialog-max-width - Max width.
- * @cssprop --dialog-max-height - Max height.
- * @cssprop --dialog-scrollable-border - Border when scrollable.
- * @cssprop --dialog-header-padding - Padding of the header slot.
- * @cssprop --dialog-header-padding-scrollable - Padding of the header slot when scrollable.
- * @cssprop --dialog-content-padding - Padding of the content slot.
- * @cssprop --dialog-footer-padding - Padding of the footer slot.
+ * @cssprop --dialog-min-width - Minimum width
+ * @cssprop --dialog-min-height - Minimum height
+ * @cssprop --dialog-max-width - Maximum width
+ * @cssprop --dialog-max-height - Maximum height
+ * @cssprop --dialog-width-auto - Width when auto
+ * @cssprop --dialog-height-auto - Height when auto
+ * @cssprop --dialog-scrollable-border - Border when scrollable
+ * @cssprop --dialog-header-padding - Padding of the header slot
+ * @cssprop --dialog-header-padding-scrollable - Padding of the header slot when scrollable
+ * @cssprop --dialog-content-padding - Padding of the content slot
+ * @cssprop --dialog-footer-padding - Padding of the footer slot
  */
 @customElement("wl-dialog")
 export class Dialog<R = unknown> extends OverlayBehavior<R, Partial<IDialogProperties>> implements IDialogProperties {

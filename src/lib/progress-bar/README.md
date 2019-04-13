@@ -28,14 +28,14 @@ Fills a bar from 0% to 100%.
 
 | Property                                       | Description                                      |
 |------------------------------------------------|--------------------------------------------------|
-| `--progress-bar-bg`                            | Background.                                      |
-| `--progress-bar-buffer-color`                  | Color of the buffer.                             |
-| `--progress-bar-color`                         | Color.                                           |
-| `--progress-bar-determinate-transition`        | Transition of when determinate.                  |
-| `--progress-bar-height`                        | Height.                                          |
-| `--progress-bar-indeterminate-duration`        | Duration of the transition when indeterminate.   |
-| `--progress-bar-indeterminate-short-delay`     | Duration of the short bar transition when indeterminate. |
-| `--progress-bar-indeterminate-timing-function` | Timing function when indeterminate.              |
+| `--progress-bar-bg`                            | Background                                       |
+| `--progress-bar-buffer-color`                  | Color of the buffer                              |
+| `--progress-bar-color`                         | Color                                            |
+| `--progress-bar-determinate-transition`        | Transition when determinate                      |
+| `--progress-bar-height`                        | Height                                           |
+| `--progress-bar-indeterminate-duration`        | Duration of the indeterminate animation          |
+| `--progress-bar-indeterminate-short-delay`     | Delay of the short bar of indeterminate animation |
+| `--progress-bar-indeterminate-timing-function` | Timing function of the indeterminate animation   |
 
 
 

@@ -30,21 +30,21 @@ const EXPANSION_ANIMATION_DURATION = 250;
  * @slot description - Description to the left on the header.
  * @slot indicator - Content to the right on the header.
  * @slot - Default content.
- * @cssprop --expansion-bg - Background.
- * @cssprop --expansion-color - Color.
- * @cssprop --expansion-transition - Transition.
- * @cssprop --expansion-elevation - Box shadow.
- * @cssprop --expansion-elevation-open - Box shadow when open.
- * @cssprop --expansion-margin-open - Margin when open.
- * @cssprop --expansion-header-bg-hover - Background of the header on hover.
- * @cssprop --expansion-header-description-color - Color of the description slot.
- * @cssprop --expansion-header-padding - Padding of the header.
- * @cssprop --expansion-header-title-margin - Margin of the title slot.
- * @cssprop --expansion-header-height - Default height of the header.
- * @cssprop --expansion-header-height-open - Height of the header when opened.
- * @cssprop --expansion-header-transition - Transition of the header.
- * @cssprop --expansion-content-padding - Padding of the default slot.
- * @cssprop --expansion-icon-transition - Transition of the icon.
+ * @cssprop --expansion-transition - Transition
+ * @cssprop --expansion-elevation - Box shadow
+ * @cssprop --expansion-elevation-open - Box shadow when open
+ * @cssprop --expansion-margin-open - Margin when open
+ * @cssprop --expansion-bg - Default background
+ * @cssprop --expansion-color - Default color
+ * @cssprop --expansion-header-bg-hover - Background of the header when :hover
+ * @cssprop --expansion-header-description-color - Color of the description slot in the header
+ * @cssprop --expansion-header-padding - Padding of the header
+ * @cssprop --expansion-header-title-margin - Margin of the title slot in the header
+ * @cssprop --expansion-header-height - Height of the header
+ * @cssprop --expansion-header-height-open - Height of the header when open
+ * @cssprop --expansion-header-transition - Transition of the header
+ * @cssprop --expansion-content-padding - Padding of the content
+ * @cssprop --expansion-icon-transition - Transition of the icon
  */
 @customElement("wl-expansion")
 export class Expansion extends RadioBehavior implements IExpansionProperties {

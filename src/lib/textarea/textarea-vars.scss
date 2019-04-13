@@ -1,6 +1,14 @@
 @import "../style/base";
 
+/* Resize strategy */
 $textarea-resize: var(--textarea-resize, none);
+
+/* Height */
 $textarea-height: var(--textarea-height);
+
+/* Min height */
 $textarea-min-height: var(--textarea-min-height);
+
+/* Max height */
 $textarea-max-height: var(--textarea-max-height);
+

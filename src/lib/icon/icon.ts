@@ -15,8 +15,8 @@ export interface IIconProperties {
 /**
  * Symbols for common actions and items.
  * @slot - Name of the icon.
- * @cssprop --icon-font - Icon font family.
- * @cssprop --icon-size - Font size.
+ * @cssprop --icon-font - Font family
+ * @cssprop --icon-size - Width and height
  */
 @customElement("wl-icon")
 export class Icon extends LitElement implements IIconProperties {

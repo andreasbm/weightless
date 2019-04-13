@@ -21,10 +21,10 @@ Make form elements more accessible.
 
 ## ➤ CSS Custom Properties
 
-| Property                 | Description                                      |
-|--------------------------|--------------------------------------------------|
-| `--label-color`          | Color.                                           |
-| `--label-color-required` | Color of the asterisk (*) when required attributed is present. |
+| Property                 | Description                  |
+|--------------------------|------------------------------|
+| `--label-color`          | Color                        |
+| `--label-required-color` | Color of the required astrix |
 
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#slots)

@@ -19,10 +19,10 @@ Symbols for common actions and items.
 
 ## ➤ CSS Custom Properties
 
-| Property      | Description       |
-|---------------|-------------------|
-| `--icon-font` | Icon font family. |
-| `--icon-size` | Font size.        |
+| Property      | Description      |
+|---------------|------------------|
+| `--icon-font` | Font family      |
+| `--icon-size` | Width and height |
 
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#slots)

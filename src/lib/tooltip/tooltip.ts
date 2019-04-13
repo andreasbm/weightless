@@ -12,9 +12,9 @@ export interface ITooltipProperties extends IPopoverProperties {
 
 /**
  * Informative context related text.
- * @cssprop --tooltip-padding - Padding.
- * @cssprop --tooltip-bg - Background.
- * @cssprop --tooltip-color - Color.
+ * @cssprop --tooltip-padding - Padding
+ * @cssprop --tooltip-bg - Background
+ * @cssprop --tooltip-color - Color
  */
 @customElement("wl-tooltip")
 export class Tooltip extends Popover implements ITooltipProperties {

@@ -19,16 +19,15 @@ export interface INavProperties {
  * @slot left - Content positioned to the left.
  * @slot right - Content positioned to the right.
  * @slot title - Title.
- * @cssprop --nav-bg - Background.
- * @cssprop --nav-color - Color.
- * @cssprop --nav-z-index - z-index.
- * @cssprop --nav-padding - Padding.
- * @cssprop --nav-height - Height.
- * @cssprop --nav-elevation - Box shadow.
- * @cssprop --nav-transition - Transition.
- * @cssprop --nav-title-font-size - Font size of the title.
- * @cssprop --nav-title-font-weight - Font weight of the title.
- * @cssprop --nav-title-margin - Margin of the title.
+ * @cssprop --nav-bg - Background
+ * @cssprop --nav-color - Color
+ * @cssprop --nav-padding - Padding
+ * @cssprop --nav-height - Height
+ * @cssprop --nav-elevation - Box shadow
+ * @cssprop --nav-transition - Transition
+ * @cssprop --nav-title-font-size - Font size of the title slot
+ * @cssprop --nav-title-font-weight - Font weight of the title slot
+ * @cssprop --nav-title-margin - Margin of the title slot
  */
 @customElement("wl-nav")
 export class Nav extends LitElement implements INavProperties {

@@ -3,5 +3,5 @@
 /* Color */
 $label-color: var(--label-color, #{color("shade", $dark-hue)});
 
-/* */
+/* Color of the required astrix */
 $label-required-color: var(--label-required-color, #{color("error", $default-hue)});

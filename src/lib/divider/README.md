@@ -20,10 +20,10 @@ Thin line that groups content in lists and layouts.
 
 ## ➤ CSS Custom Properties
 
-| Property          | Description      |
-|-------------------|------------------|
-| `--divider-color` | Color.           |
-| `--divider-size`  | Width or height. |
+| Property          | Description                    |
+|-------------------|--------------------------------|
+| `--divider-color` | Color of the divider           |
+| `--divider-size`  | Width or height of the divider |
 
 
 

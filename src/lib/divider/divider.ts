@@ -14,8 +14,8 @@ export interface IDividerProperties {
 
 /**
  * Thin line that groups content in lists and layouts.
- * @cssprop --divider-color - Color.
- * @cssprop --divider-size - Width or height.
+ * @cssprop --divider-color - Color of the divider
+ * @cssprop --divider-size - Width or height of the divider
  */
 @customElement("wl-divider")
 export class Divider extends LitElement implements IDividerProperties {

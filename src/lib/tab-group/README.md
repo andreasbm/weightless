@@ -22,16 +22,16 @@ Organize navigation between groups of content.
 
 ## ➤ CSS Custom Properties
 
-| Property                             |
-|--------------------------------------|
-| `--tab-group-bg -`                   |
-| `--tab-group-color -`                |
-| `--tab-group-filled-bg -`            |
-| `--tab-group-filled-color -`         |
-| `--tab-group-indicator-bg -`         |
-| `--tab-group-indicator-scale -`      |
-| `--tab-group-indicator-size -`       |
-| `--tab-group-indicator-transition -` |
+| Property                           | Description                 |
+|------------------------------------|-----------------------------|
+| `--tab-group-bg`                   | Default background          |
+| `--tab-group-color`                | Default color               |
+| `--tab-group-filled-bg`            | Background when filled      |
+| `--tab-group-filled-color`         | Color when filled           |
+| `--tab-group-indicator-bg`         | Background of the indicator |
+| `--tab-group-indicator-scale`      | Scale of the indicator      |
+| `--tab-group-indicator-size`       | Size of the indicator       |
+| `--tab-group-indicator-transition` | Transition of the indicator |
 
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#slots)

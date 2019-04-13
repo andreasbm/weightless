@@ -36,27 +36,27 @@ Turn an option on or off.
 
 ## ➤ CSS Custom Properties
 
-| Property                              | Description                                  |
-|---------------------------------------|----------------------------------------------|
-| `--checkbox-bg`                       | Default background.                          |
-| `--checkbox-bg-checked`               | Background when checked.                     |
-| `--checkbox-bg-disabled`              | Background when disabled.                    |
-| `--checkbox-bg-disabled-checked`      | Background when disabled and checked         |
-| `--checkbox-border-config`            | Border configuration (width and style)       |
-| `--checkbox-border-radius`            | Border radius.                               |
-| `--checkbox-checkmark-path-dasharray` | Dasharray of the checkmark.                  |
-| `--checkbox-checkmark-path-delay`     | Transition delay of the checkmark animation. |
-| `--checkbox-checkmark-path-width`     | Width of the checkmark.                      |
-| `--checkbox-checkmark-size`           | Width and height of the checkmark.           |
-| `--checkbox-checkmark-stroke-color`   | Color of the checkmark.                      |
-| `--checkbox-checkmark-transition`     | Transition of the checkmark.                 |
-| `--checkbox-color`                    | Default color.                               |
-| `--checkbox-color-checked`            | Color when checked.                          |
-| `--checkbox-color-disabled`           | Color when disabled.                         |
-| `--checkbox-color-disabled-checked`   | Color when disabled and checked.             |
-| `--checkbox-ripple-transform`         | Transform of the ripple.                     |
-| `--checkbox-size`                     | Width and height.                            |
-| `--checkbox-transition`               | Transition.                                  |
+| Property                              | Description                                 |
+|---------------------------------------|---------------------------------------------|
+| `--checkbox-bg`                       | Background                                  |
+| `--checkbox-bg-checked`               | Background when checked                     |
+| `--checkbox-bg-disabled`              | Background when disabled                    |
+| `--checkbox-bg-disabled-checked`      | Background when checked and disabled        |
+| `--checkbox-border-config`            | Border configuration (width and style)      |
+| `--checkbox-border-radius`            | Border radius                               |
+| `--checkbox-checkmark-path-dasharray` | Dasharray of the checkmark                  |
+| `--checkbox-checkmark-path-delay`     | Transition delay of the checkmark animation |
+| `--checkbox-checkmark-path-width`     | Width of the checkmark                      |
+| `--checkbox-checkmark-size`           | Width and height of the checkmark           |
+| `--checkbox-checkmark-stroke-color`   | Color of the checkmark stroke               |
+| `--checkbox-checkmark-transition`     | Transition of the checkmark                 |
+| `--checkbox-color`                    | Color                                       |
+| `--checkbox-color-checked`            | Color when checked                          |
+| `--checkbox-color-disabled`           | Color when disabled                         |
+| `--checkbox-color-disabled-checked`   | Color when disabled and checked             |
+| `--checkbox-ripple-transform`         | Transform of the ripple                     |
+| `--checkbox-size`                     | Width and height                            |
+| `--checkbox-transition`               | Transition                                  |
 
 
 

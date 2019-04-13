@@ -18,10 +18,6 @@ $tab-transition: var(--tab-transition, background #{$transition-duration-medium}
 /* Opacity when disabled */
 $tab-opacity-disabled: var(--tab-opacity-disabled, 0.6);
 
-/**
-	Default colors
- */
-
 /* Default color */
 $tab-color: var(--tab-color, #{color("shade")});
 
@@ -51,10 +47,6 @@ $tab-color-disabled: var(--tab-color-disabled, #{color("shade", $light-hue)});
 
 /* Background when disabled */
 $tab-bg-disabled: var(--tab-bg-disabled, #{$background});
-
-/**
-	Filled colors
- */
 
 /* Default color when filled */
 $tab-color-filled: var(--tab-color-filled, #{color-contrast("primary", $default-hue, 0.6)});

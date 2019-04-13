@@ -28,14 +28,14 @@ Fills a circle from 0% to 100%.
 
 | Property                                         | Description                                      |
 |--------------------------------------------------|--------------------------------------------------|
-| `--progress-spinner-buffer-color`                | Color of the buffer.                             |
-| `--progress-spinner-color`                       | Color.                                           |
-| `--progress-spinner-determinate-progress-transition` | Transition when determinate.                     |
-| `--progress-spinner-indeterminate-container-duration` | Spinner container animation duration when indeterminate. |
-| `--progress-spinner-indeterminate-progress-duration` | Spinner animation duration when indeterminate.   |
-| `--progress-spinner-indeterminate-timing-function` | Spinner animation timing function when indeterminate. |
-| `--progress-spinner-size`                        | Width and height.                                |
-| `--progress-spinner-stroke-width`                | Width of the spinner stroke.                     |
+| `--progress-spinner-buffer-color`                | Color of the buffer                              |
+| `--progress-spinner-color`                       | Color                                            |
+| `--progress-spinner-determinate-progress-transition` | Transition of the spinner when determinate       |
+| `--progress-spinner-indeterminate-container-duration` | Duration of the indeterminate animation for the container |
+| `--progress-spinner-indeterminate-progress-duration` | Duration of the indeterminate animation for the spinner |
+| `--progress-spinner-indeterminate-timing-function` | Timing function of the indeterminate animation   |
+| `--progress-spinner-size`                        | Width and height                                 |
+| `--progress-spinner-stroke-width`                | Width of the spinner stroke                      |
 
 
 

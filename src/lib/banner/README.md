@@ -19,14 +19,14 @@ Display a non-interruptive message and related optional actions.
 
 ## ➤ CSS Custom Properties
 
-| Property                   | Description                  |
-|----------------------------|------------------------------|
-| `--banner-bg`              | Background.                  |
-| `--banner-color`           | Color.                       |
-| `--banner-content-padding` | Padding of the content slot. |
-| `--banner-icon-color`      | Color of the icon.           |
-| `--banner-icon-margin`     | Margin of the icon slot.     |
-| `--banner-padding`         | Padding.                     |
+| Property                   | Description                 |
+|----------------------------|-----------------------------|
+| `--banner-bg`              | Background                  |
+| `--banner-color`           | Color                       |
+| `--banner-content-padding` | Padding of the content slot |
+| `--banner-icon-color`      | Color of the icon           |
+| `--banner-icon-margin`     | Margin of the icon slot     |
+| `--banner-padding`         | Padding                     |
 
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#slots)

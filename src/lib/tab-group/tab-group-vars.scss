@@ -23,4 +23,3 @@ $tab-group-indicator-bg: var(--tab-group-indicator-bg, currentColor);
 
 /* Transition of the indicator */
 $tab-group-indicator-transition: var(--tab-group-indicator-transition, left #{$transition-duration-medium} #{$transition-deceleration-curve}, top #{$transition-duration-medium} #{$transition-deceleration-curve}, width #{$transition-duration-medium} #{$transition-deceleration-curve});
-

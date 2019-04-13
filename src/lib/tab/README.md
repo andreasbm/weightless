@@ -36,32 +36,34 @@ Organize navigation between groups of content.
 
 ## ➤ CSS Custom Properties
 
-| Property                       | Description                                   |
-|--------------------------------|-----------------------------------------------|
-| `--tab-before-margin`          | Margin of the before slot.                    |
-| `--tab-before-margin-vertical` | Margin of the before slot when vertical.      |
-| `--tab-bg`                     | Background.                                   |
-| `--tab-bg-active`              | Background when checked.                      |
-| `--tab-bg-active-filled`       | Background when checked and filled.           |
-| `--tab-bg-disabled`            | Background when disabled.                     |
-| `--tab-bg-disabled-filled`     | Background when disabled and filled.          |
-| `--tab-bg-filled`              | Background when filled.                       |
-| `--tab-bg-hover`               | Background when hover.                        |
-| `--tab-bg-hover-active`        | Background when hover and checked.            |
-| `--tab-bg-hover-active-filled` | Background when hover and checked and filled. |
-| `--tab-bg-hover-filled`        | Background when hover and filled.             |
-| `--tab-color`                  | Color.                                        |
-| `--tab-color-active`           | Color when checked.                           |
-| `--tab-color-active-filled`    | Color when checked and filled.                |
-| `--tab-color-disabled`         | Color when disabled.                          |
-| `--tab-color-disabled-filled`  | Color when disabled and filled.               |
-| `--tab-color-filled`           | Color when filled.                            |
-| `--tab-color-hover`            | Color when hover.                             |
-| `--tab-color-hover-filled`     | Color when hover and filled.                  |
-| `--tab-opacity-disabled`       | Opacity when disabled.                        |
-| `--tab-padding`                | Padding.                                      |
-| `--tab-padding-vertical`       | Padding when vertical.                        |
-| `--tab-transition`             | Transition.                                   |
+| Property                          | Description                              |
+|-----------------------------------|------------------------------------------|
+| `--tab-before-margin`             | Margin of the before slot                |
+| `--tab-before-margin-vertical`    | margin of the before slot when vertical  |
+| `--tab-bg`                        | default background                       |
+| `--tab-bg-active`                 | background when active                   |
+| `--tab-bg-active-filled`          | background when active and filled        |
+| `--tab-bg-active-hover`           | background when active and hover         |
+| `--tab-bg-active-hover-filled`    | background when active, hover and filled |
+| `--tab-bg-disabled`               | background when disabled                 |
+| `--tab-bg-disabled-filled`        | background when disabled and filled      |
+| `--tab-bg-filled`                 | default background when filled           |
+| `--tab-bg-hover`                  | background when hover                    |
+| `--tab-bg-hover-filled`           | background when hover and filled         |
+| `--tab-color`                     | default color                            |
+| `--tab-color-active`              | color when active                        |
+| `--tab-color-active-filled`       | color when active and filled             |
+| `--tab-color-active-hover`        | color when active and hover              |
+| `--tab-color-active-hover-filled` | color when active, hover and filled      |
+| `--tab-color-disabled`            | color when disabled                      |
+| `--tab-color-disabled-filled`     | color when disabled and filled           |
+| `--tab-color-filled`              | default color when filled                |
+| `--tab-color-hover`               | color when hover                         |
+| `--tab-color-hover-filled`        | color when hover and filled              |
+| `--tab-opacity-disabled`          | opacity when disabled                    |
+| `--tab-padding`                   | Padding                                  |
+| `--tab-padding-vertical`          | Padding when vertical                    |
+| `--tab-transition`                | transition                               |
 
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#slots)

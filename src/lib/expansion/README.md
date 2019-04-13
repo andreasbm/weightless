@@ -38,23 +38,23 @@ Provide an expandable details-summary view.
 
 ## ➤ CSS Custom Properties
 
-| Property                               | Description                        |
-|----------------------------------------|------------------------------------|
-| `--expansion-bg`                       | Background.                        |
-| `--expansion-color`                    | Color.                             |
-| `--expansion-content-padding`          | Padding of the default slot.       |
-| `--expansion-elevation`                | Box shadow.                        |
-| `--expansion-elevation-open`           | Box shadow when open.              |
-| `--expansion-header-bg-hover`          | Background of the header on hover. |
-| `--expansion-header-description-color` | Color of the description slot.     |
-| `--expansion-header-height`            | Default height of the header.      |
-| `--expansion-header-height-open`       | Height of the header when opened.  |
-| `--expansion-header-padding`           | Padding of the header.             |
-| `--expansion-header-title-margin`      | Margin of the title slot.          |
-| `--expansion-header-transition`        | Transition of the header.          |
-| `--expansion-icon-transition`          | Transition of the icon.            |
-| `--expansion-margin-open`              | Margin when open.                  |
-| `--expansion-transition`               | Transition.                        |
+| Property                               | Description                                 |
+|----------------------------------------|---------------------------------------------|
+| `--expansion-bg`                       | Default background                          |
+| `--expansion-color`                    | Default color                               |
+| `--expansion-content-padding`          | Padding of the content                      |
+| `--expansion-elevation`                | Box shadow                                  |
+| `--expansion-elevation-open`           | Box shadow when open                        |
+| `--expansion-header-bg-hover`          | Background of the header when :hover        |
+| `--expansion-header-description-color` | Color of the description slot in the header |
+| `--expansion-header-height`            | Height of the header                        |
+| `--expansion-header-height-open`       | Height of the header when open              |
+| `--expansion-header-padding`           | Padding of the header                       |
+| `--expansion-header-title-margin`      | Margin of the title slot in the header      |
+| `--expansion-header-transition`        | Transition of the header                    |
+| `--expansion-icon-transition`          | Transition of the icon                      |
+| `--expansion-margin-open`              | Margin when open                            |
+| `--expansion-transition`               | Transition                                  |
 
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#slots)

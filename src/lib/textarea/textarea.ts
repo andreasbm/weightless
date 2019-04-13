@@ -17,10 +17,10 @@ export interface ITextareaProperties extends ITextfieldBehaviorProperties {
 
 /**
  * Multiline text fields.
- * --textarea-resize - Resizing strategy of the textarea.
- * --textarea-height - Height of the textarea.
- * --textarea-min-height - Minimum height of the textarea.
- * --textarea-max-height - Maximum height of the textarea.
+ * @cssprop --textarea-resize - Resize strategy
+ * @cssprop --textarea-height - Height
+ * @cssprop --textarea-min-height - Min height
+ * @cssprop --textarea-max-height - Max height
  */
 @customElement("wl-textarea")
 export class Textarea extends TextfieldBehavior implements ITextareaProperties {
