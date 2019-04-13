@@ -13,7 +13,7 @@ $card-padding: var(--card-padding, 0);
 $card-elevation: var(--card-elevation, #{elevation(1)});
 
 /* Box shadow when :hover */
-$card-elevation-hover: var(--card-elevation-hover, #{elevation(4, #{$shadow})});
+$card-elevation-hover: var(--card-elevation-hover, #{elevation(4)});
 
 /* Color */
 $card-color: var(--card-color, #{$foreground});

@@ -1,7 +1,7 @@
 @import "../style/base";
 
 /* Box shadow */
-$dialog-elevation: var(--dialog-elevation, #{elevation(4, #{$shadow})});
+$dialog-elevation: var(--dialog-elevation, #{elevation(4)});
 
 /* Background */
 $dialog-bg: var(--dialog-bg, #{$background});

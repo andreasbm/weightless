@@ -19,7 +19,7 @@ $snackbar-content-padding: var(--snackbar-content-padding, #{$spacing-s} #{$spac
 $snackbar-icon-color: var(--snackbar-icon-color, #{color("primary")});
 
 /* Box shadow */
-$snackbar-elevation: var(--snackbar-elevation, #{elevation(1, #{$shadow})});
+$snackbar-elevation: var(--snackbar-elevation, #{elevation(1)});
 
 /* Color */
 $snackbar-color: var(--snackbar-color, #{$background});

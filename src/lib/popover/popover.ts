@@ -5,9 +5,9 @@ import { Backdrop } from "../backdrop/backdrop";
 import { IOverlayBehaviorBaseProperties, IOverlayBehaviorProperties, OverlayBehavior } from "../behavior/overlay/overlay-behavior";
 import { AriaRole } from "../util/aria";
 import { cssResult } from "../util/css";
-import { queryParentRoots, renderAttributes } from "../util/dom";
+import { queryParentRoots, renderAttributes, setProperty } from "../util/dom";
 import { addClickAwayListener, addListener, EventListenerSubscription, removeListeners } from "../util/event";
-import { areStrategiesEqual, computeAnchorPosition, computeFallbackStrategy, computeTransformOrigin, IAnchorPosition, IPositionStrategy, OriginX, OriginY } from "../util/position";
+import { areStrategiesEqual, computeAnchorPosition, computeFallbackStrategy, computeMaxDimensions, computeTransformOrigin, IAnchorPosition, IPositionStrategy, OriginX, OriginY } from "../util/position";
 import { getOpacity, getScale } from "../util/style";
 import styles from "./popover.scss";
 
@@ -362,38 +362,39 @@ export class Popover<R = unknown> extends OverlayBehavior<R, IPopoverConfig> imp
 		super.updatePosition();
 		requestAnimationFrame(() => {
 
-			// Compute the transform origin
+			// Compute the anchor position and transform origin
+			const anchor = this.getAnchor();
 			let strategy = this.getPositionStrategy();
 			let isUsingFallbackStrategy = false;
-
-			// Compute the anchor position
-			const anchor = this.getAnchor();
 			let position!: IAnchorPosition;
+			let anchorRect: ClientRect | DOMRect | null = null;
 
 			// Always prioritize the anchor position set explicitly
 			if (this.anchorPosition != null) {
 				position = this.anchorPosition;
 
 			} else if (anchor != null) {
-				const anchorRect = anchor!.getBoundingClientRect();
+				anchorRect = anchor!.getBoundingClientRect();
 				position = computeAnchorPosition(strategy, anchorRect);
 
-				// Compute a fallback strategy. Will not change if there are no need for a fallback.
-				if (!this.noFallback) {
-					const containerRect = this.$container.getBoundingClientRect();
-					const fallbackStrategy = computeFallbackStrategy(strategy, position, containerRect);
-
-					// Check whether the fallback strategy should be used
-					isUsingFallbackStrategy = areStrategiesEqual(strategy, fallbackStrategy);
-					if (isUsingFallbackStrategy) {
-						strategy = fallbackStrategy;
-						position = computeAnchorPosition(fallbackStrategy, anchorRect);
-					}
-				}
 			} else {
 				return this.throwNoAnchorError();
 			}
 
+			// Compute a fallback strategy. Will not change if there are no need for a fallback.
+			if (!this.noFallback) {
+				const containerRect = this.$container.getBoundingClientRect();
+				const fallbackStrategy = computeFallbackStrategy(strategy, position, containerRect);
+
+				// Check whether the fallback strategy should be used
+				isUsingFallbackStrategy = areStrategiesEqual(strategy, fallbackStrategy);
+				if (isUsingFallbackStrategy) {
+					strategy = fallbackStrategy;
+					position = computeAnchorPosition(fallbackStrategy, anchorRect || position);
+				}
+			}
+
+			// Compute the transform of the popover
 			const transform = computeTransformOrigin(strategy);
 			this.$content.style.transformOrigin = `${strategy.transformOriginX} ${strategy.transformOriginY}`;
 			Object.assign(this.$container.style, {
@@ -402,14 +403,19 @@ export class Popover<R = unknown> extends OverlayBehavior<R, IPopoverConfig> imp
 				"transform": `translate(${transform.x}, ${transform.y})`
 			});
 
-			// Render the actual strategy. This is used for the arrow in the wl-popover-card.
+			// Render the actual strategy as data attributes. This is used for the arrow in the wl-popover-card.
 			renderAttributes(this.$container, {
 				"data-fallback-strategy": isUsingFallbackStrategy,
-				"anchorOriginX": strategy.anchorOriginX,
-				"anchorOriginY": strategy.anchorOriginY,
-				"transformOriginX": strategy.transformOriginX,
-				"transformOriginY": strategy.transformOriginY
+				"data-anchor-origin-x": strategy.anchorOriginX,
+				"data-anchor-origin-y": strategy.anchorOriginY,
+				"data-transform-origin-x": strategy.transformOriginX,
+				"data-transform-origin-y": strategy.transformOriginY
 			});
+
+			// Set the maximum height and width as CSS variables so the children can pick it up.
+			const {maxWidth, maxHeight} = computeMaxDimensions(strategy, position);
+			setProperty(`--popover-container-max-width`, `${maxWidth}px`, this.$container);
+			setProperty(`--popover-container-max-height`, `${maxHeight}px`, this.$container);
 		});
 	}
 

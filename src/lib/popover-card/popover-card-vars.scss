@@ -2,7 +2,7 @@
 @import "../card/card-vars";
 
 /* Box shadow */
-$popover-card-elevation: var(--popover-card-elevation, #{elevation(4, #{$shadow})});
+$popover-card-elevation: var(--popover-card-elevation, #{elevation(4)});
 
 /* Width of the arrow */
 $popover-card-arrow-width: var(--popover-card-arrow-width, #{size(10)});

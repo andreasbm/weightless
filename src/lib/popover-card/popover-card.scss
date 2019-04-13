@@ -30,37 +30,37 @@
 }
 
 // Only display the arrow if host-context is supported
-:host-context([transformOriginX][transformOriginY]) #arrow {
+:host-context([data-transform-origin-x][data-transform-origin-y]) #arrow {
 	display: block;
 }
 
 // Position the arrow inside the arrow container according to the transform origin.
-:host-context([transformOriginX="left"]) {
+:host-context([data-transform-origin-x="left"]) {
 	--_align-items: flex-start;
 }
 
-:host-context([transformOriginX="center"]) {
+:host-context([data-transform-origin-x="center"]) {
 	--_align-items: center;
 }
 
-:host-context([transformOriginX="right"]) {
+:host-context([data-transform-origin-x="right"]) {
 	--_align-items: flex-end;
 }
 
-:host-context([transformOriginY="top"]) {
+:host-context([data-transform-origin-y="top"]) {
 	--_justify-content: flex-start;
 }
 
-:host-context([transformOriginY="center"]) {
+:host-context([data-transform-origin-y="center"]) {
 	--_justify-content: center;
 }
 
-:host-context([transformOriginY="bottom"]) {
+:host-context([data-transform-origin-y="bottom"]) {
 	--_flex-direction: column-reverse;
 }
 
 // It doesn't make sense to show an arrow when the transform origin is in the center
-:host-context([transformOriginX="center"][transformOriginY="center"]) {
+:host-context([data-transform-origin-x="center"][data-transform-origin-y="center"]) {
 	#arrow {
 		display: none;
 	}
@@ -71,41 +71,41 @@
 // #####################################
 
 // Top rules
-:host-context([transformOriginX="left"][transformOriginY="top"]) {
+:host-context([data-transform-origin-x="left"][data-transform-origin-y="top"]) {
 	--_content-translate-x-multiplier: -2;
 	--_arrow-translate-x-multiplier: -1;
 }
 
-:host-context([transformOriginX="right"][transformOriginY="top"]) {
+:host-context([data-transform-origin-x="right"][data-transform-origin-y="top"]) {
 	--_content-translate-x-multiplier: 2;
 	--_arrow-translate-x-multiplier: 1;
 }
 
 // Bottom rules
-:host-context([transformOriginY="bottom"]) {
+:host-context([data-transform-origin-y="bottom"]) {
 	--_arrow-rotation: 180deg;
 }
 
-:host-context([transformOriginX="left"][transformOriginY="bottom"]) {
+:host-context([data-transform-origin-x="left"][data-transform-origin-y="bottom"]) {
 	--_content-translate-x-multiplier: -2;
 	--_arrow-translate-x-multiplier: 1;
 }
 
-:host-context([transformOriginX="right"][transformOriginY="bottom"]) {
+:host-context([data-transform-origin-x="right"][data-transform-origin-y="bottom"]) {
 	--_content-translate-x-multiplier: 2;
 	--_arrow-translate-x-multiplier: -1;
 }
 
-:host-context([transformOriginY="center"]) {
+:host-context([data-transform-origin-y="center"]) {
 	--_arrow-translate-x-multiplier: 0;
 }
 
 // Center rules
-:host-context([transformOriginY="center"]) {
+:host-context([data-transform-origin-y="center"]) {
 	--_align-items: center;
 }
 
-:host-context([transformOriginX="left"][transformOriginY="center"]) {
+:host-context([data-transform-origin-x="left"][data-transform-origin-y="center"]) {
 	--_flex-direction: row;
 	--_arrow-rotation: -90deg;
 
@@ -114,7 +114,7 @@
 	}
 }
 
-:host-context([transformOriginX="right"][transformOriginY="center"]) {
+:host-context([data-transform-origin-x="right"][data-transform-origin-y="center"]) {
 	--_flex-direction: row-reverse;
 	--_arrow-rotation: 90deg;
 

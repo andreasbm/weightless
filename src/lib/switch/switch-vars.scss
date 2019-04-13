@@ -46,7 +46,7 @@ $switch-knob-border-radius: var(--switch-knob-border-radius, 100%);
 $switch-knob-transition: var(--switch-knob-transition, background #{$transition-duration-fast} #{$transition-deceleration-curve}, transform #{$transition-duration-fast} #{$transition-deceleration-curve});
 
 /* Box shadow of the knob */
-$switch-knob-elevation: var(--switch-knob-elevation, #{elevation(2, #{$shadow})});
+$switch-knob-elevation: var(--switch-knob-elevation, #{elevation(2)});
 
 /* Transform of the ripple */
 $switch-ripple-transform: var(--switch-ripple-transform, translate(-50%, -50%) scale(1.8));

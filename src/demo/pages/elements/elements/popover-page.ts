@@ -3,7 +3,6 @@ import "../../../../lib/button/button";
 import "../../../../lib/card/card";
 import "../../../../lib/list-item/list-item";
 import "../../../../lib/popover-card";
-import { IOpenOverlayConfig } from "../../../../lib/behavior/overlay/show-overlay";
 import { defaultPopoverConfig, IPopoverBaseProperties, IPopoverConfig, Popover } from "../../../../lib/popover/popover";
 import { showPopover, showPopoverAtPosition } from "../../../../lib/popover/show-popover";
 import "../../../../lib/select/select";
@@ -111,6 +110,12 @@ export default class PopoverPage extends LitElement {
 			background: lightgrey;
 		}
 		
+		#popover wl-card {
+		    max-height: calc(var(--popover-container-max-height) - 90px);
+            min-height: 90px;
+            overflow: auto;
+		}
+		
 	`)];
 
 	@property({type: String}) transformOriginX = defaultPopoverConfig.transformOriginX!;
@@ -131,6 +136,7 @@ export default class PopoverPage extends LitElement {
 		e.preventDefault();
 
 		let overlay: Popover;
+
 		async function showSubContextMenu (e: MouseEvent) {
 			overlay.persistent = true;
 			const res = await showContextMenu(e, html`

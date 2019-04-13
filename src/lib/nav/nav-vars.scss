@@ -13,7 +13,7 @@ $nav-padding: var(--nav-padding, 0 #{$spacing-l});
 $nav-height: var(--nav-height, #{size(70)});
 
 /* Box shadow */
-$nav-elevation: var(--nav-elevation, #{elevation(3, #{$shadow})});
+$nav-elevation: var(--nav-elevation, #{elevation(3)});
 
 /* Transition */
 $nav-transition: var(--nav-transition, background #{$transition-duration-fast} #{$transition-deceleration-curve},
