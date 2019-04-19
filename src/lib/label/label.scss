@@ -2,6 +2,9 @@
 @import "label-vars";
 
 :host {
+	font-size: $label-font-size;
+	font-family: $label-font-family;
+	line-height: $label-line-height;
 	color: $label-color;
 	cursor: default;
 	display: inline-block;
@@ -12,6 +15,7 @@
 	overflow: hidden;
 	text-overflow: ellipsis;
 	max-width: 100%;
+	line-height: 1.1;
 }
 
 :host([required]):after {

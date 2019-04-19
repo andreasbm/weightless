@@ -1,0 +1,18 @@
+@import "../style/base";
+@import "text-vars";
+
+:host {
+	margin: $text-margin;
+	font-family: $text-font-family;
+	line-height: $text-line-height;
+	opacity: $text-opacity;
+	display: block;
+}
+
+:host([size="large"]) {
+	font-size: $text-font-size-l;
+}
+
+:host([size="medium"]) {
+	font-size: $text-font-size-m;
+}

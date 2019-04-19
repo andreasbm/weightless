@@ -201,11 +201,18 @@
 			"[Demo](https://weightless.dev/elements/tabs)"
 		],
 		[
+			"Text",
+			"`wl-text`",
+			"Group text into paragraphs.",
+			"[Documentation](/src/lib/text)",
+			"[Demo](https://weightless.dev/elements/text)"
+		],
+		[
 			"Textarea",
 			"`wl-textarea`",
 			"Multiline text fields.",
-			"[Documentation](/src/lib/textarea)",
-			"[Demo](https://weightless.dev/elements/textarea)"
+			"[Documentation](/src/lib/text)",
+			"[Demo](https://weightless.dev/elements/text)"
 		],
 		[
 			"Textfield",

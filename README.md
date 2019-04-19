@@ -94,7 +94,8 @@ If you prefer to use the `umd` bundle you can import `https://unpkg.com/weightle
 | Switch           | `wl-switch`           | Turn an option on or off.                        | [Documentation](/src/lib/switch)           | [Demo](https://weightless.dev/elements/switch)   |
 | Tab              | `wl-tab`              | Organize navigation between groups of content.   | [Documentation](/src/lib/tab)              | [Demo](https://weightless.dev/elements/tabs)     |
 | Tab Group        | `wl-tab-group`        | Organize navigation between groups of content.   | [Documentation](/src/lib/tab-group)        | [Demo](https://weightless.dev/elements/tabs)     |
-| Textarea         | `wl-textarea`         | Multiline text fields.                           | [Documentation](/src/lib/textarea)         | [Demo](https://weightless.dev/elements/textarea) |
+| Text             | `wl-text`             | Group text into paragraphs.                      | [Documentation](/src/lib/text)             | [Demo](https://weightless.dev/elements/text)     |
+| Textarea         | `wl-textarea`         | Multiline text fields.                           | [Documentation](/src/lib/text)             | [Demo](https://weightless.dev/elements/text)     |
 | Textfield        | `wl-textfield`        | Singleline text fields.                          | [Documentation](/src/lib/textfield)        | [Demo](https://weightless.dev/elements/textfield) |
 | Title            | `wl-title`            | Indicate the start of a new section.             | [Documentation](/src/lib/title)            | [Demo](https://weightless.dev/elements/title)    |
 | Tooltip          | `wl-tooltip`          | Informative context related text.                | [Documentation](/src/lib/tooltip)          | [Demo](https://weightless.dev/elements/tooltip)  |

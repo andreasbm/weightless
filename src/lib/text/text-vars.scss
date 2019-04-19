@@ -1,0 +1,20 @@
+@import "../style/base";
+
+/* Margin */
+$text-margin: var(--text-margin, #{0 0 0.4em});
+
+/* Line height */
+$text-line-height: var(--text-line-height, #{$line-height-m});
+
+/* Opacity */
+$text-opacity: var(--text-opacity, 0.8);
+
+/* Font size medium */
+$text-font-size-m: var(--text-font-size, #{$font-size-m});
+
+/* Font size large */
+$text-font-size-l: var(--text-font-size-l, #{$font-size-l});
+
+/* Font family */
+$text-font-family: var(--text-font-family, #{$font-family-serif});
+

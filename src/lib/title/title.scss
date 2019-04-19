@@ -5,24 +5,38 @@
 	margin: $title-margin;
 	font-family: $title-font-family;
 	font-weight: $title-font-weight;
+	line-height: $title-line-height;
 	display: block;
+}
+
+:host([nowrap]) {
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	max-width: 100%;
+	line-height: 1.1;
 }
 
 :host([level="1"]) {
 	font-size: $title-font-size-level-1;
 }
+
 :host([level="2"]) {
 	font-size: $title-font-size-level-2;
 }
+
 :host([level="3"]) {
 	font-size: $title-font-size-level-3;
 }
+
 :host([level="4"]) {
 	font-size: $title-font-size-level-4;
 }
+
 :host([level="5"]) {
 	font-size: $title-font-size-level-5;
 }
+
 :host([level="6"]) {
 	font-size: $title-font-size-level-6;
 }

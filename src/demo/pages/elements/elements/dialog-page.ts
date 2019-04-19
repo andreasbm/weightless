@@ -8,6 +8,7 @@ import { Select } from "../../../../lib/select/select";
 import "../../../../lib/select/select";
 import "../../../../lib/textfield/textfield";
 import "../../../../lib/title/title";
+import "../../../../lib/text/text";
 import { cssResult } from "../../../../lib/util/css";
 import "../../../elements/code-example/code-example-element";
 import "../../../elements/demo/demo-element";
@@ -21,7 +22,7 @@ async function openTemplateDialog (text: string, config: Partial<IDialogBaseProp
 		backdrop: true,
 		blockScrolling: true,
 		container: document.body,
-		template: html`<p slot="content">${text}</p>`,
+		template: html`<wl-text slot="content">${text}</wl-text>`,
 		scrollContainer: getMainScrollContainer(),
 		...config
 	});
@@ -90,7 +91,7 @@ export default class DialogPage extends LitElement {
 					<wl-dialog open>
 						<wl-title level="3" slot="header">This is a header</wl-title>
 						<div slot="content">
-							<span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</span>
+							<wl-text>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</wl-text>
 						</div>
 						<div slot="footer">
 							<wl-button inverted flat>Cancel</wl-button>

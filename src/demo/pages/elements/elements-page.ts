@@ -4,6 +4,8 @@ import { customElement, html, LitElement, property, PropertyValues, query } from
 import { repeat } from "lit-html/directives/repeat";
 import "../../../lib/button/button";
 import "../../../lib/icon/icon";
+import "../../../lib/label/label";
+import "../../../lib/title/title";
 import "../../../lib/list-item/list-item";
 import { cssResult } from "../../../lib/util/css";
 import { addListener } from "../../../lib/util/event";
@@ -75,7 +77,7 @@ export default class ElementsPage extends LitElement {
 				${this.currentRoute != null && this.currentRoute.data != null ? html`
 					<header id="header">
 						<aside>
-							<wl-title level="1">${this.currentRoute.data.title}</wl-title>
+							<wl-title id="title" level="1" nowrap>${this.currentRoute.data.title}</wl-title>
 							<wl-label>${this.currentRoute.data.desc}</wl-label>
 						</aside>
 						<a tabindex="-1" href="${DOCS_URL(this.currentRoute.data.docs || this.currentRoute.path)}" target="_blank" rel="noopener">

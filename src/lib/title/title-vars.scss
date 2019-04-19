@@ -1,7 +1,10 @@
 @import "../style/base";
 
 /* Margin */
-$title-margin: var(--title-margin, #{size(6, "em")} 0);
+$title-margin: var(--title-margin, #{0 0 0.2em});
+
+/* Line height */
+$title-line-height: var(--title-line-height, #{$line-height-m});
 
 /* Font family */
 $title-font-family: var(--title-font-family, #{$font-family-sans-serif});

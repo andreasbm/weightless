@@ -53,6 +53,7 @@ export type AriaRole =
 	| "navigation"
 	| "note"
 	| "option"
+	| "paragraph"
 	| "presentation"
 	| "progressbar"
 	| "radio"

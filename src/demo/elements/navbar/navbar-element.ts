@@ -91,8 +91,11 @@ export class ThemeComponent extends Nav {
 
 	private toggleDarkMode () {
 		this.darkMode = !this.darkMode;
-		const foreground = this.darkMode ? `hsl(0, 100%, 100%)` : `hsl(0, 0%, 5%)`;
-		const background = this.darkMode ? `hsl(0, 0%, 5%)` : `hsl(0, 100%, 100%)`;
+
+		const light = `hsl(0, 0%, 95%)`;
+		const dark = `hsl(200, 0%, 5%)`;
+		const foreground = this.darkMode ? light : dark;
+		const background = this.darkMode ? dark : light;
 		const shade = this.darkMode ? greyReversedPalette : greyPalette;
 		const shadow = this.darkMode ? `hsla(360, 5%, 50%, 0.1)` : `hsla(0, 0%, 0%, 0.2)`;
 

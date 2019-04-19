@@ -4,6 +4,7 @@ import { repeat } from "lit-html/directives/repeat";
 import "../../../lib/button/button";
 import "../../../lib/icon/icon";
 import "../../../lib/title/title";
+import "../../../lib/text/text";
 import { cssResult } from "../../../lib/util/css";
 import { BROWSER_SUPPORT, BULLETS, GITHUB_URL, NPM_URL, PACKAGE_JSON_URL } from "../../constants";
 import "../../elements/container/container-element";
@@ -82,8 +83,8 @@ export default class HomePage extends LitElement {
 	protected render () {
 		return html`
 			<container-element id="main-container" centered>
-				<wl-title class="title">Weightless</wl-title>
-				<span class="text">High quality web components with a small footprint.</span>
+				<wl-title class="title" nowrap>Weightless</wl-title>
+				<wl-text class="text" size="large">High quality web components with a small footprint.</wl-text>
 				<div class="cta-area">
 					<router-link path="get-started" delegateFocus>
 						<skip-anchor></skip-anchor>
@@ -107,7 +108,7 @@ export default class HomePage extends LitElement {
 							<img class="img" src="/assets/icon/${bullet.img}.svg" alt="${bullet.title}" />
 							<aside>
 								<wl-title class="title" level="4">${bullet.title}</wl-title>
-								<span class="text">${bullet.text}</span>
+								<wl-text class="text">${bullet.text}</wl-text>
 							</aside>
 						</div>
 					`)}
@@ -135,15 +136,15 @@ export default class HomePage extends LitElement {
 						</svg>
 						<aside>
 							<wl-title class="title" level="2">Our Octocat is hungry!</wl-title>
-							<span>Do you find this library inspiring? Help us feed our Octocat by becoming a stargazer.</span>
+							<wl-text class="text">Do you find this library inspiring? Help us feed our Octocat by becoming a stargazer.</wl-text>
 						</aside>
 					</div>
 				</container-element>
 			</a>
 			
 			<container-element id="browser-support-container">
-				<wl-title class="text" level="2">Browser Support</wl-title>
-				<span class="text">Weightless elements are supported on all modern browsers. If you want to support old school browsers you’ll need to load polyfills. Luckily it is super easy if you use <a href="https://polyfill.dev" target="_blank" rel="noopener">polyfill.dev</a> or something similar.</span>
+				<wl-title class="title" level="2">Browser Support</wl-title>
+				<wl-text class="text">Weightless elements are supported on all modern browsers. If you want to support old school browsers you’ll need to load polyfills. Luckily it is super easy if you use <a href="https://polyfill.dev" target="_blank" rel="noopener">polyfill.dev</a> or something similar.</wl-text>
 				<div id="browsers">
 					${repeat(BROWSER_SUPPORT, support => html`
 						<div class="browser">

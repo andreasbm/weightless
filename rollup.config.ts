@@ -63,12 +63,12 @@ export default [
 			...(isServe ? [
 				...defaultServePlugins({
 					serveConfig: {
-						port: 1340,
+						port: 1350,
 						contentBase: folders.dist
 					},
 					livereloadConfig: {
 						watch: folders.dist,
-						port: 35730
+						port: 35731
 					}
 				})
 			] : []),

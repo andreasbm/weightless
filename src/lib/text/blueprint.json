@@ -1,0 +1,8 @@
+{
+	"extend": "blueprint.json",
+	"input": "src/lib/text/blueprint.md",
+	"output": "src/lib/text/README.md",
+	"tag": "wl-text",
+	"demo": "https://weightless.dev/elements/text",
+	"img": "https://raw.githubusercontent.com/andreasbm/elements/master/screenshots/wl-text.png"
+}

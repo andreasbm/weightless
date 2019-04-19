@@ -57,6 +57,6 @@
 	@return hsl-contrast-fallback($palette, $name, $hue, $alpha);
 }
 
-$foreground: #{var(--foreground, hsl(0, 0%, 5%))};
-$background: #{var(--background, hsl(0, 100%, 100%))};
+$foreground: #{var(--foreground, hsl(200, 4%, 15%))};
+$background: #{var(--background, hsl(0, 0%, 95%))};
 $shadow: #{var(--shadow, hsla(0, 0%, 0%, 0.15))};

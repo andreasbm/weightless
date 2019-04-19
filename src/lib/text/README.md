@@ -1,42 +1,42 @@
 
-[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#wl-label)
+[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#wl-text)
 
-# ➤ wl-label
+# ➤ wl-text
 
-Make form elements more accessible.
+Group text into paragraphs.
 
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#properties)
 
 ## ➤ Properties
 
-| Property   | Attribute  | Type      | Default | Description                                      |
-|------------|------------|-----------|---------|--------------------------------------------------|
-| `for`      | `for`      | `string`  |         | Query of the form element click events are re-fired upon. |
-| `nowrap`   | `nowrap`   | `boolean` | false   | Caps the label element with ellipsis if overflowing. |
-| `required` | `required` | `boolean` | false   | Styles the label as required.                    |
+| Property | Attribute | Type       | Default     | Description       |
+|----------|-----------|------------|-------------|-------------------|
+| `role`   | `role`    | `AriaRole` | "paragraph" | Role of the text. |
+| `size`   | `size`    | `TextSize` | "medium"    | Size of the text. |
 
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#css-custom-properties)
 
 ## ➤ CSS Custom Properties
 
-| Property                 | Description                  |
-|--------------------------|------------------------------|
-| `--label-color`          | Color.                       |
-| `--label-font-family`    | Font family                  |
-| `--label-font-size`      | Font size                    |
-| `--label-line-height`    | Line height                  |
-| `--label-required-color` | Color of the required astrix |
+| Property             | Description      |
+|----------------------|------------------|
+| `--text-font-family` | Font family      |
+| `--text-font-size-l` | Font size large  |
+| `--text-font-size-m` | Font size medium |
+| `--text-line-height` | Line height      |
+| `--text-margin`      | Margin           |
+| `--text-opacity`     | Opacity          |
 
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#slots)
 
 ## ➤ Slots
 
-| Name | Description                                      |
-|------|--------------------------------------------------|
-|      | Default content. If the first element is a form element, clicks on the entire label will be re-fired upon that element. |
+| Name | Description      |
+|------|------------------|
+|      | Default content. |
 
 
 
@@ -44,10 +44,10 @@ Make form elements more accessible.
 
 ## ➤ Usage
 
-Go [here](https://weightless.dev/elements/label) to try the demo.
+Go [here](https://weightless.dev/elements/text) to try the demo.
 
-<a href="https://weightless.dev/elements/label" align="center">
-  <img src="https://raw.githubusercontent.com/andreasbm/elements/master/screenshots/wl-label.png" width="700" />
+<a href="https://weightless.dev/elements/text" align="center">
+  <img src="https://raw.githubusercontent.com/andreasbm/elements/master/screenshots/wl-text.png" width="700" />
 </a>
 
 

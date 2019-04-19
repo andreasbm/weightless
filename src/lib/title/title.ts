@@ -16,6 +16,7 @@ export type TitleLevel = 1 | 2 | 3 | 4 | 5 | 6;
  */
 export interface ITitleProperties {
 	level: number;
+	nowrap: boolean;
 	role: AriaRole;
 }
 
@@ -23,6 +24,7 @@ export interface ITitleProperties {
  * Indicate the start of a new section.
  * @slot - Default content.
  * @cssprop --title-margin - Margin
+ * @cssprop --title-line-height - Line height
  * @cssprop --title-font-family - Font family
  * @cssprop --title-font-weight - Font weight
  * @cssprop --title-font-size-level-1 - Font size of heading level 1
@@ -41,6 +43,12 @@ export class Title extends LitElement implements ITitleProperties {
 	 * @attr
 	 */
 	@property({type: Number, reflect: true}) level: TitleLevel = 1;
+
+	/**
+	 * Caps the title element with ellipsis if overflowing.
+	 * @attr
+	 */
+	@property({type: Boolean}) nowrap: boolean = false;
 
 	/**
 	 * Role of the title.

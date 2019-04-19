@@ -1,7 +1,16 @@
 @import "../style/base";
 
 /* Color */
-$label-color: var(--label-color, #{color("shade", $dark-hue)});
+$label-color: var(--label-color, #{color("shade")});
+
+/* Font size */
+$label-font-size: var(--label-font-size, #{$font-size-m});
+
+/* Font family */
+$label-font-family: var(--label-font-family, #{$font-family-serif});
+
+/* Font family */
+$label-line-height: var(--label-line-height, #{$line-height-m});
 
 /* Color of the required astrix */
 $label-required-color: var(--label-required-color, #{color("error", $default-hue)});

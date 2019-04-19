@@ -29,6 +29,7 @@ const ELEMENTS = [
 	"snackbar",
 	"switch",
 	"tabs",
+	"text",
 	"textarea",
 	"textfield",
 	"title",

@@ -19,7 +19,10 @@ export interface ILabelProperties {
 /**
  * Make form elements more accessible.
  * @slot - Default content. If the first element is a form element, clicks on the entire label will be re-fired upon that element.
- * @cssprop --label-color - Color
+ * @cssprop --label-font-size - Font size
+ * @cssprop --label-font-family - Font family
+ * @cssprop --label-line-height - Line height
+ * @cssprop --label-color - Color.
  * @cssprop --label-required-color - Color of the required astrix
  */
 @customElement("wl-label")

@@ -10,10 +10,11 @@ Indicate the start of a new section.
 
 ## ➤ Properties
 
-| Property | Attribute | Type         | Default   | Description         |
-|----------|-----------|--------------|-----------|---------------------|
-| `level`  | `level`   | `TitleLevel` | 1         | Level of the title. |
-| `role`   | `role`    | `AriaRole`   | "heading" | Role of the title.  |
+| Property | Attribute | Type         | Default   | Description                                      |
+|----------|-----------|--------------|-----------|--------------------------------------------------|
+| `level`  | `level`   | `TitleLevel` | 1         | Level of the title.                              |
+| `nowrap` | `nowrap`  | `boolean`    | false     | Caps the title element with ellipsis if overflowing. |
+| `role`   | `role`    | `AriaRole`   | "heading" | Role of the title.                               |
 
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#css-custom-properties)
@@ -30,6 +31,7 @@ Indicate the start of a new section.
 | `--title-font-size-level-5` | Font size of heading level 5 |
 | `--title-font-size-level-6` | Font size of heading level 6 |
 | `--title-font-weight`       | Font weight                  |
+| `--title-line-height`       | Line height                  |
 | `--title-margin`            | Margin                       |
 
 

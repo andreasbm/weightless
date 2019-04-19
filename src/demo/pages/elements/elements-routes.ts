@@ -211,6 +211,15 @@ export const COMPONENTS_ROUTES: IRoute<IRouteData>[] = [
 		}
 	},
 	{
+		path: "text",
+		component: () => import("./elements/text-page"),
+		data: {
+			title: "Text",
+			desc: "Group text into paragraphs.",
+			img: iconPath("text")
+		}
+	},
+	{
 		path: "textarea",
 		component: () => import("./elements/textarea-page"),
 		data: {

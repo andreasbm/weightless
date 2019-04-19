@@ -116,7 +116,6 @@
 
 	// Required to center the thumb on the track
 	position: relative;
-	top: -1px;
 }
 
 @mixin slider-thumb-focus-styles() {
@@ -137,9 +136,6 @@
 	@include slider-thumb-focus-styles()
 }
 
-;
 #slider:focus::-moz-range-thumb {
 	@include slider-thumb-focus-styles()
 }
-
-;
