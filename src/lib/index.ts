@@ -28,3 +28,4 @@ export * from "./switch";
 export * from "./slider";
 export * from "./tab";
 export * from "./tab-group";
+export * from "./text";
