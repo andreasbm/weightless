@@ -92,7 +92,7 @@ export class ThemeComponent extends Nav {
 	private toggleDarkMode () {
 		this.darkMode = !this.darkMode;
 
-		const light = `hsl(0, 0%, 95%)`;
+		const light = `hsl(0, 0%, 100%)`;
 		const dark = `hsl(200, 0%, 5%)`;
 		const foreground = this.darkMode ? light : dark;
 		const background = this.darkMode ? dark : light;
@@ -121,7 +121,7 @@ export class ThemeComponent extends Nav {
 
 	protected render () {
 		return html`
-			<aside id="left-container">
+			<div id="left">
 				${path().startsWith("/elements") ? html`<wl-button aria-label="Toggle menu" id="menu-button" fab inverted flat @click="${() => this.toggleMenu()}">
 					<wl-icon alt="menu">menu</wl-icon>
 				</wl-button>` : ""}
@@ -136,8 +136,8 @@ export class ThemeComponent extends Nav {
 					</svg>
 					<img id="text" src="${this.darkMode ? `assets/brand/text-light.svg` : `assets/brand/text-dark.svg`}" alt="Logo"/>
 				</router-link>
-			</aside>
-			<aside id="right-container">
+			</div>
+			<div id="right">
 				<div id="navigation">
 					<router-link class="link" path="/get-started">Get Started</router-link>
 					<router-link class="link" path="/elements">Elements</router-link>
@@ -152,7 +152,7 @@ export class ThemeComponent extends Nav {
 					</wl-popover-card>
 				</wl-popover>
 				<a id="octo" href="${GITHUB_URL}" target="_blank" rel="noopener" aria-label="Open Github"><octo-element></octo-element></a>
-			</aside>
+			</div>
 		`;
 	}
 }

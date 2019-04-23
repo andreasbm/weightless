@@ -58,5 +58,5 @@
 }
 
 $foreground: #{var(--foreground, hsl(200, 4%, 15%))};
-$background: #{var(--background, hsl(0, 0%, 95%))};
+$background: #{var(--background, hsl(0, 0%, 100%))};
 $shadow: #{var(--shadow, hsla(0, 0%, 0%, 0.15))};

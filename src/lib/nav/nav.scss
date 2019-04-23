@@ -26,13 +26,13 @@
 	box-shadow: $nav-elevation;
 }
 
-#left-container, #right-container, ::slotted([slot="left"]), ::slotted([slot="right"]), ::slotted([slot="title"]) {
+#left, #right, #title, ::slotted([slot="left"]), ::slotted([slot="right"]), ::slotted([slot="title"]) {
 	display: flex;
 	align-items: center;
 	height: 100%;
 }
 
-::slotted([slot="title"]) {
+#title, ::slotted([slot="title"]) {
 	margin: $nav-title-margin;
 	font-size: $nav-title-font-size;
 	font-weight: $nav-title-font-weight;

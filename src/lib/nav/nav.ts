@@ -56,11 +56,11 @@ export class Nav extends LitElement implements INavProperties {
 	 */
 	protected render (): TemplateResult {
 		return html`
-			<div id="left-container">
+			<div id="left">
 				<slot name="left"></slot>
 				<slot name="title"></slot>
 			</div>
-			<div id="right-container">
+			<div id="right">
 				<slot name="right"></slot>
 			</div>
 		`;
