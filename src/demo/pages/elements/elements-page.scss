@@ -17,7 +17,8 @@ a {
 
 #menu {
 	width: $elements-page-menu-width;
-	background: color("shade", 100);
+	//background: color("shade", 100);
+	background: $background;
 	padding: $spacing-s;
 	overflow-y: auto;
 	flex-shrink: 0;

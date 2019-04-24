@@ -32,6 +32,22 @@
 	<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400,700|Roboto+Slab:300,400,700"
 	      rel="stylesheet">
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-96179028-3"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag("js", new Date());
+		gtag("config", "UA-96179028-3");
+		window.addEventListener("navigationend", () => {
+			if (ga == null) return;
+			ga("send", {
+				hitType: "pageview",
+				page: location.pathname
+			});
+		});
+	</script>
 </head>
 <body>
 

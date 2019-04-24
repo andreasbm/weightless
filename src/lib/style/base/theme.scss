@@ -4,16 +4,16 @@
 /**
  * Returns a HSL string with fallback.
  */
-@function construct-hsl ($hsl-var-name, $hue-var-name, $hsl, $alpha: null) {
+@function construct-hsl ($hsl-var-name, $hue-var-name, $saturation-var-name, $lightness-var-name, $hsl, $alpha: null) {
 	$h: nth($hsl, 1);
 	$s: nth($hsl, 2);
 	$l: nth($hsl, 3);
 
 	@if ($alpha and $alpha != 1) {
-		@return #{'hsla(var(--#{$hsl-var-name}, var(--#{$hue-var-name}, #{$h}), #{$s}, #{$l}), #{$alpha})'};
+		@return #{'hsla(var(--#{$hsl-var-name}, var(--#{$hue-var-name}, #{$h}), var(--#{$saturation-var-name}, #{$s}), var(--#{$lightness-var-name}, #{$l})), #{$alpha})'};
 
 	} @else {
-		@return #{'hsl(var(--#{$hsl-var-name}, var(--#{$hue-var-name}, #{$h}), #{$s}, #{$l}))'};
+		@return #{'hsl(var(--#{$hsl-var-name}, var(--#{$hue-var-name}, #{$h}), var(--#{$saturation-var-name}, #{$s}), var(--#{$lightness-var-name}, #{$l})))'};
 	}
 }
 
@@ -22,11 +22,15 @@
  */
 @function hsl-fallback ($palette, $name, $hue: 500, $alpha: null) {
 	@return construct-hsl(
-			$hsl-var-name: #{$name}-#{$hue},
-			$hue-var-name: #{$name}-hue,
+			$hsl-var-name: "#{$name}-#{$hue}",
+			$hue-var-name: "#{$name}-hue",
+			$saturation-var-name: "#{$name}-saturation",
+			$lightness-var-name: "#{$name}-lightness",
 			$hsl: get-entry($palette, $hue),
 			$alpha: $alpha
 	);
+
+
 }
 
 /**
@@ -34,8 +38,10 @@
  */
 @function hsl-contrast-fallback ($palette, $name, $hue: 500, $alpha: null) {
 	@return construct-hsl(
-			$hsl-var-name: #{$name}-#{$hue}-contrast,
-			$hue-var-name: #{$name}-hue-contrast,
+			$hsl-var-name: "#{$name}-#{$hue}-contrast",
+			$hue-var-name: "#{$name}-hue-contrast",
+			$saturation-var-name: "#{$name}-saturation-contrast",
+			$lightness-var-name: "#{$name}-lightness-contrast",
 			$hsl: get-mapped-entry($palette, "contrast", $hue),
 			$alpha: $alpha
 	);
@@ -57,6 +63,27 @@
 	@return hsl-contrast-fallback($palette, $name, $hue, $alpha);
 }
 
-$foreground: #{var(--foreground, hsl(200, 4%, 15%))};
-$background: #{var(--background, hsl(0, 0%, 100%))};
-$shadow: #{var(--shadow, hsla(0, 0%, 0%, 0.15))};
+$foreground: construct-hsl(
+		$hsl-var-name: "foreground",
+		$hue-var-name: "foreground-hue",
+		$saturation-var-name: "foreground-saturation",
+		$lightness-var-name: "foreground-lightness",
+		$hsl: (230, 70%, 5%)
+);
+
+$background: construct-hsl(
+		$hsl-var-name: "background",
+		$hue-var-name: "background-hue",
+		$saturation-var-name: "background-saturation",
+		$lightness-var-name: "background-lightness",
+		$hsl: (0, 0%, 100%)
+);
+
+$shadow: construct-hsl(
+		$hsl-var-name: "shadow",
+		$hue-var-name: "shadow-hue",
+		$saturation-var-name: "shadow-saturation",
+		$lightness-var-name: "shadow-lightness",
+		$hsl: (230, 70%, 5%),
+		$alpha: 0.15
+);

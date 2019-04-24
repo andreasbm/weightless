@@ -6,10 +6,7 @@
 
 #main-container {
 	height: calc(100vh - var(--nav-height));
-}
-
-#main-container {
-	min-height: #{size(500)};
+	min-height: #{size(600)};
 	max-height: #{size(800)};
 	text-align: center;
 	position: relative;
@@ -43,13 +40,17 @@
 	}
 
 	.arrow-down {
-		//--size-multiplier: 1.5px;
 		font-size: #{size(25)};
 		position: absolute;
 		bottom: #{size(80)};
 		left: 50%;
 		transform: translate(-50%, 0);
+		animation: 2000ms ease-in-out arrow-point infinite;
 	}
+}
+
+.mobile-cta {
+	display: none;
 }
 
 #bullets-container {
@@ -105,7 +106,7 @@
 		}
 
 		#eyes {
-			animation: 2000ms ease-in-out pulse infinite;
+			animation: 3000ms ease-in-out pulse infinite;
 		}
 	}
 }
@@ -160,6 +161,12 @@
 	}
 }
 
+@media #{$screen-s-and-down} {
+	.mobile-cta {
+		display: block;
+	}
+}
+
 @keyframes wave {
 	0%, 100% {
 		transform: rotate(0deg);
@@ -178,6 +185,15 @@
 	}
 	50% {
 		transform: scale(0.9);
+	}
+}
+
+@keyframes arrow-point {
+	0%, 100% {
+		transform: translate(-50%, 0);
+	}
+	50% {
+		transform: translate(-50%, #{size(5)});
 	}
 }
 

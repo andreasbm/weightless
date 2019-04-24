@@ -90,6 +90,12 @@ export default class HomePage extends LitElement {
 						<skip-anchor></skip-anchor>
 						<wl-button id="get-started">Get Started</wl-button>
 					</router-link>
+					<div class="mobile-cta">
+						<p>or</p>
+						<router-link path="elements" delegateFocus>
+							<wl-button id="get-started" outlined flat inverted>Try the elements</wl-button>
+						</router-link>
+					</div>
 				</div>
 				<wl-button aria-label="Scroll down" class="arrow-down" fab inverted flat @click="${this.scrollToBullets}">
 					<wl-icon alt="Down">keyboard_arrow_down</wl-icon>
