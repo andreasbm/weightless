@@ -37,7 +37,14 @@
 	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-96179028-3"></script>
 	<script>
 		window.dataLayer = window.dataLayer || [];
-		function gtag(){dataLayer.push(arguments);}
+		const isLocalhost = location.hostname === "localhost";
+		function gtag () {
+			if (isLocalhost) {
+				console.log(`%cTrack "${arguments[0]}"`, "color: #bada55", arguments);
+				return;
+			}
+			dataLayer.push(arguments);
+		};
 		gtag("js", new Date());
 		gtag("config", "UA-96179028-3");
 	</script>
