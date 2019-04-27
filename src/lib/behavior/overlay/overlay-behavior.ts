@@ -253,13 +253,6 @@ export abstract class OverlayBehavior<R, C extends Partial<IOverlayBehaviorBaseP
 	}
 
 	/**
-	 * Creates a root that delegates the focus.
-	 */
-	protected createRenderRoot () {
-		return this.attachShadow({mode: "open", delegatesFocus: true});
-	}
-
-	/**
 	 * Creates a new resolver.
 	 */
 	protected createResolver () {

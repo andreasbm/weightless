@@ -1,13 +1,14 @@
 import { customElement, html, property, query, TemplateResult } from "lit-element";
 import { nothing } from "lit-html";
 import { ifDefined } from "lit-html/directives/if-defined";
-import { ISwitchBehaviorProperties } from "../behavior/switch/switch-behavior";
 import { IRadioBehaviorProperties, RadioBehavior } from "../behavior/radio/radio-behavior";
+import { ISwitchBehaviorProperties } from "../behavior/switch/switch-behavior";
+import "../icon";
+import "../ripple";
 import { Ripple } from "../ripple/ripple";
 import { CUBIC_BEZIER } from "../util/constant/animation";
 import { cssResult } from "../util/css";
-import "../icon";
-import "../ripple";
+import { addListener } from "../util/event";
 
 import styles from "./expansion.scss";
 
@@ -102,19 +103,19 @@ export class Expansion extends RadioBehavior implements IExpansionProperties {
 	@query("#content-container") protected $ripple!: Ripple;
 
 	/**
-	 * Change the event target to the header.
-	 */
-	protected get eventTarget (): HTMLElement {
-		return this.$header;
-	}
-
-	/**
 	 * Hooks up the element.
 	 * @param props
 	 */
 	protected firstUpdated (props: Map<keyof IExpansionProperties, unknown>) {
 		super.firstUpdated(<Map<keyof ISwitchBehaviorProperties, unknown>>props);
-		this.$ripple.target = this.eventTarget;
+
+		// Make sure only the ripple animation happens on the header.
+		this.$ripple.target = this;
+
+		// Stop the click event from propagating when clicking on the content container.
+		this.listeners.push(
+			addListener(this.$contentContainer, "click", this.onContentContainerClick.bind(this))
+		);
 
 		// The initial in or out animation will be instant
 		this.animateContent(0).then();
@@ -134,10 +135,13 @@ export class Expansion extends RadioBehavior implements IExpansionProperties {
 	}
 
 	/**
-	 * Creates a root that delegates the focus.
+	 * Handles the click on the content container by stopping the event from propagating.
+	 * This ensures that clicks on the body doesn't close the expansion.
+	 * It is required because we can't delegate focus to the header which would be the optimal soluation.
+	 * @param e
 	 */
-	protected createRenderRoot () {
-		return this.attachShadow({mode: "open", delegatesFocus: true});
+	protected onContentContainerClick (e: MouseEvent) {
+		e.stopPropagation();
 	}
 
 	/**
@@ -178,7 +182,7 @@ export class Expansion extends RadioBehavior implements IExpansionProperties {
 	 */
 	protected render (): TemplateResult {
 		return html`
-			<header id="header" tabindex="0" aria-labelledby="title">
+			<header id="header" aria-labelledby="title">
 				<div id="title">
 					<slot name="title"></slot>
 					<slot name="description"></slot>

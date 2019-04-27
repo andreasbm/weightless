@@ -54,13 +54,6 @@ export abstract class SwitchBehavior extends FormElementBehavior implements ISwi
 	protected formElementType: string = "checkbox";
 
 	/**
-	 * Event target for the listeners and click simulation.
-	 */
-	protected get eventTarget (): HTMLElement {
-		return this;
-	}
-
-	/**
 	 * Hooks up the element.
 	 * @param props
 	 */
@@ -97,8 +90,8 @@ export abstract class SwitchBehavior extends FormElementBehavior implements ISwi
 	 */
 	protected attachListeners () {
 		this.listeners.push(
-			addListener(this.eventTarget, "click", this.onClick.bind(this)),
-			addListener(this.eventTarget, "keydown", this.onKeyDown.bind(this))
+			addListener(this, "click", this.onClick.bind(this)),
+			addListener(this, "keydown", this.onKeyDown.bind(this))
 		);
 	}
 
@@ -140,7 +133,7 @@ export abstract class SwitchBehavior extends FormElementBehavior implements ISwi
 	 */
 	protected onKeyDown (e: KeyboardEvent) {
 		if (e.code === SPACE || e.code === ENTER) {
-			this.eventTarget.click();
+			this.click();
 			stopEvent(e);
 		}
 	}
