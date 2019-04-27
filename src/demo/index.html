@@ -40,13 +40,6 @@
 		function gtag(){dataLayer.push(arguments);}
 		gtag("js", new Date());
 		gtag("config", "UA-96179028-3");
-		window.addEventListener("navigationend", () => {
-			if (ga == null) return;
-			ga("send", {
-				hitType: "pageview",
-				page: location.pathname
-			});
-		});
 	</script>
 </head>
 <body>

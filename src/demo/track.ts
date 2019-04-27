@@ -1,28 +1,26 @@
 declare global {
 	interface Window {
 		ga: any;
+		gtag: any;
 	}
 }
 
 /**
  * Tracks an event.
- * @param type
- * @param options
+ * @param arguments
+ * @param args
  */
-export function trackEvent (type: string,
-                            options?: Partial<{hitType: string, eventCategory: string, eventAction: string}>) {
-	window.ga(type, options);
+export function track (...args: any[]) {
+	window.gtag(...args);
 }
 
 /**
  * Tracks a cta event.
- * @param eventAction
+ * @param name
  */
-export function trackCtaEvent (eventAction: string) {
-	trackEvent("send", {
-		hitType: "event",
-		eventCategory: "Cta",
-		eventAction
+export function trackCtaEvent (name: string) {
+	track("event", name, {
+		eventCategory: "Cta"
 	});
 }
 
