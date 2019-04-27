@@ -1,4 +1,5 @@
 import { customElement, html, property, query, TemplateResult } from "lit-element";
+import { nothing } from "lit-html";
 import { ifDefined } from "lit-html/directives/if-defined";
 import { ISwitchBehaviorProperties } from "../behavior/switch/switch-behavior";
 import { IRadioBehaviorProperties, RadioBehavior } from "../behavior/radio/radio-behavior";
@@ -184,7 +185,7 @@ export class Expansion extends RadioBehavior implements IExpansionProperties {
 				</div>
 				<div id="indicator">
 					<slot name="indicator"></slot>
-					${this.icon != null ? html`<wl-icon id="icon">${this.icon}</wl-icon>` : ""}
+					${this.icon != null ? html`<wl-icon id="icon">${this.icon}</wl-icon>` : nothing}
 				</div>
 				<wl-ripple id="ripple" overlay ?disabled="${this.disabled || this.noRipple}"></wl-ripple>
 			</header>

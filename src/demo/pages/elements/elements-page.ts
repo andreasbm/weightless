@@ -1,6 +1,7 @@
 import "@a11y/skip-navigation";
 import { ChangeStateEvent, IRoute, path, RouterSlot, RouterSlotEventKind } from "@appnest/web-router";
 import { customElement, html, LitElement, property, PropertyValues, query } from "lit-element";
+import { nothing } from "lit-html";
 import { repeat } from "lit-html/directives/repeat";
 import "../../../lib/button/button";
 import "../../../lib/icon/icon";
@@ -66,7 +67,7 @@ export default class ElementsPage extends LitElement {
 				${repeat(COMPONENTS_ROUTES.filter(route => route.path !== "**"), route => html`
 					<router-link delegateFocus class="menu-item" path="${route.path}">
 						<wl-list-item clickable ?active="${path({endSlash: false}).endsWith(route.path)}">
-							${route.data != null ? html`<img slot="before" class="img" src="${route.data.img}" alt="Icon" />` : ""}
+							${route.data != null ? html`<img slot="before" class="img" src="${route.data.img}" alt="Icon" />` : nothing}
 							<span>${route.data != null ? route.data.title : route.path}</span>
 						</wl-list-item>
 					</router-link>

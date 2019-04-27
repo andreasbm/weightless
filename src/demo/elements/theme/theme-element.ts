@@ -1,4 +1,5 @@
 import { customElement, html, LitElement } from "lit-element";
+import { nothing } from "lit-html";
 import { repeat } from "lit-html/directives/repeat";
 import "../../../lib/icon/icon";
 import { ENTER } from "../../../lib/util/constant/keycode";
@@ -78,7 +79,7 @@ export class ThemeComponent extends LitElement {
 			this.setTheme(theme.name);
 			this.dispatchUpdate();
 		}}">
-					${theme.name === this.currentThemeName ? html`<wl-icon>check</wl-icon>` : ""}	 
+					${theme.name === this.currentThemeName ? html`<wl-icon>check</wl-icon>` : nothing}	 
 				</div>
 			`)}
 			<input id="custom-color-picker" type="color" value="#57FFAC" @change="${(e: Event) => {

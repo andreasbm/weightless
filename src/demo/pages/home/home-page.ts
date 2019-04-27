@@ -1,5 +1,6 @@
 import "@appnest/web-router";
 import { customElement, html, LitElement, property, PropertyValues, query } from "lit-element";
+import { nothing } from "lit-html";
 import { repeat } from "lit-html/directives/repeat";
 import "../../../lib/button/button";
 import "../../../lib/icon/icon";
@@ -11,6 +12,7 @@ import "../../elements/container/container-element";
 import "../../elements/footer/footer-element";
 import "@a11y/skip-navigation";
 import { sharedStyles } from "../../style/shared";
+import { trackGetStartedEvent, trackGithubStarsEvent } from "../../track";
 
 import styles from "./home-page.scss";
 
@@ -86,13 +88,13 @@ export default class HomePage extends LitElement {
 				<wl-title class="title" nowrap>Weightless</wl-title>
 				<wl-text class="text" size="large">High quality web components with a small footprint.</wl-text>
 				<div class="cta-area">
-					<router-link path="get-started" delegateFocus>
+					<router-link path="get-started" delegateFocus @click="${trackGetStartedEvent}">
 						<skip-anchor></skip-anchor>
 						<wl-button id="get-started">Get Started</wl-button>
 					</router-link>
 					<div class="mobile-cta">
 						<p>or</p>
-						<router-link path="elements" delegateFocus>
+						<router-link path="elements" delegateFocus @click="${trackGetStartedEvent}">
 							<wl-button id="get-started" outlined flat inverted>Try the elements</wl-button>
 						</router-link>
 					</div>
@@ -103,7 +105,7 @@ export default class HomePage extends LitElement {
 				<a class="version-area" href="${NPM_URL}" rel="noopener" target="_blank">
 					<span>Latest version</span>
 					<img class="npm" src="/assets/npm-logo.svg" alt="NPM" />
-					<span>weightless${this.version != null ? html` - <b>v${this.version}</b>` : ""}</span>
+					<span>weightless${this.version != null ? html` - <b>v${this.version}</b>` : nothing}</span>
 				</a>
 			</container-element>
 			<container-element id="bullets-container">
@@ -120,7 +122,7 @@ export default class HomePage extends LitElement {
 					`)}
 				</div>
 			</container-element>
-			<a id="octocat-container" href="${GITHUB_URL}/stargazers" target="_blank" rel="noopener" class="${this.isIntersectingOctocat ? `intersecting` : ""}">
+			<a id="octocat-container" href="${GITHUB_URL}/stargazers" target="_blank" rel="noopener" class="${this.isIntersectingOctocat ? `intersecting` : ""}" @click="${trackGithubStarsEvent}">
 				<container-element class="container" centered>
 					<div id="octocat-area">
 						<svg class="img" width="362" height="279" viewBox="0 0 362 279" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">

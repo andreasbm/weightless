@@ -1,4 +1,5 @@
 import { customElement, html, property, query, TemplateResult } from "lit-element";
+import { nothing } from "lit-html";
 import { ifDefined } from "lit-html/directives/if-defined";
 import { FormElement } from "../behavior/form-element/form-element-behavior";
 import { IInputBehaviorProperties, InputBehavior } from "../behavior/input/input-behavior";
@@ -206,7 +207,7 @@ export class Slider extends InputBehavior implements ISliderProperties {
 					<div id="label">${this.label}</div>
 					<div id="slot-wrapper">
 						${this.renderFormElement("slider", undefined, this.sliderValueChanged)}
-						${this.thumbLabel ? html`<div id="thumb-container"><div id="thumb-label"><slot name="thumb-label">${this.value}</slot></div></div>` : undefined}
+						${this.thumbLabel ? html`<div id="thumb-container"><div id="thumb-label"><slot name="thumb-label">${this.value}</slot></div></div>` : nothing}
 						<slot id="slot"></slot>
 					</div>
 					${this.renderFormElement(this.formElementId, `display: none`, undefined, "-1")}

@@ -16,6 +16,7 @@ import { GITHUB_URL } from "../../constants";
 import { sharedStyles } from "../../style/shared";
 import "../octo/octo-element";
 import "../theme/theme-element";
+import { trackGithubSourceEvent } from "../../track";
 import styles from "./navbar-element.scss";
 
 const greyPalette: Palette = {
@@ -153,7 +154,7 @@ export class ThemeComponent extends Nav {
 						<theme-element @update="${() => this.$themePopover.hide()}"></theme-element>
 					</wl-popover-card>
 				</wl-popover>
-				<a id="octo" href="${GITHUB_URL}" target="_blank" rel="noopener" aria-label="Open Github"><octo-element></octo-element></a>
+				<a id="octo" href="${GITHUB_URL}" target="_blank" rel="noopener" aria-label="Open Github" @click="${trackGithubSourceEvent}"><octo-element></octo-element></a>
 			</div>
 		`;
 	}
