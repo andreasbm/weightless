@@ -78,11 +78,12 @@ $required-shade-hues: 200, 300, 400, 500, 600, 700;
 /**
  * Generates color variables for each color and it's hues and contrasts the palette map.
  */
-@mixin theme-variables ($palette-map, $foreground: black, $background: white, $shadow: rgba(0, 0, 0, 0.2), $validate: true) {
+@mixin theme-variables ($palette-map, $foreground: (230, 70%, 5%), $background: (0, 0%, 100%), $shadow: (230, 70%, 5%), $validate: true) {
 
 	// Validate the map if necessary
 	@if ($validate == true AND _validate-palette-map($palette-map) == false) {
 		// We only go here if the palette was not validated..
+		@warn "The palette '#{$palette-map}' is not valid.";
 	}
 
 	// Create color variables for each color

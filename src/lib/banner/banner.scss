@@ -15,6 +15,7 @@
 :host, #content, #actions {
 	display: flex;
 	align-items: center;
+	flex-wrap: wrap;
 }
 
 ::slotted([slot="icon"]) {

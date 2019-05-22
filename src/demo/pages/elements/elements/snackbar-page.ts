@@ -48,7 +48,6 @@ export default class SnackbarPage extends LitElement {
 	 */
 	private showDeclarativeSnackbar () {
 		const $snackbar = this.shadowRoot!.querySelector<Snackbar<string>>("#snackbar")!;
-		console.log($snackbar);
 		$snackbar.show().then();
 	}
 

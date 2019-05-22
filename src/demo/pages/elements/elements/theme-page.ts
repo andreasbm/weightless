@@ -1,4 +1,4 @@
-import { customElement, html, LitElement } from "lit-element";
+import { customElement, html, LitElement, property, PropertyValues } from "lit-element";
 import { repeat } from "lit-html/directives/repeat";
 import "../../../../lib/label/label";
 import "../../../../lib/select/select";
@@ -24,11 +24,13 @@ export default class ThemePage extends LitElement {
 
 	static styles = [sharedStyles, cssResult(styles)];
 
-	private updateHue (name: string, e: CustomEvent) {
-		const hue = (e.target as HTMLInputElement).value;
-		requestAnimationFrame(() => {
-			setProperty(`--${name}-hue`, hue);
-		});
+	@property({type: String}) primaryHue = document.documentElement.style.getPropertyValue("--primary-hue") || 224;
+	@property({type: String}) primarySaturation = document.documentElement.style.getPropertyValue("--primary-saturation") || 45;
+
+	protected updated (props: PropertyValues) {
+		super.updated(props);
+		setProperty(`--primary-hue`, this.primaryHue.toString());
+		setProperty(`--primary-saturation`, `${this.primarySaturation.toString().replace("%", "")}%`);
 	}
 
 	protected render () {
@@ -44,8 +46,10 @@ export default class ThemePage extends LitElement {
 				<wl-button style="--primary-hue: 310">Purple</wl-button>
 			</code-example-element>
 			
-			<p>To get a better feel for how HSL works you can play with the slider below to change the hue. Hue is a degree on the color wheel from 0 to 360. 0 is red, 120 is green, 240 is blue.</p>
-			<wl-slider min="0" max="360" value="224" thumbLabel @input="${(e: CustomEvent) => this.updateHue("primary", e)}"></wl-slider>
+			<p>To get a better feel for how HSL works you can play with the slider below to change the hue. Hue is a degree on the color wheel from 0 to 360. 0 is red, 120 is green, 240 is blue. The current values are <code>--primary-hue: ${this.primaryHue}</code> and <code>--primary-saturation: ${this.primarySaturation.toString()}%</code></p>
+			<wl-slider min="0" max="360" value="${this.primaryHue}" thumbLabel @input="${(e: CustomEvent) => this.primaryHue = (e.target as HTMLInputElement).value}"></wl-slider>
+			<wl-slider min="0" max="100" value="${this.primarySaturation}" thumbLabel @input="${(e: CustomEvent) => this.primarySaturation = (e.target as HTMLInputElement).value}"></wl-slider>
+			
 			
 			<div id="colors">
 				${repeat(requiredColors, color => html`
