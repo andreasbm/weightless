@@ -22,7 +22,7 @@ export interface IBrowserSupport {
 export const BULLETS: IBullet[] = [
 	{
 		title: "Up-to-date",
-		text: "Based on the newest web standards which makes every element future prove.",
+		text: "Based on the newest web standards which makes every element future proof.",
 		img: "crystal"
 	},
 	{
