@@ -1,5 +1,6 @@
 import { customElement, html, TemplateResult } from "lit-element";
 import { IPopoverProperties, Popover } from "../popover/popover";
+import "../popover-card/popover-card";
 import { cssResult } from "../util/css";
 
 import styles from "./tooltip.scss";
