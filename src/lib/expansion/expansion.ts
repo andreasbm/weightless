@@ -116,9 +116,8 @@ export class Expansion extends RadioBehavior implements IExpansionProperties {
 		this.listeners.push(
 			addListener(this.$contentContainer, "click", this.onContentContainerClick.bind(this))
 		);
-
-		// The initial in or out animation will be instant
-		this.animateContent(0).then();
+		// Animating here causes content to jump closed on first render, so skip it.
+		this.$contentContainer.style.height = this.checked ? `auto` : `0px`;
 	}
 
 	/**
