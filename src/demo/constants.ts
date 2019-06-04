@@ -2,12 +2,14 @@ export const GITHUB_URL = `https://github.com/andreasbm/weightless`;
 export const NPM_URL = `https://www.npmjs.com/package/weightless`;
 export const TWITTER_URL = `https://twitter.com/andreasmehlsen`;
 export const PACKAGE_JSON_URL = `https://unpkg.com/weightless/package.json`;
-export const DOCS_URL = (element: string) => `https://github.com/andreasbm/weightless/tree/master/src/lib/${element}`;
 export const UNPGK_URL = `https://unpkg.com/weightless/umd/weightless.min.js`;
 export const GOOGLE_FONT_URL = `https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400,700|Roboto+Slab:300,400,700`;
 export const MATERIAL_ICONS_URL = `https://fonts.googleapis.com/icon?family=Material+Icons`;
 export const ALL_ELEMENTS_DEMO_URL = `https://codepen.io/andreasbm/pen/YMyBQd`;
 export const GA_MEASUREMENT_ID = `UA-96179028-3`;
+export const GITHUB_DOCS_URL = (element: string) => `https://github.com/andreasbm/weightless/tree/master/src/lib/${element}`;
+export const MDN_DOCS_URL = (element: string) => `https://developer.mozilla.org/en-US/docs/Web/HTML/Element/${element}`;
+export const DOCS_URL = (element: string) => element === 'form' ? MDN_DOCS_URL(element) : GITHUB_DOCS_URL(element)
 export interface IBullet {
 	title: string;
 	text: string;
