@@ -12,6 +12,7 @@ export interface ITextfieldProperties extends ITextfieldBehaviorProperties {
 	list?: string;
 	min?: number;
 	max?: number;
+	step?: number;
 	type: TextfieldType;
 }
 
@@ -47,6 +48,12 @@ export class Textfield extends TextfieldBehavior implements ITextfieldProperties
 	@property({type: Number}) max?: number;
 
 	/**
+	 * Step size of number value.
+	 * @attr
+	 */
+	@property({type: Number}) step?: number;
+
+	/**
 	 * Renders the form element
 	 */
 	protected renderFormElement (): TemplateResult {
@@ -67,6 +74,7 @@ export class Textfield extends TextfieldBehavior implements ITextfieldProperties
 				maxlength="${ifDefined(this.maxLength)}"
 				min="${ifDefined(this.min)}"
 				max="${ifDefined(this.max)}"
+				step="${ifDefined(this.step)}"
 				tabindex="${this.disabled ? "-1" : "0"}"
 			/>
 		`;
