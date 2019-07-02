@@ -4,7 +4,7 @@ import { repeat } from "lit-html/directives/repeat";
 import "../../../lib/icon/icon";
 import { ENTER } from "../../../lib/util/constant/keycode";
 import { cssResult } from "../../../lib/util/css";
-import { colorKey, colorValue, removeColor, setColor } from "../../../lib/util/theme";
+import { removeColor, setColor } from "../../../lib/util/theme";
 import { sharedStyles } from "../../style/shared";
 import styles from "./theme-element.scss";
 import { contrastColor, hexToRGB, rgbToHSL, shadeColor } from "./theme-helpers";
