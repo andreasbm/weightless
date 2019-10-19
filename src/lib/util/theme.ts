@@ -80,7 +80,7 @@ export function setPalette (name: string, palette: Palette, config: Partial<ICol
 				palette = <Palette>hues.reduce((acc: Palette, contrastHue: number) => {
 					acc[contrastHue] = color as HSLColor;
 					return acc;
-				}, {});
+				}, {} as Palette);
 			}
 
 			setPalette(name, <Palette>color, {...config, isContrast: true});

@@ -399,7 +399,7 @@ export abstract class OverlayBehavior<R, C extends Partial<IOverlayBehaviorBaseP
 			const currentBlockingOverlays = $container.className.match(new RegExp(OVERLAY_SCROLLING_BLOCKED_CLASS_PREFIX, "gm"));
 
 			if (currentBlockingOverlays === null || (currentBlockingOverlays != null && currentBlockingOverlays.length === 1)) {
-				$container.style.overflow = null;
+				$container.style.overflow = ``;
 			}
 
 			$container.classList.remove(scrollingBlockedClass(this.overlayId));

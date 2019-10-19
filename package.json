@@ -89,10 +89,11 @@
 		"puppeteer": "^1.20.0",
 		"replace-ext": "^1.0.0",
 		"ts-node": "^8.4.1",
-		"tslib": "^1.10.0"
+		"tslib": "^1.10.0",
+		"typescript": "^3.7.0-beta"
 	},
 	"dependencies": {
-		"@a11y/focus-trap": "^1.0.3",
+		"@a11y/focus-trap": "~1.0.3",
 		"lit-element": "^2.2.0",
 		"lit-html": "^1.0.0"
 	},
