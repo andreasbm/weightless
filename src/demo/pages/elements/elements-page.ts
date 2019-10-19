@@ -24,8 +24,8 @@ export default class ElementsPage extends LitElement {
 	static styles = [sharedStyles, cssResult(styles)];
 	private currentRoute?: IRoute<IRouteData>;
 
-	@query("#router") protected $routerContainer: HTMLDivElement;
-	@query("#router-slot") protected $routerSlot: RouterSlot<IRouteData>;
+	@query("#router") protected $routerContainer!: HTMLDivElement;
+	@query("#router-slot") protected $routerSlot!: RouterSlot<IRouteData>;
 	@property({type: Boolean, reflect: true, attribute: "popover-visible"}) isPopoverVisible = false;
 
 	firstUpdated (props: PropertyValues) {
@@ -33,7 +33,7 @@ export default class ElementsPage extends LitElement {
 
 		this.$routerSlot.add(COMPONENTS_ROUTES);
 
-		this.$routerSlot.addEventListener(RouterSlotEventKind.ChangeState, (e: ChangeStateEvent) => {
+		this.$routerSlot.addEventListener(RouterSlotEventKind.ChangeState, () => {
 			this.currentRoute = this.$routerSlot.match!.route;
 			getMainScrollContainer().scrollTo({top: 0, left: 0});
 			this.requestUpdate().then();

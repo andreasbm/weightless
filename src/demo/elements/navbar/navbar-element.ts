@@ -72,7 +72,7 @@ export class ThemeComponent extends Nav {
 
 	@property({type: Boolean, reflect: true}) darkMode = false;
 	@query("#theme-popover") protected $themePopover!: Popover;
-	@query("#logo") protected $logo: HTMLImageElement;
+	@query("#logo") protected $logo!: HTMLImageElement;
 
 	firstUpdated (props: PropertyValues) {
 		super.firstUpdated(props);

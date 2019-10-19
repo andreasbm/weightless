@@ -30,8 +30,8 @@ export default class HomePage extends LitElement {
 	static styles = [sharedStyles, cssResult(styles)];
 
 	@property({type: String}) version?: string;
-	@query("#bullets-container") protected $bulletsContainer: HTMLElement;
-	@query("#octocat-container") protected $octocatContainer: HTMLElement;
+	@query("#bullets-container") protected $bulletsContainer!: HTMLElement;
+	@query("#octocat-container") protected $octocatContainer!: HTMLElement;
 
 
 	private bullets = BULLETS;

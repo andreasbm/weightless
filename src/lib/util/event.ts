@@ -10,22 +10,22 @@ export type EventListenerSubscription = (() => void);
  * @param options
  * @param debounceMs
  */
-export function addListener ($target: EventTarget,
+export function addListener<E extends Event> ($target: EventTarget,
                              type: string[] | string,
-                             listener: ((e?: Event) => void),
+                             listener: ((e: E) => void),
                              options?: boolean | AddEventListenerOptions,
                              debounceMs?: number): EventListenerSubscription {
 	const types = Array.isArray(type) ? type : [type];
 
 	// Create a callback that can debounce the listener
 	const debounceId = Math.random().toString();
-	const cb = (e: Event) => debounceMs == null ? listener(e) : debounce(() => listener(e), debounceMs, debounceId);
+	const cb = (e: E) => debounceMs == null ? listener(e) : debounce(() => listener(e), debounceMs, debounceId);
 
 	// Hook up the listeners
-	types.forEach(t => $target.addEventListener(t, cb, options));
+	types.forEach(t => $target.addEventListener(t, cb as EventListenerOrEventListenerObject, options));
 
 	// Returns an unsubscribe function
-	return () => types.forEach(t => $target.removeEventListener(t, cb, options));
+	return () => types.forEach(t => $target.removeEventListener(t, cb as EventListenerOrEventListenerObject, options));
 }
 
 
@@ -53,7 +53,8 @@ export function stopEvent (e: Event) {
  * @param $areas
  * @param listener
  */
-export function addClickAwayListener ($areas: EventTarget[], listener: ((e?: Event) => void)): EventListenerSubscription {
+export function addClickAwayListener ($areas: EventTarget[],
+                                      listener: ((e?: Event) => void)): EventListenerSubscription {
 	return addListener(window, ["mousedown", "pointerdown"], (e: Event) => {
 		if (!("composedPath" in e)) return;
 

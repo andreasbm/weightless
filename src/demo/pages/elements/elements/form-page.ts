@@ -48,7 +48,7 @@ export default class FormPage extends LitElement {
 				template: html`
 					<div slot="content">
 						<wl-title>Formdata</wl-title>
-						${repeat(data.entries(), ([key, value]) => html`<p><b>${key}: </b>${value}</p>`)}
+						${repeat(data.entries(), ([key, value]: [string, unknown]) => html`<p><b>${key}: </b>${value}</p>`)}
 					</div>`,
 				container: document.body
 			}).then();

@@ -53,7 +53,7 @@ export class Textfield extends TextfieldBehavior implements ITextfieldProperties
 		return html`
 			<input
 				id="${this.formElementId}"
-				.value="${ifDefined(this.value)}"
+				.value="${this.value}"
 				?required="${this.required}"
 				?disabled="${this.disabled}"
 				?readonly="${this.readonly}"

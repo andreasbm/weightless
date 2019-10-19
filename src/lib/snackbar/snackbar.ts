@@ -71,12 +71,12 @@ export class Snackbar<R = unknown> extends OverlayBehavior<R, Partial<ISnackbarP
 	/**
 	 * Backdrop element.
 	 */
-	@query("#backdrop") protected $backdrop: Backdrop;
+	@query("#backdrop") protected $backdrop!: Backdrop;
 
 	/**
 	 * Snackbar element.
 	 */
-	@query("#snackbar") protected $snackbar: FocusTrap;
+	@query("#snackbar") protected $snackbar!: FocusTrap;
 
 	/**
 	 * Focus trap element.
@@ -88,7 +88,7 @@ export class Snackbar<R = unknown> extends OverlayBehavior<R, Partial<ISnackbarP
 	/**
 	 * Timeout that automatically hides the snackbar.
 	 */
-	protected autoHideTimeout: number;
+	protected autoHideTimeout: number | null = null;
 
 	/**
 	 * Animates the snackbar in.

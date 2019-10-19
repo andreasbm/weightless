@@ -31,7 +31,8 @@
 	"scripts": {
 		"ncu": "ncu -u -a && npm update && npm install",
 		"test": "karma start",
-		"lint": "",
+		"lint": "npm run lint:lit",
+		"lint:lit": "lit-analyzer \"src/lib/**/*.ts\" --strict --quiet",
 		"b:dev": "rollup -c rollup.config.ts --environment NODE_ENV:dev",
 		"b:prod": "rollup -c rollup.config.ts --environment NODE_ENV:prod",
 		"s:dev": "rollup -c rollup.config.ts --watch --environment NODE_ENV:dev",
@@ -80,12 +81,13 @@
 	"devDependencies": {
 		"@a11y/skip-navigation": "0.0.8",
 		"@appnest/readme": "^1.2.4",
-		"@appnest/web-config": "0.4.28",
+		"@appnest/web-config": "0.4.29",
 		"@appnest/web-router": "^1.3.8",
 		"@types/puppeteer": "^1.20.2",
 		"code-prettify": "^0.1.0",
 		"fs-extra": "^8.1.0",
 		"glob": "^7.1.4",
+		"lit-analyzer": "^1.1.9",
 		"puppeteer": "^1.20.0",
 		"replace-ext": "^1.0.0",
 		"ts-node": "^8.4.1",
@@ -94,8 +96,8 @@
 	},
 	"dependencies": {
 		"@a11y/focus-trap": "~1.0.3",
-		"lit-element": "^2.2.0",
-		"lit-html": "^1.0.0"
+		"lit-element": "^2.2.1",
+		"lit-html": "^1.1.2"
 	},
 	"contributors": [
 		{

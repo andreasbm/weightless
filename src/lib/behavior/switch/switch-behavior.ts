@@ -151,7 +151,7 @@ export abstract class SwitchBehavior extends FormElementBehavior implements ISwi
 				?required="${this.required}"
 				?disabled="${this.disabled}"
 				?readonly="${this.readonly}"
-				.value="${ifDefined(this.value)}"
+				.value="${this.value}"
 				name="${ifDefined(this.name)}"
 				aria-hidden="true"
 				tabindex="-1"

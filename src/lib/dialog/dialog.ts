@@ -109,12 +109,12 @@ export class Dialog<R = unknown> extends OverlayBehavior<R, Partial<IDialogPrope
 	/**
 	 * Dialog element.
 	 */
-	@query("#dialog") protected $dialog: FocusTrap;
+	@query("#dialog") protected $dialog!: FocusTrap;
 
 	/**
 	 * Backdrop element.
 	 */
-	@query("#backdrop") protected $backdrop: Backdrop;
+	@query("#backdrop") protected $backdrop!: Backdrop;
 
 	/**
 	 * Focus trap element.

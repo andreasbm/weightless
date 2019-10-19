@@ -21,7 +21,7 @@ export class HighlightElement extends LitElement {
 	@property() headline?: string;
 	@property() text = "";
 
-	@query("pre") private $pre: HTMLElement;
+	@query("pre") private $pre!: HTMLElement;
 
 	get cleanedText () {
 

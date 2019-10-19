@@ -48,8 +48,8 @@ export abstract class ButtonBehavior extends FormElementBehavior implements IBut
 	 * Handles the key down event.
 	 * @param e
 	 */
-	protected onKeyDown (e: KeyboardEvent) {
-		if (e.code === ENTER || e.code === SPACE) {
+	protected onKeyDown (e: Event) {
+		if (e instanceof KeyboardEvent && (e.code === ENTER || e.code === SPACE)) {
 			// We want to have a position sent through the simulated click
 			// (document.elementFromPoint(left, top) as HTMLElement).click();
 

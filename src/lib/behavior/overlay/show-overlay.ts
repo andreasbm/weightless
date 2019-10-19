@@ -18,7 +18,7 @@ export interface IShowOverlayResult<R, C extends IOpenOverlayConfig & Partial<IO
  * @param config
  * @param create
  */
-export async function attachOverlay<R, C extends IOpenOverlayConfig & Partial<IOverlayBehaviorBaseProperties>, O extends OverlayBehavior<R, C>> (
+export async function attachOverlay<R extends any, C extends IOpenOverlayConfig & Partial<IOverlayBehaviorBaseProperties>, O extends OverlayBehavior<R, C>> (
 	config: C, create: (() => O)): Promise<O> {
 	const {template, container} = config;
 
@@ -44,7 +44,7 @@ export async function attachOverlay<R, C extends IOpenOverlayConfig & Partial<IO
  * @param config
  * @param create
  */
-export async function showOverlay<R, C extends IOpenOverlayConfig & Partial<IOverlayBehaviorBaseProperties>, O extends OverlayBehavior<R, C>> (
+export async function showOverlay<R extends any, C extends IOpenOverlayConfig & Partial<IOverlayBehaviorBaseProperties>, O extends OverlayBehavior<R, C>> (
 	config: C, create: (() => O)): Promise<IShowOverlayResult<R, C, O>> {
 	const overlay = await attachOverlay(config, create);
 	const result = overlay.show(config);

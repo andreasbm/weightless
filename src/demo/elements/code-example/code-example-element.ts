@@ -23,7 +23,7 @@ export class CodeExampleElement extends LitElement {
 	@property({type: Boolean}) lineNumber = false;
 	@property() headline?: string;
 	@property() text?: string;
-	@query("#highlighter") protected $highlighter: HighlightElement;
+	@query("#highlighter") protected $highlighter!: HighlightElement;
 
 	private cachedSlotString = "";
 

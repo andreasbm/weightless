@@ -193,7 +193,7 @@ export class Expansion extends RadioBehavior implements IExpansionProperties {
 				</div>
 				<wl-ripple id="ripple" overlay ?disabled="${this.disabled || this.noRipple}"></wl-ripple>
 			</header>
-			<div id="content-container" aria-hidden="${this.checked}">
+			<div id="content-container" aria-hidden="${this.checked.toString() as "true" | "false"}">
 				<div id="content" tabindex="${ifDefined(this.checked ? undefined : -1)}">
 					<slot></slot>
 				</div>

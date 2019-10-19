@@ -122,17 +122,17 @@ export class Popover<R = unknown> extends OverlayBehavior<R, IPopoverConfig> imp
 	/**
 	 * Content of the popover.
 	 */
-	@query("#content") protected $content: FocusTrap;
+	@query("#content") protected $content!: FocusTrap;
 
 	/**
 	 * Container element.
 	 */
-	@query("#container") protected $container: HTMLElement;
+	@query("#container") protected $container!: HTMLElement;
 
 	/**
 	 * Backdrop element.
 	 */
-	@query("#backdrop") protected $backdrop: Backdrop;
+	@query("#backdrop") protected $backdrop!: Backdrop;
 
 	/**
 	 * Listeners that reacts when the user clicks outside the popover.
@@ -456,7 +456,7 @@ export class Popover<R = unknown> extends OverlayBehavior<R, IPopoverConfig> imp
 	protected render (): TemplateResult {
 		return html`
 			<wl-backdrop id="backdrop" @click="${this.clickAway}"></wl-backdrop>
-			<div id="container" aria-expanded="${this.open}">
+			<div id="container" aria-expanded="${this.open.toString() as "true" | "false"}">
 				<focus-trap id="content" ?inactive="${!this.open || this.disableFocusTrap}">
 					${this.renderContent()}
 				</focus-trap>

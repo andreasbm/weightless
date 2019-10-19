@@ -180,7 +180,7 @@ export class Slider extends InputBehavior implements ISliderProperties {
 				type="range"
 				style="${ifDefined(style)}"
 				id="${ifDefined(id)}"
-				.value="${ifDefined(this.value)}"
+				.value="${this.value}"
 				?required="${this.required}"
 				?disabled="${this.disabled}"
 				?readonly="${this.readonly}"
@@ -190,8 +190,8 @@ export class Slider extends InputBehavior implements ISliderProperties {
 				min="${ifDefined(this.min)}"
 				max="${ifDefined(this.max)}"
 				step="${ifDefined(this.step)}"
-				@input="${ifDefined(onInput)}"
-				tabindex="${tabIndex || this.disabled ? "-1" : "0"}"
+				@input="${onInput || (() => {})}"
+				tabindex="${tabIndex || this.disabled ? -1 : 0}"
 			/>
 		`;
 	}
