@@ -141,7 +141,7 @@ export default class DialogPage extends LitElement {
 			duration: this.duration
 		})}">Open</wl-button>
 				<highlight-element language="javascript" text="${`
-					const ref = await openDialog({
+					const ref = await showDialog({
 						fixed: true,
 						backdrop: true,
 						blockScrolling: true,

@@ -14,7 +14,7 @@ export interface ITextfieldBehaviorProperties extends IInputBehaviorProperties {
 }
 
 /**
- * Slider behavior.
+ * Text field behavior.
  */
 export abstract class TextfieldBehavior extends InputBehavior implements ITextfieldBehaviorProperties {
 	static styles = [...InputBehavior.styles, cssResult(styles)];
