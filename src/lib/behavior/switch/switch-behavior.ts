@@ -123,7 +123,7 @@ export abstract class SwitchBehavior extends FormElementBehavior implements ISwi
 
 		// Defer the dispatching of the event until the UI on the grouped elements have updated.
 		requestAnimationFrame(() => {
-			this.dispatchEvent(new CustomEvent(SwitchBehaviorEvent.CHANGE, {composed: true, bubbles: true}))
+			this.dispatchEvent(new CustomEvent(SwitchBehaviorEvent.CHANGE, {composed: true, bubbles: true, detail: this.checked}))
 		});
 	}
 

@@ -149,6 +149,7 @@ export class Expansion extends RadioBehavior implements IExpansionProperties {
 	 */
 	protected toggle () {
 		this.checked = !this.checked;
+		this.dispatchChangeEvent();
 	}
 
 	/**
