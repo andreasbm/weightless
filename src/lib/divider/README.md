@@ -13,7 +13,7 @@ Thin line that groups content in lists and layouts.
 | Property   | Attribute  | Type       | Default     | Description                 |
 |------------|------------|------------|-------------|-----------------------------|
 | `role`     | `role`     | `AriaRole` | "separator" | Role of the backdrop.       |
-| `vertical` | `vertical` | `boolean`  |             | Makes the divider vertical. |
+| `vertical` | `vertical` | `boolean`  | false       | Makes the divider vertical. |
 
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#css-custom-properties)

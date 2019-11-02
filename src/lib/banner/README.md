@@ -15,6 +15,17 @@ Display a non-interruptive message and related optional actions.
 | `role`   | `role`    | `AriaRole` | "banner" | Role of the banner. |
 
 
+[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#slots)
+
+## ➤ Slots
+
+| Name     | Description                                      |
+|----------|--------------------------------------------------|
+|          | Default content.                                 |
+| `action` | Action content (you can have multiple slots named action). |
+| `icon`   | Icon content.                                    |
+
+
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#css-custom-properties)
 
 ## ➤ CSS Custom Properties
@@ -27,17 +38,6 @@ Display a non-interruptive message and related optional actions.
 | `--banner-icon-color`      | Color of the icon           |
 | `--banner-icon-margin`     | Margin of the icon slot     |
 | `--banner-padding`         | Padding                     |
-
-
-[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#slots)
-
-## ➤ Slots
-
-| Name     | Description                                      |
-|----------|--------------------------------------------------|
-|          | Default content.                                 |
-| `action` | Action content (you can have multiple slots named action). |
-| `icon`   | Icon content.                                    |
 
 
 

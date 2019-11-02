@@ -13,9 +13,18 @@ Organize navigation between groups of content.
 | Property   | Attribute  | Type                | Default   | Description                           |
 |------------|------------|---------------------|-----------|---------------------------------------|
 | `align`    | `align`    | `TabGroupAlignment` | "start"   | Alignment of the tabs.                |
-| `filled`   | `filled`   | `boolean`           |           | Adds a filled color style to the tab. |
+| `filled`   | `filled`   | `boolean`           | false     | Adds a filled color style to the tab. |
 | `role`     | `role`     | `AriaRole`          | "tablist" | Role of the tab.                      |
-| `vertical` | `vertical` | `boolean`           |           | Makes the tabs vertical.              |
+| `vertical` | `vertical` | `boolean`           | false     | Makes the tabs vertical.              |
+
+
+[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#slots)
+
+## ➤ Slots
+
+| Name | Description                                |
+|------|--------------------------------------------|
+|      | Default content. Add wl-tab elements here. |
 
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#css-custom-properties)
@@ -32,15 +41,6 @@ Organize navigation between groups of content.
 | `--tab-group-indicator-scale`      | Scale of the indicator      |
 | `--tab-group-indicator-size`       | Size of the indicator       |
 | `--tab-group-indicator-transition` | Transition of the indicator |
-
-
-[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#slots)
-
-## ➤ Slots
-
-| Name | Description                                |
-|------|--------------------------------------------|
-|      | Default content. Add wl-tab elements here. |
 
 
 

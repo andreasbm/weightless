@@ -13,8 +13,17 @@ Indicate the start of a new section.
 | Property | Attribute | Type         | Default   | Description                                      |
 |----------|-----------|--------------|-----------|--------------------------------------------------|
 | `level`  | `level`   | `TitleLevel` | 1         | Level of the title.                              |
-| `nowrap` | `nowrap`  | `boolean`    |           | Caps the title element with ellipsis if overflowing. |
+| `nowrap` | `nowrap`  | `boolean`    | false     | Caps the title element with ellipsis if overflowing. |
 | `role`   | `role`    | `AriaRole`   | "heading" | Role of the title.                               |
+
+
+[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#slots)
+
+## ➤ Slots
+
+| Name | Description      |
+|------|------------------|
+|      | Default content. |
 
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#css-custom-properties)
@@ -33,15 +42,6 @@ Indicate the start of a new section.
 | `--title-font-weight`       | Font weight                  |
 | `--title-line-height`       | Line height                  |
 | `--title-margin`            | Margin                       |
-
-
-[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#slots)
-
-## ➤ Slots
-
-| Name | Description      |
-|------|------------------|
-|      | Default content. |
 
 
 

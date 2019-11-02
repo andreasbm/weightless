@@ -16,6 +16,15 @@ Group text into paragraphs.
 | `size`   | `size`    | `TextSize` | "medium"    | Size of the text. |
 
 
+[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#slots)
+
+## ➤ Slots
+
+| Name | Description      |
+|------|------------------|
+|      | Default content. |
+
+
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#css-custom-properties)
 
 ## ➤ CSS Custom Properties
@@ -28,15 +37,6 @@ Group text into paragraphs.
 | `--text-line-height` | Line height      |
 | `--text-margin`      | Margin           |
 | `--text-opacity`     | Opacity          |
-
-
-[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#slots)
-
-## ➤ Slots
-
-| Name | Description      |
-|------|------------------|
-|      | Default content. |
 
 
 

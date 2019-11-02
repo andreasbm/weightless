@@ -12,16 +12,16 @@ Indicate touch actions.
 
 | Property          | Attribute         | Type          | Default        | Description                                    |
 |-------------------|-------------------|---------------|----------------|------------------------------------------------|
-| `autoRelease`     | `autoRelease`     | `boolean`     |                | Releases the ripple after it has been spawned. |
-| `centered`        | `centered`        | `boolean`     |                | Makes ripple appear from the center.           |
-| `disabled`        | `disabled`        | `boolean`     |                | Disables the ripple.                           |
-| `focusable`       | `focusable`       | `boolean`     |                | Allows focusin to spawn a ripple.              |
+| `autoRelease`     | `autoRelease`     | `boolean`     | false          | Releases the ripple after it has been spawned. |
+| `centered`        | `centered`        | `boolean`     | false          | Makes ripple appear from the center.           |
+| `disabled`        | `disabled`        | `boolean`     | false          | Disables the ripple.                           |
+| `focusable`       | `focusable`       | `boolean`     | false          | Allows focusin to spawn a ripple.              |
 | `initialDuration` | `initialDuration` | `number`      | 350            | Initial animation duration.                    |
-| `overlay`         | `overlay`         | `boolean`     |                | Overlays the ripple.                           |
+| `overlay`         | `overlay`         | `boolean`     | false          | Overlays the ripple.                           |
 | `releaseDuration` | `releaseDuration` | `number`      | 500            | Fade out animation duration.                   |
 | `role`            | `role`            | `AriaRole`    | "presentation" | Role of the ripple.                            |
 | `target`          | `target`          | `EventTarget` |                | Target for the spawn ripple events.            |
-| `unbounded`       | `unbounded`       | `boolean`     |                | Makes the ripple visible outside the bounds.   |
+| `unbounded`       | `unbounded`       | `boolean`     | false          | Makes the ripple visible outside the bounds.   |
 | `x`               |                   | `number`      | **required**   |                                                |
 | `y`               |                   | `number`      | **required**   |                                                |
 

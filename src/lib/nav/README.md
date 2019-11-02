@@ -12,9 +12,20 @@ Provide access to destinations in your app.
 
 | Property | Attribute | Type       | Default      | Description                           |
 |----------|-----------|------------|--------------|---------------------------------------|
-| `fixed`  | `fixed`   | `boolean`  |              | Fixes the nav to the top of the page. |
+| `fixed`  | `fixed`   | `boolean`  | false        | Fixes the nav to the top of the page. |
 | `role`   | `role`    | `AriaRole` | "navigation" | Role of the nav.                      |
-| `shadow` | `shadow`  | `boolean`  |              | Gives the nav a shadow.               |
+| `shadow` | `shadow`  | `boolean`  | false        | Gives the nav a shadow.               |
+
+
+[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#slots)
+
+## ➤ Slots
+
+| Name    | Description                      |
+|---------|----------------------------------|
+| `left`  | Content positioned to the left.  |
+| `right` | Content positioned to the right. |
+| `title` | Title.                           |
 
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#css-custom-properties)
@@ -32,17 +43,6 @@ Provide access to destinations in your app.
 | `--nav-title-font-weight` | Font weight of the title slot |
 | `--nav-title-margin`      | Margin of the title slot      |
 | `--nav-transition`        | Transition                    |
-
-
-[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#slots)
-
-## ➤ Slots
-
-| Name    | Description                      |
-|---------|----------------------------------|
-| `left`  | Content positioned to the left.  |
-| `right` | Content positioned to the right. |
-| `title` | Title.                           |
 
 
 
