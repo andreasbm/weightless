@@ -18,13 +18,13 @@ jobs:
           node-version: 10.x
 
       - name: Cache
-          uses: actions/cache@preview
-          id: cache
-          with:
-            path: node_modules
-            key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
-            restore-keys: |
-              ${{ runner.os }}-node-
+        uses: actions/cache@preview
+        id: cache
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
 
       - name: Install
         if: steps.cache.outputs.cache-hit != 'true'
