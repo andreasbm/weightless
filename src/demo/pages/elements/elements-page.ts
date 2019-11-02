@@ -1,16 +1,15 @@
 import "@a11y/skip-navigation";
-import { ChangeStateEvent, IRoute, path, RouterSlot, RouterSlotEventKind } from "@appnest/web-router";
+import { IRoute, path, RouterSlot, RouterSlotEventKind } from "@appnest/web-router";
 import { customElement, html, LitElement, property, PropertyValues, query } from "lit-element";
 import { nothing } from "lit-html";
 import { repeat } from "lit-html/directives/repeat";
 import "../../../lib/button/button";
 import "../../../lib/icon/icon";
 import "../../../lib/label/label";
-import "../../../lib/title/title";
 import "../../../lib/list-item/list-item";
+import "../../../lib/title/title";
 import { cssResult } from "../../../lib/util/css";
 import { addListener } from "../../../lib/util/event";
-import { DOCS_URL } from "../../constants";
 import "../../elements/footer/footer-element";
 import { getMainScrollContainer } from "../../main-scroll-target";
 import { sharedStyles } from "../../style/shared";
@@ -81,12 +80,12 @@ export default class ElementsPage extends LitElement {
 							<wl-title id="title" level="1" nowrap>${this.currentRoute.data.title}</wl-title>
 							<wl-label>${this.currentRoute.data.desc}</wl-label>
 						</aside>
-						<a tabindex="-1" href="${DOCS_URL(this.currentRoute.data.docs || this.currentRoute.path)}" target="_blank" rel="noopener">
+						${this.currentRoute.data.docs != null ? html`<a tabindex="-1" href="${this.currentRoute.data.docs}" target="_blank" rel="noopener">
 							<wl-button id="open-docs" inverted flat>
 								<span>Documentation</span>
 								<wl-icon>open_in_new</wl-icon>
 							</wl-button>
-						</a>
+						</a>` : nothing}
 					</header>
 				` : ""}
 				<router-slot id="router-slot"></router-slot>
