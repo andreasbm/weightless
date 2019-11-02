@@ -3,7 +3,7 @@
  * @param elementName
  * @returns {PromiseLike<void>}
  */
-export function waitForElement (elementName: string): PromiseLike<void> {
+export function waitForElement(elementName: string): PromiseLike<void> {
 	return window.customElements.whenDefined(elementName);
 }
 
@@ -11,7 +11,7 @@ export function waitForElement (elementName: string): PromiseLike<void> {
  * Waits for multiple elements to be defined.
  * @param elementNames
  */
-export function waitForElements (elementNames: string[]) {
+export function waitForElements(elementNames: string[]) {
 	const promises = elementNames.map(waitForElement);
 	return Promise.all(promises);
 }
@@ -21,7 +21,7 @@ export function waitForElements (elementNames: string[]) {
  * @param tag
  * @param parent
  */
-export function createContainer<T extends HTMLElement> (tag: string = "div", parent: HTMLElement = document.body): T {
+export function createContainer<T extends HTMLElement>(tag: string = "div", parent: HTMLElement = document.body): T {
 	const $container = document.createElement(tag);
 	parent.appendChild($container);
 	return $container as T;
@@ -31,7 +31,7 @@ export function createContainer<T extends HTMLElement> (tag: string = "div", par
  * Removes a container.
  * @param $container
  */
-export function removeContainer ($container: HTMLElement) {
+export function removeContainer($container: HTMLElement) {
 	$container.remove();
 }
 
@@ -40,7 +40,7 @@ export function removeContainer ($container: HTMLElement) {
  * @param arr
  * @returns {number}
  */
-export function average (arr: number[]): number {
+export function average(arr: number[]): number {
 	return arr.reduce((p, c) => p + c, 0) / arr.length;
 }
 
@@ -48,10 +48,9 @@ export function average (arr: number[]): number {
  * Returns a map with slot names mapped to assigned nodes.
  * @param shadowRoot
  */
-export function assignedNodesMap (shadowRoot: ShadowRoot): {[name: string]: Node[]} {
-	return Array.from(shadowRoot.querySelectorAll("slot"))
-	            .reduce((acc: {[name: string]: Node[]}, $slot: HTMLSlotElement) => {
-		            acc[<string>$slot.name] = <Node[]>$slot.assignedNodes();
-		            return acc;
-	            }, {});
+export function assignedNodesMap(shadowRoot: ShadowRoot): { [name: string]: Node[] } {
+	return Array.from(shadowRoot.querySelectorAll("slot")).reduce((acc: { [name: string]: Node[] }, $slot: HTMLSlotElement) => {
+		acc[<string>$slot.name] = <Node[]>$slot.assignedNodes();
+		return acc;
+	}, {});
 }

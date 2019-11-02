@@ -19,22 +19,21 @@ import { COMPONENTS_ROUTES, IRouteData } from "./elements-routes";
 
 @customElement("elements-page")
 export default class ElementsPage extends LitElement {
-
 	static styles = [sharedStyles, cssResult(styles)];
 	private currentRoute?: IRoute<IRouteData>;
 
 	@query("#router") protected $routerContainer!: HTMLDivElement;
 	@query("#router-slot") protected $routerSlot!: RouterSlot<IRouteData>;
-	@property({type: Boolean, reflect: true, attribute: "popover-visible"}) isPopoverVisible = false;
+	@property({ type: Boolean, reflect: true, attribute: "popover-visible" }) isPopoverVisible = false;
 
-	firstUpdated (props: PropertyValues) {
+	firstUpdated(props: PropertyValues) {
 		super.firstUpdated(props);
 
 		this.$routerSlot.add(COMPONENTS_ROUTES);
 
 		this.$routerSlot.addEventListener(RouterSlotEventKind.ChangeState, () => {
 			this.currentRoute = this.$routerSlot.match!.route;
-			getMainScrollContainer().scrollTo({top: 0, left: 0});
+			getMainScrollContainer().scrollTo({ top: 0, left: 0 });
 			this.requestUpdate().then();
 
 			// Register that the parent has finished routing
@@ -52,42 +51,60 @@ export default class ElementsPage extends LitElement {
 		window.addEventListener("toggleMenu", () => {
 			this.isPopoverVisible = !this.isPopoverVisible;
 			if (this.isPopoverVisible) {
-				addListener(this, "click", () => {
-					window.dispatchEvent(new CustomEvent("toggleMenu"));
-				}, {once: true});
+				addListener(
+					this,
+					"click",
+					() => {
+						window.dispatchEvent(new CustomEvent("toggleMenu"));
+					},
+					{ once: true }
+				);
 			}
 		});
 	}
 
-	protected render () {
+	protected render() {
 		return html`
 			<skip-button></skip-button>
 			<div id="menu">
-				${repeat(COMPONENTS_ROUTES.filter(route => route.path !== "**"), route => html`
-					<router-link delegateFocus class="menu-item" path="${route.path}">
-						<wl-list-item clickable ?active="${path({endSlash: false}).endsWith(route.path)}">
-							${route.data != null ? html`<img slot="before" class="img" src="${route.data.img}" alt="Icon" />` : nothing}
-							<span>${route.data != null ? route.data.title : route.path}</span>
-						</wl-list-item>
-					</router-link>
-				`)}
+				${repeat(
+					COMPONENTS_ROUTES.filter(route => route.path !== "**"),
+					route => html`
+						<router-link delegateFocus class="menu-item" path="${route.path}">
+							<wl-list-item clickable ?active="${path({ endSlash: false }).endsWith(route.path)}">
+								${route.data != null
+									? html`
+											<img slot="before" class="img" src="${route.data.img}" alt="Icon" />
+									  `
+									: nothing}
+								<span>${route.data != null ? route.data.title : route.path}</span>
+							</wl-list-item>
+						</router-link>
+					`
+				)}
 			</div>
 			<div id="router">
 				<skip-anchor></skip-anchor>
-				${this.currentRoute != null && this.currentRoute.data != null ? html`
-					<header id="header">
-						<aside>
-							<wl-title id="title" level="1" nowrap>${this.currentRoute.data.title}</wl-title>
-							<wl-label>${this.currentRoute.data.desc}</wl-label>
-						</aside>
-						${this.currentRoute.data.docs != null ? html`<a tabindex="-1" href="${this.currentRoute.data.docs}" target="_blank" rel="noopener">
-							<wl-button id="open-docs" inverted flat>
-								<span>Documentation</span>
-								<wl-icon>open_in_new</wl-icon>
-							</wl-button>
-						</a>` : nothing}
-					</header>
-				` : ""}
+				${this.currentRoute != null && this.currentRoute.data != null
+					? html`
+							<header id="header">
+								<aside>
+									<wl-title id="title" level="1" nowrap>${this.currentRoute.data.title}</wl-title>
+									<wl-label>${this.currentRoute.data.desc}</wl-label>
+								</aside>
+								${this.currentRoute.data.docs != null
+									? html`
+											<a tabindex="-1" href="${this.currentRoute.data.docs}" target="_blank" rel="noopener">
+												<wl-button id="open-docs" inverted flat>
+													<span>Documentation</span>
+													<wl-icon>open_in_new</wl-icon>
+												</wl-button>
+											</a>
+									  `
+									: nothing}
+							</header>
+					  `
+					: ""}
 				<router-slot id="router-slot"></router-slot>
 				<footer-element id="footer"></footer-element>
 			</div>

@@ -3,7 +3,7 @@ import "../card";
 import { Card } from "./card";
 
 describe("wl-card", () => {
-	const {expect} = chai;
+	const { expect } = chai;
 	let $card: Card;
 	let $container: HTMLElement;
 
@@ -23,4 +23,3 @@ describe("wl-card", () => {
 		expect(assignedNodes[""].length).to.be.above(0);
 	});
 });
-

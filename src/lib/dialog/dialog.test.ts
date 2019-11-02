@@ -5,7 +5,7 @@ import "../title";
 import { Dialog } from "./dialog";
 
 describe("wl-dialog", () => {
-	const {expect} = chai;
+	const { expect } = chai;
 	let $dialog: Dialog;
 	let $container: HTMLElement;
 
@@ -44,4 +44,3 @@ describe("wl-dialog", () => {
 
 	// TODO: Add more tests for the dialog
 });
-

@@ -9,10 +9,9 @@ import "../../../elements/demo/demo-element";
 
 @customElement("tabs-page")
 export default class TabsPage extends LitElement {
-
 	static styles = [sharedStyles];
 
-	protected render () {
+	protected render() {
 		return html`
 			<demo-element default>
 				<code-example-element>
@@ -22,7 +21,7 @@ export default class TabsPage extends LitElement {
 					</wl-tab-group>
 				</code-example-element>
 			</demo-element>
-			
+
 			<wl-title>Align</wl-title>
 			<demo-element>
 				<code-example-element>
@@ -40,7 +39,7 @@ export default class TabsPage extends LitElement {
 					</wl-tab-group>
 				</code-example-element>
 			</demo-element>
-			
+
 			<wl-title>Vertical</wl-title>
 			<demo-element>
 				<code-example-element>
@@ -50,7 +49,7 @@ export default class TabsPage extends LitElement {
 					</wl-tab-group>
 				</code-example-element>
 			</demo-element>
-			
+
 			<wl-title>Before slot</wl-title>
 			<demo-element>
 				<code-example-element>
@@ -76,7 +75,7 @@ export default class TabsPage extends LitElement {
 					</wl-tab-group>
 				</code-example-element>
 			</demo-element>
-			
+
 			<wl-title>Scrolling</wl-title>
 			<demo-element>
 				<code-example-element>
@@ -101,7 +100,7 @@ export default class TabsPage extends LitElement {
 					</wl-tab-group>
 				</code-example-element>
 			</demo-element>
-			
+
 			<wl-title>Filled</wl-title>
 			<demo-element>
 				<code-example-element>
@@ -111,7 +110,7 @@ export default class TabsPage extends LitElement {
 					</wl-tab-group>
 				</code-example-element>
 			</demo-element>
-			
+
 			<wl-title>Disabled</wl-title>
 			<demo-element>
 				<code-example-element>

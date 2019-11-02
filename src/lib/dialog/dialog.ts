@@ -37,8 +37,7 @@ export interface IDialogProperties extends IDialogBaseProperties, IOverlayBehavi
 /**
  * Configuration used when showing a dialog.
  */
-export interface IDialogConfig extends Partial<IDialogBaseProperties> {
-}
+export interface IDialogConfig extends Partial<IDialogBaseProperties> {}
 
 /**
  * Default configuration when showing a dialog.
@@ -92,19 +91,19 @@ export class Dialog<R = unknown> extends OverlayBehavior<R, Partial<IDialogPrope
 	 * Size of the dialog.
 	 * @attr
 	 */
-	@property({type: String, reflect: true}) size?: DialogSize;
+	@property({ type: String, reflect: true }) size?: DialogSize;
 
 	/**
 	 * Makes the dialog scrollable.
 	 * @attr
 	 */
-	@property({type: Boolean, reflect: true}) scrollable: boolean = false;
+	@property({ type: Boolean, reflect: true }) scrollable: boolean = false;
 
 	/**
 	 * Role of the dialog.
 	 * @attr
 	 */
-	@property({type: String, reflect: true}) role: AriaRole = "dialog";
+	@property({ type: String, reflect: true }) role: AriaRole = "dialog";
 
 	/**
 	 * Dialog element.
@@ -119,15 +118,14 @@ export class Dialog<R = unknown> extends OverlayBehavior<R, Partial<IDialogPrope
 	/**
 	 * Focus trap element.
 	 */
-	protected get $focusTrap (): FocusTrap {
+	protected get $focusTrap(): FocusTrap {
 		return this.$dialog;
 	}
 
 	/**
 	 * Animates the dialog in.
 	 */
-	protected animateIn () {
-
+	protected animateIn() {
 		// We only want to run the setup function once.
 		let ready = false;
 		const setup = () => {
@@ -137,16 +135,13 @@ export class Dialog<R = unknown> extends OverlayBehavior<R, Partial<IDialogPrope
 		};
 
 		// The animation of the dialog
-		const dialogAnimation = this.$dialog.animate(<Keyframe[]>[
-			{transform: `scale(0.9) translate(0, 30px)`, opacity: `${0}`},
-			{transform: `scale(1) translate(0, 0)`, opacity: `${1}`}
-		], this.animationConfig);
+		const dialogAnimation = this.$dialog.animate(
+			<Keyframe[]>[{ transform: `scale(0.9) translate(0, 30px)`, opacity: `${0}` }, { transform: `scale(1) translate(0, 0)`, opacity: `${1}` }],
+			this.animationConfig
+		);
 
 		// The animation of the backdrop
-		const backdropAnimation = this.$backdrop.animate(<Keyframe[]>[
-			{opacity: `${0}`},
-			{opacity: `${1}`}
-		], this.animationConfig);
+		const backdropAnimation = this.$backdrop.animate(<Keyframe[]>[{ opacity: `${0}` }, { opacity: `${1}` }], this.animationConfig);
 
 		dialogAnimation.onfinish = setup;
 		backdropAnimation.onfinish = setup;
@@ -158,8 +153,7 @@ export class Dialog<R = unknown> extends OverlayBehavior<R, Partial<IDialogPrope
 	 * Animates the dialog out.
 	 * @param result
 	 */
-	protected animateOut (result?: R) {
-
+	protected animateOut(result?: R) {
 		// Cleans up the component and animation. We only want to run this function once.
 		let cleaned = false;
 		const cleanup = () => {
@@ -171,16 +165,13 @@ export class Dialog<R = unknown> extends OverlayBehavior<R, Partial<IDialogPrope
 		};
 
 		// The animation of the dialog.
-		const dialogAnimation = this.$dialog.animate(<Keyframe[]>[
-			{transform: `translateY(0)`, opacity: `${1}`},
-			{transform: `translateY(30px)`, opacity: `${0}`}
-		], this.animationConfig);
+		const dialogAnimation = this.$dialog.animate(
+			<Keyframe[]>[{ transform: `translateY(0)`, opacity: `${1}` }, { transform: `translateY(30px)`, opacity: `${0}` }],
+			this.animationConfig
+		);
 
 		// The animation of the backdrop.
-		const backdropAnimation = this.$backdrop.animate(<Keyframe[]>[
-			{opacity: `${1}`},
-			{opacity: `${0}`}
-		], this.animationConfig);
+		const backdropAnimation = this.$backdrop.animate(<Keyframe[]>[{ opacity: `${1}` }, { opacity: `${0}` }], this.animationConfig);
 
 		dialogAnimation.onfinish = cleanup;
 		backdropAnimation.onfinish = cleanup;
@@ -188,7 +179,7 @@ export class Dialog<R = unknown> extends OverlayBehavior<R, Partial<IDialogPrope
 		this.activeOutAnimations.push(dialogAnimation, backdropAnimation);
 	}
 
-	render (): TemplateResult {
+	render(): TemplateResult {
 		return html`
 			<wl-backdrop id="backdrop" @click="${this.clickAway}"></wl-backdrop>
 			<focus-trap id="dialog" ?inactive="${!this.open || this.disableFocusTrap}">

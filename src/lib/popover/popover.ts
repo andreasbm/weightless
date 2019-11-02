@@ -7,7 +7,17 @@ import { AriaRole } from "../util/aria";
 import { cssResult } from "../util/css";
 import { queryParentRoots, renderAttributes, setProperty } from "../util/dom";
 import { addClickAwayListener, addListener, EventListenerSubscription, removeListeners } from "../util/event";
-import { areStrategiesEqual, computeAnchorPosition, computeFallbackStrategy, computeMaxDimensions, computeTransformOrigin, IAnchorPosition, IPositionStrategy, OriginX, OriginY } from "../util/position";
+import {
+	areStrategiesEqual,
+	computeAnchorPosition,
+	computeFallbackStrategy,
+	computeMaxDimensions,
+	computeTransformOrigin,
+	IAnchorPosition,
+	IPositionStrategy,
+	OriginX,
+	OriginY
+} from "../util/position";
 import { getOpacity, getScale } from "../util/style";
 import styles from "./popover.scss";
 
@@ -32,8 +42,7 @@ export interface IPopoverProperties extends IPopoverBaseProperties, IOverlayBeha
 /**
  * Configuration for the popover.
  */
-export interface IPopoverConfig extends Partial<IPopoverBaseProperties> {
-}
+export interface IPopoverConfig extends Partial<IPopoverBaseProperties> {}
 
 /**
  * Default configuration for the popover.
@@ -63,61 +72,61 @@ export class Popover<R = unknown> extends OverlayBehavior<R, IPopoverConfig> imp
 	 * Makes the popover close when it is clicked upon.
 	 * @attr
 	 */
-	@property({type: Boolean}) closeOnClick: boolean = false;
+	@property({ type: Boolean }) closeOnClick: boolean = false;
 
 	/**
 	 * Whether a fallback strategy for the positioning should be used when there are no room for the popover.
 	 * @attr
 	 */
-	@property({type: Boolean}) noFallback: boolean = false;
+	@property({ type: Boolean }) noFallback: boolean = false;
 
 	/**
 	 * X origin of the transform.
 	 * @attr
 	 */
-	@property({type: String, reflect: true}) transformOriginX: OriginX = OriginX.LEFT;
+	@property({ type: String, reflect: true }) transformOriginX: OriginX = OriginX.LEFT;
 
 	/**
 	 * Y origin of the transform.
 	 * @attr
 	 */
-	@property({type: String, reflect: true}) transformOriginY: OriginY = OriginY.TOP;
+	@property({ type: String, reflect: true }) transformOriginY: OriginY = OriginY.TOP;
 
 	/**
 	 * X origin of the anchored point.
 	 * @attr
 	 */
-	@property({type: String, reflect: true}) anchorOriginX: OriginX = OriginX.LEFT;
+	@property({ type: String, reflect: true }) anchorOriginX: OriginX = OriginX.LEFT;
 
 	/**
 	 * Y origin of the anchored point.
 	 * @attr
 	 */
-	@property({type: String, reflect: true}) anchorOriginY: OriginY = OriginY.TOP;
+	@property({ type: String, reflect: true }) anchorOriginY: OriginY = OriginY.TOP;
 
 	/**
 	 * Role of the popover.
 	 * @attr
 	 */
-	@property({type: String, reflect: true}) role: AriaRole = "menu";
+	@property({ type: String, reflect: true }) role: AriaRole = "menu";
 
 	/**
 	 * Anchor element or query.
 	 * @attr
 	 */
-	@property({type: String}) anchor?: Element | string;
+	@property({ type: String }) anchor?: Element | string;
 
 	/**
 	 * Events on the anchor that makes the popover open itself.
 	 * @attr
 	 */
-	@property({type: Array}) anchorOpenEvents?: string[];
+	@property({ type: Array }) anchorOpenEvents?: string[];
 
 	/**
 	 * Events on the anchor that makes the popover close itself.
 	 * @attr
 	 */
-	@property({type: Array}) anchorCloseEvents?: string[];
+	@property({ type: Array }) anchorCloseEvents?: string[];
 
 	/**
 	 * Content of the popover.
@@ -158,14 +167,14 @@ export class Popover<R = unknown> extends OverlayBehavior<R, IPopoverConfig> imp
 	/**
 	 * Focus trap.
 	 */
-	get $focusTrap () {
+	get $focusTrap() {
 		return this.$content;
 	}
 
 	/**
 	 * Tears down the component.
 	 */
-	disconnectedCallback () {
+	disconnectedCallback() {
 		super.disconnectedCallback();
 		this.detachClickAwayListeners();
 		removeListeners(this.anchorOpenEventListeners);
@@ -176,7 +185,7 @@ export class Popover<R = unknown> extends OverlayBehavior<R, IPopoverConfig> imp
 	 * Reacts on the properties changed.
 	 * @param props
 	 */
-	protected updated (props: Map<keyof IPopoverProperties, unknown>) {
+	protected updated(props: Map<keyof IPopoverProperties, unknown>) {
 		super.updated(<Map<keyof IOverlayBehaviorProperties, unknown>>props);
 
 		// Attach auto open events to anchor
@@ -195,7 +204,7 @@ export class Popover<R = unknown> extends OverlayBehavior<R, IPopoverConfig> imp
 	 * @param position
 	 * @param config
 	 */
-	showAtPosition (position: IAnchorPosition, config?: IPopoverConfig): Promise<R | null> {
+	showAtPosition(position: IAnchorPosition, config?: IPopoverConfig): Promise<R | null> {
 		this.anchorPosition = position;
 		return this.show(config);
 	}
@@ -204,7 +213,7 @@ export class Popover<R = unknown> extends OverlayBehavior<R, IPopoverConfig> imp
 	 * The current position strategy of the popover.
 	 * @returns {IPositionStrategy}
 	 */
-	protected getPositionStrategy (): IPositionStrategy {
+	protected getPositionStrategy(): IPositionStrategy {
 		return {
 			transformOriginX: this.transformOriginX,
 			transformOriginY: this.transformOriginY,
@@ -216,7 +225,7 @@ export class Popover<R = unknown> extends OverlayBehavior<R, IPopoverConfig> imp
 	/**
 	 * Adds event listeners and focuses the first element after the popover has been shown.
 	 */
-	protected didShow () {
+	protected didShow() {
 		super.didShow();
 
 		// Focus the first element
@@ -229,7 +238,7 @@ export class Popover<R = unknown> extends OverlayBehavior<R, IPopoverConfig> imp
 	/**
 	 * Resets the component after the popover has been hidden.
 	 */
-	protected didHide (result?: R) {
+	protected didHide(result?: R) {
 		super.didHide(result);
 		this.anchorPosition = undefined;
 	}
@@ -240,10 +249,7 @@ export class Popover<R = unknown> extends OverlayBehavior<R, IPopoverConfig> imp
 	 * @param events
 	 * @param cb
 	 */
-	protected attachEventListenersToAnchor (listeners: EventListenerSubscription[],
-	                                        events: string[],
-	                                        cb: ((e: Event) => void)) {
-
+	protected attachEventListenersToAnchor(listeners: EventListenerSubscription[], events: string[], cb: (e: Event) => void) {
 		// Detach the previous event listeners and attach the new ones.
 		removeListeners(listeners);
 
@@ -254,22 +260,20 @@ export class Popover<R = unknown> extends OverlayBehavior<R, IPopoverConfig> imp
 		}
 
 		// Add the listeners to the anchor
-		listeners.push(
-			addListener($anchor, events, cb)
-		);
+		listeners.push(addListener($anchor, events, cb));
 	}
 
 	/**
 	 * Throws an error that no anchor exists.
 	 */
-	protected throwNoAnchorError () {
+	protected throwNoAnchorError() {
 		throw new Error(`No anchor could be found for the popover. "${this.anchor}" provided as anchor.`);
 	}
 
 	/**
 	 * Attaches the click away listeners.
 	 */
-	protected attachClickAwayListeners () {
+	protected attachClickAwayListeners() {
 		this.clickAwayListeners.push(
 			addClickAwayListener([this.$container], this.clickAway.bind(this)),
 			addListener(this.$container, "click", this.onContainerClick.bind(this))
@@ -279,15 +283,14 @@ export class Popover<R = unknown> extends OverlayBehavior<R, IPopoverConfig> imp
 	/**
 	 * Detaches the click away listeners.
 	 */
-	protected detachClickAwayListeners () {
+	protected detachClickAwayListeners() {
 		removeListeners(this.clickAwayListeners);
 	}
 
 	/**
 	 * Animates the popover in.
 	 */
-	protected animateIn () {
-
+	protected animateIn() {
 		// Callback for cleaning up the component and the animation
 		let ready = false;
 		const setup = () => {
@@ -298,19 +301,25 @@ export class Popover<R = unknown> extends OverlayBehavior<R, IPopoverConfig> imp
 		};
 
 		// Animate the backdrop in
-		const backdropAnimation = this.$backdrop.animate(<PropertyIndexedKeyframes>{
-			opacity: [getOpacity(window.getComputedStyle(this.$backdrop)).toString(), `1`]
-		}, this.animationConfig);
+		const backdropAnimation = this.$backdrop.animate(
+			<PropertyIndexedKeyframes>{
+				opacity: [getOpacity(window.getComputedStyle(this.$backdrop)).toString(), `1`]
+			},
+			this.animationConfig
+		);
 
 		// Animate the popover in and take the intermediate stake into account
 		const contentComputedStyle = window.getComputedStyle(this.$content);
 		const contentScale = getScale(contentComputedStyle, this.$content.getBoundingClientRect());
 		const contentOpacity = getOpacity(contentComputedStyle);
 
-		const contentAnimation = this.$content.animate(<PropertyIndexedKeyframes>{
-			transform: [`scale(${contentScale.x}, ${contentScale.y})`, `scale(1)`],
-			opacity: [`${contentOpacity > 0.5 ? contentOpacity : 0}`, 1]
-		}, this.animationConfig);
+		const contentAnimation = this.$content.animate(
+			<PropertyIndexedKeyframes>{
+				transform: [`scale(${contentScale.x}, ${contentScale.y})`, `scale(1)`],
+				opacity: [`${contentOpacity > 0.5 ? contentOpacity : 0}`, 1]
+			},
+			this.animationConfig
+		);
 
 		contentAnimation.onfinish = setup;
 		backdropAnimation.onfinish = setup;
@@ -323,7 +332,7 @@ export class Popover<R = unknown> extends OverlayBehavior<R, IPopoverConfig> imp
 	 * Animates the popover out.
 	 * @param result
 	 */
-	protected animateOut (result: R) {
+	protected animateOut(result: R) {
 		// Callback for cleaning up the component and the animation
 		let cleaned = false;
 		const cleanup = () => {
@@ -335,18 +344,24 @@ export class Popover<R = unknown> extends OverlayBehavior<R, IPopoverConfig> imp
 		};
 
 		// Animate the backdrop out
-		const backdropAnimation = this.$backdrop.animate(<PropertyIndexedKeyframes>{
-			opacity: [getOpacity(window.getComputedStyle(this.$backdrop)).toString(), `0`]
-		}, this.animationConfig);
+		const backdropAnimation = this.$backdrop.animate(
+			<PropertyIndexedKeyframes>{
+				opacity: [getOpacity(window.getComputedStyle(this.$backdrop)).toString(), `0`]
+			},
+			this.animationConfig
+		);
 
 		// Animate the content out
 		const contentComputedStyle = window.getComputedStyle(this.$content);
 		const contentScale = getScale(contentComputedStyle, this.$content.getBoundingClientRect());
 		const contentOpacity = getOpacity(contentComputedStyle);
-		const contentAnimation = this.$content.animate(<PropertyIndexedKeyframes>{
-			opacity: [contentOpacity.toString(), 0],
-			transform: [`scale(${contentScale.x}, ${contentScale.y})`, `scale(0)`]
-		}, this.animationConfig);
+		const contentAnimation = this.$content.animate(
+			<PropertyIndexedKeyframes>{
+				opacity: [contentOpacity.toString(), 0],
+				transform: [`scale(${contentScale.x}, ${contentScale.y})`, `scale(0)`]
+			},
+			this.animationConfig
+		);
 
 		backdropAnimation.onfinish = cleanup;
 		contentAnimation.onfinish = cleanup;
@@ -358,10 +373,9 @@ export class Popover<R = unknown> extends OverlayBehavior<R, IPopoverConfig> imp
 	/**
 	 * Updates the position of the popover.
 	 */
-	protected updatePosition () {
+	protected updatePosition() {
 		super.updatePosition();
 		requestAnimationFrame(() => {
-
 			// Compute the anchor position and transform origin
 			const anchor = this.getAnchor();
 			let strategy = this.getPositionStrategy();
@@ -372,11 +386,9 @@ export class Popover<R = unknown> extends OverlayBehavior<R, IPopoverConfig> imp
 			// Always prioritize the anchor position set explicitly
 			if (this.anchorPosition != null) {
 				position = this.anchorPosition;
-
 			} else if (anchor != null) {
 				anchorRect = anchor!.getBoundingClientRect();
 				position = computeAnchorPosition(strategy, anchorRect);
-
 			} else {
 				return this.throwNoAnchorError();
 			}
@@ -398,9 +410,9 @@ export class Popover<R = unknown> extends OverlayBehavior<R, IPopoverConfig> imp
 			const transform = computeTransformOrigin(strategy);
 			this.$content.style.transformOrigin = `${strategy.transformOriginX} ${strategy.transformOriginY}`;
 			Object.assign(this.$container.style, {
-				"top": `${position.top}px`,
-				"left": `${position.left}px`,
-				"transform": `translate(${transform.x}, ${transform.y})`
+				top: `${position.top}px`,
+				left: `${position.left}px`,
+				transform: `translate(${transform.x}, ${transform.y})`
 			});
 
 			// Render the actual strategy as data attributes. This is used for the arrow in the wl-popover-card.
@@ -413,7 +425,7 @@ export class Popover<R = unknown> extends OverlayBehavior<R, IPopoverConfig> imp
 			});
 
 			// Set the maximum height and width as CSS variables so the children can pick it up.
-			const {maxWidth, maxHeight} = computeMaxDimensions(strategy, position);
+			const { maxWidth, maxHeight } = computeMaxDimensions(strategy, position);
 			setProperty(`--popover-container-max-width`, `${maxWidth}px`, this.$container);
 			setProperty(`--popover-container-max-height`, `${maxHeight}px`, this.$container);
 		});
@@ -422,7 +434,7 @@ export class Popover<R = unknown> extends OverlayBehavior<R, IPopoverConfig> imp
 	/**
 	 * Returns the origin of the bounding box.
 	 */
-	private getAnchor (): Element | undefined {
+	private getAnchor(): Element | undefined {
 		let anchor = this.anchor;
 
 		// Check if the anchor is an ID.
@@ -437,7 +449,7 @@ export class Popover<R = unknown> extends OverlayBehavior<R, IPopoverConfig> imp
 	/**
 	 * Handles the click event on the popover.
 	 */
-	private onContainerClick () {
+	private onContainerClick() {
 		if (this.open && this.closeOnClick) {
 			this.hide();
 		}
@@ -446,14 +458,16 @@ export class Popover<R = unknown> extends OverlayBehavior<R, IPopoverConfig> imp
 	/**
 	 * Renders the content.
 	 */
-	protected renderContent (): TemplateResult {
-		return html`<slot></slot>`;
+	protected renderContent(): TemplateResult {
+		return html`
+			<slot></slot>
+		`;
 	}
 
 	/**
 	 * Returns the template for the element.
 	 */
-	protected render (): TemplateResult {
+	protected render(): TemplateResult {
 		return html`
 			<wl-backdrop id="backdrop" @click="${this.clickAway}"></wl-backdrop>
 			<div id="container" aria-expanded="${this.open.toString() as "true" | "false"}">

@@ -8,10 +8,9 @@ import { sharedStyles } from "../../../style/shared";
 
 @customElement("label-page")
 export default class LabelPage extends LitElement {
-
 	static styles = [sharedStyles];
 
-	protected render () {
+	protected render() {
 		return html`
 			<demo-element default>
 				<code-example-element>
@@ -19,7 +18,7 @@ export default class LabelPage extends LitElement {
 					<wl-label for="cb">This is a label</wl-label>
 				</code-example-element>
 			</demo-element>
-			
+
 			<wl-title level="3">Slotted form elements</wl-title>
 			<demo-element>
 				<code-example-element>
@@ -29,7 +28,7 @@ export default class LabelPage extends LitElement {
 					</wl-label>
 				</code-example-element>
 			</demo-element>
-			
+
 			<wl-title level="3">Nowrap</wl-title>
 			<demo-element>
 				<code-example-element>
@@ -39,7 +38,7 @@ export default class LabelPage extends LitElement {
 					</wl-label>
 				</code-example-element>
 			</demo-element>
-			
+
 			<wl-title level="3">Required</wl-title>
 			<demo-element>
 				<code-example-element>

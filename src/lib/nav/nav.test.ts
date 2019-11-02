@@ -4,7 +4,7 @@ import { assignedNodesMap, createContainer, removeContainer, waitForElement } fr
 import { Nav } from "./nav";
 
 describe("wl-banner", () => {
-	const {expect} = chai;
+	const { expect } = chai;
 	let $nav: Nav;
 	let $container: HTMLElement;
 
@@ -40,4 +40,3 @@ describe("wl-banner", () => {
 		expect($nav.getAttribute("role")).to.equal("navigation");
 	});
 });
-

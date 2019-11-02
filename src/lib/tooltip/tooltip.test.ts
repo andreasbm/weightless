@@ -3,7 +3,7 @@ import "../tooltip";
 import { Tooltip } from "./tooltip";
 
 describe("wl-tooltip", () => {
-	const {expect} = chai;
+	const { expect } = chai;
 	let $tooltip: Tooltip;
 	let $container: HTMLElement;
 
@@ -24,4 +24,3 @@ describe("wl-tooltip", () => {
 		expect($tooltip.getAttribute("role")).to.equal("menu");
 	});
 });
-

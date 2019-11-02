@@ -37,24 +37,24 @@ export class Nav extends LitElement implements INavProperties {
 	 * Gives the nav a shadow.
 	 * @attr
 	 */
-	@property({type: Boolean, reflect: true}) shadow: boolean = false;
+	@property({ type: Boolean, reflect: true }) shadow: boolean = false;
 
 	/**
 	 * Fixes the nav to the top of the page.
 	 * @attr
 	 */
-	@property({type: Boolean, reflect: true}) fixed: boolean = false;
+	@property({ type: Boolean, reflect: true }) fixed: boolean = false;
 
 	/**
 	 * Role of the nav.
 	 * @attr
 	 */
-	@property({type: String, reflect: true}) role: AriaRole = "navigation";
+	@property({ type: String, reflect: true }) role: AriaRole = "navigation";
 
 	/**
 	 * Returns the template for the element.
 	 */
-	protected render (): TemplateResult {
+	protected render(): TemplateResult {
 		return html`
 			<div id="left">
 				<slot name="left"></slot>

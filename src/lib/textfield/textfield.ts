@@ -26,30 +26,30 @@ export class Textfield extends TextfieldBehavior implements ITextfieldProperties
 	 * Datalist id.
 	 * @attr
 	 */
-	@property({type: String}) list?: string;
+	@property({ type: String }) list?: string;
 
 	/**
 	 * Type of the input.
 	 * @attr
 	 */
-	@property({type: String, reflect: true}) type: TextfieldType = "text";
+	@property({ type: String, reflect: true }) type: TextfieldType = "text";
 
 	/**
 	 * Min number value.
 	 * @attr
 	 */
-	@property({type: Number}) min?: number;
+	@property({ type: Number }) min?: number;
 
 	/**
 	 * Max number value.
 	 * @attr
 	 */
-	@property({type: Number}) max?: number;
+	@property({ type: Number }) max?: number;
 
 	/**
 	 * Renders the form element
 	 */
-	protected renderFormElement (): TemplateResult {
+	protected renderFormElement(): TemplateResult {
 		return html`
 			<input
 				id="${this.formElementId}"

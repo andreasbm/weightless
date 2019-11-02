@@ -9,14 +9,16 @@ import { sharedStyles } from "../../../style/shared";
 
 @customElement("nav-page")
 export default class BannerPage extends LitElement {
-
-	static styles = [sharedStyles, unsafeCSS`
+	static styles = [
+		sharedStyles,
+		unsafeCSS`
 		a:not(:last-child) {
 			margin: 0 12px 0 0;
 		}
-	`];
+	`
+	];
 
-	protected render () {
+	protected render() {
 		return html`
 			<demo-element default>
 				<code-example-element>
@@ -34,7 +36,6 @@ export default class BannerPage extends LitElement {
 					</wl-nav>
 				</code-example-element>
 			</demo-element>
-			
 		`;
 	}
 }

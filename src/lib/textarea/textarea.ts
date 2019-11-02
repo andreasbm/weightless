@@ -10,8 +10,7 @@ import styles from "./textarea.scss";
 /**
  * Properties of the textarea.
  */
-export interface ITextareaProperties extends ITextfieldBehaviorProperties {
-}
+export interface ITextareaProperties extends ITextfieldBehaviorProperties {}
 
 /**
  * Multiline text fields.
@@ -27,7 +26,7 @@ export class Textarea extends TextfieldBehavior implements ITextareaProperties {
 	/**
 	 * Hooks up the element.
 	 */
-	connectedCallback () {
+	connectedCallback() {
 		super.connectedCallback();
 		this.setAttribute("aria-multiline", "true");
 	}
@@ -36,7 +35,7 @@ export class Textarea extends TextfieldBehavior implements ITextareaProperties {
 	 * Refresh the height at the first interaction.
 	 * @param props
 	 */
-	firstUpdated (props: Map<keyof ITextareaProperties, unknown>) {
+	firstUpdated(props: Map<keyof ITextareaProperties, unknown>) {
 		super.firstUpdated(<Map<keyof IFormElementBehaviorProperties, unknown>>props);
 		this.refreshHeight();
 	}
@@ -45,7 +44,7 @@ export class Textarea extends TextfieldBehavior implements ITextareaProperties {
 	 * Refreshes the height of the textarea each time the user interacts with it.
 	 * @param e
 	 */
-	onInput (e: Event) {
+	onInput(e: Event) {
 		super.onInput(e);
 		this.refreshHeight();
 	}
@@ -53,8 +52,7 @@ export class Textarea extends TextfieldBehavior implements ITextareaProperties {
 	/**
 	 * Refreshes the height of the textarea.
 	 */
-	refreshHeight () {
-
+	refreshHeight() {
 		// Only refresh the height of the rows and cols are not defined
 		if (isHidden(this)) {
 			return;
@@ -76,7 +74,7 @@ export class Textarea extends TextfieldBehavior implements ITextareaProperties {
 	 * Sets the height of the form element while respecting a potential user set CSS property.
 	 * @param height
 	 */
-	protected setHeight (height?: number) {
+	protected setHeight(height?: number) {
 		this.$formElement.style.setProperty(`--_textarea-height`, `${height == null ? `` : `${height}px`}`);
 	}
 
@@ -86,7 +84,7 @@ export class Textarea extends TextfieldBehavior implements ITextareaProperties {
 	 * This is to initially have the textarea starting with having the height of 1 row.
 	 * This is a good solution to avoid the textarea having the wrong height if initially being hidden.
 	 */
-	protected renderFormElement (): TemplateResult {
+	protected renderFormElement(): TemplateResult {
 		return html`
 			<textarea
 				id="${this.formElementId}"
@@ -102,7 +100,9 @@ export class Textarea extends TextfieldBehavior implements ITextareaProperties {
 				maxlength="${ifDefined(this.maxLength)}"
 				rows="1"
 				tabindex="${this.disabled ? -1 : 0}"
-			>${this.initialValue || ""}</textarea>
+			>
+${this.initialValue || ""}</textarea
+			>
 		`;
 	}
 }

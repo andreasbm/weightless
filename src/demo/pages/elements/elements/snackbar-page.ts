@@ -10,7 +10,7 @@ import "../../../elements/code-example/code-example-element";
 import "../../../elements/demo/demo-element";
 import { sharedStyles } from "../../../style/shared";
 
-function getRandomText (): string {
+function getRandomText(): string {
 	const texts = [
 		"Your internet connection was lost.",
 		"There was a problem processing a transaction on your credit card.",
@@ -24,8 +24,10 @@ function getRandomText (): string {
 	return texts[Math.floor(Math.random() * (texts.length - 1))];
 }
 
-async function showTemplateSnackbar ({text, buttonText, queue}: {text: string, buttonText: string, queue: boolean},
-                                     config: Partial<ISnackbarBaseProperties> = defaultSnackbarConfig) {
+async function showTemplateSnackbar(
+	{ text, buttonText, queue }: { text: string; buttonText: string; queue: boolean },
+	config: Partial<ISnackbarBaseProperties> = defaultSnackbarConfig
+) {
 	const ref = await (queue ? queueSnackbar : showSnackbar)({
 		container: document.body,
 		template: html`
@@ -40,18 +42,17 @@ async function showTemplateSnackbar ({text, buttonText, queue}: {text: string, b
 
 @customElement("snackbar-page")
 export default class SnackbarPage extends LitElement {
-
 	static styles = [sharedStyles];
 
 	/**
 	 * Shows the declarative snackbar.
 	 */
-	private showDeclarativeSnackbar () {
+	private showDeclarativeSnackbar() {
 		const $snackbar = this.shadowRoot!.querySelector<Snackbar<string>>("#snackbar")!;
 		$snackbar.show().then();
 	}
 
-	protected render () {
+	protected render() {
 		return html`
 			<demo-element default>
 				<code-example-element>
@@ -62,7 +63,7 @@ export default class SnackbarPage extends LitElement {
 					</wl-snackbar>
 				</code-example-element>
 			</demo-element>
-			
+
 			<wl-title level="3">Open snackbar already in the DOM (declarative)</wl-title>
 			<demo-element>
 				<code-example-element>
@@ -74,29 +75,38 @@ export default class SnackbarPage extends LitElement {
 					</wl-snackbar>
 				</code-example-element>
 			</demo-element>
-			
+
 			<wl-title level="3">Open snackbar from template (imperative)</wl-title>
 			<demo-element>
 				<code-example-element text='this.shadowRoot.querySelector("#snackbar").show()'>
-					<wl-button id="open-snackbar" @click="${() => showTemplateSnackbar({
-			text: getRandomText(),
-			buttonText: "Okay",
-			queue: false
-		})}">Open</wl-button>
+					<wl-button
+						id="open-snackbar"
+						@click="${() =>
+							showTemplateSnackbar({
+								text: getRandomText(),
+								buttonText: "Okay",
+								queue: false
+							})}"
+						>Open</wl-button
+					>
 				</code-example-element>
 			</demo-element>
-			
+
 			<wl-title level="3">Queue a snackback from template (imperative)</wl-title>
 			<demo-element>
 				<code-example-element>
-					<wl-button id="open-snackbar" @click="${() => showTemplateSnackbar({
-			text: getRandomText(),
-			buttonText: "Okay",
-			queue: true
-		})}">Add to queue</wl-button>
+					<wl-button
+						id="open-snackbar"
+						@click="${() =>
+							showTemplateSnackbar({
+								text: getRandomText(),
+								buttonText: "Okay",
+								queue: true
+							})}"
+						>Add to queue</wl-button
+					>
 				</code-example-element>
 			</demo-element>
-			
 		`;
 	}
 }

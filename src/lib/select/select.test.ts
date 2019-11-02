@@ -3,7 +3,7 @@ import "../select";
 import { Select } from "./select";
 
 describe("wl-select", () => {
-	const {expect} = chai;
+	const { expect } = chai;
 	let $select: Select;
 	let $container: HTMLElement;
 
@@ -30,4 +30,3 @@ describe("wl-select", () => {
 		expect($select.getAttribute("role")).to.equal("select");
 	});
 });
-

@@ -2,7 +2,7 @@
  * Cancels an animation without invoking the onfinish method.
  * @param {Animation} animation
  */
-export function cancelAnimation (animation: Animation) {
+export function cancelAnimation(animation: Animation) {
 	animation.onfinish = null;
 	animation.cancel();
 }
@@ -11,7 +11,7 @@ export function cancelAnimation (animation: Animation) {
  * Pauses an animation without invoking the onfinish method.
  * @param {Animation | null} animation
  */
-export function pauseAnimation (animation: Animation) {
+export function pauseAnimation(animation: Animation) {
 	animation.onfinish = null;
 	animation.pause();
 }
@@ -20,7 +20,7 @@ export function pauseAnimation (animation: Animation) {
  * Cancels an array of animations without invoking the onfinish method.
  * @param {Animation[]} animations
  */
-export function cancelAnimations (animations: Animation[]) {
+export function cancelAnimations(animations: Animation[]) {
 	for (const animation of animations) {
 		cancelAnimation(animation);
 	}
@@ -32,7 +32,7 @@ export function cancelAnimations (animations: Animation[]) {
  * Pauses an array of animations without invoking the onfinish method.
  * @param {Animation[]} animations
  */
-export function pauseAnimations (animations: Animation[]) {
+export function pauseAnimations(animations: Animation[]) {
 	for (const animation of animations) {
 		pauseAnimation(animation);
 	}
@@ -47,11 +47,8 @@ export function pauseAnimations (animations: Animation[]) {
  * @param {HTMLElement} elem
  * @param properties
  */
-export function overwriteFill (elem: HTMLElement, properties: any) {
-	elem.animate([
-		properties,
-		properties
-	], {
+export function overwriteFill(elem: HTMLElement, properties: any) {
+	elem.animate([properties, properties], {
 		duration: 0,
 		fill: "both"
 	});

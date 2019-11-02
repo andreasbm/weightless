@@ -7,17 +7,16 @@ import { sharedStyles } from "../../../style/shared";
 
 @customElement("icon-page")
 export default class IconPage extends LitElement {
-
 	static styles = [sharedStyles];
 
-	protected render () {
+	protected render() {
 		return html`
 			<demo-element default>
 				<code-example-element>
 					<wl-icon>warning</wl-icon>
 				</code-example-element>
 			</demo-element>
-			
+
 			<wl-title level="3">Different sizes</wl-title>
 			<demo-element>
 				<code-example-element>

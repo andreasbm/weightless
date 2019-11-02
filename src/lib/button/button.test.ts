@@ -3,7 +3,7 @@ import { assignedNodesMap, createContainer, removeContainer, waitForElement } fr
 import { Button } from "./button";
 
 describe("wl-button", () => {
-	const {expect} = chai;
+	const { expect } = chai;
 	let $button: Button;
 	let $container: HTMLElement;
 
@@ -24,13 +24,11 @@ describe("wl-button", () => {
 	});
 
 	it("should interact with form elements", done => {
-
 		// Add button to form
 		const $form = createContainer<HTMLFormElement>("form", $container);
 		const $button = new Button();
 		$form.appendChild($button);
 		$button.updateComplete.then(() => {
-
 			// Listen for submit event (prevent the default reload behavior).
 			$form.addEventListener("submit", e => {
 				e.preventDefault();
@@ -74,4 +72,3 @@ describe("wl-button", () => {
 		expect($button.getAttribute("tabindex")).to.equal("123");
 	});
 });
-

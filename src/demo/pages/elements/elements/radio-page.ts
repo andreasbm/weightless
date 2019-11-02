@@ -8,10 +8,9 @@ import { sharedStyles } from "../../../style/shared";
 
 @customElement("radio-page")
 export default class RadioPage extends LitElement {
-
 	static styles = [sharedStyles];
 
-	protected render () {
+	protected render() {
 		return html`
 			<demo-element default>
 				<code-example-element>
@@ -20,7 +19,7 @@ export default class RadioPage extends LitElement {
 					<wl-radio name="food" value="pizza"></wl-radio>
 				</code-example-element>
 			</demo-element>
-			
+
 			<wl-title level="3">Disabled</wl-title>
 			<demo-element>
 				<code-example-element>

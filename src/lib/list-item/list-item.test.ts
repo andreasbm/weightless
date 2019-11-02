@@ -3,7 +3,7 @@ import { assignedNodesMap, createContainer, removeContainer, waitForElement } fr
 import { ListItem } from "./list-item";
 
 describe("wl-list-item", () => {
-	const {expect} = chai;
+	const { expect } = chai;
 	let $listItem: ListItem;
 	let $container: HTMLElement;
 
@@ -35,4 +35,3 @@ describe("wl-list-item", () => {
 		expect($listItem.getAttribute("role")).to.equal("listitem");
 	});
 });
-

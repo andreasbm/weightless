@@ -3,7 +3,7 @@ import "../progress-bar";
 import { ProgressBar } from "./progress-bar";
 
 describe("wl-progress-bar", () => {
-	const {expect} = chai;
+	const { expect } = chai;
 	let $progressBar: ProgressBar;
 	let $container: HTMLElement;
 
@@ -22,4 +22,3 @@ describe("wl-progress-bar", () => {
 		expect($progressBar.getAttribute("role")).to.equal("progressbar");
 	});
 });
-

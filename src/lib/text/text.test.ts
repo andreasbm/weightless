@@ -3,7 +3,7 @@ import "../text";
 import { Text } from "./text";
 
 describe("wl-text", () => {
-	const {expect} = chai;
+	const { expect } = chai;
 	let $text: Text;
 	let $container: HTMLElement;
 
@@ -20,4 +20,3 @@ describe("wl-text", () => {
 	});
 	after(() => removeContainer($container));
 });
-

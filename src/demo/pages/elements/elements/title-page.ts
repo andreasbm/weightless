@@ -7,10 +7,9 @@ import { sharedStyles } from "../../../style/shared";
 
 @customElement("title-page")
 export default class ButtonPage extends LitElement {
-
 	static styles = [sharedStyles];
 
-	protected render () {
+	protected render() {
 		return html`
 			<demo-element default style="text-align: left;">
 				<code-example-element>

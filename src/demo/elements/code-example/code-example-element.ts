@@ -20,7 +20,7 @@ export class CodeExampleElement extends LitElement {
 	static styles = [cssResult(styles)];
 
 	@property() lang = "html";
-	@property({type: Boolean}) lineNumber = false;
+	@property({ type: Boolean }) lineNumber = false;
 	@property() headline?: string;
 	@property() text?: string;
 	@query("#highlighter") protected $highlighter!: HighlightElement;
@@ -31,17 +31,17 @@ export class CodeExampleElement extends LitElement {
 	 * Returns the HTML passed to the component as a string.
 	 * @returns {string}
 	 */
-	get slotString () {
+	get slotString() {
 		return this.shadowRoot!.host.innerHTML;
 	}
 
-	connectedCallback () {
+	connectedCallback() {
 		super.connectedCallback();
 		this.cachedSlotString = this.slotString;
 		this.requestUpdate().then();
 	}
 
-	openCodepen () {
+	openCodepen() {
 		openCodepen({
 			html: this.$highlighter.cleanedText,
 			js_external: `${UNPGK_URL}`,
@@ -49,12 +49,14 @@ export class CodeExampleElement extends LitElement {
 		});
 	}
 
-	copyToClipboard () {
+	copyToClipboard() {
 		copyToClipboard(this.$highlighter.cleanedText);
 		queueSnackbar({
 			fixed: true,
 			container: document.body,
-			template: html`<span>The code was copied to your clipboard</span>`,
+			template: html`
+				<span>The code was copied to your clipboard</span>
+			`,
 			hideDelay: 2000,
 			backdrop: true
 		}).then();
@@ -63,7 +65,7 @@ export class CodeExampleElement extends LitElement {
 	/**
 	 * Renders the component.
 	 */
-	protected render () {
+	protected render() {
 		return html`
 			<div id="tools">
 				<wl-button inverted flat fab @click="${() => this.copyToClipboard()}">
@@ -74,7 +76,13 @@ export class CodeExampleElement extends LitElement {
 				</wl-button>
 			</div>
 			<slot></slot>
-			<highlight-element id="highlighter" lang="${ifDefined(this.lang)}" ?lineNumber="${this.lineNumber}" headline="${ifDefined(this.headline)}" text="${ifDefined(this.cachedSlotString)}"></highlight-element>
+			<highlight-element
+				id="highlighter"
+				lang="${ifDefined(this.lang)}"
+				?lineNumber="${this.lineNumber}"
+				headline="${ifDefined(this.headline)}"
+				text="${ifDefined(this.cachedSlotString)}"
+			></highlight-element>
 		`;
 	}
 }

@@ -33,18 +33,18 @@ export class Text extends LitElement implements ITextProperties {
 	 * Size of the text.
 	 * @attr
 	 */
-	@property({type: String, reflect: true}) size: TextSize = "medium";
+	@property({ type: String, reflect: true }) size: TextSize = "medium";
 
 	/**
 	 * Role of the text.
 	 * @attr
 	 */
-	@property({type: String, reflect: true}) role: AriaRole = "paragraph";
+	@property({ type: String, reflect: true }) role: AriaRole = "paragraph";
 
 	/**
 	 * Returns the template for the element.
 	 */
-	protected render (): TemplateResult {
+	protected render(): TemplateResult {
 		return html`
 			<slot></slot>
 		`;

@@ -8,14 +8,16 @@ import "../../../elements/demo/demo-element";
 
 @customElement("select-page")
 export default class SelectPage extends LitElement {
-
-	static styles = [sharedStyles, cssResult(`
+	static styles = [
+		sharedStyles,
+		cssResult(`
 		wl-select:not(:last-child) {
 			margin: 0 0 12px;
 		}
-	`)];
+	`)
+	];
 
-	protected render () {
+	protected render() {
 		return html`
 			<demo-element default>
 				<code-example-element>
@@ -28,7 +30,7 @@ export default class SelectPage extends LitElement {
 					</wl-select>
 				</code-example-element>
 			</demo-element>
-			
+
 			<wl-title level="3">Outlined</wl-title>
 			<demo-element>
 				<code-example-element>
@@ -41,7 +43,7 @@ export default class SelectPage extends LitElement {
 					</wl-select>
 				</code-example-element>
 			</demo-element>
-			
+
 			<wl-title level="3">Filled</wl-title>
 			<demo-element>
 				<code-example-element>
@@ -54,7 +56,7 @@ export default class SelectPage extends LitElement {
 					</wl-select>
 				</code-example-element>
 			</demo-element>
-			
+
 			<wl-title level="3">Disabled</wl-title>
 			<demo-element>
 				<code-example-element>

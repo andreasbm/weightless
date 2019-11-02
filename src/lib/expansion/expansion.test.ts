@@ -3,7 +3,7 @@ import "../expansion";
 import { Expansion } from "./expansion";
 
 describe("wl-expansion", () => {
-	const {expect} = chai;
+	const { expect } = chai;
 	let $expansion: Expansion;
 	let $container: HTMLElement;
 
@@ -31,4 +31,3 @@ describe("wl-expansion", () => {
 		expect(assignedNodes[""].length).to.be.above(0);
 	});
 });
-

@@ -7,8 +7,7 @@ import styles from "./progress-bar.scss";
 /**
  * Properties of the progress bar.
  */
-export interface IProgressBarProperties extends IProgressBehaviorProperties {
-}
+export interface IProgressBarProperties extends IProgressBehaviorProperties {}
 
 /**
  * Fills a bar from 0% to 100%.
@@ -28,11 +27,13 @@ export class ProgressBar extends ProgressBehavior implements IProgressBarPropert
 	/**
 	 * Returns the template for the element.
 	 */
-	protected render (): TemplateResult {
+	protected render(): TemplateResult {
 		return html`
-			${this.bufferPerc > 0 ? html`
-				<div id="buffer" style="transform: scaleX(${this.bufferPerc})"></div>`
-			: ""}
+			${this.bufferPerc > 0
+				? html`
+						<div id="buffer" style="transform: scaleX(${this.bufferPerc})"></div>
+				  `
+				: ""}
 			<div id="progress" style="${this.mode === ProgressMode.DETERMINATE ? `transform: scaleX(${this.progressPerc})` : ""}">
 				<div id="before"></div>
 				<div id="after"></div>

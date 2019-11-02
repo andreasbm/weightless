@@ -3,7 +3,7 @@ import "../textarea";
 import { Textarea } from "./textarea";
 
 describe("wl-textarea", () => {
-	const {expect} = chai;
+	const { expect } = chai;
 	let $textarea: Textarea;
 	let $container: HTMLElement;
 
@@ -24,4 +24,3 @@ describe("wl-textarea", () => {
 		expect($textarea.getAttribute("role")).to.equal("textbox");
 	});
 });
-

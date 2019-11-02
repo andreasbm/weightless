@@ -6,8 +6,8 @@ import styles from "./highlight-element.scss";
 import "../../../../node_modules/code-prettify/loader/run_prettify.js";
 
 declare const PR: {
-	prettyPrint (): void,
-	prettyPrintOne (source: string, lang: string, lineNumber: boolean): string;
+	prettyPrint(): void;
+	prettyPrintOne(source: string, lang: string, lineNumber: boolean): string;
 };
 
 /**
@@ -15,16 +15,14 @@ declare const PR: {
  */
 @customElement("highlight-element")
 export class HighlightElement extends LitElement {
-
 	@property() lang = "";
-	@property({type: Boolean}) lineNumber = false;
+	@property({ type: Boolean }) lineNumber = false;
 	@property() headline?: string;
 	@property() text = "";
 
 	@query("pre") private $pre!: HTMLElement;
 
-	get cleanedText () {
-
+	get cleanedText() {
 		// Remove empty attributes (eg. disabled="") (warning: this will also remove const myVar="";)
 		let text = this.text!.replace(/=""/gm, "");
 
@@ -45,12 +43,11 @@ export class HighlightElement extends LitElement {
 			text = text.replace(new RegExp(`^[\t]{${leastTabs}}`, "gm"), "");
 		}
 
-
 		// Replace tabs with spaces
 		return text.replace(/\t/g, "   ");
 	}
 
-	get sanitizedText () {
+	get sanitizedText() {
 		return sanitize(this.cleanedText);
 	}
 
@@ -58,14 +55,14 @@ export class HighlightElement extends LitElement {
 	 * Returns a prettified HTML string of the text.
 	 * @returns {string}
 	 */
-	get prettifiedContent () {
+	get prettifiedContent() {
 		return PR.prettyPrintOne(this.sanitizedText, this.lang, this.lineNumber);
 	}
 
 	/**
 	 * Prettyprints to the text
 	 */
-	private prettyPrint () {
+	private prettyPrint() {
 		if (this.$pre == null) return;
 		this.$pre.innerHTML = this.prettifiedContent;
 	}
@@ -75,7 +72,7 @@ export class HighlightElement extends LitElement {
 	 * @private
 	 * @param changedProperties
 	 */
-	protected updated (changedProperties: PropertyValues) {
+	protected updated(changedProperties: PropertyValues) {
 		super.updated(changedProperties);
 		this.prettyPrint();
 	}
@@ -83,17 +80,19 @@ export class HighlightElement extends LitElement {
 	/**
 	 * Returns the template for the component.
 	 */
-	protected render () {
+	protected render() {
 		return html`
 			<style>
 				${codeStyles}
 				${styles}
 			</style>
-			${this.headline != null ? html`
-				<header>
-					<span>${this.headline}</span>
-				</header>
-			` : ""}
+			${this.headline != null
+				? html`
+						<header>
+							<span>${this.headline}</span>
+						</header>
+				  `
+				: ""}
 			<pre class="${`lang-${this.lang}`}"></pre>
 		`;
 	}

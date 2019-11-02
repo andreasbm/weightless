@@ -2,8 +2,8 @@ import { ARROW_DOWN, ARROW_LEFT, ARROW_RIGHT, ARROW_UP } from "./constant/keycod
 import { stopEvent } from "./event";
 
 export interface IRowing<T = unknown> {
-	queryGroup (): T[];
-	rowToElement: ((elem: T) => void);
+	queryGroup(): T[];
+	rowToElement: (elem: T) => void;
 }
 
 /**
@@ -11,7 +11,7 @@ export interface IRowing<T = unknown> {
  * @param element
  * @param e
  */
-export function row<T> (element: T & IRowing<T>, e: KeyboardEvent) {
+export function row<T>(element: T & IRowing<T>, e: KeyboardEvent) {
 	const group = element.queryGroup();
 	const currentIndex = group.indexOf(element);
 	const newIndex = nextIndex(group, currentIndex, e.code);
@@ -30,8 +30,7 @@ export function row<T> (element: T & IRowing<T>, e: KeyboardEvent) {
  * @param currentIndex
  * @param keyCode
  */
-export function nextIndex<T> (group: T[], currentIndex: number, keyCode: string): number | null {
-
+export function nextIndex<T>(group: T[], currentIndex: number, keyCode: string): number | null {
 	// If there are no elements in the group we abort.
 	if (group.length == 0) {
 		return null;

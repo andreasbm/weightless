@@ -3,7 +3,7 @@
  * @param $elem
  * @param disabled
  */
-export function updateTabindex ($elem: HTMLElement, disabled: boolean) {
+export function updateTabindex($elem: HTMLElement, disabled: boolean) {
 	$elem.tabIndex = disabled ? -1 : $elem.tabIndex < 0 ? 0 : $elem.tabIndex;
 }
 
@@ -86,4 +86,3 @@ export type AriaRole =
 	| "treeitem"
 	| "widget"
 	| "window";
-

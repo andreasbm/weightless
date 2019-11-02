@@ -1,10 +1,10 @@
 import { IRoute } from "@appnest/web-router";
 
-function iconPath (name: string): string {
+function iconPath(name: string): string {
 	return `assets/element/${name}.svg`;
 }
 
-function weightlessDocsURL (element: string): string {
+function weightlessDocsURL(element: string): string {
 	return `https://github.com/andreasbm/weightless/tree/master/src/lib/${element}`;
 }
 

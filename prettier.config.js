@@ -1,3 +1,3 @@
 module.exports = {
-	...require("./src/lib/prettier.config.js")
+	...require("./node_modules/@appnest/web-config/prettier.config.js")
 };

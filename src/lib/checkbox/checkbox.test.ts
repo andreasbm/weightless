@@ -3,7 +3,7 @@ import "../checkbox";
 import { Checkbox } from "./checkbox";
 
 describe("wl-checkbox", () => {
-	const {expect} = chai;
+	const { expect } = chai;
 	let $checkbox: Checkbox;
 	let $container: HTMLElement;
 
@@ -28,10 +28,9 @@ describe("wl-checkbox", () => {
 		expect($checkbox.getAttribute("aria-checked")).to.equal("false");
 	});
 
-	it("should reflect aria-checked when checked", (done) => {
+	it("should reflect aria-checked when checked", done => {
 		$checkbox.checked = true;
 		$checkbox.updateComplete.then(() => {
-
 			// For some reason we have to wait a bit for the aria-checked attribute to be updated
 			// Very weird.
 			setTimeout(() => {
@@ -39,7 +38,6 @@ describe("wl-checkbox", () => {
 				done();
 			}, 100);
 		});
-
 	});
 
 	it("should be removed from the tab order when disabled", async () => {
@@ -48,4 +46,3 @@ describe("wl-checkbox", () => {
 		expect($checkbox.tabIndex).to.equal(-1);
 	});
 });
-

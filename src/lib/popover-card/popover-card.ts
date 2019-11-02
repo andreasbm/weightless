@@ -8,8 +8,7 @@ import styles from "./popover-card.scss";
 /**
  * Properties of the popover card.
  */
-export interface IPopoverCardProperties {
-}
+export interface IPopoverCardProperties {}
 
 /**
  * Give popovers a contextual flair.
@@ -26,10 +25,10 @@ export class PopoverCard extends LitElement implements IPopoverCardProperties {
 	/**
 	 * Returns the template for the element.
 	 */
-	protected render (): TemplateResult {
+	protected render(): TemplateResult {
 		return html`
-			<svg id="arrow" viewBox="0 0 100 100" preserveAspectRatio="none" >
-				<polygon points="50 0, 100 100, 0 100"/>
+			<svg id="arrow" viewBox="0 0 100 100" preserveAspectRatio="none">
+				<polygon points="50 0, 100 100, 0 100" />
 			</svg>
 			<wl-card id="content">
 				<slot></slot>

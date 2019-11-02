@@ -3,7 +3,7 @@ import "../icon";
 import { Icon } from "./icon";
 
 describe("wl-divider", () => {
-	const {expect} = chai;
+	const { expect } = chai;
 	let $icon: Icon;
 	let $container: HTMLElement;
 
@@ -26,4 +26,3 @@ describe("wl-divider", () => {
 		expect(assignedNodes[""].length).to.be.above(0);
 	});
 });
-

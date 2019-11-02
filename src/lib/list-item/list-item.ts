@@ -49,25 +49,25 @@ export class ListItem extends ButtonBehavior implements IListItemProperties, IRo
 	 * Disables the element.
 	 * @attr
 	 */
-	@property({type: Boolean, reflect: true}) disabled: boolean = false;
+	@property({ type: Boolean, reflect: true }) disabled: boolean = false;
 
 	/**
 	 * Makes the element clickable.
 	 * @attr
 	 */
-	@property({type: Boolean, reflect: true}) clickable: boolean = false;
+	@property({ type: Boolean, reflect: true }) clickable: boolean = false;
 
 	/**
 	 * Deactivates the ripple.
 	 * @attr
 	 */
-	@property({type: Boolean, reflect: true}) noRipple: boolean = false;
+	@property({ type: Boolean, reflect: true }) noRipple: boolean = false;
 
 	/**
 	 * Role of the list item.
 	 * @attr
 	 */
-	@property({type: String, reflect: true}) role: AriaRole = "listitem";
+	@property({ type: String, reflect: true }) role: AriaRole = "listitem";
 
 	/**
 	 * Ripple element.
@@ -77,7 +77,7 @@ export class ListItem extends ButtonBehavior implements IListItemProperties, IRo
 	/**
 	 * Query the group.
 	 */
-	queryGroup (): ListItem[] {
+	queryGroup(): ListItem[] {
 		return Array.from(this.parentElement!.querySelectorAll(`${this.nodeName.toLowerCase()}:not([disabled])`));
 	}
 
@@ -85,7 +85,7 @@ export class ListItem extends ButtonBehavior implements IListItemProperties, IRo
 	 * Focuses a grouped element.
 	 * @param elem
 	 */
-	rowToElement (elem: ListItem) {
+	rowToElement(elem: ListItem) {
 		elem.focus();
 	}
 
@@ -94,7 +94,7 @@ export class ListItem extends ButtonBehavior implements IListItemProperties, IRo
 	 * Adds support for rowing tabindex.
 	 * @param e
 	 */
-	protected onKeyDown (e: KeyboardEvent) {
+	protected onKeyDown(e: KeyboardEvent) {
 		super.onKeyDown(e);
 		row(this, e);
 	}
@@ -102,7 +102,7 @@ export class ListItem extends ButtonBehavior implements IListItemProperties, IRo
 	/**
 	 * Returns the template of the element.
 	 */
-	protected render (): TemplateResult {
+	protected render(): TemplateResult {
 		return html`
 			<slot name="before"></slot>
 			<div id="content">

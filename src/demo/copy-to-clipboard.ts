@@ -2,8 +2,7 @@
  * Copies text to clipboard.
  * @param text
  */
-export function copyToClipboard (text: string) {
-
+export function copyToClipboard(text: string) {
 	// Create input and add it to the DOM
 	const $input = document.createElement("input");
 	$input.style.opacity = `0`;

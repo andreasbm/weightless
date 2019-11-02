@@ -3,7 +3,7 @@ import "../divider";
 import { Divider } from "./divider";
 
 describe("wl-divider", () => {
-	const {expect} = chai;
+	const { expect } = chai;
 	let $divider: Divider;
 	let $container: HTMLElement;
 
@@ -21,4 +21,3 @@ describe("wl-divider", () => {
 		expect($divider.getAttribute("role")).to.equal("separator");
 	});
 });
-

@@ -8,24 +8,23 @@ import "../../../elements/demo/demo-element";
 
 @customElement("list-item-page")
 export default class ListItemPage extends LitElement {
-
 	static styles = [sharedStyles];
 
-	protected render () {
+	protected render() {
 		return html`
 			<demo-element default>
 				<code-example-element>
 					<wl-list-item>Inbox</wl-list-item>
 				</code-example-element>
 			</demo-element>
-			
+
 			<wl-title level="3">Clickable</wl-title>
 			<demo-element>
 				<code-example-element>
 					<wl-list-item clickable>Inbox</wl-list-item>
 				</code-example-element>
 			</demo-element>
-			
+
 			<wl-title level="3">Active</wl-title>
 			<demo-element>
 				<code-example-element>
@@ -33,7 +32,7 @@ export default class ListItemPage extends LitElement {
 					<wl-list-item active clickable>Inbox</wl-list-item>
 				</code-example-element>
 			</demo-element>
-			
+
 			<wl-title level="3">Disabled</wl-title>
 			<demo-element>
 				<code-example-element>
@@ -42,7 +41,7 @@ export default class ListItemPage extends LitElement {
 					<wl-list-item disabled clickable>Inbox</wl-list-item>
 				</code-example-element>
 			</demo-element>
-			
+
 			<wl-title level="3">Left & Right </wl-title>
 			<demo-element>
 				<code-example-element>
@@ -54,7 +53,6 @@ export default class ListItemPage extends LitElement {
 					</wl-list-item>
 				</code-example-element>
 			</demo-element>
-			
 		`;
 	}
 }

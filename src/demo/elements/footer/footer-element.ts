@@ -8,15 +8,17 @@ import styles from "./footer-element.scss";
 
 @customElement("footer-element")
 export class FooterComponent extends LitElement {
-
 	static styles = [sharedStyles, cssResult(styles)];
 
-	@property({type: String, reflect: true}) role: AriaRole = "contentinfo";
+	@property({ type: String, reflect: true }) role: AriaRole = "contentinfo";
 
-	protected render () {
+	protected render() {
 		return html`
 			<aside>
-				<span>Released under <a href="https://github.com/andreasbm/weightless/blob/master/LICENSE.md" target="_blank" rel="noopener">MIT LICENSE</a>. Copyright © 2019 Andreas Mehlsen</span>
+				<span
+					>Released under <a href="https://github.com/andreasbm/weightless/blob/master/LICENSE.md" target="_blank" rel="noopener">MIT LICENSE</a>.
+					Copyright © 2019 Andreas Mehlsen</span
+				>
 			</aside>
 			<aside>
 				<a class="social" href="${GITHUB_URL}" target="_blank" rel="noopener">

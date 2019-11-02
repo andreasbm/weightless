@@ -56,31 +56,31 @@ export class Expansion extends RadioBehavior implements IExpansionProperties {
 	 * Opens the expansion.
 	 * @attr - open
 	 */
-	@property({type: Boolean, reflect: true, attribute: "open"}) checked: boolean = false;
+	@property({ type: Boolean, reflect: true, attribute: "open" }) checked: boolean = false;
 
 	/**
 	 * Deactivates the ripple.
 	 * @attr
 	 */
-	@property({type: Boolean, reflect: true}) noRipple: boolean = false;
+	@property({ type: Boolean, reflect: true }) noRipple: boolean = false;
 
 	/**
 	 * The duration of the animations.
 	 * @attr
 	 */
-	@property({type: Number}) duration: number = EXPANSION_ANIMATION_DURATION;
+	@property({ type: Number }) duration: number = EXPANSION_ANIMATION_DURATION;
 
 	/**
 	 * Aria expanded attribute.
 	 * @attr - aria-expanded
 	 */
-	@property({type: String, reflect: true, attribute: "aria-expanded"}) ariaChecked: string = this.checked.toString();
+	@property({ type: String, reflect: true, attribute: "aria-expanded" }) ariaChecked: string = this.checked.toString();
 
 	/**
 	 * Icon name.
 	 * @attr
 	 */
-	@property({type: String}) icon? = "expand_more";
+	@property({ type: String }) icon? = "expand_more";
 
 	/**
 	 * Reference to the header element.
@@ -106,16 +106,14 @@ export class Expansion extends RadioBehavior implements IExpansionProperties {
 	 * Hooks up the element.
 	 * @param props
 	 */
-	protected firstUpdated (props: Map<keyof IExpansionProperties, unknown>) {
+	protected firstUpdated(props: Map<keyof IExpansionProperties, unknown>) {
 		super.firstUpdated(<Map<keyof ISwitchBehaviorProperties, unknown>>props);
 
 		// Make sure only the ripple animation happens on the header.
 		this.$ripple.target = this;
 
 		// Stop the click event from propagating when clicking on the content container.
-		this.listeners.push(
-			addListener(this.$contentContainer, "click", this.onContentContainerClick.bind(this))
-		);
+		this.listeners.push(addListener(this.$contentContainer, "click", this.onContentContainerClick.bind(this)));
 
 		// The initial in or out animation will be instant
 		this.animateContent(0).then();
@@ -125,7 +123,7 @@ export class Expansion extends RadioBehavior implements IExpansionProperties {
 	 * Responds to properties that changes and animates the element.
 	 * @param props
 	 */
-	protected updated (props: Map<keyof IExpansionProperties, any>) {
+	protected updated(props: Map<keyof IExpansionProperties, any>) {
 		super.updated(props as Map<keyof ISwitchBehaviorProperties, unknown>);
 
 		// Either animate the content in or out when the checked property changes
@@ -140,14 +138,14 @@ export class Expansion extends RadioBehavior implements IExpansionProperties {
 	 * It is required because we can't delegate focus to the header which would be the optimal soluation.
 	 * @param e
 	 */
-	protected onContentContainerClick (e: MouseEvent) {
+	protected onContentContainerClick(e: MouseEvent) {
 		e.stopPropagation();
 	}
 
 	/**
 	 * Toggles the checked property.
 	 */
-	protected toggle () {
+	protected toggle() {
 		this.checked = !this.checked;
 		this.dispatchChangeEvent();
 	}
@@ -156,23 +154,22 @@ export class Expansion extends RadioBehavior implements IExpansionProperties {
 	 * Animates the content in or out.
 	 * @param duration
 	 */
-	private async animateContent (duration: number = this.duration): Promise<void> {
+	private async animateContent(duration: number = this.duration): Promise<void> {
 		requestAnimationFrame(() => {
-
 			// Compute the measurements for the animation
 			const toHeight = this.checked ? this.$content.offsetHeight : 0;
 			const bodyContainerHeight = this.$contentContainer.offsetHeight;
 
 			// Animate the content container in or out
-			this.$contentContainer.animate(<PropertyIndexedKeyframes>{
-				height: [
-					`${bodyContainerHeight}px`,
-					`${toHeight}px`
-				]
-			}, {
-				easing: CUBIC_BEZIER,
-				duration
-			}).onfinish = () => {
+			this.$contentContainer.animate(
+				<PropertyIndexedKeyframes>{
+					height: [`${bodyContainerHeight}px`, `${toHeight}px`]
+				},
+				{
+					easing: CUBIC_BEZIER,
+					duration
+				}
+			).onfinish = () => {
 				this.$contentContainer.style.height = this.checked ? `auto` : `0px`;
 			};
 		});
@@ -181,7 +178,7 @@ export class Expansion extends RadioBehavior implements IExpansionProperties {
 	/**
 	 * Returns the template of the element.
 	 */
-	protected render (): TemplateResult {
+	protected render(): TemplateResult {
 		return html`
 			<header id="header" aria-labelledby="title">
 				<div id="title">
@@ -190,7 +187,11 @@ export class Expansion extends RadioBehavior implements IExpansionProperties {
 				</div>
 				<div id="indicator">
 					<slot name="indicator"></slot>
-					${this.icon != null ? html`<wl-icon id="icon">${this.icon}</wl-icon>` : nothing}
+					${this.icon != null
+						? html`
+								<wl-icon id="icon">${this.icon}</wl-icon>
+						  `
+						: nothing}
 				</div>
 				<wl-ripple id="ripple" overlay ?disabled="${this.disabled || this.noRipple}"></wl-ripple>
 			</header>

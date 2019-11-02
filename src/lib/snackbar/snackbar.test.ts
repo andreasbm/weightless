@@ -5,7 +5,7 @@ import { assignedNodesMap, createContainer, removeContainer, waitForElement } fr
 import { Snackbar } from "./snackbar";
 
 describe("wl-snackbar", () => {
-	const {expect} = chai;
+	const { expect } = chai;
 	let $snackbar: Snackbar;
 	let $container: HTMLElement;
 
@@ -38,4 +38,3 @@ describe("wl-snackbar", () => {
 		expect($snackbar.getAttribute("role")).to.equal("banner");
 	});
 });
-

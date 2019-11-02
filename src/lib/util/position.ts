@@ -23,8 +23,8 @@ export enum OriginY {
 export interface IPositionStrategy {
 	transformOriginX: OriginX;
 	transformOriginY: OriginY;
-	anchorOriginX: OriginX,
-	anchorOriginY: OriginY
+	anchorOriginX: OriginX;
+	anchorOriginY: OriginY;
 }
 
 /**
@@ -53,11 +53,13 @@ export interface ITransformOrigin {
  * @param height
  * @param anchorRect
  */
-export function computeAnchorPosition ({anchorOriginX, anchorOriginY}: IPositionStrategy,
-                                       {left, top, width = 0, height = 0}: {left: number, top: number, height?: number, width?: number}): IAnchorPosition {
+export function computeAnchorPosition(
+	{ anchorOriginX, anchorOriginY }: IPositionStrategy,
+	{ left, top, width = 0, height = 0 }: { left: number; top: number; height?: number; width?: number }
+): IAnchorPosition {
 	switch (anchorOriginX) {
 		case OriginX.CENTER:
-			left = left + (width / 2);
+			left = left + width / 2;
 			break;
 		case OriginX.RIGHT:
 			left = left + width;
@@ -66,14 +68,14 @@ export function computeAnchorPosition ({anchorOriginX, anchorOriginY}: IPosition
 
 	switch (anchorOriginY) {
 		case OriginY.CENTER:
-			top = top + (height / 2);
+			top = top + height / 2;
 			break;
 		case OriginY.BOTTOM:
 			top = top + height;
 			break;
 	}
 
-	return {left, top};
+	return { left, top };
 }
 
 /**
@@ -81,7 +83,7 @@ export function computeAnchorPosition ({anchorOriginX, anchorOriginY}: IPosition
  * @param transformOriginX
  * @param transformOriginY
  */
-export function computeTransformOrigin ({transformOriginX, transformOriginY}: IPositionStrategy): ITransformOrigin {
+export function computeTransformOrigin({ transformOriginX, transformOriginY }: IPositionStrategy): ITransformOrigin {
 	let x: string | number = 0;
 	let y: string | number = 0;
 
@@ -103,7 +105,7 @@ export function computeTransformOrigin ({transformOriginX, transformOriginY}: IP
 			break;
 	}
 
-	return {x, y};
+	return { x, y };
 }
 
 /**
@@ -111,11 +113,13 @@ export function computeTransformOrigin ({transformOriginX, transformOriginY}: IP
  * @param strategyA
  * @param strategyB
  */
-export function areStrategiesEqual (strategyA: IPositionStrategy, strategyB: IPositionStrategy): boolean {
-	return strategyA.transformOriginX !== strategyB.transformOriginX
-		|| strategyA.transformOriginY !== strategyB.transformOriginY
-		|| strategyA.anchorOriginX !== strategyB.anchorOriginX
-		|| strategyA.anchorOriginY !== strategyB.anchorOriginY;
+export function areStrategiesEqual(strategyA: IPositionStrategy, strategyB: IPositionStrategy): boolean {
+	return (
+		strategyA.transformOriginX !== strategyB.transformOriginX ||
+		strategyA.transformOriginY !== strategyB.transformOriginY ||
+		strategyA.anchorOriginX !== strategyB.anchorOriginX ||
+		strategyA.anchorOriginY !== strategyB.anchorOriginY
+	);
 }
 
 /**
@@ -125,9 +129,11 @@ export function areStrategiesEqual (strategyA: IPositionStrategy, strategyB: IPo
  * @param left
  * @param top
  */
-export function computeMaxDimensions ({transformOriginX, transformOriginY}: IPositionStrategy,
-                                      {left, top}: IAnchorPosition): {maxWidth: number, maxHeight: number} {
-	const {innerHeight, innerWidth} = window;
+export function computeMaxDimensions(
+	{ transformOriginX, transformOriginY }: IPositionStrategy,
+	{ left, top }: IAnchorPosition
+): { maxWidth: number; maxHeight: number } {
+	const { innerHeight, innerWidth } = window;
 	return {
 		maxWidth: transformOriginX === OriginX.RIGHT ? left : innerWidth - left,
 		maxHeight: transformOriginY === OriginY.BOTTOM ? top : innerHeight - top
@@ -144,10 +150,12 @@ export function computeMaxDimensions ({transformOriginX, transformOriginY}: IPos
  * @param left
  * @param containerRect
  */
-export function computeFallbackStrategy ({transformOriginX, transformOriginY, anchorOriginX, anchorOriginY}: IPositionStrategy,
-                                         {top, left}: IAnchorPosition,
-                                         containerRect: ClientRect | DOMRect): IPositionStrategy {
-	const {innerHeight, innerWidth} = window;
+export function computeFallbackStrategy(
+	{ transformOriginX, transformOriginY, anchorOriginX, anchorOriginY }: IPositionStrategy,
+	{ top, left }: IAnchorPosition,
+	containerRect: ClientRect | DOMRect
+): IPositionStrategy {
+	const { innerHeight, innerWidth } = window;
 	switch (transformOriginY) {
 		case OriginY.TOP:
 			if (top + containerRect.height > innerHeight) {
@@ -168,5 +176,5 @@ export function computeFallbackStrategy ({transformOriginX, transformOriginY, an
 			break;
 	}
 
-	return {transformOriginY, transformOriginX, anchorOriginX, anchorOriginY};
+	return { transformOriginY, transformOriginX, anchorOriginX, anchorOriginY };
 }

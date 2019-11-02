@@ -4,7 +4,7 @@ import "../popover-card";
 import "../popover";
 
 describe("wl-popover-card", () => {
-	const {expect} = chai;
+	const { expect } = chai;
 	let $popoverCard: PopoverCard;
 	let $container: HTMLElement;
 
@@ -29,4 +29,3 @@ describe("wl-popover-card", () => {
 		expect(assignedNodes[""].length).to.be.above(0);
 	});
 });
-

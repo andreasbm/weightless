@@ -7,10 +7,9 @@ import { sharedStyles } from "../../../style/shared";
 
 @customElement("expansion-page")
 export default class ExpansionPage extends LitElement {
-
 	static styles = [sharedStyles];
 
-	protected render () {
+	protected render() {
 		return html`
 			<demo-element default>
 				<code-example-element>
@@ -21,42 +20,38 @@ export default class ExpansionPage extends LitElement {
 					</wl-expansion>
 				</code-example-element>
 			</demo-element>
-			
+
 			<wl-title level="3">Groups</wl-title>
 			<demo-element>
 				<code-example-element>
-				
 					<wl-expansion name="group">
 						<span slot="title">Expansion 1</span>
 						<span slot="description">Description</span>
 						<p>Here's some content</p>
 					</wl-expansion>
-					
+
 					<wl-expansion name="group">
 						<span slot="title">Expansion 2</span>
 						<span slot="description">Description</span>
 						<p>Here's some content</p>
 					</wl-expansion>
-					
+
 					<wl-expansion name="group">
 						<span slot="title">Expansion 3</span>
 						<span slot="description">Description</span>
 						<p>Here's some content</p>
 					</wl-expansion>
-					
 				</code-example-element>
 			</demo-element>
-			
+
 			<wl-title level="3">Disabled</wl-title>
 			<demo-element>
 				<code-example-element>
-				
 					<wl-expansion name="group" disabled>
 						<span slot="title">Disabled Expansion</span>
 						<span slot="description">Description</span>
 						<p>Here's some content</p>
 					</wl-expansion>
-					
 				</code-example-element>
 			</demo-element>
 		`;

@@ -3,7 +3,7 @@ import "../progress-spinner";
 import { ProgressSpinner } from "./progress-spinner";
 
 describe("wl-progress-spinner", () => {
-	const {expect} = chai;
+	const { expect } = chai;
 	let $progressSpinner: ProgressSpinner;
 	let $container: HTMLElement;
 
@@ -22,4 +22,3 @@ describe("wl-progress-spinner", () => {
 		expect($progressSpinner.getAttribute("role")).to.equal("progressbar");
 	});
 });
-

@@ -68,42 +68,42 @@ export abstract class InputBehavior extends FormElementBehavior implements IInpu
 	 * Whether autocomplete is on or off.
 	 * @attr
 	 */
-	@property({type: String, reflect: true}) autocomplete?: "on" | "off";
+	@property({ type: String, reflect: true }) autocomplete?: "on" | "off";
 
 	/**
 	 * Makes the input outlined.
 	 * @attr
 	 */
-	@property({type: Boolean, reflect: true}) outlined: boolean = false;
+	@property({ type: Boolean, reflect: true }) outlined: boolean = false;
 
 	/**
 	 * Fills the input with a solid color.
 	 * @attr
 	 */
-	@property({type: Boolean, reflect: true}) filled: boolean = false;
+	@property({ type: Boolean, reflect: true }) filled: boolean = false;
 
 	/**
 	 * Role of the input.
 	 * @attr
 	 */
-	@property({type: String, reflect: true}) role: AriaRole = "textbox";
+	@property({ type: String, reflect: true }) role: AriaRole = "textbox";
 
 	/**
 	 * Label text.
 	 * @attr
 	 */
-	@property({type: String, reflect: true}) label?: string;
+	@property({ type: String, reflect: true }) label?: string;
 
 	/**
 	 * Value of the form element.
 	 * @attr
 	 * @param value
 	 */
-	@property({type: String}) set value (value: string) {
+	@property({ type: String }) set value(value: string) {
 		this.setValue(value);
 	}
 
-	get value () {
+	get value() {
 		return this.getFormItemValue();
 	}
 
@@ -112,18 +112,18 @@ export abstract class InputBehavior extends FormElementBehavior implements IInpu
 	 * @attr
 	 * @param value
 	 */
-	@property({type: Number}) set valueAsNumber (value: number) {
+	@property({ type: Number }) set valueAsNumber(value: number) {
 		this.setValue(value.toString());
 	}
 
-	get valueAsNumber () {
+	get valueAsNumber() {
 		return parseFloat(this.getFormItemValue());
 	}
 
 	/**
 	 * Returns the main slot element.
 	 */
-	get $slot (): HTMLSlotElement {
+	get $slot(): HTMLSlotElement {
 		return this.shadowRoot!.querySelector<HTMLSlotElement>("#slot")!;
 	}
 
@@ -131,7 +131,7 @@ export abstract class InputBehavior extends FormElementBehavior implements IInpu
 	 * The element that the user interacts with.
 	 * This will most likely be the form element.
 	 */
-	protected get $interactiveElement (): FormElement {
+	protected get $interactiveElement(): FormElement {
 		return this.$formElement;
 	}
 
@@ -139,29 +139,29 @@ export abstract class InputBehavior extends FormElementBehavior implements IInpu
 	 * Returns whether the component is pristine or has been touched.
 	 */
 	private _pristine = true;
-	get pristine () {
+	get pristine() {
 		return this._pristine;
 	}
 
 	/**
 	 * Returns whether the nativeInput is dirty or not.
 	 */
-	get dirty (): boolean {
-		return (this.value != null && this.value !== "");
+	get dirty(): boolean {
+		return this.value != null && this.value !== "";
 	}
 
 	/**
 	 * Hooks up the element.
 	 * @param props
 	 */
-	protected firstUpdated (props: Map<keyof IInputBehaviorProperties, unknown>) {
+	protected firstUpdated(props: Map<keyof IInputBehaviorProperties, unknown>) {
 		super.firstUpdated(<Map<keyof IFormElementBehaviorProperties, unknown>>props);
 
 		this.listeners.push(
-			addListener(this.$formElement, "keydown", this.onKeyDown.bind(this), {passive: true}),
-			addListener(this.$formElement, "input", this.onInput.bind(this), {passive: true}),
-			addListener(this.$formElement, "focusout", this.onBlur.bind(this), {passive: true}),
-			addListener(this.$formElement, "invalid", this.onInvalid.bind(this), {passive: true})
+			addListener(this.$formElement, "keydown", this.onKeyDown.bind(this), { passive: true }),
+			addListener(this.$formElement, "input", this.onInput.bind(this), { passive: true }),
+			addListener(this.$formElement, "focusout", this.onBlur.bind(this), { passive: true }),
+			addListener(this.$formElement, "invalid", this.onInvalid.bind(this), { passive: true })
 		);
 
 		// Set the initial value after the native form element has been created.
@@ -174,7 +174,7 @@ export abstract class InputBehavior extends FormElementBehavior implements IInpu
 	 * Reacts when properties are updated.
 	 * @param props
 	 */
-	protected updated (props: Map<keyof IInputBehaviorProperties, unknown>) {
+	protected updated(props: Map<keyof IInputBehaviorProperties, unknown>) {
 		super.updated(props as Map<keyof IFormElementBehaviorProperties, unknown>);
 		this.refreshAttributes();
 	}
@@ -185,14 +185,14 @@ export abstract class InputBehavior extends FormElementBehavior implements IInpu
 	 * We will have to come up with another solution for other browsers since they
 	 * currently have to tab twice to reach the interactive element.
 	 */
-	protected createRenderRoot () {
-		return this.attachShadow({mode: "open", delegatesFocus: true});
+	protected createRenderRoot() {
+		return this.attachShadow({ mode: "open", delegatesFocus: true });
 	}
 
 	/**
 	 * Focuses the form element.
 	 */
-	focus () {
+	focus() {
 		this.$interactiveElement.focus();
 	}
 
@@ -200,11 +200,10 @@ export abstract class InputBehavior extends FormElementBehavior implements IInpu
 	 * Sets the value of the form element.
 	 * @param value
 	 */
-	protected setValue (value: string) {
+	protected setValue(value: string) {
 		if (this.$formElement != null) {
 			this.$formElement.value = value;
 			this.refreshAttributes();
-
 		} else {
 			// Store the initial value so the correct value can be set when the $formElement is added to the DOM.
 			this.initialValue = value;
@@ -215,7 +214,7 @@ export abstract class InputBehavior extends FormElementBehavior implements IInpu
 	 * Handles the input event.
 	 * @param e
 	 */
-	protected onInput (e: Event) {
+	protected onInput(e: Event) {
 		this.refreshAttributes();
 	}
 
@@ -224,14 +223,14 @@ export abstract class InputBehavior extends FormElementBehavior implements IInpu
 	 * We have to "redispatch" it because the native one doesn't bubble.
 	 * @param e
 	 */
-	protected onInvalid (e: Event) {
+	protected onInvalid(e: Event) {
 		this.dispatchInputEvent(InputBehaviorEvent.INVALID);
 	}
 
 	/**
 	 * Handles the on blur event.
 	 */
-	protected onBlur () {
+	protected onBlur() {
 		this._pristine = false;
 		this.refreshAttributes();
 	}
@@ -239,7 +238,7 @@ export abstract class InputBehavior extends FormElementBehavior implements IInpu
 	/**
 	 * Refreshes the attributes.
 	 */
-	protected refreshAttributes () {
+	protected refreshAttributes() {
 		renderAttributes(this, {
 			dirty: this.dirty,
 			invalid: !this.valid && !this.pristine,
@@ -251,7 +250,7 @@ export abstract class InputBehavior extends FormElementBehavior implements IInpu
 	 * Handles the key up event.
 	 * @param e
 	 */
-	protected onKeyDown (e: KeyboardEvent) {
+	protected onKeyDown(e: KeyboardEvent) {
 		switch (e.code) {
 			case ENTER:
 				if (e.ctrlKey || e.metaKey) {
@@ -265,19 +264,19 @@ export abstract class InputBehavior extends FormElementBehavior implements IInpu
 	 * Dispatches an input behavior event.
 	 * @param e
 	 */
-	protected dispatchInputEvent (e: InputBehaviorEvent) {
-		this.dispatchEvent(new CustomEvent(e, {composed: true}));
+	protected dispatchInputEvent(e: InputBehaviorEvent) {
+		this.dispatchEvent(new CustomEvent(e, { composed: true }));
 	}
 
 	/**
 	 * Returns the form element template.
 	 */
-	protected abstract renderFormElement (): TemplateResult;
+	protected abstract renderFormElement(): TemplateResult;
 
 	/**
 	 * Returns the template for the element.
 	 */
-	protected render (): TemplateResult {
+	protected render(): TemplateResult {
 		return html`
 			<div id="container">
 				<slot id="before" name="before"></slot>

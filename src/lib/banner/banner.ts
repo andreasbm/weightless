@@ -33,12 +33,12 @@ export class Banner extends LitElement implements IBannerProperties {
 	 * Role of the banner.
 	 * @attr
 	 */
-	@property({type: String, reflect: true}) role: AriaRole = "banner";
+	@property({ type: String, reflect: true }) role: AriaRole = "banner";
 
 	/**
 	 * Returns the template of the element.
 	 */
-	protected render (): TemplateResult {
+	protected render(): TemplateResult {
 		return html`
 			<div id="content">
 				<slot name="icon"></slot>

@@ -7,8 +7,7 @@ import styles from "./progress-spinner.scss";
 /**
  * Properties of the progress spinner.
  */
-export interface IProgressSpinnerProperties extends IProgressBehaviorProperties {
-}
+export interface IProgressSpinnerProperties extends IProgressBehaviorProperties {}
 
 /**
  * Base dash array length of the SVG circle.
@@ -33,11 +32,21 @@ export class ProgressSpinner extends ProgressBehavior implements IProgressSpinne
 	/**
 	 * Returns the template for the element.
 	 */
-	protected render (): TemplateResult {
+	protected render(): TemplateResult {
 		return html`
 			<svg focusable="false" preserveAspectRatio="xMidYMid meet" viewBox="0 0 100 100">
-				${this.bufferPerc > 0 ? svg`<circle id="buffer" cx="50%" cy="50%" r="45" fill="transparent" style="stroke-dashoffset: ${DASH_ARRAY - (DASH_ARRAY * this.bufferPerc)}px"></circle>` : ""}
-				<circle id="progress" cx="50%" cy="50%" r="45" fill="transparent" style="${this.mode === ProgressMode.DETERMINATE ? `stroke-dashoffset: ${DASH_ARRAY - (DASH_ARRAY * this.progressPerc)}px;` : ""}"></circle>
+				${this.bufferPerc > 0
+					? svg`<circle id="buffer" cx="50%" cy="50%" r="45" fill="transparent" style="stroke-dashoffset: ${DASH_ARRAY -
+							DASH_ARRAY * this.bufferPerc}px"></circle>`
+					: ""}
+				<circle
+					id="progress"
+					cx="50%"
+					cy="50%"
+					r="45"
+					fill="transparent"
+					style="${this.mode === ProgressMode.DETERMINATE ? `stroke-dashoffset: ${DASH_ARRAY - DASH_ARRAY * this.progressPerc}px;` : ""}"
+				></circle>
 			</svg>
 		`;
 	}

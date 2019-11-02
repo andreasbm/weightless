@@ -4,7 +4,7 @@
  * @param {*} element Element on which to set attributes.
  * @param {*} attrMap Object describing attributes.
  */
-export function renderAttributes (element: HTMLElement, attrMap: {[key: string]: string | boolean | number}) {
+export function renderAttributes(element: HTMLElement, attrMap: { [key: string]: string | boolean | number }) {
 	for (const a in attrMap) {
 		const v = attrMap[a] === true ? "" : attrMap[a];
 		if (v || v === "" || v === 0) {
@@ -22,8 +22,7 @@ export function renderAttributes (element: HTMLElement, attrMap: {[key: string]:
  * @param $elem
  * @param query
  */
-export function queryParentRoots<T> ($elem: Element, query: string): T[] {
-
+export function queryParentRoots<T>($elem: Element, query: string): T[] {
 	// If a shadow root doesn't exist we don't continue the traversal
 	if ($elem.shadowRoot == null) {
 		return [];
@@ -44,7 +43,7 @@ export function queryParentRoots<T> ($elem: Element, query: string): T[] {
  * Traverses the tree of active elements down the shadow tree.
  * @param activeElement
  */
-export function traverseActiveElements (activeElement: Element | null = document.activeElement): Element | null {
+export function traverseActiveElements(activeElement: Element | null = document.activeElement): Element | null {
 	if (activeElement != null && activeElement.shadowRoot != null && activeElement.shadowRoot.activeElement != null) {
 		return traverseActiveElements(activeElement.shadowRoot.activeElement);
 	}
@@ -56,7 +55,7 @@ export function traverseActiveElements (activeElement: Element | null = document
  * Returns the assigned elements to the first matching slot of the shadow root.
  * @param root
  */
-export function getSlottedElements (root: ShadowRoot): Element[] {
+export function getSlottedElements(root: ShadowRoot): Element[] {
 	return <Element[]>Array.from(root.querySelector("slot")!.assignedNodes()).filter(node => node.nodeName !== `#text`);
 }
 
@@ -64,7 +63,7 @@ export function getSlottedElements (root: ShadowRoot): Element[] {
  * Remove all children from a container.
  * @param $container
  */
-export function removeChildren ($container: HTMLElement) {
+export function removeChildren($container: HTMLElement) {
 	while ($container.firstChild) {
 		(<HTMLElement>$container.firstChild).remove();
 	}
@@ -74,12 +73,13 @@ export function removeChildren ($container: HTMLElement) {
  * Sanitizes dangerous HTML.
  * @param html
  */
-export function sanitize (html: string): string {
-	return html.replace(/&/g, "&amp;")
-	           .replace(/</g, "&lt;")
-	           .replace(/>/g, "&gt;")
-	           .replace(/'/g, "&#039;")
-	           .replace(/"/g, "&quot;");
+export function sanitize(html: string): string {
+	return html
+		.replace(/&/g, "&amp;")
+		.replace(/</g, "&lt;")
+		.replace(/>/g, "&gt;")
+		.replace(/'/g, "&#039;")
+		.replace(/"/g, "&quot;");
 }
 
 /**
@@ -88,15 +88,14 @@ export function sanitize (html: string): string {
  * @param $elem
  * @param style
  */
-export function isHidden ($elem: HTMLElement, style?: CSSStyleDeclaration) {
-
+export function isHidden($elem: HTMLElement, style?: CSSStyleDeclaration) {
 	// A more precise (AND MUCH SLOWER) check
 	if (style != null) {
-		return (style.display === "none");
+		return style.display === "none";
 	}
 
 	// If the element is hidden the offset parent will be null.
-	return ($elem.offsetParent === null);
+	return $elem.offsetParent === null;
 }
 
 /**
@@ -105,7 +104,7 @@ export function isHidden ($elem: HTMLElement, style?: CSSStyleDeclaration) {
  * @param value
  * @param $target
  */
-export function setProperty (name: string, value: string, $target: HTMLElement = document.documentElement) {
+export function setProperty(name: string, value: string, $target: HTMLElement = document.documentElement) {
 	$target.style.setProperty(name, value);
 }
 
@@ -114,7 +113,6 @@ export function setProperty (name: string, value: string, $target: HTMLElement =
  * @param name
  * @param $target
  */
-export function removeProperty (name: string, $target: HTMLElement = document.documentElement) {
+export function removeProperty(name: string, $target: HTMLElement = document.documentElement) {
 	$target.style.removeProperty(name);
 }
-

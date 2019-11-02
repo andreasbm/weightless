@@ -25,18 +25,18 @@ export class Divider extends LitElement implements IDividerProperties {
 	 * Role of the backdrop.
 	 * @attr
 	 */
-	@property({type: String, reflect: true}) role: AriaRole = "separator";
+	@property({ type: String, reflect: true }) role: AriaRole = "separator";
 
 	/**
 	 * Makes the divider vertical.
 	 * @attr
 	 */
-	@property({type: Boolean, reflect: true}) vertical: boolean = false;
+	@property({ type: Boolean, reflect: true }) vertical: boolean = false;
 
 	/**
 	 * Returns the template of the element.
 	 */
-	protected render (): TemplateResult {
+	protected render(): TemplateResult {
 		return html`
 			<slot></slot>
 		`;

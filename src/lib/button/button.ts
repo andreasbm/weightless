@@ -50,37 +50,37 @@ export class Button extends ButtonBehavior implements IButtonProperties {
 	 * Inverts the colors of the button.
 	 * @attr
 	 */
-	@property({type: Boolean, reflect: true}) inverted: boolean = false;
+	@property({ type: Boolean, reflect: true }) inverted: boolean = false;
 
 	/**
 	 * Makes the button round and squared.
 	 * @attr
 	 */
-	@property({type: Boolean, reflect: true}) fab: boolean = false;
+	@property({ type: Boolean, reflect: true }) fab: boolean = false;
 
 	/**
 	 * Makes the button outlined.
 	 * @attr
 	 */
-	@property({type: Boolean, reflect: true}) outlined: boolean = false;
+	@property({ type: Boolean, reflect: true }) outlined: boolean = false;
 
 	/**
 	 * Deactivates the ripple.
 	 * @attr
 	 */
-	@property({type: Boolean, reflect: true}) noRipple: boolean = false;
+	@property({ type: Boolean, reflect: true }) noRipple: boolean = false;
 
 	/**
 	 * Makes the button flat.
 	 * @attr
 	 */
-	@property({type: Boolean, reflect: true}) flat: boolean = false;
+	@property({ type: Boolean, reflect: true }) flat: boolean = false;
 
 	/**
 	 * Role of the button.
 	 * @attr
 	 */
-	@property({type: String, reflect: true}) role: AriaRole = "button";
+	@property({ type: String, reflect: true }) role: AriaRole = "button";
 
 	/**
 	 * Ripple element.
@@ -90,7 +90,7 @@ export class Button extends ButtonBehavior implements IButtonProperties {
 	/**
 	 * Returns the template of the element.
 	 */
-	render (): TemplateResult {
+	render(): TemplateResult {
 		return html`
 			<wl-ripple id="ripple" overlay .target="${this}" ?disabled="${this.disabled || this.noRipple}"></wl-ripple>
 			<slot></slot>

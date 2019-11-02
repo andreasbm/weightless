@@ -7,17 +7,16 @@ import { sharedStyles } from "../../../style/shared";
 
 @customElement("card-page")
 export default class CardPage extends LitElement {
-
 	static styles = [sharedStyles];
 
-	protected render () {
+	protected render() {
 		return html`
 			<demo-element default>
 				<code-example-element>
 					<wl-card>Card</wl-card>
 				</code-example-element>
 			</demo-element>
-			
+
 			<wl-title level="3">Hoverable</wl-title>
 			<demo-element>
 				<code-example-element>

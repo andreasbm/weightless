@@ -17,4 +17,4 @@ export type TextfieldType =
 	| "text" // Default. Defines a single-line text field
 	| "time" // Defines a control for entering a time (no timezone)
 	| "url" // Defines a field for entering a URL
-	| "week" // Defines a week and year control (no timezone)
+	| "week"; // Defines a week and year control (no timezone)

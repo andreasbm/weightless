@@ -26,12 +26,12 @@ export class Icon extends LitElement implements IIconProperties {
 	 * Roles of the icon.
 	 * @attr
 	 */
-	@property({type: String, reflect: true}) role: AriaRole = "presentation";
+	@property({ type: String, reflect: true }) role: AriaRole = "presentation";
 
 	/**
 	 * Returns the template for the element.
 	 */
-	protected render (): TemplateResult {
+	protected render(): TemplateResult {
 		return html`
 			<slot></slot>
 		`;

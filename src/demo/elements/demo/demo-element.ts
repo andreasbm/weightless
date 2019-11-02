@@ -8,13 +8,12 @@ import styles from "./demo-element.scss";
 export class DemoElement extends Card {
 	static styles = [...Card.styles, cssResult(styles)];
 
-	@property({type: Boolean, reflect: true}) default = false;
-
+	@property({ type: Boolean, reflect: true }) default = false;
 
 	/**
 	 * Returns the template for the component.
 	 */
-	protected render () {
+	protected render() {
 		return html`
 			<slot></slot>
 		`;
