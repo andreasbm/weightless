@@ -177,7 +177,7 @@ export class Ripple extends LitElement implements IRippleProperties {
 	protected addListeners () {
 		if (this.target == null) return;
 		this.listeners.push(
-			addListener(this.target, "mousedown", e => this.spawnRipple.bind(e), {passive: true}),
+			addListener(this.target, "mousedown", (e: MouseEvent) => this.spawnRipple(e), {passive: true}),
 			addListener(this.target, "focusin", this.onFocusIn.bind(this), {passive: true}),
 			addListener(this.target, "focusout", this.onFocusOut.bind(this), {passive: true})
 		);
@@ -202,8 +202,7 @@ export class Ripple extends LitElement implements IRippleProperties {
 		if (this.disabled) {
 
 			// Return an empty noop function
-			return (() => {
-			});
+			return (() => {});
 		}
 
 		// Release the existing ripple if there is one

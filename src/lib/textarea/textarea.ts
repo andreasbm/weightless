@@ -90,6 +90,7 @@ export class Textarea extends TextfieldBehavior implements ITextareaProperties {
 		return html`
 			<textarea
 				id="${this.formElementId}"
+				.value="${this.value}"
 				?required="${this.required}"
 				?disabled="${this.disabled}"
 				?readonly="${this.readonly}"
@@ -99,9 +100,9 @@ export class Textarea extends TextfieldBehavior implements ITextareaProperties {
 				autocomplete="${ifDefined(this.autocomplete)}"
 				minlength="${ifDefined(this.minLength)}"
 				maxlength="${ifDefined(this.maxLength)}"
-				rows="1" 
-				tabindex="${this.disabled ? "-1" : "0"}"
-			></textarea>
+				rows="1"
+				tabindex="${this.disabled ? -1 : 0}"
+			>${this.initialValue || ""}</textarea>
 		`;
 	}
 }

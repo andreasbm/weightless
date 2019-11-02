@@ -10,17 +10,17 @@ Turn an option on or off.
 
 ## ➤ Properties
 
-| Property        | Attribute       | Type       | Default    | Description                                      |
-|-----------------|-----------------|------------|------------|--------------------------------------------------|
-| `ariaChecked`   | `aria-checked`  | `string`   |            | Aria checked attribute.                          |
-| `checked`       | `checked`       | `boolean`  | false      | Checks the switch.                               |
-| `disabled`      | `disabled`      | `boolean`  | false      | Disables the element.                            |
-| `indeterminate` | `indeterminate` | `boolean`  | false      | Indeterminate checkbox state.                    |
-| `name`          | `name`          | `string`   |            | Name of the native form element.                 |
-| `readonly`      | `readonly`      | `boolean`  | false      | Makes the element readonly (disabled but tabbable) |
-| `required`      | `required`      | `boolean`  | false      | Makes the element required in a form context.    |
-| `role`          | `role`          | `AriaRole` | "checkbox" | Role of the switch.                              |
-| `value`         | `value`         | `string`   | ""         | Value of the form element.                       |
+| Property        | Attribute       | Type                  | Default    | Description                                      |
+|-----------------|-----------------|-----------------------|------------|--------------------------------------------------|
+| `ariaChecked`   | `aria-checked`  | `string`              |            | Aria checked attribute.                          |
+| `checked`       | `checked`       | `boolean`             |            | Checks the switch.                               |
+| `disabled`      | `disabled`      | `boolean`             |            | Disables the element.                            |
+| `indeterminate` | `indeterminate` | `boolean`             |            | Indeterminate checkbox state.                    |
+| `name`          | `name`          | `string \| undefined` |            | Name of the native form element.                 |
+| `readonly`      | `readonly`      | `boolean`             |            | Makes the element readonly (disabled but tabbable) |
+| `required`      | `required`      | `boolean`             |            | Makes the element required in a form context.    |
+| `role`          | `role`          | `AriaRole`            | "checkbox" | Role of the switch.                              |
+| `value`         | `value`         | `string`              |            | Value of the form element.                       |
 
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#events)

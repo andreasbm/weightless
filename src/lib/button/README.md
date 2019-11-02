@@ -12,18 +12,18 @@ Allow users to take actions, and make choices, with a single tap.
 
 | Property   | Attribute  | Type                   | Default  | Description                                      |
 |------------|------------|------------------------|----------|--------------------------------------------------|
-| `disabled` | `disabled` | `boolean`              | false    | Disables the element.                            |
-| `fab`      | `fab`      | `boolean`              | false    | Makes the button round and squared.              |
-| `flat`     | `flat`     | `boolean`              | false    | Makes the button flat.                           |
-| `inverted` | `inverted` | `boolean`              | false    | Inverts the colors of the button.                |
-| `name`     | `name`     | `string`               |          | Name of the native form element.                 |
-| `noRipple` | `noRipple` | `boolean`              | false    | Deactivates the ripple.                          |
-| `outlined` | `outlined` | `boolean`              | false    | Makes the button outlined.                       |
-| `readonly` | `readonly` | `boolean`              | false    | Makes the element readonly (disabled but tabbable) |
-| `required` | `required` | `boolean`              | false    | Makes the element required in a form context.    |
+| `disabled` | `disabled` | `boolean`              |          | Disables the element.                            |
+| `fab`      | `fab`      | `boolean`              |          | Makes the button round and squared.              |
+| `flat`     | `flat`     | `boolean`              |          | Makes the button flat.                           |
+| `inverted` | `inverted` | `boolean`              |          | Inverts the colors of the button.                |
+| `name`     | `name`     | `string \| undefined`  |          | Name of the native form element.                 |
+| `noRipple` | `noRipple` | `boolean`              |          | Deactivates the ripple.                          |
+| `outlined` | `outlined` | `boolean`              |          | Makes the button outlined.                       |
+| `readonly` | `readonly` | `boolean`              |          | Makes the element readonly (disabled but tabbable) |
+| `required` | `required` | `boolean`              |          | Makes the element required in a form context.    |
 | `role`     | `role`     | `AriaRole`             | "button" | Role of the button.                              |
 | `type`     | `type`     | `"button" \| "submit"` | "submit" | Type of the button.                              |
-| `value`    | `value`    | `string`               | ""       | Value of the form element.                       |
+| `value`    | `value`    | `string`               |          | Value of the form element.                       |
 
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#css-custom-properties)

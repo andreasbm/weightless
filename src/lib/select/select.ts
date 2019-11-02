@@ -98,7 +98,7 @@ export class Select extends InputBehavior implements ISelectProperties {
 					?readonly="${this.readonly}"
 					name="${ifDefined(this.name)}"
 					autocomplete="${ifDefined(this.autocomplete)}"
-					tabindex="${this.disabled ? "-1" : "0"}"></select>
+					tabindex="${this.disabled ? -1 : 0}"></select>
 			<svg id="arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 25" preserveAspectRatio="none">
 				<polygon points="0,0 50,0 25,25"/>
 			</svg>

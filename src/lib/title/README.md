@@ -13,7 +13,7 @@ Indicate the start of a new section.
 | Property | Attribute | Type         | Default   | Description                                      |
 |----------|-----------|--------------|-----------|--------------------------------------------------|
 | `level`  | `level`   | `TitleLevel` | 1         | Level of the title.                              |
-| `nowrap` | `nowrap`  | `boolean`    | false     | Caps the title element with ellipsis if overflowing. |
+| `nowrap` | `nowrap`  | `boolean`    |           | Caps the title element with ellipsis if overflowing. |
 | `role`   | `role`    | `AriaRole`   | "heading" | Role of the title.                               |
 
 

@@ -54,6 +54,7 @@ export class Textfield extends TextfieldBehavior implements ITextfieldProperties
 			<input
 				id="${this.formElementId}"
 				.value="${this.value}"
+				value="${ifDefined(this.initialValue)}"
 				?required="${this.required}"
 				?disabled="${this.disabled}"
 				?readonly="${this.readonly}"
@@ -67,7 +68,7 @@ export class Textfield extends TextfieldBehavior implements ITextfieldProperties
 				maxlength="${ifDefined(this.maxLength)}"
 				min="${ifDefined(this.min)}"
 				max="${ifDefined(this.max)}"
-				tabindex="${this.disabled ? "-1" : "0"}"
+				tabindex="${this.disabled ? -1 : 0}"
 			/>
 		`;
 	}

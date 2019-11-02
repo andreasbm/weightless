@@ -10,26 +10,26 @@ Singleline text fields.
 
 ## ➤ Properties
 
-| Property        | Attribute       | Type            | Default   | Description                                      |
-|-----------------|-----------------|-----------------|-----------|--------------------------------------------------|
-| `autocomplete`  | `autocomplete`  | `"on" \| "off"` |           | Whether autocomplete is on or off.               |
-| `disabled`      | `disabled`      | `boolean`       | false     | Disables the element.                            |
-| `filled`        | `filled`        | `boolean`       | false     | Fills the input with a solid color.              |
-| `label`         | `label`         | `string`        |           | Label text.                                      |
-| `list`          | `list`          | `string`        |           | Datalist id.                                     |
-| `max`           | `max`           | `number`        |           | Max number value.                                |
-| `maxLength`     | `maxLength`     | `number`        |           | Max value length.                                |
-| `min`           | `min`           | `number`        |           | Min number value.                                |
-| `minLength`     | `minLength`     | `number`        |           | Min value length.                                |
-| `name`          | `name`          | `string`        |           | Name of the native form element.                 |
-| `outlined`      | `outlined`      | `boolean`       | false     | Makes the input outlined.                        |
-| `pattern`       | `pattern`       | `string`        |           | Value pattern.                                   |
-| `readonly`      | `readonly`      | `boolean`       | false     | Makes the element readonly (disabled but tabbable) |
-| `required`      | `required`      | `boolean`       | false     | Makes the element required in a form context.    |
-| `role`          | `role`          | `AriaRole`      | "textbox" | Role of the input.                               |
-| `type`          | `type`          | `TextfieldType` | "text"    | Type of the input.                               |
-| `value`         | `value`         | `string`        |           | Value of the form element.                       |
-| `valueAsNumber` | `valueAsNumber` | `number`        |           | Value of the slider.                             |
+| Property        | Attribute       | Type                         | Default   | Description                                      |
+|-----------------|-----------------|------------------------------|-----------|--------------------------------------------------|
+| `autocomplete`  | `autocomplete`  | `"on" \| "off" \| undefined` |           | Whether autocomplete is on or off.               |
+| `disabled`      | `disabled`      | `boolean`                    |           | Disables the element.                            |
+| `filled`        | `filled`        | `boolean`                    |           | Fills the input with a solid color.              |
+| `label`         | `label`         | `string \| undefined`        |           | Label text.                                      |
+| `list`          | `list`          | `string \| undefined`        |           | Datalist id.                                     |
+| `max`           | `max`           | `number \| undefined`        |           | Max number value.                                |
+| `maxLength`     | `maxLength`     | `number \| undefined`        |           | Max value length.                                |
+| `min`           | `min`           | `number \| undefined`        |           | Min number value.                                |
+| `minLength`     | `minLength`     | `number \| undefined`        |           | Min value length.                                |
+| `name`          | `name`          | `string \| undefined`        |           | Name of the native form element.                 |
+| `outlined`      | `outlined`      | `boolean`                    |           | Makes the input outlined.                        |
+| `pattern`       | `pattern`       | `string \| undefined`        |           | Value pattern.                                   |
+| `readonly`      | `readonly`      | `boolean`                    |           | Makes the element readonly (disabled but tabbable) |
+| `required`      | `required`      | `boolean`                    |           | Makes the element required in a form context.    |
+| `role`          | `role`          | `AriaRole`                   | "textbox" | Role of the input.                               |
+| `type`          | `type`          | `TextfieldType`              | "text"    | Type of the input.                               |
+| `value`         | `value`         | `string`                     |           | Value of the form element.                       |
+| `valueAsNumber` | `valueAsNumber` | `number`                     |           | Value of the slider.                             |
 
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#events)

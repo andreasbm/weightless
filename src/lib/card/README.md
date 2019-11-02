@@ -10,9 +10,9 @@ Group related content and action.
 
 ## ➤ Properties
 
-| Property    | Attribute   | Type      | Default | Description               |
-|-------------|-------------|-----------|---------|---------------------------|
-| `hoverable` | `hoverable` | `boolean` | false   | Makes the card hoverable. |
+| Property    | Attribute   | Type      | Description               |
+|-------------|-------------|-----------|---------------------------|
+| `hoverable` | `hoverable` | `boolean` | Makes the card hoverable. |
 
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#css-custom-properties)

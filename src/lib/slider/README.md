@@ -10,26 +10,26 @@ Make selections from a range of values.
 
 ## ➤ Properties
 
-| Property        | Attribute       | Type            | Default  | Description                                      |
-|-----------------|-----------------|-----------------|----------|--------------------------------------------------|
-| `autocomplete`  | `autocomplete`  | `"on" \| "off"` |          | Whether autocomplete is on or off.               |
-| `bufferMax`     | `bufferMax`     | `number`        | 100      | The maximum buffer value allowed.                |
-| `bufferMin`     | `bufferMin`     | `number`        | 0        | The minimum buffer value allowed.                |
-| `bufferValue`   | `bufferValue`   | `number`        |          | The buffer value.                                |
-| `disabled`      | `disabled`      | `boolean`       | false    | Disables the element.                            |
-| `filled`        | `filled`        | `boolean`       | false    | Fills the input with a solid color.              |
-| `label`         | `label`         | `string`        |          | Label text.                                      |
-| `max`           | `max`           | `number`        | 100      | The maximum value allowed.                       |
-| `min`           | `min`           | `number`        | 0        | The minimum value allowed.                       |
-| `name`          | `name`          | `string`        |          | Name of the native form element.                 |
-| `outlined`      | `outlined`      | `boolean`       | false    | Makes the input outlined.                        |
-| `readonly`      | `readonly`      | `boolean`       | false    | Makes the element readonly (disabled but tabbable) |
-| `required`      | `required`      | `boolean`       | false    | Makes the element required in a form context.    |
-| `role`          | `role`          | `AriaRole`      | "slider" | Role of the slider.                              |
-| `step`          | `step`          | `number`        |          | The legal number intervals                       |
-| `thumbLabel`    | `thumbLabel`    | `boolean`       | false    | Label above the thumb that shows the value.      |
-| `value`         | `value`         | `string`        |          | Value of the form element.                       |
-| `valueAsNumber` | `valueAsNumber` | `number`        |          | Value of the slider.                             |
+| Property        | Attribute       | Type                         | Default  | Description                                      |
+|-----------------|-----------------|------------------------------|----------|--------------------------------------------------|
+| `autocomplete`  | `autocomplete`  | `"on" \| "off" \| undefined` |          | Whether autocomplete is on or off.               |
+| `bufferMax`     | `bufferMax`     | `number`                     | 100      | The maximum buffer value allowed.                |
+| `bufferMin`     | `bufferMin`     | `number`                     |          | The minimum buffer value allowed.                |
+| `bufferValue`   | `bufferValue`   | `number \| undefined`        |          | The buffer value.                                |
+| `disabled`      | `disabled`      | `boolean`                    |          | Disables the element.                            |
+| `filled`        | `filled`        | `boolean`                    |          | Fills the input with a solid color.              |
+| `label`         | `label`         | `string \| undefined`        |          | Label text.                                      |
+| `max`           | `max`           | `number`                     | 100      | The maximum value allowed.                       |
+| `min`           | `min`           | `number`                     |          | The minimum value allowed.                       |
+| `name`          | `name`          | `string \| undefined`        |          | Name of the native form element.                 |
+| `outlined`      | `outlined`      | `boolean`                    |          | Makes the input outlined.                        |
+| `readonly`      | `readonly`      | `boolean`                    |          | Makes the element readonly (disabled but tabbable) |
+| `required`      | `required`      | `boolean`                    |          | Makes the element required in a form context.    |
+| `role`          | `role`          | `AriaRole`                   | "slider" | Role of the slider.                              |
+| `step`          | `step`          | `number \| undefined`        |          | The legal number intervals                       |
+| `thumbLabel`    | `thumbLabel`    | `boolean`                    |          | Label above the thumb that shows the value.      |
+| `value`         | `value`         | `string`                     |          | Value of the form element.                       |
+| `valueAsNumber` | `valueAsNumber` | `number`                     |          | Value of the slider.                             |
 
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#events)

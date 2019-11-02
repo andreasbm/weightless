@@ -10,16 +10,16 @@ Fills a bar from 0% to 100%.
 
 ## ➤ Properties
 
-| Property    | Attribute   | Type           | Default         | Description                    |
-|-------------|-------------|----------------|-----------------|--------------------------------|
-| `buffer`    | `buffer`    | `number`       | 0               | Buffer progress value.         |
-| `bufferMax` | `bufferMax` | `number`       | 1               | Max buffer progress value.     |
-| `bufferMin` | `bufferMin` | `number`       | 0               | Min buffer progress value.     |
-| `max`       | `max`       | `number`       | 1               | Max progress value.            |
-| `min`       | `min`       | `number`       | 0               | Min progress value.            |
-| `mode`      | `mode`      | `ProgressMode` | "indeterminate" | Animation mode.                |
-| `role`      | `role`      | `AriaRole`     | "progressbar"   | Role of the progress behavior. |
-| `value`     | `value`     | `number`       | 0               | Progress value.                |
+| Property    | Attribute   | Type           | Default       | Description                    |
+|-------------|-------------|----------------|---------------|--------------------------------|
+| `buffer`    | `buffer`    | `number`       |               | Buffer progress value.         |
+| `bufferMax` | `bufferMax` | `number`       | 1             | Max buffer progress value.     |
+| `bufferMin` | `bufferMin` | `number`       |               | Min buffer progress value.     |
+| `max`       | `max`       | `number`       | 1             | Max progress value.            |
+| `min`       | `min`       | `number`       |               | Min progress value.            |
+| `mode`      | `mode`      | `ProgressMode` |               | Animation mode.                |
+| `role`      | `role`      | `AriaRole`     | "progressbar" | Role of the progress behavior. |
+| `value`     | `value`     | `number`       |               | Progress value.                |
 
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#css-custom-properties)
