@@ -54,49 +54,49 @@ export class Slider extends InputBehavior implements ISliderProperties {
 	 * Role of the slider.
 	 * @attr
 	 */
-	@property({type: String, reflect: true}) role: AriaRole = "slider";
+	@property({ type: String, reflect: true }) role: AriaRole = "slider";
 
 	/**
 	 * Label above the thumb that shows the value.
 	 * @attr
 	 */
-	@property({type: Boolean}) thumbLabel: boolean = false;
+	@property({ type: Boolean }) thumbLabel: boolean = false;
 
 	/**
 	 * The minimum value allowed.
 	 * @attr
 	 */
-	@property({type: Number}) min: number = 0;
+	@property({ type: Number }) min: number = 0;
 
 	/**
 	 * The maximum value allowed.
 	 * @attr
 	 */
-	@property({type: Number}) max: number = 100;
+	@property({ type: Number }) max: number = 100;
 
 	/**
 	 * The legal number intervals
 	 * @attr
 	 */
-	@property({type: Number}) step?: number;
+	@property({ type: Number }) step?: number;
 
 	/**
 	 * The minimum buffer value allowed.
 	 * @attr
 	 */
-	@property({type: Number}) bufferMin: number = 0;
+	@property({ type: Number }) bufferMin: number = 0;
 
 	/**
 	 * The maximum buffer value allowed.
 	 * @attr
 	 */
-	@property({type: Number}) bufferMax: number = 100;
+	@property({ type: Number }) bufferMax: number = 100;
 
 	/**
 	 * The buffer value.
 	 * @attr
 	 */
-	@property({type: Number}) bufferValue?: number;
+	@property({ type: Number }) bufferValue?: number;
 
 	/**
 	 * Slider element.
@@ -106,21 +106,21 @@ export class Slider extends InputBehavior implements ISliderProperties {
 	/**
 	 * The element that the user interacts with.
 	 */
-	protected get $interactiveElement (): FormElement {
+	protected get $interactiveElement(): FormElement {
 		return this.$slider;
 	}
 
 	/**
 	 * Value in percentage.
 	 */
-	get perc () {
+	get perc() {
 		return (this.$slider.valueAsNumber - this.min) / (this.max - this.min);
 	}
 
 	/**
 	 * Buffer value in percentage.
 	 */
-	get bufferPerc () {
+	get bufferPerc() {
 		return ((this.bufferValue || 0) - this.bufferMin) / (this.bufferMax - this.bufferMin);
 	}
 
@@ -128,7 +128,7 @@ export class Slider extends InputBehavior implements ISliderProperties {
 	 * When the properties changes we need to upgrade the background.
 	 * @param props
 	 */
-	protected updated (props: Map<keyof ISliderProperties, unknown>) {
+	protected updated(props: Map<keyof ISliderProperties, unknown>) {
 		super.updated(props as Map<keyof IInputBehaviorProperties, unknown>);
 		this.updateBackground();
 	}
@@ -137,7 +137,7 @@ export class Slider extends InputBehavior implements ISliderProperties {
 	 * Sets the value of the form element and updates the background.
 	 * @param value
 	 */
-	protected setValue (value: string) {
+	protected setValue(value: string) {
 		super.setValue(value);
 
 		// Update the slider that the user interacts with
@@ -151,7 +151,7 @@ export class Slider extends InputBehavior implements ISliderProperties {
 	/**
 	 * Updates the background properties.
 	 */
-	protected updateBackground () {
+	protected updateBackground() {
 		requestAnimationFrame(() => {
 			this.style.setProperty("--_perc", this.perc.toString());
 			this.style.setProperty("--_buffer-perc", this.bufferPerc.toString());
@@ -161,7 +161,7 @@ export class Slider extends InputBehavior implements ISliderProperties {
 	/**
 	 * Update the value of the form element when the slider value changes.
 	 */
-	protected sliderValueChanged () {
+	protected sliderValueChanged() {
 		this.value = this.$slider.value;
 		this.requestUpdate().then();
 	}
@@ -171,16 +171,13 @@ export class Slider extends InputBehavior implements ISliderProperties {
 	 * The reason we need to create two different range sliders is because the pseudo selectors of
 	 * a range input cannot be styled using the ::slotted(..) selector.
 	 */
-	protected renderFormElement (id?: string,
-	                             style?: string,
-	                             onInput?: ((e: Event) => void),
-	                             tabIndex?: string): TemplateResult {
+	protected renderFormElement(id?: string, style?: string, onInput?: (e: Event) => void, tabIndex?: string): TemplateResult {
 		return html`
 			<input
 				type="range"
 				style="${ifDefined(style)}"
 				id="${ifDefined(id)}"
-				.value="${ifDefined(this.value)}"
+				.value="${this.value}"
 				?required="${this.required}"
 				?disabled="${this.disabled}"
 				?readonly="${this.readonly}"
@@ -190,8 +187,8 @@ export class Slider extends InputBehavior implements ISliderProperties {
 				min="${ifDefined(this.min)}"
 				max="${ifDefined(this.max)}"
 				step="${ifDefined(this.step)}"
-				@input="${ifDefined(onInput)}"
-				tabindex="${tabIndex || this.disabled ? "-1" : "0"}"
+				@input="${onInput || (() => {})}"
+				tabindex="${tabIndex || this.disabled ? -1 : 0}"
 			/>
 		`;
 	}
@@ -199,7 +196,7 @@ export class Slider extends InputBehavior implements ISliderProperties {
 	/**
 	 * Returns the template for the element.
 	 */
-	protected render (): TemplateResult {
+	protected render(): TemplateResult {
 		return html`
 			<div id="container">
 				<slot id="before" name="before"></slot>
@@ -207,7 +204,13 @@ export class Slider extends InputBehavior implements ISliderProperties {
 					<div id="label">${this.label}</div>
 					<div id="slot-wrapper">
 						${this.renderFormElement("slider", undefined, this.sliderValueChanged)}
-						${this.thumbLabel ? html`<div id="thumb-container"><div id="thumb-label"><slot name="thumb-label">${this.value}</slot></div></div>` : nothing}
+						${this.thumbLabel
+							? html`
+									<div id="thumb-container">
+										<div id="thumb-label"><slot name="thumb-label">${this.value}</slot></div>
+									</div>
+							  `
+							: nothing}
 						<slot id="slot"></slot>
 					</div>
 					${this.renderFormElement(this.formElementId, `display: none`, undefined, "-1")}

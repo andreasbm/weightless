@@ -25,31 +25,28 @@ export abstract class ButtonBehavior extends FormElementBehavior implements IBut
 	 * Type of the button.
 	 * @attr
 	 */
-	@property({type: String}) type: "button" | "submit" = "submit";
+	@property({ type: String }) type: "button" | "submit" = "submit";
 
 	/**
 	 * Ripple element.
 	 */
-	protected abstract get $ripple (): Ripple | null;
+	protected abstract get $ripple(): Ripple | null;
 
 	/**
 	 * Hooks up the component.
 	 */
-	connectedCallback () {
+	connectedCallback() {
 		super.connectedCallback();
 
-		this.listeners.push(
-			addListener(this, "click", this.onClick.bind(this)),
-			addListener(this, "keydown", this.onKeyDown.bind(this))
-		);
+		this.listeners.push(addListener(this, "click", this.onClick.bind(this)), addListener(this, "keydown", this.onKeyDown.bind(this)));
 	}
 
 	/**
 	 * Handles the key down event.
 	 * @param e
 	 */
-	protected onKeyDown (e: KeyboardEvent) {
-		if (e.code === ENTER || e.code === SPACE) {
+	protected onKeyDown(e: Event) {
+		if (e instanceof KeyboardEvent && (e.code === ENTER || e.code === SPACE)) {
 			// We want to have a position sent through the simulated click
 			// (document.elementFromPoint(left, top) as HTMLElement).click();
 
@@ -58,7 +55,7 @@ export abstract class ButtonBehavior extends FormElementBehavior implements IBut
 
 			// Show ripple if one has been defined
 			if (this.$ripple != null) {
-				this.$ripple.spawnRipple(undefined, {autoRelease: true});
+				this.$ripple.spawnRipple(undefined, { autoRelease: true });
 			}
 		}
 	}
@@ -67,8 +64,7 @@ export abstract class ButtonBehavior extends FormElementBehavior implements IBut
 	 * Handles click events on the button.
 	 * @param e
 	 */
-	protected onClick (e: Event) {
-
+	protected onClick(e: Event) {
 		// If disabled we stop the event here
 		if (this.disabled) {
 			stopEvent(e);
@@ -77,14 +73,14 @@ export abstract class ButtonBehavior extends FormElementBehavior implements IBut
 
 		// Re-fire the event on the inner form element to interact with the form if there is one
 		if (e.target == this && !e.defaultPrevented) {
-			this.$formElement.dispatchEvent(new MouseEvent("click", {relatedTarget: this, composed: true}));
+			this.$formElement.dispatchEvent(new MouseEvent("click", { relatedTarget: this, composed: true }));
 		}
 	}
 
 	/**
 	 * Returns the form element
 	 */
-	protected renderFormElement (): TemplateResult {
+	protected renderFormElement(): TemplateResult {
 		return html`
 			<button
 				style="display: none;"
@@ -94,10 +90,8 @@ export abstract class ButtonBehavior extends FormElementBehavior implements IBut
 				type="${this.type}"
 				?disabled="${this.disabled}"
 				name="${ifDefined(this.name)}"
-				value="${ifDefined(this.value)}">
-			</button>
+				value="${ifDefined(this.value)}"
+			></button>
 		`;
 	}
-
 }
-

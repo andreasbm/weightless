@@ -10,17 +10,17 @@ Organize navigation between groups of content.
 
 ## ➤ Properties
 
-| Property      | Attribute      | Type       | Default | Description                                      |
-|---------------|----------------|------------|---------|--------------------------------------------------|
-| `ariaChecked` | `aria-checked` | `string`   |         | Aria checked attribute.                          |
-| `checked`     | `checked`      | `boolean`  | false   | Checks the switch.                               |
-| `disabled`    | `disabled`     | `boolean`  | false   | Disables the element.                            |
-| `name`        | `name`         | `string`   |         | Name of the native form element.                 |
-| `readonly`    | `readonly`     | `boolean`  | false   | Makes the element readonly (disabled but tabbable) |
-| `required`    | `required`     | `boolean`  | false   | Makes the element required in a form context.    |
-| `role`        | `role`         | `AriaRole` | "tab"   | Role of the tab.                                 |
-| `value`       | `value`        | `string`   | ""      | Value of the form element.                       |
-| `vertical`    | `vertical`     | `boolean`  | false   | Vertical tab style.                              |
+| Property      | Attribute      | Type                  | Default | Description                                      |
+|---------------|----------------|-----------------------|---------|--------------------------------------------------|
+| `ariaChecked` | `aria-checked` | `string`              |         | Aria checked attribute.                          |
+| `checked`     | `checked`      | `boolean`             | false   | Checks the switch.                               |
+| `disabled`    | `disabled`     | `boolean`             | false   | Disables the element.                            |
+| `name`        | `name`         | `string \| undefined` |         | Name of the native form element.                 |
+| `readonly`    | `readonly`     | `boolean`             | false   | Makes the element readonly (disabled but tabbable) |
+| `required`    | `required`     | `boolean`             | false   | Makes the element required in a form context.    |
+| `role`        | `role`         | `AriaRole`            | "tab"   | Role of the tab.                                 |
+| `value`       | `value`        | `string`              | ""      | Value of the form element.                       |
+| `vertical`    | `vertical`     | `boolean`             | false   | Vertical tab style.                              |
 
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#events)
@@ -30,6 +30,16 @@ Organize navigation between groups of content.
 | Event    | Description                                      |
 |----------|--------------------------------------------------|
 | `change` | Dispatched when the checked property changes due to a user interaction. |
+
+
+[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#slots)
+
+## ➤ Slots
+
+| Name     | Description      |
+|----------|------------------|
+|          | Default content. |
+| `before` | Default content. |
 
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#css-custom-properties)
@@ -64,16 +74,6 @@ Organize navigation between groups of content.
 | `--tab-padding`                   | Padding                                  |
 | `--tab-padding-vertical`          | Padding when vertical                    |
 | `--tab-transition`                | transition                               |
-
-
-[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#slots)
-
-## ➤ Slots
-
-| Name     | Description      |
-|----------|------------------|
-|          | Default content. |
-| `before` | Default content. |
 
 
 

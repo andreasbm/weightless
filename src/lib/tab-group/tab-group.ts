@@ -39,30 +39,30 @@ export class TabGroup extends LitElement implements ITabGroupProperties {
 	 * Alignment of the tabs.
 	 * @attr
 	 */
-	@property({type: String, reflect: true}) align: TabGroupAlignment = "start";
+	@property({ type: String, reflect: true }) align: TabGroupAlignment = "start";
 
 	/**
 	 * Adds a filled color style to the tab.
 	 * @attr
 	 */
-	@property({type: Boolean, reflect: true}) filled: boolean = false;
+	@property({ type: Boolean, reflect: true }) filled: boolean = false;
 
 	/**
 	 * Makes the tabs vertical.
 	 * @attr
 	 */
-	@property({type: Boolean, reflect: true}) vertical: boolean = false;
+	@property({ type: Boolean, reflect: true }) vertical: boolean = false;
 
 	/**
 	 * Role of the tab.
 	 * @attr
 	 */
-	@property({type: String, reflect: true}) role: AriaRole = "tablist";
+	@property({ type: String, reflect: true }) role: AriaRole = "tablist";
 
 	/**
 	 * Returns the main slot element.
 	 */
-	get $slot (): HTMLSlotElement {
+	get $slot(): HTMLSlotElement {
 		return this.shadowRoot!.querySelector<HTMLSlotElement>("slot")!;
 	}
 
@@ -74,7 +74,7 @@ export class TabGroup extends LitElement implements ITabGroupProperties {
 	/**
 	 * Hooks up the element.
 	 */
-	connectedCallback () {
+	connectedCallback() {
 		super.connectedCallback();
 		this.listeners.push(addListener(this, "change", this.updateIndicator.bind(this)));
 	}
@@ -82,7 +82,7 @@ export class TabGroup extends LitElement implements ITabGroupProperties {
 	/**
 	 * Removes listeners.
 	 */
-	disconnectedCallback () {
+	disconnectedCallback() {
 		super.disconnectedCallback();
 		removeListeners(this.listeners);
 	}
@@ -90,11 +90,9 @@ export class TabGroup extends LitElement implements ITabGroupProperties {
 	/**
 	 * Updates the position and size of the indicator.
 	 */
-	protected updateIndicator () {
-
+	protected updateIndicator() {
 		// Grab the nodes from the slot
-		const nodes = Array.from(this.$slot.assignedNodes()
-		                             .filter(node => node.nodeType === 1)) as any as HTMLElement[];
+		const nodes = (Array.from(this.$slot.assignedNodes().filter(node => node.nodeType === 1)) as any) as HTMLElement[];
 
 		// Find the current checked node
 		let checkedNode: HTMLElement | null = null;
@@ -122,14 +120,14 @@ export class TabGroup extends LitElement implements ITabGroupProperties {
 	 * Returns the size of the node depending on whether the tab group is vertical or horizontal.
 	 * @param $node
 	 */
-	private getNodeSize ($node: HTMLElement) {
+	private getNodeSize($node: HTMLElement) {
 		return this.vertical ? $node.offsetHeight : $node.offsetWidth;
 	}
 
 	/**
 	 * Returns the template of the element.
 	 */
-	protected render (): TemplateResult {
+	protected render(): TemplateResult {
 		return html`
 			<div id="tabs-container">
 				<div id="tabs">

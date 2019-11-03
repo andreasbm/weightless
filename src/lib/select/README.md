@@ -10,19 +10,19 @@ Select one or more values from a set of options.
 
 ## ➤ Properties
 
-| Property        | Attribute       | Type            | Default  | Description                                      |
-|-----------------|-----------------|-----------------|----------|--------------------------------------------------|
-| `autocomplete`  | `autocomplete`  | `"on" \| "off"` |          | Whether autocomplete is on or off.               |
-| `disabled`      | `disabled`      | `boolean`       | false    | Disables the element.                            |
-| `filled`        | `filled`        | `boolean`       | false    | Fills the input with a solid color.              |
-| `label`         | `label`         | `string`        |          | Label text.                                      |
-| `name`          | `name`          | `string`        |          | Name of the native form element.                 |
-| `outlined`      | `outlined`      | `boolean`       | false    | Makes the input outlined.                        |
-| `readonly`      | `readonly`      | `boolean`       | false    | Makes the element readonly (disabled but tabbable) |
-| `required`      | `required`      | `boolean`       | false    | Makes the element required in a form context.    |
-| `role`          |                 | `AriaRole`      | "select" | Role of the select.                              |
-| `value`         | `value`         | `string`        |          | Value of the form element.                       |
-| `valueAsNumber` | `valueAsNumber` | `number`        |          | Value of the slider.                             |
+| Property        | Attribute       | Type                         | Default  | Description                                      |
+|-----------------|-----------------|------------------------------|----------|--------------------------------------------------|
+| `autocomplete`  | `autocomplete`  | `"on" \| "off" \| undefined` |          | Whether autocomplete is on or off.               |
+| `disabled`      | `disabled`      | `boolean`                    | false    | Disables the element.                            |
+| `filled`        | `filled`        | `boolean`                    | false    | Fills the input with a solid color.              |
+| `label`         | `label`         | `string \| undefined`        |          | Label text.                                      |
+| `name`          | `name`          | `string \| undefined`        |          | Name of the native form element.                 |
+| `outlined`      | `outlined`      | `boolean`                    | false    | Makes the input outlined.                        |
+| `readonly`      | `readonly`      | `boolean`                    | false    | Makes the element readonly (disabled but tabbable) |
+| `required`      | `required`      | `boolean`                    | false    | Makes the element required in a form context.    |
+| `role`          | `role`          | `AriaRole`                   | "select" | Role of the select.                              |
+| `value`         | `value`         | `string`                     |          | Value of the form element.                       |
+| `valueAsNumber` | `valueAsNumber` | `number`                     |          | Value of the slider.                             |
 
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#events)
@@ -34,6 +34,17 @@ Select one or more values from a set of options.
 | `input`   | Dispatches from the native input event each time the input changes. |
 | `invalid` | Dispatched when the input becomes invalid.       |
 | `submit`  | Dispatched when the enter key is hit while pressing ctrl or the meta-key. |
+
+
+[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#slots)
+
+## ➤ Slots
+
+| Name     | Description                |
+|----------|----------------------------|
+|          | <option> elements go here. |
+| `after`  | Content after the input.   |
+| `before` | Content before the input.  |
 
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#css-custom-properties)
@@ -70,17 +81,6 @@ Select one or more values from a set of options.
 | `--input-state-color-invalid`         | Invalid state color                  |
 | `--input-transition`                  | Transition                           |
 | `--select-arrow-height`               | Height of the arrow.                 |
-
-
-[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#slots)
-
-## ➤ Slots
-
-| Name     | Description                |
-|----------|----------------------------|
-|          | <option> elements go here. |
-| `after`  | Content after the input.   |
-| `before` | Content before the input.  |
 
 
 

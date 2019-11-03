@@ -7,13 +7,9 @@ import { renderAttributes } from "../../util/dom";
 import { EventListenerSubscription, removeListeners } from "../../util/event";
 import { uniqueID } from "../../util/unique";
 
-export type FormElement =
-	(HTMLInputElement
-		| HTMLOutputElement
-		| HTMLButtonElement
-		| HTMLObjectElement
-		| HTMLSelectElement
-		| HTMLTextAreaElement) & {value: string};
+export type FormElement = (HTMLInputElement | HTMLOutputElement | HTMLButtonElement | HTMLObjectElement | HTMLSelectElement | HTMLTextAreaElement) & {
+	value: string;
+};
 
 export interface IFormElementBehaviorProperties {
 	disabled: boolean;
@@ -38,32 +34,32 @@ export abstract class FormElementBehavior extends LitElement implements IFormEle
 	 * Disables the element.
 	 * @attr
 	 */
-	@property({type: Boolean, reflect: true}) disabled: boolean = false;
+	@property({ type: Boolean, reflect: true }) disabled: boolean = false;
 
 	/**
 	 * Makes the element readonly (disabled but tabbable)
 	 * @attr
 	 */
-	@property({type: Boolean, reflect: true}) readonly: boolean = false;
+	@property({ type: Boolean, reflect: true }) readonly: boolean = false;
 
 	/**
 	 * Makes the element required in a form context.
 	 * @attr
 	 */
-	@property({type: Boolean, reflect: true}) required: boolean = false;
+	@property({ type: Boolean, reflect: true }) required: boolean = false;
 
 	/**
 	 * Name of the native form element.
 	 * @attr
 	 */
-	@property({type: String}) name?: string;
+	@property({ type: String }) name?: string;
 
 	/**
 	 * Value of the form element.
 	 * @attr
 	 * @param value
 	 */
-	@property({type: String}) value: string = "";
+	@property({ type: String }) value: string = "";
 
 	/**
 	 * Initial value is only set if the form element doesn't exist which will be the case
@@ -89,7 +85,7 @@ export abstract class FormElementBehavior extends LitElement implements IFormEle
 	/**
 	 * Message for the current validation.
 	 */
-	get validationMessage (): string {
+	get validationMessage(): string {
 		return this.$formElement.validationMessage;
 	}
 
@@ -97,35 +93,35 @@ export abstract class FormElementBehavior extends LitElement implements IFormEle
 	 * Returns whether the nativeInput is valid or not.
 	 * @returns {boolean}
 	 */
-	get valid (): boolean {
-		return (this.validity != null ? this.validity.valid : true);
+	get valid(): boolean {
+		return this.validity != null ? this.validity.valid : true;
 	}
 
 	/**
 	 * Returns the validity state.
 	 */
-	get validity (): ValidityState {
+	get validity(): ValidityState {
 		return this.$formElement.validity;
 	}
 
 	/**
 	 * Returns whether an element will successfully validate based on forms validation rules and constraints.
 	 */
-	get willValidate (): boolean {
+	get willValidate(): boolean {
 		return this.$formElement.willValidate;
 	}
 
 	/**
 	 * Returns the associated form of the native form element.
 	 */
-	get form (): HTMLFormElement | null {
+	get form(): HTMLFormElement | null {
 		return this.$formElement.form;
 	}
 
 	/**
 	 * Checks the validity of the form element.
 	 */
-	checkValidity (): boolean {
+	checkValidity(): boolean {
 		return this.$formElement.checkValidity();
 	}
 
@@ -133,7 +129,7 @@ export abstract class FormElementBehavior extends LitElement implements IFormEle
 	 * Sets a custom validity on the form element.
 	 * @param error
 	 */
-	setCustomValidity (error: string) {
+	setCustomValidity(error: string) {
 		return this.$formElement.setCustomValidity(error);
 	}
 
@@ -141,7 +137,7 @@ export abstract class FormElementBehavior extends LitElement implements IFormEle
 	 * When the form element first updates we add the form element to the light DOM.
 	 * @param props
 	 */
-	protected firstUpdated (props: Map<keyof IFormElementBehaviorProperties, unknown>) {
+	protected firstUpdated(props: Map<keyof IFormElementBehaviorProperties, unknown>) {
 		super.firstUpdated(props);
 
 		// Move the form element to the light DOM so it can interact with the forms.
@@ -152,7 +148,7 @@ export abstract class FormElementBehavior extends LitElement implements IFormEle
 	/**
 	 * Tears down the component.
 	 */
-	disconnectedCallback () {
+	disconnectedCallback() {
 		super.disconnectedCallback();
 		removeListeners(this.listeners);
 	}
@@ -161,7 +157,7 @@ export abstract class FormElementBehavior extends LitElement implements IFormEle
 	 * Responds to property changes.
 	 * @param props
 	 */
-	protected updated (props: Map<keyof IFormElementBehaviorProperties, unknown>) {
+	protected updated(props: Map<keyof IFormElementBehaviorProperties, unknown>) {
 		super.updated(props);
 
 		// When disabled we need to show the aria disabled attribute
@@ -178,7 +174,7 @@ export abstract class FormElementBehavior extends LitElement implements IFormEle
 	/**
 	 * Updates the tabindex.
 	 */
-	protected updateTabindex (props: Map<keyof IFormElementBehaviorProperties, unknown>) {
+	protected updateTabindex(props: Map<keyof IFormElementBehaviorProperties, unknown>) {
 		if (props.has("disabled")) {
 			updateTabindex(this, this.disabled);
 		}
@@ -187,14 +183,14 @@ export abstract class FormElementBehavior extends LitElement implements IFormEle
 	/**
 	 * Returns the value of the form element.
 	 */
-	protected getFormItemValue (): string {
+	protected getFormItemValue(): string {
 		return this.$formElement != null ? this.$formElement.value : this.initialValue || "";
 	}
 
 	/**
 	 * Queries the form element from the shadow root.
 	 */
-	protected queryFormElement (): FormElement {
+	protected queryFormElement(): FormElement {
 		return this.shadowRoot!.querySelector<FormElement>(`#${this.formElementId}`)!;
 	}
 }

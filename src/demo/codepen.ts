@@ -7,11 +7,11 @@ export interface ICodePenOptions {
 	editors?: string; // Set which editors are open. In this example HTML open, CSS closed, JS open
 	layout?: "top" | "left" | "right";
 	html?: string;
-	html_pre_processor?: "none" | "slim" | "haml" | "markdown",
+	html_pre_processor?: "none" | "slim" | "haml" | "markdown";
 	css?: string;
 	css_pre_processor?: "none" | "less" | "scss" | "sass" | "stylus";
-	css_starter?: "normalize" | "reset" | "neither",
-	css_prefix?: "autoprefixer" | "prefixfree" | "neither",
+	css_starter?: "normalize" | "reset" | "neither";
+	css_prefix?: "autoprefixer" | "prefixfree" | "neither";
 	js?: string;
 	js_pre_processor?: "none" | "coffeescript" | "babel" | "livescript" | "typescript";
 	html_classes?: string;
@@ -22,7 +22,7 @@ export interface ICodePenOptions {
 
 const CODEPEN_URL = `https://codepen.io/pen/define`;
 
-export function openCodepen (options: ICodePenOptions) {
+export function openCodepen(options: ICodePenOptions) {
 	const $form = document.createElement("form");
 	$form.action = CODEPEN_URL;
 	$form.target = `_blank`;

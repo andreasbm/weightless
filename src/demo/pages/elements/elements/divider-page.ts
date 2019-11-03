@@ -7,22 +7,24 @@ import "../../../elements/demo/demo-element";
 
 @customElement("divider-page")
 export default class DividerPage extends LitElement {
-
-	static styles = [sharedStyles, unsafeCSS`
+	static styles = [
+		sharedStyles,
+		unsafeCSS`
 		wl-divider[vertical] {
 			height: 100px;
 			margin: 0 auto;
 		}
-	`];
+	`
+	];
 
-	protected render () {
+	protected render() {
 		return html`
 			<demo-element default>
 				<code-example-element>
 					<wl-divider></wl-divider>
 				</code-example-element>
 			</demo-element>
-			
+
 			<wl-title>Vertical</wl-title>
 			<demo-element>
 				<code-example-element>

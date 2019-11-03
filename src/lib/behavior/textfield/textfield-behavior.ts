@@ -14,7 +14,7 @@ export interface ITextfieldBehaviorProperties extends IInputBehaviorProperties {
 }
 
 /**
- * Slider behavior.
+ * Text field behavior.
  */
 export abstract class TextfieldBehavior extends InputBehavior implements ITextfieldBehaviorProperties {
 	static styles = [...InputBehavior.styles, cssResult(styles)];
@@ -23,18 +23,17 @@ export abstract class TextfieldBehavior extends InputBehavior implements ITextfi
 	 * Value pattern.
 	 * @attr
 	 */
-	@property({type: String}) pattern?: string;
+	@property({ type: String }) pattern?: string;
 
 	/**
 	 * Min value length.
 	 * @attr
 	 */
-	@property({type: Number}) minLength?: number;
+	@property({ type: Number }) minLength?: number;
 
 	/**
 	 * Max value length.
 	 * @attr
 	 */
-	@property({type: Number}) maxLength?: number;
-
+	@property({ type: Number }) maxLength?: number;
 }

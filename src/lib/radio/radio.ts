@@ -9,8 +9,7 @@ import styles from "./radio.scss";
 /**
  * Properties of the radio.
  */
-export interface IRadioProperties extends IRadioBehaviorProperties {
-}
+export interface IRadioProperties extends IRadioBehaviorProperties {}
 
 /**
  * Select one option from a set.
@@ -38,9 +37,9 @@ export class Radio extends RadioBehavior implements IRadioProperties {
 	/**
 	 * Returns the template for the element.
 	 */
-	protected render (): TemplateResult {
+	protected render(): TemplateResult {
 		return html`
-            <div id="dot"></div>
+			<div id="dot"></div>
 			<wl-ripple id="ripple" .target="${this}" focusable overlay unbounded centered initialDuration="200"></wl-ripple>
 			<slot></slot>
 			${this.renderFormElement()}

@@ -8,8 +8,7 @@ import styles from "./switch.scss";
 /**
  * Properties of the switch.
  */
-export interface ISwitchProperties extends ISwitchBehaviorProperties {
-}
+export interface ISwitchProperties extends ISwitchBehaviorProperties {}
 
 /**
  * Turn an option on or off.
@@ -38,9 +37,9 @@ export class Switch extends SwitchBehavior implements ISwitchProperties {
 	/**
 	 * Returns the template for the component.
 	 */
-	protected render (): TemplateResult {
+	protected render(): TemplateResult {
 		return html`
-            <div id="knob">
+			<div id="knob">
 				<wl-ripple id="ripple" .target="${this}" focusable overlay unbounded centered initialDuration="200"></wl-ripple>
 			</div>
 			${this.renderFormElement()}

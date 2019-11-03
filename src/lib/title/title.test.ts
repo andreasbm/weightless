@@ -3,7 +3,7 @@ import "../title";
 import { Title, TitleLevel } from "./title";
 
 describe("wl-title", () => {
-	const {expect} = chai;
+	const { expect } = chai;
 	let $title: Title;
 	let $container: HTMLElement;
 
@@ -24,11 +24,9 @@ describe("wl-title", () => {
 		expect($title.getAttribute("role")).to.equal("heading");
 	});
 
-
 	it("should reflect aria-level", async () => {
-
 		// Asserts that the aria attribute is set
-		async function assertAriaLevel ($title: Title, level: TitleLevel) {
+		async function assertAriaLevel($title: Title, level: TitleLevel) {
 			$title.level = level;
 			await $title.updateComplete;
 			expect($title.getAttribute("aria-level")).to.equal(level.toString());
@@ -42,4 +40,3 @@ describe("wl-title", () => {
 		await assertAriaLevel($title, 6);
 	});
 });
-

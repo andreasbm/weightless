@@ -6,6 +6,15 @@
 Give popovers a contextual flair.
 
 
+[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#slots)
+
+## ➤ Slots
+
+| Name | Description      |
+|------|------------------|
+|      | Default content. |
+
+
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#css-custom-properties)
 
 ## ➤ CSS Custom Properties
@@ -16,15 +25,6 @@ Give popovers a contextual flair.
 | `--popover-card-arrow-height` | Height of the arrow |
 | `--popover-card-arrow-width`  | Width of the arrow  |
 | `--popover-card-elevation`    | Box shadow          |
-
-
-[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#slots)
-
-## ➤ Slots
-
-| Name | Description      |
-|------|------------------|
-|      | Default content. |
 
 
 

@@ -1,7 +1,11 @@
 import { IRoute } from "@appnest/web-router";
 
-function iconPath (name: string): string {
+function iconPath(name: string): string {
 	return `assets/element/${name}.svg`;
+}
+
+function weightlessDocsURL(element: string): string {
+	return `https://github.com/andreasbm/weightless/tree/master/src/lib/${element}`;
 }
 
 export interface IRouteData {
@@ -18,7 +22,8 @@ export const COMPONENTS_ROUTES: IRoute<IRouteData>[] = [
 		data: {
 			title: "Banner",
 			desc: "Display a non-interruptive message and related optional actions.",
-			img: iconPath("banner")
+			img: iconPath("banner"),
+			docs: weightlessDocsURL("banner")
 		}
 	},
 	{
@@ -27,7 +32,8 @@ export const COMPONENTS_ROUTES: IRoute<IRouteData>[] = [
 		data: {
 			title: "Button",
 			desc: "Allow users to take actions, and make choices, with a single tap.",
-			img: iconPath("button")
+			img: iconPath("button"),
+			docs: weightlessDocsURL("button")
 		}
 	},
 	{
@@ -36,7 +42,8 @@ export const COMPONENTS_ROUTES: IRoute<IRouteData>[] = [
 		data: {
 			title: "Card",
 			desc: "Group related content and action.",
-			img: iconPath("card")
+			img: iconPath("card"),
+			docs: weightlessDocsURL("card")
 		}
 	},
 	{
@@ -45,7 +52,8 @@ export const COMPONENTS_ROUTES: IRoute<IRouteData>[] = [
 		data: {
 			title: "Checkbox",
 			desc: "Turn an option on or off.",
-			img: iconPath("checkbox")
+			img: iconPath("checkbox"),
+			docs: weightlessDocsURL("checkbox")
 		}
 	},
 	{
@@ -54,7 +62,8 @@ export const COMPONENTS_ROUTES: IRoute<IRouteData>[] = [
 		data: {
 			title: "Dialog",
 			desc: "Highly interruptive messages.",
-			img: iconPath("dialog")
+			img: iconPath("dialog"),
+			docs: weightlessDocsURL("dialog")
 		}
 	},
 	{
@@ -63,7 +72,8 @@ export const COMPONENTS_ROUTES: IRoute<IRouteData>[] = [
 		data: {
 			title: "Divider",
 			desc: "Thin line that groups content in lists and layouts.",
-			img: iconPath("divider")
+			img: iconPath("divider"),
+			docs: weightlessDocsURL("divider")
 		}
 	},
 	{
@@ -72,7 +82,8 @@ export const COMPONENTS_ROUTES: IRoute<IRouteData>[] = [
 		data: {
 			title: "Expansion",
 			desc: "Provide an expandable details-summary view.",
-			img: iconPath("expansion")
+			img: iconPath("expansion"),
+			docs: weightlessDocsURL("expansion")
 		}
 	},
 	{
@@ -81,7 +92,8 @@ export const COMPONENTS_ROUTES: IRoute<IRouteData>[] = [
 		data: {
 			title: "Form",
 			desc: "Interact with the native <form> element to validate the inputs.",
-			img: iconPath("form")
+			img: iconPath("form"),
+			docs: "https://developer.mozilla.org/en-US/docs/Web/HTML/Element/form"
 		}
 	},
 	{
@@ -90,7 +102,8 @@ export const COMPONENTS_ROUTES: IRoute<IRouteData>[] = [
 		data: {
 			title: "Icon",
 			desc: "Symbols for common actions and items.",
-			img: iconPath("icon")
+			img: iconPath("icon"),
+			docs: weightlessDocsURL("icon")
 		}
 	},
 	{
@@ -99,7 +112,8 @@ export const COMPONENTS_ROUTES: IRoute<IRouteData>[] = [
 		data: {
 			title: "Label",
 			desc: "Make form elements more accessible.",
-			img: iconPath("label")
+			img: iconPath("label"),
+			docs: weightlessDocsURL("label")
 		}
 	},
 	{
@@ -108,7 +122,8 @@ export const COMPONENTS_ROUTES: IRoute<IRouteData>[] = [
 		data: {
 			title: "List Item",
 			desc: "Display an item in a list.",
-			img: iconPath("list")
+			img: iconPath("list"),
+			docs: weightlessDocsURL("list-item")
 		}
 	},
 	{
@@ -117,7 +132,8 @@ export const COMPONENTS_ROUTES: IRoute<IRouteData>[] = [
 		data: {
 			title: "Navigation Bar",
 			desc: "Provide access to destinations in your app.",
-			img: iconPath("toolbar")
+			img: iconPath("toolbar"),
+			docs: weightlessDocsURL("nav")
 		}
 	},
 	{
@@ -126,7 +142,8 @@ export const COMPONENTS_ROUTES: IRoute<IRouteData>[] = [
 		data: {
 			title: "Popover",
 			desc: "Contextual anchored elements.",
-			img: iconPath("menu")
+			img: iconPath("menu"),
+			docs: weightlessDocsURL("popover")
 		}
 	},
 	{
@@ -135,7 +152,8 @@ export const COMPONENTS_ROUTES: IRoute<IRouteData>[] = [
 		data: {
 			title: "Progress Bar",
 			desc: "Fills a bar from 0% to 100%.",
-			img: iconPath("progress_bar")
+			img: iconPath("progress_bar"),
+			docs: weightlessDocsURL("progress-bar")
 		}
 	},
 	{
@@ -144,7 +162,8 @@ export const COMPONENTS_ROUTES: IRoute<IRouteData>[] = [
 		data: {
 			title: "Progress Spinner",
 			desc: "Fills a circle from 0% to 100%.",
-			img: iconPath("progress_spinner")
+			img: iconPath("progress_spinner"),
+			docs: weightlessDocsURL("progress-spinner")
 		}
 	},
 	{
@@ -153,7 +172,8 @@ export const COMPONENTS_ROUTES: IRoute<IRouteData>[] = [
 		data: {
 			title: "Radio",
 			desc: "Select one option from a set.",
-			img: iconPath("radio_button")
+			img: iconPath("radio_button"),
+			docs: weightlessDocsURL("radio")
 		}
 	},
 	{
@@ -162,7 +182,8 @@ export const COMPONENTS_ROUTES: IRoute<IRouteData>[] = [
 		data: {
 			title: "Ripple",
 			desc: "Indicate touch actions.",
-			img: iconPath("ripple")
+			img: iconPath("ripple"),
+			docs: weightlessDocsURL("ripple")
 		}
 	},
 	{
@@ -171,7 +192,8 @@ export const COMPONENTS_ROUTES: IRoute<IRouteData>[] = [
 		data: {
 			title: "Select",
 			desc: "Select one or more values from a set of options.",
-			img: iconPath("select")
+			img: iconPath("select"),
+			docs: weightlessDocsURL("select")
 		}
 	},
 	{
@@ -180,7 +202,8 @@ export const COMPONENTS_ROUTES: IRoute<IRouteData>[] = [
 		data: {
 			title: "Slider",
 			desc: "Make selections from a range of values.",
-			img: iconPath("slider")
+			img: iconPath("slider"),
+			docs: weightlessDocsURL("slider")
 		}
 	},
 	{
@@ -189,7 +212,8 @@ export const COMPONENTS_ROUTES: IRoute<IRouteData>[] = [
 		data: {
 			title: "Snackbar",
 			desc: "Provide brief messages at the bottom of the screen.",
-			img: iconPath("snackbar")
+			img: iconPath("snackbar"),
+			docs: weightlessDocsURL("snackbar")
 		}
 	},
 	{
@@ -198,7 +222,8 @@ export const COMPONENTS_ROUTES: IRoute<IRouteData>[] = [
 		data: {
 			title: "Switch",
 			desc: "Turn an option on or off.",
-			img: iconPath("switch")
+			img: iconPath("switch"),
+			docs: weightlessDocsURL("switch")
 		}
 	},
 	{
@@ -207,7 +232,8 @@ export const COMPONENTS_ROUTES: IRoute<IRouteData>[] = [
 		data: {
 			title: "Tabs",
 			desc: "Organize navigation between groups of content.",
-			img: iconPath("tabs")
+			img: iconPath("tabs"),
+			docs: weightlessDocsURL("tab")
 		}
 	},
 	{
@@ -216,7 +242,8 @@ export const COMPONENTS_ROUTES: IRoute<IRouteData>[] = [
 		data: {
 			title: "Text",
 			desc: "Group text into paragraphs.",
-			img: iconPath("text")
+			img: iconPath("text"),
+			docs: weightlessDocsURL("text")
 		}
 	},
 	{
@@ -225,7 +252,8 @@ export const COMPONENTS_ROUTES: IRoute<IRouteData>[] = [
 		data: {
 			title: "Textarea",
 			desc: "Multiline text fields.",
-			img: iconPath("textarea")
+			img: iconPath("textarea"),
+			docs: weightlessDocsURL("textarea")
 		}
 	},
 	{
@@ -234,7 +262,8 @@ export const COMPONENTS_ROUTES: IRoute<IRouteData>[] = [
 		data: {
 			title: "Textfield",
 			desc: "Singleline text fields.",
-			img: iconPath("textfield")
+			img: iconPath("textfield"),
+			docs: weightlessDocsURL("textfield")
 		}
 	},
 	{
@@ -244,7 +273,7 @@ export const COMPONENTS_ROUTES: IRoute<IRouteData>[] = [
 			title: "Theme",
 			desc: "Customize every element to fit your brand",
 			img: iconPath("theme"),
-			docs: "style"
+			docs: weightlessDocsURL("style")
 		}
 	},
 	{
@@ -253,7 +282,8 @@ export const COMPONENTS_ROUTES: IRoute<IRouteData>[] = [
 		data: {
 			title: "Title",
 			desc: "Indicate the start of a new section.",
-			img: iconPath("typography")
+			img: iconPath("typography"),
+			docs: weightlessDocsURL("title")
 		}
 	},
 	{
@@ -262,7 +292,8 @@ export const COMPONENTS_ROUTES: IRoute<IRouteData>[] = [
 		data: {
 			title: "Tooltip",
 			desc: "Informative context related text",
-			img: iconPath("tooltip")
+			img: iconPath("tooltip"),
+			docs: weightlessDocsURL("tooltip")
 		}
 	},
 	{

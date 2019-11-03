@@ -3,7 +3,7 @@ import "./slider";
 import { Slider } from "./slider";
 
 describe("wl-slider", () => {
-	const {expect} = chai;
+	const { expect } = chai;
 	let $slider: Slider;
 	let $container: HTMLElement;
 
@@ -24,4 +24,3 @@ describe("wl-slider", () => {
 		expect($slider.getAttribute("role")).to.equal("slider");
 	});
 });
-

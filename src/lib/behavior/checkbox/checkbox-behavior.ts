@@ -7,8 +7,7 @@ import styles from "./checkbox-behavior.scss";
 /**
  * Properties of the checkbox behavior.
  */
-export interface ICheckboxBehaviorProperties extends ISwitchBehaviorProperties {
-}
+export interface ICheckboxBehaviorProperties extends ISwitchBehaviorProperties {}
 
 /**
  * Provides checkbox behavior.
@@ -20,13 +19,12 @@ export abstract class CheckboxBehavior extends SwitchBehavior implements ICheckb
 	 * Indeterminate checkbox state.
 	 * @attr
 	 */
-	@property({type: Boolean, reflect: true}) indeterminate: boolean = false;
+	@property({ type: Boolean, reflect: true }) indeterminate: boolean = false;
 
 	/**
 	 * Checks and unchecks the checkbox.
 	 */
-	protected toggle () {
-
+	protected toggle() {
 		// If the checkbox is indeterminate we always remove that state first.
 		if (this.indeterminate) {
 			this.indeterminate = false;
@@ -40,11 +38,9 @@ export abstract class CheckboxBehavior extends SwitchBehavior implements ICheckb
 	 * Updates the aria attributes.
 	 * @param props
 	 */
-	protected updateAria (props: PropertyValues) {
+	protected updateAria(props: PropertyValues) {
 		if (props.has("checked") || props.has("indeterminate")) {
 			this.ariaChecked = this.indeterminate ? `mixed` : this.checked.toString();
 		}
 	}
-
 }
-

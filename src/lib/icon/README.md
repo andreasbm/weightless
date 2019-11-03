@@ -15,6 +15,15 @@ Symbols for common actions and items.
 | `role`   | `role`    | `AriaRole` | "presentation" | Roles of the icon. |
 
 
+[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#slots)
+
+## ➤ Slots
+
+| Name | Description       |
+|------|-------------------|
+|      | Name of the icon. |
+
+
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#css-custom-properties)
 
 ## ➤ CSS Custom Properties
@@ -23,15 +32,6 @@ Symbols for common actions and items.
 |---------------|------------------|
 | `--icon-font` | Font family      |
 | `--icon-size` | Width and height |
-
-
-[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#slots)
-
-## ➤ Slots
-
-| Name | Description       |
-|------|-------------------|
-|      | Name of the icon. |
 
 
 

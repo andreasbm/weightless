@@ -8,21 +8,23 @@ import { sharedStyles } from "../../../style/shared";
 
 @customElement("progress-bar-page")
 export default class ProgressBarPage extends LitElement {
-
-	static styles = [sharedStyles, cssResult(`
+	static styles = [
+		sharedStyles,
+		cssResult(`
 		wl-progress-bar:not(:last-child) {
 			margin: 0 0 12px;
 		}
-	`)];
+	`)
+	];
 
-	protected render () {
+	protected render() {
 		return html`
 			<demo-element default>
 				<code-example-element>
 					<wl-progress-bar></wl-progress-bar>
 				</code-example-element>
 			</demo-element>
-			
+
 			<wl-title level="3">Determinate</wl-title>
 			<demo-element>
 				<code-example-element>

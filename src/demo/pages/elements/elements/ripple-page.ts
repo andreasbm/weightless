@@ -8,8 +8,9 @@ import { sharedStyles } from "../../../style/shared";
 
 @customElement("ripple-page")
 export default class RipplePage extends LitElement {
-
-	static styles = [sharedStyles, cssResult(`
+	static styles = [
+		sharedStyles,
+		cssResult(`
 		wl-ripple {
 			width: 200px;
 			height: 200px;
@@ -21,16 +22,17 @@ export default class RipplePage extends LitElement {
 		wl-ripple:focus {
 			border-color: blue;
 		}
-	`)];
+	`)
+	];
 
 	@query("#demo-element") protected $demoElement!: DemoElement;
 
-	firstUpdated (props: PropertyValues) {
+	firstUpdated(props: PropertyValues) {
 		super.firstUpdated(props);
 		this.requestUpdate().then();
 	}
 
-	protected render () {
+	protected render() {
 		return html`
 			<demo-element default>
 				<code-example-element>
@@ -39,7 +41,7 @@ export default class RipplePage extends LitElement {
 					<wl-ripple unbounded></wl-ripple>
 				</code-example-element>
 			</demo-element>
-			
+
 			<wl-title level="3">Change animation duration</wl-title>
 			<demo-element>
 				<code-example-element>
@@ -48,14 +50,14 @@ export default class RipplePage extends LitElement {
 					<wl-ripple autorelease></wl-ripple>
 				</code-example-element>
 			</demo-element>
-			
+
 			<wl-title level="3">Disabled</wl-title>
 			<demo-element>
 				<code-example-element>
 					<wl-ripple disabled></wl-ripple>
 				</code-example-element>
 			</demo-element>
-			
+
 			<wl-title level="3">Focusable</wl-title>
 			<wl-label>You can't click on the ripple below. Try to hit the tab key and see what happens.</wl-label>
 			<demo-element>
@@ -63,9 +65,12 @@ export default class RipplePage extends LitElement {
 					<wl-ripple tabindex="0" focusable style="pointer-events: none;"></wl-ripple>
 				</code-example-element>
 			</demo-element>
-			
+
 			<wl-title level="3">Change target</wl-title>
-			<wl-label>To change the target for the touch events you need to set the .target property on the ripple. Try to click outside the ripple and see what happens.</wl-label>
+			<wl-label
+				>To change the target for the touch events you need to set the .target property on the ripple. Try to click outside the ripple and see what
+				happens.</wl-label
+			>
 			<demo-element id="demo-element">
 				<wl-ripple .target="${this.$demoElement}"></wl-ripple>
 			</demo-element>

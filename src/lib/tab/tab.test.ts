@@ -3,7 +3,7 @@ import "./tab";
 import { Tab } from "./tab";
 
 describe("wl-tab", () => {
-	const {expect} = chai;
+	const { expect } = chai;
 	let $tab: Tab;
 	let $container: HTMLElement;
 
@@ -21,4 +21,3 @@ describe("wl-tab", () => {
 		expect($tab.getAttribute("role")).to.equal("tab");
 	});
 });
-

@@ -10,11 +10,20 @@ Make form elements more accessible.
 
 ## ➤ Properties
 
-| Property   | Attribute  | Type      | Default | Description                                      |
-|------------|------------|-----------|---------|--------------------------------------------------|
-| `for`      | `for`      | `string`  |         | Query of the form element click events are re-fired upon. |
-| `nowrap`   | `nowrap`   | `boolean` | false   | Caps the label element with ellipsis if overflowing. |
-| `required` | `required` | `boolean` | false   | Styles the label as required.                    |
+| Property   | Attribute  | Type                  | Default | Description                                      |
+|------------|------------|-----------------------|---------|--------------------------------------------------|
+| `for`      | `for`      | `string \| undefined` |         | Query of the form element click events are re-fired upon. |
+| `nowrap`   | `nowrap`   | `boolean`             | false   | Caps the label element with ellipsis if overflowing. |
+| `required` | `required` | `boolean`             | false   | Styles the label as required.                    |
+
+
+[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#slots)
+
+## ➤ Slots
+
+| Name | Description                                      |
+|------|--------------------------------------------------|
+|      | Default content. If the first element is a form element, clicks on the entire label will be re-fired upon that element. |
 
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#css-custom-properties)
@@ -28,15 +37,6 @@ Make form elements more accessible.
 | `--label-font-size`      | Font size                    |
 | `--label-line-height`    | Line height                  |
 | `--label-required-color` | Color of the required astrix |
-
-
-[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#slots)
-
-## ➤ Slots
-
-| Name | Description                                      |
-|------|--------------------------------------------------|
-|      | Default content. If the first element is a form element, clicks on the entire label will be re-fired upon that element. |
 
 
 

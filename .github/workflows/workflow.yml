@@ -1,0 +1,37 @@
+name: Main Workflow
+
+on: [push, pull_request]
+
+jobs:
+  run:
+    name: Run
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@master
+
+      - name: Set Node.js 10.x
+        uses: actions/setup-node@master
+        with:
+          node-version: 10.x
+
+      - name: Cache
+        uses: actions/cache@preview
+        id: cache
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
+      - name: Install
+        if: steps.cache.outputs.cache-hit != 'true'
+        run: npm ci
+
+      - name: Lint
+        run: npm run lint
+
+      - name: Test
+        run: npm test

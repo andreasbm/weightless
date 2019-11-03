@@ -3,7 +3,7 @@ import "../radio";
 import { Radio } from "./radio";
 
 describe("wl-radio", () => {
-	const {expect} = chai;
+	const { expect } = chai;
 	let $radios: Radio[];
 	let $container: HTMLElement;
 
@@ -27,4 +27,3 @@ describe("wl-radio", () => {
 		}
 	});
 });
-

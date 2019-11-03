@@ -4,7 +4,7 @@ import "../tab";
 import { TabGroup } from "./tab-group";
 
 describe("wl-tab-group", () => {
-	const {expect} = chai;
+	const { expect } = chai;
 	let $tabGroup: TabGroup;
 	let $container: HTMLElement;
 
@@ -23,4 +23,3 @@ describe("wl-tab-group", () => {
 		expect($tabGroup.getAttribute("role")).to.equal("tablist");
 	});
 });
-

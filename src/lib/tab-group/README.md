@@ -18,6 +18,15 @@ Organize navigation between groups of content.
 | `vertical` | `vertical` | `boolean`           | false     | Makes the tabs vertical.              |
 
 
+[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#slots)
+
+## ➤ Slots
+
+| Name | Description                                |
+|------|--------------------------------------------|
+|      | Default content. Add wl-tab elements here. |
+
+
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#css-custom-properties)
 
 ## ➤ CSS Custom Properties
@@ -32,15 +41,6 @@ Organize navigation between groups of content.
 | `--tab-group-indicator-scale`      | Scale of the indicator      |
 | `--tab-group-indicator-size`       | Size of the indicator       |
 | `--tab-group-indicator-transition` | Transition of the indicator |
-
-
-[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#slots)
-
-## ➤ Slots
-
-| Name | Description                                |
-|------|--------------------------------------------|
-|      | Default content. Add wl-tab elements here. |
 
 
 

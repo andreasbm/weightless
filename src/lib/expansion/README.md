@@ -10,19 +10,19 @@ Provide an expandable details-summary view.
 
 ## ➤ Properties
 
-| Property      | Attribute     | Type       | Default       | Description                                      |
-|---------------|---------------|------------|---------------|--------------------------------------------------|
-| `ariaChecked` | `ariaChecked` | `string`   |               | Aria expanded attribute.                         |
-| `checked`     | `checked`     | `boolean`  | false         | Opens the expansion.                             |
-| `disabled`    | `disabled`    | `boolean`  | false         | Disables the element.                            |
-| `duration`    | `duration`    | `number`   | 250           | The duration of the animations.                  |
-| `icon`        | `icon`        | `string`   | "expand_more" | Icon name.                                       |
-| `name`        | `name`        | `string`   |               | Name of the native form element.                 |
-| `noRipple`    | `noRipple`    | `boolean`  | false         | Deactivates the ripple.                          |
-| `readonly`    | `readonly`    | `boolean`  | false         | Makes the element readonly (disabled but tabbable) |
-| `required`    | `required`    | `boolean`  | false         | Makes the element required in a form context.    |
-| `role`        | `role`        | `AriaRole` | "radio"       | Role of the radio behavior.                      |
-| `value`       | `value`       | `string`   | ""            | Value of the form element.                       |
+| Property      | Attribute      | Type                  | Default       | Description                                      |
+|---------------|----------------|-----------------------|---------------|--------------------------------------------------|
+| `ariaChecked` | `aria-checked` | `string`              |               | Aria expanded attribute.                         |
+| `checked`     | `checked`      | `boolean`             | false         | Opens the expansion.                             |
+| `disabled`    | `disabled`     | `boolean`             | false         | Disables the element.                            |
+| `duration`    | `duration`     | `number`              | 250           | The duration of the animations.                  |
+| `icon`        | `icon`         | `string \| undefined` | "expand_more" | Icon name.                                       |
+| `name`        | `name`         | `string \| undefined` |               | Name of the native form element.                 |
+| `noRipple`    | `noRipple`     | `boolean`             | false         | Deactivates the ripple.                          |
+| `readonly`    | `readonly`     | `boolean`             | false         | Makes the element readonly (disabled but tabbable) |
+| `required`    | `required`     | `boolean`             | false         | Makes the element required in a form context.    |
+| `role`        | `role`         | `AriaRole`            | "radio"       | Role of the radio behavior.                      |
+| `value`       | `value`        | `string`              | ""            | Value of the form element.                       |
 
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#events)
@@ -32,6 +32,18 @@ Provide an expandable details-summary view.
 | Event    | Description                                      |
 |----------|--------------------------------------------------|
 | `change` | Dispatched when the checked property changes due to a user interaction. |
+
+
+[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#slots)
+
+## ➤ Slots
+
+| Name          | Description                            |
+|---------------|----------------------------------------|
+|               | Default content.                       |
+| `description` | Description to the left on the header. |
+| `indicator`   | Content to the right on the header.    |
+| `title`       | Title to the left on the header.       |
 
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#css-custom-properties)
@@ -55,18 +67,6 @@ Provide an expandable details-summary view.
 | `--expansion-icon-transition`          | Transition of the icon                      |
 | `--expansion-margin-open`              | Margin when open                            |
 | `--expansion-transition`               | Transition                                  |
-
-
-[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#slots)
-
-## ➤ Slots
-
-| Name          | Description                            |
-|---------------|----------------------------------------|
-|               | Default content.                       |
-| `description` | Description to the left on the header. |
-| `indicator`   | Content to the right on the header.    |
-| `title`       | Title to the left on the header.       |
 
 
 

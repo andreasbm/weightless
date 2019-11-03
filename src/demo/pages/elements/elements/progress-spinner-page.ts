@@ -7,17 +7,16 @@ import { sharedStyles } from "../../../style/shared";
 
 @customElement("progress-spinner-page")
 export default class ProgressSpinnerPage extends LitElement {
-
 	static styles = [sharedStyles];
 
-	protected render () {
+	protected render() {
 		return html`
 			<demo-element default>
 				<code-example-element>
 					<wl-progress-spinner></wl-progress-spinner>
 				</code-example-element>
 			</demo-element>
-			
+
 			<wl-title level="3">Determinate</wl-title>
 			<demo-element>
 				<code-example-element>

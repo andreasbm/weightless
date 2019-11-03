@@ -14,14 +14,15 @@ export interface IQueueConfig {
  * Drains the queue one by one until it is empty.
  * @param queue
  */
-export async function drainQueue<R, C extends IOpenOverlayConfig & Partial<IOverlayBehaviorBaseProperties>, O extends OverlayBehavior<R, C>> (queue: IQueuedOverlay<R, C, O>[]) {
+export async function drainQueue<R, C extends IOpenOverlayConfig & Partial<IOverlayBehaviorBaseProperties>, O extends OverlayBehavior<R, C>>(
+	queue: IQueuedOverlay<R, C, O>[]
+) {
 	if (queue.length === 0) return;
 
 	// Show the next overlay from the queue.
-	const {show, resolve} = queue[0];
+	const { show, resolve } = queue[0];
 	const ref = show();
-	ref.then(async ({result}) => {
-
+	ref.then(async ({ result }) => {
 		// Wait for the overlay to resolve completely
 		await result;
 
@@ -37,16 +38,17 @@ export async function drainQueue<R, C extends IOpenOverlayConfig & Partial<IOver
 	resolve(await ref);
 }
 
-
 /**
  * Queues an overlay.
  */
-export async function queueOverlay<R, C extends IOpenOverlayConfig & Partial<IOverlayBehaviorBaseProperties>, O extends OverlayBehavior<R, C>> (queue: IQueuedOverlay<R, C, O>[],
-                                                                                                                                                show: (() => Promise<IShowOverlayResult<R, C, O>>),
-                                                                                                                                                {priority = false}: Partial<IQueueConfig> = {}): Promise<IShowOverlayResult<R, C, O>> {
+export async function queueOverlay<R, C extends IOpenOverlayConfig & Partial<IOverlayBehaviorBaseProperties>, O extends OverlayBehavior<R, C>>(
+	queue: IQueuedOverlay<R, C, O>[],
+	show: () => Promise<IShowOverlayResult<R, C, O>>,
+	{ priority = false }: Partial<IQueueConfig> = {}
+): Promise<IShowOverlayResult<R, C, O>> {
 	// Defer the resolving of the overlay
 	return new Promise<IShowOverlayResult<R, C, O>>(resolve => {
-		const item = {show, resolve};
+		const item = { show, resolve };
 
 		// Add the overlay to the bottom of the queue if prioritized.
 		priority ? queue.unshift(item) : queue.push(item);

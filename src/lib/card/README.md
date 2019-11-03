@@ -15,6 +15,15 @@ Group related content and action.
 | `hoverable` | `hoverable` | `boolean` | false   | Makes the card hoverable. |
 
 
+[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#slots)
+
+## ➤ Slots
+
+| Name | Description      |
+|------|------------------|
+|      | Default content. |
+
+
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#css-custom-properties)
 
 ## ➤ CSS Custom Properties
@@ -28,15 +37,6 @@ Group related content and action.
 | `--card-elevation-hover` | Box shadow when :hover |
 | `--card-padding`         | Padding                |
 | `--card-transition`      | Transition             |
-
-
-[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#slots)
-
-## ➤ Slots
-
-| Name | Description      |
-|------|------------------|
-|      | Default content. |
 
 
 

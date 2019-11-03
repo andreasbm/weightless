@@ -14,13 +14,24 @@ Display an item in a list.
 |-------------|-------------|------------------------|------------|--------------------------------------------------|
 | `clickable` | `clickable` | `boolean`              | false      | Makes the element clickable.                     |
 | `disabled`  | `disabled`  | `boolean`              | false      | Disables the element.                            |
-| `name`      | `name`      | `string`               |            | Name of the native form element.                 |
+| `name`      | `name`      | `string \| undefined`  |            | Name of the native form element.                 |
 | `noRipple`  | `noRipple`  | `boolean`              | false      | Deactivates the ripple.                          |
 | `readonly`  | `readonly`  | `boolean`              | false      | Makes the element readonly (disabled but tabbable) |
 | `required`  | `required`  | `boolean`              | false      | Makes the element required in a form context.    |
 | `role`      | `role`      | `AriaRole`             | "listitem" | Role of the list item.                           |
 | `type`      | `type`      | `"button" \| "submit"` | "submit"   | Type of the button.                              |
 | `value`     | `value`     | `string`               | ""         | Value of the form element.                       |
+
+
+[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#slots)
+
+## ➤ Slots
+
+| Name     | Description      |
+|----------|------------------|
+|          | Default content. |
+| `after`  | Right content.   |
+| `before` | Left content.    |
 
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#css-custom-properties)
@@ -47,17 +58,6 @@ Display an item in a list.
 | `--list-item-opacity-disabled`   | Opacity when disabled            |
 | `--list-item-padding`            | Padding                          |
 | `--list-item-transition`         | Transition                       |
-
-
-[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#slots)
-
-## ➤ Slots
-
-| Name     | Description      |
-|----------|------------------|
-|          | Default content. |
-| `after`  | Right content.   |
-| `before` | Left content.    |
 
 
 

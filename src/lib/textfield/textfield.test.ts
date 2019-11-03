@@ -3,7 +3,7 @@ import "../textfield";
 import { Textfield } from "./textfield";
 
 describe("wl-textfield", () => {
-	const {expect} = chai;
+	const { expect } = chai;
 	let $textfield: Textfield;
 	let $container: HTMLElement;
 
@@ -24,4 +24,3 @@ describe("wl-textfield", () => {
 		expect($textfield.getAttribute("role")).to.equal("textbox");
 	});
 });
-

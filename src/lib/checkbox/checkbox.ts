@@ -9,8 +9,7 @@ import styles from "./checkbox.scss";
 /**
  * Properties of the switch.
  */
-export interface ICheckboxProperties extends ISwitchBehaviorProperties {
-}
+export interface ICheckboxProperties extends ISwitchBehaviorProperties {}
 
 /**
  * Turn an option on or off.
@@ -41,12 +40,12 @@ export class Checkbox extends CheckboxBehavior implements ICheckboxProperties {
 	/**
 	 * Returns the template for the component.
 	 */
-	protected render (): TemplateResult {
+	protected render(): TemplateResult {
 		return html`
 			<svg id="checkmark" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" preserveAspectRatio="none" viewBox="0 0 24 24">
-                <path id="checkmark-path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59"></path>
-                <line id="indeterminate-path" fill="none" x1="0" y1="12.5" x2="24" y2="12.5" />
-            </svg>
+				<path id="checkmark-path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59"></path>
+				<line id="indeterminate-path" fill="none" x1="0" y1="12.5" x2="24" y2="12.5" />
+			</svg>
 			<wl-ripple id="ripple" .target="${this}" focusable overlay unbounded centered initialDuration="200"></wl-ripple>
 			<slot></slot>
 			${this.renderFormElement()}

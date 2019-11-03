@@ -29,7 +29,7 @@ const greyPalette: Palette = {
 	700: [200, 4, 25],
 	800: [200, 4, 15],
 	900: [200, 4, 5],
-	"contrast": {
+	contrast: {
 		100: [0, 0, 0],
 		200: [0, 0, 0],
 		300: [0, 0, 0],
@@ -52,7 +52,7 @@ const greyReversedPalette: Palette = {
 	300: [200, 4, 25],
 	200: [200, 4, 15],
 	100: [200, 4, 5],
-	"contrast": {
+	contrast: {
 		900: [0, 0, 0],
 		800: [0, 0, 0],
 		700: [0, 0, 0],
@@ -67,14 +67,13 @@ const greyReversedPalette: Palette = {
 
 @customElement("navbar-element")
 export class ThemeComponent extends Nav {
-
 	static styles = [...Nav.styles, sharedStyles, cssResult(styles)];
 
-	@property({type: Boolean, reflect: true}) darkMode = false;
+	@property({ type: Boolean, reflect: true }) darkMode = false;
 	@query("#theme-popover") protected $themePopover!: Popover;
-	@query("#logo") protected $logo: HTMLImageElement;
+	@query("#logo") protected $logo!: HTMLImageElement;
 
-	firstUpdated (props: PropertyValues) {
+	firstUpdated(props: PropertyValues) {
 		super.firstUpdated(props);
 
 		GLOBAL_ROUTER_EVENTS_TARGET.addEventListener(GlobalRouterEventKind.ChangeState, () => {
@@ -82,15 +81,15 @@ export class ThemeComponent extends Nav {
 		});
 	}
 
-	private toggleMenu () {
+	private toggleMenu() {
 		window.dispatchEvent(new CustomEvent("toggleMenu"));
 	}
 
-	private openThemeSelector () {
+	private openThemeSelector() {
 		this.$themePopover.show();
 	}
 
-	private toggleDarkMode () {
+	private toggleDarkMode() {
 		this.darkMode = !this.darkMode;
 
 		const light = `0, 0%, 100%`;
@@ -116,28 +115,41 @@ export class ThemeComponent extends Nav {
 		}
 	}
 
-	private rotateLogo () {
-		this.$logo.animate(<PropertyIndexedKeyframes>{
-			transform: [`rotate(0deg)`, `rotate(${360 * 5}deg)`]
-		}, {easing: "ease-out", duration: 1500});
+	private rotateLogo() {
+		this.$logo.animate(
+			<PropertyIndexedKeyframes>{
+				transform: [`rotate(0deg)`, `rotate(${360 * 5}deg)`]
+			},
+			{ easing: "ease-out", duration: 1500 }
+		);
 	}
 
-	protected render () {
+	protected render() {
 		return html`
 			<div id="left">
-				${path().startsWith("/elements") ? html`<wl-button aria-label="Toggle menu" id="menu-button" fab inverted flat @click="${() => this.toggleMenu()}">
-					<wl-icon alt="menu">menu</wl-icon>
-				</wl-button>` : ""}
+				${path().startsWith("/elements")
+					? html`
+							<wl-button aria-label="Toggle menu" id="menu-button" fab inverted flat @click="${() => this.toggleMenu()}">
+								<wl-icon alt="menu">menu</wl-icon>
+							</wl-button>
+					  `
+					: ""}
 				<router-link id="logo-wrapper" path="/" @click="${() => this.rotateLogo()}">
 					<svg id="logo" width="100%" height="100%" viewBox="0 0 264 264" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
 						<g fill-rule="nonzero">
-							<path d="M217.5 132h-20v-22.5c0-49.43-40.07-89.5-89.5-89.5-5.523 0-10-4.477-10-10s4.477-10 10-10c60.475 0 109.5 49.025 109.5 109.5V132z"/>
-							<path d="M132 46.5v20h-22.5C60.07 66.5 20 106.57 20 156c0 5.523-4.477 10-10 10s-10-4.477-10-10C0 95.525 49.025 46.5 109.5 46.5H132z"/>
-							<path d="M46.5 132h20v22.5c0 49.43 40.07 89.5 89.5 89.5 5.523 0 10 4.477 10 10s-4.477 10-10 10c-60.475 0-109.5-49.025-109.5-109.5V132z"/>
-							<path d="M132 217.5v-20h22.5c49.43 0 89.5-40.07 89.5-89.5 0-5.523 4.477-10 10-10s10 4.477 10 10c0 60.475-49.025 109.5-109.5 109.5H132z"/>
+							<path
+								d="M217.5 132h-20v-22.5c0-49.43-40.07-89.5-89.5-89.5-5.523 0-10-4.477-10-10s4.477-10 10-10c60.475 0 109.5 49.025 109.5 109.5V132z"
+							/>
+							<path d="M132 46.5v20h-22.5C60.07 66.5 20 106.57 20 156c0 5.523-4.477 10-10 10s-10-4.477-10-10C0 95.525 49.025 46.5 109.5 46.5H132z" />
+							<path
+								d="M46.5 132h20v22.5c0 49.43 40.07 89.5 89.5 89.5 5.523 0 10 4.477 10 10s-4.477 10-10 10c-60.475 0-109.5-49.025-109.5-109.5V132z"
+							/>
+							<path
+								d="M132 217.5v-20h22.5c49.43 0 89.5-40.07 89.5-89.5 0-5.523 4.477-10 10-10s10 4.477 10 10c0 60.475-49.025 109.5-109.5 109.5H132z"
+							/>
 						</g>
 					</svg>
-					<img id="text" src="${this.darkMode ? `assets/brand/text-light.svg` : `assets/brand/text-dark.svg`}" alt="Logo"/>
+					<img id="text" src="${this.darkMode ? `assets/brand/text-light.svg` : `assets/brand/text-dark.svg`}" alt="Logo" />
 				</router-link>
 			</div>
 			<div id="right">
@@ -146,7 +158,13 @@ export class ThemeComponent extends Nav {
 					<router-link class="link" path="/elements">Elements</router-link>
 				</div>
 				<wl-button aria-label="Toggle darkmode" id="dark-mode" @click="${() => this.toggleDarkMode()}" fab inverted flat outlined>
-					${this.darkMode ? html`<wl-icon>flash_off</wl-icon>` : html`<wl-icon>flash_on</wl-icon>`}
+					${this.darkMode
+						? html`
+								<wl-icon>flash_off</wl-icon>
+						  `
+						: html`
+								<wl-icon>flash_on</wl-icon>
+						  `}
 				</wl-button>
 				<wl-button aria-label="Open theme" fab id="theme-selector" @click="${() => this.openThemeSelector()}"></wl-button>
 				<wl-popover id="theme-popover" anchor="#theme-selector" backdrop fixed transformOriginX="right" anchorOriginY="center" anchorOriginX="center">
@@ -154,7 +172,9 @@ export class ThemeComponent extends Nav {
 						<theme-element @update="${() => this.$themePopover.hide()}"></theme-element>
 					</wl-popover-card>
 				</wl-popover>
-				<a id="octo" href="${GITHUB_URL}" target="_blank" rel="noopener" aria-label="Open Github" @click="${trackGithubSourceEvent}"><octo-element></octo-element></a>
+				<a id="octo" href="${GITHUB_URL}" target="_blank" rel="noopener" aria-label="Open Github" @click="${trackGithubSourceEvent}"
+					><octo-element></octo-element
+				></a>
 			</div>
 		`;
 	}

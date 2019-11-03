@@ -17,6 +17,15 @@ Indicate the start of a new section.
 | `role`   | `role`    | `AriaRole`   | "heading" | Role of the title.                               |
 
 
+[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#slots)
+
+## ➤ Slots
+
+| Name | Description      |
+|------|------------------|
+|      | Default content. |
+
+
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#css-custom-properties)
 
 ## ➤ CSS Custom Properties
@@ -33,15 +42,6 @@ Indicate the start of a new section.
 | `--title-font-weight`       | Font weight                  |
 | `--title-line-height`       | Line height                  |
 | `--title-margin`            | Margin                       |
-
-
-[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#slots)
-
-## ➤ Slots
-
-| Name | Description      |
-|------|------------------|
-|      | Default content. |
 
 
 

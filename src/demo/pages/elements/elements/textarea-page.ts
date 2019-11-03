@@ -9,14 +9,16 @@ import { sharedStyles } from "../../../style/shared";
 
 @customElement("textarea-page")
 export default class TextareaPage extends LitElement {
-
-	static styles = [sharedStyles, cssResult(`
+	static styles = [
+		sharedStyles,
+		cssResult(`
 		wl-textarea:not(:last-child) {
 			margin: 0 0 12px;
 		}
-	`)];
+	`)
+	];
 
-	protected render () {
+	protected render() {
 		return html`
 			<demo-element default>
 				<code-example-element>
@@ -32,7 +34,7 @@ export default class TextareaPage extends LitElement {
 					<wl-textarea outlined label="Hello World"></wl-textarea>
 				</code-example-element>
 			</demo-element>
-			
+
 			<wl-title level="3">Filled</wl-title>
 			<demo-element>
 				<code-example-element>
@@ -40,7 +42,7 @@ export default class TextareaPage extends LitElement {
 					<wl-textarea filled label="Hello World"></wl-textarea>
 				</code-example-element>
 			</demo-element>
-			
+
 			<wl-title level="3">Disabled</wl-title>
 			<demo-element>
 				<code-example-element>

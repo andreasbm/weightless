@@ -42,25 +42,25 @@ export class Title extends LitElement implements ITitleProperties {
 	 * Level of the title.
 	 * @attr
 	 */
-	@property({type: Number, reflect: true}) level: TitleLevel = 1;
+	@property({ type: Number, reflect: true }) level: TitleLevel = 1;
 
 	/**
 	 * Caps the title element with ellipsis if overflowing.
 	 * @attr
 	 */
-	@property({type: Boolean}) nowrap: boolean = false;
+	@property({ type: Boolean }) nowrap: boolean = false;
 
 	/**
 	 * Role of the title.
 	 * @attr
 	 */
-	@property({type: String, reflect: true}) role: AriaRole = "heading";
+	@property({ type: String, reflect: true }) role: AriaRole = "heading";
 
 	/**
 	 * Reflect the updates when properties change.
 	 * @param props
 	 */
-	protected updated (props: Map<keyof ITitleProperties, unknown>) {
+	protected updated(props: Map<keyof ITitleProperties, unknown>) {
 		super.updated(props);
 
 		// Update the aria attributes
@@ -74,7 +74,7 @@ export class Title extends LitElement implements ITitleProperties {
 	/**
 	 * Returns the template for the element.
 	 */
-	protected render (): TemplateResult {
+	protected render(): TemplateResult {
 		return html`
 			<slot></slot>
 		`;

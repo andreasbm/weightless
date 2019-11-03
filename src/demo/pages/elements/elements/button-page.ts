@@ -9,17 +9,16 @@ import "../../../elements/demo/demo-element";
 
 @customElement("button-page")
 export default class ButtonPage extends LitElement {
-
 	static styles = [sharedStyles];
 
-	protected render () {
+	protected render() {
 		return html`
 			<demo-element default>
 				<code-example-element>
 					<wl-button>Button</wl-button>
 				</code-example-element>
 			</demo-element>
-			
+
 			<wl-title level="3">Inverted, outlined and flat</wl-title>
 			<demo-element>
 				<code-example-element>
@@ -40,7 +39,7 @@ export default class ButtonPage extends LitElement {
 					<wl-button flat inverted outlined disabled>Button</wl-button>
 				</code-example-element>
 			</demo-element>
-			
+
 			<wl-title level="3">Interacts with forms</wl-title>
 			<demo-element>
 				<code-example-element>
@@ -50,7 +49,7 @@ export default class ButtonPage extends LitElement {
 					</form>
 				</code-example-element>
 			</demo-element>
-			
+
 			<wl-title level="3">Fab</wl-title>
 			<demo-element>
 				<code-example-element>
@@ -71,7 +70,7 @@ export default class ButtonPage extends LitElement {
 					</wl-button>
 				</code-example-element>
 			</demo-element>
-			
+
 			<wl-title level="3">No ripple</wl-title>
 			<demo-element>
 				<code-example-element>

@@ -12,8 +12,7 @@ const $navbar = document.querySelector<Nav>("#navbar")!;
 
 let currentPath = path();
 
-
-function updateShadow () {
+function updateShadow() {
 	let shadow = true;
 	if (window.scrollY <= 100 && !currentPath.startsWith("/elements")) {
 		shadow = false;
@@ -27,9 +26,8 @@ function updateShadow () {
 GLOBAL_ROUTER_EVENTS_TARGET.addEventListener(GlobalRouterEventKind.ChangeState, () => {
 	currentPath = path();
 	updateShadow();
-	getMainScrollContainer().scrollTo({top: 0, left: 0});
+	getMainScrollContainer().scrollTo({ top: 0, left: 0 });
 });
-
 
 customElements.whenDefined(ROUTER_SLOT_TAG_NAME).then(() => {
 	const $slot = document.querySelector<RouterSlot>(ROUTER_SLOT_TAG_NAME)!;
@@ -67,8 +65,8 @@ if ("serviceWorker" in navigator) {
 // Track page views
 window.addEventListener(GlobalRouterEventKind.NavigationEnd, () => {
 	track("config", GA_MEASUREMENT_ID, {
-		"page_path": location.pathname,
-		"page_location": location.href
+		page_path: location.pathname,
+		page_location: location.href
 	});
 });
 
@@ -76,8 +74,8 @@ window.addEventListener(GlobalRouterEventKind.NavigationEnd, () => {
 if (window.performance) {
 	const timeSincePageLoad = Math.round(performance.now());
 	track("event", "timing_complete", {
-		"name": "load",
-		"value": timeSincePageLoad,
-		"event_category": "Performance"
+		name: "load",
+		value: timeSincePageLoad,
+		event_category: "Performance"
 	});
 }

@@ -5,7 +5,7 @@ import { assignedNodesMap, createContainer, removeContainer, waitForElement } fr
 import { Banner } from "./banner";
 
 describe("wl-banner", () => {
-	const {expect} = chai;
+	const { expect } = chai;
 	let $banner: Banner;
 	let $container: HTMLElement;
 
@@ -41,4 +41,3 @@ describe("wl-banner", () => {
 		expect($banner.getAttribute("role")).to.equal("banner");
 	});
 });
-

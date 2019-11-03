@@ -7,10 +7,9 @@ import { sharedStyles } from "../../../style/shared";
 
 @customElement("switch-page")
 export default class SwitchPage extends LitElement {
-
 	static styles = [sharedStyles];
 
-	protected render () {
+	protected render() {
 		return html`
 			<demo-element default>
 				<code-example-element>
@@ -18,7 +17,7 @@ export default class SwitchPage extends LitElement {
 					<wl-switch checked></wl-switch>
 				</code-example-element>
 			</demo-element>
-			
+
 			<wl-title level="3">Disabled</wl-title>
 			<demo-element>
 				<code-example-element>

@@ -38,68 +38,68 @@ export abstract class ProgressBehavior extends LitElement implements IProgressBe
 	 * Animation mode.
 	 * @attr
 	 */
-	@property({type: String, reflect: true}) mode: ProgressMode = ProgressMode.INDETERMINATE;
+	@property({ type: String, reflect: true }) mode: ProgressMode = ProgressMode.INDETERMINATE;
 
 	/**
 	 * Progress value.
 	 * @attr
 	 */
-	@property({type: Number}) value: number = 0;
+	@property({ type: Number }) value: number = 0;
 
 	/**
 	 * Max progress value.
 	 * @attr
 	 */
-	@property({type: Number}) max: number = 1;
+	@property({ type: Number }) max: number = 1;
 
 	/**
 	 * Min progress value.
 	 * @attr
 	 */
-	@property({type: Number}) min: number = 0;
+	@property({ type: Number }) min: number = 0;
 
 	/**
 	 * Buffer progress value.
 	 * @attr
 	 */
-	@property({type: Number}) buffer: number = 0;
+	@property({ type: Number }) buffer: number = 0;
 
 	/**
 	 * Max buffer progress value.
 	 * @attr
 	 */
-	@property({type: Number}) bufferMax: number = 1;
+	@property({ type: Number }) bufferMax: number = 1;
 
 	/**
 	 * Min buffer progress value.
 	 * @attr
 	 */
-	@property({type: Number}) bufferMin: number = 0;
+	@property({ type: Number }) bufferMin: number = 0;
 
 	/**
 	 * Role of the progress behavior.
 	 * @attr
 	 */
-	@property({type: String, reflect: true}) role: AriaRole = "progressbar";
+	@property({ type: String, reflect: true }) role: AriaRole = "progressbar";
 
 	/**
 	 * Progress in percentage.
 	 */
-	get progressPerc (): number {
+	get progressPerc(): number {
 		return clamp(this.value / (this.max - this.min), 0, 1);
 	}
 
 	/**
 	 * Buffer progress in percentage.
 	 */
-	get bufferPerc (): number {
+	get bufferPerc(): number {
 		return clamp(this.buffer / (this.bufferMax - this.bufferMin), 0, 1);
 	}
 
 	/**
 	 * Hooks up the element.
 	 */
-	connectedCallback () {
+	connectedCallback() {
 		super.connectedCallback();
 		this.setAttribute("role", this.role);
 	}
@@ -107,7 +107,7 @@ export abstract class ProgressBehavior extends LitElement implements IProgressBe
 	/**
 	 * Updates the aria attributes.
 	 */
-	protected updateAria () {
+	protected updateAria() {
 		renderAttributes(this, {
 			"aria-valuemin": this.min,
 			"aria-valuemax": this.max,
@@ -122,7 +122,7 @@ export abstract class ProgressBehavior extends LitElement implements IProgressBe
 	 * Handle that the properties has changed.
 	 * @param changedProperties
 	 */
-	protected updated (changedProperties: Map<keyof IProgressBehaviorProperties, unknown>) {
+	protected updated(changedProperties: Map<keyof IProgressBehaviorProperties, unknown>) {
 		super.updated(changedProperties);
 		this.updateAria();
 	}

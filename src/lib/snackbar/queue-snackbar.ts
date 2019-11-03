@@ -13,6 +13,6 @@ const queue: IQueuedOverlay<any, IOpenOverlayConfig & Partial<ISnackbarBasePrope
  * @param config
  * @param queueConfig
  */
-export async function queueSnackbar<R> (config: IOpenOverlayConfig & Partial<ISnackbarBaseProperties>, queueConfig: Partial<IQueueConfig> = {}) {
+export async function queueSnackbar<R>(config: IOpenOverlayConfig & Partial<ISnackbarBaseProperties>, queueConfig: Partial<IQueueConfig> = {}) {
 	return queueOverlay(queue, () => showSnackbar(config), queueConfig);
 }

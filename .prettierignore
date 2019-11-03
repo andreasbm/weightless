@@ -1,0 +1,8 @@
+*.md
+node_modules
+.DS_Store
+.*
+*.gif
+*.png
+dist
+out

@@ -7,7 +7,7 @@ $input-state-color-inactive: var(--input-state-color-inactive, #{color("shade", 
 $input-state-color-active: var(--input-state-color-active, #{color("primary")});
 
 /* Hover state color */
-$input-state-color-hover: var(--input-state-border-color-hover, #{color("shade", $dark-hue)});
+$input-state-color-hover: var(--input-state-color-hover, #{color("shade", $dark-hue)});
 
 /* Invalid state color */
 $input-state-color-invalid: var(--input-state-color-invalid, #{color("error")});

@@ -8,14 +8,16 @@ import { sharedStyles } from "../../../style/shared";
 
 @customElement("textfield-page")
 export default class TextfieldPage extends LitElement {
-
-	static styles = [sharedStyles, cssResult(`
+	static styles = [
+		sharedStyles,
+		cssResult(`
 		wl-textfield:not(:last-child) {
 			margin: 0 0 12px;
 		}
-	`)];
+	`)
+	];
 
-	protected render () {
+	protected render() {
 		return html`
 			<demo-element default>
 				<code-example-element>
@@ -23,7 +25,7 @@ export default class TextfieldPage extends LitElement {
 					<wl-textfield label="Label"></wl-textfield>
 				</code-example-element>
 			</demo-element>
-			
+
 			<wl-title level="3">Outlined</wl-title>
 			<demo-element>
 				<code-example-element>
@@ -31,7 +33,7 @@ export default class TextfieldPage extends LitElement {
 					<wl-textfield outlined label="Label"></wl-textfield>
 				</code-example-element>
 			</demo-element>
-			
+
 			<wl-title level="3">Filled</wl-title>
 			<demo-element>
 				<code-example-element>
@@ -39,7 +41,7 @@ export default class TextfieldPage extends LitElement {
 					<wl-textfield filled label="Label"></wl-textfield>
 				</code-example-element>
 			</demo-element>
-			
+
 			<wl-title level="3">Before & after slots</wl-title>
 			<demo-element>
 				<code-example-element>
@@ -57,19 +59,19 @@ export default class TextfieldPage extends LitElement {
 					</wl-textfield>
 				</code-example-element>
 			</demo-element>
-			
+
 			<wl-title level="3">Datalist</wl-title>
 			<demo-element>
 				<code-example-element>
 					<wl-textfield outlined label="Datalist" list="datalist"></wl-textfield>
 					<datalist id="datalist">
-					  <option value="Option 1"></option>
-					  <option value="Option 2"></option>
-					  <option value="Option 3"></option>
+						<option value="Option 1"></option>
+						<option value="Option 2"></option>
+						<option value="Option 3"></option>
 					</datalist>
 				</code-example-element>
 			</demo-element>
-			
+
 			<wl-title level="3">Disabled</wl-title>
 			<demo-element>
 				<code-example-element>
@@ -95,7 +97,6 @@ export default class TextfieldPage extends LitElement {
 					<wl-textfield label="File" type="file"></wl-textfield>
 				</code-example-element>
 			</demo-element>
-
 		`;
 	}
 }

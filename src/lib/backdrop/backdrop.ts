@@ -8,8 +8,7 @@ import styles from "./backdrop.scss";
 /**
  * Backdrop properties.
  */
-export interface IBackdropProperties {
-}
+export interface IBackdropProperties {}
 
 /**
  * Dark layer to use behind overlayed elements.
@@ -23,12 +22,12 @@ export class Backdrop extends LitElement implements IBackdropProperties {
 	 * Role of the backdrop.
 	 * @attr
 	 */
-	@property({type: String, reflect: true}) role: AriaRole = "presentation";
+	@property({ type: String, reflect: true }) role: AriaRole = "presentation";
 
 	/**
 	 * Returns the template of the element.
 	 */
-	protected render (): TemplateResult {
+	protected render(): TemplateResult {
 		return html``;
 	}
 }

@@ -16,7 +16,7 @@ Allow users to take actions, and make choices, with a single tap.
 | `fab`      | `fab`      | `boolean`              | false    | Makes the button round and squared.              |
 | `flat`     | `flat`     | `boolean`              | false    | Makes the button flat.                           |
 | `inverted` | `inverted` | `boolean`              | false    | Inverts the colors of the button.                |
-| `name`     | `name`     | `string`               |          | Name of the native form element.                 |
+| `name`     | `name`     | `string \| undefined`  |          | Name of the native form element.                 |
 | `noRipple` | `noRipple` | `boolean`              | false    | Deactivates the ripple.                          |
 | `outlined` | `outlined` | `boolean`              | false    | Makes the button outlined.                       |
 | `readonly` | `readonly` | `boolean`              | false    | Makes the element readonly (disabled but tabbable) |
@@ -24,6 +24,15 @@ Allow users to take actions, and make choices, with a single tap.
 | `role`     | `role`     | `AriaRole`             | "button" | Role of the button.                              |
 | `type`     | `type`     | `"button" \| "submit"` | "submit" | Type of the button.                              |
 | `value`    | `value`    | `string`               | ""       | Value of the form element.                       |
+
+
+[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#slots)
+
+## ➤ Slots
+
+| Name | Description      |
+|------|------------------|
+|      | Default content. |
 
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#css-custom-properties)
@@ -51,15 +60,6 @@ Allow users to take actions, and make choices, with a single tap.
 | `--button-shadow-color`       | Default shadow color                             |
 | `--button-shadow-color-hover` | Shadow color when :hover or :focus               |
 | `--button-transition`         | Transition                                       |
-
-
-[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#slots)
-
-## ➤ Slots
-
-| Name | Description      |
-|------|------------------|
-|      | Default content. |
 
 
 

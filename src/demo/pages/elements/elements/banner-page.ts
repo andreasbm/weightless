@@ -9,10 +9,9 @@ import { sharedStyles } from "../../../style/shared";
 
 @customElement("banner-page")
 export default class BannerPage extends LitElement {
-
 	static styles = [sharedStyles];
 
-	protected render () {
+	protected render() {
 		return html`
 			<demo-element default>
 				<code-example-element>
@@ -24,7 +23,6 @@ export default class BannerPage extends LitElement {
 					</wl-banner>
 				</code-example-element>
 			</demo-element>
-			
 		`;
 	}
 }

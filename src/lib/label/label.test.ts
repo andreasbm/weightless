@@ -5,7 +5,7 @@ import { Checkbox } from "../checkbox/checkbox";
 import { Label } from "./label";
 
 describe("wl-label", () => {
-	const {expect} = chai;
+	const { expect } = chai;
 	let $container: HTMLElement;
 	let $label1: Label;
 	let $checkbox1: Checkbox;
@@ -44,8 +44,7 @@ describe("wl-label", () => {
 	 * @param $checkbox
 	 * @param done
 	 */
-	function expectRefireClick ($label: Label, $checkbox: Checkbox, done: (() => void)) {
-
+	function expectRefireClick($label: Label, $checkbox: Checkbox, done: () => void) {
 		// Listen for click event (prevent the default reload behavior).
 		$checkbox.addEventListener("click", e => {
 			e.preventDefault();
@@ -76,4 +75,3 @@ describe("wl-label", () => {
 		expect($checkbox1.getAttribute("aria-labelledby")).to.equal($label1.id);
 	});
 });
-

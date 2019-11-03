@@ -25,8 +25,7 @@ export interface ISnackbarProperties extends ISnackbarBaseProperties, IOverlayBe
 /**
  * Configuration used when showing a snackbar.
  */
-export interface ISnackbarConfig extends Partial<ISnackbarBaseProperties> {
-}
+export interface ISnackbarConfig extends Partial<ISnackbarBaseProperties> {}
 
 /**
  * Default configuration when showing a snackbar.
@@ -60,41 +59,40 @@ export class Snackbar<R = unknown> extends OverlayBehavior<R, Partial<ISnackbarP
 	 * Role of the snackbar.
 	 * @attr
 	 */
-	@property({type: String, reflect: true}) role: AriaRole = "banner";
+	@property({ type: String, reflect: true }) role: AriaRole = "banner";
 
 	/**
 	 * Time in ms before the snackbar is hidden automatically.
 	 * @attr
 	 */
-	@property({type: Number}) hideDelay = 5000;
+	@property({ type: Number }) hideDelay = 5000;
 
 	/**
 	 * Backdrop element.
 	 */
-	@query("#backdrop") protected $backdrop: Backdrop;
+	@query("#backdrop") protected $backdrop!: Backdrop;
 
 	/**
 	 * Snackbar element.
 	 */
-	@query("#snackbar") protected $snackbar: FocusTrap;
+	@query("#snackbar") protected $snackbar!: FocusTrap;
 
 	/**
 	 * Focus trap element.
 	 */
-	protected get $focusTrap (): FocusTrap {
+	protected get $focusTrap(): FocusTrap {
 		return this.$snackbar;
 	}
 
 	/**
 	 * Timeout that automatically hides the snackbar.
 	 */
-	protected autoHideTimeout: number;
+	protected autoHideTimeout: number | null = null;
 
 	/**
 	 * Animates the snackbar in.
 	 */
-	protected animateIn () {
-
+	protected animateIn() {
 		// We only want to run the setup function once.
 		let ready = false;
 		const setup = () => {
@@ -104,16 +102,13 @@ export class Snackbar<R = unknown> extends OverlayBehavior<R, Partial<ISnackbarP
 		};
 
 		// The animation of the snackbar
-		const snackbarAnimation = this.$snackbar.animate(<Keyframe[]>[
-			{transform: `translateY(100%)`, opacity: `${0}`},
-			{transform: `translateY(0)`, opacity: `${1}`}
-		], this.animationConfig);
+		const snackbarAnimation = this.$snackbar.animate(
+			<Keyframe[]>[{ transform: `translateY(100%)`, opacity: `${0}` }, { transform: `translateY(0)`, opacity: `${1}` }],
+			this.animationConfig
+		);
 
 		// The animation of the backdrop
-		const backdropAnimation = this.$backdrop.animate(<Keyframe[]>[
-			{opacity: `${0}`},
-			{opacity: `${1}`}
-		], this.animationConfig);
+		const backdropAnimation = this.$backdrop.animate(<Keyframe[]>[{ opacity: `${0}` }, { opacity: `${1}` }], this.animationConfig);
 
 		backdropAnimation.onfinish = setup;
 		snackbarAnimation.onfinish = setup;
@@ -125,8 +120,7 @@ export class Snackbar<R = unknown> extends OverlayBehavior<R, Partial<ISnackbarP
 	 * Animates the snackbar out.
 	 * @param result
 	 */
-	protected animateOut (result?: R) {
-
+	protected animateOut(result?: R) {
 		// Clear the timeout if there is an ongoing auto hide timeout.
 		if (this.autoHideTimeout != null) {
 			window.clearTimeout(this.autoHideTimeout);
@@ -143,16 +137,13 @@ export class Snackbar<R = unknown> extends OverlayBehavior<R, Partial<ISnackbarP
 		};
 
 		// The animation of the snackbar.
-		const snackbarAnimation = this.$snackbar.animate(<Keyframe[]>[
-			{transform: `translateY(0)`, opacity: `${1}`},
-			{transform: `translateY(100%)`, opacity: `${0}`}
-		], this.animationConfig);
+		const snackbarAnimation = this.$snackbar.animate(
+			<Keyframe[]>[{ transform: `translateY(0)`, opacity: `${1}` }, { transform: `translateY(100%)`, opacity: `${0}` }],
+			this.animationConfig
+		);
 
 		// The animation of the backdrop.
-		const backdropAnimation = this.$backdrop.animate(<Keyframe[]>[
-			{opacity: `${1}`},
-			{opacity: `${0}`}
-		], this.animationConfig);
+		const backdropAnimation = this.$backdrop.animate(<Keyframe[]>[{ opacity: `${1}` }, { opacity: `${0}` }], this.animationConfig);
 
 		backdropAnimation.onfinish = cleanup;
 		snackbarAnimation.onfinish = cleanup;
@@ -163,7 +154,7 @@ export class Snackbar<R = unknown> extends OverlayBehavior<R, Partial<ISnackbarP
 	/**
 	 * When the snackbar shows we start a timeout that hides it.
 	 */
-	didShow () {
+	didShow() {
 		super.didShow();
 
 		// Start timeout to hide the snackbar.
@@ -177,7 +168,7 @@ export class Snackbar<R = unknown> extends OverlayBehavior<R, Partial<ISnackbarP
 	/**
 	 * Returns the template of the element.
 	 */
-	protected render (): TemplateResult {
+	protected render(): TemplateResult {
 		return html`
 			<wl-backdrop id="backdrop" @click="${this.clickAway}"></wl-backdrop>
 			<focus-trap id="snackbar" ?inactive="${!this.open || this.disableFocusTrap}">

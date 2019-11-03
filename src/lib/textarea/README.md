@@ -10,22 +10,22 @@ Multiline text fields.
 
 ## ➤ Properties
 
-| Property        | Attribute       | Type            | Default   | Description                                      |
-|-----------------|-----------------|-----------------|-----------|--------------------------------------------------|
-| `autocomplete`  | `autocomplete`  | `"on" \| "off"` |           | Whether autocomplete is on or off.               |
-| `disabled`      | `disabled`      | `boolean`       | false     | Disables the element.                            |
-| `filled`        | `filled`        | `boolean`       | false     | Fills the input with a solid color.              |
-| `label`         | `label`         | `string`        |           | Label text.                                      |
-| `maxLength`     | `maxLength`     | `number`        |           | Max value length.                                |
-| `minLength`     | `minLength`     | `number`        |           | Min value length.                                |
-| `name`          | `name`          | `string`        |           | Name of the native form element.                 |
-| `outlined`      | `outlined`      | `boolean`       | false     | Makes the input outlined.                        |
-| `pattern`       | `pattern`       | `string`        |           | Value pattern.                                   |
-| `readonly`      | `readonly`      | `boolean`       | false     | Makes the element readonly (disabled but tabbable) |
-| `required`      | `required`      | `boolean`       | false     | Makes the element required in a form context.    |
-| `role`          | `role`          | `AriaRole`      | "textbox" | Role of the input.                               |
-| `value`         | `value`         | `string`        |           | Value of the form element.                       |
-| `valueAsNumber` | `valueAsNumber` | `number`        |           | Value of the slider.                             |
+| Property        | Attribute       | Type                         | Default   | Description                                      |
+|-----------------|-----------------|------------------------------|-----------|--------------------------------------------------|
+| `autocomplete`  | `autocomplete`  | `"on" \| "off" \| undefined` |           | Whether autocomplete is on or off.               |
+| `disabled`      | `disabled`      | `boolean`                    | false     | Disables the element.                            |
+| `filled`        | `filled`        | `boolean`                    | false     | Fills the input with a solid color.              |
+| `label`         | `label`         | `string \| undefined`        |           | Label text.                                      |
+| `maxLength`     | `maxLength`     | `number \| undefined`        |           | Max value length.                                |
+| `minLength`     | `minLength`     | `number \| undefined`        |           | Min value length.                                |
+| `name`          | `name`          | `string \| undefined`        |           | Name of the native form element.                 |
+| `outlined`      | `outlined`      | `boolean`                    | false     | Makes the input outlined.                        |
+| `pattern`       | `pattern`       | `string \| undefined`        |           | Value pattern.                                   |
+| `readonly`      | `readonly`      | `boolean`                    | false     | Makes the element readonly (disabled but tabbable) |
+| `required`      | `required`      | `boolean`                    | false     | Makes the element required in a form context.    |
+| `role`          | `role`          | `AriaRole`                   | "textbox" | Role of the input.                               |
+| `value`         | `value`         | `string`                     |           | Value of the form element.                       |
+| `valueAsNumber` | `valueAsNumber` | `number`                     |           | Value of the slider.                             |
 
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#events)
@@ -37,6 +37,16 @@ Multiline text fields.
 | `input`   | Dispatches from the native input event each time the input changes. |
 | `invalid` | Dispatched when the input becomes invalid.       |
 | `submit`  | Dispatched when the enter key is hit while pressing ctrl or the meta-key. |
+
+
+[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#slots)
+
+## ➤ Slots
+
+| Name     | Description               |
+|----------|---------------------------|
+| `after`  | Content after the input.  |
+| `before` | Content before the input. |
 
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#css-custom-properties)
@@ -76,16 +86,6 @@ Multiline text fields.
 | `--textarea-max-height`               | Max height                           |
 | `--textarea-min-height`               | Min height                           |
 | `--textarea-resize`                   | Resize strategy                      |
-
-
-[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#slots)
-
-## ➤ Slots
-
-| Name     | Description               |
-|----------|---------------------------|
-| `after`  | Content after the input.  |
-| `before` | Content before the input. |
 
 
 

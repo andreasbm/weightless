@@ -33,19 +33,19 @@ export class Label extends LitElement implements ILabelProperties {
 	 * Styles the label as required.
 	 * @attr
 	 */
-	@property({type: Boolean}) required: boolean = false;
+	@property({ type: Boolean }) required: boolean = false;
 
 	/**
 	 * Caps the label element with ellipsis if overflowing.
 	 * @attr
 	 */
-	@property({type: Boolean}) nowrap: boolean = false;
+	@property({ type: Boolean }) nowrap: boolean = false;
 
 	/**
 	 * Query of the form element click events are re-fired upon.
 	 * @attr
 	 */
-	@property({type: String}) for?: string;
+	@property({ type: String }) for?: string;
 
 	/**
 	 * Event listener subscriptions.
@@ -56,12 +56,10 @@ export class Label extends LitElement implements ILabelProperties {
 	 * Hooks up the element.
 	 * @param props
 	 */
-	firstUpdated (props: PropertyValues) {
+	firstUpdated(props: PropertyValues) {
 		super.firstUpdated(props);
 
-		this.listeners.push(
-			addListener(this, "click", this.refireClick.bind(this))
-		);
+		this.listeners.push(addListener(this, "click", this.refireClick.bind(this)));
 
 		this.updateAria();
 	}
@@ -69,7 +67,7 @@ export class Label extends LitElement implements ILabelProperties {
 	/**
 	 * Tears down the element.
 	 */
-	disconnectedCallback () {
+	disconnectedCallback() {
 		super.disconnectedCallback();
 		removeListeners(this.listeners);
 	}
@@ -77,8 +75,7 @@ export class Label extends LitElement implements ILabelProperties {
 	/**
 	 * Returns the target element.
 	 */
-	getTargetElement (): Element | null {
-
+	getTargetElement(): Element | null {
 		// Only continue of a target was specified
 		if (this.for == null) {
 			const $elements = getSlottedElements(this.shadowRoot!);
@@ -91,14 +88,12 @@ export class Label extends LitElement implements ILabelProperties {
 		return matches.length > 0 ? matches[0] : null;
 	}
 
-
 	/**
 	 * Updates the aria attributes.
 	 */
-	protected updateAria () {
+	protected updateAria() {
 		const $target = this.getTargetElement();
 		if ($target != null) {
-
 			// If the ID is not defined we give the label a random ID.
 			if (this.id == "") {
 				this.id = uniqueID();
@@ -112,12 +107,12 @@ export class Label extends LitElement implements ILabelProperties {
 	/**
 	 * Refires the click event on the target.
 	 */
-	protected refireClick (e: MouseEvent) {
+	protected refireClick(e: MouseEvent) {
 		const $target = this.getTargetElement();
 
 		// Only refire the click if the target was not the target element to begin with
 		if ($target != null && e.target !== $target) {
-			$target.dispatchEvent(new MouseEvent("click", {relatedTarget: this}));
+			$target.dispatchEvent(new MouseEvent("click", { relatedTarget: this }));
 			if ($target instanceof HTMLElement) {
 				$target.focus();
 			}
@@ -127,7 +122,7 @@ export class Label extends LitElement implements ILabelProperties {
 	/**
 	 * Returns the template for the element.
 	 */
-	protected render (): TemplateResult {
+	protected render(): TemplateResult {
 		return html`
 			<slot></slot>
 		`;

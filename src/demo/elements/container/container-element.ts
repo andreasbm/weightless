@@ -8,12 +8,12 @@ import styles from "./container-element.scss";
 export class ContainerElement extends LitElement {
 	static styles = [sharedStyles, cssResult(styles)];
 
-	@property({type: Boolean, reflect: true}) centered = false;
+	@property({ type: Boolean, reflect: true }) centered = false;
 
 	/**
 	 * Returns the template for the element.
 	 */
-	protected render () {
+	protected render() {
 		return html`
 			<div id="container">
 				<slot></slot>

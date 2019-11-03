@@ -8,8 +8,7 @@ import styles from "./tooltip.scss";
 /**
  * Properties of the tooltip.
  */
-export interface ITooltipProperties extends IPopoverProperties {
-}
+export interface ITooltipProperties extends IPopoverProperties {}
 
 /**
  * Informative context related text.
@@ -24,8 +23,10 @@ export class Tooltip extends Popover implements ITooltipProperties {
 	/**
 	 * Renders the content.
 	 */
-	protected renderContent (): TemplateResult {
-		return html`<wl-popover-card><slot></slot></wl-popover-card>`;
+	protected renderContent(): TemplateResult {
+		return html`
+			<wl-popover-card><slot></slot></wl-popover-card>
+		`;
 	}
 }
 

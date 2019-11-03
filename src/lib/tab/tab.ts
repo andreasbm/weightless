@@ -54,18 +54,18 @@ export class Tab extends RadioBehavior implements ITabProperties {
 	 * Role of the tab.
 	 * @attr
 	 */
-	@property({type: String, reflect: true}) role: AriaRole = "tab";
+	@property({ type: String, reflect: true }) role: AriaRole = "tab";
 
 	/**
 	 * Vertical tab style.
 	 * @attr
 	 */
-	@property({type: Boolean, reflect: true}) vertical: boolean = false;
+	@property({ type: Boolean, reflect: true }) vertical: boolean = false;
 
 	/**
 	 * Query the group.
 	 */
-	queryGroup (): RadioBehavior[] {
+	queryGroup(): RadioBehavior[] {
 		return Array.from(this.parentElement!.querySelectorAll(`${this.nodeName.toLowerCase()}:not([disabled])`));
 	}
 
@@ -73,23 +73,22 @@ export class Tab extends RadioBehavior implements ITabProperties {
 	 * Focuses a grouped element.
 	 * @param elem
 	 */
-	rowToElement (elem: RadioBehavior) {
+	rowToElement(elem: RadioBehavior) {
 		elem.focus();
 	}
 
 	/**
 	 * Returns the template of the element.
 	 */
-	protected render (): TemplateResult {
+	protected render(): TemplateResult {
 		return html`
 			<slot name="before"></slot>
 			<slot></slot>
 			<wl-ripple id="ripple" overlay .target="${this}" ?disabled="${this.disabled}"></wl-ripple>
-		    ${this.renderFormElement()}
+			${this.renderFormElement()}
 		`;
 	}
 }
-
 
 declare global {
 	interface HTMLElementTagNameMap {

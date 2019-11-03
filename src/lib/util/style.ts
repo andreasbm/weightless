@@ -6,7 +6,7 @@
  */
 import { StyleInfo } from "lit-html/directives/style-map";
 
-export function getWebkitMatrix (computedStyle: CSSStyleDeclaration) {
+export function getWebkitMatrix(computedStyle: CSSStyleDeclaration) {
 	return new WebKitCSSMatrix(<string | number[]>computedStyle.webkitTransform);
 }
 
@@ -16,7 +16,7 @@ export function getWebkitMatrix (computedStyle: CSSStyleDeclaration) {
  * @returns {number}
  * @param computedStyle
  */
-export function getTranslateX (computedStyle: CSSStyleDeclaration) {
+export function getTranslateX(computedStyle: CSSStyleDeclaration) {
 	return getWebkitMatrix(computedStyle).m41;
 }
 
@@ -26,7 +26,7 @@ export function getTranslateX (computedStyle: CSSStyleDeclaration) {
  * @returns {number}
  * @param computedStyle
  */
-export function getTranslateY (computedStyle: CSSStyleDeclaration) {
+export function getTranslateY(computedStyle: CSSStyleDeclaration) {
 	return getWebkitMatrix(computedStyle).m42;
 }
 
@@ -37,7 +37,7 @@ export function getTranslateY (computedStyle: CSSStyleDeclaration) {
  * @param computedStyle
  * @param rect
  */
-export function getScale (computedStyle: CSSStyleDeclaration, rect?: ClientRect | DOMRect): {x: number, y: number} {
+export function getScale(computedStyle: CSSStyleDeclaration, rect?: ClientRect | DOMRect): { x: number; y: number } {
 	const matrix = getWebkitMatrix(computedStyle);
 	return {
 		x: (rect == null ? computedStyle.getPropertyValue("width") : rect.width) === 0 ? 0 : matrix.a,
@@ -57,7 +57,7 @@ export function getScale (computedStyle: CSSStyleDeclaration, rect?: ClientRect 
  * Returns the opacity of an element. If the element is hidden, 0 is returned.
  * @param computedStyle
  */
-export function getOpacity (computedStyle: CSSStyleDeclaration): number {
+export function getOpacity(computedStyle: CSSStyleDeclaration): number {
 	if (computedStyle.getPropertyValue("width") === "0px" || computedStyle.getPropertyValue("height") === "0px") {
 		return 0;
 	}
@@ -80,4 +80,3 @@ export const HIDDEN_STYLE_MAP: StyleInfo = {
 	height: "100%",
 	cursor: "inherit"
 };
-

@@ -118,8 +118,9 @@ You are more than welcome to contribute to this repository! Below are some instr
 
 1. Clone this repository by running `git clone https://github.com/andreasbm/weightless.git`.
 2. Run `npm i` to install all dependencies.
-3. Spin up the development server with `npm run s`. The browser should automatically be opened at the correct url.
-5. Run tests with `npm run test`.
+3. Spin up the development server with `npm run s`. The browser should automatically be opened at the correct url. If not, you can open your browser and go to `http://localhost:1350`.
+4. Run tests with `npm run test`.
+5. Lint the files with `npm run lint`.
 6. Compile the documentation by running `npm run docs`.
 
 The elements are written in [Typescript](https://www.typescriptlang.org/) and the stylesheets are written in [SASS](https://sass-lang.com/). All of the web components uses [lit-element](https://lit-element.polymer-project.org/).

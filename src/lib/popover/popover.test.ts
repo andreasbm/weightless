@@ -3,7 +3,7 @@ import "../popover";
 import { Popover } from "./popover";
 
 describe("wl-popover", () => {
-	const {expect} = chai;
+	const { expect } = chai;
 	let $popover: Popover;
 	let $container: HTMLElement;
 
@@ -32,4 +32,3 @@ describe("wl-popover", () => {
 
 	// TODO: Add more tests for the popover
 });
-

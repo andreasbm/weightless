@@ -7,8 +7,7 @@ import { ISwitchBehaviorProperties, SwitchBehavior } from "../switch/switch-beha
 
 import styles from "./radio-behavior.scss";
 
-export interface IRadioBehaviorProperties extends ISwitchBehaviorProperties {
-}
+export interface IRadioBehaviorProperties extends ISwitchBehaviorProperties {}
 
 /**
  * Radio behavior.
@@ -20,7 +19,7 @@ export abstract class RadioBehavior extends SwitchBehavior implements IRadioBeha
 	 * Role of the radio behavior.
 	 * @attr
 	 */
-	@property({type: String, reflect: true}) role: AriaRole = "radio";
+	@property({ type: String, reflect: true }) role: AriaRole = "radio";
 
 	/**
 	 * Form element type.
@@ -30,7 +29,7 @@ export abstract class RadioBehavior extends SwitchBehavior implements IRadioBeha
 	/**
 	 * Query the group.
 	 */
-	queryGroup (): RadioBehavior[] {
+	queryGroup(): RadioBehavior[] {
 		if (this.name != null) {
 			return queryParentRoots<RadioBehavior>(this, `${this.nodeName.toLowerCase()}[name=${this.name}]:not([disabled])`);
 		}
@@ -42,7 +41,7 @@ export abstract class RadioBehavior extends SwitchBehavior implements IRadioBeha
 	 * Checks and focuses a grouped element.
 	 * @param elem
 	 */
-	rowToElement (elem: RadioBehavior) {
+	rowToElement(elem: RadioBehavior) {
 		elem.click();
 		elem.focus();
 	}
@@ -50,7 +49,7 @@ export abstract class RadioBehavior extends SwitchBehavior implements IRadioBeha
 	/**
 	 * Checks and unchecks the component.
 	 */
-	protected toggle () {
+	protected toggle() {
 		this.checked = true;
 		this.dispatchChangeEvent();
 	}
@@ -58,8 +57,7 @@ export abstract class RadioBehavior extends SwitchBehavior implements IRadioBeha
 	/**
 	 * Updates the tabindex.
 	 */
-	protected updateTabindex (props: Map<keyof ISwitchBehaviorProperties, unknown>) {
-
+	protected updateTabindex(props: Map<keyof ISwitchBehaviorProperties, unknown>) {
 		// Remove from tab order if disabled or if not checked and the group is checked.
 		if (props.has("disabled") || props.has("checked")) {
 			updateTabindex(this, this.disabled || (!this.checked && this.isGroupedChecked()));
@@ -71,11 +69,10 @@ export abstract class RadioBehavior extends SwitchBehavior implements IRadioBeha
 		}
 	}
 
-
 	/**
 	 * Returns whether at least one radio from the group is checked.
 	 */
-	protected isGroupedChecked () {
+	protected isGroupedChecked() {
 		return this.queryGroup().find(radio => radio.checked) != null;
 	}
 
@@ -83,7 +80,7 @@ export abstract class RadioBehavior extends SwitchBehavior implements IRadioBeha
 	 * Unchecks the rest of the group.
 	 * Also removes the other radios from the tab order to support rowing tabindex.
 	 */
-	protected uncheckGroup () {
+	protected uncheckGroup() {
 		const group = this.queryGroup();
 		for (const radio of group) {
 			if (radio === this) continue;
@@ -97,9 +94,8 @@ export abstract class RadioBehavior extends SwitchBehavior implements IRadioBeha
 	 * Adds support for rowing tabindex.
 	 * @param e
 	 */
-	protected onKeyDown (e: KeyboardEvent) {
+	protected onKeyDown(e: KeyboardEvent) {
 		super.onKeyDown(e);
 		row(this, e);
 	}
 }
-

@@ -3,7 +3,7 @@ import "../backdrop";
 import { Backdrop } from "./backdrop";
 
 describe("wl-backdrop", () => {
-	const {expect} = chai;
+	const { expect } = chai;
 	let $backdrop: Backdrop;
 	let $container: HTMLElement;
 
@@ -19,8 +19,7 @@ describe("wl-backdrop", () => {
 	after(() => removeContainer($container));
 
 	it("should have a presentation role", () => {
-		expect($backdrop).to.exist
+		expect($backdrop).to.exist;
 		expect($backdrop.getAttribute("role")).to.equal("presentation");
 	});
 });
-

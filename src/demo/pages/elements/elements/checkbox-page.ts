@@ -7,10 +7,9 @@ import { sharedStyles } from "../../../style/shared";
 
 @customElement("checkbox-page")
 export default class CheckboxPage extends LitElement {
-
 	static styles = [sharedStyles];
 
-	protected render () {
+	protected render() {
 		return html`
 			<demo-element default>
 				<code-example-element>
@@ -20,7 +19,7 @@ export default class CheckboxPage extends LitElement {
 					<wl-checkbox checked indeterminate></wl-checkbox>
 				</code-example-element>
 			</demo-element>
-			
+
 			<wl-title level="3">Disabled</wl-title>
 			<demo-element>
 				<code-example-element>

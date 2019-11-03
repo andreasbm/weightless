@@ -9,7 +9,7 @@ import styles from "./card.scss";
  * Properties of the card.
  */
 export interface ICardProperties {
-	hoverable: boolean
+	hoverable: boolean;
 }
 
 /**
@@ -32,20 +32,21 @@ export interface ICardProperties {
  */
 @customElement("wl-card")
 export class Card extends LitElement implements ICardProperties {
-
 	static styles = [sharedStyles, cssResult(styles)];
 
 	/**
 	 * Makes the card hoverable.
 	 * @attr
 	 */
-	@property({reflect: true, type: Boolean}) hoverable: boolean = false;
+	@property({ reflect: true, type: Boolean }) hoverable: boolean = false;
 
 	/**
 	 * Returns the template of the element.
 	 */
-	protected render (): TemplateResult {
-		return html`<slot></slot>`;
+	protected render(): TemplateResult {
+		return html`
+			<slot></slot>
+		`;
 	}
 }
 

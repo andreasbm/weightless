@@ -3,7 +3,7 @@ import "../ripple";
 import { Ripple } from "./ripple";
 
 describe("wl-ripple", () => {
-	const {expect} = chai;
+	const { expect } = chai;
 	let $ripple: Ripple;
 	let $container: HTMLElement;
 
@@ -22,4 +22,3 @@ describe("wl-ripple", () => {
 		expect($ripple.getAttribute("role")).to.equal("presentation");
 	});
 });
-

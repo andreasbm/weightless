@@ -34,19 +34,19 @@ export abstract class SwitchBehavior extends FormElementBehavior implements ISwi
 	 * Checks the switch.
 	 * @attr
 	 */
-	@property({type: Boolean, reflect: true}) checked: boolean = false;
+	@property({ type: Boolean, reflect: true }) checked: boolean = false;
 
 	/**
 	 * Aria checked attribute.
 	 * @attr aria-checked
 	 */
-	@property({type: String, reflect: true, attribute: "aria-checked"}) ariaChecked: string = this.checked.toString();
+	@property({ type: String, reflect: true, attribute: "aria-checked" }) ariaChecked: string = this.checked.toString();
 
 	/**
 	 * Role of the switch.
 	 * @attr
 	 */
-	@property({type: String, reflect: true}) role: AriaRole = "checkbox";
+	@property({ type: String, reflect: true }) role: AriaRole = "checkbox";
 
 	/**
 	 * Type of the form element.
@@ -57,7 +57,7 @@ export abstract class SwitchBehavior extends FormElementBehavior implements ISwi
 	 * Hooks up the element.
 	 * @param props
 	 */
-	protected firstUpdated (props: Map<keyof ISwitchBehaviorProperties, unknown>) {
+	protected firstUpdated(props: Map<keyof ISwitchBehaviorProperties, unknown>) {
 		super.firstUpdated(<Map<keyof IFormElementBehaviorProperties, unknown>>props);
 
 		this.onClick = this.onClick.bind(this);
@@ -69,7 +69,7 @@ export abstract class SwitchBehavior extends FormElementBehavior implements ISwi
 	 * Reacts to properties when they change.
 	 * @param props
 	 */
-	protected updated (props: Map<keyof ISwitchBehaviorProperties, unknown>) {
+	protected updated(props: Map<keyof ISwitchBehaviorProperties, unknown>) {
 		super.updated(props as Map<keyof IFormElementBehaviorProperties, unknown>);
 
 		// When checked we need to show the aria checked attribute
@@ -79,7 +79,7 @@ export abstract class SwitchBehavior extends FormElementBehavior implements ISwi
 	/**
 	 * Updates the aria attributes.
 	 */
-	protected updateAria (props: PropertyValues) {
+	protected updateAria(props: PropertyValues) {
 		if (props.has("checked")) {
 			this.ariaChecked = this.checked.toString();
 		}
@@ -88,18 +88,15 @@ export abstract class SwitchBehavior extends FormElementBehavior implements ISwi
 	/**
 	 * Attaches the keydown and click listeners.
 	 */
-	protected attachListeners () {
-		this.listeners.push(
-			addListener(this, "click", this.onClick.bind(this)),
-			addListener(this, "keydown", this.onKeyDown.bind(this))
-		);
+	protected attachListeners() {
+		this.listeners.push(addListener(this, "click", this.onClick.bind(this)), addListener(this, "keydown", this.onKeyDown.bind(this)));
 	}
 
 	/**
 	 * Handles that the switch was clicked.
 	 * @param e
 	 */
-	protected onClick (e: MouseEvent) {
+	protected onClick(e: MouseEvent) {
 		if (this.disabled) {
 			stopEvent(e);
 			return;
@@ -111,7 +108,7 @@ export abstract class SwitchBehavior extends FormElementBehavior implements ISwi
 	/**
 	 * Checks and unchecks the component.
 	 */
-	protected toggle () {
+	protected toggle() {
 		this.checked = !this.checked;
 		this.dispatchChangeEvent();
 	}
@@ -119,11 +116,10 @@ export abstract class SwitchBehavior extends FormElementBehavior implements ISwi
 	/**
 	 * Dispatch that the switch was toggled.
 	 */
-	protected dispatchChangeEvent () {
-
+	protected dispatchChangeEvent() {
 		// Defer the dispatching of the event until the UI on the grouped elements have updated.
 		requestAnimationFrame(() => {
-			this.dispatchEvent(new CustomEvent(SwitchBehaviorEvent.CHANGE, {composed: true, bubbles: true}))
+			this.dispatchEvent(new CustomEvent(SwitchBehaviorEvent.CHANGE, { composed: true, bubbles: true, detail: this.checked }));
 		});
 	}
 
@@ -131,7 +127,7 @@ export abstract class SwitchBehavior extends FormElementBehavior implements ISwi
 	 * Handles the key down event.
 	 * @param e
 	 */
-	protected onKeyDown (e: KeyboardEvent) {
+	protected onKeyDown(e: KeyboardEvent) {
 		if (e.code === SPACE || e.code === ENTER) {
 			this.click();
 			stopEvent(e);
@@ -141,7 +137,7 @@ export abstract class SwitchBehavior extends FormElementBehavior implements ISwi
 	/**
 	 * Returns the template for the form element
 	 */
-	protected renderFormElement (): TemplateResult {
+	protected renderFormElement(): TemplateResult {
 		return html`
 			<input
 				style="display: none;"
@@ -151,7 +147,7 @@ export abstract class SwitchBehavior extends FormElementBehavior implements ISwi
 				?required="${this.required}"
 				?disabled="${this.disabled}"
 				?readonly="${this.readonly}"
-				.value="${ifDefined(this.value)}"
+				.value="${this.value}"
 				name="${ifDefined(this.name)}"
 				aria-hidden="true"
 				tabindex="-1"
@@ -159,4 +155,3 @@ export abstract class SwitchBehavior extends FormElementBehavior implements ISwi
 		`;
 	}
 }
-

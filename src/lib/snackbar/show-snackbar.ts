@@ -5,6 +5,6 @@ import { ISnackbarBaseProperties, Snackbar } from "./snackbar";
  * Shows a snackbar.
  * @param config
  */
-export function showSnackbar<R> (config: IOpenOverlayConfig & Partial<ISnackbarBaseProperties>) {
+export function showSnackbar<R extends any>(config: IOpenOverlayConfig & Partial<ISnackbarBaseProperties>) {
 	return showOverlay(config, () => new Snackbar<R>());
 }
