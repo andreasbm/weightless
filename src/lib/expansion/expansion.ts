@@ -115,9 +115,10 @@ export class Expansion extends RadioBehavior implements IExpansionProperties {
 		// Stop the click event from propagating when clicking on the content container.
 		this.listeners.push(addListener(this.$contentContainer, "click", this.onContentContainerClick.bind(this)));
 
-		// Animating here causes content to jump closed on first render. Therefore we don't use 
-    // the animateContent function and set the height of the $contentContainer directly instead.
-		this.$contentContainer.style.height = this.checked ? `auto` : `0px`;
+        // Waiting an animation frame here before setting the height of the content container here
+		// causes the content to jump on first render. Therefore we don't use the animateContent function
+		// but the refreshContentContainerHeight that sets the height instantly instead.
+		this.refreshContentContainerHeight();
 	}
 
 	/**
@@ -171,9 +172,16 @@ export class Expansion extends RadioBehavior implements IExpansionProperties {
 					duration
 				}
 			).onfinish = () => {
-				this.$contentContainer.style.height = this.checked ? `auto` : `0px`;
+				this.refreshContentContainerHeight();
 			};
 		});
+	}
+
+	/**
+	 * Refreshes height of the content container to auto if the expansion is checked and 0px if not.
+	 */
+	private refreshContentContainerHeight () {
+		this.$contentContainer.style.height = this.checked ? `auto` : `0px`;
 	}
 
 	/**
