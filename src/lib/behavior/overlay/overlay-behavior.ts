@@ -9,7 +9,7 @@ import { ESCAPE } from "../../util/constant/keycode";
 import { cssResult } from "../../util/css";
 import { renderAttributes, traverseActiveElements } from "../../util/dom";
 import { addListener, EventListenerSubscription, removeListeners, stopEvent } from "../../util/event";
-import { onSizeChanged } from "../../util/resize";
+import { CAN_USE_RESIZE_OBSERVER, onSizeChanged } from "../../util/resize";
 import { uniqueID } from "../../util/unique";
 
 /**
@@ -327,7 +327,7 @@ export abstract class OverlayBehavior<R, C extends Partial<IOverlayBehaviorBaseP
 			addListener(this.scrollContainer, "scroll", this.updatePosition.bind(this), { passive: true }),
 
 			// Either attach a resize observer or fallback to listening to window resizes
-			"ResizeObserver" in window
+			CAN_USE_RESIZE_OBSERVER
 				? onSizeChanged(this, this.updatePosition.bind(this), { debounceMs: 100 })
 				: addListener(window, "resize", this.updatePosition.bind(this), { passive: true })
 		);

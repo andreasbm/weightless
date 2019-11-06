@@ -1,9 +1,10 @@
-import { customElement, html, LitElement, property, TemplateResult } from "lit-element";
+import { customElement, html, LitElement, property, PropertyValues, TemplateResult } from "lit-element";
 import "../divider";
 import { sharedStyles } from "../style/shared";
 import { AriaRole } from "../util/aria";
 import { cssResult } from "../util/css";
 import { addListener, EventListenerSubscription, removeListeners } from "../util/event";
+import { CAN_USE_RESIZE_OBSERVER, onSizeChanged } from "../util/resize";
 
 import styles from "./tab-group.scss";
 
@@ -39,30 +40,30 @@ export class TabGroup extends LitElement implements ITabGroupProperties {
 	 * Alignment of the tabs.
 	 * @attr
 	 */
-	@property({ type: String, reflect: true }) align: TabGroupAlignment = "start";
+	@property({type: String, reflect: true}) align: TabGroupAlignment = "start";
 
 	/**
 	 * Adds a filled color style to the tab.
 	 * @attr
 	 */
-	@property({ type: Boolean, reflect: true }) filled: boolean = false;
+	@property({type: Boolean, reflect: true}) filled: boolean = false;
 
 	/**
 	 * Makes the tabs vertical.
 	 * @attr
 	 */
-	@property({ type: Boolean, reflect: true }) vertical: boolean = false;
+	@property({type: Boolean, reflect: true}) vertical: boolean = false;
 
 	/**
 	 * Role of the tab.
 	 * @attr
 	 */
-	@property({ type: String, reflect: true }) role: AriaRole = "tablist";
+	@property({type: String, reflect: true}) role: AriaRole = "tablist";
 
 	/**
 	 * Returns the main slot element.
 	 */
-	get $slot(): HTMLSlotElement {
+	get $slot (): HTMLSlotElement {
 		return this.shadowRoot!.querySelector<HTMLSlotElement>("slot")!;
 	}
 
@@ -74,25 +75,41 @@ export class TabGroup extends LitElement implements ITabGroupProperties {
 	/**
 	 * Hooks up the element.
 	 */
-	connectedCallback() {
+	connectedCallback () {
 		super.connectedCallback();
-		this.listeners.push(addListener(this, "change", this.updateIndicator.bind(this)));
+		this.listeners.push(addListener(this, "change", this.updateIndicatorPosition.bind(this)));
 	}
 
 	/**
 	 * Removes listeners.
 	 */
-	disconnectedCallback() {
+	disconnectedCallback () {
 		super.disconnectedCallback();
 		removeListeners(this.listeners);
 	}
 
 	/**
+	 * Hooks up the element.
+	 * @param props
+	 */
+	protected firstUpdated (props: PropertyValues): void {
+		super.firstUpdated(props);
+
+		// We need to update the indicator position whenever the size of one of the tab changes.
+		// Either attach a resize observer or fallback to listening to window resizes
+		CAN_USE_RESIZE_OBSERVER
+			? onSizeChanged(this.$slot.parentElement!, this.updateIndicatorPosition.bind(this), {debounceMs: 100})
+			: addListener(window, "resize", this.updateIndicatorPosition.bind(this), {passive: true});
+	}
+
+	/**
 	 * Updates the position and size of the indicator.
 	 */
-	protected updateIndicator() {
+	protected updateIndicatorPosition () {
+
 		// Grab the nodes from the slot
-		const nodes = (Array.from(this.$slot.assignedNodes().filter(node => node.nodeType === 1)) as any) as HTMLElement[];
+		const nodes = (Array.from(this.$slot.assignedNodes()
+		                              .filter(node => node.nodeType === 1)) as any) as HTMLElement[];
 
 		// Find the current checked node
 		let checkedNode: HTMLElement | null = null;
@@ -120,26 +137,18 @@ export class TabGroup extends LitElement implements ITabGroupProperties {
 	 * Returns the size of the node depending on whether the tab group is vertical or horizontal.
 	 * @param $node
 	 */
-	private getNodeSize($node: HTMLElement) {
+	private getNodeSize ($node: HTMLElement) {
 		return this.vertical ? $node.offsetHeight : $node.offsetWidth;
-	}
-
-	/**
-	 * When the slot changes we need to update the indicator.
-	 * Request an animation frame to allow the layout to settle first.
-	 */
-	private onSlotChanged () {
-		requestAnimationFrame(this.updateIndicator.bind(this));
 	}
 
 	/**
 	 * Returns the template of the element.
 	 */
-	protected render(): TemplateResult {
+	protected render (): TemplateResult {
 		return html`
 			<div id="tabs-container">
 				<div id="tabs">
-					<slot @slotchange="${this.onSlotChanged}"></slot>
+					<slot @slotchange="${this.updateIndicatorPosition}"></slot>
 					<div id="indicator"></div>
 				</div>
 			</div>

@@ -25,6 +25,11 @@ export interface IOnSizeChangedOptions {
 }
 
 /**
+ * Determines whether the resize observer API is available.
+ */
+export const CAN_USE_RESIZE_OBSERVER = "ResizeObserver" in window;
+
+/**
  * Invokes the given callback for all ResizeEntries that are triggered when the size of the target element changes.
  * @param $elem
  * @param cb
