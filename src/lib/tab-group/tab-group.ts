@@ -125,13 +125,21 @@ export class TabGroup extends LitElement implements ITabGroupProperties {
 	}
 
 	/**
+	 * When the slot changes we need to update the indicator.
+	 * Request an animation frame to allow the layout to settle first.
+	 */
+	private onSlotChanged () {
+		requestAnimationFrame(this.updateIndicator.bind(this));
+	}
+
+	/**
 	 * Returns the template of the element.
 	 */
 	protected render(): TemplateResult {
 		return html`
 			<div id="tabs-container">
 				<div id="tabs">
-					<slot @slotchange="${this.updateIndicator}"></slot>
+					<slot @slotchange="${this.onSlotChanged}"></slot>
 					<div id="indicator"></div>
 				</div>
 			</div>
