@@ -12,7 +12,7 @@ import styles from "./button-behavior.scss";
  * Properties of the button behavior.
  */
 export interface IButtonBehaviorProperties extends IFormElementBehaviorProperties {
-	type: "button" | "submit";
+	type: "button" | "submit" | "reset";
 }
 
 /**
@@ -25,7 +25,7 @@ export abstract class ButtonBehavior extends FormElementBehavior implements IBut
 	 * Type of the button.
 	 * @attr
 	 */
-	@property({ type: String }) type: "button" | "submit" = "submit";
+	@property({ type: String }) type: "button" | "submit" | "reset" = "submit";
 
 	/**
 	 * Ripple element.
