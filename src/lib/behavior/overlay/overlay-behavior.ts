@@ -57,8 +57,8 @@ const scrollingBlockedClass = (id: string) => `${OVERLAY_SCROLLING_BLOCKED_CLASS
 
 /**
  * Provides overlay behavior.
- * @event didshow - Dispatches after the overlay has been shown.
- * @event didhide - Dispatches after the overlay has been hidden.
+ * @event didShow - Dispatches after the overlay has been shown.
+ * @event didHide - Dispatches after the overlay has been hidden.
  */
 export abstract class OverlayBehavior<R, C extends Partial<IOverlayBehaviorBaseProperties>> extends LitElement implements IOverlayBehaviorProperties {
 	static styles = [sharedStyles, cssResult(styles)];
