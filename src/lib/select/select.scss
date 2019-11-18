@@ -8,6 +8,7 @@
 	top: 50%;
 	right: 0;
 	transform: translate(-100%, -50%);
+	pointer-events: none;
 }
 
 ::slotted(option) {
