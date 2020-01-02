@@ -2,7 +2,7 @@ import { customElement, html, property, query, TemplateResult } from "lit-elemen
 import { nothing } from "lit-html";
 import { ifDefined } from "lit-html/directives/if-defined";
 import { FormElement } from "../behavior/form-element/form-element-behavior";
-import { IInputBehaviorProperties, InputBehavior } from "../behavior/input/input-behavior";
+import { IInputBehaviorProperties, InputBehavior, InputBehaviorEvent } from "../behavior/input/input-behavior";
 import { AriaRole } from "../util/aria";
 import { cssResult } from "../util/css";
 import styles from "./slider.scss";
@@ -160,10 +160,15 @@ export class Slider extends InputBehavior implements ISliderProperties {
 
 	/**
 	 * Update the value of the form element when the slider value changes.
+	 * @param e
 	 */
-	protected sliderValueChanged() {
+	protected sliderValueChanged(e: Event) {
 		this.value = this.$slider.value;
 		this.requestUpdate().then();
+		// Workaround for Firefox not setting composed on inputs with the range role.
+		if (!e.composed) {
+			this.dispatchInputEvent(InputBehaviorEvent.INPUT);
+		}
 	}
 
 	/**

@@ -12,7 +12,8 @@ import styles from "./input-behavior.scss";
  */
 export enum InputBehaviorEvent {
 	SUBMIT = "submit",
-	INVALID = "invalid"
+	INVALID = "invalid",
+	INPUT = "input"
 }
 
 /**
