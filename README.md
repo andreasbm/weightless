@@ -1,3 +1,5 @@
+*This project has reached the end of its development. Feel free to browse the code.*
+
 <p align="center">
   <img src="https://raw.githubusercontent.com/andreasbm/elements/master/assets/brand/logo-text-dark.png" alt="Logo" width="400" height="auto" />
 </p>
