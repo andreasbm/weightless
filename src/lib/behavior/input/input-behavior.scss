@@ -89,7 +89,7 @@
 	--_input-state-color: #{$input-state-color-active};
 }
 
-:host([dirty]), :host(:focus-within), :host([type="color"]), :host([type="date"]), :host([type="file"]), :host([type="range"]) {
+:host([dirty]), :host(:focus-within), :host([type="color"]), :host([type="date"]), :host([type="datetime-local"]), :host([type="file"]), :host([type="range"]) {
 	#label {
 		font-size: $input-label-font-size;
 		top: $input-padding-top-bottom;
