@@ -30,8 +30,8 @@ Provide brief messages at the bottom of the screen.
 
 | Event     | Description                                   |
 |-----------|-----------------------------------------------|
-| `didhide` | Dispatches after the overlay has been hidden. |
-| `didshow` | Dispatches after the overlay has been shown.  |
+| `didHide` | Dispatches after the overlay has been hidden. |
+| `didShow` | Dispatches after the overlay has been shown.  |
 
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#slots)
